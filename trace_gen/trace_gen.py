@@ -11,26 +11,7 @@ from random import choice
 from utils.latency_model import LatencyModel
 from utils.layer import Layer
 from utils.latency_model_wrapper import generate, analyze
-
-
-array_diameter = 15
-array_size = array_diameter**2
-arch_config = {
-    "p": 6, "cp_if": 6, "cp_of": 0, "tr": 1, "ts": 2, "tw": 1,
-    "n": array_diameter**2,
-    "d": array_diameter,
-    "w": 512
-}
-
-cv = 2
-
-controller_idx = 0
-
-# Round Robin Style
-def get_controller(memory_controllers):
-    global controller_idx
-    controller_idx = (controller_idx + 1) % len(memory_controllers)
-    return memory_controllers[controller_idx]
+from utils.global_control import *
 
 
 class WorkingLayerSet():
@@ -48,10 +29,11 @@ class WorkingLayerSet():
         exec_info = self.getExecInfo()
         transformed_info = self.transformExecInfo(exec_info)
         collapsed_info = self.collapseExecInfo(transformed_info)
-        latency_result = self.invokeEstimator(collapsed_info)
-        self.dump2HNOC(collapsed_info)
+        if use_estimator:
+            latency_result = self.invokeEstimator(collapsed_info)
+        self.dumpTranceFile(collapsed_info)
 
-    def dump2HNOC(self, collapsed_info):
+    def dumpTranceFile(self, collapsed_info):
         comm_graph, interval, buffer_access = collapsed_info
         hnocs_dump_file = "trace.dat"
         with open(hnocs_dump_file, "w") as f:
@@ -274,101 +256,3 @@ def embeddedFunc(layer: Layer, comm_bank):
                     pass
 
     return zip(comm_graph, interval, buffer_access)
-
-
-def plot_heatmap(analysis_result):
-    lantencies = analysis_result["achieved_bandwidth"] / analysis_result["required_bandwidth"]
-    lantencies = analysis_result["slow_down"]
-    # lantencies[lantencies > 10] = 10
-    supp = pd.Series([0] * (array_diameter**2 - len(lantencies)))
-    lantencies = lantencies.append(supp)
-
-    core_map = lantencies.values.reshape((array_diameter, -1))  
-    fig_name = "heatmap.png"
-    fig = sns.heatmap(data=core_map, cmap="RdBu_r", linewidths=0.3, center=1, annot=False)
-    heatmap = fig.get_figure()
-    heatmap.savefig(fig_name, dpi=400)
-
-
-def plot_dist(pkt_sizes):
-
-    array = np.asfarray(pkt_sizes)
-
-    print("min: {}, avg: {}, max: {}".format(array.min(), array.mean(), array.max()))
-
-    overhead = arch_config["w"] / (array.flatten() + arch_config["w"])
-    fig = sns.displot(overhead)
-    fig_name = "dist.png"
-    fig.savefig(fig_name, dpi=400)
-
-
-def run():
-    layer_names = [
-        "resnet50_layer43", "resnet50_layer44", "resnet50_layer45", "resnet50_layer46", \
-        "vgg16_layer1", "vgg16_layer2", "vgg16_layer3", "vgg16_layer4", \
-        "inception_layer1", "inception_layer2", "inception_layer3", "inception_layer4"
-    ]
-    cores = [
-        16, 16, 16, 16, 
-        16, 16, 32, 32,
-        4, 4, 4, 4
-    ]
-
-    # Allocate memory controllers on the array
-    memory_controllers = [
-        0, array_diameter-1, 
-        array_diameter, 2*array_diameter-1, 
-        array_diameter*(array_diameter-2), array_diameter*(array_diameter-1)-1,
-        array_diameter*(array_diameter-1), array_diameter*array_diameter-1
-    ]
-
-    assert(sum(cores) <= (array_diameter-2) * (array_diameter-1))
-
-    # Setup core mapping
-    remain_places = [i for i in range(array_diameter**2) if i not in memory_controllers]
-    biases = [sum(cores[:i]) for i in range(len(cores))]
-
-    core_map = {layer: {**{i: remain_places[i + bias] for i in range(core)}, **{-1: get_controller(memory_controllers)}} for \
-        layer, bias, core in zip(layer_names, biases, cores)}
-
-    # Instantiate the working set
-    layer_set = WorkingLayerSet(layer_names, cores, core_map)
-
-    # Invoke timeloop-model for extracting communication status, and invoke estimator
-    # to analyze communication status. Intermediate results are stored in 
-    # layer-set-exchange-info.yaml
-    layer_set.generate()
-
-    # Read the exchange file and organize it as a dataframe
-    result = layer_set.analyze()
-
-    # Plot the heatmap
-    plot_heatmap(result)
-
-    # plot the histogram
-    plot_dist(layer_set.getPktSizes())
-
-
-    # avg_slowdown = result["slow_down"].sum() / len(result["slow_down"])
-    avg_slowdown = result["slow_down"].max()
-    print("max slowdown:", result["slow_down"].max())
-    print("bounded fraction:", result["is_bound"].sum())
-    bw_util = result["achieved_bandwidth"].sum() / (arch_config["w"] * 160 * 3)
-    print("bandwidth utilization", bw_util)
-    print("bandwidth requirement", result["required_bandwidth"].sum() / (1024*3))
-
-    return bw_util, avg_slowdown
-
-
-if __name__ == "__main__": 
-
-    res = pd.DataFrame()
-    run()
-    # for width in range(2048, 2049, 128):
-    #     arch_config["w"] = width
-    #     bw_util, avg_slowdown = run()
-    #     res = res.append({"width": width, "average slowdown": avg_slowdown, "bandwidth utilization": bw_util}, ignore_index=True)
-    res.to_csv("fk.csv")
-    print(res)
-
-    # print(result.head(10))

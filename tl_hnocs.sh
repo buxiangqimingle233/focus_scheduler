@@ -1,4 +1,4 @@
-python main.py
+python focus.py
 cp trace.dat ~/simulator/HNOCS/examples/sync/8x8/
 cp trace.dat /home/wangzhao/code/routeschedulingea/
 
