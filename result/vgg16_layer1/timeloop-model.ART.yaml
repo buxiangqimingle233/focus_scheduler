@@ -1,0 +1,11 @@
+ART:
+  version: 0.3
+  tables:
+  - name: System.die[0..7].PE[0..15].RegisterFile
+    area: 887.84
+  - name: System.die[0..7].PE[0..15].MACC
+    area: 332.25
+  - name: System.die[0..7].GlobalBuffer
+    area: 679274.0
+  - name: System.MainMemory
+    area: 0

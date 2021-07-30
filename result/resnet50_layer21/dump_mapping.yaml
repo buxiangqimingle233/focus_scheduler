@@ -1,0 +1,68 @@
+mapping:
+- factors: C=2 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: QPNSRMC
+  target: DRAM
+  type: temporal
+- factors: C=1 M=1 R=1 S=1 N=1 P=28 Q=14
+  permutation: NSRMCPQ
+  split: 5
+  target: DRAM
+  type: spatial
+- factors: C=2 M=32 R=1 S=1 N=1 P=1 Q=1
+  permutation: QPNSRCM
+  target: GlobalBuffer
+  type: temporal
+- factors: C=4 M=4 R=1 S=1 N=1 P=1 Q=1
+  permutation: QPNSRMC
+  target: GlobalBuffer
+  type: spatial
+- bypass:
+  - Weights
+  target: GlobalBuffer
+  type: bypass
+- factors: C=1 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: PNSRMCQ
+  target: PEInputBuffer
+  type: temporal
+- factors: C=1 M=4 R=1 S=1 N=1 P=1 Q=1
+  permutation: QPNSRCM
+  split: 5
+  target: PEInputBuffer
+  type: spatial
+- bypass:
+  - Weights
+  - Outputs
+  target: PEInputBuffer
+  type: bypass
+- factors: C=2 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: QPNSRMC
+  target: PEWeightBuffer
+  type: temporal
+- bypass:
+  - Inputs
+  - Outputs
+  target: PEWeightBuffer
+  type: bypass
+- factors: C=1 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: PNSRMCQ
+  target: PEAccuBuffer
+  type: temporal
+- factors: C=4 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: QPNSRMC
+  split: 5
+  target: PEAccuBuffer
+  type: spatial
+- bypass:
+  - Weights
+  - Inputs
+  target: PEAccuBuffer
+  type: bypass
+- factors: C=1 M=1 R=1 S=1 N=1 P=1 Q=2
+  permutation: PNSRMCQ
+  target: PEWeightRegs
+  type: temporal
+- bypass:
+  - Inputs
+  - Outputs
+  target: PEWeightRegs
+  type: bypass

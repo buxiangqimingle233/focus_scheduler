@@ -1,0 +1,21 @@
+mapping:
+- factors: C=2 M=1 R=1 S=1 N=1 P=1 Q=5
+  permutation: PNSRMQC
+  target: MainMemory
+  type: temporal
+- factors: C=8 M=1 R=1 S=3 N=1 P=1 Q=1
+  permutation: QPNRMCS
+  target: MainMemory
+  type: spatial
+- factors: C=6 M=16 R=3 S=1 N=1 P=15 Q=1
+  permutation: QNSCRMP
+  target: GlobalBuffer
+  type: temporal
+- factors: C=4 M=4 R=1 S=1 N=1 P=1 Q=1
+  permutation: QPNSRCM
+  target: GlobalBuffer
+  type: spatial
+- factors: C=1 M=4 R=1 S=1 N=1 P=1 Q=3
+  permutation: PNSRCMQ
+  target: RegisterFile
+  type: temporal

@@ -1,0 +1,49 @@
+mapping:
+- factors: C=1 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: PNSRMCQ
+  target: DRAM
+  type: temporal
+- factors: C=1 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: PNSRMCQ
+  target: shared_glb
+  type: temporal
+- factors: C=24 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: QPNSRMC
+  target: shared_glb
+  type: spatial
+- factors: C=3 M=288 R=1 S=1 N=1 P=1 Q=1
+  permutation: QPNSRCM
+  target: pe_spad
+  type: temporal
+- bypass:
+  - Weights
+  - Outputs
+  target: pe_spad
+  type: bypass
+- factors: C=1 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: PNSRMCQ
+  target: weight_reg
+  type: temporal
+- bypass:
+  - Inputs
+  - Outputs
+  target: weight_reg
+  type: bypass
+- factors: C=1 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: PNSRMCQ
+  target: input_activation_reg
+  type: temporal
+- bypass:
+  - Weights
+  - Outputs
+  target: input_activation_reg
+  type: bypass
+- factors: C=1 M=1 R=1 S=1 N=1 P=1 Q=1
+  permutation: PNSRMCQ
+  target: output_activation_reg
+  type: temporal
+- bypass:
+  - Weights
+  - Inputs
+  target: output_activation_reg
+  type: bypass
