@@ -31,9 +31,9 @@ class WorkingLayerSet():
         collapsed_info = self.collapseExecInfo(transformed_info)
         if use_estimator:
             latency_result = self.invokeEstimator(collapsed_info)
-        self.dumpTranceFile(collapsed_info)
+        self.dumpTraceFile(collapsed_info)
 
-    def dumpTranceFile(self, collapsed_info):
+    def dumpTraceFile(self, collapsed_info):
         comm_graph, interval, buffer_access = collapsed_info
         hnocs_dump_file = "trace.dat"
         with open(hnocs_dump_file, "w") as f:

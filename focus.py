@@ -1,9 +1,12 @@
 import os
 import pandas as pd
+import seaborn as sns
+import numpy as np
 
 from utils.global_control import *
 from trace_gen import trace_gen
 from mapper import task_map
+from ts_scheduler import EA
 
 def plot_heatmap(analysis_result):
     lantencies = analysis_result["achieved_bandwidth"] / analysis_result["required_bandwidth"]
@@ -46,9 +49,7 @@ def run():
     trace_generator.generate()
 
     # Baseline test: invoke HNOCs
-
     if simulate_baseline:
-        
         os.system(f"cp trace.dat {hnocs_working_path}")
         prev_cmd = os.getcwd()
         os.chdir(hnocs_working_path)
@@ -56,7 +57,11 @@ def run():
         os.chdir(prev_cmd)
 
     # FOCUS optimizations: invoke focus scheduler
-
+    if focus_schedule:
+        ea_controller = EA.EvolutionController()
+        ea_controller = EA.ParallelEvolutionController(n_workers=n_workers, population_size=population_size)
+        ea_controller.init_population(EA.individual_generator)
+        best_individual,best_score = ea_controller.run_evolution_search(scheduler_verbose)
 
 
 if __name__ == "__main__":

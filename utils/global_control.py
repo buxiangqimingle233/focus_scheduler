@@ -1,7 +1,7 @@
 # Global Variables for controling
 
 
-# -------------------- Layer -------------------------
+# -------------------- Timeloop -------------------------
 
 # whether to invoke timeloop-mapper
 search_dataflow = False
@@ -53,18 +53,21 @@ cores = [
 
 # -------------------- Task Mapper -------------------------
 
-verbose_mapper = True
+mapper_verbose = False
 # .cfg formatted file corresponding to the hardware setups
 conf_filename = "ML_mapper.cfg"
 
 # -------------------- HNOCS -------------------------
 
-simulate_baseline = True
+simulate_baseline = False
 hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
 
 # -------------------- FOCUS Scheduler -------------------------
 
-
+focus_schedule = False
+scheduler_verbose = False
+n_workers = 24
+population_size = 100
 
 # -------------------- [Optional] Estimator -------------------------
 

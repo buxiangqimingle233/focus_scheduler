@@ -21,7 +21,6 @@ class ml_mapping():
         array_size-1, array_size-2, array_size-3, array_size-4
     ]
 
-
     def __init__(self):
         self.layer_num = 0
         self.layer_MACs = {}
@@ -93,7 +92,7 @@ class ml_mapping():
                         return
                     height = layer[1] // width
 
-        if verbose_mapper:
+        if mapper_verbose:
             print(mapping_result)
 
         f = open('mapping_result.dat', 'w')
