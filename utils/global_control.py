@@ -24,6 +24,9 @@ arch_config = {
     "d": array_diameter,
     "w": 512
 }
+# mapping_style = "Tetris"
+mapping_style = "Zig-Zag"
+# mapping_style = "Hilbert"
 
 
 # -------------------- Tasks -------------------------
@@ -69,8 +72,8 @@ hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
 
 # -------------------- FOCUS Scheduler -------------------------
 
-focus_schedule = True
-scheduler_verbose = True
+focus_schedule = False
+scheduler_verbose = False
 n_workers = 24
 population_size = 100
 
@@ -93,6 +96,9 @@ def generate_config_file():
     config["layer_config"] = {
         "layer_num": len(cores),
         "layer_MACs": ":".join(map(lambda x: str(x), cores))
+    }
+    config["mapping_style"] = {
+        "mapping_style": mapping_style
     }
     config.write(open(conf_filename, "w"))
 
