@@ -7,7 +7,7 @@ Level 0
     SPECS
     -----
     Word bits            : 8
-    Instances            : 4096 (16*256)
+    Instances            : 131072 (16*8192)
     Energy-per-op        : 0.56 pJ
 
     STATS
@@ -15,7 +15,7 @@ Level 0
     Utilized instances   : 3072
     Cycles               : 36864
     Energy (total)       : 63531122.69 pJ
-    Area (total)         : 1360896.00 um^2
+    Area (total)         : 43548672.00 um^2
 
 Level 1
 -------
@@ -28,7 +28,7 @@ Level 1
         Word bits            : 8
         Block size           : 1
         Cluster size         : 64
-        Instances            : 4096 (16*256)
+        Instances            : 131072 (16*8192)
         Read bandwidth       : -
         Write bandwidth      : -
         Multiple buffering   : 1.00
@@ -51,15 +51,15 @@ Level 1
         Partition size                           : 9
         Utilized capacity                        : 1
         Utilized instances (max)                 : 3072
-        Utilized clusters (max)                  : 64
+        Utilized clusters (max)                  : 2048
         Scalar reads (per-instance)              : 36864
         Scalar updates (per-instance)            : 0
         Scalar fills (per-instance)              : 1152
         Temporal reductions (per-instance)       : 0
         Address generations (per-cluster)        : 38016
         Energy (per-scalar-access)               : 0.00 pJ
-        Energy (per-instance)                    : 0.11 pJ
-        Energy (total)                           : 342.14 pJ
+        Energy (per-instance)                    : 3.56 pJ
+        Energy (total)                           : 10948.61 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
@@ -80,7 +80,7 @@ Level 2
         Word bits            : 24
         Block size           : 1
         Cluster size         : 1
-        Instances            : 1024 (16*64)
+        Instances            : 32768 (16*2048)
         Read bandwidth       : -
         Write bandwidth      : -
         Multiple buffering   : 1.00
@@ -131,7 +131,7 @@ Level 3
         Word bits            : 8
         Block size           : 8
         Cluster size         : 1
-        Instances            : 1024 (16*64)
+        Instances            : 32768 (16*2048)
         Read bandwidth       : -
         Write bandwidth      : -
         Multiple buffering   : 1.00
@@ -183,7 +183,7 @@ Level 4
         Word bits            : 8
         Block size           : 8
         Cluster size         : 1
-        Instances            : 256 (16*16)
+        Instances            : 8192 (16*512)
         Read bandwidth       : -
         Write bandwidth      : -
         Multiple buffering   : 1.00
@@ -234,7 +234,7 @@ Level 5
         Word bits            : 8
         Block size           : 32
         Cluster size         : 2
-        Instances            : 16 (1*16)
+        Instances            : 512 (1*512)
         Read bandwidth       : -
         Write bandwidth      : -
         Multiple buffering   : 1.00
@@ -258,15 +258,15 @@ Level 5
         Partition size                           : 1728
         Utilized capacity                        : 1728
         Utilized instances (max)                 : 16
-        Utilized clusters (max)                  : 8
+        Utilized clusters (max)                  : 16
         Scalar reads (per-instance)              : 1728
         Scalar updates (per-instance)            : 0
         Scalar fills (per-instance)              : 1728
         Temporal reductions (per-instance)       : 0
         Address generations (per-cluster)        : 3456
-        Energy (per-scalar-access)               : 0.01 pJ
-        Energy (per-instance)                    : 28.32 pJ
-        Energy (total)                           : 453.17 pJ
+        Energy (per-scalar-access)               : 0.02 pJ
+        Energy (per-instance)                    : 56.65 pJ
+        Energy (total)                           : 906.34 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
@@ -279,15 +279,15 @@ Level 5
         Partition size                           : 17028
         Utilized capacity                        : 1188
         Utilized instances (max)                 : 16
-        Utilized clusters (max)                  : 8
+        Utilized clusters (max)                  : 16
         Scalar reads (per-instance)              : 20736
         Scalar updates (per-instance)            : 0
         Scalar fills (per-instance)              : 19008
         Temporal reductions (per-instance)       : 0
         Address generations (per-cluster)        : 39744
-        Energy (per-scalar-access)               : 0.01 pJ
-        Energy (per-instance)                    : 325.71 pJ
-        Energy (total)                           : 5211.43 pJ
+        Energy (per-scalar-access)               : 0.02 pJ
+        Energy (per-instance)                    : 651.43 pJ
+        Energy (total)                           : 10422.86 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
@@ -300,15 +300,15 @@ Level 5
         Partition size                           : 262144
         Utilized capacity                        : 16384
         Utilized instances (max)                 : 16
-        Utilized clusters (max)                  : 8
+        Utilized clusters (max)                  : 16
         Scalar reads (per-instance)              : 0
         Scalar updates (per-instance)            : 262144
         Scalar fills (per-instance)              : 262144
         Temporal reductions (per-instance)       : 0
         Address generations (per-cluster)        : 524288
-        Energy (per-scalar-access)               : 0.01 pJ
-        Energy (per-instance)                    : 4296.70 pJ
-        Energy (total)                           : 68747.26 pJ
+        Energy (per-scalar-access)               : 0.02 pJ
+        Energy (per-instance)                    : 8593.41 pJ
+        Energy (total)                           : 137494.53 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
@@ -799,16 +799,16 @@ PEWeightRegs <==> LMAC
         Spatial Reduction Energy (per-instance) : 0.00 pJ
         Spatial Reduction Energy (total)        : 0.00 pJ
 
-Total topology energy: 1138450514.00 pJ
-Total topology area: 2237501.42 um^2
+Total topology energy: 1138535532.33 pJ
+Total topology area: 71600045.54 um^2
 Max topology cycles: 36864
 
 Summary Stats
 -------------
-Utilization: 0.75
+Utilization: 0.02
 Cycles: 36864
-Energy: 1138.45 uJ
-Area: 2.24 mm^2
+Energy: 1138.54 uJ
+Area: 71.60 mm^2
 
 MACCs = 113246208
 pJ/MACC

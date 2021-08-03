@@ -30,6 +30,7 @@ class Layer:
 
     layer_name = None
     working_dir = None
+    top_level_cnt = None
     mapper_stats_file = "timeloop-mapper.stats.txt"
     mapper_map_file = "timeloop-mapper.map.txt"
     model_stats_file = "timeloop-model.stats.txt"
@@ -55,6 +56,7 @@ class Layer:
         if not os.path.exists(self.working_dir):
             os.mkdir(self.working_dir)
 
+        self.top_level_cnt = dram_spatial_size
         self.arch_specs = self._get_specs_from_database("arch")
         self.mapper_specs = self._get_specs_from_database("mapper")
         self.constraint_specs = self._get_specs_from_database("constraints")
@@ -120,9 +122,11 @@ class Layer:
         command = " ".join([executable, self.arch_specs, self.mapper_specs,
                             self.constraint_specs, self.prob_specs])
         try:
-            # mapper_sp = subprocess.Popen(command, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
-            #                              cwd=self.working_dir, shell=True, preexec_fn=os.setpgrp)
-            mapper_sp = subprocess.Popen(command, cwd=self.working_dir, shell=True, preexec_fn=os.setpgrp)
+            if gc.timeloop_verbose:
+                mapper_sp = subprocess.Popen(command, cwd=self.working_dir, shell=True, preexec_fn=os.setpgrp)
+            else:
+                mapper_sp = subprocess.Popen(command, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                                                            cwd=self.working_dir, shell=True, preexec_fn=os.setpgrp)
 
             # Register sigint handler
             def sigint_handler(signum, frame):
@@ -151,9 +155,11 @@ class Layer:
         # invoke model for getting communication status, single process
         executable = "timeloop-model"
         command = " ".join([executable, self.arch_specs, self.dump_mapping_file, self.prob_specs])
-        # model_sp = subprocess.Popen(command, shell=True, cwd=self.working_dir)
-        model_sp = subprocess.Popen(command, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
-                                    cwd=self.working_dir, shell=True)
+        if gc.timeloop_verbose:
+            model_sp = subprocess.Popen(command, shell=True, cwd=self.working_dir)
+        else:
+            model_sp = subprocess.Popen(command, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                                        cwd=self.working_dir, shell=True)
         model_sp.wait()
 
         print("Info: Communication status extraction finished")
@@ -261,8 +267,8 @@ class Layer:
         os.chdir(self.working_dir)
         print("Info:", "Working for", self.layer_name)
         
-        if gc.top_level_cnt:
-            self._modify_arch_specification(gc.top_level_cnt)
+        if self.top_level_cnt:
+            self._modify_arch_specification(self.top_level_cnt)
         if gc.search_dataflow:
             self.search_optimal_dataflow(gc.timeout)
         

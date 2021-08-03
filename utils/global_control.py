@@ -3,6 +3,7 @@
 
 # -------------------- Timeloop -------------------------
 
+timeloop_verbose = False
 # whether to invoke timeloop-mapper
 search_dataflow = False
 # Search time
@@ -10,7 +11,7 @@ timeout = 300
 # Core numbers (default: number specified in db/arch/arch.yaml)
 top_level_cnt = None
 # whether to invoke timeloop-model
-dump_comm_status = False
+dump_comm_status = True
 
 # -------------------- Hardware -------------------------
 
@@ -21,7 +22,7 @@ arch_config = {
     "p": 6, "cp_if": 6, "cp_of": 0, "tr": 1, "ts": 2, "tw": 1,
     "n": array_diameter**2,
     "d": array_diameter,
-    "w": 2048
+    "w": 512
 }
 
 
@@ -44,16 +45,20 @@ arch_config = {
 # ]
 
 layer_names = [
-    "resnet50_layer43", "resnet50_layer44"
+    "resnet50_layer43", "resnet50_layer44",
+    "vgg16_layer1", "vgg16_layer2",
+    "inception_layer1", "inception_layer2"
 ]
 cores = [
-    8, 16
+    16, 16, 
+    8, 8, 
+    4, 2
 ]
 
 
 # -------------------- Task Mapper -------------------------
 
-mapper_verbose = False
+mapper_verbose = True
 # .cfg formatted file corresponding to the hardware setups
 conf_filename = "ML_mapper.cfg"
 
@@ -64,8 +69,8 @@ hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
 
 # -------------------- FOCUS Scheduler -------------------------
 
-focus_schedule = False
-scheduler_verbose = False
+focus_schedule = True
+scheduler_verbose = True
 n_workers = 24
 population_size = 100
 

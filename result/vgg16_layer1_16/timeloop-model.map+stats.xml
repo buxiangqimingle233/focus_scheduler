@@ -14,13 +14,13 @@
 							<level_name>LMAC</level_name>
 						</LevelSpecs>
 						<instances class_id="8" tracking_level="0" version="0">
-							<t_>4096</t_>
+							<t_>131072</t_>
 						</instances>
 						<meshX>
 							<t_>16</t_>
 						</meshX>
 						<meshY>
-							<t_>256</t_>
+							<t_>8192</t_>
 						</meshY>
 						<word_bits>
 							<t_>8</t_>
@@ -80,13 +80,13 @@
 							<t_>64</t_>
 						</cluster_size>
 						<instances>
-							<t_>4096</t_>
+							<t_>131072</t_>
 						</instances>
 						<meshX>
 							<t_>16</t_>
 						</meshX>
 						<meshY>
-							<t_>256</t_>
+							<t_>8192</t_>
 						</meshY>
 						<read_bandwidth class_id="15" tracking_level="0" version="0"></read_bandwidth>
 						<write_bandwidth></write_bandwidth>
@@ -138,9 +138,9 @@
 						</utilized_instances>
 						<utilized_clusters>
 							<PerDataSpace>
-								<item>64</item>
-								<item>64</item>
-								<item>64</item>
+								<item>2048</item>
+								<item>2048</item>
+								<item>2048</item>
 							</PerDataSpace>
 						</utilized_clusters>
 						<reads>
@@ -194,14 +194,14 @@
 						</write_bandwidth>
 						<energy_per_access>
 							<PerDataSpace>
-								<item>2.92968749999999964e-06</item>
+								<item>9.37499999999999884e-05</item>
 								<item>-nan</item>
 								<item>-nan</item>
 							</PerDataSpace>
 						</energy_per_access>
 						<energy>
 							<PerDataSpace>
-								<item>1.11374999999999988e-01</item>
+								<item>3.56399999999999961e+00</item>
 								<item>0.00000000000000000e+00</item>
 								<item>0.00000000000000000e+00</item>
 							</PerDataSpace>
@@ -272,13 +272,13 @@
 							<t_>1</t_>
 						</cluster_size>
 						<instances>
-							<t_>1024</t_>
+							<t_>32768</t_>
 						</instances>
 						<meshX>
 							<t_>16</t_>
 						</meshX>
 						<meshY>
-							<t_>64</t_>
+							<t_>2048</t_>
 						</meshY>
 						<read_bandwidth></read_bandwidth>
 						<write_bandwidth></write_bandwidth>
@@ -464,13 +464,13 @@
 							<t_>1</t_>
 						</cluster_size>
 						<instances>
-							<t_>1024</t_>
+							<t_>32768</t_>
 						</instances>
 						<meshX>
 							<t_>16</t_>
 						</meshX>
 						<meshY>
-							<t_>64</t_>
+							<t_>2048</t_>
 						</meshY>
 						<read_bandwidth></read_bandwidth>
 						<write_bandwidth></write_bandwidth>
@@ -656,13 +656,13 @@
 							<t_>1</t_>
 						</cluster_size>
 						<instances>
-							<t_>256</t_>
+							<t_>8192</t_>
 						</instances>
 						<meshX>
 							<t_>16</t_>
 						</meshX>
 						<meshY>
-							<t_>16</t_>
+							<t_>512</t_>
 						</meshY>
 						<read_bandwidth></read_bandwidth>
 						<write_bandwidth></write_bandwidth>
@@ -855,13 +855,13 @@
 							<t_>2</t_>
 						</cluster_size>
 						<instances>
-							<t_>16</t_>
+							<t_>512</t_>
 						</instances>
 						<meshX>
 							<t_>1</t_>
 						</meshX>
 						<meshY>
-							<t_>16</t_>
+							<t_>512</t_>
 						</meshY>
 						<read_bandwidth></read_bandwidth>
 						<write_bandwidth></write_bandwidth>
@@ -913,9 +913,9 @@
 						</utilized_instances>
 						<utilized_clusters>
 							<PerDataSpace>
-								<item>8</item>
-								<item>8</item>
-								<item>8</item>
+								<item>16</item>
+								<item>16</item>
+								<item>16</item>
 							</PerDataSpace>
 						</utilized_clusters>
 						<reads>
@@ -969,16 +969,16 @@
 						</write_bandwidth>
 						<energy_per_access>
 							<PerDataSpace>
-								<item>8.19531249999999947e-03</item>
-								<item>8.19531249999999947e-03</item>
-								<item>8.19531249999999947e-03</item>
+								<item>1.63906249999999989e-02</item>
+								<item>1.63906249999999989e-02</item>
+								<item>1.63906249999999989e-02</item>
 							</PerDataSpace>
 						</energy_per_access>
 						<energy>
 							<PerDataSpace>
-								<item>2.83229999999999968e+01</item>
-								<item>3.25714499999999987e+02</item>
-								<item>4.29670399999999972e+03</item>
+								<item>5.66459999999999937e+01</item>
+								<item>6.51428999999999974e+02</item>
+								<item>8.59340799999999945e+03</item>
 							</PerDataSpace>
 						</energy>
 						<temporal_reduction_energy>

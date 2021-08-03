@@ -9,16 +9,8 @@ from utils.global_control import *
 class ml_mapping():
     controller_idx = 0
 
-    # Four corners
-    # memory_controllers = [
-    #     0, array_diameter-1, 
-    #     array_diameter, 2*array_diameter-1, 
-    #     array_diameter*(array_diameter-2), array_diameter*(array_diameter-1)-1,
-    #     array_diameter*(array_diameter-1), array_diameter*array_diameter-1
-    # ]
-
     memory_controllers = [
-        array_size-1, array_size-2, array_size-3, array_size-4
+        array_size-1, array_size-2
     ]
 
     def __init__(self):

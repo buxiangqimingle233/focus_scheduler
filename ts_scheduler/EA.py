@@ -50,9 +50,10 @@ class EvolutionController:
         else:
             n=max_sample_times
         for i in tqdm(range(self.population_size),desc="Generate individuals"):
-            repeat_flag=True
+            repeat_flag = False
             for i in range(n):
-                individual=individual_generator()
+                individual = individual_generator()
+                # break
                 if individual not in self.population:
                     self.add_individual(individual)
                     repeat_flag=False
@@ -90,6 +91,11 @@ class EvolutionController:
             now_best_score = self.scores[sorted_inds[0]]
             t.set_postfix({'new_best_score': now_best_score})
             print(f'Now Best score: {now_best_score} Best Individual {parents[0]}')
+
+            if now_best_score > -1e-5:
+                print("We have found the best solution, break now")
+                break
+
             self.log_file.write(
                 f"==={generation}/{self.n_generations}===\n")
             for i in sorted_inds[:3]:
@@ -110,36 +116,39 @@ class EvolutionController:
 
         print('Finish Evolution Search')
         ind=np.argmax(self.scores)
-        return self.population[ind],self.scores[ind]
+        return self.population[ind], self.scores[ind]
 
 import multiprocessing as mp
 
 
 def individual_generator():
-    p = Individual(pd.read_csv("trace.dat", header=0), (15, 15),)
-    for i in range(np.random.randint(1000)):
+    p = Individual(pd.read_csv("trace.dat", header=0), (array_diameter, array_diameter),)
+    for i in range(np.random.randint(100)):
         p.mutate(inplace=True)
     return p
 
 def individual_gen_process(pid,individual_generator):
     # print(f"start {pid}")
-    sys.stdout = open("output/individual.out", "a+")
-    individual=individual_generator()
-    score=individual.evaluate()
+    with open("output/individual.out", "a+") as outf:
+        sys.stdout = outf
+        individual=individual_generator()
+        score=individual.evaluate()
     return individual,score
 
 def individual_mutation_process(pid,parent):
     # print(f"start {pid}")
-    sys.stdout = open("output/individual.out", "a+")
-    child=parent.mutate()
-    score=child.evaluate()
+    with open("output/individual.out", "a+") as outf:
+        sys.stdout = outf
+        child=parent.mutate()
+        score=child.evaluate()
     return child,score
 
 def individual_crossover_process(pid,parents):
     # print(f"start {pid}")
-    sys.stdout = open("output/individual.out", "a+")
-    child=parents[0].crossover(*parents)
-    score=child.evaluate()
+    with open("output/individual.out", "a+") as outf:
+        sys.stdout = outf
+        child=parents[0].crossover(*parents)
+        score=child.evaluate()
     return child,score
 
 class ParallelEvolutionController(EvolutionController):
@@ -159,6 +168,7 @@ class ParallelEvolutionController(EvolutionController):
         rst=pool.starmap(individual_gen_process,[ (pid,individual_generator) for pid in range(self.population_size)])
         for i,s in rst:
             self.add_individual(i,s)
+        pool.close()
             
 
     def mutation(self, parents):
@@ -172,15 +182,17 @@ class ParallelEvolutionController(EvolutionController):
         rst=pool.starmap(individual_mutation_process,[ (pid,parent) for pid,parent in enumerate(selected_parents)])
         for i,s in rst:
             self.add_individual(i,s)
-    
+        pool.close()
+
     def crossover(self, parents):
-        pool=mp.Pool(processes=self.n_workers,)
+        pool = mp.Pool(processes=self.n_workers)
         selected_parents=[]
         for _ in range(self.mutation_num):
             selected_parent1=parents[np.random.randint(self.parent_num)]
             selected_parent2=parents[np.random.randint(self.parent_num)]
             selected_parents.append([selected_parent1,selected_parent2])
         
-        rst=pool.starmap(individual_crossover_process,[ (pid,parent) for pid,parent in enumerate(selected_parents)])
+        rst = pool.starmap(individual_crossover_process,[ (pid,parent) for pid,parent in enumerate(selected_parents)])
         for i,s in rst:
             self.add_individual(i,s)
+        pool.close()

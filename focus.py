@@ -3,35 +3,11 @@ import pandas as pd
 import seaborn as sns
 import numpy as np
 
-from utils.global_control import *
 from trace_gen import trace_gen
 from mapper import task_map
 from ts_scheduler import EA
 
-def plot_heatmap(analysis_result):
-    lantencies = analysis_result["achieved_bandwidth"] / analysis_result["required_bandwidth"]
-    lantencies = analysis_result["slow_down"]
-    # lantencies[lantencies > 10] = 10
-    supp = pd.Series([0] * (array_diameter**2 - len(lantencies)))
-    lantencies = lantencies.append(supp)
-
-    core_map = lantencies.values.reshape((array_diameter, -1))  
-    fig_name = "heatmap.png"
-    fig = sns.heatmap(data=core_map, cmap="RdBu_r", linewidths=0.3, center=1, annot=False)
-    heatmap = fig.get_figure()
-    heatmap.savefig(fig_name, dpi=400)
-
-
-def plot_dist(pkt_sizes):
-
-    array = np.asfarray(pkt_sizes)
-
-    print("min: {}, avg: {}, max: {}".format(array.min(), array.mean(), array.max()))
-
-    overhead = arch_config["w"] / (array.flatten() + arch_config["w"])
-    fig = sns.displot(overhead)
-    fig_name = "dist.png"
-    fig.savefig(fig_name, dpi=400)
+from utils.global_control import *
 
 
 def run():
@@ -41,6 +17,9 @@ def run():
 
     # Generate task mapping
     core_map = task_mapper.map()
+
+    # Visualize mapping results
+    os.system("gnuplot mapper/mapping_vis.gp")
 
     # Instantiate the traffic trace generator
     trace_generator = trace_gen.WorkingLayerSet(layer_names, cores, core_map)
@@ -58,11 +37,11 @@ def run():
 
     # FOCUS optimizations: invoke focus scheduler
     if focus_schedule:
-        ea_controller = EA.EvolutionController()
         ea_controller = EA.ParallelEvolutionController(n_workers=n_workers, population_size=population_size)
         ea_controller.init_population(EA.individual_generator)
-        best_individual,best_score = ea_controller.run_evolution_search(scheduler_verbose)
-
+        best_individual, best_score = ea_controller.run_evolution_search(scheduler_verbose)
+        best_individual.getTrace().to_csv("best_scheduling.csv")
+        print("Sum Exceeded Latency: {}".format(best_score))
 
 if __name__ == "__main__":
     run()

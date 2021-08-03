@@ -6,6 +6,10 @@ import pandas as pd
 from copy import deepcopy
 import random
 import yaml
+from time import time
+
+INF = 1e10
+
 
 class XYRouter:
     port_number = {"input": 0, "output": 1, "north": 2, "south": 3, "west": 4, "east": 5}
@@ -91,8 +95,9 @@ class FocusLatencyModel():
         while any(working_pkts["unsolved"]):
             
             iter_cnt += 1
-            if iter_cnt % 500 == 0:
-                print("iteration: {}, remained packets: {}".format(iter_cnt, (working_pkts["unsolved"].value_counts())[True]))
+
+            # if iter_cnt % 500 == 0:
+            #     print("iteration: {}, remained packets: {}".format(iter_cnt, (working_pkts["unsolved"].value_counts())[True]))
 
             issued_pkt = working_pkts[working_pkts["unsolved"]].sort_values("issue_time").iloc[0]
 
@@ -135,6 +140,8 @@ class FocusLatencyModel():
                 working_pkts.loc[issued_pkt["id"]] = issued_pkt
 
         working_pkts["is_bound"] = working_pkts["delay"] > 0
+
+        print("Iteration counts: {}".format(iter_cnt))
         return working_pkts
 
 
@@ -156,8 +163,8 @@ class Individual():
         
         trace.columns = ["src", "dst", "interval", "flits", "count"]
         trace["id"] = trace.index
-        trace["intermediate"] = [[]] * trace.shape[0]
-        trace["path"] = [[]] * trace.shape[0]
+        trace["intermediate"] = [[] for _ in range(trace.shape[0])] 
+        trace["path"] = [[] for _ in range(trace.shape[0])]
 
         # For reducing the time of simulating
         trace["count"] = iter_episode
@@ -167,6 +174,8 @@ class Individual():
         self.array_size = reduce(lambda x, y: x*y, self.array_shape)
     
     def mutate(self,inplace=False):
+        # start = time.time()
+
         if inplace:
             new=self
         else:
@@ -176,6 +185,9 @@ class Individual():
                 new.addImNode()
             else:
                 new.rmImNode()
+        # end = time.time()
+        # print("Used time: {}s".format(end - start))
+
         return new
 
     @staticmethod
@@ -210,10 +222,10 @@ class Individual():
 
         if sel_pkt["intermediate"]:
             sel_pkt["intermediate"].pop(random.choice(range(len(sel_pkt["intermediate"]))))
-
-        self.trace.iloc[sel_idx] = sel_pkt
         
     def evaluate(self):
+        start_time = time()
+
         working_trace = self.trace.copy()
         
         router = XYRouter(self.array_shape)
@@ -230,18 +242,21 @@ class Individual():
                 path += segment_path
 
             # write back
-            row["path"] = path
+            row["path"] = deepcopy(path)
             working_trace.loc[idx] = row
 
         # temporal map
-        print("begin temporal mapping")
+        # print("begin temporal mapping")
         temporal_mapper = FocusTemporalMapper()
         working_trace = temporal_mapper.temporal_map(working_trace)
 
-        print("begin estimating")
+        # print("begin estimating")
         # estimate latency
         latency_model = FocusLatencyModel(self.array_shape)
         working_trace = latency_model.run(working_trace)
+        
+        end_time = time()
+        print("Evaluate time: {} Score: {}".format(end_time-start_time, working_trace["delay"].sum()))
 
         return -working_trace["delay"].sum()
 

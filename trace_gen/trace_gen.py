@@ -1,4 +1,7 @@
 import sys
+import os
+sys.path.append(".")
+
 import re
 import math
 import yaml

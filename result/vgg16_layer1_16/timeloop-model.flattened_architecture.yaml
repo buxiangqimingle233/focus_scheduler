@@ -1,7 +1,10 @@
 architecture:
   version: 0.3
   local:
-  - attributes:
+  - name: System.ws[0..511].PE[0..15].PEInputBuffer
+    class: storage
+    subclass: smartbuffer_RF
+    attributes:
       block-size: 8
       datawidth: 8
       depth: 4096
@@ -14,10 +17,10 @@ architecture:
       technology: 45nm
       width: 64
       word-bits: 8
+  - name: System.ws[0..511].PE[0..15].PEWeightBuffer[0..3]
     class: storage
-    name: System.ws[0..15].PE[0..15].PEInputBuffer
     subclass: smartbuffer_RF
-  - attributes:
+    attributes:
       block-size: 8
       datawidth: 8
       depth: 2048
@@ -30,10 +33,10 @@ architecture:
       nbanks: 8
       technology: 45nm
       word-bits: 8
+  - name: System.ws[0..511].PE[0..15].PEAccuBuffer[0..3]
     class: storage
-    name: System.ws[0..15].PE[0..15].PEWeightBuffer[0..3]
     subclass: smartbuffer_RF
-  - attributes:
+    attributes:
       datawidth: 24
       depth: 64
       memory_depth: 12
@@ -44,10 +47,10 @@ architecture:
       n_rdwr_ports: 2
       technology: 45nm
       word-bits: 24
+  - name: System.ws[0..511].PE[0..15].PEWeightRegs[0..15]
     class: storage
-    name: System.ws[0..15].PE[0..15].PEAccuBuffer[0..3]
-    subclass: smartbuffer_RF
-  - attributes:
+    subclass: reg_storage
+    attributes:
       cluster-size: 64
       datawidth: 8
       depth: 1
@@ -57,18 +60,18 @@ architecture:
       technology: 45nm
       width: 16
       word-bits: 8
-    class: storage
-    name: System.ws[0..15].PE[0..15].PEWeightRegs[0..15]
-    subclass: reg_storage
-  - attributes:
+  - name: System.ws[0..511].PE[0..15].LMAC[0..15]
+    class: compute
+    subclass: lmac
+    attributes:
       datawidth: 8
       meshX: 16
       technology: 45nm
       word-bits: 8
-    class: compute
-    name: System.ws[0..15].PE[0..15].LMAC[0..15]
-    subclass: lmac
-  - attributes:
+  - name: System.ws[0..511].GlobalBuffer
+    class: storage
+    subclass: smartbuffer_SRAM
+    attributes:
       block-size: 32
       datawidth: 8
       depth: 4096
@@ -83,15 +86,12 @@ architecture:
       technology: 45nm
       width: 512
       word-bits: 8
-    class: storage
-    name: System.ws[0..15].GlobalBuffer
-    subclass: smartbuffer_SRAM
-  - attributes:
+  - name: System.DRAM
+    class: DRAM
+    attributes:
       block-size: 8
       datawidth: 8
       technology: 45nm
       type: LPDDR4
       width: 64
       word-bits: 8
-    class: DRAM
-    name: System.DRAM

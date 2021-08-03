@@ -9,12 +9,12 @@ Info: generating outputs according to the following specified output flags...
  Please use the -f flag to update the preference (default to all output files) 
 {'ERT': 1, 'ERT_summary': 1, 'ART': 1, 'ART_summary': 1, 'energy_estimation': 1, 'flattened_arch': 1}
 Warn: Cannot recognize the top key "mapping" in file dump_mapping.yaml 
-Warn: Cannot recognize the top key "problem" in file /home/wangzhao/timeloop-dev/timeloop/exp/bandwidth-research/db/inception/inception_layer1.yaml 
-Info: Parsing file /home/wangzhao/timeloop-dev/timeloop/exp/bandwidth-research/result/inception_layer1_4/modified_arch.yaml for architecture info 
-Info: Parsing file /home/wangzhao/timeloop-dev/timeloop/exp/bandwidth-research/db/arch/components/smartbuffer_RF.yaml for compound_components info 
-Info: Parsing file /home/wangzhao/timeloop-dev/timeloop/exp/bandwidth-research/db/arch/components/lmac.yaml for compound_components info 
-Info: Parsing file /home/wangzhao/timeloop-dev/timeloop/exp/bandwidth-research/db/arch/components/reg_storage.yaml for compound_components info 
-Info: Parsing file /home/wangzhao/timeloop-dev/timeloop/exp/bandwidth-research/db/arch/components/smartbuffer_SRAM.yaml for compound_components info 
+Warn: Cannot recognize the top key "problem" in file /home/wangzhao/timeloop-dev/focus/db/inception/inception_layer1.yaml 
+Info: Parsing file /home/wangzhao/timeloop-dev/focus/result/inception_layer1_4/modified_arch.yaml for architecture info 
+Info: Parsing file /home/wangzhao/timeloop-dev/focus/db/arch/components/smartbuffer_RF.yaml for compound_components info 
+Info: Parsing file /home/wangzhao/timeloop-dev/focus/db/arch/components/lmac.yaml for compound_components info 
+Info: Parsing file /home/wangzhao/timeloop-dev/focus/db/arch/components/reg_storage.yaml for compound_components info 
+Info: Parsing file /home/wangzhao/timeloop-dev/focus/db/arch/components/smartbuffer_SRAM.yaml for compound_components info 
 Info: config file located: /home/wangzhao/.config/accelergy/accelergy_config.yaml 
 config file content: 
  {'estimator_plug_ins': ['/home/wangzhao/.pyenv/versions/3.6.9/share/accelergy/estimation_plug_ins'], 'primitive_components': ['/home/wangzhao/.pyenv/versions/3.6.9/share/accelergy/primitive_component_libs'], 'version': 0.3}

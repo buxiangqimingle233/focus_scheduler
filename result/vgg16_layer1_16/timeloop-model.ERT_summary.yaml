@@ -12,7 +12,7 @@ ERT_summary:
     primitive_estimation(s):
     - name: System.DRAM
       estimator: Cacti
-  - name: System.ws[0..15].PE[0..15].PEInputBuffer
+  - name: System.ws[0..511].PE[0..15].PEInputBuffer
     actions:
     - name: write
       average_energy: 0.146
@@ -33,7 +33,7 @@ ERT_summary:
       estimator: Aladdin_table
     - name: address_generators[0..1]
       estimator: Aladdin_table
-  - name: System.ws[0..15].PE[0..15].PEWeightBuffer[0..3]
+  - name: System.ws[0..511].PE[0..15].PEWeightBuffer[0..3]
     actions:
     - name: write
       average_energy: 0.146
@@ -54,7 +54,7 @@ ERT_summary:
       estimator: Aladdin_table
     - name: address_generators[0..1]
       estimator: Aladdin_table
-  - name: System.ws[0..15].PE[0..15].PEAccuBuffer[0..3]
+  - name: System.ws[0..511].PE[0..15].PEAccuBuffer[0..3]
     actions:
     - name: write
       average_energy: 0.146
@@ -75,21 +75,21 @@ ERT_summary:
       estimator: Aladdin_table
     - name: address_generators[0..1]
       estimator: Aladdin_table
-  - name: System.ws[0..15].PE[0..15].PEWeightRegs[0..15]
+  - name: System.ws[0..511].PE[0..15].PEWeightRegs[0..15]
     actions:
     - name: access
       energy: 0.009
     primitive_estimation(s):
     - name: storage
       estimator: Aladdin_table
-  - name: System.ws[0..15].PE[0..15].LMAC[0..15]
+  - name: System.ws[0..511].PE[0..15].LMAC[0..15]
     actions:
     - name: compute
       energy: 0.561
     primitive_estimation(s):
     - name: intmac
       estimator: Aladdin_table
-  - name: System.ws[0..15].GlobalBuffer
+  - name: System.ws[0..511].GlobalBuffer
     actions:
     - name: write
       average_energy: 1.049
