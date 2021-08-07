@@ -130,7 +130,8 @@ def individual_generator():
 def individual_gen_process(pid,individual_generator):
     # print(f"start {pid}")
     with open("output/individual.out", "a+") as outf:
-        sys.stdout = outf
+        if not scheduler_verbose:
+            sys.stdout = outf
         individual=individual_generator()
         score=individual.evaluate()
     return individual,score
@@ -138,7 +139,8 @@ def individual_gen_process(pid,individual_generator):
 def individual_mutation_process(pid,parent):
     # print(f"start {pid}")
     with open("output/individual.out", "a+") as outf:
-        sys.stdout = outf
+        if not scheduler_verbose:
+            sys.stdout = outf
         child=parent.mutate()
         score=child.evaluate()
     return child,score
@@ -146,7 +148,8 @@ def individual_mutation_process(pid,parent):
 def individual_crossover_process(pid,parents):
     # print(f"start {pid}")
     with open("output/individual.out", "a+") as outf:
-        sys.stdout = outf
+        if not scheduler_verbose:
+            sys.stdout = outf
         child=parents[0].crossover(*parents)
         score=child.evaluate()
     return child,score

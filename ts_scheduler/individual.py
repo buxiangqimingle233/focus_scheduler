@@ -8,6 +8,8 @@ import random
 import yaml
 from time import time
 
+from utils.global_control import *
+
 INF = 1e10
 
 
@@ -96,8 +98,9 @@ class FocusLatencyModel():
             
             iter_cnt += 1
 
-            # if iter_cnt % 500 == 0:
-            #     print("iteration: {}, remained packets: {}".format(iter_cnt, (working_pkts["unsolved"].value_counts())[True]))
+            if scheduler_verbose:
+                if iter_cnt % 500 == 0:
+                    print("iteration: {}, remained packets: {}".format(iter_cnt, (working_pkts["unsolved"].value_counts())[True]))
 
             issued_pkt = working_pkts[working_pkts["unsolved"]].sort_values("issue_time").iloc[0]
 
@@ -152,7 +155,8 @@ class FocusTemporalMapper():
         pass
 
     def temporal_map(self, packets):
-        ret = packets.sort_values("flits")
+        # ret = packets.sort_values("flits")
+        ret = packets.sort_values("interval")
         ret["issue_time"] = 0
         return ret
 
@@ -246,11 +250,11 @@ class Individual():
             working_trace.loc[idx] = row
 
         # temporal map
-        # print("begin temporal mapping")
+        print("begin temporal mapping")
         temporal_mapper = FocusTemporalMapper()
         working_trace = temporal_mapper.temporal_map(working_trace)
 
-        # print("begin estimating")
+        print("begin estimating")
         # estimate latency
         latency_model = FocusLatencyModel(self.array_shape)
         working_trace = latency_model.run(working_trace)

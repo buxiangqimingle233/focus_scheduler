@@ -10,6 +10,7 @@ from .hilbert import hilbert_map
 
 from utils.global_control import *
 
+
 class ml_mapping():
     controller_idx = [0, 0]
 
@@ -49,7 +50,7 @@ class ml_mapping():
         total_MACs = 0
         for layer_i in self.layer_MACs:
             total_MACs += self.layer_MACs[layer_i]
-        
+
         for layer_i in self.layer_MACs:
             self.layer_tile_num[layer_i] = round((self.layer_MACs[layer_i] * self.tile_array_height * self.tile_array_width) / total_MACs)
             # self.layer_tile_num[layer_i] = (self.layer_MACs[layer_i] * self.tile_array_height * self.tile_array_width) // total_MACs
@@ -61,8 +62,6 @@ class ml_mapping():
         self.layer_tile_num = sorted(self.layer_tile_num.items(), key=lambda x:x[1], reverse=True)
 
     def get_controller(self, memory_controllers, layer):
-        # self.controller_idx = (self.controller_idx + 1) % len(memory_controllers)
-        # return memory_controllers[self.controller_idx]
         x_sum = 0
         y_sum = 0
         for i in range(array_diameter):
@@ -82,7 +81,7 @@ class ml_mapping():
                 self.controller_idx = [mc_index[0], mc_index[1]]
                 mc_distance = abs(x_sum - mc_index[0]) + abs(y_sum - mc_index[1])
         # print(self.controller_idx)
-        return self.controller_idx
+        return self.controller_idx[0] * array_diameter + self.controller_idx[1]
 
     def map(self):
         self.parse_config()

@@ -1,1536 +1,991 @@
-layer0 requires: 16 height: 4 width: 4 latency: 1.0
-layer1 requires: 16 height: 4 width: 4 latency: 1.0
-layer2 requires: 8 height: 3 width: 3 latency: 0.8888888888888888
-layer3 requires: 8 height: 3 width: 3 latency: 0.8888888888888888
+layer0 requires: 4 height: 2 width: 2 latency: 1.0
+layer1 requires: 4 height: 2 width: 2 latency: 1.0
+layer2 requires: 4 height: 2 width: 2 latency: 1.0
+layer3 requires: 4 height: 2 width: 2 latency: 1.0
 layer4 requires: 4 height: 2 width: 2 latency: 1.0
-layer5 requires: 2 height: 1 width: 2 latency: 1.0
-[[0 0 0 0 1 1 1 1]
- [0 0 0 0 1 1 1 1]
- [0 0 0 0 1 1 1 1]
- [0 0 0 0 1 1 1 1]
- [2 2 2 3 3 3 4 4]
- [2 2 2 3 3 3 4 4]
- [2 2 2 3 3 3 5 5]]
-Info: Working for resnet50_layer43
-====================== FINISH =========================
-
-
-Info: Working for resnet50_layer44
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer1
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer2
-====================== FINISH =========================
-
-
+layer5 requires: 4 height: 2 width: 2 latency: 1.0
+layer6 requires: 4 height: 2 width: 2 latency: 1.0
+layer7 requires: 4 height: 2 width: 2 latency: 1.0
+layer8 requires: 4 height: 2 width: 2 latency: 1.0
+layer9 requires: 4 height: 2 width: 2 latency: 1.0
+layer10 requires: 4 height: 2 width: 2 latency: 1.0
+layer11 requires: 4 height: 2 width: 2 latency: 1.0
+layer12 requires: 4 height: 2 width: 2 latency: 1.0
+layer13 requires: 4 height: 2 width: 2 latency: 1.0
+layer14 requires: 4 height: 2 width: 2 latency: 1.0
+layer15 requires: 4 height: 2 width: 2 latency: 1.0
+layer16 requires: 4 height: 2 width: 2 latency: 1.0
+layer17 requires: 4 height: 2 width: 2 latency: 1.0
+layer18 requires: 4 height: 2 width: 2 latency: 1.0
+layer19 requires: 4 height: 2 width: 2 latency: 1.0
+layer20 requires: 4 height: 2 width: 2 latency: 1.0
+layer21 requires: 4 height: 2 width: 2 latency: 1.0
+layer22 requires: 4 height: 2 width: 2 latency: 1.0
+layer23 requires: 4 height: 2 width: 2 latency: 1.0
+layer24 requires: 4 height: 2 width: 2 latency: 1.0
+layer25 requires: 4 height: 2 width: 2 latency: 1.0
+layer26 requires: 4 height: 2 width: 2 latency: 1.0
+layer27 requires: 4 height: 2 width: 2 latency: 1.0
+layer28 requires: 4 height: 2 width: 2 latency: 1.0
+layer29 requires: 4 height: 2 width: 2 latency: 1.0
+layer30 requires: 4 height: 2 width: 2 latency: 1.0
+layer31 requires: 4 height: 2 width: 2 latency: 1.0
+layer32 requires: 4 height: 2 width: 2 latency: 1.0
+layer33 requires: 4 height: 2 width: 2 latency: 1.0
+layer34 requires: 4 height: 2 width: 2 latency: 1.0
+layer35 requires: 4 height: 2 width: 2 latency: 1.0
+layer36 requires: 4 height: 2 width: 2 latency: 1.0
+layer37 requires: 4 height: 2 width: 2 latency: 1.0
+layer38 requires: 4 height: 2 width: 2 latency: 1.0
+layer39 requires: 4 height: 2 width: 2 latency: 1.0
+layer40 requires: 4 height: 2 width: 2 latency: 1.0
+layer41 requires: 4 height: 2 width: 2 latency: 1.0
+layer42 requires: 4 height: 2 width: 2 latency: 1.0
+layer43 requires: 4 height: 2 width: 2 latency: 1.0
+layer44 requires: 4 height: 2 width: 2 latency: 1.0
+layer45 requires: 4 height: 2 width: 2 latency: 1.0
+layer46 requires: 4 height: 2 width: 2 latency: 1.0
+layer47 requires: 4 height: 2 width: 2 latency: 1.0
+layer48 requires: 4 height: 2 width: 2 latency: 1.0
+layer49 requires: 4 height: 2 width: 2 latency: 1.0
+layer50 requires: 4 height: 2 width: 2 latency: 1.0
+layer51 requires: 4 height: 2 width: 2 latency: 1.0
+layer52 requires: 4 height: 2 width: 2 latency: 1.0
+layer53 requires: 4 height: 2 width: 2 latency: 1.0
+layer54 requires: 4 height: 2 width: 2 latency: 1.0
+layer55 requires: 4 height: 2 width: 2 latency: 1.0
+layer56 requires: 4 height: 2 width: 2 latency: 1.0
+layer57 requires: 4 height: 2 width: 2 latency: 1.0
+layer58 requires: 4 height: 2 width: 2 latency: 1.0
+layer59 requires: 4 height: 2 width: 2 latency: 1.0
+layer60 requires: 4 height: 2 width: 2 latency: 1.0
+layer61 requires: 4 height: 2 width: 2 latency: 1.0
+layer62 requires: 4 height: 2 width: 2 latency: 1.0
+layer63 requires: 4 height: 2 width: 2 latency: 1.0
+layer64 requires: 4 height: 2 width: 2 latency: 1.0
+layer65 requires: 4 height: 2 width: 2 latency: 1.0
+layer66 requires: 4 height: 2 width: 2 latency: 1.0
+layer67 requires: 4 height: 2 width: 2 latency: 1.0
+layer68 requires: 4 height: 2 width: 2 latency: 1.0
+layer69 requires: 4 height: 2 width: 2 latency: 1.0
+layer70 requires: 4 height: 2 width: 2 latency: 1.0
+layer71 requires: 4 height: 2 width: 2 latency: 1.0
+layer72 requires: 4 height: 2 width: 2 latency: 1.0
+layer73 requires: 4 height: 2 width: 2 latency: 1.0
+layer74 requires: 4 height: 2 width: 2 latency: 1.0
+layer75 requires: 4 height: 2 width: 2 latency: 1.0
+layer76 requires: 4 height: 2 width: 2 latency: 1.0
+layer77 requires: 4 height: 2 width: 2 latency: 1.0
+layer78 requires: 4 height: 2 width: 2 latency: 1.0
+layer79 requires: 4 height: 2 width: 2 latency: 1.0
+layer80 requires: 4 height: 2 width: 2 latency: 1.0
+layer81 requires: 4 height: 2 width: 2 latency: 1.0
+layer82 requires: 4 height: 2 width: 2 latency: 1.0
+layer83 requires: 4 height: 2 width: 2 latency: 1.0
+layer84 requires: 4 height: 2 width: 2 latency: 1.0
+layer85 requires: 4 height: 2 width: 2 latency: 1.0
+layer86 requires: 4 height: 2 width: 2 latency: 1.0
+layer87 requires: 4 height: 2 width: 2 latency: 1.0
+layer88 requires: 4 height: 2 width: 2 latency: 1.0
+layer89 requires: 4 height: 2 width: 2 latency: 1.0
+layer90 requires: 4 height: 2 width: 2 latency: 1.0
+layer91 requires: 4 height: 2 width: 2 latency: 1.0
+layer92 requires: 4 height: 2 width: 2 latency: 1.0
+layer93 requires: 4 height: 2 width: 2 latency: 1.0
+layer94 requires: 4 height: 2 width: 2 latency: 1.0
+[[ 0  0  1 ... 14 15 15]
+ [ 0  0  1 ... 14 15 15]
+ [16 16 17 ... 30 31 31]
+ ...
+ [-1 -1 -1 ... -1 -1 -1]
+ [-1 -1 -1 ... -1 -1 -1]
+ [-1 -1 -1 ... -1 -1 -1]]
 Info: Working for inception_layer1
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
 Info: Working for inception_layer2
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Generate 100 individuals Parallel
-layer0 requires: 16 height: 4 width: 4 latency: 1.0
-layer1 requires: 16 height: 4 width: 4 latency: 1.0
-layer2 requires: 8 height: 3 width: 3 latency: 0.8888888888888888
-layer3 requires: 8 height: 3 width: 3 latency: 0.8888888888888888
-layer4 requires: 4 height: 2 width: 2 latency: 1.0
+Info: Working for inception_layer3
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer4
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer5
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer6
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer7
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer8
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer9
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer10
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer11
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer12
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer13
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer14
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer15
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer16
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer17layer0 requires: 2 height: 1 width: 2 latency: 1.0
+layer1 requires: 2 height: 1 width: 2 latency: 1.0
+layer2 requires: 2 height: 1 width: 2 latency: 1.0
+layer3 requires: 2 height: 1 width: 2 latency: 1.0
+layer4 requires: 2 height: 1 width: 2 latency: 1.0
 layer5 requires: 2 height: 1 width: 2 latency: 1.0
-[[0 0 0 0 1 1 1 1]
- [0 0 0 0 1 1 1 1]
- [0 0 0 0 1 1 1 1]
- [0 0 0 0 1 1 1 1]
- [2 2 2 3 3 3 4 4]
- [2 2 2 3 3 3 4 4]
- [2 2 2 3 3 3 5 5]]
-Info: Working for resnet50_layer43
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for resnet50_layer44
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer1
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer2
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
+layer6 requires: 2 height: 1 width: 2 latency: 1.0
+layer7 requires: 2 height: 1 width: 2 latency: 1.0
+layer8 requires: 2 height: 1 width: 2 latency: 1.0
+layer9 requires: 2 height: 1 width: 2 latency: 1.0
+layer10 requires: 2 height: 1 width: 2 latency: 1.0
+layer11 requires: 2 height: 1 width: 2 latency: 1.0
+layer12 requires: 2 height: 1 width: 2 latency: 1.0
+layer13 requires: 2 height: 1 width: 2 latency: 1.0
+layer14 requires: 2 height: 1 width: 2 latency: 1.0
+layer15 requires: 2 height: 1 width: 2 latency: 1.0
+layer16 requires: 2 height: 1 width: 2 latency: 1.0
+layer17 requires: 2 height: 1 width: 2 latency: 1.0
+layer18 requires: 2 height: 1 width: 2 latency: 1.0
+layer19 requires: 2 height: 1 width: 2 latency: 1.0
+layer20 requires: 2 height: 1 width: 2 latency: 1.0
+layer21 requires: 2 height: 1 width: 2 latency: 1.0
+layer22 requires: 2 height: 1 width: 2 latency: 1.0
+layer23 requires: 2 height: 1 width: 2 latency: 1.0
+layer24 requires: 2 height: 1 width: 2 latency: 1.0
+layer25 requires: 2 height: 1 width: 2 latency: 1.0
+layer26 requires: 2 height: 1 width: 2 latency: 1.0
+layer27 requires: 2 height: 1 width: 2 latency: 1.0
+layer28 requires: 2 height: 1 width: 2 latency: 1.0
+layer29 requires: 2 height: 1 width: 2 latency: 1.0
+layer30 requires: 2 height: 1 width: 2 latency: 1.0
+layer31 requires: 2 height: 1 width: 2 latency: 1.0
+layer32 requires: 2 height: 1 width: 2 latency: 1.0
+layer33 requires: 2 height: 1 width: 2 latency: 1.0
+layer34 requires: 2 height: 1 width: 2 latency: 1.0
+layer35 requires: 2 height: 1 width: 2 latency: 1.0
+layer36 requires: 2 height: 1 width: 2 latency: 1.0
+layer37 requires: 2 height: 1 width: 2 latency: 1.0
+layer38 requires: 2 height: 1 width: 2 latency: 1.0
+layer39 requires: 2 height: 1 width: 2 latency: 1.0
+layer40 requires: 2 height: 1 width: 2 latency: 1.0
+layer41 requires: 2 height: 1 width: 2 latency: 1.0
+layer42 requires: 2 height: 1 width: 2 latency: 1.0
+layer43 requires: 2 height: 1 width: 2 latency: 1.0
+layer44 requires: 2 height: 1 width: 2 latency: 1.0
+layer45 requires: 2 height: 1 width: 2 latency: 1.0
+layer46 requires: 2 height: 1 width: 2 latency: 1.0
+layer47 requires: 2 height: 1 width: 2 latency: 1.0
+layer48 requires: 2 height: 1 width: 2 latency: 1.0
+layer49 requires: 2 height: 1 width: 2 latency: 1.0
+layer50 requires: 2 height: 1 width: 2 latency: 1.0
+layer51 requires: 2 height: 1 width: 2 latency: 1.0
+layer52 requires: 2 height: 1 width: 2 latency: 1.0
+layer53 requires: 2 height: 1 width: 2 latency: 1.0
+layer54 requires: 2 height: 1 width: 2 latency: 1.0
+layer55 requires: 2 height: 1 width: 2 latency: 1.0
+layer56 requires: 2 height: 1 width: 2 latency: 1.0
+layer57 requires: 2 height: 1 width: 2 latency: 1.0
+layer58 requires: 2 height: 1 width: 2 latency: 1.0
+layer59 requires: 2 height: 1 width: 2 latency: 1.0
+layer60 requires: 2 height: 1 width: 2 latency: 1.0
+layer61 requires: 2 height: 1 width: 2 latency: 1.0
+layer62 requires: 2 height: 1 width: 2 latency: 1.0
+layer63 requires: 2 height: 1 width: 2 latency: 1.0
+layer64 requires: 2 height: 1 width: 2 latency: 1.0
+layer65 requires: 2 height: 1 width: 2 latency: 1.0
+layer66 requires: 2 height: 1 width: 2 latency: 1.0
+layer67 requires: 2 height: 1 width: 2 latency: 1.0
+layer68 requires: 2 height: 1 width: 2 latency: 1.0
+layer69 requires: 2 height: 1 width: 2 latency: 1.0
+layer70 requires: 2 height: 1 width: 2 latency: 1.0
+layer71 requires: 2 height: 1 width: 2 latency: 1.0
+layer72 requires: 2 height: 1 width: 2 latency: 1.0
+layer73 requires: 2 height: 1 width: 2 latency: 1.0
+layer74 requires: 2 height: 1 width: 2 latency: 1.0
+layer75 requires: 2 height: 1 width: 2 latency: 1.0
+layer76 requires: 2 height: 1 width: 2 latency: 1.0
+layer77 requires: 2 height: 1 width: 2 latency: 1.0
+layer78 requires: 2 height: 1 width: 2 latency: 1.0
+layer79 requires: 2 height: 1 width: 2 latency: 1.0
+layer80 requires: 2 height: 1 width: 2 latency: 1.0
+layer81 requires: 2 height: 1 width: 2 latency: 1.0
+layer82 requires: 2 height: 1 width: 2 latency: 1.0
+layer83 requires: 2 height: 1 width: 2 latency: 1.0
+layer84 requires: 2 height: 1 width: 2 latency: 1.0
+layer85 requires: 2 height: 1 width: 2 latency: 1.0
+layer86 requires: 2 height: 1 width: 2 latency: 1.0
+layer87 requires: 2 height: 1 width: 2 latency: 1.0
+layer88 requires: 2 height: 1 width: 2 latency: 1.0
+layer89 requires: 2 height: 1 width: 2 latency: 1.0
+layer90 requires: 2 height: 1 width: 2 latency: 1.0
+layer91 requires: 2 height: 1 width: 2 latency: 1.0
+layer92 requires: 2 height: 1 width: 2 latency: 1.0
+layer93 requires: 2 height: 1 width: 2 latency: 1.0
+layer94 requires: 2 height: 1 width: 2 latency: 1.0
+[[ 0  0  1 ... 14 15 15]
+ [16 16 17 ... 30 31 31]
+ [32 32 33 ... 46 47 47]
+ ...
+ [-1 -1 -1 ... -1 -1 -1]
+ [-1 -1 -1 ... -1 -1 -1]
+ [-1 -1 -1 ... -1 -1 -1]]
 Info: Working for inception_layer1
+Info: Mapper timeout!!
+Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
 Info: Working for inception_layer2
+Info: Mapper timeout!!
+Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Generate 100 individuals Parallel
-Start Evolution Search...
-Evolutionary Search:   0%|          | 0/50 [00:00<?, ?it/s]Evolutionary Search:   0%|          | 0/50 [00:00<?, ?it/s, new_best_score=-3.04e+4]Start Generation=0
-Now Best score: -30361.546875 Best Individual <individual.Individual object at 0x7fe632d11940>
-Start Mutation
-<individual.Individual object at 0x7fe6354fab38>
-<individual.Individual object at 0x7fe6354fab38>
-<individual.Individual object at 0x7fe635477710>
-<individual.Individual object at 0x7fe632d27668>
-<individual.Individual object at 0x7fe635477710>
-<individual.Individual object at 0x7fe6354e5048>
-<individual.Individual object at 0x7fe6353997b8>
-<individual.Individual object at 0x7fe632c9e6d8>
-<individual.Individual object at 0x7fe632c38780>
-<individual.Individual object at 0x7fe632cc9cf8>
-<individual.Individual object at 0x7fe63539a908>
-<individual.Individual object at 0x7fe63539a908>
-<individual.Individual object at 0x7fe632cc95c0>
-<individual.Individual object at 0x7fe6354c47f0>
-<individual.Individual object at 0x7fe6353fe940>
-<individual.Individual object at 0x7fe632cdbda0>
-<individual.Individual object at 0x7fe6353b9cc0>
-<individual.Individual object at 0x7fe635399908>
-<individual.Individual object at 0x7fe63539a908>
-<individual.Individual object at 0x7fe632bf49e8>
-<individual.Individual object at 0x7fe6354e5048>
-<individual.Individual object at 0x7fe632d27710>
-<individual.Individual object at 0x7fe632c38780>
-<individual.Individual object at 0x7fe6353fe940>
-<individual.Individual object at 0x7fe6354e52b0>
-Start Crossover
-Evolutionary Search:   2%|▏         | 1/50 [00:17<14:41, 18.00s/it, new_best_score=-3.04e+4]Evolutionary Search:   2%|▏         | 1/50 [00:17<14:41, 18.00s/it, new_best_score=-1.11e+4]Start Generation=1
-Now Best score: -11136.515625 Best Individual <individual.Individual object at 0x7fe6353b9518>
-Start Mutation
-<individual.Individual object at 0x7fe632cfb358>
-<individual.Individual object at 0x7fe632cc9cf8>
-<individual.Individual object at 0x7fe635459cf8>
-<individual.Individual object at 0x7fe632bbfdd8>
-<individual.Individual object at 0x7fe632d05eb8>
-<individual.Individual object at 0x7fe632c89ef0>
-<individual.Individual object at 0x7fe6354bb3c8>
-<individual.Individual object at 0x7fe6353fea90>
-<individual.Individual object at 0x7fe635410f60>
-<individual.Individual object at 0x7fe639b698d0>
-<individual.Individual object at 0x7fe6354433c8>
-<individual.Individual object at 0x7fe632d27668>
-<individual.Individual object at 0x7fe6354e5048>
-<individual.Individual object at 0x7fe6354ebb00>
-<individual.Individual object at 0x7fe632c38898>
-<individual.Individual object at 0x7fe632cfb518>
-<individual.Individual object at 0x7fe6354fa7f0>
-<individual.Individual object at 0x7fe632bbfdd8>
-<individual.Individual object at 0x7fe632d2fe80>
-<individual.Individual object at 0x7fe632bbfe48>
-<individual.Individual object at 0x7fe632d05208>
-<individual.Individual object at 0x7fe632d2f5c0>
-<individual.Individual object at 0x7fe6353fea90>
-<individual.Individual object at 0x7fe632d27710>
-<individual.Individual object at 0x7fe632d11940>
-Start Crossover
-Evolutionary Search:   4%|▍         | 2/50 [00:32<12:54, 16.14s/it, new_best_score=-1.11e+4]Evolutionary Search:   4%|▍         | 2/50 [00:32<12:54, 16.14s/it, new_best_score=-1.11e+4]Start Generation=2
-Now Best score: -11136.515625 Best Individual <individual.Individual object at 0x7fe6353b9518>
-Start Mutation
-<individual.Individual object at 0x7fe632cc90b8>
-<individual.Individual object at 0x7fe632bbf940>
-<individual.Individual object at 0x7fe635401860>
-<individual.Individual object at 0x7fe6354018d0>
-<individual.Individual object at 0x7fe632d2fe80>
-<individual.Individual object at 0x7fe635459cf8>
-<individual.Individual object at 0x7fe635410f60>
-<individual.Individual object at 0x7fe632c60c50>
-<individual.Individual object at 0x7fe632c209b0>
-<individual.Individual object at 0x7fe6354bb550>
-<individual.Individual object at 0x7fe632bf47b8>
-<individual.Individual object at 0x7fe632d050f0>
-<individual.Individual object at 0x7fe632bbfdd8>
-<individual.Individual object at 0x7fe6354c42e8>
-<individual.Individual object at 0x7fe635459cf8>
-<individual.Individual object at 0x7fe632bf4588>
-<individual.Individual object at 0x7fe632cdbda0>
-<individual.Individual object at 0x7fe6353fea90>
-<individual.Individual object at 0x7fe635399be0>
-<individual.Individual object at 0x7fe632bbfdd8>
-<individual.Individual object at 0x7fe632d271d0>
-<individual.Individual object at 0x7fe632cdbda0>
-<individual.Individual object at 0x7fe632c38898>
-<individual.Individual object at 0x7fe632cdb2e8>
-<individual.Individual object at 0x7fe6354e51d0>
-Start Crossover
-Evolutionary Search:   6%|▌         | 3/50 [00:46<11:54, 15.20s/it, new_best_score=-1.11e+4]Evolutionary Search:   6%|▌         | 3/50 [00:46<11:54, 15.20s/it, new_best_score=-1.11e+4]Start Generation=3
-Now Best score: -11136.515625 Best Individual <individual.Individual object at 0x7fe6353b9518>
-Start Mutation
-<individual.Individual object at 0x7fe632cfb160>
-<individual.Individual object at 0x7fe632cfba20>
-<individual.Individual object at 0x7fe6354e5e48>
-<individual.Individual object at 0x7fe632bf47b8>
-<individual.Individual object at 0x7fe632cfba20>
-<individual.Individual object at 0x7fe6354018d0>
-<individual.Individual object at 0x7fe6354bb550>
-<individual.Individual object at 0x7fe632bbf748>
-<individual.Individual object at 0x7fe632c60e80>
-<individual.Individual object at 0x7fe632d110b8>
-<individual.Individual object at 0x7fe632c0b3c8>
-<individual.Individual object at 0x7fe632cc95c0>
-<individual.Individual object at 0x7fe632c89ef0>
-<individual.Individual object at 0x7fe632d2fef0>
-<individual.Individual object at 0x7fe632c9e1d0>
-<individual.Individual object at 0x7fe632c60c50>
-<individual.Individual object at 0x7fe632bbf940>
-<individual.Individual object at 0x7fe632c9e1d0>
-<individual.Individual object at 0x7fe632c38898>
-<individual.Individual object at 0x7fe5ff1d6748>
-<individual.Individual object at 0x7fe635410080>
-<individual.Individual object at 0x7fe635477710>
-<individual.Individual object at 0x7fe5ff1d6748>
-<individual.Individual object at 0x7fe632cfb160>
-<individual.Individual object at 0x7fe6354bb550>
-Start Crossover
-Evolutionary Search:   8%|▊         | 4/50 [00:59<10:51, 14.15s/it, new_best_score=-1.11e+4]Evolutionary Search:   8%|▊         | 4/50 [00:59<10:51, 14.15s/it, new_best_score=-1.11e+4]Start Generation=4
-Now Best score: -11136.515625 Best Individual <individual.Individual object at 0x7fe6353b9518>
-Start Mutation
-<individual.Individual object at 0x7fe6353fea90>
-<individual.Individual object at 0x7fe632bf5ba8>
-<individual.Individual object at 0x7fe6354bbef0>
-<individual.Individual object at 0x7fe632c54d30>
-<individual.Individual object at 0x7fe632c209e8>
-<individual.Individual object at 0x7fe632bf4c88>
-<individual.Individual object at 0x7fe632c38400>
-<individual.Individual object at 0x7fe6354fa320>
-<individual.Individual object at 0x7fe6353fea90>
-<individual.Individual object at 0x7fe632c60eb8>
-<individual.Individual object at 0x7fe632c60be0>
-<individual.Individual object at 0x7fe6354fada0>
-<individual.Individual object at 0x7fe632bf5ba8>
-<individual.Individual object at 0x7fe632bf4588>
-<individual.Individual object at 0x7fe632cfb400>
-<individual.Individual object at 0x7fe632c209e8>
-<individual.Individual object at 0x7fe6353b9518>
-<individual.Individual object at 0x7fe632bbfdd8>
-<individual.Individual object at 0x7fe6354bbef0>
-<individual.Individual object at 0x7fe632bbfdd8>
-<individual.Individual object at 0x7fe632c54550>
-<individual.Individual object at 0x7fe632c38400>
-<individual.Individual object at 0x7fe632c9e1d0>
-<individual.Individual object at 0x7fe6354fada0>
-<individual.Individual object at 0x7fe635477cc0>
-Start Crossover
-Evolutionary Search:  10%|█         | 5/50 [01:12<10:23, 13.86s/it, new_best_score=-1.11e+4]Evolutionary Search:  10%|█         | 5/50 [01:12<10:23, 13.86s/it, new_best_score=-1.11e+4]Start Generation=5
-Now Best score: -11136.515625 Best Individual <individual.Individual object at 0x7fe6353b9518>
-Start Mutation
-<individual.Individual object at 0x7fe6354fa320>
-<individual.Individual object at 0x7fe6354e5a20>
-<individual.Individual object at 0x7fe635399be0>
-<individual.Individual object at 0x7fe635477710>
-<individual.Individual object at 0x7fe632d2f3c8>
-<individual.Individual object at 0x7fe6354fada0>
-<individual.Individual object at 0x7fe632bbf940>
-<individual.Individual object at 0x7fe632c9ef28>
-<individual.Individual object at 0x7fe632bf4588>
-<individual.Individual object at 0x7fe6354fada0>
-<individual.Individual object at 0x7fe632cfb400>
-<individual.Individual object at 0x7fe632c209b0>
-<individual.Individual object at 0x7fe632bbfe48>
-<individual.Individual object at 0x7fe632c209e8>
-<individual.Individual object at 0x7fe632c209e8>
-<individual.Individual object at 0x7fe632c209e8>
-<individual.Individual object at 0x7fe6354e5a20>
-<individual.Individual object at 0x7fe632c544e0>
-<individual.Individual object at 0x7fe639b69f98>
-<individual.Individual object at 0x7fe632c54d30>
-<individual.Individual object at 0x7fe63547bf28>
-<individual.Individual object at 0x7fe635401d68>
-<individual.Individual object at 0x7fe632bf52e8>
-<individual.Individual object at 0x7fe632bbfdd8>
-<individual.Individual object at 0x7fe635401470>
-Start Crossover
-Evolutionary Search:  12%|█▏        | 6/50 [01:24<09:40, 13.20s/it, new_best_score=-1.11e+4]Evolutionary Search:  12%|█▏        | 6/50 [01:24<09:40, 13.20s/it, new_best_score=-1.11e+4]Start Generation=6
-Now Best score: -11136.515625 Best Individual <individual.Individual object at 0x7fe6353b9518>
-Start Mutation
-<individual.Individual object at 0x7fe632c9ef28>
-<individual.Individual object at 0x7fe6353feeb8>
-<individual.Individual object at 0x7fe632d11128>
-<individual.Individual object at 0x7fe632c544e0>
-<individual.Individual object at 0x7fe6354fab00>
-<individual.Individual object at 0x7fe632d27b70>
-<individual.Individual object at 0x7fe632c9ef28>
-<individual.Individual object at 0x7fe6353b9518>
-<individual.Individual object at 0x7fe632d11780>
-<individual.Individual object at 0x7fe632c544a8>
-<individual.Individual object at 0x7fe63547bf28>
-<individual.Individual object at 0x7fe632c9ef28>
-<individual.Individual object at 0x7fe635477710>
-<individual.Individual object at 0x7fe6354018d0>
-<individual.Individual object at 0x7fe632c60f98>
-<individual.Individual object at 0x7fe632bf4588>
-<individual.Individual object at 0x7fe632c54d30>
-<individual.Individual object at 0x7fe6354e51d0>
-<individual.Individual object at 0x7fe632d11128>
-<individual.Individual object at 0x7fe6354faf98>
-<individual.Individual object at 0x7fe6354438d0>
-<individual.Individual object at 0x7fe632bbf940>
-<individual.Individual object at 0x7fe632cfba20>
-<individual.Individual object at 0x7fe632ca1cc0>
-<individual.Individual object at 0x7fe632bbfdd8>
-Start Crossover
-Evolutionary Search:  14%|█▍        | 7/50 [01:35<08:54, 12.44s/it, new_best_score=-1.11e+4]Evolutionary Search:  14%|█▍        | 7/50 [01:35<08:54, 12.44s/it, new_best_score=-8.5e+3] Start Generation=7
-Now Best score: -8502.140625 Best Individual <individual.Individual object at 0x7fe635470d30>
-Start Mutation
-<individual.Individual object at 0x7fe632bbf940>
-<individual.Individual object at 0x7fe632d27b70>
-<individual.Individual object at 0x7fe632d2f978>
-<individual.Individual object at 0x7fe6354c4e10>
-<individual.Individual object at 0x7fe632c60eb8>
-<individual.Individual object at 0x7fe6354c4e10>
-<individual.Individual object at 0x7fe639b69518>
-<individual.Individual object at 0x7fe632c9e208>
-<individual.Individual object at 0x7fe6354ebcf8>
-<individual.Individual object at 0x7fe6353b9dd8>
-<individual.Individual object at 0x7fe632bf53c8>
-<individual.Individual object at 0x7fe632c60470>
-<individual.Individual object at 0x7fe6354faf98>
-<individual.Individual object at 0x7fe635470e80>
-<individual.Individual object at 0x7fe632cc9080>
-<individual.Individual object at 0x7fe6354599e8>
-<individual.Individual object at 0x7fe632c544a8>
-<individual.Individual object at 0x7fe632c60470>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe632bf4f28>
-<individual.Individual object at 0x7fe632d2fb70>
-<individual.Individual object at 0x7fe635470d30>
-<individual.Individual object at 0x7fe632c0b0f0>
-<individual.Individual object at 0x7fe632d11940>
-<individual.Individual object at 0x7fe632bbf940>
-Start Crossover
-Evolutionary Search:  16%|█▌        | 8/50 [01:47<08:31, 12.17s/it, new_best_score=-8.5e+3]Evolutionary Search:  16%|█▌        | 8/50 [01:47<08:31, 12.17s/it, new_best_score=-8.5e+3]Start Generation=8
-Now Best score: -8502.140625 Best Individual <individual.Individual object at 0x7fe635470d30>
-Start Mutation
-<individual.Individual object at 0x7fe639b69518>
-<individual.Individual object at 0x7fe632bf4f28>
-<individual.Individual object at 0x7fe635401c18>
-<individual.Individual object at 0x7fe6354438d0>
-<individual.Individual object at 0x7fe6354595c0>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe635470cf8>
-<individual.Individual object at 0x7fe632cfbb38>
-<individual.Individual object at 0x7fe6354599e8>
-<individual.Individual object at 0x7fe639b697f0>
-<individual.Individual object at 0x7fe632cc9080>
-<individual.Individual object at 0x7fe6354ebcf8>
-<individual.Individual object at 0x7fe6353b9470>
-<individual.Individual object at 0x7fe632d277f0>
-<individual.Individual object at 0x7fe632cdbe48>
-<individual.Individual object at 0x7fe632d24470>
-<individual.Individual object at 0x7fe6354599e8>
-<individual.Individual object at 0x7fe632ca11d0>
-<individual.Individual object at 0x7fe6353b9518>
-<individual.Individual object at 0x7fe632c544e0>
-<individual.Individual object at 0x7fe635470d30>
-<individual.Individual object at 0x7fe6353b9518>
-<individual.Individual object at 0x7fe632c0b518>
-<individual.Individual object at 0x7fe632d24470>
-<individual.Individual object at 0x7fe6354599e8>
-Start Crossover
-Evolutionary Search:  18%|█▊        | 9/50 [01:59<08:20, 12.20s/it, new_best_score=-8.5e+3]Evolutionary Search:  18%|█▊        | 9/50 [01:59<08:20, 12.20s/it, new_best_score=-8.5e+3]Start Generation=9
-Now Best score: -8502.140625 Best Individual <individual.Individual object at 0x7fe635470d30>
-Start Mutation
-<individual.Individual object at 0x7fe632c0b518>
-<individual.Individual object at 0x7fe632bf53c8>
-<individual.Individual object at 0x7fe6354ebba8>
-<individual.Individual object at 0x7fe632c60128>
-<individual.Individual object at 0x7fe635401d30>
-<individual.Individual object at 0x7fe632cdbdd8>
-<individual.Individual object at 0x7fe6354595c0>
-<individual.Individual object at 0x7fe632d277f0>
-<individual.Individual object at 0x7fe632c89358>
-<individual.Individual object at 0x7fe632c60470>
-<individual.Individual object at 0x7fe6353b9518>
-<individual.Individual object at 0x7fe632d11940>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe632bf4c88>
-<individual.Individual object at 0x7fe635399470>
-<individual.Individual object at 0x7fe632d11128>
-<individual.Individual object at 0x7fe632bf4f28>
-<individual.Individual object at 0x7fe632c89e80>
-<individual.Individual object at 0x7fe632d11d30>
-<individual.Individual object at 0x7fe6354faf98>
-<individual.Individual object at 0x7fe632d11940>
-<individual.Individual object at 0x7fe632ca11d0>
-<individual.Individual object at 0x7fe632ca11d0>
-<individual.Individual object at 0x7fe632c89e80>
-<individual.Individual object at 0x7fe6353feda0>
-Start Crossover
-Evolutionary Search:  20%|██        | 10/50 [02:10<07:49, 11.73s/it, new_best_score=-8.5e+3]Evolutionary Search:  20%|██        | 10/50 [02:10<07:49, 11.73s/it, new_best_score=-8.28e+3]Start Generation=10
-Now Best score: -8283.6875 Best Individual <individual.Individual object at 0x7fe639b69f98>
-Start Mutation
-<individual.Individual object at 0x7fe632cc9080>
-<individual.Individual object at 0x7fe6354595c0>
-<individual.Individual object at 0x7fe632d11128>
-<individual.Individual object at 0x7fe6354435f8>
-<individual.Individual object at 0x7fe6354435f8>
-<individual.Individual object at 0x7fe635443940>
-<individual.Individual object at 0x7fe632cfbdd8>
-<individual.Individual object at 0x7fe635433438>
-<individual.Individual object at 0x7fe632d277f0>
-<individual.Individual object at 0x7fe632c386d8>
-<individual.Individual object at 0x7fe639b697f0>
-<individual.Individual object at 0x7fe632c9e1d0>
-<individual.Individual object at 0x7fe632d277f0>
-<individual.Individual object at 0x7fe639b69f98>
-<individual.Individual object at 0x7fe632d11d30>
-<individual.Individual object at 0x7fe632cc9080>
-<individual.Individual object at 0x7fe632c20f60>
-<individual.Individual object at 0x7fe632bf4320>
-<individual.Individual object at 0x7fe632c9e1d0>
-<individual.Individual object at 0x7fe632cdbe48>
-<individual.Individual object at 0x7fe63547be10>
-<individual.Individual object at 0x7fe63547be10>
-<individual.Individual object at 0x7fe632cc9c88>
-<individual.Individual object at 0x7fe632c386d8>
-<individual.Individual object at 0x7fe632c386d8>
-Start Crossover
-Evolutionary Search:  22%|██▏       | 11/50 [02:20<07:22, 11.36s/it, new_best_score=-8.28e+3]Evolutionary Search:  22%|██▏       | 11/50 [02:20<07:22, 11.36s/it, new_best_score=-7.35e+3]Start Generation=11
-Now Best score: -7348.1875 Best Individual <individual.Individual object at 0x7fe635410a58>
-Start Mutation
-<individual.Individual object at 0x7fe635399cf8>
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe6354ebba8>
-<individual.Individual object at 0x7fe632d11128>
-<individual.Individual object at 0x7fe639b697f0>
-<individual.Individual object at 0x7fe632ca17f0>
-<individual.Individual object at 0x7fe6354438d0>
-<individual.Individual object at 0x7fe6354c49e8>
-<individual.Individual object at 0x7fe6354ebcf8>
-<individual.Individual object at 0x7fe635410a58>
-<individual.Individual object at 0x7fe632cc9780>
-<individual.Individual object at 0x7fe635410a58>
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe632bf53c8>
-<individual.Individual object at 0x7fe635443940>
-<individual.Individual object at 0x7fe632c89e80>
-<individual.Individual object at 0x7fe6354e5b00>
-<individual.Individual object at 0x7fe635433400>
-<individual.Individual object at 0x7fe632c89e80>
-<individual.Individual object at 0x7fe632c386d8>
-<individual.Individual object at 0x7fe632d11128>
-<individual.Individual object at 0x7fe6354435f8>
-<individual.Individual object at 0x7fe635399080>
-<individual.Individual object at 0x7fe635443940>
-<individual.Individual object at 0x7fe6354c4588>
-Start Crossover
-Evolutionary Search:  24%|██▍       | 12/50 [02:31<07:03, 11.14s/it, new_best_score=-7.35e+3]Evolutionary Search:  24%|██▍       | 12/50 [02:31<07:03, 11.14s/it, new_best_score=-4.4e+3] Start Generation=12
-Now Best score: -4402.046875 Best Individual <individual.Individual object at 0x7fe639bb83c8>
-Start Mutation
-<individual.Individual object at 0x7fe632cc9780>
-<individual.Individual object at 0x7fe635477ac8>
-<individual.Individual object at 0x7fe6353feda0>
-<individual.Individual object at 0x7fe639b69208>
-<individual.Individual object at 0x7fe632bf5320>
-<individual.Individual object at 0x7fe639b697f0>
-<individual.Individual object at 0x7fe632c386d8>
-<individual.Individual object at 0x7fe6354fa9e8>
-<individual.Individual object at 0x7fe635470d30>
-<individual.Individual object at 0x7fe635477ac8>
-<individual.Individual object at 0x7fe6354facf8>
-<individual.Individual object at 0x7fe632cc9080>
-<individual.Individual object at 0x7fe632c0bac8>
-<individual.Individual object at 0x7fe632c386d8>
-<individual.Individual object at 0x7fe632ca1240>
-<individual.Individual object at 0x7fe632c0bac8>
-<individual.Individual object at 0x7fe6353c20f0>
-<individual.Individual object at 0x7fe639b69208>
-<individual.Individual object at 0x7fe6354c49e8>
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe6354fa9e8>
-<individual.Individual object at 0x7fe6353fe748>
-<individual.Individual object at 0x7fe632cc9c88>
-<individual.Individual object at 0x7fe632bf4668>
-<individual.Individual object at 0x7fe6354c49e8>
-Start Crossover
-Evolutionary Search:  26%|██▌       | 13/50 [02:42<06:47, 11.02s/it, new_best_score=-4.4e+3]Evolutionary Search:  26%|██▌       | 13/50 [02:42<06:47, 11.02s/it, new_best_score=-4.4e+3]Start Generation=13
-Now Best score: -4402.046875 Best Individual <individual.Individual object at 0x7fe639bb83c8>
-Start Mutation
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe632d2f4e0>
-<individual.Individual object at 0x7fe6353fe748>
-<individual.Individual object at 0x7fe635433400>
-<individual.Individual object at 0x7fe632cfbb38>
-<individual.Individual object at 0x7fe632c89a20>
-<individual.Individual object at 0x7fe6353b9518>
-<individual.Individual object at 0x7fe6353fe748>
-<individual.Individual object at 0x7fe6354ebba8>
-<individual.Individual object at 0x7fe632ca1240>
-<individual.Individual object at 0x7fe632d2f438>
-<individual.Individual object at 0x7fe632cc9198>
-<individual.Individual object at 0x7fe632c386d8>
-<individual.Individual object at 0x7fe6354fab00>
-<individual.Individual object at 0x7fe632ca1240>
-<individual.Individual object at 0x7fe632c60c50>
-<individual.Individual object at 0x7fe6353b9518>
-<individual.Individual object at 0x7fe6353fe748>
-<individual.Individual object at 0x7fe635470d30>
-<individual.Individual object at 0x7fe632cc9080>
-<individual.Individual object at 0x7fe632c89a20>
-<individual.Individual object at 0x7fe632d2f4e0>
-<individual.Individual object at 0x7fe6354fab00>
-<individual.Individual object at 0x7fe6354435f8>
-<individual.Individual object at 0x7fe632c89e80>
-Start Crossover
-Evolutionary Search:  28%|██▊       | 14/50 [02:51<06:19, 10.55s/it, new_best_score=-4.4e+3]Evolutionary Search:  28%|██▊       | 14/50 [02:51<06:19, 10.55s/it, new_best_score=-3.02e+3]Start Generation=14
-Now Best score: -3023.59375 Best Individual <individual.Individual object at 0x7fe635410a90>
-Start Mutation
-<individual.Individual object at 0x7fe6354c4828>
-<individual.Individual object at 0x7fe6354e50b8>
-<individual.Individual object at 0x7fe6354103c8>
-<individual.Individual object at 0x7fe632bbfb70>
-<individual.Individual object at 0x7fe632d2f4e0>
-<individual.Individual object at 0x7fe6354c4828>
-<individual.Individual object at 0x7fe635410a58>
-<individual.Individual object at 0x7fe6354ebcf8>
-<individual.Individual object at 0x7fe632c20f60>
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe632bbf898>
-<individual.Individual object at 0x7fe6353c20f0>
-<individual.Individual object at 0x7fe639b69208>
-<individual.Individual object at 0x7fe632bbfb70>
-<individual.Individual object at 0x7fe632c9efd0>
-<individual.Individual object at 0x7fe632c549e8>
-<individual.Individual object at 0x7fe632c89cf8>
-<individual.Individual object at 0x7fe632c60160>
-<individual.Individual object at 0x7fe635399c18>
-<individual.Individual object at 0x7fe639b69f98>
-<individual.Individual object at 0x7fe6354eb320>
-<individual.Individual object at 0x7fe632c38048>
-<individual.Individual object at 0x7fe632c385f8>
-<individual.Individual object at 0x7fe632bf4668>
-<individual.Individual object at 0x7fe632c549e8>
-Start Crossover
-Evolutionary Search:  30%|███       | 15/50 [03:01<06:08, 10.53s/it, new_best_score=-3.02e+3]Evolutionary Search:  30%|███       | 15/50 [03:01<06:08, 10.53s/it, new_best_score=-2.81e+3]Start Generation=15
-Now Best score: -2807.546875 Best Individual <individual.Individual object at 0x7fe632c38978>
-Start Mutation
-<individual.Individual object at 0x7fe635399c18>
-<individual.Individual object at 0x7fe6354c4828>
-<individual.Individual object at 0x7fe6353fe748>
-<individual.Individual object at 0x7fe632d2f4e0>
-<individual.Individual object at 0x7fe6354103c8>
-<individual.Individual object at 0x7fe632c203c8>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe632c38048>
-<individual.Individual object at 0x7fe6354ebcf8>
-<individual.Individual object at 0x7fe632c60160>
-<individual.Individual object at 0x7fe632c54be0>
-<individual.Individual object at 0x7fe632c89e80>
-<individual.Individual object at 0x7fe635470470>
-<individual.Individual object at 0x7fe635399c18>
-<individual.Individual object at 0x7fe632cc9198>
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe632c9efd0>
-<individual.Individual object at 0x7fe632cdb438>
-<individual.Individual object at 0x7fe632cfbb38>
-<individual.Individual object at 0x7fe632c60c50>
-<individual.Individual object at 0x7fe632cc9198>
-<individual.Individual object at 0x7fe632c20278>
-<individual.Individual object at 0x7fe6353b9518>
-<individual.Individual object at 0x7fe632d27128>
-<individual.Individual object at 0x7fe632c9eba8>
-Start Crossover
-Evolutionary Search:  32%|███▏      | 16/50 [03:10<05:41, 10.06s/it, new_best_score=-2.81e+3]Evolutionary Search:  32%|███▏      | 16/50 [03:10<05:41, 10.06s/it, new_best_score=-2.81e+3]Start Generation=16
-Now Best score: -2807.546875 Best Individual <individual.Individual object at 0x7fe632c38978>
-Start Mutation
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe63539a6a0>
-<individual.Individual object at 0x7fe63539aa20>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe6354c4588>
-<individual.Individual object at 0x7fe6354c49e8>
-<individual.Individual object at 0x7fe635459a90>
-<individual.Individual object at 0x7fe632c549e8>
-<individual.Individual object at 0x7fe6354c49e8>
-<individual.Individual object at 0x7fe632bbfb70>
-<individual.Individual object at 0x7fe632c60160>
-<individual.Individual object at 0x7fe6354e56d8>
-<individual.Individual object at 0x7fe632cc97b8>
-<individual.Individual object at 0x7fe635399c18>
-<individual.Individual object at 0x7fe632cc9198>
-<individual.Individual object at 0x7fe632cc97b8>
-<individual.Individual object at 0x7fe6354c4b00>
-<individual.Individual object at 0x7fe635443f60>
-<individual.Individual object at 0x7fe632bbfb70>
-<individual.Individual object at 0x7fe632c20278>
-<individual.Individual object at 0x7fe632c203c8>
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe6354c4828>
-<individual.Individual object at 0x7fe635410a90>
-Start Crossover
-Evolutionary Search:  34%|███▍      | 17/50 [03:21<05:37, 10.22s/it, new_best_score=-2.81e+3]Evolutionary Search:  34%|███▍      | 17/50 [03:21<05:37, 10.22s/it, new_best_score=-1546.5] Start Generation=17
-Now Best score: -1546.5 Best Individual <individual.Individual object at 0x7fe639b694a8>
-Start Mutation
-<individual.Individual object at 0x7fe635459748>
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe63539aa20>
-<individual.Individual object at 0x7fe632cc9ac8>
-<individual.Individual object at 0x7fe632bbfa58>
-<individual.Individual object at 0x7fe632c9e080>
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe635410a58>
-<individual.Individual object at 0x7fe632c9efd0>
-<individual.Individual object at 0x7fe635410a58>
-<individual.Individual object at 0x7fe635459748>
-<individual.Individual object at 0x7fe63539aa20>
-<individual.Individual object at 0x7fe632cc9e48>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe639b697b8>
-<individual.Individual object at 0x7fe632d2f4e0>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe632c203c8>
-<individual.Individual object at 0x7fe6354c4588>
-<individual.Individual object at 0x7fe635410a90>
-<individual.Individual object at 0x7fe635399588>
-<individual.Individual object at 0x7fe632bbfa58>
-<individual.Individual object at 0x7fe632cdbc88>
-Start Crossover
-Evolutionary Search:  36%|███▌      | 18/50 [03:31<05:23, 10.12s/it, new_best_score=-1546.5]Evolutionary Search:  36%|███▌      | 18/50 [03:31<05:23, 10.12s/it, new_best_score=-1546.5]Start Generation=18
-Now Best score: -1546.5 Best Individual <individual.Individual object at 0x7fe639b694a8>
-Start Mutation
-<individual.Individual object at 0x7fe6354e56d8>
-<individual.Individual object at 0x7fe635477c88>
-<individual.Individual object at 0x7fe635410a58>
-<individual.Individual object at 0x7fe632cc97b8>
-<individual.Individual object at 0x7fe632cfbb38>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe6354e5208>
-<individual.Individual object at 0x7fe6354103c8>
-<individual.Individual object at 0x7fe6353c2940>
-<individual.Individual object at 0x7fe6354e56d8>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe632cdb160>
-<individual.Individual object at 0x7fe635477198>
-<individual.Individual object at 0x7fe6354c49e8>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe6354e56d8>
-<individual.Individual object at 0x7fe632d27358>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe632cc9198>
-<individual.Individual object at 0x7fe63547bfd0>
-<individual.Individual object at 0x7fe632cc9198>
-<individual.Individual object at 0x7fe632d11b38>
-<individual.Individual object at 0x7fe632d113c8>
-<individual.Individual object at 0x7fe635477c88>
-<individual.Individual object at 0x7fe635399588>
-Start Crossover
-Evolutionary Search:  38%|███▊      | 19/50 [03:39<04:56,  9.56s/it, new_best_score=-1546.5]Evolutionary Search:  38%|███▊      | 19/50 [03:39<04:56,  9.56s/it, new_best_score=-1546.5]Start Generation=19
-Now Best score: -1546.5 Best Individual <individual.Individual object at 0x7fe639b694a8>
-Start Mutation
-<individual.Individual object at 0x7fe6354e5208>
-<individual.Individual object at 0x7fe6354c4b00>
-<individual.Individual object at 0x7fe63539aa20>
-<individual.Individual object at 0x7fe632d11b38>
-<individual.Individual object at 0x7fe639b697b8>
-<individual.Individual object at 0x7fe5f5821198>
-<individual.Individual object at 0x7fe632cdb160>
-<individual.Individual object at 0x7fe632d27358>
-<individual.Individual object at 0x7fe632cc9780>
-<individual.Individual object at 0x7fe6353c2940>
-<individual.Individual object at 0x7fe6354fa198>
-<individual.Individual object at 0x7fe63547bfd0>
-<individual.Individual object at 0x7fe632bbffd0>
-<individual.Individual object at 0x7fe632d113c8>
-<individual.Individual object at 0x7fe632c389b0>
-<individual.Individual object at 0x7fe6354e5208>
-<individual.Individual object at 0x7fe632bf5780>
-<individual.Individual object at 0x7fe632c600f0>
-<individual.Individual object at 0x7fe6354fab00>
-<individual.Individual object at 0x7fe632c20978>
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe635399588>
-<individual.Individual object at 0x7fe6354ebd68>
-<individual.Individual object at 0x7fe632c89b00>
-<individual.Individual object at 0x7fe635410a58>
-Start Crossover
-Evolutionary Search:  40%|████      | 20/50 [03:48<04:37,  9.25s/it, new_best_score=-1546.5]Evolutionary Search:  40%|████      | 20/50 [03:48<04:37,  9.25s/it, new_best_score=-1546.5]Start Generation=20
-Now Best score: -1546.5 Best Individual <individual.Individual object at 0x7fe639b694a8>
-Start Mutation
-<individual.Individual object at 0x7fe635399588>
-<individual.Individual object at 0x7fe6354eb7b8>
-<individual.Individual object at 0x7fe635433f28>
-<individual.Individual object at 0x7fe635399588>
-<individual.Individual object at 0x7fe632c389b0>
-<individual.Individual object at 0x7fe6354ebd68>
-<individual.Individual object at 0x7fe6353c2940>
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe632bf5780>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe632d27358>
-<individual.Individual object at 0x7fe632c389b0>
-<individual.Individual object at 0x7fe6354c4b00>
-<individual.Individual object at 0x7fe5f5821198>
-<individual.Individual object at 0x7fe6354fa198>
-<individual.Individual object at 0x7fe632c38cc0>
-<individual.Individual object at 0x7fe632c9e080>
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe6354ebd68>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe632d2f4e0>
-<individual.Individual object at 0x7fe6353c2940>
-<individual.Individual object at 0x7fe632cc9780>
-<individual.Individual object at 0x7fe635410a90>
-Start Crossover
-Evolutionary Search:  42%|████▏     | 21/50 [03:56<04:22,  9.04s/it, new_best_score=-1546.5]Evolutionary Search:  42%|████▏     | 21/50 [03:56<04:22,  9.04s/it, new_best_score=-1546.5]Start Generation=21
-Now Best score: -1546.5 Best Individual <individual.Individual object at 0x7fe639b694a8>
-Start Mutation
-<individual.Individual object at 0x7fe635399588>
-<individual.Individual object at 0x7fe6354ebd68>
-<individual.Individual object at 0x7fe632c38cc0>
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe632cc9e48>
-<individual.Individual object at 0x7fe63547be48>
-<individual.Individual object at 0x7fe632d2f4e0>
-<individual.Individual object at 0x7fe6353c22e8>
-<individual.Individual object at 0x7fe6354e5630>
-<individual.Individual object at 0x7fe6353b9e48>
-<individual.Individual object at 0x7fe632d2f4e0>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe63539a6a0>
-<individual.Individual object at 0x7fe6354fa710>
-<individual.Individual object at 0x7fe632d2feb8>
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe632c600f0>
-<individual.Individual object at 0x7fe6353c22e8>
-<individual.Individual object at 0x7fe635433f28>
-<individual.Individual object at 0x7fe6354ebd30>
-<individual.Individual object at 0x7fe632c9e080>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe632c38cc0>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe6353b90b8>
-Start Crossover
-Evolutionary Search:  44%|████▍     | 22/50 [04:05<04:07,  8.85s/it, new_best_score=-1546.5]Evolutionary Search:  44%|████▍     | 22/50 [04:05<04:07,  8.85s/it, new_best_score=-1546.5]Start Generation=22
-Now Best score: -1546.5 Best Individual <individual.Individual object at 0x7fe639b694a8>
-Start Mutation
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe6354ebd30>
-<individual.Individual object at 0x7fe6354eb748>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe6353c2940>
-<individual.Individual object at 0x7fe6354eb7b8>
-<individual.Individual object at 0x7fe6354ebd68>
-<individual.Individual object at 0x7fe6354eb7b8>
-<individual.Individual object at 0x7fe63547bf60>
-<individual.Individual object at 0x7fe632d2feb8>
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe632d2f4e0>
-<individual.Individual object at 0x7fe632cc9e48>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe63539a6a0>
-<individual.Individual object at 0x7fe6354c4b00>
-<individual.Individual object at 0x7fe635477198>
-<individual.Individual object at 0x7fe6354c4b00>
-<individual.Individual object at 0x7fe6353c2940>
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe63539ac18>
-Start Crossover
-Evolutionary Search:  46%|████▌     | 23/50 [04:12<03:48,  8.45s/it, new_best_score=-1546.5]Evolutionary Search:  46%|████▌     | 23/50 [04:12<03:48,  8.45s/it, new_best_score=-1.16e+3]Start Generation=23
-Now Best score: -1157.046875 Best Individual <individual.Individual object at 0x7fe63547b080>
-Start Mutation
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe6354fa710>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe635443630>
-<individual.Individual object at 0x7fe6353c25c0>
-<individual.Individual object at 0x7fe652f8beb8>
-<individual.Individual object at 0x7fe632bf4978>
-<individual.Individual object at 0x7fe63547b9b0>
-<individual.Individual object at 0x7fe632bf5dd8>
-<individual.Individual object at 0x7fe63547bfd0>
-<individual.Individual object at 0x7fe6354337f0>
-<individual.Individual object at 0x7fe6354fa710>
-<individual.Individual object at 0x7fe632cc9e48>
-<individual.Individual object at 0x7fe6354103c8>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe6354eb748>
-<individual.Individual object at 0x7fe6354ebd30>
-<individual.Individual object at 0x7fe63547b8d0>
-<individual.Individual object at 0x7fe635477c88>
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe6354337f0>
-<individual.Individual object at 0x7fe63547bfd0>
-<individual.Individual object at 0x7fe632c38978>
-Start Crossover
-Evolutionary Search:  48%|████▊     | 24/50 [04:21<03:42,  8.54s/it, new_best_score=-1.16e+3]Evolutionary Search:  48%|████▊     | 24/50 [04:21<03:42,  8.54s/it, new_best_score=-1.16e+3]Start Generation=24
-Now Best score: -1157.046875 Best Individual <individual.Individual object at 0x7fe63547b080>
-Start Mutation
-<individual.Individual object at 0x7fe635410a90>
-<individual.Individual object at 0x7fe6353997b8>
-<individual.Individual object at 0x7fe635477198>
-<individual.Individual object at 0x7fe6354103c8>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe635433160>
-<individual.Individual object at 0x7fe6354fa198>
-<individual.Individual object at 0x7fe63547b8d0>
-<individual.Individual object at 0x7fe652f8beb8>
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe63539a6a0>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe6354107f0>
-<individual.Individual object at 0x7fe652f8beb8>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe6354fab00>
-<individual.Individual object at 0x7fe635477198>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe635410a90>
-<individual.Individual object at 0x7fe6353c2e48>
-<individual.Individual object at 0x7fe6354e5630>
-<individual.Individual object at 0x7fe63539ac18>
-Start Crossover
-Evolutionary Search:  50%|█████     | 25/50 [04:29<03:30,  8.40s/it, new_best_score=-1.16e+3]Evolutionary Search:  50%|█████     | 25/50 [04:29<03:30,  8.40s/it, new_best_score=-1.16e+3]Start Generation=25
-Now Best score: -1157.046875 Best Individual <individual.Individual object at 0x7fe63547b080>
-Start Mutation
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe6354eb748>
-<individual.Individual object at 0x7fe6353c2908>
-<individual.Individual object at 0x7fe6354eb7b8>
-<individual.Individual object at 0x7fe63547b4a8>
-<individual.Individual object at 0x7fe6354eb7b8>
-<individual.Individual object at 0x7fe6354c4b00>
-<individual.Individual object at 0x7fe6354103c8>
-<individual.Individual object at 0x7fe635399588>
-<individual.Individual object at 0x7fe6354337f0>
-<individual.Individual object at 0x7fe632bf4358>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe635470470>
-<individual.Individual object at 0x7fe63547bfd0>
-<individual.Individual object at 0x7fe6354eb748>
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe635410a90>
-<individual.Individual object at 0x7fe6354e5630>
-<individual.Individual object at 0x7fe632bf5dd8>
-<individual.Individual object at 0x7fe639bb83c8>
-<individual.Individual object at 0x7fe632ca1f28>
-<individual.Individual object at 0x7fe63539a6a0>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe6354fa198>
-<individual.Individual object at 0x7fe635410ba8>
-Start Crossover
-Evolutionary Search:  52%|█████▏    | 26/50 [04:37<03:16,  8.21s/it, new_best_score=-1.16e+3]Evolutionary Search:  52%|█████▏    | 26/50 [04:37<03:16,  8.21s/it, new_best_score=-1.16e+3]Start Generation=26
-Now Best score: -1157.046875 Best Individual <individual.Individual object at 0x7fe63547b080>
-Start Mutation
-<individual.Individual object at 0x7fe632d2feb8>
-<individual.Individual object at 0x7fe632bf4358>
-<individual.Individual object at 0x7fe6353997b8>
-<individual.Individual object at 0x7fe6354339e8>
-<individual.Individual object at 0x7fe6354ebf60>
-<individual.Individual object at 0x7fe6354c4b00>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe652f8beb8>
-<individual.Individual object at 0x7fe6353b96a0>
-<individual.Individual object at 0x7fe632cc9e48>
-<individual.Individual object at 0x7fe632bf5dd8>
-<individual.Individual object at 0x7fe632cc9e48>
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe6354fa860>
-<individual.Individual object at 0x7fe632d2feb8>
-<individual.Individual object at 0x7fe652f8beb8>
-<individual.Individual object at 0x7fe652f8beb8>
-<individual.Individual object at 0x7fe6354339e8>
-<individual.Individual object at 0x7fe632cdb8d0>
-<individual.Individual object at 0x7fe632cc9e48>
-<individual.Individual object at 0x7fe63547b4a8>
-<individual.Individual object at 0x7fe639b691d0>
-<individual.Individual object at 0x7fe6354eb7b8>
-Start Crossover
-Evolutionary Search:  54%|█████▍    | 27/50 [04:45<03:09,  8.25s/it, new_best_score=-1.16e+3]Evolutionary Search:  54%|█████▍    | 27/50 [04:45<03:09,  8.25s/it, new_best_score=-1.16e+3]Start Generation=27
-Now Best score: -1157.046875 Best Individual <individual.Individual object at 0x7fe63547b080>
-Start Mutation
-<individual.Individual object at 0x7fe6354fab00>
-<individual.Individual object at 0x7fe635399588>
-<individual.Individual object at 0x7fe632bf5dd8>
-<individual.Individual object at 0x7fe639b69160>
-<individual.Individual object at 0x7fe6354fa198>
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe6353c2e48>
-<individual.Individual object at 0x7fe632cc9e48>
-<individual.Individual object at 0x7fe632d2feb8>
-<individual.Individual object at 0x7fe6354ebf60>
-<individual.Individual object at 0x7fe63539a320>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe632c9ebe0>
-<individual.Individual object at 0x7fe6353fe0b8>
-<individual.Individual object at 0x7fe63539a320>
-<individual.Individual object at 0x7fe6354339e8>
-<individual.Individual object at 0x7fe6353c2908>
-<individual.Individual object at 0x7fe635477c88>
-<individual.Individual object at 0x7fe5fc522240>
-<individual.Individual object at 0x7fe635477c88>
-<individual.Individual object at 0x7fe632cc9e48>
-<individual.Individual object at 0x7fe635410ba8>
-<individual.Individual object at 0x7fe632c9ebe0>
-<individual.Individual object at 0x7fe6354fa198>
-Start Crossover
-Evolutionary Search:  56%|█████▌    | 28/50 [04:53<02:56,  8.01s/it, new_best_score=-1.16e+3]Evolutionary Search:  56%|█████▌    | 28/50 [04:53<02:56,  8.01s/it, new_best_score=-1.16e+3]Start Generation=28
-Now Best score: -1157.046875 Best Individual <individual.Individual object at 0x7fe63547b080>
-Start Mutation
-<individual.Individual object at 0x7fe6354337f0>
-<individual.Individual object at 0x7fe632c9ebe0>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe635410a20>
-<individual.Individual object at 0x7fe5fc522240>
-<individual.Individual object at 0x7fe632bf4978>
-<individual.Individual object at 0x7fe6353990b8>
-<individual.Individual object at 0x7fe63539a320>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe63539ac18>
-<individual.Individual object at 0x7fe635477198>
-<individual.Individual object at 0x7fe635433e48>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe652f8beb8>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe6353b90b8>
-<individual.Individual object at 0x7fe635433160>
-<individual.Individual object at 0x7fe635477198>
-<individual.Individual object at 0x7fe63547b4a8>
-<individual.Individual object at 0x7fe6353fe0b8>
-<individual.Individual object at 0x7fe632bf4358>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe632d2feb8>
-<individual.Individual object at 0x7fe635477198>
-Start Crossover
-Evolutionary Search:  58%|█████▊    | 29/50 [05:01<02:49,  8.08s/it, new_best_score=-1.16e+3]Evolutionary Search:  58%|█████▊    | 29/50 [05:01<02:49,  8.08s/it, new_best_score=-1012.5] Start Generation=29
-Now Best score: -1012.5 Best Individual <individual.Individual object at 0x7fe632cd9400>
-Start Mutation
-<individual.Individual object at 0x7fe6353b96a0>
-<individual.Individual object at 0x7fe6353c2e48>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe6353c2e48>
-<individual.Individual object at 0x7fe635410ba8>
-<individual.Individual object at 0x7fe6353b90b8>
-<individual.Individual object at 0x7fe63539a320>
-<individual.Individual object at 0x7fe6354fab00>
-<individual.Individual object at 0x7fe6354fa198>
-<individual.Individual object at 0x7fe635410ba8>
-<individual.Individual object at 0x7fe632c60c88>
-<individual.Individual object at 0x7fe6353fe978>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe635477358>
-<individual.Individual object at 0x7fe632c9ebe0>
-<individual.Individual object at 0x7fe635410a20>
-<individual.Individual object at 0x7fe632c9ebe0>
-<individual.Individual object at 0x7fe63547bfd0>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe63547bfd0>
-<individual.Individual object at 0x7fe6354fa198>
-<individual.Individual object at 0x7fe6354faa90>
-<individual.Individual object at 0x7fe6354337f0>
-<individual.Individual object at 0x7fe6353c2908>
-<individual.Individual object at 0x7fe6354fab00>
-Start Crossover
-Evolutionary Search:  60%|██████    | 30/50 [05:09<02:40,  8.00s/it, new_best_score=-1012.5]Evolutionary Search:  60%|██████    | 30/50 [05:09<02:40,  8.00s/it, new_best_score=-1012.5]Start Generation=30
-Now Best score: -1012.5 Best Individual <individual.Individual object at 0x7fe632cd9400>
-Start Mutation
-<individual.Individual object at 0x7fe652f8beb8>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe635410a90>
-<individual.Individual object at 0x7fe63547b5f8>
-<individual.Individual object at 0x7fe63547b8d0>
-<individual.Individual object at 0x7fe635477198>
-<individual.Individual object at 0x7fe6354337f0>
-<individual.Individual object at 0x7fe632d2feb8>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe63547b8d0>
-<individual.Individual object at 0x7fe63539a320>
-<individual.Individual object at 0x7fe6353b9eb8>
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe63547b8d0>
-<individual.Individual object at 0x7fe632c60c88>
-<individual.Individual object at 0x7fe632cdb7b8>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe635443630>
-<individual.Individual object at 0x7fe63547b8d0>
-<individual.Individual object at 0x7fe632c38ba8>
-<individual.Individual object at 0x7fe635410a90>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe635443630>
-<individual.Individual object at 0x7fe6353c2908>
-<individual.Individual object at 0x7fe632cfba58>
-Start Crossover
-Evolutionary Search:  62%|██████▏   | 31/50 [05:17<02:33,  8.07s/it, new_best_score=-1012.5]Evolutionary Search:  62%|██████▏   | 31/50 [05:17<02:33,  8.07s/it, new_best_score=-1012.5]Start Generation=31
-Now Best score: -1012.5 Best Individual <individual.Individual object at 0x7fe632cd9400>
-Start Mutation
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe6353fe978>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe635477c88>
-<individual.Individual object at 0x7fe63547b8d0>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe652f8beb8>
-<individual.Individual object at 0x7fe63547b8d0>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe632cc9e48>
-<individual.Individual object at 0x7fe6354337f0>
-<individual.Individual object at 0x7fe63547b8d0>
-<individual.Individual object at 0x7fe63547b5f8>
-<individual.Individual object at 0x7fe632cdb048>
-<individual.Individual object at 0x7fe632cdb048>
-<individual.Individual object at 0x7fe632d24160>
-<individual.Individual object at 0x7fe632c9ebe0>
-<individual.Individual object at 0x7fe6354337f0>
-<individual.Individual object at 0x7fe635433d30>
-<individual.Individual object at 0x7fe6354337f0>
-<individual.Individual object at 0x7fe632c9ebe0>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe632cc9c18>
-<individual.Individual object at 0x7fe635410a90>
-Start Crossover
-Evolutionary Search:  64%|██████▍   | 32/50 [05:25<02:26,  8.14s/it, new_best_score=-1012.5]Evolutionary Search:  64%|██████▍   | 32/50 [05:25<02:26,  8.14s/it, new_best_score=-1012.5]Start Generation=32
-Now Best score: -1012.5 Best Individual <individual.Individual object at 0x7fe632cd9400>
-Start Mutation
-<individual.Individual object at 0x7fe635433080>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe632d117f0>
-<individual.Individual object at 0x7fe632cc92e8>
-<individual.Individual object at 0x7fe632d24160>
-<individual.Individual object at 0x7fe632d24160>
-<individual.Individual object at 0x7fe632d27a58>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe632d24160>
-<individual.Individual object at 0x7fe63547bfd0>
-<individual.Individual object at 0x7fe632c60c88>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe6353b96a0>
-<individual.Individual object at 0x7fe632cdb588>
-<individual.Individual object at 0x7fe635477c88>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe6353febe0>
-<individual.Individual object at 0x7fe63547bfd0>
-<individual.Individual object at 0x7fe632d2feb8>
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe632bf5dd8>
-<individual.Individual object at 0x7fe632d2feb8>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe632cc9c18>
-Start Crossover
-Evolutionary Search:  66%|██████▌   | 33/50 [05:33<02:14,  7.93s/it, new_best_score=-1012.5]Evolutionary Search:  66%|██████▌   | 33/50 [05:33<02:14,  7.93s/it, new_best_score=-1012.5]Start Generation=33
-Now Best score: -1012.5 Best Individual <individual.Individual object at 0x7fe632cd9400>
-Start Mutation
-<individual.Individual object at 0x7fe632bf5dd8>
-<individual.Individual object at 0x7fe635433320>
-<individual.Individual object at 0x7fe632cdb048>
-<individual.Individual object at 0x7fe6354c2e10>
-<individual.Individual object at 0x7fe6353c25c0>
-<individual.Individual object at 0x7fe632bf5d68>
-<individual.Individual object at 0x7fe6353b9f60>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe632c60c88>
-<individual.Individual object at 0x7fe6353c25c0>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe632bf5d68>
-<individual.Individual object at 0x7fe635433d30>
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe6353b9eb8>
-<individual.Individual object at 0x7fe635433080>
-<individual.Individual object at 0x7fe632d2feb8>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe6354c2e10>
-<individual.Individual object at 0x7fe652f8beb8>
-<individual.Individual object at 0x7fe6354c4710>
-Start Crossover
-Evolutionary Search:  68%|██████▊   | 34/50 [05:40<02:05,  7.87s/it, new_best_score=-1012.5]Evolutionary Search:  68%|██████▊   | 34/50 [05:40<02:05,  7.87s/it, new_best_score=-1012.5]Start Generation=34
-Now Best score: -1012.5 Best Individual <individual.Individual object at 0x7fe632cd9400>
-Start Mutation
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe6353c4860>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe632ca1a20>
-<individual.Individual object at 0x7fe6354c21d0>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe632c38ba8>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe632bf5d68>
-<individual.Individual object at 0x7fe632bf5d68>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe632c38978>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe6353c2e48>
-<individual.Individual object at 0x7fe632c54a90>
-<individual.Individual object at 0x7fe632d117f0>
-<individual.Individual object at 0x7fe632cc9c18>
-<individual.Individual object at 0x7fe6353c25c0>
-<individual.Individual object at 0x7fe6354c21d0>
-<individual.Individual object at 0x7fe632cd9400>
-Start Crossover
-Evolutionary Search:  70%|███████   | 35/50 [05:48<01:56,  7.77s/it, new_best_score=-1012.5]Evolutionary Search:  70%|███████   | 35/50 [05:48<01:56,  7.77s/it, new_best_score=-1012.5]Start Generation=35
-Now Best score: -1012.5 Best Individual <individual.Individual object at 0x7fe632cd9400>
-Start Mutation
-<individual.Individual object at 0x7fe635477c88>
-<individual.Individual object at 0x7fe6353c2e48>
-<individual.Individual object at 0x7fe632c54a90>
-<individual.Individual object at 0x7fe63547b5f8>
-<individual.Individual object at 0x7fe632c9e3c8>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe6353b96a0>
-<individual.Individual object at 0x7fe632c9e630>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe635433e48>
-<individual.Individual object at 0x7fe6353b90b8>
-<individual.Individual object at 0x7fe6353c4860>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe632c9e630>
-<individual.Individual object at 0x7fe6354c21d0>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe635477c88>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe632c60c88>
-<individual.Individual object at 0x7fe632bf5d68>
-<individual.Individual object at 0x7fe632c38ba8>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe63547bfd0>
-Start Crossover
-Evolutionary Search:  72%|███████▏  | 36/50 [05:56<01:49,  7.82s/it, new_best_score=-1012.5]Evolutionary Search:  72%|███████▏  | 36/50 [05:56<01:49,  7.82s/it, new_best_score=-1012.5]Start Generation=36
-Now Best score: -1012.5 Best Individual <individual.Individual object at 0x7fe632cd9400>
-Start Mutation
-<individual.Individual object at 0x7fe632c895f8>
-<individual.Individual object at 0x7fe632d117f0>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe632bf4358>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe63547bfd0>
-<individual.Individual object at 0x7fe632cc9128>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe632bf5da0>
-<individual.Individual object at 0x7fe6353c2c50>
-<individual.Individual object at 0x7fe632c38ba8>
-<individual.Individual object at 0x7fe6353b90b8>
-<individual.Individual object at 0x7fe6353b90b8>
-<individual.Individual object at 0x7fe632c60c88>
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe632bf5dd8>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe632c383c8>
-<individual.Individual object at 0x7fe6353b9eb8>
-<individual.Individual object at 0x7fe635443fd0>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe632bf5d68>
-<individual.Individual object at 0x7fe6353c4860>
-Start Crossover
-Evolutionary Search:  74%|███████▍  | 37/50 [06:03<01:39,  7.65s/it, new_best_score=-1012.5]Evolutionary Search:  74%|███████▍  | 37/50 [06:03<01:39,  7.65s/it, new_best_score=-1012.5]Start Generation=37
-Now Best score: -1012.5 Best Individual <individual.Individual object at 0x7fe632cd9400>
-Start Mutation
-<individual.Individual object at 0x7fe632c38ba8>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe632d117f0>
-<individual.Individual object at 0x7fe632ca1a20>
-<individual.Individual object at 0x7fe632cdbfd0>
-<individual.Individual object at 0x7fe6353c26a0>
-<individual.Individual object at 0x7fe632c20f98>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe632c54a90>
-<individual.Individual object at 0x7fe632ca1588>
-<individual.Individual object at 0x7fe632d117f0>
-<individual.Individual object at 0x7fe632c38ba8>
-<individual.Individual object at 0x7fe6353b9eb8>
-<individual.Individual object at 0x7fe6353c4860>
-<individual.Individual object at 0x7fe632ca1d68>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe635443fd0>
-<individual.Individual object at 0x7fe632d117f0>
-<individual.Individual object at 0x7fe632c54a90>
-<individual.Individual object at 0x7fe6353b9eb8>
-<individual.Individual object at 0x7fe6353b96a0>
-<individual.Individual object at 0x7fe635443198>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe632c38ba8>
-Start Crossover
-Evolutionary Search:  76%|███████▌  | 38/50 [06:10<01:31,  7.59s/it, new_best_score=-1012.5]Evolutionary Search:  76%|███████▌  | 38/50 [06:10<01:31,  7.59s/it, new_best_score=-773]   Start Generation=38
-Now Best score: -773.0 Best Individual <individual.Individual object at 0x7fe632cd9e10>
-Start Mutation
-<individual.Individual object at 0x7fe632c895f8>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe635443198>
-<individual.Individual object at 0x7fe632ca1588>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe6353b90b8>
-<individual.Individual object at 0x7fe6353c2e48>
-<individual.Individual object at 0x7fe635399a90>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe6354c21d0>
-<individual.Individual object at 0x7fe635399a90>
-<individual.Individual object at 0x7fe6353c4860>
-<individual.Individual object at 0x7fe6354eb780>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe6353b90b8>
-<individual.Individual object at 0x7fe6353c4860>
-<individual.Individual object at 0x7fe6353c4860>
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe632d24470>
-<individual.Individual object at 0x7fe6353b90b8>
-<individual.Individual object at 0x7fe635443198>
-<individual.Individual object at 0x7fe6353c2c50>
-<individual.Individual object at 0x7fe635399a90>
-<individual.Individual object at 0x7fe6354eb0b8>
-Start Crossover
-Evolutionary Search:  78%|███████▊  | 39/50 [06:18<01:23,  7.57s/it, new_best_score=-773]Evolutionary Search:  78%|███████▊  | 39/50 [06:18<01:23,  7.57s/it, new_best_score=-773]Start Generation=39
-Now Best score: -773.0 Best Individual <individual.Individual object at 0x7fe632cd9e10>
-Start Mutation
-<individual.Individual object at 0x7fe6354c49b0>
-<individual.Individual object at 0x7fe6354c21d0>
-<individual.Individual object at 0x7fe632c208d0>
-<individual.Individual object at 0x7fe632cd9e10>
-<individual.Individual object at 0x7fe635433588>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe635433e48>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe635399a90>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe6353c4860>
-<individual.Individual object at 0x7fe6353c2c50>
-<individual.Individual object at 0x7fe632bf4358>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe6354c49b0>
-<individual.Individual object at 0x7fe6354eb780>
-<individual.Individual object at 0x7fe635443fd0>
-<individual.Individual object at 0x7fe6354c49b0>
-<individual.Individual object at 0x7fe632d27780>
-<individual.Individual object at 0x7fe63539aef0>
-<individual.Individual object at 0x7fe632cd9e10>
-<individual.Individual object at 0x7fe6353c4748>
-<individual.Individual object at 0x7fe632ca1d68>
-Start Crossover
-Evolutionary Search:  80%|████████  | 40/50 [06:25<01:15,  7.51s/it, new_best_score=-773]Evolutionary Search:  80%|████████  | 40/50 [06:25<01:15,  7.51s/it, new_best_score=-773]Start Generation=40
-Now Best score: -773.0 Best Individual <individual.Individual object at 0x7fe632cd9e10>
-Start Mutation
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe635443fd0>
-<individual.Individual object at 0x7fe6354c21d0>
-<individual.Individual object at 0x7fe63547b5f8>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe6354eb780>
-<individual.Individual object at 0x7fe632d117f0>
-<individual.Individual object at 0x7fe632d2fd30>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe635433588>
-<individual.Individual object at 0x7fe6354c49b0>
-<individual.Individual object at 0x7fe632c383c8>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe632cdb048>
-<individual.Individual object at 0x7fe632c60d68>
-<individual.Individual object at 0x7fe635433e48>
-<individual.Individual object at 0x7fe6353b9eb8>
-<individual.Individual object at 0x7fe635477438>
-<individual.Individual object at 0x7fe6354eb0b8>
-<individual.Individual object at 0x7fe632d2fd30>
-<individual.Individual object at 0x7fe632d24470>
-<individual.Individual object at 0x7fe632cd9400>
-Start Crossover
-Evolutionary Search:  82%|████████▏ | 41/50 [06:33<01:08,  7.61s/it, new_best_score=-773]Evolutionary Search:  82%|████████▏ | 41/50 [06:33<01:08,  7.61s/it, new_best_score=-236]Start Generation=41
-Now Best score: -236.0 Best Individual <individual.Individual object at 0x7fe6354c4400>
-Start Mutation
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe632c20f98>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe632d27e48>
-<individual.Individual object at 0x7fe632c383c8>
-<individual.Individual object at 0x7fe632ca1d68>
-<individual.Individual object at 0x7fe6354c49b0>
-<individual.Individual object at 0x7fe6353c26a0>
-<individual.Individual object at 0x7fe635433e48>
-<individual.Individual object at 0x7fe632c60d68>
-<individual.Individual object at 0x7fe635399a90>
-<individual.Individual object at 0x7fe639b69828>
-<individual.Individual object at 0x7fe6353c2cc0>
-<individual.Individual object at 0x7fe632d24470>
-<individual.Individual object at 0x7fe635477438>
-<individual.Individual object at 0x7fe6353c26a0>
-<individual.Individual object at 0x7fe632cdb320>
-<individual.Individual object at 0x7fe635399a90>
-<individual.Individual object at 0x7fe6354c21d0>
-<individual.Individual object at 0x7fe6353c2cc0>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe632c9e630>
-<individual.Individual object at 0x7fe632d2fd30>
-<individual.Individual object at 0x7fe6353c4748>
-<individual.Individual object at 0x7fe639b694a8>
-Start Crossover
-Evolutionary Search:  84%|████████▍ | 42/50 [06:41<01:00,  7.56s/it, new_best_score=-236]Evolutionary Search:  84%|████████▍ | 42/50 [06:41<01:00,  7.56s/it, new_best_score=-236]Start Generation=42
-Now Best score: -236.0 Best Individual <individual.Individual object at 0x7fe6354c4400>
-Start Mutation
-<individual.Individual object at 0x7fe632c60d68>
-<individual.Individual object at 0x7fe6353c2e48>
-<individual.Individual object at 0x7fe6354c2240>
-<individual.Individual object at 0x7fe632c60c88>
-<individual.Individual object at 0x7fe632cd9e10>
-<individual.Individual object at 0x7fe6353c2e48>
-<individual.Individual object at 0x7fe632c60c88>
-<individual.Individual object at 0x7fe6354c49b0>
-<individual.Individual object at 0x7fe6353c4748>
-<individual.Individual object at 0x7fe6354c4da0>
-<individual.Individual object at 0x7fe6353fe2b0>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe6353c2cc0>
-<individual.Individual object at 0x7fe632c895f8>
-<individual.Individual object at 0x7fe635433588>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe6354eb0b8>
-<individual.Individual object at 0x7fe635433e48>
-<individual.Individual object at 0x7fe632cd9e10>
-<individual.Individual object at 0x7fe632cd9e10>
-<individual.Individual object at 0x7fe639b69828>
-<individual.Individual object at 0x7fe632d2fd30>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe632d27b70>
-<individual.Individual object at 0x7fe6353c2e48>
-Start Crossover
-Evolutionary Search:  86%|████████▌ | 43/50 [06:48<00:52,  7.48s/it, new_best_score=-236]Evolutionary Search:  86%|████████▌ | 43/50 [06:48<00:52,  7.48s/it, new_best_score=-236]Start Generation=43
-Now Best score: -236.0 Best Individual <individual.Individual object at 0x7fe6354c4400>
-Start Mutation
-<individual.Individual object at 0x7fe632cd9e10>
-<individual.Individual object at 0x7fe6353fea20>
-<individual.Individual object at 0x7fe635399940>
-<individual.Individual object at 0x7fe6354eb780>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe6354c4400>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe6354c21d0>
-<individual.Individual object at 0x7fe6353c2cc0>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe6354c2c50>
-<individual.Individual object at 0x7fe632c60d68>
-<individual.Individual object at 0x7fe6354fa9b0>
-<individual.Individual object at 0x7fe6353b9eb8>
-<individual.Individual object at 0x7fe6354c49b0>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe632c383c8>
-<individual.Individual object at 0x7fe6354592b0>
-<individual.Individual object at 0x7fe632ca1588>
-<individual.Individual object at 0x7fe632d2fc18>
-<individual.Individual object at 0x7fe6354c4da0>
-<individual.Individual object at 0x7fe632ca1588>
-<individual.Individual object at 0x7fe635443fd0>
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe632c9e630>
-Start Crossover
-Evolutionary Search:  88%|████████▊ | 44/50 [06:55<00:44,  7.40s/it, new_best_score=-236]Evolutionary Search:  88%|████████▊ | 44/50 [06:55<00:44,  7.40s/it, new_best_score=-236]Start Generation=44
-Now Best score: -236.0 Best Individual <individual.Individual object at 0x7fe6354c4400>
-Start Mutation
-<individual.Individual object at 0x7fe6354fa9b0>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe632d27b70>
-<individual.Individual object at 0x7fe6353feeb8>
-<individual.Individual object at 0x7fe632d117f0>
-<individual.Individual object at 0x7fe6354fa2b0>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe632d11198>
-<individual.Individual object at 0x7fe6354eb6a0>
-<individual.Individual object at 0x7fe632d11198>
-<individual.Individual object at 0x7fe632c382b0>
-<individual.Individual object at 0x7fe6354c4400>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe632c9e630>
-<individual.Individual object at 0x7fe632cdb320>
-<individual.Individual object at 0x7fe632cc9e80>
-<individual.Individual object at 0x7fe6354592b0>
-<individual.Individual object at 0x7fe632d11198>
-<individual.Individual object at 0x7fe6353c26a0>
-<individual.Individual object at 0x7fe6353fea20>
-<individual.Individual object at 0x7fe6354c4400>
-<individual.Individual object at 0x7fe6354c21d0>
-<individual.Individual object at 0x7fe635477438>
-Start Crossover
-Evolutionary Search:  90%|█████████ | 45/50 [07:03<00:37,  7.40s/it, new_best_score=-236]Evolutionary Search:  90%|█████████ | 45/50 [07:03<00:37,  7.40s/it, new_best_score=-236]Start Generation=45
-Now Best score: -236.0 Best Individual <individual.Individual object at 0x7fe6354c4400>
-Start Mutation
-<individual.Individual object at 0x7fe6353fe0f0>
-<individual.Individual object at 0x7fe6354eb9b0>
-<individual.Individual object at 0x7fe6353fe2b0>
-<individual.Individual object at 0x7fe632c20fd0>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe632c38ba8>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe632d11198>
-<individual.Individual object at 0x7fe6354eb6a0>
-<individual.Individual object at 0x7fe632c54a20>
-<individual.Individual object at 0x7fe632c382b0>
-<individual.Individual object at 0x7fe635433e48>
-<individual.Individual object at 0x7fe6354eb9b0>
-<individual.Individual object at 0x7fe639bfe588>
-<individual.Individual object at 0x7fe6353c2e48>
-<individual.Individual object at 0x7fe632c382b0>
-<individual.Individual object at 0x7fe6354c4da0>
-<individual.Individual object at 0x7fe6354c4da0>
-<individual.Individual object at 0x7fe632d27b70>
-<individual.Individual object at 0x7fe632cd9e10>
-<individual.Individual object at 0x7fe6353feeb8>
-<individual.Individual object at 0x7fe632c387b8>
-<individual.Individual object at 0x7fe632cd9e10>
-<individual.Individual object at 0x7fe632c383c8>
-<individual.Individual object at 0x7fe632d27e48>
-Start Crossover
-Evolutionary Search:  92%|█████████▏| 46/50 [07:10<00:29,  7.45s/it, new_best_score=-236]Evolutionary Search:  92%|█████████▏| 46/50 [07:10<00:29,  7.45s/it, new_best_score=-236]Start Generation=46
-Now Best score: -236.0 Best Individual <individual.Individual object at 0x7fe6354c4400>
-Start Mutation
-<individual.Individual object at 0x7fe632cdb390>
-<individual.Individual object at 0x7fe6354e5828>
-<individual.Individual object at 0x7fe6354eb9b0>
-<individual.Individual object at 0x7fe6354c4da0>
-<individual.Individual object at 0x7fe6354eb6a0>
-<individual.Individual object at 0x7fe632cdb390>
-<individual.Individual object at 0x7fe632d27b70>
-<individual.Individual object at 0x7fe632d24470>
-<individual.Individual object at 0x7fe6353feeb8>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe632c387b8>
-<individual.Individual object at 0x7fe632ca1d68>
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe632c383c8>
-<individual.Individual object at 0x7fe635470630>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe632d2fbe0>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe6354e5828>
-<individual.Individual object at 0x7fe6354fa9b0>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe6354e5828>
-Start Crossover
-Evolutionary Search:  94%|█████████▍| 47/50 [07:17<00:22,  7.36s/it, new_best_score=-236]Evolutionary Search:  94%|█████████▍| 47/50 [07:17<00:22,  7.36s/it, new_best_score=-236]Start Generation=47
-Now Best score: -236.0 Best Individual <individual.Individual object at 0x7fe6354c4400>
-Start Mutation
-<individual.Individual object at 0x7fe635433e48>
-<individual.Individual object at 0x7fe6353c26a0>
-<individual.Individual object at 0x7fe6353fe2b0>
-<individual.Individual object at 0x7fe639b694a8>
-<individual.Individual object at 0x7fe6354fa2b0>
-<individual.Individual object at 0x7fe632ca1d68>
-<individual.Individual object at 0x7fe632c206d8>
-<individual.Individual object at 0x7fe635477438>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe632d24470>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe632cd9e10>
-<individual.Individual object at 0x7fe635477438>
-<individual.Individual object at 0x7fe6353feeb8>
-<individual.Individual object at 0x7fe632d11198>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe6353fe2b0>
-<individual.Individual object at 0x7fe6353feeb8>
-<individual.Individual object at 0x7fe632cc9e80>
-<individual.Individual object at 0x7fe635477438>
-<individual.Individual object at 0x7fe6354336d8>
-<individual.Individual object at 0x7fe632d11198>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe632d2fd30>
-<individual.Individual object at 0x7fe632d11198>
-Start Crossover
-Evolutionary Search:  96%|█████████▌| 48/50 [07:25<00:15,  7.56s/it, new_best_score=-236]Evolutionary Search:  96%|█████████▌| 48/50 [07:25<00:15,  7.56s/it, new_best_score=-236]Start Generation=48
-Now Best score: -236.0 Best Individual <individual.Individual object at 0x7fe6354c4400>
-Start Mutation
-<individual.Individual object at 0x7fe632d27e48>
-<individual.Individual object at 0x7fe6354c4400>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe632c382b0>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe632c206d8>
-<individual.Individual object at 0x7fe632d24470>
-<individual.Individual object at 0x7fe632d2fd30>
-<individual.Individual object at 0x7fe6354c24e0>
-<individual.Individual object at 0x7fe632d27e48>
-<individual.Individual object at 0x7fe6353fea20>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe6354c4400>
-<individual.Individual object at 0x7fe632d27b70>
-<individual.Individual object at 0x7fe632cdb400>
-<individual.Individual object at 0x7fe632d27e48>
-<individual.Individual object at 0x7fe6353fea20>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe632c20fd0>
-<individual.Individual object at 0x7fe632c382b0>
-<individual.Individual object at 0x7fe63547b080>
-<individual.Individual object at 0x7fe639b696a0>
-<individual.Individual object at 0x7fe6353c2400>
-<individual.Individual object at 0x7fe639b694a8>
-Start Crossover
-Evolutionary Search:  98%|█████████▊| 49/50 [07:33<00:07,  7.49s/it, new_best_score=-236]Evolutionary Search:  98%|█████████▊| 49/50 [07:33<00:07,  7.49s/it, new_best_score=-236]Start Generation=49
-Now Best score: -236.0 Best Individual <individual.Individual object at 0x7fe6354c4400>
-Start Mutation
-<individual.Individual object at 0x7fe6354c4710>
-<individual.Individual object at 0x7fe639b696a0>
-<individual.Individual object at 0x7fe635399940>
-<individual.Individual object at 0x7fe632c54a20>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe6353fe2b0>
-<individual.Individual object at 0x7fe632cfbcc0>
-<individual.Individual object at 0x7fe632c54a20>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe6353b9160>
-<individual.Individual object at 0x7fe632d24470>
-<individual.Individual object at 0x7fe632cfba58>
-<individual.Individual object at 0x7fe5fc522240>
-<individual.Individual object at 0x7fe632c60ac8>
-<individual.Individual object at 0x7fe632cfbcc0>
-<individual.Individual object at 0x7fe632cc9be0>
-<individual.Individual object at 0x7fe6354e5828>
-<individual.Individual object at 0x7fe632d11eb8>
-<individual.Individual object at 0x7fe6354c24e0>
-<individual.Individual object at 0x7fe63539af28>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe632cd9400>
-<individual.Individual object at 0x7fe6354fa5c0>
-<individual.Individual object at 0x7fe632d11198>
-<individual.Individual object at 0x7fe632c38ba8>
-Start Crossover
-Evolutionary Search: 100%|██████████| 50/50 [07:40<00:00,  7.40s/it, new_best_score=-236]Evolutionary Search: 100%|██████████| 50/50 [07:40<00:00,  9.21s/it, new_best_score=-236]
-Finish Evolution Search
-Sum Exceeded Latency: -236.0
+Info: Working for inception_layer3
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer4
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer5
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer6
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer7
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer8
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer9
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer10
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer11
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer12
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer13
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer14
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer15
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer16
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer17
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer18
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer19
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer20
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer21
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer22
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer23
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer24
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer25
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer26
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer27
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer28
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer29
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer30
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer31
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer32
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer33
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer34
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer35
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer36
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer37
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer38
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer39
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer40
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer41
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer42
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer43
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer44
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer45
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer46
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer47
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer48
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer49
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer50
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer51
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer52
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer53
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer54
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer55
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer56
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer57
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer58
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer59
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer60
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer61
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer62
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer63
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer64
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer65
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer66
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer67
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer68
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer69
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer70
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer71
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer72
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer73
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer74
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer75
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer76
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer77
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer78
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer79
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer80
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer81
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer82
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer83
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer84
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer85
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer86
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer87
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer88
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer89
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer90
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer91
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer92
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer93
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer94
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Info: Working for inception_layer95
+Info: Mapper timeout!!
+Info: Mapper search finished
+Info: Communication status extraction finished
+====================== FINISH =========================
+
+
+Traceback (most recent call last):
+  File "focus.py", line 50, in <module>
+    run()
+  File "focus.py", line 28, in run
+    trace_generator.generate()
+  File "/home/wangzhao/timeloop-dev/focus/trace_gen/trace_gen.py", line 33, in generate
+    transformed_info = self.transformExecInfo(exec_info)
+  File "/home/wangzhao/timeloop-dev/focus/trace_gen/trace_gen.py", line 163, in transformExecInfo
+    raise Exception("No spatial parallelism is specified in layer {}".format(self.layer_names[layer_idx]))
+Exception: No spatial parallelism is specified in layer inception_layer1

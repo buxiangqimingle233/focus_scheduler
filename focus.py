@@ -38,10 +38,13 @@ def run():
     # FOCUS optimizations: invoke focus scheduler
     if focus_schedule:
         ea_controller = EA.ParallelEvolutionController(n_workers=n_workers, population_size=population_size)
+        # ea_controller = EA.EvolutionController()
         ea_controller.init_population(EA.individual_generator)
         best_individual, best_score = ea_controller.run_evolution_search(scheduler_verbose)
         best_individual.getTrace().to_csv("best_scheduling.csv")
         print("Sum Exceeded Latency: {}".format(best_score))
+
+
 
 if __name__ == "__main__":
     run()

@@ -5,9 +5,9 @@
 
 timeloop_verbose = False
 # whether to invoke timeloop-mapper
-search_dataflow = False
+search_dataflow = True
 # Search time
-timeout = 300
+timeout = 60
 # Core numbers (default: number specified in db/arch/arch.yaml)
 top_level_cnt = None
 # whether to invoke timeloop-model
@@ -16,7 +16,7 @@ dump_comm_status = True
 # -------------------- Hardware -------------------------
 
 # hardware setup
-array_diameter = 8
+array_diameter = 32
 array_size = array_diameter**2
 arch_config = {
     "p": 6, "cp_if": 6, "cp_of": 0, "tr": 1, "ts": 2, "tw": 1,
@@ -24,8 +24,9 @@ arch_config = {
     "d": array_diameter,
     "w": 512
 }
-# mapping_style = "Tetris"
-mapping_style = "Zig-Zag"
+
+mapping_style = "Tetris"
+# mapping_style = "Zig-Zag"
 # mapping_style = "Hilbert"
 
 
@@ -47,16 +48,20 @@ mapping_style = "Zig-Zag"
 #     8, 16, 1, 8, 16, 2
 # ]
 
-layer_names = [
-    "resnet50_layer43", "resnet50_layer44",
-    "vgg16_layer1", "vgg16_layer2",
-    "inception_layer1", "inception_layer2"
-]
-cores = [
-    16, 16, 
-    8, 8, 
-    4, 2
-]
+model = "inception"
+layer_names = ["{}_layer{}".format(model, i + 1) for i in range(95)]
+cores = [2 for i in range(len(layer_names))]
+
+# layer_names = [
+#     "resnet50_layer43", "resnet50_layer44",
+#     "vgg16_layer1", "vgg16_layer2",
+#     "inception_layer1", "inception_layer2"
+# ]
+# cores = [
+#     8, 8, 
+#     4, 4, 
+#     4, 2
+# ]
 
 
 # -------------------- Task Mapper -------------------------
@@ -72,7 +77,7 @@ hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
 
 # -------------------- FOCUS Scheduler -------------------------
 
-focus_schedule = False
+focus_schedule = True
 scheduler_verbose = False
 n_workers = 24
 population_size = 100

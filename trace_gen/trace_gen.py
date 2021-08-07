@@ -45,8 +45,10 @@ class WorkingLayerSet():
 
                 for single_comm, single_interval, single_buffer_access \
                     in zip(comm_graph_per_datatype["graph"], interval_per_datatype, buffer_access_per_datatype):
-                    # src, dst, interval, flits, count
-                    print(",".join(map(lambda x: str(x), [single_comm[0], single_comm[1], single_interval, max(single_buffer_access/arch_config["w"], 4), 20])), file=f)
+
+                    if single_comm[0] != single_comm[1]:
+                        # src, dst, interval, flits, count
+                        print(",".join(map(lambda x: str(x), [single_comm[0], single_comm[1], single_interval, max(single_buffer_access/arch_config["w"], 4), 20])), file=f)
 
     def getPktSizes(self):
         return self.buffer_access

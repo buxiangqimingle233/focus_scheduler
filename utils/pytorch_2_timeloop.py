@@ -1,23 +1,26 @@
 import torchvision.models as models
 import pytorch2timeloop
 import torch
+from transformers import BertTokenizer, BertModel, BertForMaskedLM
+
 
 # Define a pytorch-based neural network model, for example, a pre-defined alexnet from torchvision.
-net = models.mobilenet_v3_small()
+# net = models.mobilenet_v3_small()
+net = BertModel.from_pretrained('bert-base-uncased')
 device = torch.device("cuda")
 net.to(device)
 # Define the shape of a single input sample, in the following format:
 # (# of channels, height, width)
 # For example, the above alexnet will get a 224x224 RGB image:
-input_shape = (3, 224, 224)
+input_shape = (768, 768)
 
 # Define the number of batches that will be used for the inference
-batch_size = 1
+batch_size = 768
 
 # Define the directory names where the timeloop workload yaml files will be stored.
 # The yaml files will be stored in ./workloads/alexnet/ in this example.
 top_dir = 'db'
-sub_dir = 'mobilenet_v3_small'
+sub_dir = 'bert_base'
 
 # By default, nn.Conv2d modules will be automatically converted, but nn.Linear modules will be ignored.
 # If you want to convert nn.Linear, set the option to be true.
