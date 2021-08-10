@@ -16,6 +16,13 @@ class ml_mapping():
 
     mc_idx0 = array_diameter//2 - 1
     mc_idx1 = array_diameter//2
+    # memory_controllers = [
+    #     # array_size-array_diameter, array_size-2
+    #     mc_idx0, mc_idx1,
+    #     mc_idx0 * array_diameter, mc_idx1 * array_diameter,
+    #     # (mc_idx0 + 1) * array_diameter - 1, (mc_idx1 + 1) * array_diameter - 1,
+    #     # (array_diameter - 1) * array_diameter + mc_idx0, (array_diameter - 1) * array_diameter + mc_idx1
+    # ]
     memory_controllers = [
         # array_size-array_diameter, array_size-2
         mc_idx0, mc_idx1,
@@ -146,13 +153,25 @@ class ml_mapping():
                 print(i, j, self.mapping_result[i][j], file=f)
 
         res = {}
+        is_pipelined = [False] + [layer_names[idl-1][:6] == layer_names[idl][:6] for idl in range(1, len(layer_names))]
         for idl in range(len(layer_names)):
-            mapped_mc = {-1: self.get_controller(self.memory_controllers, self.layer_tile_num[idl])}
             mapped_core = [x * self.tile_array_width + y for x, y in zip(*np.where(self.mapping_result == idl))]
             mapped_core = {i: mapped_core[i] for i in range(cores[idl])}
 
-            res[layer_names[idl]] = {**mapped_mc, **mapped_core}
-        
+            # Select the largest tile to be the exit port if you're not the last layer
+            if (idl < len(layer_names) - 1) and (is_pipelined[idl+1] is True):
+                mapped_out = {-2: mapped_core[max(mapped_core.keys())]}
+            else:
+                mapped_out = {-2: self.get_controller(self.memory_controllers, self.layer_tile_num[idl])}
+
+            # If pipelined, memory controller is mapped to the exit port of last layer
+            if is_pipelined[idl]:
+                mapped_mc = {-1: res[layer_names[idl-1]][-2]}
+            else:
+                mapped_mc = {-1: self.get_controller(self.memory_controllers, self.layer_tile_num[idl])}
+
+            res[layer_names[idl]] = {**mapped_mc, **mapped_core, **mapped_out}
+
         return res
 
 if __name__ == '__main__':

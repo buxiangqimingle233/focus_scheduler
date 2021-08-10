@@ -5,18 +5,20 @@
 
 timeloop_verbose = False
 # whether to invoke timeloop-mapper
-search_dataflow = True
+search_dataflow = False
 # Search time
 timeout = 60
 # Core numbers (default: number specified in db/arch/arch.yaml)
 top_level_cnt = None
 # whether to invoke timeloop-model
-dump_comm_status = True
+dump_comm_status = False
 
+# data orders
+datatype = ["weight", "input", "output"]
 # -------------------- Hardware -------------------------
 
 # hardware setup
-array_diameter = 32
+array_diameter = 8
 array_size = array_diameter**2
 arch_config = {
     "p": 6, "cp_if": 6, "cp_of": 0, "tr": 1, "ts": 2, "tw": 1,
@@ -48,20 +50,20 @@ mapping_style = "Tetris"
 #     8, 16, 1, 8, 16, 2
 # ]
 
-model = "inception"
-layer_names = ["{}_layer{}".format(model, i + 1) for i in range(95)]
-cores = [2 for i in range(len(layer_names))]
+# model = "resnet50"
+# layer_names = ["{}_layer{}".format(model, i + 1) for i in range(54)]
+# cores = [16 for i in range(len(layer_names))]
 
-# layer_names = [
-#     "resnet50_layer43", "resnet50_layer44",
-#     "vgg16_layer1", "vgg16_layer2",
-#     "inception_layer1", "inception_layer2"
-# ]
-# cores = [
-#     8, 8, 
-#     4, 4, 
-#     4, 2
-# ]
+layer_names = [
+    "resnet50_layer43", "resnet50_layer44", "resnet50_layer45",
+    "vgg16_layer1", "vgg16_layer2", "vgg16_layer3", "vgg16_layer4"
+]
+cores = [
+    16,
+    16, 16,
+    4, 4, 
+    4, 4
+]
 
 
 # -------------------- Task Mapper -------------------------
@@ -89,6 +91,13 @@ cv = 2
 
 
 # -------------------- Helping Funcions -------------------------
+
+def debug_show(item):
+    from pprint import PrettyPrinter
+    pp = PrettyPrinter(indent=2)
+    pp.pprint(item)
+    exit(0)
+
 
 def generate_config_file():
     # Generate such configure file

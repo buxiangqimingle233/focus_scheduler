@@ -10,12 +10,13 @@ import numpy as np
 import seaborn as sns
 from functools import reduce
 from random import choice
+from copy import deepcopy
 
 from utils.latency_model import LatencyModel
 from utils.layer import Layer
 from utils.latency_model_wrapper import generate, analyze
 from utils.global_control import *
-
+from mapper.spanningtree import SpanningTree
 
 class WorkingLayerSet():
 
@@ -189,6 +190,125 @@ class WorkingLayerSet():
             merged_access.append(access)
 
         return (merged_comm_graph, merged_interval, merged_access)
+
+class WorkingLayerSetDR(WorkingLayerSet):
+
+    traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])
+
+    def __init__(self, layers, cores, core_map):
+        super().__init__(layers, cores, core_map)
+    
+    def generate(self):
+        self.traffic = self.getExecInfo()
+        self.traffic = self.applyCoreMap(self.traffic)
+        self.traffic = self.selectCaptain(self.traffic)
+        self.traffic = self.genSpanningTree(self.traffic)
+        
+        if use_estimator:
+            raise Exception("Dual-phased routing do not support estimator yet")
+        
+        self.traffic.to_json("traceDR.json")
+        return self.traffic
+
+    def getExecInfo(self):
+        for layer, model, result, prob_spec, core in \
+            zip(self.layer_names, self.model_names, \
+                self.result_names, self.prob_spec_names, self.cores):
+
+            layer = Layer(prob_spec, model_dir=model, dram_spatial_size=core)
+
+            exec_info_per_layer = layer.run_with_gc(embeddedFuncDR)
+
+            self.traffic = self.traffic.append(exec_info_per_layer, ignore_index=True)
+
+        return self.traffic        
+
+    def applyCoreMap(self, traffic):
+        core_map = self.core_map
+        traffic.loc[:, "map_src"] = traffic.apply(lambda x: [core_map[x["layer"]][i] for i in x["src"]], axis=1)
+        traffic.loc[:, "map_dst"] = traffic.apply(lambda x: [core_map[x["layer"]][i] for i in x["dst"]], axis=1)
+        return traffic
+
+    def selectCaptain(self, traffic):
+        sel = traffic["dst"].map(len) > 1
+        rev_sel = ~sel
+        bcast = traffic[sel]
+        other = traffic[rev_sel]
+
+        # left most captain
+        bcast.loc[:, "captain"] = deepcopy(bcast["map_dst"].map(lambda x: min(x)))
+        traffic = pd.concat([bcast, other])
+
+        traffic.loc[:, "captain"] = traffic["captain"].astype("Int64")
+        return traffic
+    
+    def genSpanningTree(self, traffic):
+        traffic["tree"] = np.NaN
+        
+        def genTree(row):
+            if pd.isna(row["captain"]):
+                return []
+            else:
+                gen = SpanningTree()
+                return gen.wrapper_genST(int(row["captain"]), row["map_dst"])[0]
+
+        def genEPFL(row):
+            if pd.isna(row["captain"]):
+                return np.NaN
+            else:
+                gen = SpanningTree()
+                return gen.wrapper_genST(int(row["captain"]), row["map_dst"])[1]
+
+        traffic.loc[:, "tree"] = traffic.apply(genTree, axis=1)
+        traffic.loc[:, "epfl"] = traffic.apply(genEPFL, axis=1)
+        
+        return traffic
+
+
+def embeddedFuncDR(layer: Layer, comm_bank):
+    df = pd.DataFrame()
+    for dti in range(3):
+        for traffic_pertile in comm_bank[::-1]:
+            traffic_perdatatype = traffic_pertile[dti]
+            if traffic_perdatatype:
+                for flow in traffic_perdatatype:
+                    df = df.append({
+                        "layer": layer.layer_name,
+                        "src": flow["srcs"],
+                        "dst": flow["dsts"],
+                        "interval": flow["pkt_interval"],
+                        "flit": flow["bit_volume"] / arch_config["w"],
+                        "counts": flow["cnt"],
+                        "datatype": datatype[dti]
+                    }, ignore_index=True)
+                df = df[df["flit"] > 0]
+                df.loc[:, "flit"] = df["flit"].map(lambda x: int(max(x + 1, 2)))    # add headflits
+                break
+
+    # collapse all the datatypes
+    bcast = df[(df["dst"].map(len) > 1) & (df["src"].map(lambda x: x[0]) == -1)]
+    reduction = df[(df["dst"].map(lambda x: x[0]) == -1)]
+    other = df[df["src"].map(len) == 1]
+
+    # broadcast: keep destination, reduce source size to 1
+    bcast.loc[:, "src"] = bcast["src"].map(lambda x: x[:1])
+
+    # reduction: distribute
+    tmp = pd.DataFrame(columns=reduction.columns)
+    for idx, row in reduction.iterrows():
+        srcs = row["src"]
+        for s in srcs:
+            new_row = deepcopy(row)
+            new_row["src"] = [s]
+            new_row["dst"] = [-2]
+            new_row["delay"] = new_row["interval"]
+            tmp = tmp.append(new_row)
+
+    reduction = deepcopy(tmp)
+    # other: keep still
+
+    df = pd.concat([bcast, reduction, other])
+    return df
 
 
 def embeddedFunc(layer: Layer, comm_bank):

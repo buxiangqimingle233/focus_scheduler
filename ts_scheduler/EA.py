@@ -121,12 +121,6 @@ class EvolutionController:
 import multiprocessing as mp
 
 
-def individual_generator():
-    p = Individual(pd.read_csv("trace.dat", header=0), (array_diameter, array_diameter),)
-    for i in range(np.random.randint(100)):
-        p.mutate(inplace=True)
-    return p
-
 def individual_gen_process(pid,individual_generator):
     # print(f"start {pid}")
     with open("output/individual.out", "a+") as outf:
@@ -153,6 +147,7 @@ def individual_crossover_process(pid,parents):
         child=parents[0].crossover(*parents)
         score=child.evaluate()
     return child,score
+
 
 class ParallelEvolutionController(EvolutionController):
     def __init__(self, n_workers=8, mutate_prob=0.1, population_size=100, n_evolution=50, parent_fraction=0.5, mutation_fraction=0.25, crossover_fraction=0.25, log_path='output/'):

@@ -71,7 +71,7 @@ class XYRouter:
 
 class FocusLatencyModel():
 
-    packets = pd.DataFrame(columns=["id", "src", "dst", "flits", "interval", "path", "issue_time", "count"])
+    packets = pd.DataFrame(columns=["id", "src", "dst", "flit", "interval", "path", "issue_time", "count"])
     routers = pd.DataFrame(columns=["rid", "coordinate", "port", "grab_start", "grab_end"])
 
     def __init__(self, array_shape):
@@ -113,7 +113,7 @@ class FocusLatencyModel():
 
             # release time in path
             grab_time = np.zeros(self.routers.shape[0])
-            grab_time[path_ids] = issued_pkt["flits"] + np.arange(len(path_ids)) + 1
+            grab_time[path_ids] = issued_pkt["flit"] + np.arange(len(path_ids)) + 1
 
             wait_until = self.routers["grab_end"][sel].max()
 
@@ -148,15 +148,24 @@ class FocusLatencyModel():
         return working_pkts
 
 
+def individual_generator():
+    p = Individual(pd.read_json("traceDR.json"), (array_diameter, array_diameter),)
+    for i in range(np.random.randint(100)):
+        p.mutate(inplace=True)
+    return p
+
+
 class FocusTemporalMapper():
-    packets = pd.DataFrame(columns=["id", "src", "dst", "flits", "interval", "path", "issue_time", "count"])
+    # packets = pd.DataFrame(columns=["id", "src", "dst", "flit", "interval", "path", "issue_time", "count"])
 
     def __init__(self):
         pass
 
     def temporal_map(self, packets):
-        # ret = packets.sort_values("flits")
+        # ret = packets.sort_values("flit")
         ret = packets.sort_values("interval")
+        # delay = ret["delay"].map(lambda x: 0 if pd.isna(x) else x)
+        # ret["issue_time"] = delay
         ret["issue_time"] = 0
         return ret
 
@@ -165,15 +174,28 @@ class Individual():
 
     def __init__(self, trace, array_shape, iter_episode=1):
         
-        trace.columns = ["src", "dst", "interval", "flits", "count"]
-        trace["id"] = trace.index
         trace["intermediate"] = [[] for _ in range(trace.shape[0])] 
         trace["path"] = [[] for _ in range(trace.shape[0])]
 
         # For reducing the time of simulating
         trace["count"] = iter_episode
 
+        # Change datatype
+        trace.loc[:, "captain"] = trace["captain"].astype("Int64")
+        trace.loc[:, "epfl"] = trace["epfl"].astype("Int64")
+
+        # add id
+        trace["id"] = trace.index
+
+        # replace the orginal source and destination
+        trace.loc[:, "src"] = trace["map_src"]
+        trace.loc[:, "dst"] = trace["map_dst"]
+
+        # no cyclic
+        trace = trace[trace["src"] != trace["dst"]]
+
         self.trace = trace
+
         self.array_shape = array_shape
         self.array_size = reduce(lambda x, y: x*y, self.array_shape)
     
@@ -234,16 +256,26 @@ class Individual():
         
         router = XYRouter(self.array_shape)
         for idx, row in working_trace.iterrows():
-            milestones = [row["src"]] + row["intermediate"] + [row["dst"]]
-            path = []
 
-            # do routing
-            for i in range(len(milestones)-1):
-                segment_path = router.getPath(milestones[i], milestones[i+1])
-                # drop the output port of intermediate nodes
-                if i != len(milestones) - 1:
-                    segment_path = segment_path[:-1]
-                path += segment_path
+            path = []
+            if pd.isna(row["captain"]):
+                milestones = row["src"] + row["intermediate"] + row["dst"]
+                # do routing
+                for i in range(len(milestones)-1):
+                    segment_path = router.getPath(milestones[i], milestones[i+1])
+                    # drop the output port of intermediate nodes
+                    if i != len(milestones) - 1:
+                        segment_path = segment_path[:-1]
+                    path += segment_path
+            else:
+                milestones = row["src"] + row["intermediate"] + [row["captain"]]
+                for i in range(len(milestones) - 1):
+                    segment_path = router.getPath(milestones[i], milestones[i+1])
+
+                    # drop all the output port of intermedate nodes (captain is the nodes too)
+                    path += segment_path[:-1]
+
+                path += row["tree"]
 
             # write back
             row["path"] = deepcopy(path)
@@ -260,7 +292,7 @@ class Individual():
         working_trace = latency_model.run(working_trace)
         
         end_time = time()
-        print("Evaluate time: {} Score: {}".format(end_time-start_time, working_trace["delay"].sum()))
+        print("Evaluate time: {} Score: -{}".format(end_time-start_time, working_trace["delay"].sum()))
 
         return -working_trace["delay"].sum()
 

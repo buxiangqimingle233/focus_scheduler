@@ -1,978 +1,436 @@
-layer0 requires: 4 height: 2 width: 2 latency: 1.0
-layer1 requires: 4 height: 2 width: 2 latency: 1.0
-layer2 requires: 4 height: 2 width: 2 latency: 1.0
-layer3 requires: 4 height: 2 width: 2 latency: 1.0
-layer4 requires: 4 height: 2 width: 2 latency: 1.0
-layer5 requires: 4 height: 2 width: 2 latency: 1.0
-layer6 requires: 4 height: 2 width: 2 latency: 1.0
-layer7 requires: 4 height: 2 width: 2 latency: 1.0
-layer8 requires: 4 height: 2 width: 2 latency: 1.0
-layer9 requires: 4 height: 2 width: 2 latency: 1.0
-layer10 requires: 4 height: 2 width: 2 latency: 1.0
-layer11 requires: 4 height: 2 width: 2 latency: 1.0
-layer12 requires: 4 height: 2 width: 2 latency: 1.0
-layer13 requires: 4 height: 2 width: 2 latency: 1.0
-layer14 requires: 4 height: 2 width: 2 latency: 1.0
-layer15 requires: 4 height: 2 width: 2 latency: 1.0
-layer16 requires: 4 height: 2 width: 2 latency: 1.0
-layer17 requires: 4 height: 2 width: 2 latency: 1.0
-layer18 requires: 4 height: 2 width: 2 latency: 1.0
-layer19 requires: 4 height: 2 width: 2 latency: 1.0
-layer20 requires: 4 height: 2 width: 2 latency: 1.0
-layer21 requires: 4 height: 2 width: 2 latency: 1.0
-layer22 requires: 4 height: 2 width: 2 latency: 1.0
-layer23 requires: 4 height: 2 width: 2 latency: 1.0
-layer24 requires: 4 height: 2 width: 2 latency: 1.0
-layer25 requires: 4 height: 2 width: 2 latency: 1.0
-layer26 requires: 4 height: 2 width: 2 latency: 1.0
-layer27 requires: 4 height: 2 width: 2 latency: 1.0
-layer28 requires: 4 height: 2 width: 2 latency: 1.0
-layer29 requires: 4 height: 2 width: 2 latency: 1.0
-layer30 requires: 4 height: 2 width: 2 latency: 1.0
-layer31 requires: 4 height: 2 width: 2 latency: 1.0
-layer32 requires: 4 height: 2 width: 2 latency: 1.0
-layer33 requires: 4 height: 2 width: 2 latency: 1.0
-layer34 requires: 4 height: 2 width: 2 latency: 1.0
-layer35 requires: 4 height: 2 width: 2 latency: 1.0
-layer36 requires: 4 height: 2 width: 2 latency: 1.0
-layer37 requires: 4 height: 2 width: 2 latency: 1.0
-layer38 requires: 4 height: 2 width: 2 latency: 1.0
-layer39 requires: 4 height: 2 width: 2 latency: 1.0
-layer40 requires: 4 height: 2 width: 2 latency: 1.0
-layer41 requires: 4 height: 2 width: 2 latency: 1.0
-layer42 requires: 4 height: 2 width: 2 latency: 1.0
-layer43 requires: 4 height: 2 width: 2 latency: 1.0
-layer44 requires: 4 height: 2 width: 2 latency: 1.0
-layer45 requires: 4 height: 2 width: 2 latency: 1.0
-layer46 requires: 4 height: 2 width: 2 latency: 1.0
-layer47 requires: 4 height: 2 width: 2 latency: 1.0
-layer48 requires: 4 height: 2 width: 2 latency: 1.0
-layer49 requires: 4 height: 2 width: 2 latency: 1.0
-layer50 requires: 4 height: 2 width: 2 latency: 1.0
-layer51 requires: 4 height: 2 width: 2 latency: 1.0
-layer52 requires: 4 height: 2 width: 2 latency: 1.0
-layer53 requires: 4 height: 2 width: 2 latency: 1.0
-layer54 requires: 4 height: 2 width: 2 latency: 1.0
-layer55 requires: 4 height: 2 width: 2 latency: 1.0
-layer56 requires: 4 height: 2 width: 2 latency: 1.0
-layer57 requires: 4 height: 2 width: 2 latency: 1.0
-layer58 requires: 4 height: 2 width: 2 latency: 1.0
-layer59 requires: 4 height: 2 width: 2 latency: 1.0
-layer60 requires: 4 height: 2 width: 2 latency: 1.0
-layer61 requires: 4 height: 2 width: 2 latency: 1.0
-layer62 requires: 4 height: 2 width: 2 latency: 1.0
-layer63 requires: 4 height: 2 width: 2 latency: 1.0
-layer64 requires: 4 height: 2 width: 2 latency: 1.0
-layer65 requires: 4 height: 2 width: 2 latency: 1.0
-layer66 requires: 4 height: 2 width: 2 latency: 1.0
-layer67 requires: 4 height: 2 width: 2 latency: 1.0
-layer68 requires: 4 height: 2 width: 2 latency: 1.0
-layer69 requires: 4 height: 2 width: 2 latency: 1.0
-layer70 requires: 4 height: 2 width: 2 latency: 1.0
-layer71 requires: 4 height: 2 width: 2 latency: 1.0
-layer72 requires: 4 height: 2 width: 2 latency: 1.0
-layer73 requires: 4 height: 2 width: 2 latency: 1.0
-layer74 requires: 4 height: 2 width: 2 latency: 1.0
-layer75 requires: 4 height: 2 width: 2 latency: 1.0
-layer76 requires: 4 height: 2 width: 2 latency: 1.0
-layer77 requires: 4 height: 2 width: 2 latency: 1.0
-layer78 requires: 4 height: 2 width: 2 latency: 1.0
-layer79 requires: 4 height: 2 width: 2 latency: 1.0
-layer80 requires: 4 height: 2 width: 2 latency: 1.0
-layer81 requires: 4 height: 2 width: 2 latency: 1.0
-layer82 requires: 4 height: 2 width: 2 latency: 1.0
-layer83 requires: 4 height: 2 width: 2 latency: 1.0
-layer84 requires: 4 height: 2 width: 2 latency: 1.0
-layer85 requires: 4 height: 2 width: 2 latency: 1.0
-layer86 requires: 4 height: 2 width: 2 latency: 1.0
-layer87 requires: 4 height: 2 width: 2 latency: 1.0
-layer88 requires: 4 height: 2 width: 2 latency: 1.0
-layer89 requires: 4 height: 2 width: 2 latency: 1.0
-layer90 requires: 4 height: 2 width: 2 latency: 1.0
-layer91 requires: 4 height: 2 width: 2 latency: 1.0
-layer92 requires: 4 height: 2 width: 2 latency: 1.0
-layer93 requires: 4 height: 2 width: 2 latency: 1.0
-layer94 requires: 4 height: 2 width: 2 latency: 1.0
-[[ 0  0  1 ... 14 15 15]
- [ 0  0  1 ... 14 15 15]
- [16 16 17 ... 30 31 31]
+layer0 requires: 16 height: 4 width: 4 latency: 1.0
+layer1 requires: 16 height: 4 width: 4 latency: 1.0
+layer2 requires: 16 height: 4 width: 4 latency: 1.0
+layer3 requires: 16 height: 4 width: 4 latency: 1.0
+layer4 requires: 16 height: 4 width: 4 latency: 1.0
+layer5 requires: 16 height: 4 width: 4 latency: 1.0
+layer6 requires: 16 height: 4 width: 4 latency: 1.0
+layer7 requires: 16 height: 4 width: 4 latency: 1.0
+layer8 requires: 16 height: 4 width: 4 latency: 1.0
+layer9 requires: 16 height: 4 width: 4 latency: 1.0
+layer10 requires: 16 height: 4 width: 4 latency: 1.0
+layer11 requires: 16 height: 4 width: 4 latency: 1.0
+layer12 requires: 16 height: 4 width: 4 latency: 1.0
+layer13 requires: 16 height: 4 width: 4 latency: 1.0
+layer14 requires: 16 height: 4 width: 4 latency: 1.0
+layer15 requires: 16 height: 4 width: 4 latency: 1.0
+layer16 requires: 16 height: 4 width: 4 latency: 1.0
+layer17 requires: 16 height: 4 width: 4 latency: 1.0
+layer18 requires: 16 height: 4 width: 4 latency: 1.0
+layer19 requires: 16 height: 4 width: 4 latency: 1.0
+layer20 requires: 16 height: 4 width: 4 latency: 1.0
+layer21 requires: 16 height: 4 width: 4 latency: 1.0
+layer22 requires: 16 height: 4 width: 4 latency: 1.0
+layer23 requires: 16 height: 4 width: 4 latency: 1.0
+layer24 requires: 16 height: 4 width: 4 latency: 1.0
+layer25 requires: 16 height: 4 width: 4 latency: 1.0
+layer26 requires: 16 height: 4 width: 4 latency: 1.0
+layer27 requires: 16 height: 4 width: 4 latency: 1.0
+layer28 requires: 16 height: 4 width: 4 latency: 1.0
+layer29 requires: 16 height: 4 width: 4 latency: 1.0
+layer30 requires: 16 height: 4 width: 4 latency: 1.0
+layer31 requires: 16 height: 4 width: 4 latency: 1.0
+layer32 requires: 16 height: 4 width: 4 latency: 1.0
+layer33 requires: 16 height: 4 width: 4 latency: 1.0
+layer34 requires: 16 height: 4 width: 4 latency: 1.0
+layer35 requires: 16 height: 4 width: 4 latency: 1.0
+layer36 requires: 16 height: 4 width: 4 latency: 1.0
+layer37 requires: 16 height: 4 width: 4 latency: 1.0
+layer38 requires: 16 height: 4 width: 4 latency: 1.0
+layer39 requires: 16 height: 4 width: 4 latency: 1.0
+layer40 requires: 16 height: 4 width: 4 latency: 1.0
+layer41 requires: 16 height: 4 width: 4 latency: 1.0
+layer42 requires: 16 height: 4 width: 4 latency: 1.0
+layer43 requires: 16 height: 4 width: 4 latency: 1.0
+layer44 requires: 16 height: 4 width: 4 latency: 1.0
+layer45 requires: 16 height: 4 width: 4 latency: 1.0
+layer46 requires: 16 height: 4 width: 4 latency: 1.0
+layer47 requires: 16 height: 4 width: 4 latency: 1.0
+layer48 requires: 16 height: 4 width: 4 latency: 1.0
+layer49 requires: 16 height: 4 width: 4 latency: 1.0
+layer50 requires: 16 height: 4 width: 4 latency: 1.0
+layer51 requires: 16 height: 4 width: 4 latency: 1.0
+layer52 requires: 16 height: 4 width: 4 latency: 1.0
+layer53 requires: 16 height: 4 width: 4 latency: 1.0
+[[ 0  0  0 ...  7  7  7]
+ [ 0  0  0 ...  7  7  7]
+ [ 0  0  0 ...  7  7  7]
  ...
  [-1 -1 -1 ... -1 -1 -1]
  [-1 -1 -1 ... -1 -1 -1]
  [-1 -1 -1 ... -1 -1 -1]]
-Info: Working for inception_layer1
+Info: Working for resnet50_layer1
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer2
+Info: Working for resnet50_layer2
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer3
+Info: Working for resnet50_layer3
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer4
+Info: Working for resnet50_layer4
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer5
+Info: Working for resnet50_layer5
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer6
+Info: Working for resnet50_layer6
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer7
+Info: Working for resnet50_layer7
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer8
+Info: Working for resnet50_layer8
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer9
+Info: Working for resnet50_layer9
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer10
+Info: Working for resnet50_layer10
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer11
+Info: Working for resnet50_layer11
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer12
+Info: Working for resnet50_layer12
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer13
+Info: Working for resnet50_layer13
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer14
+Info: Working for resnet50_layer14
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer15
+Info: Working for resnet50_layer15
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer16
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer17layer0 requires: 2 height: 1 width: 2 latency: 1.0
-layer1 requires: 2 height: 1 width: 2 latency: 1.0
-layer2 requires: 2 height: 1 width: 2 latency: 1.0
-layer3 requires: 2 height: 1 width: 2 latency: 1.0
-layer4 requires: 2 height: 1 width: 2 latency: 1.0
-layer5 requires: 2 height: 1 width: 2 latency: 1.0
-layer6 requires: 2 height: 1 width: 2 latency: 1.0
-layer7 requires: 2 height: 1 width: 2 latency: 1.0
-layer8 requires: 2 height: 1 width: 2 latency: 1.0
-layer9 requires: 2 height: 1 width: 2 latency: 1.0
-layer10 requires: 2 height: 1 width: 2 latency: 1.0
-layer11 requires: 2 height: 1 width: 2 latency: 1.0
-layer12 requires: 2 height: 1 width: 2 latency: 1.0
-layer13 requires: 2 height: 1 width: 2 latency: 1.0
-layer14 requires: 2 height: 1 width: 2 latency: 1.0
-layer15 requires: 2 height: 1 width: 2 latency: 1.0
-layer16 requires: 2 height: 1 width: 2 latency: 1.0
-layer17 requires: 2 height: 1 width: 2 latency: 1.0
-layer18 requires: 2 height: 1 width: 2 latency: 1.0
-layer19 requires: 2 height: 1 width: 2 latency: 1.0
-layer20 requires: 2 height: 1 width: 2 latency: 1.0
-layer21 requires: 2 height: 1 width: 2 latency: 1.0
-layer22 requires: 2 height: 1 width: 2 latency: 1.0
-layer23 requires: 2 height: 1 width: 2 latency: 1.0
-layer24 requires: 2 height: 1 width: 2 latency: 1.0
-layer25 requires: 2 height: 1 width: 2 latency: 1.0
-layer26 requires: 2 height: 1 width: 2 latency: 1.0
-layer27 requires: 2 height: 1 width: 2 latency: 1.0
-layer28 requires: 2 height: 1 width: 2 latency: 1.0
-layer29 requires: 2 height: 1 width: 2 latency: 1.0
-layer30 requires: 2 height: 1 width: 2 latency: 1.0
-layer31 requires: 2 height: 1 width: 2 latency: 1.0
-layer32 requires: 2 height: 1 width: 2 latency: 1.0
-layer33 requires: 2 height: 1 width: 2 latency: 1.0
-layer34 requires: 2 height: 1 width: 2 latency: 1.0
-layer35 requires: 2 height: 1 width: 2 latency: 1.0
-layer36 requires: 2 height: 1 width: 2 latency: 1.0
-layer37 requires: 2 height: 1 width: 2 latency: 1.0
-layer38 requires: 2 height: 1 width: 2 latency: 1.0
-layer39 requires: 2 height: 1 width: 2 latency: 1.0
-layer40 requires: 2 height: 1 width: 2 latency: 1.0
-layer41 requires: 2 height: 1 width: 2 latency: 1.0
-layer42 requires: 2 height: 1 width: 2 latency: 1.0
-layer43 requires: 2 height: 1 width: 2 latency: 1.0
-layer44 requires: 2 height: 1 width: 2 latency: 1.0
-layer45 requires: 2 height: 1 width: 2 latency: 1.0
-layer46 requires: 2 height: 1 width: 2 latency: 1.0
-layer47 requires: 2 height: 1 width: 2 latency: 1.0
-layer48 requires: 2 height: 1 width: 2 latency: 1.0
-layer49 requires: 2 height: 1 width: 2 latency: 1.0
-layer50 requires: 2 height: 1 width: 2 latency: 1.0
-layer51 requires: 2 height: 1 width: 2 latency: 1.0
-layer52 requires: 2 height: 1 width: 2 latency: 1.0
-layer53 requires: 2 height: 1 width: 2 latency: 1.0
-layer54 requires: 2 height: 1 width: 2 latency: 1.0
-layer55 requires: 2 height: 1 width: 2 latency: 1.0
-layer56 requires: 2 height: 1 width: 2 latency: 1.0
-layer57 requires: 2 height: 1 width: 2 latency: 1.0
-layer58 requires: 2 height: 1 width: 2 latency: 1.0
-layer59 requires: 2 height: 1 width: 2 latency: 1.0
-layer60 requires: 2 height: 1 width: 2 latency: 1.0
-layer61 requires: 2 height: 1 width: 2 latency: 1.0
-layer62 requires: 2 height: 1 width: 2 latency: 1.0
-layer63 requires: 2 height: 1 width: 2 latency: 1.0
-layer64 requires: 2 height: 1 width: 2 latency: 1.0
-layer65 requires: 2 height: 1 width: 2 latency: 1.0
-layer66 requires: 2 height: 1 width: 2 latency: 1.0
-layer67 requires: 2 height: 1 width: 2 latency: 1.0
-layer68 requires: 2 height: 1 width: 2 latency: 1.0
-layer69 requires: 2 height: 1 width: 2 latency: 1.0
-layer70 requires: 2 height: 1 width: 2 latency: 1.0
-layer71 requires: 2 height: 1 width: 2 latency: 1.0
-layer72 requires: 2 height: 1 width: 2 latency: 1.0
-layer73 requires: 2 height: 1 width: 2 latency: 1.0
-layer74 requires: 2 height: 1 width: 2 latency: 1.0
-layer75 requires: 2 height: 1 width: 2 latency: 1.0
-layer76 requires: 2 height: 1 width: 2 latency: 1.0
-layer77 requires: 2 height: 1 width: 2 latency: 1.0
-layer78 requires: 2 height: 1 width: 2 latency: 1.0
-layer79 requires: 2 height: 1 width: 2 latency: 1.0
-layer80 requires: 2 height: 1 width: 2 latency: 1.0
-layer81 requires: 2 height: 1 width: 2 latency: 1.0
-layer82 requires: 2 height: 1 width: 2 latency: 1.0
-layer83 requires: 2 height: 1 width: 2 latency: 1.0
-layer84 requires: 2 height: 1 width: 2 latency: 1.0
-layer85 requires: 2 height: 1 width: 2 latency: 1.0
-layer86 requires: 2 height: 1 width: 2 latency: 1.0
-layer87 requires: 2 height: 1 width: 2 latency: 1.0
-layer88 requires: 2 height: 1 width: 2 latency: 1.0
-layer89 requires: 2 height: 1 width: 2 latency: 1.0
-layer90 requires: 2 height: 1 width: 2 latency: 1.0
-layer91 requires: 2 height: 1 width: 2 latency: 1.0
-layer92 requires: 2 height: 1 width: 2 latency: 1.0
-layer93 requires: 2 height: 1 width: 2 latency: 1.0
-layer94 requires: 2 height: 1 width: 2 latency: 1.0
-[[ 0  0  1 ... 14 15 15]
- [16 16 17 ... 30 31 31]
- [32 32 33 ... 46 47 47]
- ...
- [-1 -1 -1 ... -1 -1 -1]
- [-1 -1 -1 ... -1 -1 -1]
- [-1 -1 -1 ... -1 -1 -1]]
-Info: Working for inception_layer1
+Info: Working for resnet50_layer16
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer2
+Info: Working for resnet50_layer17
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer3
+Info: Working for resnet50_layer18
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer4
+Info: Working for resnet50_layer19
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer5
+Info: Working for resnet50_layer20
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer6
+Info: Working for resnet50_layer21
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer7
+Info: Working for resnet50_layer22
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer8
+Info: Working for resnet50_layer23
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer9
+Info: Working for resnet50_layer24
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer10
+Info: Working for resnet50_layer25
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer11
+Info: Working for resnet50_layer26
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer12
+Info: Working for resnet50_layer27
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer13
+Info: Working for resnet50_layer28
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer14
+Info: Working for resnet50_layer29
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer15
+Info: Working for resnet50_layer30
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer16
+Info: Working for resnet50_layer31
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer17
+Info: Working for resnet50_layer32
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer18
+Info: Working for resnet50_layer33
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer19
+Info: Working for resnet50_layer34
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer20
+Info: Working for resnet50_layer35
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer21
+Info: Working for resnet50_layer36
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer22
+Info: Working for resnet50_layer37
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer23
+Info: Working for resnet50_layer38
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer24
+Info: Working for resnet50_layer39
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer25
+Info: Working for resnet50_layer40
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer26
+Info: Working for resnet50_layer41
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer27
+Info: Working for resnet50_layer42
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer28
+Info: Working for resnet50_layer43
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer29
+Info: Working for resnet50_layer44
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer30
+Info: Working for resnet50_layer45
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer31
+Info: Working for resnet50_layer46
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer32
+Info: Working for resnet50_layer47
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer33
+Info: Working for resnet50_layer48
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer34
+Info: Working for resnet50_layer49
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer35
+Info: Working for resnet50_layer50
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer36
+Info: Working for resnet50_layer51
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer37
+Info: Working for resnet50_layer52
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer38
+Info: Working for resnet50_layer53
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer39
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer40
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer41
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer42
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer43
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer44
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer45
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer46
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer47
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer48
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer49
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer50
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer51
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer52
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer53
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer54
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer55
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer56
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer57
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer58
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer59
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer60
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer61
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer62
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer63
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer64
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer65
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer66
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer67
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer68
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer69
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer70
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer71
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer72
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer73
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer74
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer75
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer76
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer77
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer78
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer79
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer80
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer81
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer82
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer83
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer84
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer85
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer86
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer87
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer88
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer89
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer90
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer91
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer92
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer93
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer94
-Info: Mapper timeout!!
-Info: Mapper search finished
-Info: Communication status extraction finished
-====================== FINISH =========================
-
-
-Info: Working for inception_layer95
+Info: Working for resnet50_layer54
 Info: Mapper timeout!!
 Info: Mapper search finished
 Info: Communication status extraction finished
@@ -980,12 +438,12 @@ Info: Communication status extraction finished
 
 
 Traceback (most recent call last):
-  File "focus.py", line 50, in <module>
+  File "focus.py", line 57, in <module>
     run()
-  File "focus.py", line 28, in run
-    trace_generator.generate()
-  File "/home/wangzhao/timeloop-dev/focus/trace_gen/trace_gen.py", line 33, in generate
+  File "focus.py", line 29, in run
+    org_trace_generator.generate()    
+  File "/home/wangzhao/timeloop-dev/focus/trace_gen/trace_gen.py", line 34, in generate
     transformed_info = self.transformExecInfo(exec_info)
-  File "/home/wangzhao/timeloop-dev/focus/trace_gen/trace_gen.py", line 163, in transformExecInfo
+  File "/home/wangzhao/timeloop-dev/focus/trace_gen/trace_gen.py", line 164, in transformExecInfo
     raise Exception("No spatial parallelism is specified in layer {}".format(self.layer_names[layer_idx]))
-Exception: No spatial parallelism is specified in layer inception_layer1
+Exception: No spatial parallelism is specified in layer resnet50_layer54
