@@ -2,11 +2,11 @@ import torchvision.models as models
 import pytorch2timeloop
 import torch
 from transformers import BertTokenizer, BertModel, BertForMaskedLM
+net = BertModel.from_pretrained('bert-base-uncased')
 
 
 # Define a pytorch-based neural network model, for example, a pre-defined alexnet from torchvision.
 # net = models.mobilenet_v3_small()
-net = BertModel.from_pretrained('bert-base-uncased')
 device = torch.device("cuda")
 net.to(device)
 # Define the shape of a single input sample, in the following format:

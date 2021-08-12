@@ -1,7 +1,7 @@
 architecture:
   version: 0.3
   local:
-  - name: System.ws[0..127].PE[0..63].PEInputBuffer
+  - name: System.ws[0..63].PE[0..63].PEInputBuffer
     class: storage
     subclass: smartbuffer_RF
     attributes:
@@ -17,7 +17,7 @@ architecture:
       technology: 45nm
       width: 64
       word-bits: 8
-  - name: System.ws[0..127].PE[0..63].PEWeightBuffer[0..3]
+  - name: System.ws[0..63].PE[0..63].PEWeightBuffer[0..3]
     class: storage
     subclass: smartbuffer_RF
     attributes:
@@ -33,7 +33,7 @@ architecture:
       nbanks: 8
       technology: 45nm
       word-bits: 8
-  - name: System.ws[0..127].PE[0..63].PEAccuBuffer[0..3]
+  - name: System.ws[0..63].PE[0..63].PEAccuBuffer[0..3]
     class: storage
     subclass: smartbuffer_RF
     attributes:
@@ -47,7 +47,7 @@ architecture:
       n_rdwr_ports: 2
       technology: 45nm
       word-bits: 24
-  - name: System.ws[0..127].PE[0..63].PEWeightRegs[0..15]
+  - name: System.ws[0..63].PE[0..63].PEWeightRegs[0..15]
     class: storage
     subclass: reg_storage
     attributes:
@@ -60,7 +60,7 @@ architecture:
       technology: 45nm
       width: 16
       word-bits: 8
-  - name: System.ws[0..127].PE[0..63].LMAC[0..15]
+  - name: System.ws[0..63].PE[0..63].LMAC[0..15]
     class: compute
     subclass: lmac
     attributes:
@@ -68,7 +68,7 @@ architecture:
       meshX: 16
       technology: 45nm
       word-bits: 8
-  - name: System.ws[0..127].GlobalBuffer
+  - name: System.ws[0..63].GlobalBuffer
     class: storage
     subclass: smartbuffer_SRAM
     attributes:

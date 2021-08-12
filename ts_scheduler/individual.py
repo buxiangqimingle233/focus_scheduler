@@ -12,6 +12,7 @@ from utils.global_control import *
 
 INF = 1e10
 
+best_solution = (None, -1e10)
 
 class XYRouter:
     port_number = {"input": 0, "output": 1, "north": 2, "south": 3, "west": 4, "east": 5}
@@ -142,8 +143,9 @@ class FocusLatencyModel():
                 issued_pkt["issue_time"] = wait_until
                 working_pkts.loc[issued_pkt["id"]] = issued_pkt
 
+        working_pkts["count"] = packets["count"]
+        working_pkts["delay"] /= packets["count"]
         working_pkts["is_bound"] = working_pkts["delay"] > 0
-
         print("Iteration counts: {}".format(iter_cnt))
         return working_pkts
 
@@ -201,13 +203,12 @@ class Individual():
     
     def mutate(self,inplace=False):
         # start = time.time()
-
         if inplace:
             new=self
         else:
             new=deepcopy(self)
         for _ in range(np.random.randint(50)):
-            if random.random() > 0.5:
+            if random.random() > 0.6:
                 new.addImNode()
             else:
                 new.rmImNode()
@@ -292,9 +293,20 @@ class Individual():
         working_trace = latency_model.run(working_trace)
         
         end_time = time()
-        print("Evaluate time: {} Score: -{}".format(end_time-start_time, working_trace["delay"].sum()))
+        
+        # TODO: 差一个pkt的长度，算overall bandwidth
+        # score = sum(working_trace.apply(lambda x: x["flit"] * 1024 * x["count"], axis=1)) / max(working_trace["issue_time"])
+        slowdown = (working_trace["issue_time"] / (working_trace["count"] * working_trace["interval"]))
+        score = -slowdown[slowdown > 1].mean()
 
-        return -working_trace["delay"].sum()
+        # score = -working_trace["delay"].sum()
+        global best_solution
+        if score > best_solution[1]:
+            best_solution = (working_trace, score)
+
+        print("Evaluate time: {} Score: {}".format(end_time-start_time, score))
+        self.trace["issue_time"] = working_trace["issue_time"]
+        return score
 
 
 if __name__ == "__main__":

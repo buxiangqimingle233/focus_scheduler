@@ -1,0 +1,400 @@
+===0/100===
+-1.92578125 <ts_scheduler.individual.Individual object at 0x7f78ecc3a9b0>
+-2.061224489795918 <ts_scheduler.individual.Individual object at 0x7f78e81a4128>
+-2.29296875 <ts_scheduler.individual.Individual object at 0x7f78e8499390>
+===1/100===
+-1.92578125 <ts_scheduler.individual.Individual object at 0x7f78ecc3a9b0>
+-2.0234375 <ts_scheduler.individual.Individual object at 0x7f78e839bc18>
+-2.061224489795918 <ts_scheduler.individual.Individual object at 0x7f78e81a4128>
+===2/100===
+-1.92578125 <ts_scheduler.individual.Individual object at 0x7f78ecc3a9b0>
+-2.0234375 <ts_scheduler.individual.Individual object at 0x7f78e839bc18>
+-2.061224489795918 <ts_scheduler.individual.Individual object at 0x7f78e81a4128>
+===3/100===
+-1.87890625 <ts_scheduler.individual.Individual object at 0x7f78e837e828>
+-1.92578125 <ts_scheduler.individual.Individual object at 0x7f78ecc3a9b0>
+-2.0234375 <ts_scheduler.individual.Individual object at 0x7f78e839bc18>
+===4/100===
+-1.87890625 <ts_scheduler.individual.Individual object at 0x7f78e837e828>
+-1.92578125 <ts_scheduler.individual.Individual object at 0x7f78ecc3a9b0>
+-2.0234375 <ts_scheduler.individual.Individual object at 0x7f78e839bc18>
+===5/100===
+-1.87890625 <ts_scheduler.individual.Individual object at 0x7f78e837e828>
+-1.92578125 <ts_scheduler.individual.Individual object at 0x7f78ecc3a9b0>
+-1.9776785714285714 <ts_scheduler.individual.Individual object at 0x7f78e8358668>
+===6/100===
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.81640625 <ts_scheduler.individual.Individual object at 0x7f78e82eaeb8>
+-1.85546875 <ts_scheduler.individual.Individual object at 0x7f78e83690f0>
+===7/100===
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.81640625 <ts_scheduler.individual.Individual object at 0x7f78e82eaeb8>
+-1.85546875 <ts_scheduler.individual.Individual object at 0x7f78e83690f0>
+===8/100===
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.81640625 <ts_scheduler.individual.Individual object at 0x7f78e82eaeb8>
+-1.84375 <ts_scheduler.individual.Individual object at 0x7f78e84a5c88>
+===9/100===
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.81640625 <ts_scheduler.individual.Individual object at 0x7f78e82eaeb8>
+-1.84375 <ts_scheduler.individual.Individual object at 0x7f78e7feb048>
+===10/100===
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.81640625 <ts_scheduler.individual.Individual object at 0x7f78e82eaeb8>
+-1.84375 <ts_scheduler.individual.Individual object at 0x7f78e7feb048>
+===11/100===
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.81640625 <ts_scheduler.individual.Individual object at 0x7f78e82eaeb8>
+-1.82421875 <ts_scheduler.individual.Individual object at 0x7f78efb7d7b8>
+===12/100===
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.81640625 <ts_scheduler.individual.Individual object at 0x7f78e82eaeb8>
+-1.82421875 <ts_scheduler.individual.Individual object at 0x7f78efb7d7b8>
+===13/100===
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78e80e1d30>
+-1.81640625 <ts_scheduler.individual.Individual object at 0x7f78e7f9d048>
+===14/100===
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78e80e1d30>
+-1.81640625 <ts_scheduler.individual.Individual object at 0x7f78e7f9d048>
+===15/100===
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7fb6668>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78e80e1d30>
+===16/100===
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7fb6668>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78e80e1d30>
+===17/100===
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7fb6668>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78e80e1d30>
+===18/100===
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7fb6668>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78ecbaf9b0>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78e847f908>
+===19/100===
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7fb6668>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78ecbef2b0>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78efb9ea90>
+===20/100===
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7fb6668>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78ecc03828>
+-1.49609375 <ts_scheduler.individual.Individual object at 0x7f78e80a44e0>
+===21/100===
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e7f766d8>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e8310198>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78efc4cf60>
+===22/100===
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e7f766d8>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7fa2278>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7f4bcc0>
+===23/100===
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e7f766d8>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7fa2278>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7f4bcc0>
+===24/100===
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e7f766d8>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78ecbfd1d0>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e7fa2278>
+===25/100===
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e7f766d8>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e807d518>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78e8202668>
+===26/100===
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e7f766d8>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e807d518>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78efc4cf60>
+===27/100===
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e7f766d8>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e807d518>
+-1.2640306122448979 <ts_scheduler.individual.Individual object at 0x7f78efbd0208>
+===28/100===
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e7f766d8>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e807d518>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78efc44d68>
+===29/100===
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e7f766d8>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e807d518>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78efc44d68>
+===30/100===
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e7f766d8>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e807d518>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78efc44d68>
+===31/100===
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78ecbb1320>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e80d08d0>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e80054e0>
+===32/100===
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78ecbb1320>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e80d08d0>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e80054e0>
+===33/100===
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78ecbb1320>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecbeb4a8>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e80d08d0>
+===34/100===
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78ecbb1320>
+-1.260204081632653 <ts_scheduler.individual.Individual object at 0x7f78e807d518>
+===35/100===
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78ecbb1320>
+-1.2525510204081634 <ts_scheduler.individual.Individual object at 0x7f78e844dc88>
+===36/100===
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78ecbb1320>
+-1.2525510204081634 <ts_scheduler.individual.Individual object at 0x7f78e844dc88>
+===37/100===
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78ecbb1320>
+===38/100===
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78ecbb1320>
+===39/100===
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78ecbb1320>
+===40/100===
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78ecbb1320>
+===41/100===
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78e7f35eb8>
+===42/100===
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+-1.2410714285714286 <ts_scheduler.individual.Individual object at 0x7f78e7f35eb8>
+===43/100===
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e80640b8>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+===44/100===
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e8376dd8>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78ecc62dd8>
+===45/100===
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e7eb75c0>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78ecc205f8>
+===46/100===
+-1.191326530612245 <ts_scheduler.individual.Individual object at 0x7f78e7ede630>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.239795918367347 <ts_scheduler.individual.Individual object at 0x7f78e80640b8>
+===47/100===
+-1.191326530612245 <ts_scheduler.individual.Individual object at 0x7f78e7ede630>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb64630>
+===48/100===
+-1.191326530612245 <ts_scheduler.individual.Individual object at 0x7f78e7ede630>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb64630>
+===49/100===
+-1.191326530612245 <ts_scheduler.individual.Individual object at 0x7f78e7ede630>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb64630>
+===50/100===
+-1.191326530612245 <ts_scheduler.individual.Individual object at 0x7f78e7ede630>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78e839af98>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78ecb5bd68>
+===51/100===
+-1.191326530612245 <ts_scheduler.individual.Individual object at 0x7f78e7ede630>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78e839af98>
+-1.2385204081632653 <ts_scheduler.individual.Individual object at 0x7f78e80f30f0>
+===52/100===
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78efcd7ac8>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e81b5c18>
+-1.191326530612245 <ts_scheduler.individual.Individual object at 0x7f78e7ede630>
+===53/100===
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78efcd7ac8>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e81b5c18>
+-1.191326530612245 <ts_scheduler.individual.Individual object at 0x7f78e7ede630>
+===54/100===
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78efcd7ac8>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e81b5c18>
+-1.191326530612245 <ts_scheduler.individual.Individual object at 0x7f78e827c278>
+===55/100===
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78efcd7ac8>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e81b5c18>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78efc240f0>
+===56/100===
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78efcd7ac8>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e81b5c18>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78efc240f0>
+===57/100===
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78efcd7ac8>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e7e41e80>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e839dd30>
+===58/100===
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78ecb5beb8>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78ecb61710>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e7e41e80>
+===59/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78ecb5beb8>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e839dd30>
+===60/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78ecc1ea20>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e8224cf8>
+===61/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78ecc1ea20>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78ecb5beb8>
+===62/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78ecc1ea20>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78e8131b00>
+===63/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78ecc1ea20>
+-1.1564980158730158 <ts_scheduler.individual.Individual object at 0x7f78efcd1898>
+===64/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78ecc1ea20>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7fe2a90>
+===65/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78ecc1ea20>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7fe2a90>
+===66/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78ecc1ea20>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7fe2a90>
+===67/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78ecc1ea20>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7fe2a90>
+===68/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e84abbe0>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f8f390>
+===69/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e8310208>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e84abbe0>
+===70/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e8139978>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78efbffba8>
+===71/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78eccb46a0>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f19860>
+===72/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7e4b358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e81d0358>
+===73/100===
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e84127f0>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7ebd908>
+===74/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e81d0358>
+===75/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78efc71080>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78efb86d68>
+===76/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78efb86eb8>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f28358>
+===77/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7f2b390>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78efbc8c50>
+===78/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e83ded30>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e82841d0>
+===79/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e82f22e8>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78e7ebd908>
+===80/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e82f22e8>
+-1.121173469387755 <ts_scheduler.individual.Individual object at 0x7f78ecbb8518>
+===81/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e82f22e8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e8269ac8>
+===82/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e8272cf8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e816e1d0>
+===83/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e8272cf8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e816e1d0>
+===84/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78efbf1dd8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e7e9d5c0>
+===85/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e83ffe48>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e7f1bf98>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e7eb5da0>
+===86/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e81676a0>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78ecbacd68>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e8201240>
+===87/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e7fb0f60>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e82f2ba8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78efbc82b0>
+===88/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78efc49550>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e82da550>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78efc51908>
+===89/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e80299b0>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e81622b0>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e8316a90>
+===90/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e7ea72e8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78ecba3d30>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78eccadac8>
+===91/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e82e3a20>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e7effda0>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e80bde10>
+===92/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e80146d8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e803c9e8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e8269ac8>
+===93/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e826f828>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e8272cf8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e7fa4a90>
+===94/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78ecc95518>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78ecbacd68>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78eccc1c50>
+===95/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e7e439e8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78eccad940>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e843d7f0>
+===96/100===
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78ecc29ef0>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e81ecfd0>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78efcee5f8>
+===97/100===
+-1.1175595238095237 <ts_scheduler.individual.Individual object at 0x7f78e8162ef0>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e7f8beb8>
+-1.119047619047619 <ts_scheduler.individual.Individual object at 0x7f78e82d0160>
+===98/100===
+-1.1175595238095237 <ts_scheduler.individual.Individual object at 0x7f78e8162ef0>
+-1.1175595238095237 <ts_scheduler.individual.Individual object at 0x7f78e8220588>
+-1.1175595238095237 <ts_scheduler.individual.Individual object at 0x7f78e83c9be0>
+===99/100===
+-1.1175595238095237 <ts_scheduler.individual.Individual object at 0x7f78e8162ef0>
+-1.1175595238095237 <ts_scheduler.individual.Individual object at 0x7f78e8220588>
+-1.1175595238095237 <ts_scheduler.individual.Individual object at 0x7f78e83c9be0>

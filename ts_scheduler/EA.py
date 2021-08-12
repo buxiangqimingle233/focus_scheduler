@@ -10,7 +10,7 @@ import pandas as pd
 import time
 from tqdm import tqdm
 from copy import deepcopy
-from individual import Individual
+import ts_scheduler.individual as indi
 
 from utils.global_control import *
 
@@ -92,9 +92,9 @@ class EvolutionController:
             t.set_postfix({'new_best_score': now_best_score})
             print(f'Now Best score: {now_best_score} Best Individual {parents[0]}')
 
-            if now_best_score > -1e-5:
-                print("We have found the best solution, break now")
-                break
+            # if now_best_score > -1e-5:
+            #     print("We have found the best solution, break now")
+            #     break
 
             self.log_file.write(
                 f"==={generation}/{self.n_generations}===\n")
@@ -117,6 +117,7 @@ class EvolutionController:
         print('Finish Evolution Search')
         ind=np.argmax(self.scores)
         return self.population[ind], self.scores[ind]
+        # return indi, self.scores[ind]
 
 import multiprocessing as mp
 

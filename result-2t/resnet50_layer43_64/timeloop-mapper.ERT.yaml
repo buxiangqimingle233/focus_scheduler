@@ -12,7 +12,7 @@ ERT:
     - name: idle
       arguments: null
       energy: 0
-  - name: System.ws[0..127].PE[0..63].PEInputBuffer
+  - name: System.ws[0..63].PE[0..63].PEInputBuffer
     actions:
     - name: write
       arguments:
@@ -57,7 +57,7 @@ ERT:
     - name: idle
       arguments: null
       energy: 0.018
-  - name: System.ws[0..127].PE[0..63].PEWeightBuffer[0..3]
+  - name: System.ws[0..63].PE[0..63].PEWeightBuffer[0..3]
     actions:
     - name: write
       arguments:
@@ -102,7 +102,7 @@ ERT:
     - name: idle
       arguments: null
       energy: 0.018
-  - name: System.ws[0..127].PE[0..63].PEAccuBuffer[0..3]
+  - name: System.ws[0..63].PE[0..63].PEAccuBuffer[0..3]
     actions:
     - name: write
       arguments:
@@ -147,17 +147,17 @@ ERT:
     - name: idle
       arguments: null
       energy: 0.018
-  - name: System.ws[0..127].PE[0..63].PEWeightRegs[0..15]
+  - name: System.ws[0..63].PE[0..63].PEWeightRegs[0..15]
     actions:
     - name: access
       arguments: null
       energy: 0.009
-  - name: System.ws[0..127].PE[0..63].LMAC[0..15]
+  - name: System.ws[0..63].PE[0..63].LMAC[0..15]
     actions:
     - name: compute
       arguments: null
       energy: 0.561
-  - name: System.ws[0..127].GlobalBuffer
+  - name: System.ws[0..63].GlobalBuffer
     actions:
     - name: write
       arguments:

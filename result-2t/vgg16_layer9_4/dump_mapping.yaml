@@ -1,18 +1,18 @@
 mapping:
-- factors: C=8 M=64 R=1 S=1 N=1 P=2 Q=4
+- factors: C=1 M=4 R=1 S=1 N=1 P=2 Q=4
   permutation: NSRCMPQ
   target: DRAM
   type: temporal
-- factors: C=1 M=1 R=1 S=1 N=1 P=2 Q=2
-  permutation: NSRMCPQ
+- factors: C=1 M=2 R=1 S=1 N=1 P=2 Q=1
+  permutation: QNSRCMP
   split: 5
   target: DRAM
   type: spatial
-- factors: C=2 M=1 R=1 S=1 N=1 P=8 Q=4
-  permutation: NSRMCPQ
+- factors: C=1 M=16 R=1 S=1 N=1 P=8 Q=2
+  permutation: NSRCMPQ
   target: GlobalBuffer
   type: temporal
-- factors: C=8 M=2 R=1 S=1 N=1 P=1 Q=1
+- factors: C=16 M=1 R=1 S=1 N=1 P=1 Q=1
   permutation: QPNSRMC
   target: GlobalBuffer
   type: spatial
@@ -30,7 +30,7 @@ mapping:
   - Outputs
   target: PEInputBuffer
   type: bypass
-- factors: C=1 M=1 R=3 S=3 N=1 P=1 Q=1
+- factors: C=8 M=1 R=3 S=3 N=1 P=1 Q=1
   permutation: QPNMCRS
   target: PEWeightBuffer
   type: temporal
@@ -57,7 +57,7 @@ mapping:
   - Inputs
   target: PEAccuBuffer
   type: bypass
-- factors: C=1 M=1 R=1 S=1 N=1 P=1 Q=1
+- factors: C=1 M=1 R=1 S=1 N=1 P=1 Q=4
   permutation: PNSRMCQ
   target: PEWeightRegs
   type: temporal

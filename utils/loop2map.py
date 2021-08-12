@@ -27,6 +27,7 @@ class Loop2Map():
         extract_tile_keep = re.compile(r"Weights|Inputs|Outputs")
         judge_dim = re.compile(r"^\|.*$")
         extract_diminfo = re.compile(r"^[^A-Z]*?([A-Z]).*?:([0-9]+).*$")
+        print(in_file_path)
         with open(in_file_path, 'r') as f:
             line = f.readline()
 

@@ -23,7 +23,7 @@ class WorkingLayerSet():
     def __init__(self, layers, cores, core_map):    
         self.layer_names = layers
         self.cores = cores
-        self.model_names = [re.search(r"(.+?)_", layer).group(1) for layer in layers]
+        self.model_names = [re.search(r"(^.+)_", layer).group(1) for layer in layers]
         self.result_names = ["result_" + layer + ".yaml" for layer in layers]
         self.prob_spec_names = [layer + ".yaml" for layer in layers]
         self.exchange_file_name = "layer-set-exchange-info.yaml"
@@ -35,9 +35,75 @@ class WorkingLayerSet():
         collapsed_info = self.collapseExecInfo(transformed_info)
         if use_estimator:
             latency_result = self.invokeEstimator(collapsed_info)
-        self.dumpTraceFile(collapsed_info)
+        self.dumpTraceFileHnocs(collapsed_info)
+        self.dumpTraceFileBooksim(collapsed_info)
 
-    def dumpTraceFile(self, collapsed_info):
+    def dumpTraceFileBooksim(self, collapsed_info):
+        df = pd.DataFrame(columns=["src", "dst", "interval", "flit"])
+        comm_graph, interval, buffer_access = collapsed_info
+
+        for comm_graph_per_datatype, interval_per_datatype, buffer_access_per_datatype \
+            in zip(comm_graph, interval, buffer_access):
+
+            for single_comm, single_interval, single_buffer_access \
+                in zip(comm_graph_per_datatype["graph"], interval_per_datatype, buffer_access_per_datatype):
+
+                if single_comm[0] != single_comm[1]:
+                    # src, dst, interval, flits, count
+                    df = df.append({
+                        "src": single_comm[0], "dst": single_comm[1],
+                        "flit": max(single_buffer_access/arch_config["w"], 4),
+                        "interval": single_interval
+                    }, ignore_index=True)
+
+        # store
+        self.trace = df.copy()
+
+        # injection rates: 
+        rates = df.groupby("src").apply(lambda x: sum(x["flit"] / x["interval"])).reset_index()
+        rates.columns = ["src", "rate"]
+        rates[rates["rate"] > 1] = 1
+        with open(os.path.join(booksim_working_path, "rate.txt"), "w") as wf:
+            print(" ".join(map(str, rates["rate"].tolist())), file=wf)
+
+        # traffic trace:
+        def getIssueOrder(fk):
+            flows = fk.copy()
+            flows["unsolved"] = True
+            flows["issue_time"] = flows["interval"]
+            ret = []
+            while any(flows["unsolved"]):
+                flows.sort_values("issue_time", inplace=True)
+                issued_flow = flows.iloc[0, ]
+                issued_flow["unsolved"] = False
+                ret.append(issued_flow["dst"])
+                issued_flow["issue_time"] += issued_flow["interval"]
+                flows.iloc[0, :] = issued_flow.copy()
+            return ret
+
+        trace = df.groupby("src").apply(lambda x: getIssueOrder(x)).reset_index()
+        trace.columns = ["src", "trace"]
+        with open(os.path.join(booksim_working_path, "trace.txt"), "w") as wf:
+            for _, row in trace.iterrows():
+                print(int(row["src"]), " ".join(map(lambda x: str(int(x)), row["trace"])), sep="\n", file=wf)
+
+    def analyzeBookSim(self):
+        booksim_out = os.path.join(booksim_working_path, "out.txt")
+        booksim_res = pd.read_csv(booksim_out, header=None, names=["id", "mean", "max"], index_col=False)
+        booksim_res = booksim_res.iloc[:array_size, :]
+        booksim_res.loc[booksim_res["mean"].isna(), "mean"] = 1
+        booksim_res.loc[booksim_res["max"].isna(), "max"] = 1
+
+        # aligned_trace = 
+        max_slowdown = (booksim_res["max"] / self.trace.groupby("dst").agg({"interval": "max"})["interval"]).max()
+        mean_slowdown = (booksim_res["mean"] / self.trace.groupby("dst").agg({"interval": "mean"})["interval"])
+        mean_slowdown = mean_slowdown[mean_slowdown > 1]
+        mean_slowdown = mean_slowdown.mean()
+        with open(f"booksim_{slowdown_result}", "a") as wf:
+            # print(arch_config["w"], mean_slowdown, max_slowdown, sep=",", file=wf)
+            print(mean_slowdown, file=wf)
+
+    def dumpTraceFileHnocs(self, collapsed_info):
         comm_graph, interval, buffer_access = collapsed_info
         hnocs_dump_file = "trace.dat"
         with open(hnocs_dump_file, "w") as f:
@@ -225,6 +291,13 @@ class WorkingLayerSetDR(WorkingLayerSet):
 
     def applyCoreMap(self, traffic):
         core_map = self.core_map
+        # debug_show(traffic[traffic["src"] == 64])
+
+        # FIXME: 我们应该在timeloop去修 no spatial fanout的问题，但是这里先改一下吧
+        src_sel = traffic.apply(lambda x: max(x["src"]) < max(core_map[x["layer"]].keys()), axis=1)
+        dst_sel = traffic.apply(lambda x: max(x["dst"]) < max(core_map[x["layer"]].keys()), axis=1)
+
+        traffic = traffic[(src_sel) & (dst_sel)]
         traffic.loc[:, "map_src"] = traffic.apply(lambda x: [core_map[x["layer"]][i] for i in x["src"]], axis=1)
         traffic.loc[:, "map_dst"] = traffic.apply(lambda x: [core_map[x["layer"]][i] for i in x["dst"]], axis=1)
         return traffic
@@ -284,6 +357,8 @@ def embeddedFuncDR(layer: Layer, comm_bank):
                 df = df[df["flit"] > 0]
                 df.loc[:, "flit"] = df["flit"].map(lambda x: int(max(x + 1, 2)))    # add headflits
                 break
+    
+    # debug_show(df["flit"].mean())
 
     # collapse all the datatypes
     bcast = df[(df["dst"].map(len) > 1) & (df["src"].map(lambda x: x[0]) == -1)]

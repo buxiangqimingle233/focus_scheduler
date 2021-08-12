@@ -13,11 +13,15 @@ mapspace_constraints:
     - target: GlobalBuffer
       type: temporal
       factors: R=1 S=1
-      permutation: RSCMN
+      permutation: RSCN
     # intuitive optimization to not tile the R and S dimension at the DRAM level
     - target: DRAM
       type: temporal
       factors: R=1 S=1
+      permutation: RSCN
+    - target: DRAM
+      type: spatial
+      factors: C=0
       permutation: RSCMN
     # intuitive optimization according to hardware dimension
     - target: PEAccuBuffer
