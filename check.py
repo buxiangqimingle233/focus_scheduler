@@ -1,23 +1,30 @@
 import os
 import sys
 import re
+import yaml
 
 # checked_model = "resnext50_32x4d"
 checked_model = "mnasnet"
-checked_model = "wide_resnet50_2"
+# checked_model = "wide_resnet50_2"
 # checked_model = "resnet50"
 
 root = os.path.dirname(os.path.abspath(__file__))
 prob_dir = os.path.join(root, "db/", checked_model)
 
-res = "["
+res = []
 for father, _, files in os.walk(prob_dir):
     for file in files:
-        with open(os.path.join(father, file)) as f:
-            content = f.read()
-            if content.find("M") < 0:
-                # print("layer: {} does not have dimension M!".format(file))
-                res += re.search(r"([0-9]+)", file).group(1) + ", "
+        obj = yaml.load(open(os.path.join(father, file), "r"), Loader=yaml.FullLoader)
+        if "M" not in obj["problem"]["instance"]:
+            obj["problem"]["instance"]["M"] = 1
+            res.append(int(re.search(r"([0-9]+)", file).group(1)))
+            
+        # with open(os.path.join(father, file)) as f:
+        #     content = f.read()
+        #     if content.find("M") < 0:
+        #         # print("layer: {} does not have dimension M!".format(file))
+        #         res.append(int(re.search(r"([0-9]+)", file).group(1)))
 
-res += "]"
+res.sort()
+
 print(res)

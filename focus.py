@@ -20,7 +20,7 @@ def run():
     # Generate task mapping
     core_map = task_mapper.map()
 
-    # Visualize mapping results
+    # FIXME: Doesn't work, visualize mapping results
     os.system("gnuplot mapper/mapping_vis.gp")
 
     # Instantiate the original traffic trace generator
@@ -59,15 +59,17 @@ def run():
         # ea_controller = EA.EvolutionController()
         ea_controller.init_population(individual.individual_generator)
         best_individual, _ = ea_controller.run_evolution_search(scheduler_verbose)
-        best_trace = best_individual.getTrace()
 
         # dump & print
+        best_trace = best_individual.getTrace()
         best_trace.to_csv("best_scheduling.csv")
         slowdown = (best_trace["issue_time"] / (best_trace["interval"] * best_trace["count"]))
         best_mean = slowdown[slowdown > 1].mean()
         print("Sum Exceeded Latency: {}".format(best_mean))
         with open(slowdown_result, "a") as wf:
-            print(arch_config["w"], best_mean, best_mean, sep=",", file=wf)
+            # print(arch_config["w"], best_mean, best_mean, sep=",", file=wf)
+            print(best_mean)
+
 
 if __name__ == "__main__":
     run()

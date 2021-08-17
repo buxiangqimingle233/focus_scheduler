@@ -2,6 +2,10 @@
 
 
 
+# -------------------- Hardware Setup -------------------------
+
+result_dir = "result-512g"
+
 
 
 # -------------------- Timeloop -------------------------
@@ -13,7 +17,6 @@ timeloop_verbose = False
 # whether to invoke timeloop-mapper
 
 search_dataflow = False
-
 # Search time
 
 timeout = 30
@@ -27,7 +30,6 @@ top_level_cnt = None
 dump_comm_status = False
 
 
-
 # data orders
 
 datatype = ["weight", "input", "output"]
@@ -38,7 +40,7 @@ datatype = ["weight", "input", "output"]
 
 # hardware setup
 
-array_diameter = 8
+array_diameter = 16
 
 array_size = array_diameter**2
 
@@ -50,7 +52,7 @@ arch_config = {
 
     "d": array_diameter,
 
-    "w": 1024
+    "w": 2048
 
 }
 
@@ -70,64 +72,12 @@ mapping_style = "Hilbert"
 
 
 
-# layer_names = [
-
-#     "resnet50_layer43", "resnet50_layer44", "resnet50_layer45", "resnet50_layer46", \
-
-#     "vgg16_layer1", "vgg16_layer2", "vgg16_layer3", "vgg16_layer4", \
-
-#     "inception_layer1", "inception_layer2", "inception_layer3", "inception_layer4"
-
-# ]
-
-
-
-# layer_names = [
-
-#     "resnet50_layer43", "resnet50_layer44", \
-
-#     "vgg16_layer1", "vgg16_layer2", \
-
-#     "inception_layer1", "inception_layer2"
-
-# ]
-
-
-
-# cores = [
-
-#     8, 16, 1, 8, 16, 2
-
-# ]
-
 
 
 model = "vgg16"
 
-layer_names = ["wide_resnet50_2_layer34", "wide_resnet50_2_layer35", "wide_resnet50_2_layer36", "wide_resnet50_2_layer37", "wide_resnet50_2_layer38", "wide_resnet50_2_layer39", "wide_resnet50_2_layer40", "wide_resnet50_2_layer41", "resnext50_32x4d_layer31", "resnext50_32x4d_layer32", "resnext50_32x4d_layer33", "resnext50_32x4d_layer34"]
-cores = [2, 2, 2, 2, 2, 2, 2, 2, 12, 12, 12, 12]
-
-
-# layer_names = [
-
-#     "resnet50_layer43", "resnet50_layer44", "resnet50_layer45",
-
-#     "vgg16_layer1", "vgg16_layer2", "vgg16_layer3", "vgg16_layer4"
-
-# ]
-
-# cores = [
-
-#     16,
-
-#     16, 16,
-
-#     4, 4, 
-
-#     4, 4
-
-# ]
-
+layer_names = ["bert_layer1", "bert_layer2", "bert_layer3", "bert_layer4", "bert_layer5", "bert_layer6", "bert_layer7", "bert_layer8", "bert_layer9", "bert_layer10", "bert_layer11", "bert_layer12", "bert_layer13", "bert_layer14", "bert_layer15", "bert_layer16", "bert_layer17", "bert_layer18", "bert_layer19", "bert_layer20", "bert_layer21", "bert_layer22", "bert_layer23", "bert_layer24", "bert_layer25", "bert_layer26", "bert_layer27", "bert_layer28", "bert_layer29", "bert_layer30", "bert_layer31", "bert_layer32", "bert_layer33", "bert_layer34", "bert_layer35", "bert_layer36", "bert_layer37", "bert_layer38", "bert_layer39", "bert_layer40", "bert_layer41", "bert_layer42", "bert_layer43", "bert_layer44", "bert_layer45", "bert_layer46", "bert_layer47", "bert_layer48", "bert_layer49", "bert_layer50", "bert_layer51", "bert_layer52", "bert_layer53", "bert_layer54", "bert_layer55", "bert_layer56", "bert_layer57", "bert_layer58", "bert_layer59", "bert_layer60", "bert_layer61", "bert_layer62", "bert_layer63", "bert_layer64", "bert_layer65", "bert_layer66", "bert_layer67", "bert_layer68", "bert_layer69", "bert_layer70", "bert_layer71", "bert_layer72", "bert_layer73"]
+cores = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 
 
 
@@ -148,7 +98,7 @@ conf_filename = "ML_mapper.cfg"
 
 
 
-simulate_baseline = False
+simulate_baseline = True
 
 hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
 
@@ -170,19 +120,19 @@ booksim_working_path = "/home/wangzhao/simulator/booksim2/src"
 
 
 
-focus_schedule = True
+focus_schedule = False
 
 scheduler_verbose = False
 
 n_workers = 28
 
-population_size = 2
+population_size = 100
 
-n_evolution = 1
+n_evolution = 50
 
 
 
-slowdown_result = "slowdown_wide_resnet50_2_resnext50_32x4d.csv"
+slowdown_result = "slowdown_bert.csv"
 
 
 # -------------------- [Optional] Estimator -------------------------

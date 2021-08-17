@@ -1,5 +1,7 @@
 # Global Variables for controling
 
+# -------------------- Hardware Setup -------------------------
+result_dir = "result-512g"
 
 # -------------------- Timeloop -------------------------
 
@@ -18,7 +20,7 @@ datatype = ["weight", "input", "output"]
 # -------------------- Hardware -------------------------
 
 # hardware setup
-array_diameter = 8
+array_diameter = 16
 array_size = array_diameter**2
 arch_config = {
     "p": 6, "cp_if": 6, "cp_of": 0, "tr": 1, "ts": 2, "tw": 1,
@@ -34,36 +36,10 @@ mapping_style = "Hilbert"
 
 # -------------------- Tasks -------------------------
 
-# layer_names = [
-#     "resnet50_layer43", "resnet50_layer44", "resnet50_layer45", "resnet50_layer46", \
-#     "vgg16_layer1", "vgg16_layer2", "vgg16_layer3", "vgg16_layer4", \
-#     "inception_layer1", "inception_layer2", "inception_layer3", "inception_layer4"
-# ]
-
-# layer_names = [
-#     "resnet50_layer43", "resnet50_layer44", \
-#     "vgg16_layer1", "vgg16_layer2", \
-#     "inception_layer1", "inception_layer2"
-# ]
-
-# cores = [
-#     8, 16, 1, 8, 16, 2
-# ]
 
 model = "vgg16"
 layer_names = ["{}_layer{}".format(model, i + 1) for i in range(16)]
 cores = [int(array_diameter**2 / len(layer_names)) for i in range(len(layer_names))]
-
-# layer_names = [
-#     "resnet50_layer43", "resnet50_layer44", "resnet50_layer45",
-#     "vgg16_layer1", "vgg16_layer2", "vgg16_layer3", "vgg16_layer4"
-# ]
-# cores = [
-#     16,
-#     16, 16,
-#     4, 4, 
-#     4, 4
-# ]
 
 
 # -------------------- Task Mapper -------------------------
@@ -74,7 +50,7 @@ conf_filename = "ML_mapper.cfg"
 
 # -------------------- HNOCS -------------------------
 
-simulate_baseline = False
+simulate_baseline = True
 hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
 
 # -------------------- BookSim -------------------------
@@ -85,11 +61,11 @@ booksim_working_path = "/home/wangzhao/simulator/booksim2/src"
 
 # -------------------- FOCUS Scheduler -------------------------
 
-focus_schedule = True
+focus_schedule = False
 scheduler_verbose = False
 n_workers = 28
-population_size = 2
-n_evolution = 1
+population_size = 100
+n_evolution = 50
 
 slowdown_result = "slowdown.csv"
 

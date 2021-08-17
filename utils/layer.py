@@ -44,7 +44,7 @@ class Layer:
         else:
             self.prj_root = prj_root
 
-        result_root = os.path.join(self.prj_root, "result-2t")
+        result_root = os.path.join(self.prj_root, gc.result_dir)
         if not os.path.exists(result_root):
             os.makedirs(result_root)
 

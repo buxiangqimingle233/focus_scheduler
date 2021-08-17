@@ -56,6 +56,8 @@ class WorkingLayerSet():
                         "interval": single_interval
                     }, ignore_index=True)
 
+        df.to_csv("dump_trace.csv")
+        exit(-1)
         # store
         self.trace = df.copy()
 
@@ -94,13 +96,14 @@ class WorkingLayerSet():
         booksim_res.loc[booksim_res["mean"].isna(), "mean"] = 1
         booksim_res.loc[booksim_res["max"].isna(), "max"] = 1
 
-        # aligned_trace = 
-        max_slowdown = (booksim_res["max"] / self.trace.groupby("dst").agg({"interval": "max"})["interval"]).max()
+        # max_slowdown = (booksim_res["max"] / self.trace.groupby("dst").agg({"interval": "max"})["interval"]).max()
         mean_slowdown = (booksim_res["mean"] / self.trace.groupby("dst").agg({"interval": "mean"})["interval"])
-        mean_slowdown = mean_slowdown[mean_slowdown > 1]
+
+        mean_slowdown = mean_slowdown[~(mean_slowdown.isna()) & (mean_slowdown > 1)]
+        if mean_slowdown.shape[0] == 0:
+            mean_slowdown = pd.Series([1])
         mean_slowdown = mean_slowdown.mean()
         with open(f"booksim_{slowdown_result}", "a") as wf:
-            # print(arch_config["w"], mean_slowdown, max_slowdown, sep=",", file=wf)
             print(mean_slowdown, file=wf)
 
     def dumpTraceFileHnocs(self, collapsed_info):
@@ -222,13 +225,11 @@ class WorkingLayerSet():
                             exec_info[layer_idx][datatype_idx][struct_idx]
                     except IndexError:
                         pass
-        
+
         for struct_idx in range(struct_size):
-            for datatype_idx in range(datatype_size):
-                for layer_idx in range(layer_size):
-                    if not transformed_info[struct_idx][datatype_idx][layer_idx]:
-                        raise Exception("No spatial parallelism is specified in layer {}".format(self.layer_names[layer_idx]))
-                        pass
+            for layer_idx in range(layer_size):
+                if all([not transformed_info[struct_idx][datatype_idx][layer_idx] for datatype_idx in range(datatype_size)]):
+                    raise Exception("No spatial parallelism is specified in layer {}".format(self.layer_names[layer_idx]))
 
         return transformed_info
 
@@ -236,12 +237,12 @@ class WorkingLayerSet():
         merged_comm_graph, merged_interval, merged_access = [], [], []
 
         for graph_per_datatype, interval_per_datatype, buffer_access_per_datatype in zip(*exec_info):
-            total_cores = sum([len(graph_per_layer["graph"]) for \
-                               graph_per_layer in graph_per_datatype if graph_per_layer])
-            core_fractions = [len(graph_per_layer) / total_cores for graph_per_layer in graph_per_datatype]
-            avg_l = sum([graph_per_layer["avg_l"] * fraction for \
-                         graph_per_layer, fraction in zip(graph_per_datatype, core_fractions)])
-
+            avg_l = -1
+            # total_cores = sum([len(graph_per_layer["graph"]) for \
+            #                    graph_per_layer in graph_per_datatype if graph_per_layer])
+            # core_fractions = [len(graph_per_layer) / total_cores for graph_per_layer in graph_per_datatype]
+            # avg_l = sum([graph_per_layer["avg_l"] * fraction for \
+            #              graph_per_layer, fraction in zip(graph_per_datatype, core_fractions)])
             graph = reduce(
                 lambda x, y: x + y,
                 [self.applyCoreMap(layer, graph_per_layer["graph"]) for \
@@ -274,6 +275,9 @@ class WorkingLayerSetDR(WorkingLayerSet):
             raise Exception("Dual-phased routing do not support estimator yet")
         
         self.traffic.to_json("traceDR.json")
+        # enbale packet-based control
+        self.traffic.loc[:, "flit"] += self.traffic["flit"] / 4
+
         return self.traffic
 
     def getExecInfo(self):
@@ -293,7 +297,6 @@ class WorkingLayerSetDR(WorkingLayerSet):
         core_map = self.core_map
         # debug_show(traffic[traffic["src"] == 64])
 
-        # FIXME: 我们应该在timeloop去修 no spatial fanout的问题，但是这里先改一下吧
         src_sel = traffic.apply(lambda x: max(x["src"]) < max(core_map[x["layer"]].keys()), axis=1)
         dst_sel = traffic.apply(lambda x: max(x["dst"]) < max(core_map[x["layer"]].keys()), axis=1)
 
@@ -443,16 +446,19 @@ def embeddedFunc(layer: Layer, comm_bank):
     res = []
     comm_graph, interval, buffer_access = [], [], []
     if layer.get_dram_tile_spatial_size() > 1:
-
-        # get data from the last tile of each datatype
+        
+        top_tile_idx = 0
+        for tile_index in range(len(comm_graphs)-1, -1, -1):
+            if any([dt for dt in comm_graphs[tile_index]]):
+                top_tile_idx = tile_index
+                break
+        
         for datatype_index in range(3):
-            for tile_index in range(len(comm_graphs)-1, -1, -1):
-                try:
-                    comm_graph.append(comm_graphs[tile_index][datatype_index])
-                    interval.append(intervals[tile_index][datatype_index])
-                    buffer_access.append(buffer_accesses[tile_index][datatype_index])
-                    break
-                except IndexError:
-                    pass
+            try:
+                comm_graph.append(comm_graphs[top_tile_idx][datatype_index])
+                interval.append(intervals[top_tile_idx][datatype_index])
+                buffer_access.append(buffer_accesses[top_tile_idx][datatype_index])
+            except IndexError:
+                pass
 
     return zip(comm_graph, interval, buffer_access)
