@@ -1,8 +1,8 @@
 SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)"/db"
-LAYER="resnet50_layer43"
+LAYER="bert-large_layer10"
 
 echo "working for $LAYER"
 
-cd result-2t/$LAYER"_64"
-timeloop-mapper $SHELL_FOLDER/arch/components/* $SHELL_FOLDER/arch/*.yaml \
-    $SHELL_FOLDER/constraints/* $SHELL_FOLDER/mapper/* $SHELL_FOLDER/resnet50/$LAYER".yaml"
+cd result-512g/$LAYER"_4"
+timeloop-mapper $SHELL_FOLDER/arch/components/* modified_arch.yaml \
+    $SHELL_FOLDER/constraints/* $SHELL_FOLDER/mapper/* $SHELL_FOLDER/bert-large/$LAYER".yaml"

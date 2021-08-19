@@ -11,77 +11,82 @@ global_control = os.path.join(root_dir, "utils", "global_control.py")
 benchmark_modelss = [
     ["wide_resnet50_2", "resnext50_32x4d", "resnet50", "vgg16"],
     ["bert"],
+    ["unet", "resnet50", "bert-large", "ssd_r34"],
 ]
 
 biass = [
-    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0],
     [0],
+    [0, 0, 0, 0],
 ]
 
 allocate_coress = [
     [64, 64, 64, 64],
-    [219],
+    [256],
+    [64, 64, 64, 64],
 ]
 
 pipeline_layerss = [
-    [4, 4, 8, 8, 4],
-    [73],
+    [4, 4, 8, 4],
+    [64],
+    [8, 4, 32, 4],
 ]
 
-w_candidate = range(512, 2049, 256)
-
+w_candidate = range(256, 2049, 256)
+# w_candidate = [512]
 search = True
 
+if __name__ == "__main__":
 
-# run! run! run!
-for w in w_candidate:
-    cnt = 0
-    for benchmark_models, allocate_cores, bias, pipeline_layers in zip(benchmark_modelss, allocate_coress, biass, pipeline_layerss):
-        # cnt += 1
-        # if cnt != 4:
-        #     continue
-        layer_names = ["{}_layer{}".format(benchmark_models[idm], idl+1+bias[idm]) 
-                        for idm in range(len(benchmark_models)) for idl in range(pipeline_layers[idm])]
+    # run! run! run!
+    for w in w_candidate:
+        cnt = 0
+        for benchmark_models, allocate_cores, bias, pipeline_layers in zip(benchmark_modelss, allocate_coress, biass, pipeline_layerss):
+            # cnt += 1
+            # if cnt != 3:
+            #     continue
+            layer_names = ["{}_layer{}".format(benchmark_models[idm], idl+1+bias[idm]) 
+                            for idm in range(len(benchmark_models)) for idl in range(pipeline_layers[idm])]
 
-        layer_names = list(map(lambda x: "\"{}\"".format(x), layer_names))
+            layer_names = list(map(lambda x: "\"{}\"".format(x), layer_names))
 
-        cores = [str(int(allocate_cores[idm] / pipeline_layers[idm])) for idm in range(len(benchmark_models)) for _ in range(pipeline_layers[idm])]
+            cores = [str(int(allocate_cores[idm] / pipeline_layers[idm])) for idm in range(len(benchmark_models)) for _ in range(pipeline_layers[idm])]
 
-        with open(global_control_bc, "r") as rf:
-            with open(global_control, "w") as wf:
-                for line in rf:
-                    if line[0] != "#":
-                        if re.search(r"layer_names = .*", line) is not None:
-                            print("layer_names = [{}]".format(", ".join(layer_names)), file=wf)
-                        elif re.search(r"cores = .*", line) is not None:
-                            print("cores = [{}]".format(", ".join(cores)), file=wf)
-                        elif re.search("\s\"w\":.*?", line) is not None:
-                            line = re.sub("[0-9]+", str(w), line)
-                            print(line, file=wf)
-                        elif re.search(r"slowdown_result.*?", line) is not None:
-                            line = "slowdown_result = \"slowdown_{}.csv\"".format("_".join(benchmark_models))
-                            print(line, file=wf)
-                        elif re.search(r"search_dataflow = .*", line) is not None:
-                            if search:
-                                print("search_dataflow = {}".format("True"), file=wf)
+            with open(global_control_bc, "r") as rf:
+                with open(global_control, "w") as wf:
+                    for line in rf:
+                        if line[0] != "#":
+                            if re.search(r"layer_names = .*", line) is not None:
+                                print("layer_names = [{}]".format(", ".join(layer_names)), file=wf)
+                            elif re.search(r"cores = .*", line) is not None:
+                                print("cores = [{}]".format(", ".join(cores)), file=wf)
+                            elif re.search("\s\"w\":.*?", line) is not None:
+                                line = re.sub("[0-9]+", str(w), line)
+                                print(line, file=wf)
+                            elif re.search(r"slowdown_result.*?", line) is not None:
+                                line = "slowdown_result = \"slowdown_{}.csv\"".format("_".join(benchmark_models))
+                                print(line, file=wf)
+                            elif re.search(r"search_dataflow = .*", line) is not None:
+                                if search:
+                                    print("search_dataflow = {}".format("True"), file=wf)
+                                else:
+                                    print("search_dataflow = {}".format("False"), file=wf)
+                            elif re.search(r"dump_comm_status = .*", line) is not None:
+                                if search:
+                                    print("dump_comm_status = {}".format("True"), file=wf)
+                                else:
+                                    print("dump_comm_status = {}".format("False"), file=wf)
                             else:
-                                print("search_dataflow = {}".format("False"), file=wf)
-                        elif re.search(r"dump_comm_status = .*", line) is not None:
-                            if search:
-                                print("dump_comm_status = {}".format("True"), file=wf)
-                            else:
-                                print("dump_comm_status = {}".format("False"), file=wf)
-                        else:
+                                print(line, file=wf)
+                        elif line:
                             print(line, file=wf)
-                    elif line:
-                        print(line, file=wf)
 
-        try:
-            os.system("python focus.py")
-        except Exception as e:
-            print("Exception: {} happend".format(e))
+            try:
+                os.system("python focus.py")
+            except Exception as e:
+                print("Exception: {} happend".format(e))
 
-    search = False
+        search = False
 
 
 # # --------------------- scalablility -----------------------------------

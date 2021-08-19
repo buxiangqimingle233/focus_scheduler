@@ -1,21 +1,24 @@
-import yaml
-from functools import reduce
+import re
 
+pattern = re.compile(r"Sum Exceeded Latency: (.*)")
 
-def get_mac_number(self):
-    obj = yaml.load(open(self.prob_specs, "r"), Loader=yaml.FullLoader)
+ret = []
+with open("nohup.out", "r") as f:
+    for line in f:
+        try:
+            res = float(pattern.search(line).group(1))
+            ret.append(res)
+        except Exception:
+            pass
 
-    # mac_cnt = multiplicative of output dims and weight dims
-    weight_obj = obj["problem"]["shape"]["data-spaces"][0]
-    output_obj = obj["problem"]["shape"]["data-spaces"][2]
+odd, even = [], []
+for i in range(0, len(ret), 2):
+    odd.append(ret[i])
+    even.append(ret[i + 1])
 
-    if not output_obj["name"] == "Outputs" and weight_obj["name"] == "Weight":
-        raise Exception("Datatypes in problem spec misordered!")
-
-    def extract_dim_names(datatype): return [wrapper[0][0] for wrapper in datatype["projection"]]
-    weight_dim_names, output_dim_names = extract_dim_names(weight_obj), extract_dim_names(output_obj)
-    mac_related_dim_names = list(set(weight_dim_names + output_dim_names))
-
-    mac_related_dim_sizes = [obj["problem"]["instance"][dim_name] for dim_name in mac_related_dim_names]
-    mac_cnt = reduce(lambda x, y: x * y, mac_related_dim_sizes)
-    return mac_cnt
+for i in odd:
+    print(i)
+print()
+for j in even:
+    print(j)
+print(odd, even, sep='\n')

@@ -4,7 +4,7 @@ import re
 import yaml
 
 # checked_model = "resnext50_32x4d"
-checked_model = "mnasnet"
+checked_model = "unet"
 # checked_model = "wide_resnet50_2"
 # checked_model = "resnet50"
 

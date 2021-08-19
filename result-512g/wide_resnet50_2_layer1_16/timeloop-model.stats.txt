@@ -40,32 +40,33 @@ Level 1
     MAPPING
     -------
     Loop nest:
+      for P in [0:4)
 
     STATS
     -----
     Cycles               : 153664
     Bandwidth throttling : 1.00
     Weights:
-        Partition size                           : 196
+        Partition size                           : 98
         Utilized capacity                        : 1
         Utilized instances (max)                 : 768
         Utilized clusters (max)                  : 64
         Scalar reads (per-instance)              : 153664
         Scalar updates (per-instance)            : 0
-        Scalar fills (per-instance)              : 153664
+        Scalar fills (per-instance)              : 38416
         Temporal reductions (per-instance)       : 0
-        Address generations (per-cluster)        : 307328
+        Address generations (per-cluster)        : 192080
         Energy (per-scalar-access)               : 0.00 pJ
-        Energy (per-instance)                    : 3.60 pJ
-        Energy (total)                           : 2765.95 pJ
+        Energy (per-instance)                    : 2.25 pJ
+        Energy (total)                           : 1728.72 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
         Address Generation Energy (total)        : 0.00 pJ
         Read Bandwidth (per-instance)            : 1.00 words/cycle
         Read Bandwidth (total)                   : 768.00 words/cycle
-        Write Bandwidth (per-instance)           : 1.00 words/cycle
-        Write Bandwidth (total)                  : 768.00 words/cycle
+        Write Bandwidth (per-instance)           : 0.25 words/cycle
+        Write Bandwidth (total)                  : 192.00 words/cycle
 
 Level 2
 -------
@@ -90,7 +91,8 @@ Level 2
     MAPPING
     -------
     Loop nest:
-      for C in [0:3) (Spatial-Y)
+      for M in [0:2)
+        for C in [0:3) (Spatial-Y)
 
     STATS
     -----
@@ -98,7 +100,7 @@ Level 2
     Bandwidth throttling : 1.00
     Outputs:
         Partition size                           : 3136
-        Utilized capacity                        : 1
+        Utilized capacity                        : 8
         Utilized instances (max)                 : 256
         Utilized clusters (max)                  : 256
         Scalar reads (per-instance)              : 150528
@@ -149,26 +151,26 @@ Level 3
     Cycles               : 153664
     Bandwidth throttling : 1.00
     Weights:
-        Partition size                           : 588
-        Utilized capacity                        : 147
+        Partition size                           : 294
+        Utilized capacity                        : 294
         Utilized instances (max)                 : 256
         Utilized clusters (max)                  : 256
-        Scalar reads (per-instance)              : 460992
+        Scalar reads (per-instance)              : 115248
         Scalar updates (per-instance)            : 0
-        Scalar fills (per-instance)              : 32928
+        Scalar fills (per-instance)              : 294
         Temporal reductions (per-instance)       : 0
-        Address generations (per-cluster)        : 493920
+        Address generations (per-cluster)        : 115542
         Energy (per-scalar-access)               : 0.03 pJ
-        Energy (per-instance)                    : 14632.38 pJ
-        Energy (total)                           : 3745889.28 pJ
+        Energy (per-instance)                    : 3422.99 pJ
+        Energy (total)                           : 876285.70 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
         Address Generation Energy (total)        : 0.00 pJ
-        Read Bandwidth (per-instance)            : 3.00 words/cycle
-        Read Bandwidth (total)                   : 768.00 words/cycle
-        Write Bandwidth (per-instance)           : 0.21 words/cycle
-        Write Bandwidth (total)                  : 54.86 words/cycle
+        Read Bandwidth (per-instance)            : 0.75 words/cycle
+        Read Bandwidth (total)                   : 192.00 words/cycle
+        Write Bandwidth (per-instance)           : 0.00 words/cycle
+        Write Bandwidth (total)                  : 0.49 words/cycle
 
 Level 4
 -------
@@ -200,26 +202,26 @@ Level 4
     Cycles               : 153664
     Bandwidth throttling : 1.00
     Inputs:
-        Partition size                           : 17687
-        Utilized capacity                        : 147
+        Partition size                           : 29012
+        Utilized capacity                        : 273
         Utilized instances (max)                 : 64
         Utilized clusters (max)                  : 64
         Scalar reads (per-instance)              : 460992
         Scalar updates (per-instance)            : 0
-        Scalar fills (per-instance)              : 178752
+        Scalar fills (per-instance)              : 71736
         Temporal reductions (per-instance)       : 0
-        Address generations (per-cluster)        : 639744
+        Address generations (per-cluster)        : 532728
         Energy (per-scalar-access)               : 0.03 pJ
-        Energy (per-instance)                    : 18952.42 pJ
-        Energy (total)                           : 1212954.62 pJ
+        Energy (per-instance)                    : 15782.07 pJ
+        Energy (total)                           : 1010052.29 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
         Address Generation Energy (total)        : 0.00 pJ
         Read Bandwidth (per-instance)            : 3.00 words/cycle
         Read Bandwidth (total)                   : 192.00 words/cycle
-        Write Bandwidth (per-instance)           : 1.16 words/cycle
-        Write Bandwidth (total)                  : 74.45 words/cycle
+        Write Bandwidth (per-instance)           : 0.47 words/cycle
+        Write Bandwidth (total)                  : 29.88 words/cycle
 
 Level 5
 -------
@@ -228,7 +230,7 @@ Level 5
     SPECS
     -----
         Technology           : SRAM
-        Size                 : 4096
+        Size                 : 32768
         Word bits            : 8
         Block size           : 32
         Cluster size         : 2
@@ -236,7 +238,7 @@ Level 5
         Read bandwidth       : -
         Write bandwidth      : -
         Multiple buffering   : 1.00
-        Effective size       : 4096
+        Effective size       : 32768
         Min utilization      : 0.00
         Vector access energy : 0.52 pJ
         Area                 : 90.00 um^2
@@ -244,8 +246,8 @@ Level 5
     MAPPING
     -------
     Loop nest:
-      for P in [0:2)
-        for Q in [0:7)
+      for Q in [0:2)
+        for P in [0:7)
           for M in [0:4) (Spatial-Y)
 
     STATS
@@ -253,50 +255,50 @@ Level 5
     Cycles               : 153664
     Bandwidth throttling : 1.00
     Weights:
-        Partition size                           : 9408
-        Utilized capacity                        : 2352
+        Partition size                           : 4704
+        Utilized capacity                        : 4704
         Utilized instances (max)                 : 16
         Utilized clusters (max)                  : 8
-        Scalar reads (per-instance)              : 526848
+        Scalar reads (per-instance)              : 4704
         Scalar updates (per-instance)            : 0
-        Scalar fills (per-instance)              : 526848
+        Scalar fills (per-instance)              : 4704
         Temporal reductions (per-instance)       : 0
-        Address generations (per-cluster)        : 1053696
+        Address generations (per-cluster)        : 9408
         Energy (per-scalar-access)               : 0.01 pJ
-        Energy (per-instance)                    : 8635.37 pJ
-        Energy (total)                           : 138165.89 pJ
+        Energy (per-instance)                    : 77.10 pJ
+        Energy (total)                           : 1233.62 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
         Address Generation Energy (total)        : 0.00 pJ
-        Read Bandwidth (per-instance)            : 3.43 words/cycle
-        Read Bandwidth (total)                   : 54.86 words/cycle
-        Write Bandwidth (per-instance)           : 3.43 words/cycle
-        Write Bandwidth (total)                  : 54.86 words/cycle
+        Read Bandwidth (per-instance)            : 0.03 words/cycle
+        Read Bandwidth (total)                   : 0.49 words/cycle
+        Write Bandwidth (per-instance)           : 0.03 words/cycle
+        Write Bandwidth (total)                  : 0.49 words/cycle
     Inputs:
-        Partition size                           : 17687
-        Utilized capacity                        : 513
+        Partition size                           : 29012
+        Utilized capacity                        : 1647
         Utilized instances (max)                 : 16
         Utilized clusters (max)                  : 8
-        Scalar reads (per-instance)              : 178752
+        Scalar reads (per-instance)              : 71736
         Scalar updates (per-instance)            : 0
-        Scalar fills (per-instance)              : 25650
+        Scalar fills (per-instance)              : 41175
         Temporal reductions (per-instance)       : 0
-        Address generations (per-cluster)        : 204402
+        Address generations (per-cluster)        : 112911
         Energy (per-scalar-access)               : 0.01 pJ
-        Energy (per-instance)                    : 1675.25 pJ
-        Energy (total)                           : 26804.05 pJ
+        Energy (per-instance)                    : 925.48 pJ
+        Energy (total)                           : 14807.68 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
         Address Generation Energy (total)        : 0.00 pJ
-        Read Bandwidth (per-instance)            : 1.16 words/cycle
-        Read Bandwidth (total)                   : 18.61 words/cycle
-        Write Bandwidth (per-instance)           : 0.17 words/cycle
-        Write Bandwidth (total)                  : 2.67 words/cycle
+        Read Bandwidth (per-instance)            : 0.47 words/cycle
+        Read Bandwidth (total)                   : 7.47 words/cycle
+        Write Bandwidth (per-instance)           : 0.27 words/cycle
+        Write Bandwidth (total)                  : 4.29 words/cycle
     Outputs:
         Partition size                           : 50176
-        Utilized capacity                        : 224
+        Utilized capacity                        : 1792
         Utilized instances (max)                 : 16
         Utilized clusters (max)                  : 8
         Scalar reads (per-instance)              : 0
@@ -339,11 +341,10 @@ Level 6
     MAPPING
     -------
     Loop nest:
-      for Q in [0:2)
-        for P in [0:28)
-          for M in [0:4)
-            for Q in [0:8) (Spatial-Y)
-              for P in [0:2) (Spatial-Y)
+      for Q in [0:28)
+        for Q in [0:2) (Spatial-Y)
+          for P in [0:4) (Spatial-Y)
+            for M in [0:2) (Spatial-X)
 
     STATS
     -----
@@ -354,20 +355,20 @@ Level 6
         Utilized capacity                        : 9408
         Utilized instances (max)                 : 1
         Utilized clusters (max)                  : 1
-        Scalar reads (per-instance)              : 526848
+        Scalar reads (per-instance)              : 9408
         Scalar updates (per-instance)            : 0
         Scalar fills (per-instance)              : 0
         Temporal reductions (per-instance)       : 0
-        Address generations (per-cluster)        : 526848
+        Address generations (per-cluster)        : 9408
         Energy (per-scalar-access)               : 64.00 pJ
-        Energy (per-instance)                    : 33718272.00 pJ
-        Energy (total)                           : 33718272.00 pJ
+        Energy (per-instance)                    : 602112.00 pJ
+        Energy (total)                           : 602112.00 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
         Address Generation Energy (total)        : 0.00 pJ
-        Read Bandwidth (per-instance)            : 3.43 words/cycle
-        Read Bandwidth (total)                   : 3.43 words/cycle
+        Read Bandwidth (per-instance)            : 0.06 words/cycle
+        Read Bandwidth (total)                   : 0.06 words/cycle
         Write Bandwidth (per-instance)           : 0.00 words/cycle
         Write Bandwidth (total)                  : 0.00 words/cycle
     Inputs:
@@ -375,20 +376,20 @@ Level 6
         Utilized capacity                        : 157323
         Utilized instances (max)                 : 1
         Utilized clusters (max)                  : 1
-        Scalar reads (per-instance)              : 410400
+        Scalar reads (per-instance)              : 329400
         Scalar updates (per-instance)            : 0
         Scalar fills (per-instance)              : 0
         Temporal reductions (per-instance)       : 0
-        Address generations (per-cluster)        : 410400
+        Address generations (per-cluster)        : 329400
         Energy (per-scalar-access)               : 64.00 pJ
-        Energy (per-instance)                    : 26265600.00 pJ
-        Energy (total)                           : 26265600.00 pJ
+        Energy (per-instance)                    : 21081600.00 pJ
+        Energy (total)                           : 21081600.00 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
         Address Generation Energy (total)        : 0.00 pJ
-        Read Bandwidth (per-instance)            : 2.67 words/cycle
-        Read Bandwidth (total)                   : 2.67 words/cycle
+        Read Bandwidth (per-instance)            : 2.14 words/cycle
+        Read Bandwidth (total)                   : 2.14 words/cycle
         Write Bandwidth (per-instance)           : 0.00 words/cycle
         Write Bandwidth (total)                  : 0.00 words/cycle
     Outputs:
@@ -433,15 +434,15 @@ DRAM <==> GlobalBuffer
     Weights:
         Fanout                                  : 16
         Fanout (distributed)                    : 0
-        Multicast factor                        : 16
-        Ingresses                               : 526848
-            @multicast 16: 526848
+        Multicast factor                        : 8
+        Ingresses                               : 9408
+            @multicast 8: 9408
         Link transfers                          : 0
         Spatial reductions                      : 0
-        Average number of hops                  : 15.50
+        Average number of hops                  : 10.99
         Energy (per-hop)                        : 0.00 fJ
-        Energy (per-instance)                   : 69079610.97 pJ
-        Energy (total)                          : 69079610.97 pJ
+        Energy (per-instance)                   : 896033.23 pJ
+        Energy (total)                          : 896033.23 pJ
         Link transfer energy (per-instance)     : 0.00 pJ
         Link transfer energy (total)            : 0.00 pJ
         Spatial Reduction Energy (per-instance) : 0.00 pJ
@@ -449,15 +450,15 @@ DRAM <==> GlobalBuffer
     Inputs:
         Fanout                                  : 16
         Fanout (distributed)                    : 0
-        Multicast factor                        : 1
-        Ingresses                               : 410400
-            @multicast 1: 410400
+        Multicast factor                        : 2
+        Ingresses                               : 329400
+            @multicast 2: 329400
         Link transfers                          : 0
         Spatial reductions                      : 0
-        Average number of hops                  : 2.00
+        Average number of hops                  : 4.62
         Energy (per-hop)                        : 0.00 fJ
-        Energy (per-instance)                   : 9783837.03 pJ
-        Energy (total)                          : 9783837.03 pJ
+        Energy (per-instance)                   : 14714391.85 pJ
+        Energy (total)                          : 14714391.85 pJ
         Link transfer energy (per-instance)     : 0.00 pJ
         Link transfer energy (total)            : 0.00 pJ
         Spatial Reduction Energy (per-instance) : 0.00 pJ
@@ -498,14 +499,14 @@ GlobalBuffer <==> PEInputBuffer
         Fanout                                  : 4
         Fanout (distributed)                    : 0
         Multicast factor                        : 1
-        Ingresses                               : 526848
-            @multicast 1: 526848
+        Ingresses                               : 4704
+            @multicast 1: 4704
         Link transfers                          : 0
         Spatial reductions                      : 0
         Average number of hops                  : 1.00
         Energy (per-hop)                        : 0.00 fJ
-        Energy (per-instance)                   : 2092647.83 pJ
-        Energy (total)                          : 33482365.30 pJ
+        Energy (per-instance)                   : 18684.36 pJ
+        Energy (total)                          : 298949.69 pJ
         Link transfer energy (per-instance)     : 0.00 pJ
         Link transfer energy (total)            : 0.00 pJ
         Spatial Reduction Energy (per-instance) : 0.00 pJ
@@ -514,14 +515,14 @@ GlobalBuffer <==> PEInputBuffer
         Fanout                                  : 4
         Fanout (distributed)                    : 0
         Multicast factor                        : 4
-        Ingresses                               : 178752
-            @multicast 4: 178752
+        Ingresses                               : 71736
+            @multicast 4: 71736
         Link transfers                          : 0
         Spatial reductions                      : 0
         Average number of hops                  : 3.50
         Energy (per-hop)                        : 0.00 fJ
-        Energy (per-instance)                   : 1597512.41 pJ
-        Energy (total)                          : 25560198.51 pJ
+        Energy (per-instance)                   : 641106.95 pJ
+        Energy (total)                          : 10257711.24 pJ
         Link transfer energy (per-instance)     : 0.00 pJ
         Link transfer energy (total)            : 0.00 pJ
         Spatial Reduction Energy (per-instance) : 0.00 pJ
@@ -562,14 +563,14 @@ PEAccuBuffer <==> PEWeightRegs
         Fanout                                  : 3
         Fanout (distributed)                    : 0
         Multicast factor                        : 1
-        Ingresses                               : 460992
-            @multicast 1: 460992
+        Ingresses                               : 115248
+            @multicast 1: 115248
         Link transfers                          : 0
         Spatial reductions                      : 0
         Average number of hops                  : 0.87
         Energy (per-hop)                        : 0.00 fJ
-        Energy (per-instance)                   : 333244.53 pJ
-        Energy (total)                          : 85310600.47 pJ
+        Energy (per-instance)                   : 83310.94 pJ
+        Energy (total)                          : 21327600.53 pJ
         Link transfer energy (per-instance)     : 0.00 pJ
         Link transfer energy (total)            : 0.00 pJ
         Spatial Reduction Energy (per-instance) : 0.00 pJ
@@ -626,14 +627,14 @@ PEInputBuffer <==> PEWeightBuffer
         Fanout                                  : 4
         Fanout (distributed)                    : 0
         Multicast factor                        : 1
-        Ingresses                               : 131712
-            @multicast 1: 131712
+        Ingresses                               : 1176
+            @multicast 1: 1176
         Link transfers                          : 0
         Spatial reductions                      : 0
         Average number of hops                  : 1.00
         Energy (per-hop)                        : 0.00 fJ
-        Energy (per-instance)                   : 255832.56 pJ
-        Energy (total)                          : 16373283.78 pJ
+        Energy (per-instance)                   : 2284.22 pJ
+        Energy (total)                          : 146190.03 pJ
         Link transfer energy (per-instance)     : 0.00 pJ
         Link transfer energy (total)            : 0.00 pJ
         Spatial Reduction Energy (per-instance) : 0.00 pJ
@@ -690,14 +691,14 @@ PEWeightBuffer <==> PEAccuBuffer
         Fanout                                  : 1
         Fanout (distributed)                    : 0
         Multicast factor                        : 1
-        Ingresses                               : 460992
-            @multicast 1: 460992
+        Ingresses                               : 115248
+            @multicast 1: 115248
         Link transfers                          : 0
         Spatial reductions                      : 0
         Average number of hops                  : 0.50
         Energy (per-hop)                        : 0.00 fJ
-        Energy (per-instance)                   : 607465.25 pJ
-        Energy (total)                          : 155511105.02 pJ
+        Energy (per-instance)                   : 151866.31 pJ
+        Energy (total)                          : 38877776.26 pJ
         Link transfer energy (per-instance)     : 0.00 pJ
         Link transfer energy (total)            : 0.00 pJ
         Spatial Reduction Energy (per-instance) : 0.00 pJ
@@ -799,7 +800,7 @@ PEWeightRegs <==> LMAC
         Spatial Reduction Energy (per-instance) : 0.00 pJ
         Spatial Reduction Energy (total)        : 0.00 pJ
 
-Total topology energy: 1250201999.19 pJ
+Total topology energy: 900097019.15 pJ
 Total topology area: 2237501.42 um^2
 Max topology cycles: 153664
 
@@ -807,7 +808,7 @@ Summary Stats
 -------------
 Utilization: 0.19
 Cycles: 153664
-Energy: 1250.20 uJ
+Energy: 900.10 uJ
 Area: 2.24 mm^2
 
 MACCs = 118013952
@@ -815,15 +816,15 @@ pJ/MACC
     LMAC                              = 0.56
     PEWeightRegs                      = 0.00
     PEAccuBuffer                      = 0.16
-    PEWeightBuffer                    = 0.03
+    PEWeightBuffer                    = 0.01
     PEInputBuffer                     = 0.01
     GlobalBuffer                      = 0.00
-    DRAM                              = 0.94
-    DRAM <==> GlobalBuffer            = 0.83
-    GlobalBuffer <==> PEInputBuffer   = 0.53
-    PEAccuBuffer <==> PEWeightRegs    = 1.90
-    PEInputBuffer <==> PEWeightBuffer = 1.24
-    PEWeightBuffer <==> PEAccuBuffer  = 2.64
+    DRAM                              = 0.62
+    DRAM <==> GlobalBuffer            = 0.29
+    GlobalBuffer <==> PEInputBuffer   = 0.12
+    PEAccuBuffer <==> PEWeightRegs    = 1.36
+    PEInputBuffer <==> PEWeightBuffer = 1.11
+    PEWeightBuffer <==> PEAccuBuffer  = 1.66
     PEWeightRegs <==> LMAC            = 1.74
-    Total                             = 10.59
+    Total                             = 7.63
 

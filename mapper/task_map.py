@@ -9,6 +9,7 @@ from numpy.core.records import array
 from .hilbert import hilbert_map
 
 from utils.global_control import *
+import seaborn as sns
 
 
 class ml_mapping():
@@ -136,7 +137,7 @@ class ml_mapping():
 
             elif self.mapping_style == "Hilbert":
                 mapping_list = list(hilbert_map(np.log2(array_diameter)))
-            
+
             for layer in self.layer_tile_num:
                 tile_num = layer[1]
                 while(tile_num > 0):
@@ -146,6 +147,10 @@ class ml_mapping():
 
         if mapper_verbose:
             print(self.mapping_result)
+            fig_name = "mapping_vis/map_result.png"
+            fig = sns.heatmap(data=self.mapping_result, cmap="RdBu_r", linewidths=0.3, annot=True)
+            heatmap = fig.get_figure()
+            heatmap.savefig(fig_name, dpi=400) 
 
         f = open(f'mapping_vis/self.mapping_result_{self.mapping_style}.dat', 'w')
         for i in range(self.tile_array_height):
@@ -164,12 +169,15 @@ class ml_mapping():
             else:
                 mapped_out = {-2: self.get_controller(self.memory_controllers, self.layer_tile_num[idl])}
 
-            # If pipelined, memory controller is mapped to the exit port of last layer
+            # If pipelined, input is fetched from exit port of last layer, weight is fetched from memory controllers
+            # For simplicity, we always allocate a memory controller for each layer, which is denoted as -3
             if is_pipelined[idl]:
-                mapped_mc = {-1: res[layer_names[idl-1]][-2]}
+                mapped_mc = {-1: res[layer_names[idl-1]][-2], 
+                             -3: self.get_controller(self.memory_controllers, self.layer_tile_num[idl])}
             else:
-                mapped_mc = {-1: self.get_controller(self.memory_controllers, self.layer_tile_num[idl])}
-
+                mapped_mc = {-1: self.get_controller(self.memory_controllers, self.layer_tile_num[idl]), 
+                             -3: self.get_controller(self.memory_controllers, self.layer_tile_num[idl])}
+        
             res[layer_names[idl]] = {**mapped_mc, **mapped_core, **mapped_out}
 
         return res

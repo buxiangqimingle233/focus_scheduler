@@ -419,7 +419,7 @@
 						<item>
 							<dimension>0</dimension>
 							<start>0</start>
-							<end>3</end>
+							<end>4</end>
 							<stride>1</stride>
 							<spacetime_dimension>0</spacetime_dimension>
 						</item>
@@ -494,7 +494,7 @@
 						</partition_size>
 						<utilized_capacity>
 							<PerDataSpace>
-								<item>48</item>
+								<item>64</item>
 								<item>0</item>
 								<item>0</item>
 							</PerDataSpace>
@@ -687,7 +687,7 @@
 						<utilized_capacity>
 							<PerDataSpace>
 								<item>0</item>
-								<item>12</item>
+								<item>16</item>
 								<item>0</item>
 							</PerDataSpace>
 						</utilized_capacity>
@@ -808,9 +808,9 @@
 							<spacetime_dimension>2</spacetime_dimension>
 						</item>
 						<item>
-							<dimension>6</dimension>
+							<dimension>0</dimension>
 							<start>0</start>
-							<end>1</end>
+							<end>4</end>
 							<stride>1</stride>
 							<spacetime_dimension>0</spacetime_dimension>
 						</item>
@@ -826,13 +826,13 @@
 							<t_>0</t_>
 						</technology>
 						<size>
-							<t_>4096</t_>
+							<t_>32768</t_>
 						</size>
 						<word_bits>
 							<t_>8</t_>
 						</word_bits>
 						<addr_gen_bits>
-							<t_>7</t_>
+							<t_>10</t_>
 						</addr_gen_bits>
 						<block_size>
 							<t_>32</t_>
@@ -885,8 +885,8 @@
 						</partition_size>
 						<utilized_capacity>
 							<PerDataSpace>
-								<item>3072</item>
-								<item>48</item>
+								<item>16384</item>
+								<item>256</item>
 								<item>64</item>
 							</PerDataSpace>
 						</utilized_capacity>
@@ -1002,7 +1002,7 @@
 						<item>
 							<dimension>0</dimension>
 							<start>0</start>
-							<end>64</end>
+							<end>12</end>
 							<stride>1</stride>
 							<spacetime_dimension>0</spacetime_dimension>
 						</item>

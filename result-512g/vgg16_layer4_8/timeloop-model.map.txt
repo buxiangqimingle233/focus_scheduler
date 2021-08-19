@@ -1,36 +1,38 @@
 
 DRAM [ Weights:147456 Inputs:2163200 Outputs:2097152 ] 
 ------------------------------------------------------
-| for Q in [0:32)
-|   for P in [0:8)
-|     for M in [0:8)
+| for Q in [0:4)
+|   for P in [0:16)
+|     for M in [0:2)
 |       for C in [0:2)
-|         for M in [0:2) (Spatial-Y)
-|           for C in [0:4) (Spatial-Y)
+|         for C in [0:2) (Spatial-Y)
+|           for R in [0:3) (Spatial-Y)
 
-GlobalBuffer [ Weights:1152 Inputs:1728 Outputs:512 ] 
------------------------------------------------------
-|             for Q in [0:4)
-|               for P in [0:4)
-|                 for C in [0:4) (Spatial-Y)
-|                   for M in [0:2) (Spatial-Y)
+GlobalBuffer [ Weights:6144 Inputs:8704 Outputs:16384 ] 
+-------------------------------------------------------
+|             for Q in [0:8)
+|               for P in [0:2)
+|                 for M in [0:8)
+|                   for C in [0:2)
+|                     for C in [0:4) (Spatial-Y)
+|                       for M in [0:2) (Spatial-Y)
 
-PEInputBuffer [ Inputs:72 ] 
+PEInputBuffer [ Inputs:96 ] 
 ---------------------------
-|                     for Q in [0:1)
-|                       for M in [0:4) (Spatial-X)
+|                         for Q in [0:1)
+|                           for M in [0:4) (Spatial-X)
 
-PEWeightBuffer [ Weights:36 ] 
+PEWeightBuffer [ Weights:12 ] 
 -----------------------------
-|                         for S in [0:3)
-|                           for R in [0:3)
+|                             for S in [0:3)
 
-PEAccuBuffer [ Outputs:4 ] 
---------------------------
-|                             for Q in [0:1)
-|                               for C in [0:4) (Spatial-Y)
+PEAccuBuffer [ Outputs:16 ] 
+---------------------------
+|                               for Q in [0:1)
+|                                 for C in [0:4) (Spatial-Y)
 
 PEWeightRegs [ Weights:1 ] 
 --------------------------
-|                                 for P in [0:4)
+|                                   for Q in [0:4)
+|                                     for P in [0:4)
 

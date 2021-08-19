@@ -71,7 +71,7 @@ architecture:
   - attributes:
       block-size: 32
       datawidth: 8
-      depth: 128
+      depth: 1024
       memory_depth: 12
       memory_width: 16
       meshX: 1

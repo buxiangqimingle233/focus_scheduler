@@ -250,13 +250,13 @@
 							<t_>0</t_>
 						</technology>
 						<size>
-							<t_>64</t_>
+							<t_>16</t_>
 						</size>
 						<word_bits>
 							<t_>24</t_>
 						</word_bits>
 						<addr_gen_bits>
-							<t_>6</t_>
+							<t_>4</t_>
 						</addr_gen_bits>
 						<block_size>
 							<t_>1</t_>
@@ -847,13 +847,13 @@
 							<t_>0</t_>
 						</technology>
 						<size>
-							<t_>131072</t_>
+							<t_>32768</t_>
 						</size>
 						<word_bits>
 							<t_>8</t_>
 						</word_bits>
 						<addr_gen_bits>
-							<t_>12</t_>
+							<t_>10</t_>
 						</addr_gen_bits>
 						<block_size>
 							<t_>32</t_>

@@ -4,472 +4,424 @@ communication:
   - type: 0
     tile: 1
     volume: 1
-    cnt: 153664
+    cnt: 38416
     srcs: [ -1 ]
     dsts: [ 0 ]
   - type: 0
     tile: 1
     volume: 1
-    cnt: 153664
+    cnt: 38416
     srcs: [ -1 ]
     dsts: [ 1 ]
   - type: 0
     tile: 1
     volume: 1
-    cnt: 153664
+    cnt: 38416
     srcs: [ -1 ]
     dsts: [ 2 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 0 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 1 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 2 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 3 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 4 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 5 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 6 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 7 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 8 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 9 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 10 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 11 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 12 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 13 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 14 ]
   - type: 0
     tile: 2
-    volume: 147
-    cnt: 224
+    volume: 294
+    cnt: 1
     srcs: [ -1 ]
     dsts: [ 15 ]
   - type: 0
     tile: 2
     volume: 0
-    cnt: 2912
+    cnt: 391
     srcs: [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 ]
     dsts: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
   - type: 0
     tile: 3
-    volume: 2352
-    cnt: 224
+    volume: 4704
+    cnt: 1
+    srcs: [ -1, -1, -1, -1, -1, -1, -1, -1 ]
+    dsts: [ 0, 2, 4, 6, 8, 10, 12, 14 ]
+  - type: 0
+    tile: 3
+    volume: 4704
+    cnt: 1
+    srcs: [ -1, -1, -1, -1, -1, -1, -1, -1 ]
+    dsts: [ 1, 3, 5, 7, 9, 11, 13, 15 ]
+  - type: 0
+    tile: 3
+    volume: 0
+    cnt: 27
     srcs: [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 ]
     dsts: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
 - pv: 1
   contents: 
   - type: 0
     tile: 0
-    volume: 1
-    cnt: 40768
+    volume: 7
+    cnt: 19208
     srcs: [ -1 ]
     dsts: [ 0 ]
   - type: 0
     tile: 0
-    volume: 1
-    cnt: 40768
+    volume: 7
+    cnt: 19208
     srcs: [ -1 ]
     dsts: [ 1 ]
   - type: 0
     tile: 0
-    volume: 1
-    cnt: 40768
+    volume: 7
+    cnt: 19208
     srcs: [ -1 ]
     dsts: [ 2 ]
   - type: 0
     tile: 0
-    volume: 1
-    cnt: 112896
-    srcs: [ -1, -1, -1, -1 ]
-    dsts: [ 0, 3, 6, 9 ]
+    volume: 0
+    cnt: 5096
+    srcs: [ -1, -1, -1 ]
+    dsts: [ 0, 1, 2 ]
   - type: 0
     tile: 0
-    volume: 1
-    cnt: 112896
-    srcs: [ -1, -1, -1, -1 ]
-    dsts: [ 1, 4, 7, 10 ]
-  - type: 0
-    tile: 0
-    volume: 1
-    cnt: 112896
-    srcs: [ -1, -1, -1, -1 ]
-    dsts: [ 2, 5, 8, 11 ]
+    volume: 0
+    cnt: 14112
+    srcs: [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 ]
+    dsts: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
   - type: 0
     tile: 1
-    volume: 147
-    cnt: 3136
+    volume: 273
+    cnt: 392
     srcs: [ -1, -1, -1, -1 ]
     dsts: [ 0, 1, 2, 3 ]
   - type: 0
     tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 0 ]
+    volume: 1647
+    cnt: 28
+    srcs: [ -1, -1 ]
+    dsts: [ 0, 1 ]
   - type: 0
     tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 1 ]
+    volume: 1647
+    cnt: 28
+    srcs: [ -1, -1 ]
+    dsts: [ 2, 3 ]
   - type: 0
     tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 2 ]
+    volume: 1647
+    cnt: 28
+    srcs: [ -1, -1 ]
+    dsts: [ 4, 5 ]
   - type: 0
     tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 3 ]
+    volume: 1647
+    cnt: 28
+    srcs: [ -1, -1 ]
+    dsts: [ 6, 7 ]
   - type: 0
     tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 4 ]
+    volume: 1647
+    cnt: 28
+    srcs: [ -1, -1 ]
+    dsts: [ 8, 9 ]
   - type: 0
     tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 5 ]
+    volume: 1647
+    cnt: 28
+    srcs: [ -1, -1 ]
+    dsts: [ 10, 11 ]
   - type: 0
     tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 6 ]
+    volume: 1647
+    cnt: 28
+    srcs: [ -1, -1 ]
+    dsts: [ 12, 13 ]
   - type: 0
     tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 7 ]
-  - type: 0
-    tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 8 ]
-  - type: 0
-    tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 9 ]
-  - type: 0
-    tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 10 ]
-  - type: 0
-    tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 11 ]
-  - type: 0
-    tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 12 ]
-  - type: 0
-    tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 13 ]
-  - type: 0
-    tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 14 ]
-  - type: 0
-    tile: 2
-    volume: 513
-    cnt: 56
-    srcs: [ -1 ]
-    dsts: [ 15 ]
-  - type: 0
-    tile: 2
-    volume: 0
-    cnt: 168
-    srcs: [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 ]
-    dsts: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    volume: 1647
+    cnt: 28
+    srcs: [ -1, -1 ]
+    dsts: [ 14, 15 ]
 - pv: 2
   contents: 
   - type: 2
     tile: 0
-    volume: 1
-    cnt: 153664
+    volume: 4
+    cnt: 38416
     srcs: [ 0, 1, 2 ]
     dsts: [ -1, -1, -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 0 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 1 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 2 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 3 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 4 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 5 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 6 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 7 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 8 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 9 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 10 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 11 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 12 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 13 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 14 ]
     dsts: [ -1 ]
   - type: 2
     tile: 1
-    volume: 1
-    cnt: 3136
+    volume: 8
+    cnt: 392
     srcs: [ 15 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 0 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 1 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 2 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 3 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 4 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 5 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 6 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 7 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 8 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 9 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 10 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 11 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 12 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 13 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 14 ]
     dsts: [ -1 ]
   - type: 2
     tile: 2
-    volume: 224
-    cnt: 224
+    volume: 1792
+    cnt: 28
     srcs: [ 15 ]
     dsts: [ -1 ]

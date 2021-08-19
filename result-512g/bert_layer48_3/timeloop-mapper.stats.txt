@@ -142,7 +142,7 @@ Level 3
     MAPPING
     -------
     Loop nest:
-      for C in [0:3)
+      for C in [0:4)
 
     STATS
     -----
@@ -150,7 +150,7 @@ Level 3
     Bandwidth throttling : 1.00
     Weights:
         Partition size                           : 12288
-        Utilized capacity                        : 48
+        Utilized capacity                        : 64
         Utilized instances (max)                 : 192
         Utilized clusters (max)                  : 192
         Scalar reads (per-instance)              : 12288
@@ -201,7 +201,7 @@ Level 4
     Bandwidth throttling : 1.00
     Inputs:
         Partition size                           : 768
-        Utilized capacity                        : 12
+        Utilized capacity                        : 16
         Utilized instances (max)                 : 48
         Utilized clusters (max)                  : 48
         Scalar reads (per-instance)              : 12288
@@ -228,7 +228,7 @@ Level 5
     SPECS
     -----
         Technology           : SRAM
-        Size                 : 4096
+        Size                 : 32768
         Word bits            : 8
         Block size           : 32
         Cluster size         : 2
@@ -236,7 +236,7 @@ Level 5
         Read bandwidth       : -
         Write bandwidth      : -
         Multiple buffering   : 1.00
-        Effective size       : 4096
+        Effective size       : 32768
         Min utilization      : 0.00
         Vector access energy : 0.52 pJ
         Area                 : 90.00 um^2
@@ -244,8 +244,9 @@ Level 5
     MAPPING
     -------
     Loop nest:
-      for C in [0:4) (Spatial-Y)
-        for M in [0:4) (Spatial-X)
+      for C in [0:4)
+        for C in [0:4) (Spatial-Y)
+          for M in [0:4) (Spatial-X)
 
     STATS
     -----
@@ -253,7 +254,7 @@ Level 5
     Bandwidth throttling : 1.00
     Weights:
         Partition size                           : 786432
-        Utilized capacity                        : 3072
+        Utilized capacity                        : 16384
         Utilized instances (max)                 : 3
         Utilized clusters (max)                  : 1
         Scalar reads (per-instance)              : 786432
@@ -274,7 +275,7 @@ Level 5
         Write Bandwidth (total)                  : 768.00 words/cycle
     Inputs:
         Partition size                           : 3072
-        Utilized capacity                        : 48
+        Utilized capacity                        : 256
         Utilized instances (max)                 : 3
         Utilized clusters (max)                  : 1
         Scalar reads (per-instance)              : 12288
@@ -339,7 +340,7 @@ Level 6
     -------
     Loop nest:
       for M in [0:4)
-        for C in [0:64)
+        for C in [0:12)
           for M in [0:3) (Spatial-Y)
 
     STATS
