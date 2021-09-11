@@ -8,7 +8,7 @@ mapping:
   split: 5
   target: DRAM
   type: spatial
-- factors: C=4 M=1 R=1 S=1 N=1 P=1 Q=1
+- factors: C=2 M=1 R=1 S=1 N=1 P=1 Q=1
   permutation: QPNSRMC
   target: GlobalBuffer
   type: temporal
@@ -30,7 +30,7 @@ mapping:
   - Outputs
   target: PEInputBuffer
   type: bypass
-- factors: C=8 M=1 R=1 S=1 N=1 P=1 Q=1
+- factors: C=16 M=1 R=1 S=1 N=1 P=1 Q=1
   permutation: QPNSRMC
   target: PEWeightBuffer
   type: temporal

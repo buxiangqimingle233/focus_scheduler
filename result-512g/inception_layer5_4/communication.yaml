@@ -1,0 +1,337 @@
+communication:
+- pv: 0
+  contents: 
+  - type: 0
+    tile: 1
+    volume: 1
+    cnt: 112320
+    srcs: [ -1 ]
+    dsts: [ 0 ]
+  - type: 0
+    tile: 1
+    volume: 1
+    cnt: 112320
+    srcs: [ -1 ]
+    dsts: [ 1 ]
+  - type: 0
+    tile: 1
+    volume: 1
+    cnt: 112320
+    srcs: [ -1 ]
+    dsts: [ 2 ]
+  - type: 0
+    tile: 1
+    volume: 1
+    cnt: 112320
+    srcs: [ -1 ]
+    dsts: [ 3 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 0 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 1 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 2 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 3 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 4 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 5 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 6 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 7 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 8 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 9 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 10 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 11 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 12 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 13 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 14 ]
+  - type: 0
+    tile: 2
+    volume: 72
+    cnt: 6240
+    srcs: [ -1 ]
+    dsts: [ 15 ]
+  - type: 0
+    tile: 3
+    volume: 4608
+    cnt: 60
+    srcs: [ -1, -1 ]
+    dsts: [ 0, 2 ]
+  - type: 0
+    tile: 3
+    volume: 4608
+    cnt: 60
+    srcs: [ -1, -1 ]
+    dsts: [ 1, 3 ]
+- pv: 1
+  contents: 
+  - type: 0
+    tile: 0
+    volume: 13
+    cnt: 87360
+    srcs: [ -1 ]
+    dsts: [ 0 ]
+  - type: 0
+    tile: 0
+    volume: 13
+    cnt: 87360
+    srcs: [ -1 ]
+    dsts: [ 1 ]
+  - type: 0
+    tile: 0
+    volume: 13
+    cnt: 87360
+    srcs: [ -1 ]
+    dsts: [ 2 ]
+  - type: 0
+    tile: 0
+    volume: 13
+    cnt: 87360
+    srcs: [ -1 ]
+    dsts: [ 3 ]
+  - type: 0
+    tile: 0
+    volume: 13
+    cnt: 24960
+    srcs: [ -1, -1, -1, -1 ]
+    dsts: [ 0, 4, 8, 12 ]
+  - type: 0
+    tile: 0
+    volume: 13
+    cnt: 24960
+    srcs: [ -1, -1, -1, -1 ]
+    dsts: [ 1, 5, 9, 13 ]
+  - type: 0
+    tile: 0
+    volume: 13
+    cnt: 24960
+    srcs: [ -1, -1, -1, -1 ]
+    dsts: [ 2, 6, 10, 14 ]
+  - type: 0
+    tile: 0
+    volume: 13
+    cnt: 24960
+    srcs: [ -1, -1, -1, -1 ]
+    dsts: [ 3, 7, 11, 15 ]
+  - type: 0
+    tile: 1
+    volume: 360
+    cnt: 6240
+    srcs: [ -1, -1, -1, -1 ]
+    dsts: [ 0, 1, 2, 3 ]
+  - type: 0
+    tile: 2
+    volume: 3360
+    cnt: 60
+    srcs: [ -1 ]
+    dsts: [ 0 ]
+  - type: 0
+    tile: 2
+    volume: 3360
+    cnt: 60
+    srcs: [ -1 ]
+    dsts: [ 1 ]
+  - type: 0
+    tile: 2
+    volume: 3360
+    cnt: 60
+    srcs: [ -1 ]
+    dsts: [ 2 ]
+  - type: 0
+    tile: 2
+    volume: 3360
+    cnt: 60
+    srcs: [ -1 ]
+    dsts: [ 3 ]
+- pv: 2
+  contents: 
+  - type: 2
+    tile: 0
+    volume: 13
+    cnt: 112320
+    srcs: [ 0, 1, 2, 3 ]
+    dsts: [ -1, -1, -1, -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 0 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 1 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 2 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 3 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 4 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 5 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 6 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 7 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 8 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 9 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 10 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 11 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 12 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 13 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 14 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 1
+    volume: 13
+    cnt: 6240
+    srcs: [ 15 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 2
+    volume: 21632
+    cnt: 12
+    srcs: [ 0, 1 ]
+    dsts: [ -1, -1 ]
+  - type: 2
+    tile: 2
+    volume: 21632
+    cnt: 12
+    srcs: [ 2, 3 ]
+    dsts: [ -1, -1 ]
+  - type: 2
+    tile: 2
+    volume: 0
+    cnt: 48
+    srcs: [ 0, 1, 2, 3 ]
+    dsts: [ -1, -1, -1, -1 ]

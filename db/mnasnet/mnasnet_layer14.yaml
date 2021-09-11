@@ -3,6 +3,7 @@ problem:
     C: 72
     Hdilation: 1
     Hstride: 2
+    M: 1
     N: 1
     P: 28
     Q: 28
@@ -50,6 +51,7 @@ problem:
     - R
     - S
     - N
+    - M
     - P
     - Q
     name: CNN-Layer

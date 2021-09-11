@@ -1,40 +1,36 @@
 
 DRAM [ Weights:589824 Inputs:1115136 Outputs:1048576 ] 
 ------------------------------------------------------
-| for Q in [0:8)
-|   for P in [0:16)
-|     for M in [0:4)
-|       for C in [0:2)
-|         for Q in [0:2) (Spatial-Y)
-|           for M in [0:2) (Spatial-Y)
-|             for C in [0:2) (Spatial-X)
+| for P in [0:8)
+|   for M in [0:4)
+|     for C in [0:32)
+|       for Q in [0:4) (Spatial-Y)
+|         for M in [0:2) (Spatial-Y)
 
-GlobalBuffer [ Weights:18432 Inputs:2304 Outputs:512 ] 
+GlobalBuffer [ Weights:2304 Inputs:1440 Outputs:4096 ] 
 ------------------------------------------------------
-|               for Q in [0:2)
-|                 for P in [0:4)
-|                   for M in [0:2)
-|                     for C in [0:2)
-|                       for C in [0:4) (Spatial-Y)
-|                         for M in [0:4) (Spatial-Y)
+|           for Q in [0:8)
+|             for M in [0:2)
+|               for C in [0:2) (Spatial-Y)
+|                 for M in [0:4) (Spatial-Y)
 
-PEInputBuffer [ Inputs:96 ] 
+PEInputBuffer [ Inputs:160 ] 
+----------------------------
+|                   for Q in [0:1)
+|                     for M in [0:4) (Spatial-X)
+
+PEWeightBuffer [ Weights:36 ] 
+-----------------------------
+|                       for S in [0:3)
+|                         for R in [0:3)
+
+PEAccuBuffer [ Outputs:16 ] 
 ---------------------------
 |                           for Q in [0:1)
-|                             for M in [0:4) (Spatial-X)
-
-PEWeightBuffer [ Weights:72 ] 
------------------------------
-|                               for S in [0:3)
-|                                 for R in [0:3)
-|                                   for C in [0:2)
-
-PEAccuBuffer [ Outputs:2 ] 
---------------------------
-|                                     for Q in [0:1)
-|                                       for C in [0:4) (Spatial-Y)
+|                             for C in [0:4) (Spatial-Y)
 
 PEWeightRegs [ Weights:1 ] 
 --------------------------
-|                                         for Q in [0:2)
+|                               for Q in [0:2)
+|                                 for P in [0:8)
 

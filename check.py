@@ -4,7 +4,10 @@ import re
 import yaml
 
 # checked_model = "resnext50_32x4d"
-checked_model = "unet"
+# checked_model = "unet"
+# checked_model = "mnasnet"
+checked_model = "inception"
+# checked_model = "mobilenet_v3_large"
 # checked_model = "wide_resnet50_2"
 # checked_model = "resnet50"
 
@@ -17,7 +20,7 @@ for father, _, files in os.walk(prob_dir):
         obj = yaml.load(open(os.path.join(father, file), "r"), Loader=yaml.FullLoader)
         if "M" not in obj["problem"]["instance"]:
             obj["problem"]["instance"]["M"] = 1
-            res.append(int(re.search(r"([0-9]+)", file).group(1)))
+            res.append(int(re.search(r"([0-9]+)", file[::-1]).group(1)[::-1]))
             
         # with open(os.path.join(father, file)) as f:
         #     content = f.read()

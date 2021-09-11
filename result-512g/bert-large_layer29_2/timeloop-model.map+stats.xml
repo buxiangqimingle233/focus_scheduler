@@ -419,7 +419,7 @@
 						<item>
 							<dimension>0</dimension>
 							<start>0</start>
-							<end>8</end>
+							<end>16</end>
 							<stride>1</stride>
 							<spacetime_dimension>0</spacetime_dimension>
 						</item>
@@ -494,7 +494,7 @@
 						</partition_size>
 						<utilized_capacity>
 							<PerDataSpace>
-								<item>64</item>
+								<item>128</item>
 								<item>0</item>
 								<item>0</item>
 							</PerDataSpace>
@@ -687,7 +687,7 @@
 						<utilized_capacity>
 							<PerDataSpace>
 								<item>0</item>
-								<item>32</item>
+								<item>64</item>
 								<item>0</item>
 							</PerDataSpace>
 						</utilized_capacity>
@@ -810,7 +810,7 @@
 						<item>
 							<dimension>0</dimension>
 							<start>0</start>
-							<end>4</end>
+							<end>2</end>
 							<stride>1</stride>
 							<spacetime_dimension>0</spacetime_dimension>
 						</item>

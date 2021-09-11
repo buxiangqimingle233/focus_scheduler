@@ -16,7 +16,7 @@ timeloop_verbose = False
 
 # whether to invoke timeloop-mapper
 
-search_dataflow = True
+search_dataflow = False
 # Search time
 
 timeout = 30
@@ -27,7 +27,7 @@ top_level_cnt = None
 
 # whether to invoke timeloop-model
 
-dump_comm_status = True
+dump_comm_status = False
 
 
 # data orders
@@ -52,7 +52,7 @@ arch_config = {
 
     "d": array_diameter,
 
-    "w": 256
+    "w": 2048
 
 }
 
@@ -76,9 +76,8 @@ mapping_style = "Hilbert"
 
 model = "vgg16"
 
-layer_names = ["bert_layer1", "bert_layer2", "bert_layer3", "bert_layer4", "bert_layer5", "bert_layer6", "bert_layer7", "bert_layer8", "bert_layer9", "bert_layer10", "bert_layer11", "bert_layer12", "bert_layer13", "bert_layer14", "bert_layer15", "bert_layer16", "bert_layer17", "bert_layer18", "bert_layer19", "bert_layer20", "bert_layer21", "bert_layer22", "bert_layer23", "bert_layer24", "bert_layer25", "bert_layer26", "bert_layer27", "bert_layer28", "bert_layer29", "bert_layer30", "bert_layer31", "bert_layer32", "bert_layer33", "bert_layer34", "bert_layer35", "bert_layer36", "bert_layer37", "bert_layer38", "bert_layer39", "bert_layer40", "bert_layer41", "bert_layer42", "bert_layer43", "bert_layer44", "bert_layer45", "bert_layer46", "bert_layer47", "bert_layer48", "bert_layer49", "bert_layer50", "bert_layer51", "bert_layer52", "bert_layer53", "bert_layer54", "bert_layer55", "bert_layer56", "bert_layer57", "bert_layer58", "bert_layer59", "bert_layer60", "bert_layer61", "bert_layer62", "bert_layer63", "bert_layer64"]
-cores = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
-
+layer_names = ["unet_layer1", "unet_layer2"]
+cores = [8, 8]
 
 
 
@@ -132,7 +131,7 @@ n_evolution = 50
 
 
 
-slowdown_result = "slowdown_bert.csv"
+slowdown_result = "slowdown_unet_vgg16_mnasnet_inception.csv"
 
 
 # -------------------- [Optional] Estimator -------------------------

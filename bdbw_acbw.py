@@ -10,31 +10,54 @@ global_control = os.path.join(root_dir, "utils", "global_control.py")
 
 benchmark_modelss = [
     ["wide_resnet50_2", "resnext50_32x4d", "resnet50", "vgg16"],
-    ["bert"],
+    ["bert", "bert"],
     ["unet", "resnet50", "bert-large", "ssd_r34"],
+    ["unet", "vgg16", "mnasnet", "inception"]
 ]
 
 biass = [
     [0, 0, 0, 0],
-    [0],
+    [0, 33],
     [0, 0, 0, 0],
+    [0, 0, 0, 0]
 ]
 
 allocate_coress = [
     [64, 64, 64, 64],
-    [256],
+    [132, 120],
     [64, 64, 64, 64],
+    [128, 64, 32, 32]
 ]
 
 pipeline_layerss = [
     [4, 4, 8, 4],
-    [64],
+    [33, 40],
     [8, 4, 32, 4],
+    [16, 4, 4, 8]
 ]
 
+# # # just for search
+# benchmark_modelss = [
+#     ["unet"]
+# ]
+
+# biass = [
+#     [8]
+# ]
+
+# allocate_coress = [
+#     [64]
+# ]
+
+# pipeline_layerss = [
+#     [8]
+# ]
+
 w_candidate = range(256, 2049, 256)
-# w_candidate = [512]
-search = True
+# w_candidate = [256]
+# w_candidate = [2**i for i in range(6, 8)]
+# w_candidate = [32, 64, 128]
+search = False
 
 if __name__ == "__main__":
 
@@ -42,9 +65,9 @@ if __name__ == "__main__":
     for w in w_candidate:
         cnt = 0
         for benchmark_models, allocate_cores, bias, pipeline_layers in zip(benchmark_modelss, allocate_coress, biass, pipeline_layerss):
-            # cnt += 1
-            # if cnt != 3:
-            #     continue
+            cnt += 1
+            if cnt != 4:
+                continue
             layer_names = ["{}_layer{}".format(benchmark_models[idm], idl+1+bias[idm]) 
                             for idm in range(len(benchmark_models)) for idl in range(pipeline_layers[idm])]
 

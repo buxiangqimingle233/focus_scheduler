@@ -1,0 +1,175 @@
+communication:
+- pv: 0
+  contents: 
+  - type: 0
+    tile: 1
+    volume: 1
+    cnt: 2048
+    srcs: [ -1 ]
+    dsts: [ 0 ]
+  - type: 0
+    tile: 1
+    volume: 1
+    cnt: 2048
+    srcs: [ -1 ]
+    dsts: [ 1 ]
+  - type: 0
+    tile: 1
+    volume: 1
+    cnt: 2048
+    srcs: [ -1 ]
+    dsts: [ 2 ]
+  - type: 0
+    tile: 1
+    volume: 1
+    cnt: 2048
+    srcs: [ -1 ]
+    dsts: [ 3 ]
+  - type: 0
+    tile: 2
+    volume: 8
+    cnt: 1
+    srcs: [ -1 ]
+    dsts: [ 0 ]
+  - type: 0
+    tile: 2
+    volume: 8
+    cnt: 1
+    srcs: [ -1 ]
+    dsts: [ 1 ]
+  - type: 0
+    tile: 2
+    volume: 8
+    cnt: 1
+    srcs: [ -1 ]
+    dsts: [ 2 ]
+  - type: 0
+    tile: 2
+    volume: 8
+    cnt: 1
+    srcs: [ -1 ]
+    dsts: [ 3 ]
+  - type: 0
+    tile: 2
+    volume: 0
+    cnt: 1023
+    srcs: [ -1, -1, -1, -1 ]
+    dsts: [ 0, 1, 2, 3 ]
+  - type: 0
+    tile: 3
+    volume: 32
+    cnt: 128
+    srcs: [ -1, -1, -1, -1 ]
+    dsts: [ 0, 1, 2, 3 ]
+- pv: 1
+  contents: 
+  - type: 0
+    tile: 0
+    volume: 16
+    cnt: 2048
+    srcs: [ -1 ]
+    dsts: [ 0 ]
+  - type: 0
+    tile: 0
+    volume: 16
+    cnt: 2048
+    srcs: [ -1 ]
+    dsts: [ 1 ]
+  - type: 0
+    tile: 0
+    volume: 16
+    cnt: 2048
+    srcs: [ -1 ]
+    dsts: [ 2 ]
+  - type: 0
+    tile: 0
+    volume: 16
+    cnt: 2048
+    srcs: [ -1 ]
+    dsts: [ 3 ]
+  - type: 0
+    tile: 1
+    volume: 128
+    cnt: 1024
+    srcs: [ -1 ]
+    dsts: [ 0 ]
+  - type: 0
+    tile: 1
+    volume: 128
+    cnt: 1024
+    srcs: [ -1 ]
+    dsts: [ 1 ]
+  - type: 0
+    tile: 1
+    volume: 128
+    cnt: 1024
+    srcs: [ -1 ]
+    dsts: [ 2 ]
+  - type: 0
+    tile: 1
+    volume: 128
+    cnt: 1024
+    srcs: [ -1 ]
+    dsts: [ 3 ]
+  - type: 0
+    tile: 2
+    volume: 4096
+    cnt: 128
+    srcs: [ -1 ]
+    dsts: [ 0 ]
+  - type: 0
+    tile: 2
+    volume: 4096
+    cnt: 128
+    srcs: [ -1 ]
+    dsts: [ 1 ]
+  - type: 0
+    tile: 2
+    volume: 4096
+    cnt: 128
+    srcs: [ -1 ]
+    dsts: [ 2 ]
+  - type: 0
+    tile: 2
+    volume: 4096
+    cnt: 128
+    srcs: [ -1 ]
+    dsts: [ 3 ]
+- pv: 2
+  contents: 
+  - type: 2
+    tile: 0
+    volume: 16
+    cnt: 2048
+    srcs: [ 0, 1, 2, 3 ]
+    dsts: [ -1, -1, -1, -1 ]
+  - type: 2
+    tile: 1
+    volume: 16
+    cnt: 1024
+    srcs: [ 0, 1, 2, 3 ]
+    dsts: [ -1, -1, -1, -1 ]
+  - type: 2
+    tile: 2
+    volume: 128
+    cnt: 128
+    srcs: [ 0 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 2
+    volume: 128
+    cnt: 128
+    srcs: [ 1 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 2
+    volume: 128
+    cnt: 128
+    srcs: [ 2 ]
+    dsts: [ -1 ]
+  - type: 2
+    tile: 2
+    volume: 128
+    cnt: 128
+    srcs: [ 3 ]
+    dsts: [ -1 ]

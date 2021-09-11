@@ -142,7 +142,7 @@ Level 3
     MAPPING
     -------
     Loop nest:
-      for C in [0:16)
+      for C in [0:8)
 
     STATS
     -----
@@ -150,7 +150,7 @@ Level 3
     Bandwidth throttling : 1.00
     Weights:
         Partition size                           : 32768
-        Utilized capacity                        : 128
+        Utilized capacity                        : 64
         Utilized instances (max)                 : 128
         Utilized clusters (max)                  : 128
         Scalar reads (per-instance)              : 32768
@@ -201,7 +201,7 @@ Level 4
     Bandwidth throttling : 1.00
     Inputs:
         Partition size                           : 128
-        Utilized capacity                        : 64
+        Utilized capacity                        : 32
         Utilized instances (max)                 : 32
         Utilized clusters (max)                  : 32
         Scalar reads (per-instance)              : 32768
@@ -244,7 +244,7 @@ Level 5
     MAPPING
     -------
     Loop nest:
-      for C in [0:2)
+      for C in [0:4)
         for C in [0:4) (Spatial-Y)
           for M in [0:4) (Spatial-Y)
 
