@@ -50,7 +50,7 @@ conf_filename = "ML_mapper.cfg"
 
 # -------------------- HNOCS -------------------------
 
-simulate_baseline = False
+simulate_baseline = True
 hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
 
 # -------------------- BookSim -------------------------
@@ -61,7 +61,7 @@ booksim_working_path = "/home/wangzhao/simulator/booksim2/src"
 
 # -------------------- FOCUS Scheduler -------------------------
 
-focus_schedule = True
+focus_schedule = False
 scheduler_verbose = False
 n_workers = 28
 population_size = 100

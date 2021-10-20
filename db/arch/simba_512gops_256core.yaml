@@ -22,7 +22,7 @@ architecture:
               class: storage
               subclass: smartbuffer_SRAM
               attributes:
-                depth: 1024
+                depth: 2048
                 width: 512
                 word-bits: 8
                 block-size: 32

@@ -10,7 +10,7 @@ w = list(w_candidate)
 for root, _, file_names in os.walk("focus-final-out"):
     for file_name in file_names:
         try:
-            value = pd.read_csv(os.path.join(root, file_name), sep=" ", header=None).transpose()        
+            value = pd.read_csv(os.path.join(root, file_name), sep="\t", header=None).transpose()        
             df = df.append(value, ignore_index=True)
         except Exception:
             pass

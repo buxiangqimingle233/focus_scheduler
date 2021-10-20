@@ -52,7 +52,7 @@ arch_config = {
 
     "d": array_diameter,
 
-    "w": 2048
+    "w": 4096
 
 }
 
@@ -76,8 +76,9 @@ mapping_style = "Hilbert"
 
 model = "vgg16"
 
-layer_names = ["unet_layer1", "unet_layer2"]
-cores = [8, 8]
+layer_names = ["unet_layer1", "unet_layer2", "unet_layer3", "unet_layer4", "unet_layer5", "unet_layer6", "unet_layer7", "unet_layer8", "unet_layer9", "unet_layer10", "unet_layer11", "unet_layer12", "unet_layer13", "unet_layer14", "unet_layer15", "unet_layer16", "vgg16_layer1", "vgg16_layer2", "vgg16_layer3", "vgg16_layer4", "mnasnet_layer1", "mnasnet_layer2", "mnasnet_layer3", "mnasnet_layer4", "inception_layer1", "inception_layer2", "inception_layer3", "inception_layer4", "inception_layer5", "inception_layer6", "inception_layer7", "inception_layer8"]
+cores = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 16, 16, 16, 16, 8, 8, 8, 8, 4, 4, 4, 4, 4, 4, 4, 4]
+
 
 
 

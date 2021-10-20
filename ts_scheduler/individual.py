@@ -103,6 +103,7 @@ class FocusLatencyModel():
                 if iter_cnt % 500 == 0:
                     print("iteration: {}, remained packets: {}".format(iter_cnt, (working_pkts["unsolved"].value_counts())[True]))
 
+            # Greedy strategy: issue the first-ready packet
             issued_pkt = working_pkts[working_pkts["unsolved"]].sort_values("issue_time").iloc[0]
 
             path = issued_pkt["path"]

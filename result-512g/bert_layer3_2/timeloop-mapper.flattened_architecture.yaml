@@ -35,7 +35,7 @@ architecture:
     subclass: smartbuffer_RF
   - attributes:
       datawidth: 24
-      depth: 64
+      depth: 16
       memory_depth: 12
       memory_width: 16
       meshX: 16
@@ -71,7 +71,7 @@ architecture:
   - attributes:
       block-size: 32
       datawidth: 8
-      depth: 4096
+      depth: 2048
       memory_depth: 12
       memory_width: 16
       meshX: 1

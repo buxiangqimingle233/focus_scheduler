@@ -19,7 +19,7 @@ def run():
 
     # Generate task mapping
     core_map = task_mapper.map()
-
+ 
     # FIXME: Doesn't work, visualize mapping results
     os.system("gnuplot mapper/mapping_vis.gp")
 

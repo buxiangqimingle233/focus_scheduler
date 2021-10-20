@@ -1,5 +1,5 @@
 SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)"/db"
-layer="vgg16_layer6"
+layer="bert_layer2"
 
 cd temp
 

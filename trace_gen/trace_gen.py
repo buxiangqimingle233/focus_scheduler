@@ -346,76 +346,46 @@ class WorkingLayerSetDR(WorkingLayerSet):
 
     def dumpTraceFileBooksim(self, traffic):
         df = deepcopy(traffic)
-        df = df[["map_src", "map_dst", "flit", "interval"]]
-        df = df.rename({"map_src": "src", "map_dst": "dst"}, axis='columns')
+        df.loc[:, "depend"] = df["datatype"].map(lambda x: 2 if x == "output" else 0)
+        df = df[["map_src", "map_dst", "flit", "interval", "counts", "depend"]]
+        # df = df.rename({"interval": "computing_time", "counts": "max_iter", "depend": "wait_flows", \
+        #                 "flit": "size", }, axis='columns')
+        df = df.rename({"map_src": "src", "map_dst": "dst"}, axis="columns")
         # collapse src & dst
         df = df.explode("src").explode("dst")
         # store
         self.trace = df
 
-        # injection rates: 
-        rates = df.groupby("src").apply(lambda x: sum(x["flit"] / x["interval"])).reset_index()
-        rates.columns = ["src", "rate"]
-
-        betas = df.groupby("src").apply(lambda x: (1/x["flit"]).mean()).reset_index()
-        betas.columns = ["src", "beta"]
-        # betas.loc[:, "beta"] = 1 / betas["beta"]
-
-        alphas = df.groupby("src").apply(lambda x: (1/x["interval"]).mean()).reset_index()
-        alphas.columns = ["src", "alpha"]
-        # alphas.loc[:, "alpha"] = 1 / alphas["alpha"]
-
-        def padding(org):
-            pad = pd.DataFrame(np.zeros((array_diameter**2, 2)), columns=org.columns)
-            pad.loc[:, "src"] = pad.index
-            pad.update(org.set_index("src"))
-            return pad
-
-        alphas, betas, rates = padding(alphas), padding(betas), padding(rates)
-        rates[rates["rate"] > 1] = 1
-
-        with open(os.path.join(booksim_working_path, "rate.txt"), "w") as wf:
-            print(" ".join(map(str, rates["rate"].tolist())), file=wf)
-            print(" ".join(map(str, alphas["alpha"].tolist())), file=wf)
-            print(" ".join(map(str, betas["beta"].tolist())), file=wf)
-        # traffic trace:
-        def getIssueOrder(fk):
-            flows = fk.copy()
-            flows["unsolved"] = True
-            flows["issue_time"] = flows["interval"]
-            ret = []
-            while any(flows["unsolved"]):
-                flows.sort_values("issue_time", inplace=True)
-                issued_flow = flows.iloc[0, ]
-                issued_flow["unsolved"] = False
-                ret.append(issued_flow["dst"])
-                issued_flow["issue_time"] += issued_flow["interval"]
-                flows.iloc[0, :] = issued_flow.copy()
-            return ret
-
-        trace = df.groupby("src").apply(lambda x: getIssueOrder(x)).reset_index()
-        trace.columns = ["src", "trace"]
         with open(os.path.join(booksim_working_path, "trace.txt"), "w") as wf:
-            for _, row in trace.iterrows():
-                print(int(row["src"]), " ".join(map(lambda x: str(int(x)), row["trace"])), sep="\n", file=wf)
+            for nid in range(array_diameter**2):
+                flows = df[df["src"] == nid]
+                print("{} {}".format(nid, flows.shape[0]), file=wf)
+                for _, f in flows.iterrows():
+                    f = f.astype("int").astype("str")
+                    print(" ".join([f["interval"], f["counts"], f["depend"], \
+                                    f["flit"], f["dst"], f["src"]]), file=wf)
 
     def analyzeBookSim(self):
         booksim_out = os.path.join(booksim_working_path, "out.txt")
-        booksim_res = pd.read_csv(booksim_out, header=None, names=["id", "mean", "max", "min"], index_col=False)
-        booksim_res = booksim_res.iloc[:array_size, :]
-        booksim_res.loc[booksim_res["mean"].isna(), "mean"] = 1
-        booksim_res.loc[booksim_res["max"].isna(), "max"] = 1
+        booksim_res = pd.read_csv(booksim_out, header=None, names=["id", "mean", "max", "min", "slowdown"], index_col=False)
+        # booksim_res = booksim_res.iloc[:array_size, :]
+        # booksim_res.loc[booksim_res["mean"].isna(), "mean"] = 1
+        # booksim_res.loc[booksim_res["max"].isna(), "max"] = 1
 
-        max_slowdown = (booksim_res["max"] / self.trace.groupby("dst").agg({"interval": "max"})["interval"])
-        mean_slowdown = (booksim_res["mean"] / self.trace.groupby("dst").agg({"interval": "max"})["interval"])
+        # max_slowdown = (booksim_res["max"] / self.trace.groupby("dst").agg({"interval": "max"})["interval"])
+        # mean_slowdown = (booksim_res["mean"] / self.trace.groupby("dst").agg({"interval": "max"})["interval"])
 
-        mean_slowdown = mean_slowdown[~(mean_slowdown.isna()) & (mean_slowdown > 1)]
+        # mean_slowdown = mean_slowdown[~(mean_slowdown.isna()) & (mean_slowdown > 1)]
 
-        if mean_slowdown.shape[0] == 0:
-            mean_slowdown = pd.Series([1])
-        mean_slowdown = mean_slowdown.mean()
+        # if mean_slowdown.shape[0] == 0:
+        #     mean_slowdown = pd.Series([1])
+
+        booksim_res.loc[booksim_res["slowdown"] == 0, "slowdown"] = 1
+        mean_slowdown = booksim_res["slowdown"].mean()
+        mean_delay = booksim_res["mean"].mean()
 
         with open(os.path.join("focus-final-out", f"booksim_{slowdown_result}"), "a") as wf:
+            # print(arch_config["w"], mean_slowdown, mean_delay, file=wf, sep="\t")
             print(mean_slowdown, file=wf)
 
 
@@ -444,7 +414,7 @@ def embeddedFuncDR(layer: Layer, comm_bank):
     # collapse all the datatypes
     bcast = df[(df["dst"].map(len) > 1) & (df["src"].map(lambda x: x[0]) == -1)]
     reduction = df[(df["dst"].map(lambda x: x[0]) == -1)]
-    other = df[df["src"].map(len) == 1]
+    other = df[(df["src"].map(len) == 1) & (df["dst"].map(lambda x: x[0]) != -1)]
 
     # broadcast: keep destination, reduce source size to 1
     bcast.loc[:, "src"] = bcast["src"].map(lambda x: x[:1])
