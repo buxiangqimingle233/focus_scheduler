@@ -84,21 +84,21 @@ def debug_show(item):
     exit(0)
 
 
-def generate_config_file():
-    # Generate such configure file
-    import configparser as cp
-    config = cp.ConfigParser()
-    config["accelerator_config"] = {
-        "tile_array_height": array_diameter, 
-        "tile_array_width": array_diameter
-    }
-    config["layer_config"] = {
-        "layer_num": len(cores),
-        "layer_MACs": ":".join(map(lambda x: str(x), cores))
-    }
-    config["mapping_style"] = {
-        "mapping_style": mapping_style
-    }
-    config.write(open(conf_filename, "w"))
+# def generate_config_file():
+#     # Generate such configure file
+#     import configparser as cp
+#     config = cp.ConfigParser()
+#     config["accelerator_config"] = {
+#         "tile_array_height": array_diameter, 
+#         "tile_array_width": array_diameter
+#     }
+#     config["layer_config"] = {
+#         "layer_num": len(cores),
+#         "layer_MACs": ":".join(map(lambda x: str(x), cores))
+#     }
+#     config["mapping_style"] = {
+#         "mapping_style": mapping_style
+#     }
+#     config.write(open(conf_filename, "w"))
 
-generate_config_file()
+# generate_config_file()

@@ -22,7 +22,6 @@ def sample_from_compound_distribution(sample_cnt: int, distribution_list: list) 
     ret = np.sum(samples, axis=0)
     return ret
 
-
 def gen_inference_trace(core_list: list) -> dict:
     intensity = sample_from_compound_distribution(3, intensity_distributions).astype(int)
     # FIXME: Approximation: we assume intensity and interval are indepentent
@@ -52,16 +51,15 @@ def gen_trace():
         global region_name
         region_name = "dummy_layer" + str(iter_cnt)
 
-        # generate trace      
+        # generate traffic trace
         region_trace = gen_inference_trace(range(region_size))
         trace = trace.append(region_trace, ignore_index=True)
 
-        # update global control 
+        # add dummy layers and its assigned core number to task specs
         gc.layer_names.append(region_name)
         gc.cores.append(region_size)
 
         iter_cnt += 1
-    # gc.debug_show(gc.layer_names)
     return trace
 
 if __name__ == "__main__":

@@ -295,15 +295,14 @@ class WorkingLayerSetDR(WorkingLayerSet):
 
         # Instantiate the task mapper
         task_mapper = task_map.ml_mapping()
-
         # Generate task mapping
         core_map = task_mapper.map()
-
         # FIXME: Doesn't work, visualize mapping results
         os.system("gnuplot mapper/mapping_vis.gp")
-
         traffic = self.applyCoreMap(traffic, core_map)
+
         traffic = self.selectCaptain(traffic)
+
         traffic = self.genSpanningTree(traffic)
         return traffic
 

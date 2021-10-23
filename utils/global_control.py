@@ -52,7 +52,7 @@ arch_config = {
 
     "d": array_diameter,
 
-    "w": 4096
+    "w": 512
 
 }
 
@@ -76,13 +76,13 @@ mapping_style = "Hilbert"
 
 model = "vgg16"
 
-layer_names = ["unet_layer1", "unet_layer2", "unet_layer3", "unet_layer4", "unet_layer5", "unet_layer6", "unet_layer7", "unet_layer8", "unet_layer9", "unet_layer10", "unet_layer11", "unet_layer12", "unet_layer13", "unet_layer14", "unet_layer15", "unet_layer16", "vgg16_layer1", "vgg16_layer2", "vgg16_layer3", "vgg16_layer4", "mnasnet_layer1", "mnasnet_layer2", "mnasnet_layer3", "mnasnet_layer4", "inception_layer1", "inception_layer2", "inception_layer3", "inception_layer4", "inception_layer5", "inception_layer6", "inception_layer7", "inception_layer8"]
-cores = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 16, 16, 16, 16, 8, 8, 8, 8, 4, 4, 4, 4, 4, 4, 4, 4]
+layer_names = ["unet_layer1", "unet_layer2", "unet_layer3", "unet_layer4", "unet_layer5", "unet_layer6", "unet_layer7", "unet_layer8", "resnet50_layer1", "resnet50_layer2", "resnet50_layer3", "resnet50_layer4", "bert-large_layer1", "bert-large_layer2", "bert-large_layer3", "bert-large_layer4", "bert-large_layer5", "bert-large_layer6", "bert-large_layer7", "bert-large_layer8", "bert-large_layer9", "bert-large_layer10", "bert-large_layer11", "bert-large_layer12", "bert-large_layer13", "bert-large_layer14", "bert-large_layer15", "bert-large_layer16", "bert-large_layer17", "bert-large_layer18", "bert-large_layer19", "bert-large_layer20", "bert-large_layer21", "bert-large_layer22", "bert-large_layer23", "bert-large_layer24", "bert-large_layer25", "bert-large_layer26", "bert-large_layer27", "bert-large_layer28", "bert-large_layer29", "bert-large_layer30", "bert-large_layer31", "bert-large_layer32", "ssd_r34_layer1", "ssd_r34_layer2", "ssd_r34_layer3", "ssd_r34_layer4"]
+cores = [8, 8, 8, 8, 8, 8, 8, 8, 16, 16, 16, 16, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 16, 16, 16, 16]
 
 
 
 
-# -------------------- Task Mapper ------------------------- 
+# -------------------- Task Mapper -------------------------
 
 
 
@@ -132,7 +132,7 @@ n_evolution = 50
 
 
 
-slowdown_result = "slowdown_unet_vgg16_mnasnet_inception.csv"
+slowdown_result = "slowdown_unet_resnet50_bert-large_ssd_r34.csv"
 
 
 # -------------------- [Optional] Estimator -------------------------
@@ -160,43 +160,3 @@ def debug_show(item):
     pp.pprint(item)
 
     exit(0)
-
-
-
-
-
-def generate_config_file():
-
-    # Generate such configure file
-
-    import configparser as cp
-
-    config = cp.ConfigParser()
-
-    config["accelerator_config"] = {
-
-        "tile_array_height": array_diameter, 
-
-        "tile_array_width": array_diameter
-
-    }
-
-    config["layer_config"] = {
-
-        "layer_num": len(cores),
-
-        "layer_MACs": ":".join(map(lambda x: str(x), cores))
-
-    }
-
-    config["mapping_style"] = {
-
-        "mapping_style": mapping_style
-
-    }
-
-    config.write(open(conf_filename, "w"))
-
-
-
-generate_config_file()

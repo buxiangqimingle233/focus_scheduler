@@ -7,8 +7,8 @@ sim_type = throughput;
 
 packet_size = 1;
 warmup_periods = 1;
-sample_period = 30000;
-max_samples = 20;
+sample_period = 10000;
+max_samples = 5;
 
 burst_alpha = 0.5;
 burst_beta = -1.0;
@@ -33,2501 +33,259 @@ END Configuration File: examples/focusconfig
 Warning: injection kernel is renewed
 Warning: injection kernel is renewed
 Class 0:
-Packet latency average = 1742.03
-	minimum = 18
-	maximum = 23939
-Network latency average = 63.5662
-	minimum = 18
-	maximum = 1490
-Slowest packet = 2
-Flit latency average = 31.2904
-	minimum = 9
-	maximum = 1145
-Slowest flit = 105658
-Fragmentation average = 9.1435
-	minimum = 0
-	maximum = 255
-Injected packet rate average = 0.00161094
-	minimum = 0 (at node 0)
-	maximum = 0.0604333 (at node 59)
-Accepted packet rate average = 0.00160872
-	minimum = 0 (at node 30)
-	maximum = 0.0167667 (at node 31)
-Injected flit rate average = 0.0362548
-	minimum = 0 (at node 0)
-	maximum = 0.657667 (at node 51)
-Accepted flit rate average= 0.0362262
-	minimum = 0 (at node 30)
-	maximum = 0.2056 (at node 59)
-Injected packet length average = 22.5054
-Accepted packet length average = 22.5186
-Total in-flight flits = 425 (0 measured)
-latency change    = 1
-throughput change = 1
-Warmed up ...Time used is 30000 cycles
-Class 0:
-Packet latency average = 5692.61
-	minimum = 18
-	maximum = 47877
-Network latency average = 64.8439
-	minimum = 18
-	maximum = 1254
-Slowest packet = 12378
-Flit latency average = 33.4756
-	minimum = 9
-	maximum = 825
-Slowest flit = 508217
-Fragmentation average = 8.64258
-	minimum = 0
-	maximum = 254
-Injected packet rate average = 0.00136354
-	minimum = 0 (at node 0)
-	maximum = 0.0606 (at node 59)
-Accepted packet rate average = 0.00136289
-	minimum = 0 (at node 30)
-	maximum = 0.0161333 (at node 31)
-Injected flit rate average = 0.0309109
-	minimum = 0 (at node 0)
-	maximum = 0.670767 (at node 51)
-Accepted flit rate average= 0.0309069
-	minimum = 0 (at node 30)
-	maximum = 0.245933 (at node 59)
-Injected packet length average = 22.6696
-Accepted packet length average = 22.6775
-Total in-flight flits = 841 (841 measured)
-latency change    = 0.693984
-throughput change = 0.172106
-Class 0:
-Packet latency average = 7597.18
-	minimum = 18
-	maximum = 71837
-Network latency average = 64.8851
-	minimum = 18
-	maximum = 1538
-Slowest packet = 12378
-Flit latency average = 33.6685
-	minimum = 9
-	maximum = 1252
-Slowest flit = 555970
-Fragmentation average = 8.49789
-	minimum = 0
-	maximum = 255
-Injected packet rate average = 0.00135605
-	minimum = 0 (at node 0)
-	maximum = 0.0606 (at node 59)
-Accepted packet rate average = 0.00135566
-	minimum = 0 (at node 30)
-	maximum = 0.0163833 (at node 31)
-Injected flit rate average = 0.0305694
-	minimum = 0 (at node 0)
-	maximum = 0.670767 (at node 51)
-Accepted flit rate average= 0.0305655
-	minimum = 0 (at node 30)
-	maximum = 0.240417 (at node 59)
-Injected packet length average = 22.5429
-Accepted packet length average = 22.5465
-Total in-flight flits = 1210 (1210 measured)
-latency change    = 0.250694
-throughput change = 0.0111697
-Class 0:
-Packet latency average = 9432.22
-	minimum = 18
-	maximum = 95743
-Network latency average = 65.1307
-	minimum = 18
-	maximum = 1538
-Slowest packet = 12378
-Flit latency average = 33.9195
-	minimum = 9
-	maximum = 1252
-Slowest flit = 555970
-Fragmentation average = 8.41826
-	minimum = 0
-	maximum = 255
-Injected packet rate average = 0.0013451
-	minimum = 0 (at node 0)
-	maximum = 0.0606111 (at node 187)
-Accepted packet rate average = 0.00134466
-	minimum = 0 (at node 30)
-	maximum = 0.0157667 (at node 31)
-Injected flit rate average = 0.0302644
-	minimum = 0 (at node 0)
-	maximum = 0.670722 (at node 51)
-Accepted flit rate average= 0.0302602
-	minimum = 0 (at node 30)
-	maximum = 0.239867 (at node 59)
-Injected packet length average = 22.4998
-Accepted packet length average = 22.5039
-Total in-flight flits = 778 (778 measured)
-latency change    = 0.194551
-throughput change = 0.0100904
-Class 0:
-Packet latency average = 11242.5
-	minimum = 18
-	maximum = 119885
-Network latency average = 65.1931
-	minimum = 18
-	maximum = 1538
-Slowest packet = 12378
-Flit latency average = 33.9638
-	minimum = 9
-	maximum = 1252
-Slowest flit = 555970
-Fragmentation average = 8.40157
-	minimum = 0
-	maximum = 255
-Injected packet rate average = 0.00133988
-	minimum = 0 (at node 0)
-	maximum = 0.0606083 (at node 187)
-Accepted packet rate average = 0.00133971
-	minimum = 0 (at node 30)
-	maximum = 0.0155583 (at node 31)
-Injected flit rate average = 0.0301756
-	minimum = 0 (at node 0)
-	maximum = 0.670708 (at node 51)
-Accepted flit rate average= 0.0301747
-	minimum = 0 (at node 30)
-	maximum = 0.24415 (at node 59)
-Injected packet length average = 22.5211
-Accepted packet length average = 22.5232
-Total in-flight flits = 468 (468 measured)
-latency change    = 0.16102
-throughput change = 0.0028329
-Draining remaining packets ...
-Time taken is 150148 cycles
-====== Overall Traffic Statistics ======
-====== Traffic class 0 ======
-Packet latency average = 11259.6 (1 samples)
-	minimum = 18 (1 samples)
-	maximum = 120098 (1 samples)
-Network latency average = 65.2116 (1 samples)
-	minimum = 18 (1 samples)
-	maximum = 1538 (1 samples)
-Flit latency average = 33.969 (1 samples)
-	minimum = 9 (1 samples)
-	maximum = 1252 (1 samples)
-Fragmentation average = 8.40526 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 255 (1 samples)
-Injected packet rate average = 0.00133988 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.0606083 (1 samples)
-Accepted packet rate average = 0.00133971 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.0155583 (1 samples)
-Injected flit rate average = 0.0301756 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.670708 (1 samples)
-Accepted flit rate average = 0.0301747 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.24415 (1 samples)
-Injected packet size average = 22.5211 (1 samples)
-Accepted packet size average = 22.5232 (1 samples)
-Hops average = 6.25582 (1 samples)
-Total run time 86.0105
-[[16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]]
-Info: Working for unet_layer1
-====================== FINISH =========================
-
-
-Info: Working for unet_layer2
-====================== FINISH =========================
-
-
-Info: Working for unet_layer3
-====================== FINISH =========================
-
-
-Info: Working for unet_layer4
-====================== FINISH =========================
-
-
-Info: Working for unet_layer5
-====================== FINISH =========================
-
-
-Info: Working for unet_layer6
-====================== FINISH =========================
-
-
-Info: Working for unet_layer7
-====================== FINISH =========================
-
-
-Info: Working for unet_layer8
-====================== FINISH =========================
-
-
-Info: Working for unet_layer9
-====================== FINISH =========================
-
-
-Info: Working for unet_layer10
-====================== FINISH =========================
-
-
-Info: Working for unet_layer11
-====================== FINISH =========================
-
-
-Info: Working for unet_layer12
-====================== FINISH =========================
-
-
-Info: Working for unet_layer13
-====================== FINISH =========================
-
-
-Info: Working for unet_layer14
-====================== FINISH =========================
-
-
-Info: Working for unet_layer15
-====================== FINISH =========================
-
-
-Info: Working for unet_layer16
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer1
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer2
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer3
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer4
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer1
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer2
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer3
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer1
-====================== FINISH =========================
-
-
-Info: Working for inception_layer2
-====================== FINISH =========================
-
-
-Info: Working for inception_layer3
-====================== FINISH =========================
-
-
-Info: Working for inception_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer5
-====================== FINISH =========================
-
-
-Info: Working for inception_layer6
-====================== FINISH =========================
-
-
-Info: Working for inception_layer7
-====================== FINISH =========================
-
-
-Info: Working for inception_layer8
-====================== FINISH =========================
-
-
-BEGIN Configuration File: examples/focusconfig
-topology = mesh;
-k = 16;
-n = 2;
-
-sim_type = throughput;
-
-packet_size = 1;
-warmup_periods = 1;
-sample_period = 30000;
-max_samples = 20;
-
-burst_alpha = 0.5;
-burst_beta = -1.0;
-
-// Routing
-
-routing_function = dim_order;
-// routing_function = min_adapt;
-// routing_function = xy_yx;
-// routing_function = romm;
-
-
-// Flow control
-num_vcs = 2;
-vc_buf_size = 4;
-
-// Traffic
-traffic = focus;
-injection_process = focus;
-
-END Configuration File: examples/focusconfig
-Warning: injection kernel is renewed
-Warning: injection kernel is renewed
-Class 0:
-Packet latency average = 1583.05
-	minimum = 17
-	maximum = 18579
-Network latency average = 50.1975
-	minimum = 15
-	maximum = 680
-Slowest packet = 3
-Flit latency average = 35.105
-	minimum = 9
-	maximum = 431
-Slowest flit = 107656
-Fragmentation average = 4.83437
-	minimum = 0
-	maximum = 126
-Injected packet rate average = 0.00188581
-	minimum = 0 (at node 0)
-	maximum = 0.0604333 (at node 59)
-Accepted packet rate average = 0.00188359
-	minimum = 0 (at node 30)
-	maximum = 0.0304333 (at node 31)
-Injected flit rate average = 0.0247681
-	minimum = 0 (at node 0)
-	maximum = 0.651333 (at node 127)
-Accepted flit rate average= 0.02475
-	minimum = 0 (at node 30)
-	maximum = 0.152167 (at node 31)
-Injected packet length average = 13.134
-Accepted packet length average = 13.1398
-Total in-flight flits = 305 (0 measured)
-latency change    = 1
-throughput change = 1
-Warmed up ...Time used is 30000 cycles
-Class 0:
-Packet latency average = 5251.48
-	minimum = 17
-	maximum = 37493
-Network latency average = 52.2158
-	minimum = 17
-	maximum = 646
-Slowest packet = 14486
-Flit latency average = 37.217
-	minimum = 9
-	maximum = 404
-Slowest flit = 214748
-Fragmentation average = 4.74039
-	minimum = 0
-	maximum = 127
-Injected packet rate average = 0.00163958
-	minimum = 0 (at node 0)
-	maximum = 0.0606333 (at node 187)
-Accepted packet rate average = 0.00163828
-	minimum = 0 (at node 30)
-	maximum = 0.0307667 (at node 31)
-Injected flit rate average = 0.0219777
-	minimum = 0 (at node 0)
-	maximum = 0.6533 (at node 127)
-Accepted flit rate average= 0.0219691
-	minimum = 0 (at node 30)
-	maximum = 0.153833 (at node 31)
-Injected packet length average = 13.4045
-Accepted packet length average = 13.4099
-Total in-flight flits = 326 (326 measured)
-latency change    = 0.698552
-throughput change = 0.12658
-Class 0:
-Packet latency average = 7005.66
-	minimum = 17
-	maximum = 56380
-Network latency average = 52.1998
-	minimum = 17
-	maximum = 646
-Slowest packet = 14486
-Flit latency average = 37.4235
-	minimum = 9
-	maximum = 404
-Slowest flit = 214748
-Fragmentation average = 4.69925
-	minimum = 0
-	maximum = 127
-Injected packet rate average = 0.00163249
-	minimum = 0 (at node 0)
-	maximum = 0.0606333 (at node 187)
-Accepted packet rate average = 0.00163203
-	minimum = 0 (at node 30)
-	maximum = 0.0307833 (at node 31)
-Injected flit rate average = 0.0217883
-	minimum = 0 (at node 0)
-	maximum = 0.652983 (at node 127)
-Accepted flit rate average= 0.021782
-	minimum = 0 (at node 30)
-	maximum = 0.153917 (at node 31)
-Injected packet length average = 13.3467
-Accepted packet length average = 13.3466
-Total in-flight flits = 400 (400 measured)
-latency change    = 0.250394
-throughput change = 0.00859008
-Class 0:
-Packet latency average = 8805.89
-	minimum = 17
-	maximum = 75144
-Network latency average = 52.201
-	minimum = 17
-	maximum = 762
-Slowest packet = 14486
-Flit latency average = 37.5107
-	minimum = 9
-	maximum = 546
-Slowest flit = 657932
-Fragmentation average = 4.68476
-	minimum = 0
-	maximum = 127
-Injected packet rate average = 0.00162778
-	minimum = 0 (at node 0)
-	maximum = 0.0606222 (at node 187)
-Accepted packet rate average = 0.00162704
-	minimum = 0 (at node 30)
-	maximum = 0.0307778 (at node 31)
-Injected flit rate average = 0.021706
-	minimum = 0 (at node 0)
-	maximum = 0.6528 (at node 127)
-Accepted flit rate average= 0.0216966
-	minimum = 0 (at node 30)
-	maximum = 0.153889 (at node 31)
-Injected packet length average = 13.3347
-Accepted packet length average = 13.335
-Total in-flight flits = 739 (739 measured)
-latency change    = 0.204435
-throughput change = 0.00393687
-Class 0:
-Packet latency average = 10553.5
-	minimum = 17
-	maximum = 94022
-Network latency average = 52.2418
-	minimum = 17
-	maximum = 762
-Slowest packet = 14486
-Flit latency average = 37.5851
-	minimum = 9
-	maximum = 546
-Slowest flit = 657932
-Fragmentation average = 4.67894
-	minimum = 0
-	maximum = 127
-Injected packet rate average = 0.00162441
-	minimum = 0 (at node 0)
-	maximum = 0.060625 (at node 187)
-Accepted packet rate average = 0.00162428
-	minimum = 0 (at node 30)
-	maximum = 0.0307 (at node 31)
-Injected flit rate average = 0.0216421
-	minimum = 0 (at node 0)
-	maximum = 0.652908 (at node 127)
-Accepted flit rate average= 0.02164
-	minimum = 0 (at node 30)
-	maximum = 0.1535 (at node 31)
-Injected packet length average = 13.323
-Accepted packet length average = 13.3228
-Total in-flight flits = 323 (323 measured)
-latency change    = 0.165595
-throughput change = 0.00261439
-Draining remaining packets ...
-Time taken is 150116 cycles
-====== Overall Traffic Statistics ======
-====== Traffic class 0 ======
-Packet latency average = 10557 (1 samples)
-	minimum = 17 (1 samples)
-	maximum = 94029 (1 samples)
-Network latency average = 52.2454 (1 samples)
-	minimum = 17 (1 samples)
-	maximum = 762 (1 samples)
-Flit latency average = 37.5886 (1 samples)
-	minimum = 9 (1 samples)
-	maximum = 546 (1 samples)
-Fragmentation average = 4.67919 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 127 (1 samples)
-Injected packet rate average = 0.00162441 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.060625 (1 samples)
-Accepted packet rate average = 0.00162428 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.0307 (1 samples)
-Injected flit rate average = 0.0216421 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.652908 (1 samples)
-Accepted flit rate average = 0.02164 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.1535 (1 samples)
-Injected packet size average = 13.323 (1 samples)
-Accepted packet size average = 13.3228 (1 samples)
-Hops average = 6.39696 (1 samples)
-Total run time 76.496
-[[16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]]
-Info: Working for unet_layer1
-====================== FINISH =========================
-
-
-Info: Working for unet_layer2
-====================== FINISH =========================
-
-
-Info: Working for unet_layer3
-====================== FINISH =========================
-
-
-Info: Working for unet_layer4
-====================== FINISH =========================
-
-
-Info: Working for unet_layer5
-====================== FINISH =========================
-
-
-Info: Working for unet_layer6
-====================== FINISH =========================
-
-
-Info: Working for unet_layer7
-====================== FINISH =========================
-
-
-Info: Working for unet_layer8
-====================== FINISH =========================
-
-
-Info: Working for unet_layer9
-====================== FINISH =========================
-
-
-Info: Working for unet_layer10
-====================== FINISH =========================
-
-
-Info: Working for unet_layer11
-====================== FINISH =========================
-
-
-Info: Working for unet_layer12
-====================== FINISH =========================
-
-
-Info: Working for unet_layer13
-====================== FINISH =========================
-
-
-Info: Working for unet_layer14
-====================== FINISH =========================
-
-
-Info: Working for unet_layer15
-====================== FINISH =========================
-
-
-Info: Working for unet_layer16
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer1
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer2
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer3
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer4
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer1
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer2
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer3
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer1
-====================== FINISH =========================
-
-
-Info: Working for inception_layer2
-====================== FINISH =========================
-
-
-Info: Working for inception_layer3
-====================== FINISH =========================
-
-
-Info: Working for inception_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer5
-====================== FINISH =========================
-
-
-Info: Working for inception_layer6
-====================== FINISH =========================
-
-
-Info: Working for inception_layer7
-====================== FINISH =========================
-
-
-Info: Working for inception_layer8
-====================== FINISH =========================
-
-
-BEGIN Configuration File: examples/focusconfig
-topology = mesh;
-k = 16;
-n = 2;
-
-sim_type = throughput;
-
-packet_size = 1;
-warmup_periods = 1;
-sample_period = 30000;
-max_samples = 20;
-
-burst_alpha = 0.5;
-burst_beta = -1.0;
-
-// Routing
-
-routing_function = dim_order;
-// routing_function = min_adapt;
-// routing_function = xy_yx;
-// routing_function = romm;
-
-
-// Flow control
-num_vcs = 2;
-vc_buf_size = 4;
-
-// Traffic
-traffic = focus;
-injection_process = focus;
-
-END Configuration File: examples/focusconfig
-Warning: injection kernel is renewed
-Warning: injection kernel is renewed
-Class 0:
-Packet latency average = 1361.99
-	minimum = 14
-	maximum = 14386
-Network latency average = 45.4755
-	minimum = 14
-	maximum = 461
-Slowest packet = 5
-Flit latency average = 36.974
-	minimum = 9
+Packet latency average = 888.695
+	minimum = 32
+	maximum = 6240
+Network latency average = 70.1847
+	minimum = 19
 	maximum = 376
-Slowest flit = 84709
-Fragmentation average = 3.03763
-	minimum = 0
-	maximum = 83
-Injected packet rate average = 0.00202656
-	minimum = 0 (at node 0)
-	maximum = 0.0604333 (at node 59)
-Accepted packet rate average = 0.00202422
-	minimum = 0 (at node 30)
-	maximum = 0.0304333 (at node 31)
-Injected flit rate average = 0.0196052
-	minimum = 0 (at node 0)
-	maximum = 0.6568 (at node 127)
-Accepted flit rate average= 0.0195906
-	minimum = 0 (at node 30)
-	maximum = 0.117633 (at node 12)
-Injected packet length average = 9.67412
-Accepted packet length average = 9.67812
-Total in-flight flits = 180 (0 measured)
-latency change    = 1
-throughput change = 1
-Warmed up ...Time used is 30000 cycles
-Class 0:
-Packet latency average = 4558.54
-	minimum = 14
-	maximum = 28748
-Network latency average = 47.515
-	minimum = 14
-	maximum = 488
-Slowest packet = 15564
-Flit latency average = 39.0835
-	minimum = 9
-	maximum = 396
-Slowest flit = 253097
-Fragmentation average = 3.04001
-	minimum = 0
-	maximum = 83
-Injected packet rate average = 0.00178372
-	minimum = 0 (at node 0)
-	maximum = 0.0606333 (at node 59)
-Accepted packet rate average = 0.00178268
-	minimum = 0 (at node 30)
-	maximum = 0.0307667 (at node 31)
-Injected flit rate average = 0.017677
-	minimum = 0 (at node 0)
-	maximum = 0.6598 (at node 127)
-Accepted flit rate average= 0.0176714
-	minimum = 0 (at node 30)
-	maximum = 0.117333 (at node 15)
-Injected packet length average = 9.91014
-Accepted packet length average = 9.91279
-Total in-flight flits = 245 (245 measured)
-latency change    = 0.701223
-throughput change = 0.108609
-Class 0:
-Packet latency average = 6085.33
-	minimum = 14
-	maximum = 43368
-Network latency average = 47.5191
-	minimum = 14
-	maximum = 521
-Slowest packet = 15564
-Flit latency average = 39.1919
-	minimum = 9
-	maximum = 396
-Slowest flit = 253097
-Fragmentation average = 3.00682
-	minimum = 0
-	maximum = 83
-Injected packet rate average = 0.0017776
-	minimum = 0 (at node 0)
-	maximum = 0.0606333 (at node 59)
-Accepted packet rate average = 0.00177741
-	minimum = 0 (at node 30)
-	maximum = 0.0307833 (at node 31)
-Injected flit rate average = 0.0175688
-	minimum = 0 (at node 0)
-	maximum = 0.659433 (at node 127)
-Accepted flit rate average= 0.0175661
-	minimum = 0 (at node 30)
-	maximum = 0.1174 (at node 13)
-Injected packet length average = 9.88339
-Accepted packet length average = 9.88301
-Total in-flight flits = 175 (175 measured)
-latency change    = 0.250897
-throughput change = 0.00598927
-Class 0:
-Packet latency average = 7625.54
-	minimum = 14
-	maximum = 57723
-Network latency average = 47.5021
-	minimum = 14
-	maximum = 525
-Slowest packet = 15564
-Flit latency average = 39.2352
-	minimum = 9
-	maximum = 410
-Slowest flit = 445244
-Fragmentation average = 2.99654
-	minimum = 0
-	maximum = 85
-Injected packet rate average = 0.00177105
-	minimum = 0 (at node 0)
-	maximum = 0.0606333 (at node 187)
-Accepted packet rate average = 0.00177018
-	minimum = 0 (at node 30)
-	maximum = 0.0307889 (at node 31)
-Injected flit rate average = 0.0174987
-	minimum = 0 (at node 0)
-	maximum = 0.659489 (at node 127)
-Accepted flit rate average= 0.0174895
-	minimum = 0 (at node 30)
-	maximum = 0.117033 (at node 12)
-Injected packet length average = 9.88038
-Accepted packet length average = 9.88003
-Total in-flight flits = 617 (617 measured)
-latency change    = 0.201981
-throughput change = 0.00438508
-Class 0:
-Packet latency average = 9149.58
-	minimum = 14
-	maximum = 72310
-Network latency average = 47.5377
-	minimum = 14
-	maximum = 525
-Slowest packet = 15564
-Flit latency average = 39.2753
-	minimum = 9
-	maximum = 507
-Slowest flit = 554544
-Fragmentation average = 2.99171
-	minimum = 0
-	maximum = 85
-Injected packet rate average = 0.00176712
-	minimum = 0 (at node 0)
-	maximum = 0.0606333 (at node 187)
-Accepted packet rate average = 0.00176657
-	minimum = 0 (at node 30)
-	maximum = 0.0307833 (at node 31)
-Injected flit rate average = 0.0174374
-	minimum = 0 (at node 0)
-	maximum = 0.65935 (at node 127)
-Accepted flit rate average= 0.017433
-	minimum = 0 (at node 30)
-	maximum = 0.11685 (at node 13)
-Injected packet length average = 9.8677
-Accepted packet length average = 9.86827
-Total in-flight flits = 317 (317 measured)
-latency change    = 0.166569
-throughput change = 0.00323971
-Draining remaining packets ...
-Time taken is 150134 cycles
-====== Overall Traffic Statistics ======
-====== Traffic class 0 ======
-Packet latency average = 9151.43 (1 samples)
-	minimum = 14 (1 samples)
-	maximum = 72366 (1 samples)
-Network latency average = 47.541 (1 samples)
-	minimum = 14 (1 samples)
-	maximum = 525 (1 samples)
-Flit latency average = 39.2809 (1 samples)
-	minimum = 9 (1 samples)
-	maximum = 507 (1 samples)
-Fragmentation average = 2.99215 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 85 (1 samples)
-Injected packet rate average = 0.00176712 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.0606333 (1 samples)
-Accepted packet rate average = 0.00176657 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.0307833 (1 samples)
-Injected flit rate average = 0.0174374 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.65935 (1 samples)
-Accepted flit rate average = 0.017433 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.11685 (1 samples)
-Injected packet size average = 9.8677 (1 samples)
-Accepted packet size average = 9.86827 (1 samples)
-Hops average = 6.47393 (1 samples)
-Total run time 73.7903
-[[16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]]
-Info: Working for unet_layer1
-====================== FINISH =========================
-
-
-Info: Working for unet_layer2
-====================== FINISH =========================
-
-
-Info: Working for unet_layer3
-====================== FINISH =========================
-
-
-Info: Working for unet_layer4
-====================== FINISH =========================
-
-
-Info: Working for unet_layer5
-====================== FINISH =========================
-
-
-Info: Working for unet_layer6
-====================== FINISH =========================
-
-
-Info: Working for unet_layer7
-====================== FINISH =========================
-
-
-Info: Working for unet_layer8
-====================== FINISH =========================
-
-
-Info: Working for unet_layer9
-====================== FINISH =========================
-
-
-Info: Working for unet_layer10
-====================== FINISH =========================
-
-
-Info: Working for unet_layer11
-====================== FINISH =========================
-
-
-Info: Working for unet_layer12
-====================== FINISH =========================
-
-
-Info: Working for unet_layer13
-====================== FINISH =========================
-
-
-Info: Working for unet_layer14
-====================== FINISH =========================
-
-
-Info: Working for unet_layer15
-====================== FINISH =========================
-
-
-Info: Working for unet_layer16
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer1
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer2
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer3
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer4
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer1
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer2
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer3
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer1
-====================== FINISH =========================
-
-
-Info: Working for inception_layer2
-====================== FINISH =========================
-
-
-Info: Working for inception_layer3
-====================== FINISH =========================
-
-
-Info: Working for inception_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer5
-====================== FINISH =========================
-
-
-Info: Working for inception_layer6
-====================== FINISH =========================
-
-
-Info: Working for inception_layer7
-====================== FINISH =========================
-
-
-Info: Working for inception_layer8
-====================== FINISH =========================
-
-
-BEGIN Configuration File: examples/focusconfig
-topology = mesh;
-k = 16;
-n = 2;
-
-sim_type = throughput;
-
-packet_size = 1;
-warmup_periods = 1;
-sample_period = 30000;
-max_samples = 20;
-
-burst_alpha = 0.5;
-burst_beta = -1.0;
-
-// Routing
-
-routing_function = dim_order;
-// routing_function = min_adapt;
-// routing_function = xy_yx;
-// routing_function = romm;
-
-
-// Flow control
-num_vcs = 2;
-vc_buf_size = 4;
-
-// Traffic
-traffic = focus;
-injection_process = focus;
-
-END Configuration File: examples/focusconfig
-Warning: injection kernel is renewed
-Warning: injection kernel is renewed
-Class 0:
-Packet latency average = 1048.92
-	minimum = 14
-	maximum = 11413
-Network latency average = 43.6287
-	minimum = 14
-	maximum = 451
-Slowest packet = 8
-Flit latency average = 37.6045
-	minimum = 9
-	maximum = 384
-Slowest flit = 73256
-Fragmentation average = 2.50324
-	minimum = 0
-	maximum = 62
-Injected packet rate average = 0.00213021
-	minimum = 0 (at node 0)
-	maximum = 0.0675667 (at node 127)
-Accepted packet rate average = 0.00212786
-	minimum = 0 (at node 30)
-	maximum = 0.0304333 (at node 31)
-Injected flit rate average = 0.0171822
-	minimum = 0 (at node 0)
-	maximum = 0.638867 (at node 127)
-Accepted flit rate average= 0.0171673
-	minimum = 0 (at node 30)
-	maximum = 0.117967 (at node 12)
-Injected packet length average = 8.06595
-Accepted packet length average = 8.06786
-Total in-flight flits = 137 (0 measured)
-latency change    = 1
-throughput change = 1
-Warmed up ...Time used is 30000 cycles
-Class 0:
-Packet latency average = 3479.44
-	minimum = 14
-	maximum = 22775
-Network latency average = 45.6006
-	minimum = 14
-	maximum = 454
-Slowest packet = 16362
-Flit latency average = 39.7248
-	minimum = 9
-	maximum = 390
-Slowest flit = 221840
-Fragmentation average = 2.50394
-	minimum = 0
-	maximum = 63
-Injected packet rate average = 0.0018875
-	minimum = 0 (at node 0)
-	maximum = 0.0678667 (at node 127)
-Accepted packet rate average = 0.00188568
-	minimum = 0 (at node 30)
-	maximum = 0.0307667 (at node 31)
-Injected flit rate average = 0.015578
-	minimum = 0 (at node 0)
-	maximum = 0.6419 (at node 127)
-Accepted flit rate average= 0.0155721
-	minimum = 0 (at node 30)
-	maximum = 0.1172 (at node 15)
-Injected packet length average = 8.25324
-Accepted packet length average = 8.25811
-Total in-flight flits = 166 (166 measured)
-latency change    = 0.698537
-throughput change = 0.102438
-Class 0:
-Packet latency average = 4643.6
-	minimum = 14
-	maximum = 34076
-Network latency average = 45.6341
-	minimum = 14
-	maximum = 454
-Slowest packet = 16362
-Flit latency average = 39.8283
-	minimum = 9
-	maximum = 390
-Slowest flit = 221840
-Fragmentation average = 2.49086
-	minimum = 0
-	maximum = 63
-Injected packet rate average = 0.00188092
-	minimum = 0 (at node 0)
-	maximum = 0.06785 (at node 127)
-Accepted packet rate average = 0.00188086
-	minimum = 0 (at node 30)
-	maximum = 0.0307833 (at node 31)
-Injected flit rate average = 0.0154882
-	minimum = 0 (at node 0)
-	maximum = 0.641633 (at node 127)
-Accepted flit rate average= 0.0154876
-	minimum = 0 (at node 30)
-	maximum = 0.11705 (at node 13)
-Injected packet length average = 8.23433
-Accepted packet length average = 8.2343
-Total in-flight flits = 150 (150 measured)
-latency change    = 0.2507
-throughput change = 0.00546053
-Class 0:
-Packet latency average = 5826.59
-	minimum = 14
-	maximum = 45450
-Network latency average = 45.6181
-	minimum = 14
-	maximum = 454
-Slowest packet = 16362
-Flit latency average = 39.8261
-	minimum = 9
-	maximum = 390
-Slowest flit = 221840
-Fragmentation average = 2.48804
-	minimum = 0
-	maximum = 63
-Injected packet rate average = 0.00187539
-	minimum = 0 (at node 0)
-	maximum = 0.0678556 (at node 127)
-Accepted packet rate average = 0.00187444
-	minimum = 0 (at node 30)
-	maximum = 0.0307889 (at node 31)
-Injected flit rate average = 0.0154487
-	minimum = 0 (at node 0)
-	maximum = 0.641644 (at node 127)
-Accepted flit rate average= 0.0154393
-	minimum = 0 (at node 30)
-	maximum = 0.1171 (at node 13)
-Injected packet length average = 8.23759
-Accepted packet length average = 8.23678
-Total in-flight flits = 548 (548 measured)
-latency change    = 0.203034
-throughput change = 0.00312463
-Class 0:
-Packet latency average = 7003.33
-	minimum = 14
-	maximum = 56766
-Network latency average = 45.6309
-	minimum = 14
-	maximum = 454
-Slowest packet = 16362
-Flit latency average = 39.8563
-	minimum = 9
-	maximum = 390
-Slowest flit = 221840
-Fragmentation average = 2.4891
-	minimum = 0
-	maximum = 63
-Injected packet rate average = 0.00187288
-	minimum = 0 (at node 0)
-	maximum = 0.0678833 (at node 127)
-Accepted packet rate average = 0.00187253
-	minimum = 0 (at node 30)
-	maximum = 0.0307917 (at node 31)
-Injected flit rate average = 0.0154147
-	minimum = 0 (at node 0)
-	maximum = 0.641658 (at node 127)
-Accepted flit rate average= 0.0154121
-	minimum = 0 (at node 30)
-	maximum = 0.11735 (at node 13)
-Injected packet length average = 8.23047
-Accepted packet length average = 8.23065
-Total in-flight flits = 215 (215 measured)
-latency change    = 0.168026
-throughput change = 0.00176572
-Draining remaining packets ...
-Time taken is 150062 cycles
-====== Overall Traffic Statistics ======
-====== Traffic class 0 ======
-Packet latency average = 7005.44 (1 samples)
-	minimum = 14 (1 samples)
-	maximum = 56766 (1 samples)
-Network latency average = 45.6305 (1 samples)
-	minimum = 14 (1 samples)
-	maximum = 454 (1 samples)
-Flit latency average = 39.856 (1 samples)
-	minimum = 9 (1 samples)
-	maximum = 390 (1 samples)
-Fragmentation average = 2.48885 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 63 (1 samples)
-Injected packet rate average = 0.00187288 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.0678833 (1 samples)
-Accepted packet rate average = 0.00187253 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.0307917 (1 samples)
-Injected flit rate average = 0.0154147 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.641658 (1 samples)
-Accepted flit rate average = 0.0154121 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.11735 (1 samples)
-Injected packet size average = 8.23047 (1 samples)
-Accepted packet size average = 8.23065 (1 samples)
-Hops average = 6.51038 (1 samples)
-Total run time 69.9728
-[[16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]]
-Info: Working for unet_layer1
-====================== FINISH =========================
-
-
-Info: Working for unet_layer2
-====================== FINISH =========================
-
-
-Info: Working for unet_layer3
-====================== FINISH =========================
-
-
-Info: Working for unet_layer4
-====================== FINISH =========================
-
-
-Info: Working for unet_layer5
-====================== FINISH =========================
-
-
-Info: Working for unet_layer6
-====================== FINISH =========================
-
-
-Info: Working for unet_layer7
-====================== FINISH =========================
-
-
-Info: Working for unet_layer8
-====================== FINISH =========================
-
-
-Info: Working for unet_layer9
-====================== FINISH =========================
-
-
-Info: Working for unet_layer10
-====================== FINISH =========================
-
-
-Info: Working for unet_layer11
-====================== FINISH =========================
-
-
-Info: Working for unet_layer12
-====================== FINISH =========================
-
-
-Info: Working for unet_layer13
-====================== FINISH =========================
-
-
-Info: Working for unet_layer14
-====================== FINISH =========================
-
-
-Info: Working for unet_layer15
-====================== FINISH =========================
-
-
-Info: Working for unet_layer16
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer1
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer2
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer3
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer4
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer1
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer2
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer3
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer1
-====================== FINISH =========================
-
-
-Info: Working for inception_layer2
-====================== FINISH =========================
-
-
-Info: Working for inception_layer3
-====================== FINISH =========================
-
-
-Info: Working for inception_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer5
-====================== FINISH =========================
-
-
-Info: Working for inception_layer6
-====================== FINISH =========================
-
-
-Info: Working for inception_layer7
-====================== FINISH =========================
-
-
-Info: Working for inception_layer8
-====================== FINISH =========================
-
-
-BEGIN Configuration File: examples/focusconfig
-topology = mesh;
-k = 16;
-n = 2;
-
-sim_type = throughput;
-
-packet_size = 1;
-warmup_periods = 1;
-sample_period = 30000;
-max_samples = 20;
-
-burst_alpha = 0.5;
-burst_beta = -1.0;
-
-// Routing
-
-routing_function = dim_order;
-// routing_function = min_adapt;
-// routing_function = xy_yx;
-// routing_function = romm;
-
-
-// Flow control
-num_vcs = 2;
-vc_buf_size = 4;
-
-// Traffic
-traffic = focus;
-injection_process = focus;
-
-END Configuration File: examples/focusconfig
-Warning: injection kernel is renewed
-Warning: injection kernel is renewed
-Class 0:
-Packet latency average = 370.766
-	minimum = 13
-	maximum = 3656
-Network latency average = 41.9281
-	minimum = 13
-	maximum = 363
-Slowest packet = 10
-Flit latency average = 38.2031
-	minimum = 9
-	maximum = 310
-Slowest flit = 65191
-Fragmentation average = 1.6504
-	minimum = 0
-	maximum = 50
-Injected packet rate average = 0.00229284
-	minimum = 0 (at node 0)
-	maximum = 0.0957667 (at node 127)
-Accepted packet rate average = 0.00228984
-	minimum = 0 (at node 30)
-	maximum = 0.0304333 (at node 31)
-Injected flit rate average = 0.0153719
-	minimum = 0 (at node 0)
-	maximum = 0.707033 (at node 127)
-Accepted flit rate average= 0.0153574
-	minimum = 0 (at node 30)
-	maximum = 0.100667 (at node 12)
-Injected packet length average = 6.7043
-Accepted packet length average = 6.70676
-Total in-flight flits = 137 (0 measured)
-latency change    = 1
-throughput change = 1
-Warmed up ...Time used is 30000 cycles
-Class 0:
-Packet latency average = 1068.79
-	minimum = 13
-	maximum = 7275
-Network latency average = 43.8051
-	minimum = 13
-	maximum = 319
-Slowest packet = 17613
-Flit latency average = 40.2905
-	minimum = 9
-	maximum = 264
-Slowest flit = 199298
-Fragmentation average = 1.63978
-	minimum = 0
-	maximum = 49
-Injected packet rate average = 0.0020569
-	minimum = 0 (at node 0)
-	maximum = 0.0960667 (at node 127)
-Accepted packet rate average = 0.00205508
-	minimum = 0 (at node 30)
-	maximum = 0.0307667 (at node 31)
-Injected flit rate average = 0.0140703
-	minimum = 0 (at node 0)
-	maximum = 0.7116 (at node 127)
-Accepted flit rate average= 0.014065
-	minimum = 0 (at node 30)
-	maximum = 0.101 (at node 12)
-Injected packet length average = 6.84054
-Accepted packet length average = 6.84401
-Total in-flight flits = 171 (171 measured)
-latency change    = 0.653096
-throughput change = 0.0918912
-Class 0:
-Packet latency average = 1399.68
-	minimum = 13
-	maximum = 10928
-Network latency average = 43.889
-	minimum = 13
-	maximum = 364
-Slowest packet = 17613
-Flit latency average = 40.4233
-	minimum = 9
-	maximum = 311
-Slowest flit = 286824
-Fragmentation average = 1.64191
-	minimum = 0
-	maximum = 50
-Injected packet rate average = 0.00204896
-	minimum = 0 (at node 0)
-	maximum = 0.0959833 (at node 127)
-Accepted packet rate average = 0.00204902
-	minimum = 0 (at node 30)
-	maximum = 0.0307833 (at node 31)
-Injected flit rate average = 0.013986
-	minimum = 0 (at node 0)
-	maximum = 0.7113 (at node 127)
-Accepted flit rate average= 0.0139855
-	minimum = 0 (at node 30)
-	maximum = 0.101 (at node 12)
-Injected packet length average = 6.82591
-Accepted packet length average = 6.82544
-Total in-flight flits = 134 (134 measured)
-latency change    = 0.23641
-throughput change = 0.00568391
-Class 0:
-Packet latency average = 1735.89
-	minimum = 13
-	maximum = 14535
-Network latency average = 43.8682
-	minimum = 13
-	maximum = 364
-Slowest packet = 17613
-Flit latency average = 40.4221
-	minimum = 9
-	maximum = 311
-Slowest flit = 286824
-Fragmentation average = 1.63519
-	minimum = 0
-	maximum = 50
-Injected packet rate average = 0.00204366
-	minimum = 0 (at node 0)
-	maximum = 0.0960111 (at node 127)
-Accepted packet rate average = 0.00204236
-	minimum = 0 (at node 30)
-	maximum = 0.0307889 (at node 31)
-Injected flit rate average = 0.0139531
-	minimum = 0 (at node 0)
-	maximum = 0.711444 (at node 127)
-Accepted flit rate average= 0.0139425
-	minimum = 0 (at node 30)
-	maximum = 0.101 (at node 29)
-Injected packet length average = 6.82749
-Accepted packet length average = 6.82667
-Total in-flight flits = 577 (577 measured)
-latency change    = 0.19368
-throughput change = 0.00308029
-Class 0:
-Packet latency average = 2068.99
-	minimum = 13
-	maximum = 18230
-Network latency average = 43.9036
-	minimum = 13
-	maximum = 364
-Slowest packet = 17613
-Flit latency average = 40.4669
-	minimum = 9
-	maximum = 311
-Slowest flit = 286824
-Fragmentation average = 1.64204
-	minimum = 0
-	maximum = 50
-Injected packet rate average = 0.00204001
-	minimum = 0 (at node 0)
-	maximum = 0.0959833 (at node 127)
-Accepted packet rate average = 0.00203975
-	minimum = 0 (at node 30)
-	maximum = 0.0307917 (at node 31)
-Injected flit rate average = 0.0139125
-	minimum = 0 (at node 0)
-	maximum = 0.711325 (at node 127)
-Accepted flit rate average= 0.0139119
-	minimum = 0 (at node 30)
-	maximum = 0.101042 (at node 14)
-Injected packet length average = 6.81985
-Accepted packet length average = 6.82041
-Total in-flight flits = 135 (135 measured)
-latency change    = 0.160995
-throughput change = 0.00220104
-Draining remaining packets ...
-Time taken is 150055 cycles
-====== Overall Traffic Statistics ======
-====== Traffic class 0 ======
-Packet latency average = 2069.15 (1 samples)
-	minimum = 13 (1 samples)
-	maximum = 18239 (1 samples)
-Network latency average = 43.9003 (1 samples)
-	minimum = 13 (1 samples)
-	maximum = 364 (1 samples)
-Flit latency average = 40.4653 (1 samples)
-	minimum = 9 (1 samples)
-	maximum = 311 (1 samples)
-Fragmentation average = 1.64172 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 50 (1 samples)
-Injected packet rate average = 0.00204001 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.0959833 (1 samples)
-Accepted packet rate average = 0.00203975 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.0307917 (1 samples)
-Injected flit rate average = 0.0139125 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.711325 (1 samples)
-Accepted flit rate average = 0.0139119 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.101042 (1 samples)
-Injected packet size average = 6.81985 (1 samples)
-Accepted packet size average = 6.82041 (1 samples)
-Hops average = 6.51277 (1 samples)
-Total run time 66.9676
-[[16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]]
-Info: Working for unet_layer1
-====================== FINISH =========================
-
-
-Info: Working for unet_layer2
-====================== FINISH =========================
-
-
-Info: Working for unet_layer3
-====================== FINISH =========================
-
-
-Info: Working for unet_layer4
-====================== FINISH =========================
-
-
-Info: Working for unet_layer5
-====================== FINISH =========================
-
-
-Info: Working for unet_layer6
-====================== FINISH =========================
-
-
-Info: Working for unet_layer7
-====================== FINISH =========================
-
-
-Info: Working for unet_layer8
-====================== FINISH =========================
-
-
-Info: Working for unet_layer9
-====================== FINISH =========================
-
-
-Info: Working for unet_layer10
-====================== FINISH =========================
-
-
-Info: Working for unet_layer11
-====================== FINISH =========================
-
-
-Info: Working for unet_layer12
-====================== FINISH =========================
-
-
-Info: Working for unet_layer13
-====================== FINISH =========================
-
-
-Info: Working for unet_layer14
-====================== FINISH =========================
-
-
-Info: Working for unet_layer15
-====================== FINISH =========================
-
-
-Info: Working for unet_layer16
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer1
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer2
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer3
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer4
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer1
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer2
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer3
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer1
-====================== FINISH =========================
-
-
-Info: Working for inception_layer2
-====================== FINISH =========================
-
-
-Info: Working for inception_layer3
-====================== FINISH =========================
-
-
-Info: Working for inception_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer5
-====================== FINISH =========================
-
-
-Info: Working for inception_layer6
-====================== FINISH =========================
-
-
-Info: Working for inception_layer7
-====================== FINISH =========================
-
-
-Info: Working for inception_layer8
-====================== FINISH =========================
-
-
-BEGIN Configuration File: examples/focusconfig
-topology = mesh;
-k = 16;
-n = 2;
-
-sim_type = throughput;
-
-packet_size = 1;
-warmup_periods = 1;
-sample_period = 30000;
-max_samples = 20;
-
-burst_alpha = 0.5;
-burst_beta = -1.0;
-
-// Routing
-
-routing_function = dim_order;
-// routing_function = min_adapt;
-// routing_function = xy_yx;
-// routing_function = romm;
-
-
-// Flow control
-num_vcs = 2;
-vc_buf_size = 4;
-
-// Traffic
-traffic = focus;
-injection_process = focus;
-
-END Configuration File: examples/focusconfig
-Warning: injection kernel is renewed
-Warning: injection kernel is renewed
-Class 0:
-Packet latency average = 320.654
-	minimum = 13
-	maximum = 3141
-Network latency average = 41.1182
-	minimum = 13
-	maximum = 332
-Slowest packet = 10
-Flit latency average = 38.1296
-	minimum = 9
-	maximum = 294
-Slowest flit = 60668
-Fragmentation average = 1.45764
-	minimum = 0
-	maximum = 41
-Injected packet rate average = 0.00230039
-	minimum = 0 (at node 0)
-	maximum = 0.0976 (at node 127)
-Accepted packet rate average = 0.00229779
-	minimum = 0 (at node 30)
-	maximum = 0.0304333 (at node 31)
-Injected flit rate average = 0.0144048
-	minimum = 0 (at node 0)
-	maximum = 0.710033 (at node 127)
-Accepted flit rate average= 0.0143938
-	minimum = 0 (at node 30)
-	maximum = 0.100667 (at node 12)
-Injected packet length average = 6.2619
-Accepted packet length average = 6.26418
-Total in-flight flits = 92 (0 measured)
-latency change    = 1
-throughput change = 1
-Warmed up ...Time used is 30000 cycles
-Class 0:
-Packet latency average = 920.272
-	minimum = 13
-	maximum = 6187
-Network latency average = 42.9441
-	minimum = 13
-	maximum = 301
-Slowest packet = 17670
-Flit latency average = 40.1062
-	minimum = 9
-	maximum = 255
-Slowest flit = 124502
-Fragmentation average = 1.46566
-	minimum = 0
-	maximum = 41
-Injected packet rate average = 0.00206536
-	minimum = 0 (at node 0)
-	maximum = 0.0983 (at node 127)
-Accepted packet rate average = 0.00206315
-	minimum = 0 (at node 30)
-	maximum = 0.0307667 (at node 31)
-Injected flit rate average = 0.0132374
-	minimum = 0 (at node 0)
-	maximum = 0.714133 (at node 127)
-Accepted flit rate average= 0.0132307
-	minimum = 0 (at node 30)
-	maximum = 0.101 (at node 12)
-Injected packet length average = 6.40922
-Accepted packet length average = 6.41287
-Total in-flight flits = 142 (142 measured)
-latency change    = 0.651566
-throughput change = 0.087903
-Class 0:
-Packet latency average = 1203.9
-	minimum = 13
-	maximum = 9155
-Network latency average = 42.952
-	minimum = 13
-	maximum = 301
-Slowest packet = 17670
-Flit latency average = 40.1439
-	minimum = 9
-	maximum = 255
-Slowest flit = 124502
-Fragmentation average = 1.44944
-	minimum = 0
-	maximum = 41
-Injected packet rate average = 0.00205742
-	minimum = 0 (at node 0)
-	maximum = 0.0981667 (at node 127)
-Accepted packet rate average = 0.00205723
-	minimum = 0 (at node 30)
-	maximum = 0.0307833 (at node 31)
-Injected flit rate average = 0.0131667
-	minimum = 0 (at node 0)
-	maximum = 0.714167 (at node 127)
-Accepted flit rate average= 0.0131635
-	minimum = 0 (at node 30)
-	maximum = 0.101 (at node 12)
-Injected packet length average = 6.39959
-Accepted packet length average = 6.39865
-Total in-flight flits = 194 (194 measured)
-latency change    = 0.235592
-throughput change = 0.00510903
-Class 0:
-Packet latency average = 1490.59
-	minimum = 13
-	maximum = 12303
-Network latency average = 42.9357
-	minimum = 13
-	maximum = 301
-Slowest packet = 17670
-Flit latency average = 40.1214
-	minimum = 9
-	maximum = 255
-Slowest flit = 124502
-Fragmentation average = 1.44914
-	minimum = 0
-	maximum = 41
-Injected packet rate average = 0.00205204
-	minimum = 0 (at node 0)
-	maximum = 0.0981556 (at node 127)
-Accepted packet rate average = 0.0020503
-	minimum = 0 (at node 30)
-	maximum = 0.0307889 (at node 31)
-Injected flit rate average = 0.0131382
-	minimum = 0 (at node 0)
-	maximum = 0.714278 (at node 127)
-Accepted flit rate average= 0.0131262
-	minimum = 0 (at node 30)
-	maximum = 0.100956 (at node 29)
-Injected packet length average = 6.4025
-Accepted packet length average = 6.40206
-Total in-flight flits = 498 (498 measured)
-latency change    = 0.192334
-throughput change = 0.00284201
-Class 0:
-Packet latency average = 1778.59
-	minimum = 13
-	maximum = 15323
-Network latency average = 43.0008
-	minimum = 13
-	maximum = 301
-Slowest packet = 17670
-Flit latency average = 40.1854
-	minimum = 9
-	maximum = 255
-Slowest flit = 124502
-Fragmentation average = 1.45535
-	minimum = 0
-	maximum = 41
-Injected packet rate average = 0.00204847
-	minimum = 0 (at node 0)
-	maximum = 0.098175 (at node 127)
-Accepted packet rate average = 0.00204814
-	minimum = 0 (at node 30)
-	maximum = 0.0307917 (at node 31)
-Injected flit rate average = 0.0131
-	minimum = 0 (at node 0)
-	maximum = 0.714317 (at node 127)
-Accepted flit rate average= 0.0130984
-	minimum = 0 (at node 30)
-	maximum = 0.101 (at node 12)
-Injected packet length average = 6.39502
-Accepted packet length average = 6.39525
-Total in-flight flits = 138 (138 measured)
-latency change    = 0.161925
-throughput change = 0.00211987
-Draining remaining packets ...
-Time taken is 150055 cycles
-====== Overall Traffic Statistics ======
-====== Traffic class 0 ======
-Packet latency average = 1779.22 (1 samples)
-	minimum = 13 (1 samples)
-	maximum = 15323 (1 samples)
-Network latency average = 42.9984 (1 samples)
-	minimum = 13 (1 samples)
-	maximum = 301 (1 samples)
-Flit latency average = 40.1838 (1 samples)
-	minimum = 9 (1 samples)
-	maximum = 255 (1 samples)
-Fragmentation average = 1.45529 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 41 (1 samples)
-Injected packet rate average = 0.00204847 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.098175 (1 samples)
-Accepted packet rate average = 0.00204814 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.0307917 (1 samples)
-Injected flit rate average = 0.0131 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.714317 (1 samples)
-Accepted flit rate average = 0.0130984 (1 samples)
-	minimum = 0 (1 samples)
-	maximum = 0.101 (1 samples)
-Injected packet size average = 6.39502 (1 samples)
-Accepted packet size average = 6.39525 (1 samples)
-Hops average = 6.50922 (1 samples)
-Total run time 63.1657
-[[16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]]
-Info: Working for unet_layer1
-====================== FINISH =========================
-
-
-Info: Working for unet_layer2
-====================== FINISH =========================
-
-
-Info: Working for unet_layer3
-====================== FINISH =========================
-
-
-Info: Working for unet_layer4
-====================== FINISH =========================
-
-
-Info: Working for unet_layer5
-====================== FINISH =========================
-
-
-Info: Working for unet_layer6
-====================== FINISH =========================
-
-
-Info: Working for unet_layer7
-====================== FINISH =========================
-
-
-Info: Working for unet_layer8
-====================== FINISH =========================
-
-
-Info: Working for unet_layer9
-====================== FINISH =========================
-
-
-Info: Working for unet_layer10
-====================== FINISH =========================
-
-
-Info: Working for unet_layer11
-====================== FINISH =========================
-
-
-Info: Working for unet_layer12
-====================== FINISH =========================
-
-
-Info: Working for unet_layer13
-====================== FINISH =========================
-
-
-Info: Working for unet_layer14
-====================== FINISH =========================
-
-
-Info: Working for unet_layer15
-====================== FINISH =========================
-
-
-Info: Working for unet_layer16
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer1
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer2
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer3
-====================== FINISH =========================
-
-
-Info: Working for vgg16_layer4
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer1
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer2
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer3
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer1
-====================== FINISH =========================
-
-
-Info: Working for inception_layer2
-====================== FINISH =========================
-
-
-Info: Working for inception_layer3
-====================== FINISH =========================
-
-
-Info: Working for inception_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer5
-====================== FINISH =========================
-
-
-Info: Working for inception_layer6
-====================== FINISH =========================
-
-
-Info: Working for inception_layer7
-====================== FINISH =========================
-
-
-Info: Working for inception_layer8
-====================== FINISH =========================
-
-
-BEGIN Configuration File: examples/focusconfig
-topology = mesh;
-k = 16;
-n = 2;
-
-sim_type = throughput;
-
-packet_size = 1;
-warmup_periods = 1;
-sample_period = 30000;
-max_samples = 20;
-
-burst_alpha = 0.5;
-burst_beta = -1.0;
-
-// Routing
-
-routing_function = dim_order;
-// routing_function = min_adapt;
-// routing_function = xy_yx;
-// routing_function = romm;
-
-
-// Flow control
-num_vcs = 2;
-vc_buf_size = 4;
-
-// Traffic
-traffic = focus;
-injection_process = focus;
-
-END Configuration File: examples/focusconfig
-Warning: injection kernel is renewed
-Warning: injection kernel is renewed
-Class 0:
-Packet latency average = 81.2376
-	minimum = 13
-	maximum = 1214
-Network latency average = 39.6343
-	minimum = 13
-	maximum = 214
-Slowest packet = 3
-Flit latency average = 37.7127
-	minimum = 9
-	maximum = 150
-Slowest flit = 33929
-Fragmentation average = 1.12148
-	minimum = 0
-	maximum = 35
-Injected packet rate average = 0.00234271
-	minimum = 0 (at node 0)
-	maximum = 0.108367 (at node 127)
-Accepted packet rate average = 0.00233984
-	minimum = 0 (at node 30)
-	maximum = 0.0304333 (at node 31)
-Injected flit rate average = 0.0129012
-	minimum = 0 (at node 0)
-	maximum = 0.668733 (at node 127)
-Accepted flit rate average= 0.01289
-	minimum = 0 (at node 30)
-	maximum = 0.0906 (at node 12)
-Injected packet length average = 5.50695
-Accepted packet length average = 5.5089
-Total in-flight flits = 94 (0 measured)
-latency change    = 1
-throughput change = 1
-Warmed up ...Time used is 30000 cycles
-Class 0:
-Packet latency average = 84.4793
-	minimum = 13
-	maximum = 1168
-Network latency average = 41.4097
-	minimum = 13
+Slowest packet = 0
+Flit latency average = 27.3024
+	minimum = 6
 	maximum = 256
-Slowest packet = 17995
-Flit latency average = 39.8063
-	minimum = 9
-	maximum = 202
-Slowest flit = 166876
-Fragmentation average = 1.11414
-	minimum = 0
-	maximum = 35
-Injected packet rate average = 0.00210794
+Slowest flit = 49375
+Fragmentation average = 9.5958
+	minimum = 2
+	maximum = 161
+Injected packet rate average = 0.00108633
 	minimum = 0 (at node 0)
-	maximum = 0.109233 (at node 127)
-Accepted packet rate average = 0.00210651
-	minimum = 0 (at node 30)
-	maximum = 0.0307667 (at node 31)
-Injected flit rate average = 0.0118108
+	maximum = 0.0521 (at node 8)
+Accepted packet rate average = 0.00107852
+	minimum = 0 (at node 50)
+	maximum = 0.0065 (at node 63)
+Injected flit rate average = 0.0314738
 	minimum = 0 (at node 0)
-	maximum = 0.675333 (at node 127)
-Accepted flit rate average= 0.0118079
-	minimum = 0 (at node 30)
-	maximum = 0.0934333 (at node 143)
-Injected packet length average = 5.603
-Accepted packet length average = 5.60545
-Total in-flight flits = 118 (118 measured)
-latency change    = 0.0383735
-throughput change = 0.0916359
+	maximum = 0.6676 (at node 247)
+Accepted flit rate average= 0.0313746
+	minimum = 0 (at node 50)
+	maximum = 0.4113 (at node 215)
+Injected packet length average = 28.9727
+Accepted packet length average = 29.0905
+Total in-flight flits = 845 (0 measured)
+latency change    = 1
+throughput change = 1
+Warmed up ...Time used is 10000 cycles
 Class 0:
-Packet latency average = 83.0465
-	minimum = 13
-	maximum = 1168
-Network latency average = 41.4432
-	minimum = 13
-	maximum = 256
-Slowest packet = 17995
-Flit latency average = 39.8751
-	minimum = 9
-	maximum = 204
-Slowest flit = 277753
-Fragmentation average = 1.10681
-	minimum = 0
-	maximum = 35
-Injected packet rate average = 0.00210091
+Packet latency average = 3133.17
+	minimum = 32
+	maximum = 12489
+Network latency average = 85.3138
+	minimum = 19
+	maximum = 380
+Slowest packet = 2781
+Flit latency average = 28.1229
+	minimum = 6
+	maximum = 166
+Slowest flit = 118190
+Fragmentation average = 13.4689
+	minimum = 2
+	maximum = 162
+Injected packet rate average = 0.000664844
 	minimum = 0 (at node 0)
-	maximum = 0.1093 (at node 127)
-Accepted packet rate average = 0.00210065
-	minimum = 0 (at node 30)
-	maximum = 0.0307833 (at node 31)
-Injected flit rate average = 0.0117511
+	maximum = 0.0381 (at node 179)
+Accepted packet rate average = 0.000667578
+	minimum = 0 (at node 12)
+	maximum = 0.0064 (at node 128)
+Injected flit rate average = 0.0268805
 	minimum = 0 (at node 0)
-	maximum = 0.675617 (at node 127)
-Accepted flit rate average= 0.0117489
-	minimum = 0 (at node 30)
-	maximum = 0.0933333 (at node 143)
-Injected packet length average = 5.59334
-Accepted packet length average = 5.59298
-Total in-flight flits = 134 (134 measured)
-latency change    = 0.0172531
-throughput change = 0.00502596
+	maximum = 0.7138 (at node 247)
+Accepted flit rate average= 0.0269125
+	minimum = 0 (at node 12)
+	maximum = 0.2667 (at node 215)
+Injected packet length average = 40.4313
+Accepted packet length average = 40.3136
+Total in-flight flits = 838 (838 measured)
+latency change    = 0.716359
+throughput change = 0.165801
 Class 0:
-Packet latency average = 82.252
+Packet latency average = 4093.15
 	minimum = 13
-	maximum = 1168
-Network latency average = 41.3683
+	maximum = 18775
+Network latency average = 84.7107
 	minimum = 13
-	maximum = 256
-Slowest packet = 17995
-Flit latency average = 39.8109
-	minimum = 9
-	maximum = 204
-Slowest flit = 277753
-Fragmentation average = 1.10175
+	maximum = 380
+Slowest packet = 2781
+Flit latency average = 28.3642
+	minimum = 6
+	maximum = 166
+Slowest flit = 118190
+Fragmentation average = 13.2285
 	minimum = 0
-	maximum = 35
-Injected packet rate average = 0.00209575
+	maximum = 162
+Injected packet rate average = 0.000665234
 	minimum = 0 (at node 0)
-	maximum = 0.109289 (at node 127)
-Accepted packet rate average = 0.00209418
-	minimum = 0 (at node 30)
-	maximum = 0.0307889 (at node 31)
-Injected flit rate average = 0.011726
+	maximum = 0.038 (at node 179)
+Accepted packet rate average = 0.000665625
+	minimum = 0 (at node 12)
+	maximum = 0.0064 (at node 128)
+Injected flit rate average = 0.0266326
 	minimum = 0 (at node 0)
-	maximum = 0.675633 (at node 127)
-Accepted flit rate average= 0.0117162
-	minimum = 0 (at node 30)
-	maximum = 0.0931333 (at node 143)
-Injected packet length average = 5.59512
-Accepted packet length average = 5.59465
-Total in-flight flits = 492 (492 measured)
-latency change    = 0.00965919
-throughput change = 0.00278764
+	maximum = 0.70795 (at node 247)
+Accepted flit rate average= 0.0266402
+	minimum = 0 (at node 12)
+	maximum = 0.15675 (at node 7)
+Injected packet length average = 40.0349
+Accepted packet length average = 40.0229
+Total in-flight flits = 580 (580 measured)
+latency change    = 0.234534
+throughput change = 0.0102201
 Class 0:
-Packet latency average = 82.1894
+Packet latency average = 4996.41
 	minimum = 13
-	maximum = 1168
-Network latency average = 41.3952
+	maximum = 25058
+Network latency average = 84.6156
 	minimum = 13
-	maximum = 256
-Slowest packet = 17995
-Flit latency average = 39.8438
-	minimum = 9
-	maximum = 204
-Slowest flit = 277753
-Fragmentation average = 1.1056
+	maximum = 380
+Slowest packet = 2781
+Flit latency average = 28.4368
+	minimum = 6
+	maximum = 166
+Slowest flit = 118190
+Fragmentation average = 13.182
 	minimum = 0
-	maximum = 35
-Injected packet rate average = 0.00209144
+	maximum = 162
+Injected packet rate average = 0.000660677
 	minimum = 0 (at node 0)
-	maximum = 0.109183 (at node 127)
-Accepted packet rate average = 0.00209131
-	minimum = 0 (at node 30)
-	maximum = 0.0307917 (at node 31)
-Injected flit rate average = 0.0116884
+	maximum = 0.038 (at node 179)
+Accepted packet rate average = 0.000662109
+	minimum = 0 (at node 12)
+	maximum = 0.00636667 (at node 128)
+Injected flit rate average = 0.026553
 	minimum = 0 (at node 0)
-	maximum = 0.67535 (at node 127)
-Accepted flit rate average= 0.0116882
-	minimum = 0 (at node 30)
-	maximum = 0.0927 (at node 143)
-Injected packet length average = 5.58868
-Accepted packet length average = 5.58893
-Total in-flight flits = 95 (95 measured)
-latency change    = 0.000761635
-throughput change = 0.00239978
+	maximum = 0.710767 (at node 247)
+Accepted flit rate average= 0.0265723
+	minimum = 0 (at node 12)
+	maximum = 0.1419 (at node 7)
+Injected packet length average = 40.1906
+Accepted packet length average = 40.1327
+Total in-flight flits = 224 (224 measured)
+latency change    = 0.180783
+throughput change = 0.00255788
+Class 0:
+Packet latency average = 5863.76
+	minimum = 13
+	maximum = 31323
+Network latency average = 84.464
+	minimum = 13
+	maximum = 380
+Slowest packet = 2781
+Flit latency average = 28.3964
+	minimum = 6
+	maximum = 166
+Slowest flit = 118190
+Fragmentation average = 13.198
+	minimum = 0
+	maximum = 162
+Injected packet rate average = 0.000661328
+	minimum = 0 (at node 0)
+	maximum = 0.03795 (at node 179)
+Accepted packet rate average = 0.000662012
+	minimum = 0 (at node 12)
+	maximum = 0.006375 (at node 128)
+Injected flit rate average = 0.0264789
+	minimum = 0 (at node 0)
+	maximum = 0.7092 (at node 247)
+Accepted flit rate average= 0.0264856
+	minimum = 0 (at node 12)
+	maximum = 0.1518 (at node 7)
+Injected packet length average = 40.039
+Accepted packet length average = 40.0078
+Total in-flight flits = 416 (416 measured)
+latency change    = 0.147917
+throughput change = 0.00327049
 Draining remaining packets ...
-Time taken is 150055 cycles
+Time taken is 50128 cycles
 ====== Overall Traffic Statistics ======
 ====== Traffic class 0 ======
-Packet latency average = 82.1775 (1 samples)
+Packet latency average = 5867.67 (1 samples)
 	minimum = 13 (1 samples)
-	maximum = 1168 (1 samples)
-Network latency average = 41.3947 (1 samples)
+	maximum = 31325 (1 samples)
+Network latency average = 84.5009 (1 samples)
 	minimum = 13 (1 samples)
-	maximum = 256 (1 samples)
-Flit latency average = 39.8438 (1 samples)
-	minimum = 9 (1 samples)
-	maximum = 204 (1 samples)
-Fragmentation average = 1.10536 (1 samples)
+	maximum = 380 (1 samples)
+Flit latency average = 28.4094 (1 samples)
+	minimum = 6 (1 samples)
+	maximum = 166 (1 samples)
+Fragmentation average = 13.1983 (1 samples)
 	minimum = 0 (1 samples)
-	maximum = 35 (1 samples)
-Injected packet rate average = 0.00209144 (1 samples)
+	maximum = 162 (1 samples)
+Injected packet rate average = 0.000661328 (1 samples)
 	minimum = 0 (1 samples)
-	maximum = 0.109183 (1 samples)
-Accepted packet rate average = 0.00209131 (1 samples)
+	maximum = 0.03795 (1 samples)
+Accepted packet rate average = 0.000662012 (1 samples)
 	minimum = 0 (1 samples)
-	maximum = 0.0307917 (1 samples)
-Injected flit rate average = 0.0116884 (1 samples)
+	maximum = 0.006375 (1 samples)
+Injected flit rate average = 0.0264789 (1 samples)
 	minimum = 0 (1 samples)
-	maximum = 0.67535 (1 samples)
-Accepted flit rate average = 0.0116882 (1 samples)
+	maximum = 0.7092 (1 samples)
+Accepted flit rate average = 0.0264856 (1 samples)
 	minimum = 0 (1 samples)
-	maximum = 0.0927 (1 samples)
-Injected packet size average = 5.58868 (1 samples)
-Accepted packet size average = 5.58893 (1 samples)
-Hops average = 6.49364 (1 samples)
-Total run time 63.2829
-[[16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]]
-Info: Working for unet_layer1
+	maximum = 0.1518 (1 samples)
+Injected packet size average = 40.039 (1 samples)
+Accepted packet size average = 40.0078 (1 samples)
+Hops average = 5.97135 (1 samples)
+Total run time 25.7975
+Info: Working for wide_resnet50_2_layer1
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer2
+Info: Working for wide_resnet50_2_layer2
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer3
+Info: Working for wide_resnet50_2_layer3
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer4
+Info: Working for wide_resnet50_2_layer4
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer5
+Info: Working for resnext50_32x4d_layer1
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer6
+Info: Working for resnext50_32x4d_layer2
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer7
+Info: Working for resnext50_32x4d_layer3
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer8
+Info: Working for resnext50_32x4d_layer4
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer9
+Info: Working for resnet50_layer1
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer10
+Info: Working for resnet50_layer2
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer11
+Info: Working for resnet50_layer3
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer12
+Info: Working for resnet50_layer4
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer13
+Info: Working for resnet50_layer5
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer14
+Info: Working for resnet50_layer6
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer15
+Info: Working for resnet50_layer7
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer16
+Info: Working for resnet50_layer8
 ====================== FINISH =========================
 
 
@@ -2547,54 +305,22 @@ Info: Working for vgg16_layer4
 ====================== FINISH =========================
 
 
-Info: Working for mnasnet_layer1
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer2
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer3
-====================== FINISH =========================
-
-
-Info: Working for mnasnet_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer1
-====================== FINISH =========================
-
-
-Info: Working for inception_layer2
-====================== FINISH =========================
-
-
-Info: Working for inception_layer3
-====================== FINISH =========================
-
-
-Info: Working for inception_layer4
-====================== FINISH =========================
-
-
-Info: Working for inception_layer5
-====================== FINISH =========================
-
-
-Info: Working for inception_layer6
-====================== FINISH =========================
-
-
-Info: Working for inception_layer7
-====================== FINISH =========================
-
-
-Info: Working for inception_layer8
-====================== FINISH =========================
-
-
+[[ 0  0  0  0  3  3  3  3  4  4  4  4  5  5  5  5]
+ [ 0  0  0  0  3  3  3  3  4  4  4  4  5  5  5  5]
+ [ 0  0  0  0  3  3  3  3  4  4  4  4  5  5  5  5]
+ [ 0  0  0  0  3  3  3  3  4  4  4  4  5  5  5  5]
+ [ 1  1  1  1  2  2  2  2  7  7  7  7  6  6  6  6]
+ [ 1  1  1  1  2  2  2  2  7  7  7  7  6  6  6  6]
+ [ 1  1  1  1  2  2  2  2  7  7  7  7  6  6  6  6]
+ [ 1  1  1  1  2  2  2  2  7  7  7  7  6  6  6  6]
+ [13 13 12 12 11 11 10 10 16 16 16 16 17 17 17 17]
+ [13 13 12 12 11 11 10 10 16 16 16 16 17 17 17 17]
+ [13 13 12 12 11 11 10 10 16 16 16 16 17 17 17 17]
+ [13 13 12 12 11 11 10 10 16 16 16 16 17 17 17 17]
+ [14 14 14 14  9  9  9  9 19 19 19 19 18 18 18 18]
+ [14 14 14 14  9  9  9  9 19 19 19 19 18 18 18 18]
+ [15 15 15 15  8  8  8  8 19 19 19 19 18 18 18 18]
+ [15 15 15 15  8  8  8  8 19 19 19 19 18 18 18 18]]
 BEGIN Configuration File: examples/focusconfig
 topology = mesh;
 k = 16;
@@ -2604,8 +330,8 @@ sim_type = throughput;
 
 packet_size = 1;
 warmup_periods = 1;
-sample_period = 30000;
-max_samples = 20;
+sample_period = 10000;
+max_samples = 5;
 
 burst_alpha = 0.5;
 burst_beta = -1.0;
@@ -2630,339 +356,471 @@ END Configuration File: examples/focusconfig
 Warning: injection kernel is renewed
 Warning: injection kernel is renewed
 Class 0:
-Packet latency average = 77.0489
-	minimum = 13
-	maximum = 1068
-Network latency average = 39.1534
-	minimum = 13
+Packet latency average = 669.139
+	minimum = 14
+	maximum = 9305
+Network latency average = 68.9058
+	minimum = 14
+	maximum = 999
+Slowest packet = 188
+Flit latency average = 21.0154
+	minimum = 6
+	maximum = 44
+Slowest flit = 5729
+Fragmentation average = 10.0695
+	minimum = 0
 	maximum = 192
-Slowest packet = 3
-Flit latency average = 37.6327
-	minimum = 9
-	maximum = 132
-Slowest flit = 31959
-Fragmentation average = 1.03784
-	minimum = 0
-	maximum = 31
-Injected packet rate average = 0.00234284
+Injected packet rate average = 0.000446875
 	minimum = 0 (at node 0)
-	maximum = 0.108367 (at node 127)
-Accepted packet rate average = 0.00233984
-	minimum = 0 (at node 30)
-	maximum = 0.0304333 (at node 31)
-Injected flit rate average = 0.0122743
+	maximum = 0.0039 (at node 127)
+Accepted packet rate average = 0.00044375
+	minimum = 0 (at node 4)
+	maximum = 0.0027 (at node 168)
+Injected flit rate average = 0.0189059
 	minimum = 0 (at node 0)
-	maximum = 0.662067 (at node 127)
-Accepted flit rate average= 0.012263
-	minimum = 0 (at node 30)
-	maximum = 0.0906 (at node 12)
-Injected packet length average = 5.23909
-Accepted packet length average = 5.24096
-Total in-flight flits = 93 (0 measured)
+	maximum = 0.7607 (at node 8)
+Accepted flit rate average= 0.018875
+	minimum = 0 (at node 4)
+	maximum = 0.2129 (at node 168)
+Injected packet length average = 42.3068
+Accepted packet length average = 42.5352
+Total in-flight flits = 2446 (0 measured)
 latency change    = 1
 throughput change = 1
-Warmed up ...Time used is 30000 cycles
+Warmed up ...Time used is 10000 cycles
 Class 0:
-Packet latency average = 80.1794
-	minimum = 13
-	maximum = 1040
-Network latency average = 40.9751
-	minimum = 13
-	maximum = 235
-Slowest packet = 17996
-Flit latency average = 39.5828
-	minimum = 9
-	maximum = 186
-Slowest flit = 123743
-Fragmentation average = 1.03275
+Packet latency average = 8308.87
+	minimum = 17
+	maximum = 18809
+Network latency average = 229.64
+	minimum = 17
+	maximum = 999
+Slowest packet = 1145
+Flit latency average = 20.9367
+	minimum = 6
+	maximum = 42
+Slowest flit = 50507
+Fragmentation average = 41.053
 	minimum = 0
-	maximum = 31
-Injected packet rate average = 0.00210794
+	maximum = 192
+Injected packet rate average = 0.000105859
 	minimum = 0 (at node 0)
-	maximum = 0.109233 (at node 127)
-Accepted packet rate average = 0.00210651
-	minimum = 0 (at node 30)
-	maximum = 0.0307667 (at node 31)
-Injected flit rate average = 0.0113168
+	maximum = 0.0031 (at node 112)
+Accepted packet rate average = 0.00010625
+	minimum = 0 (at node 5)
+	maximum = 0.0007 (at node 143)
+Injected flit rate average = 0.0185031
 	minimum = 0 (at node 0)
-	maximum = 0.6684 (at node 127)
-Accepted flit rate average= 0.0113141
-	minimum = 0 (at node 30)
-	maximum = 0.0931667 (at node 143)
-Injected packet length average = 5.36865
-Accepted packet length average = 5.371
-Total in-flight flits = 115 (115 measured)
-latency change    = 0.0390441
-throughput change = 0.0838742
+	maximum = 0.7856 (at node 8)
+Accepted flit rate average= 0.0184984
+	minimum = 0 (at node 5)
+	maximum = 0.2313 (at node 152)
+Injected packet length average = 174.79
+Accepted packet length average = 174.103
+Total in-flight flits = 929 (929 measured)
+latency change    = 0.919467
+throughput change = 0.0203564
 Class 0:
-Packet latency average = 78.7129
-	minimum = 13
-	maximum = 1040
-Network latency average = 41.0058
-	minimum = 13
-	maximum = 252
-Slowest packet = 17996
-Flit latency average = 39.6573
-	minimum = 9
-	maximum = 221
-Slowest flit = 212519
-Fragmentation average = 1.02819
+Packet latency average = 10889.2
+	minimum = 17
+	maximum = 28222
+Network latency average = 257.482
+	minimum = 17
+	maximum = 999
+Slowest packet = 1145
+Flit latency average = 20.9142
+	minimum = 6
+	maximum = 42
+Slowest flit = 50507
+Fragmentation average = 46.53
 	minimum = 0
-	maximum = 31
-Injected packet rate average = 0.00210085
+	maximum = 192
+Injected packet rate average = 9.58984e-05
 	minimum = 0 (at node 0)
-	maximum = 0.1093 (at node 127)
-Accepted packet rate average = 0.00210065
-	minimum = 0 (at node 30)
-	maximum = 0.0307833 (at node 31)
-Injected flit rate average = 0.0112623
+	maximum = 0.003 (at node 127)
+Accepted packet rate average = 9.58984e-05
+	minimum = 0 (at node 5)
+	maximum = 0.00065 (at node 143)
+Injected flit rate average = 0.0185039
 	minimum = 0 (at node 0)
-	maximum = 0.668683 (at node 127)
-Accepted flit rate average= 0.01126
-	minimum = 0 (at node 30)
-	maximum = 0.0930667 (at node 143)
-Injected packet length average = 5.36084
-Accepted packet length average = 5.36026
-Total in-flight flits = 126 (126 measured)
-latency change    = 0.0186312
-throughput change = 0.00479896
+	maximum = 0.7868 (at node 8)
+Accepted flit rate average= 0.018499
+	minimum = 0 (at node 5)
+	maximum = 0.3376 (at node 152)
+Injected packet length average = 192.953
+Accepted packet length average = 192.902
+Total in-flight flits = 988 (988 measured)
+latency change    = 0.236959
+throughput change = 3.1674e-05
 Class 0:
-Packet latency average = 77.9978
-	minimum = 13
-	maximum = 1040
-Network latency average = 40.9437
-	minimum = 13
-	maximum = 252
-Slowest packet = 17996
-Flit latency average = 39.6029
-	minimum = 9
-	maximum = 221
-Slowest flit = 212519
-Fragmentation average = 1.02556
+Packet latency average = 13696.7
+	minimum = 17
+	maximum = 37702
+Network latency average = 260.297
+	minimum = 17
+	maximum = 999
+Slowest packet = 1145
+Flit latency average = 21.0616
+	minimum = 6
+	maximum = 42
+Slowest flit = 50507
+Fragmentation average = 47.1214
 	minimum = 0
-	maximum = 31
-Injected packet rate average = 0.00209583
+	maximum = 192
+Injected packet rate average = 9.53125e-05
 	minimum = 0 (at node 0)
-	maximum = 0.109289 (at node 127)
-Accepted packet rate average = 0.00209453
-	minimum = 0 (at node 30)
-	maximum = 0.0307889 (at node 31)
-Injected flit rate average = 0.0112394
+	maximum = 0.00293333 (at node 127)
+Accepted packet rate average = 9.54427e-05
+	minimum = 0 (at node 5)
+	maximum = 0.000633333 (at node 152)
+Injected flit rate average = 0.0184993
 	minimum = 0 (at node 0)
-	maximum = 0.6687 (at node 127)
-Accepted flit rate average= 0.0112307
-	minimum = 0 (at node 30)
-	maximum = 0.0929222 (at node 143)
-Injected packet length average = 5.36274
-Accepted packet length average = 5.36191
-Total in-flight flits = 420 (420 measured)
-latency change    = 0.00916829
-throughput change = 0.00261251
-Class 0:
-Packet latency average = 77.8961
-	minimum = 13
-	maximum = 1040
-Network latency average = 40.9648
-	minimum = 13
-	maximum = 252
-Slowest packet = 17996
-Flit latency average = 39.6322
-	minimum = 9
-	maximum = 221
-Slowest flit = 212519
-Fragmentation average = 1.02678
-	minimum = 0
-	maximum = 31
-Injected packet rate average = 0.00209144
-	minimum = 0 (at node 0)
-	maximum = 0.109183 (at node 127)
-Accepted packet rate average = 0.00209137
-	minimum = 0 (at node 30)
-	maximum = 0.0307917 (at node 31)
-Injected flit rate average = 0.0112031
-	minimum = 0 (at node 0)
-	maximum = 0.668417 (at node 127)
-Accepted flit rate average= 0.0112031
-	minimum = 0 (at node 30)
-	maximum = 0.0925 (at node 143)
-Injected packet length average = 5.35666
-Accepted packet length average = 5.35683
-Total in-flight flits = 89 (89 measured)
-latency change    = 0.00130591
-throughput change = 0.0024601
+	maximum = 0.7856 (at node 8)
+Accepted flit rate average= 0.0184977
+	minimum = 0 (at node 5)
+	maximum = 0.4883 (at node 152)
+Injected packet length average = 194.092
+Accepted packet length average = 193.809
+Total in-flight flits = 1536 (1536 measured)
+latency change    = 0.204982
+throughput change = 7.39114e-05
 Draining remaining packets ...
-Time taken is 150055 cycles
+Time taken is 40971 cycles
 ====== Overall Traffic Statistics ======
 ====== Traffic class 0 ======
-Packet latency average = 77.886 (1 samples)
-	minimum = 13 (1 samples)
-	maximum = 1040 (1 samples)
-Network latency average = 40.9642 (1 samples)
-	minimum = 13 (1 samples)
-	maximum = 252 (1 samples)
-Flit latency average = 39.6323 (1 samples)
-	minimum = 9 (1 samples)
-	maximum = 221 (1 samples)
-Fragmentation average = 1.02658 (1 samples)
+Packet latency average = 13900.8 (1 samples)
+	minimum = 17 (1 samples)
+	maximum = 38076 (1 samples)
+Network latency average = 263.153 (1 samples)
+	minimum = 17 (1 samples)
+	maximum = 999 (1 samples)
+Flit latency average = 21.0713 (1 samples)
+	minimum = 6 (1 samples)
+	maximum = 42 (1 samples)
+Fragmentation average = 47.6762 (1 samples)
 	minimum = 0 (1 samples)
-	maximum = 31 (1 samples)
-Injected packet rate average = 0.00209144 (1 samples)
+	maximum = 192 (1 samples)
+Injected packet rate average = 9.53125e-05 (1 samples)
 	minimum = 0 (1 samples)
-	maximum = 0.109183 (1 samples)
-Accepted packet rate average = 0.00209137 (1 samples)
+	maximum = 0.00293333 (1 samples)
+Accepted packet rate average = 9.54427e-05 (1 samples)
 	minimum = 0 (1 samples)
-	maximum = 0.0307917 (1 samples)
-Injected flit rate average = 0.0112031 (1 samples)
+	maximum = 0.000633333 (1 samples)
+Injected flit rate average = 0.0184993 (1 samples)
 	minimum = 0 (1 samples)
-	maximum = 0.668417 (1 samples)
-Accepted flit rate average = 0.0112031 (1 samples)
+	maximum = 0.7856 (1 samples)
+Accepted flit rate average = 0.0184977 (1 samples)
 	minimum = 0 (1 samples)
-	maximum = 0.0925 (1 samples)
-Injected packet size average = 5.35666 (1 samples)
-Accepted packet size average = 5.35683 (1 samples)
-Hops average = 6.49366 (1 samples)
-Total run time 63.4874
-[[16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  2  2  2  2]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [16 16 16 16 19 19 19 19  0  0  1  1  3  3  3  3]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  4  4  4  4]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [17 17 17 17 18 18 18 18  7  7  6  6  5  5  5  5]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [26 26 25 25 23 23 22 22  8  8  9  9 10 10 10 10]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [27 27 24 24 23 23 22 22  8  8  9  9 11 11 11 11]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [28 28 29 29 21 21 21 21 15 15 14 14 12 12 12 12]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]
- [31 31 30 30 20 20 20 20 15 15 14 14 13 13 13 13]]
-Info: Working for unet_layer1
+	maximum = 0.4883 (1 samples)
+Injected packet size average = 194.092 (1 samples)
+Accepted packet size average = 193.809 (1 samples)
+Hops average = 4.32923 (1 samples)
+Total run time 16.5728
+Info: Working for bert_layer1
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer2
+Info: Working for bert_layer2
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer3
+Info: Working for bert_layer3
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer4
+Info: Working for bert_layer4
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer5
+Info: Working for bert_layer5
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer6
+Info: Working for bert_layer6
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer7
+Info: Working for bert_layer7
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer8
+Info: Working for bert_layer8
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer9
+Info: Working for bert_layer9
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer10
+Info: Working for bert_layer10
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer11
+Info: Working for bert_layer11
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer12
+Info: Working for bert_layer12
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer13
+Info: Working for bert_layer13
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer14
+Info: Working for bert_layer14
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer15
+Info: Working for bert_layer15
 ====================== FINISH =========================
 
 
-Info: Working for unet_layer16
+Info: Working for bert_layer16
 ====================== FINISH =========================
 
 
-Info: Working for vgg16_layer1
+Info: Working for bert_layer17
 ====================== FINISH =========================
 
 
-Info: Working for vgg16_layer2
+Info: Working for bert_layer18
 ====================== FINISH =========================
 
 
-Info: Working for vgg16_layer3
+Info: Working for bert_layer19
 ====================== FINISH =========================
 
 
-Info: Working for vgg16_layer4
+Info: Working for bert_layer20
 ====================== FINISH =========================
 
 
-Info: Working for mnasnet_layer1
+Info: Working for bert_layer21
 ====================== FINISH =========================
 
 
-Info: Working for mnasnet_layer2
+Info: Working for bert_layer22
 ====================== FINISH =========================
 
 
-Info: Working for mnasnet_layer3
+Info: Working for bert_layer23
 ====================== FINISH =========================
 
 
-Info: Working for mnasnet_layer4
+Info: Working for bert_layer24
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer1
+Info: Working for bert_layer25
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer2
+Info: Working for bert_layer26
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer3
+Info: Working for bert_layer27
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer4
+Info: Working for bert_layer28
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer5
+Info: Working for bert_layer29
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer6
+Info: Working for bert_layer30
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer7
+Info: Working for bert_layer31
 ====================== FINISH =========================
 
 
-Info: Working for inception_layer8
+Info: Working for bert_layer32
 ====================== FINISH =========================
 
 
+Info: Working for bert_layer33
+====================== FINISH =========================
+
+
+Info: Working for bert_layer34
+====================== FINISH =========================
+
+
+Info: Working for bert_layer35
+====================== FINISH =========================
+
+
+Info: Working for bert_layer36
+====================== FINISH =========================
+
+
+Info: Working for bert_layer37
+====================== FINISH =========================
+
+
+Info: Working for bert_layer38
+====================== FINISH =========================
+
+
+Info: Working for bert_layer39
+====================== FINISH =========================
+
+
+Info: Working for bert_layer40
+====================== FINISH =========================
+
+
+Info: Working for bert_layer41
+====================== FINISH =========================
+
+
+Info: Working for bert_layer42
+====================== FINISH =========================
+
+
+Info: Working for bert_layer43
+====================== FINISH =========================
+
+
+Info: Working for bert_layer44
+====================== FINISH =========================
+
+
+Info: Working for bert_layer45
+====================== FINISH =========================
+
+
+Info: Working for bert_layer46
+====================== FINISH =========================
+
+
+Info: Working for bert_layer47
+====================== FINISH =========================
+
+
+Info: Working for bert_layer48
+====================== FINISH =========================
+
+
+Info: Working for bert_layer49
+====================== FINISH =========================
+
+
+Info: Working for bert_layer50
+====================== FINISH =========================
+
+
+Info: Working for bert_layer51
+====================== FINISH =========================
+
+
+Info: Working for bert_layer52
+====================== FINISH =========================
+
+
+Info: Working for bert_layer53
+====================== FINISH =========================
+
+
+Info: Working for bert_layer54
+====================== FINISH =========================
+
+
+Info: Working for bert_layer55
+====================== FINISH =========================
+
+
+Info: Working for bert_layer56
+====================== FINISH =========================
+
+
+Info: Working for bert_layer57
+====================== FINISH =========================
+
+
+Info: Working for bert_layer58
+====================== FINISH =========================
+
+
+Info: Working for bert_layer59
+====================== FINISH =========================
+
+
+Info: Working for bert_layer60
+====================== FINISH =========================
+
+
+Info: Working for bert_layer61
+====================== FINISH =========================
+
+
+Info: Working for bert_layer62
+====================== FINISH =========================
+
+
+Info: Working for bert_layer63
+====================== FINISH =========================
+
+
+Info: Working for bert_layer64
+====================== FINISH =========================
+
+
+Info: Working for bert_layer65
+====================== FINISH =========================
+
+
+Info: Working for bert_layer66
+====================== FINISH =========================
+
+
+Info: Working for bert_layer67
+====================== FINISH =========================
+
+
+Info: Working for bert_layer68
+====================== FINISH =========================
+
+
+Info: Working for bert_layer69
+====================== FINISH =========================
+
+
+Info: Working for bert_layer70
+====================== FINISH =========================
+
+
+Info: Working for bert_layer71
+====================== FINISH =========================
+
+
+Info: Working for bert_layer72
+====================== FINISH =========================
+
+
+Info: Working for bert_layer73
+====================== FINISH =========================
+
+
+[[ 0  1  2  2 29 29 30 31 32 32 39 39 40 41 42 42]
+ [ 0  1  3  3 28 28 30 31 33 33 38 38 40 41 43 43]
+ [ 7  6  4  4 27 27 25 24 34 35 36 37 47 46 44 44]
+ [ 7  6  5  5 26 26 25 24 34 35 36 37 47 46 45 45]
+ [ 8  8 15 15 16 16 23 23 61 60 59 58 48 49 50 50]
+ [ 9  9 14 14 17 17 22 22 61 60 59 58 48 49 51 51]
+ [10 11 12 13 18 19 20 21 62 62 57 57 55 54 52 52]
+ [10 11 12 13 18 19 20 21 63 63 56 56 55 54 53 53]
+ [-1 -1 -1 -1 -1 -1 -1 -1 64 64 71 71 72 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 65 65 70 70 72 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 66 67 68 69 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 66 67 68 69 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+ [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]]

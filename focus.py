@@ -17,10 +17,10 @@ def run():
     working_layer_set = layer_set.WorkingLayerSetDR(gc.layer_names, gc.cores)
 
     # Generate traffic trace from real-world workloads, feeding the backends of focus and booksim
-    # working_layer_set.getTraceFromTimeloop()
+    working_layer_set.getTraceFromTimeloop()
 
     # Generate traffic trace by randomly mixing traffic operations
-    working_layer_set.getTraceFromTraceGenerator()
+    # working_layer_set.getTraceFromTraceGenerator()
 
     # Invoke Booksim
     if gc.simulate_baseline:

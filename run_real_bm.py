@@ -65,9 +65,9 @@ if __name__ == "__main__":
     for w in w_candidate:
         cnt = 0
         for benchmark_models, allocate_cores, bias, pipeline_layers in zip(benchmark_modelss, allocate_coress, biass, pipeline_layerss):
-            cnt += 1
-            if cnt != 2:
-                continue
+            # cnt += 1
+            # if cnt != 2:
+            #     continue
             layer_names = ["{}_layer{}".format(benchmark_models[idm], idl+1+bias[idm]) 
                             for idm in range(len(benchmark_models)) for idl in range(pipeline_layers[idm])]
 
