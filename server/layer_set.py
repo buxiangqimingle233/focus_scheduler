@@ -12,11 +12,13 @@ from functools import reduce
 from random import choice
 from copy import deepcopy
 
+from mapper import task_map
 from utils.latency_model import LatencyModel
 from utils.layer import Layer
 from utils.latency_model_wrapper import generate, analyze
 from utils.global_control import *
 from mapper.spanningtree import SpanningTree
+from trace_generator import generator
 
 class WorkingLayerSet():
 
@@ -255,33 +257,55 @@ class WorkingLayerSet():
 
         return (merged_comm_graph, merged_interval, merged_access)
 
-class WorkingLayerSetDR(WorkingLayerSet):
 
+class WorkingLayerSetDR(WorkingLayerSet):
+    '''Glue module as the interface for the two trace generation backends
+    genTraceFromTimeloop(): invoke timeloop for the traffic trace from real-world workloads. The \
+        workload is specified in utils/global_control.py
+    getTraceFromTraceGenerator(): invoke trace gererator for dummy traffic traces mixed from various \
+        pre-defined data movement patterns. The specificiation of generator lies in utils/global_control.py as well.
+    '''
     traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])
 
-    def __init__(self, layers, cores, core_map):
-        super().__init__(layers, cores, core_map)
+    def __init__(self, layers, cores):
+        super().__init__(layers, cores, None)
     
-    def generate(self):
-        self.traffic = self.getExecInfo()
-        
-        # FIXME: to accelerate simulation, we just account for the traffic with interval smaller than 50000
-        self.traffic = self.traffic[self.traffic["interval"] < 50000]
-
-        self.traffic = self.applyCoreMap(self.traffic)
-        self.traffic = self.selectCaptain(self.traffic)
-        self.traffic = self.genSpanningTree(self.traffic)
-
+    def getTraceFromTimeloop(self):
+        trace_from_tl = self.getExecInfo()
+        trace_to_sim = self.toSimTrace(trace_from_tl)
         if simulate_baseline:
-            self.dumpTraceFileBooksim(self.traffic)
-
+            self.dumpTraceFileBooksim(trace_to_sim)
         if use_estimator:
             raise Exception("Dual-phased routing do not support estimator yet")
-
         # dump for focus simulation
-        self.traffic.to_json("traceDR.json")
+        trace_to_sim.to_json("traceDR.json")
+        return trace_to_sim
 
-        return self.traffic
+    def getTraceFromTraceGenerator(self):
+        trace_from_generator = generator.gen_trace()
+        trace_to_sim = self.toSimTrace(trace_from_generator)
+        if simulate_baseline:
+            self.dumpTraceFileBooksim(trace_to_sim)
+        trace_to_sim.to_json("traceDR.json")
+        return trace_to_sim
+
+    def toSimTrace(self, traffic):
+        # FIXME: to accelerate simulation, we just account for the traffic with interval smaller than 50000
+        # traffic = traffic[traffic["interval"] < 50000]
+
+        # Instantiate the task mapper
+        task_mapper = task_map.ml_mapping()
+
+        # Generate task mapping
+        core_map = task_mapper.map()
+
+        # FIXME: Doesn't work, visualize mapping results
+        os.system("gnuplot mapper/mapping_vis.gp")
+
+        traffic = self.applyCoreMap(traffic, core_map)
+        traffic = self.selectCaptain(traffic)
+        traffic = self.genSpanningTree(traffic)
+        return traffic
 
     def getExecInfo(self):
         for layer, model, result, prob_spec, core in \
@@ -296,8 +320,8 @@ class WorkingLayerSetDR(WorkingLayerSet):
 
         return self.traffic        
 
-    def applyCoreMap(self, traffic):
-        core_map = self.core_map
+    def applyCoreMap(self, traffic, core_map):
+        # core_map = self.core_map
         # debug_show(traffic[traffic["src"] == 64])
 
         src_sel = traffic.apply(lambda x: max(x["src"]) < max(core_map[x["layer"]].keys()), axis=1)
