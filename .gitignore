@@ -1,5 +1,11 @@
+# redundant codes
 backup/*
+temp/*
+
+# intermediate files
 result*/*
 __pycache__/*
 *.png
-temp/*
+nohup.*
+/*.json
+/*.csv

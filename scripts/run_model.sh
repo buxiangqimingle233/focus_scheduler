@@ -1,3 +1,4 @@
+cd ..
 SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)"/db"
 layer="bert_layer2"
 

@@ -1,3 +1,4 @@
+cd ..
 rm *.txt *.log *.yaml *.xml
 cat /dev/null > nohup.out
 cd focus-final-out
