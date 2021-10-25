@@ -271,10 +271,10 @@ class WorkingLayerSetDR(WorkingLayerSet):
         super().__init__(layers, cores, None)
     
     def getTraceFromTimeloop(self):
-        trace_from_tl = self.getExecInfo()
-        trace_to_sim = self.toSimTrace(trace_from_tl)
+        trace_from_tl = self._getExecInfo()
+        trace_to_sim = self._toSimTrace(trace_from_tl)
         if gc.simulate_baseline:
-            self.dumpTraceFileBooksim(trace_to_sim)
+            self._dumpTraceFileBooksim(trace_to_sim)
         if gc.use_estimator:
             raise Exception("Dual-phased routing do not support estimator yet")
         # dump for focus simulation
@@ -283,13 +283,13 @@ class WorkingLayerSetDR(WorkingLayerSet):
 
     def getTraceFromTraceGenerator(self):
         trace_from_generator = generator.gen_trace()
-        trace_to_sim = self.toSimTrace(trace_from_generator)
+        trace_to_sim = self._toSimTrace(trace_from_generator)
         if gc.simulate_baseline:
-            self.dumpTraceFileBooksim(trace_to_sim)
+            self._dumpTraceFileBooksim(trace_to_sim)
         trace_to_sim.to_json("traceDR.json")
         return trace_to_sim
 
-    def toSimTrace(self, traffic):
+    def _toSimTrace(self, traffic):
         # FIXME: to accelerate simulation, we just account for the traffic with interval smaller than 50000
         # traffic = traffic[traffic["interval"] < 50000]
 
@@ -299,14 +299,14 @@ class WorkingLayerSetDR(WorkingLayerSet):
         core_map = task_mapper.map()
         # FIXME: Doesn't work, visualize mapping results
         os.system("gnuplot mapper/mapping_vis.gp")
-        traffic = self.applyCoreMap(traffic, core_map)
+        traffic = self._applyCoreMap(traffic, core_map)
 
-        traffic = self.selectCaptain(traffic)
+        traffic = self._selectCaptain(traffic)
 
-        traffic = self.genSpanningTree(traffic)
+        traffic = self._genSpanningTree(traffic)
         return traffic
 
-    def getExecInfo(self):
+    def _getExecInfo(self):
         for layer, model, result, prob_spec, core in \
             zip(self.layer_names, self.model_names, \
                 self.result_names, self.prob_spec_names, self.cores):
@@ -319,7 +319,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
 
         return self.traffic        
 
-    def applyCoreMap(self, traffic, core_map):
+    def _applyCoreMap(self, traffic, core_map):
         # core_map = self.core_map
         # debug_show(traffic[traffic["src"] == 64])
 
@@ -332,7 +332,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
 
         return traffic
 
-    def selectCaptain(self, traffic):
+    def _selectCaptain(self, traffic):
         sel = traffic["dst"].map(len) > 1
         rev_sel = ~sel
         bcast = traffic[sel]
@@ -345,7 +345,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
         traffic.loc[:, "captain"] = traffic["captain"].astype("Int64")
         return traffic
     
-    def genSpanningTree(self, traffic):
+    def _genSpanningTree(self, traffic):
         traffic["tree"] = np.NaN
         
         def genTree(row):
@@ -367,7 +367,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
         
         return traffic
 
-    def dumpTraceFileBooksim(self, traffic):
+    def _dumpTraceFileBooksim(self, traffic):
         df = deepcopy(traffic)
         df.loc[:, "depend"] = df["datatype"].map(lambda x: 2 if x == "output" else 0)
         df = df[["map_src", "map_dst", "flit", "interval", "counts", "depend"]]
@@ -388,7 +388,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
                     print(" ".join([f["interval"], f["counts"], f["depend"], \
                                     f["flit"], f["dst"], f["src"]]), file=wf)
 
-    def analyzeBookSim(self):
+    def _analyzeBookSim(self):
         booksim_out = os.path.join(gc.booksim_working_path, "out.txt")
         booksim_res = pd.read_csv(booksim_out, header=None, names=["id", "mean", "max", "min", "slowdown"], index_col=False)
         # booksim_res = booksim_res.iloc[:array_size, :]

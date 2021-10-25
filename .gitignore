@@ -1,0 +1,5 @@
+backup/*
+result*/*
+__pycache__/*
+*.png
+temp/*

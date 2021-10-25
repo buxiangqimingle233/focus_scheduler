@@ -20,7 +20,7 @@ def run():
         # Generate traffic trace from real-world workloads, feeding the backends of focus and booksim
         working_layer_set.getTraceFromTimeloop()
     else:
-        # Generate traffic trace by randomly mixing traffic zoperations
+        # Generate traffic trace by randomly mixing traffic operations
         working_layer_set.getTraceFromTraceGenerator()
 
 
@@ -30,13 +30,15 @@ def run():
         os.chdir(gc.booksim_working_path)
         os.system("./run.sh")
         os.chdir(prev_cwd)
-        working_layer_set.analyzeBookSim()
+        working_layer_set._analyzeBookSim()
 
     if gc.focus_schedule:
         # generate scheduling
         ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers, population_size=gc.population_size, n_evolution=n_evolution)
+
         # for debugging
         # ea_controller = EA.EvolutionController()
+
         ea_controller.init_population(individual.individual_generator)
         best_individual, _ = ea_controller.run_evolution_search(gc.scheduler_verbose)
 
