@@ -1,10 +1,10 @@
 import os
+from numpy.core.fromnumeric import trace
 import pandas as pd
 import seaborn as sns
 import numpy as np
 
 from server import layer_set
-from mapper import task_map
 from ts_scheduler import EA
 from ts_scheduler import individual
 import utils.global_control as gc
@@ -16,11 +16,13 @@ def run():
     # Instantiate the focus traffic trace generator
     working_layer_set = layer_set.WorkingLayerSetDR(gc.layer_names, gc.cores)
 
-    # Generate traffic trace from real-world workloads, feeding the backends of focus and booksim
-    working_layer_set.getTraceFromTimeloop()
+    if gc.trace_gen_backend == "timeloop":
+        # Generate traffic trace from real-world workloads, feeding the backends of focus and booksim
+        working_layer_set.getTraceFromTimeloop()
+    else:
+        # Generate traffic trace by randomly mixing traffic zoperations
+        working_layer_set.getTraceFromTraceGenerator()
 
-    # Generate traffic trace by randomly mixing traffic operations
-    # working_layer_set.getTraceFromTraceGenerator()
 
     # Invoke Booksim
     if gc.simulate_baseline:
@@ -44,10 +46,11 @@ def run():
         slowdown = (best_trace["issue_time"] / (best_trace["interval"] * best_trace["count"]))
         best_mean = slowdown[slowdown > 1].mean()
         print("Sum Exceeded Latency: {}".format(best_mean))
-        with open(os.path.join("focus-final-out", gc.slowdown_result), "a") as wf:
+        with open(os.path.join("focus-final-out", gc.result_file), "a") as wf:
             # print(arch_config["w"], best_mean, best_mean, sep=",", file=wf)
             print(best_mean, file=wf)
 
 
 if __name__ == "__main__":
+    gc.arch_config["w"] = 1024
     run()

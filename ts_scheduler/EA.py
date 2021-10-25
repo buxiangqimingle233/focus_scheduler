@@ -11,8 +11,7 @@ import time
 from tqdm import tqdm
 from copy import deepcopy
 import ts_scheduler.individual as indi
-
-from utils.global_control import *
+import utils.global_control as gc
 
 class EvolutionController:
     def __init__(self, mutate_prob=0.1, population_size=100, n_evolution=50, parent_fraction=0.5, mutation_fraction=0.25, crossover_fraction=0.25, log_path='output/'):
@@ -125,7 +124,7 @@ import multiprocessing as mp
 def individual_gen_process(pid,individual_generator):
     # print(f"start {pid}")
     with open("output/individual.out", "a+") as outf:
-        if not scheduler_verbose:
+        if not gc.scheduler_verbose:
             sys.stdout = outf
         individual=individual_generator()
         score=individual.evaluate()
@@ -134,7 +133,7 @@ def individual_gen_process(pid,individual_generator):
 def individual_mutation_process(pid,parent):
     # print(f"start {pid}")
     with open("output/individual.out", "a+") as outf:
-        if not scheduler_verbose:
+        if not gc.scheduler_verbose:
             sys.stdout = outf
         child=parent.mutate()
         score=child.evaluate()
@@ -143,7 +142,7 @@ def individual_mutation_process(pid,parent):
 def individual_crossover_process(pid,parents):
     # print(f"start {pid}")
     with open("output/individual.out", "a+") as outf:
-        if not scheduler_verbose:
+        if not gc.scheduler_verbose:
             sys.stdout = outf
         child=parents[0].crossover(*parents)
         score=child.evaluate()

@@ -1,5 +1,8 @@
+from logging import debug
 import os
 import sys
+
+from backup.global_control import debug_show
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -89,7 +92,7 @@ class Layer:
                 return obj, arch_spec
         raise "keyword `architecture` has not been found"
 
-    def _modify_arch_specification(self, top_level_pe_cnt):
+    def _modify_arch_specification(self, top_level_pe_cnt: int):
         '''
             Create a modified architecture with `top_level_pe_cnt` based on the architecture
             specified by `arch_spec`, noted that we just change the number of second-level component\n

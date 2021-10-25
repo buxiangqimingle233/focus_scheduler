@@ -16,7 +16,7 @@ from mapper import task_map
 from utils.latency_model import LatencyModel
 from utils.layer import Layer
 from utils.latency_model_wrapper import generate, analyze
-from utils.global_control import *
+import utils.global_control as gc
 from mapper.spanningtree import SpanningTree
 from trace_generator import generator
 
@@ -35,7 +35,7 @@ class WorkingLayerSet():
         exec_info = self.getExecInfo()
         transformed_info = self.transformExecInfo(exec_info)
         collapsed_info = self.collapseExecInfo(transformed_info)
-        if use_estimator:
+        if gc.use_estimator:
             latency_result = self.invokeEstimator(collapsed_info)
         self.dumpTraceFileHnocs(collapsed_info)
         self.dumpTraceFileBooksim(collapsed_info)
@@ -54,7 +54,7 @@ class WorkingLayerSet():
                     # src, dst, interval, flits, count
                     df = df.append({
                         "src": single_comm[0], "dst": single_comm[1],
-                        "flit": max(single_buffer_access/arch_config["w"], 4),
+                        "flit": max(single_buffer_access/gc.arch_config["w"], 4),
                         "interval": single_interval
                     }, ignore_index=True)
         # store
@@ -64,7 +64,7 @@ class WorkingLayerSet():
         rates = df.groupby("src").apply(lambda x: sum(x["flit"] / x["interval"])).reset_index()
         rates.columns = ["src", "rate"]
         rates[rates["rate"] > 1] = 1
-        with open(os.path.join(booksim_working_path, "rate.txt"), "w") as wf:
+        with open(os.path.join(gc.booksim_working_path, "rate.txt"), "w") as wf:
             print(" ".join(map(str, rates["rate"].tolist())), file=wf)
 
         # traffic trace:
@@ -84,14 +84,14 @@ class WorkingLayerSet():
 
         trace = df.groupby("src").apply(lambda x: getIssueOrder(x)).reset_index()
         trace.columns = ["src", "trace"]
-        with open(os.path.join(booksim_working_path, "trace.txt"), "w") as wf:
+        with open(os.path.join(gc.booksim_working_path, "trace.txt"), "w") as wf:
             for _, row in trace.iterrows():
                 print(int(row["src"]), " ".join(map(lambda x: str(int(x)), row["trace"])), sep="\n", file=wf)
 
     def analyzeBookSim(self):
-        booksim_out = os.path.join(booksim_working_path, "out.txt")
+        booksim_out = os.path.join(gc.booksim_working_path, "out.txt")
         booksim_res = pd.read_csv(booksim_out, header=None, names=["id", "mean", "max"], index_col=False)
-        booksim_res = booksim_res.iloc[:array_size, :]
+        booksim_res = booksim_res.iloc[:gc.array_size, :]
         booksim_res.loc[booksim_res["mean"].isna(), "mean"] = 1
         booksim_res.loc[booksim_res["max"].isna(), "max"] = 1
 
@@ -102,7 +102,7 @@ class WorkingLayerSet():
         if mean_slowdown.shape[0] == 0:
             mean_slowdown = pd.Series([1])
         mean_slowdown = mean_slowdown.mean()
-        with open(f"booksim_{slowdown_result}", "a") as wf:
+        with open(f"booksim_{gc.result_file}", "a") as wf:
             print(mean_slowdown, file=wf)
 
     def dumpTraceFileHnocs(self, collapsed_info):
@@ -168,7 +168,7 @@ class WorkingLayerSet():
 
             for episode in range(10):
                 try:
-                    achieved_latencies = estimator.runModel(comm_graph_per_datatype, arch_config)
+                    achieved_latencies = estimator.runModel(comm_graph_per_datatype, gc.arch_config)
                     achieved_bandwidths = [data / latency for data, latency in \
                         zip(buffer_access_per_datatype, achieved_latencies)]
                     is_comm_bound = [l > q for l, q in \
@@ -247,7 +247,7 @@ class WorkingLayerSet():
                 [self.applyCoreMap(layer, graph_per_layer["graph"]) for \
                     layer, graph_per_layer in zip(self.layer_names, graph_per_datatype)]
             )
-            merged_comm_graph.append({"avg_l": avg_l, "cv": cv, "graph": graph})
+            merged_comm_graph.append({"avg_l": avg_l, "cv": gc.cv, "graph": graph})
 
             interval = reduce(lambda x, y: x + y, interval_per_datatype)
             merged_interval.append(interval)
@@ -273,9 +273,9 @@ class WorkingLayerSetDR(WorkingLayerSet):
     def getTraceFromTimeloop(self):
         trace_from_tl = self.getExecInfo()
         trace_to_sim = self.toSimTrace(trace_from_tl)
-        if simulate_baseline:
+        if gc.simulate_baseline:
             self.dumpTraceFileBooksim(trace_to_sim)
-        if use_estimator:
+        if gc.use_estimator:
             raise Exception("Dual-phased routing do not support estimator yet")
         # dump for focus simulation
         trace_to_sim.to_json("traceDR.json")
@@ -284,7 +284,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
     def getTraceFromTraceGenerator(self):
         trace_from_generator = generator.gen_trace()
         trace_to_sim = self.toSimTrace(trace_from_generator)
-        if simulate_baseline:
+        if gc.simulate_baseline:
             self.dumpTraceFileBooksim(trace_to_sim)
         trace_to_sim.to_json("traceDR.json")
         return trace_to_sim
@@ -379,8 +379,8 @@ class WorkingLayerSetDR(WorkingLayerSet):
         # store
         self.trace = df
 
-        with open(os.path.join(booksim_working_path, "trace.txt"), "w") as wf:
-            for nid in range(array_diameter**2):
+        with open(os.path.join(gc.booksim_working_path, "trace.txt"), "w") as wf:
+            for nid in range(gc.array_diameter**2):
                 flows = df[df["src"] == nid]
                 print("{} {}".format(nid, flows.shape[0]), file=wf)
                 for _, f in flows.iterrows():
@@ -389,7 +389,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
                                     f["flit"], f["dst"], f["src"]]), file=wf)
 
     def analyzeBookSim(self):
-        booksim_out = os.path.join(booksim_working_path, "out.txt")
+        booksim_out = os.path.join(gc.booksim_working_path, "out.txt")
         booksim_res = pd.read_csv(booksim_out, header=None, names=["id", "mean", "max", "min", "slowdown"], index_col=False)
         # booksim_res = booksim_res.iloc[:array_size, :]
         # booksim_res.loc[booksim_res["mean"].isna(), "mean"] = 1
@@ -407,7 +407,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
         mean_slowdown = booksim_res["slowdown"].mean()
         mean_delay = booksim_res["mean"].mean()
 
-        with open(os.path.join("focus-final-out", f"booksim_{slowdown_result}"), "a") as wf:
+        with open(os.path.join("focus-final-out", f"booksim_{gc.result_file}"), "a") as wf:
             # print(arch_config["w"], mean_slowdown, mean_delay, file=wf, sep="\t")
             print(mean_slowdown, file=wf)
 
@@ -424,9 +424,9 @@ def embeddedFuncDR(layer: Layer, comm_bank):
                         "src": flow["srcs"],
                         "dst": flow["dsts"],
                         "interval": flow["pkt_interval"],
-                        "flit": flow["bit_volume"] / arch_config["w"],
+                        "flit": flow["bit_volume"] / gc.arch_config["w"],
                         "counts": flow["cnt"],
-                        "datatype": datatype[dti]
+                        "datatype": gc.datatype[dti]
                     }, ignore_index=True)
                 df = df[df["flit"] > 0]
                 df.loc[:, "flit"] = df["flit"].map(lambda x: int(max(x + 1, 2)))    # add headflits
@@ -499,12 +499,12 @@ def embeddedFunc(layer: Layer, comm_bank):
             _, _, inject_rates = zip(*comm_graph_per_datatype)
             avg_inject_rate = avg(inject_rates)
             cv = math.sqrt(abs((
-                    (avg_interval - avg_packet_length / arch_config["w"]) * avg_inject_rate**2
-                    + (avg_packet_length / arch_config["w"]) * (arch_config["w"] / avg_packet_length - avg_inject_rate)**2
+                    (avg_interval - avg_packet_length / gc.arch_config["w"]) * avg_inject_rate**2
+                    + (avg_packet_length / gc.arch_config["w"]) * (gc.arch_config["w"] / avg_packet_length - avg_inject_rate)**2
                 )) / avg_interval
             ) / avg_inject_rate
             
-            comm_graph.append({"graph": comm_graph_per_datatype, "cv": cv, "avg_l": avg_packet_length / arch_config["w"]})
+            comm_graph.append({"graph": comm_graph_per_datatype, "cv": cv, "avg_l": avg_packet_length / gc.arch_config["w"]})
             interval_graph.append(interval_graph_per_datatype)
             volume_graph.append(volume_graph_per_datatype)
         

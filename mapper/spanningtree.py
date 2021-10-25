@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from functools import reduce
-from utils.global_control import *
+from utils import global_control as gc
 
 
 class SpanningTree():
@@ -12,7 +12,7 @@ class SpanningTree():
         super().__init__()
 
     def wrapper_genST(self, captain, region):
-
+        array_diameter = gc.array_diameter
         array = np.asarray(region)
         array_x = (array / array_diameter).astype(np.int64)
         array_y = (array % array_diameter).astype(np.int64)

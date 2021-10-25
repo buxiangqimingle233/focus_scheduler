@@ -8,7 +8,7 @@ import random
 import yaml
 from time import time
 
-from utils.global_control import *
+import utils.global_control as gc
 
 INF = 1e10
 
@@ -99,7 +99,7 @@ class FocusLatencyModel():
             
             iter_cnt += 1
 
-            if scheduler_verbose:
+            if gc.scheduler_verbose:
                 if iter_cnt % 500 == 0:
                     print("iteration: {}, remained packets: {}".format(iter_cnt, (working_pkts["unsolved"].value_counts())[True]))
 
@@ -152,7 +152,7 @@ class FocusLatencyModel():
 
 
 def individual_generator():
-    p = Individual(pd.read_json("traceDR.json"), (array_diameter, array_diameter),)
+    p = Individual(pd.read_json("traceDR.json"), (gc.array_diameter, gc.array_diameter),)
     for i in range(np.random.randint(100)):
         p.mutate(inplace=True)
     return p
