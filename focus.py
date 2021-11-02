@@ -12,7 +12,6 @@ import utils.global_control as gc
 pd.set_option('mode.chained_assignment', None)
 
 def run():
-
     # Instantiate the focus traffic trace generator
     working_layer_set = layer_set.WorkingLayerSetDR(gc.layer_names, gc.cores)
 
@@ -22,7 +21,6 @@ def run():
     else:
         # Generate traffic trace by randomly mixing traffic operations
         working_layer_set.getTraceFromTraceGenerator()
-
 
     # Invoke Booksim
     if gc.simulate_baseline:
@@ -34,7 +32,8 @@ def run():
 
     if gc.focus_schedule:
         # generate scheduling
-        ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers, population_size=gc.population_size, n_evolution=n_evolution)
+        ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers, 
+            population_size=gc.population_size, n_evolution=gc.n_evolution)
 
         # for debugging
         # ea_controller = EA.EvolutionController()

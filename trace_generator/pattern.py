@@ -68,6 +68,7 @@ class DataDistribution():
         df["datatype"] = self.datatype_
         df["delay"] = 0
         df["layer"] = self.layer_
+        df.astype({"flit": "int32", "interval": "int32"})
         return df
 
 

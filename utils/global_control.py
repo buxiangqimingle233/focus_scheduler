@@ -7,6 +7,21 @@ result_dir = "result-512g"
 
 trace_gen_backend = "timeloop"
 
+# --------------------- Sampling Trace Generator --------------------
+
+# Packet intensity ~ Guassian Distribution
+intensity_distributions = {
+    0.6: (0.01, 0.005), 0.3: (0.1, 0.02), 0.1: (0.3, 0.05)
+}
+# Packet interval ~ Gaussian Distribution
+interval_distributions = {
+    0.5: (1000, 100), 0.3: (10000, 1000), 0.2: (500, 10)
+}
+
+# Region size ~ Zipf Distribution
+zipf_alpha = 2.
+
+
 # -------------------- Timeloop -------------------------
 
 timeloop_verbose = False

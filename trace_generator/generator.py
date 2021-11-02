@@ -12,9 +12,6 @@ import utils.global_control as gc
 from math import floor
 # import matplotlib.pyplot as plt
 
-intensity_distributions = {0.5: (30, 5)}
-interval_distributions = {0.5: (30, 5)}
-zipf_alpha = 1.5
 
 def sample_from_compound_distribution(sample_cnt: int, distribution_list: list) -> np.ndarray:
     samples = np.asarray_chkfinite([np.random.normal(para[0], para[1], sample_cnt) * scale 
@@ -23,9 +20,8 @@ def sample_from_compound_distribution(sample_cnt: int, distribution_list: list) 
     return ret
 
 def gen_inference_trace(core_list: list) -> dict:
-    intensity = sample_from_compound_distribution(3, intensity_distributions).astype(int)
-    # FIXME: Approximation: we assume intensity and interval are indepentent
-    interval = sample_from_compound_distribution(3, interval_distributions).astype(int)
+    intensity = sample_from_compound_distribution(3, gc.intensity_distributions)
+    interval = sample_from_compound_distribution(3, gc.interval_distributions)
 
     global region_name
     _weight = P.DataDistribution([], core_list, intensity[0] * interval[0], interval[0], "weight", region_name)
@@ -45,7 +41,7 @@ def gen_trace():
     # Sample a consequtive region once a time
     while sum_sampled_core < gc.array_size:
         # sample the region parameters
-        region_size = min(2 ** floor(np.random.zipf(zipf_alpha, size=1)),
+        region_size = min(2 ** floor(np.random.zipf(gc.zipf_alpha, size=1)),
             gc.array_size - sum_sampled_core)
         sum_sampled_core += region_size
         global region_name
