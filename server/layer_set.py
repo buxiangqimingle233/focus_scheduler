@@ -117,7 +117,7 @@ class WorkingLayerSet():
 
                     if single_comm[0] != single_comm[1]:
                         # src, dst, interval, flits, count
-                        print(",".join(map(lambda x: str(x), [single_comm[0], single_comm[1], single_interval, max(single_buffer_access/arch_config["w"], 4), 20])), file=f)
+                        print(",".join(map(lambda x: str(x), [single_comm[0], single_comm[1], single_interval, max(single_buffer_access/gc.arch_config["w"], 4), 20])), file=f)
 
     def getPktSizes(self):
         return self.buffer_access
@@ -407,9 +407,10 @@ class WorkingLayerSetDR(WorkingLayerSet):
         mean_slowdown = booksim_res["slowdown"].mean()
         mean_delay = booksim_res["mean"].mean()
 
-        with open(os.path.join("focus-final-out", f"booksim_{gc.result_file}"), "a") as wf:
-            # print(arch_config["w"], mean_slowdown, mean_delay, file=wf, sep="\t")
-            print(mean_slowdown, file=wf)
+        return mean_slowdown
+        # with open(os.path.join("focus-final-out", f"booksim_{gc.result_file}"), "a") as wf:
+        #     # print(arch_config["w"], mean_slowdown, mean_delay, file=wf, sep="\t")
+        #     print(mean_slowdown, file=wf)
 
 
 def embeddedFuncDR(layer: Layer, comm_bank):

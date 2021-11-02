@@ -9,7 +9,7 @@ from numpy.core.defchararray import mod
 
 from numpy.core.records import array
 
-from backup.global_control import debug_show
+#from backup.global_control import debug_show
 from .hilbert import hilbert_map
 
 import utils.global_control as gc

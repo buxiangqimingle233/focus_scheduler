@@ -5,7 +5,7 @@ result_dir = "result-512g"
 
 # --------------------- Trace Gen Backends --------------------
 
-trace_gen_backend = "timeloop"
+trace_gen_backend = "NOTtimeloop"
 
 # --------------------- Sampling Trace Generator --------------------
 
@@ -75,7 +75,8 @@ hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
 # -------------------- BookSim -------------------------
 
 # simulate_baseline = False
-booksim_working_path = "/home/wangzhao/simulator/booksim2/src"
+#booksim_working_path = "/home/wangzhao/simulator/booksim2/src"
+booksim_working_path = "/home/parallelism/ypp_parallel/booksim_focus/src"
 
 
 # -------------------- FOCUS Scheduler -------------------------
