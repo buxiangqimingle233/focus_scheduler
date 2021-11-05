@@ -12,14 +12,16 @@ import utils.global_control as gc
 
 pd.set_option('mode.chained_assignment', None)
 
-def run(config_id):
+def run():
+    config_id = 1
     np.random.seed(config_id)
     # print("--------------------------------------Run with threadId",config_id)
-    gc.booksim_working_path += str(config_id)
+    booksim_working_path_origin = gc.booksim_working_path
+    # gc.booksim_working_path += str(config_id)
 
-    if os.path.exists(gc.booksim_working_path):
-        shutil.rmtree(gc.booksim_working_path)
-    os.makedirs(gc.booksim_working_path)
+    # if os.path.exists(gc.booksim_working_path):
+    #     shutil.rmtree(gc.booksim_working_path)
+    # os.makedirs(gc.booksim_working_path)
 
     gc.arch_config["w"] = 512 * config_id
     # Instantiate the focus traffic trace generator
@@ -37,7 +39,7 @@ def run(config_id):
     if gc.simulate_baseline:
         prev_cwd = os.getcwd()
         os.chdir(gc.booksim_working_path)
-        os.system("/home/parallelism/ypp_parallel/booksim_focus/src/run.sh")
+        os.system(booksim_working_path_origin + "/run.sh")
         os.chdir(prev_cwd)
         ans = working_layer_set._analyzeBookSim()
 

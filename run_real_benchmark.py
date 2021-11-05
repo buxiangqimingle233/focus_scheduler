@@ -43,14 +43,14 @@ def run():
 
     gc.trace_gen_backend = "timeloop"
 
-    for w in w_candidate:
-        cnt = 0
-        for benchmark_models, allocate_cores, bias, pipeline_layers in zip(benchmark_modelss, allocate_coress, biass, pipeline_layerss):
-            # FIXME: for debugging
-            cnt += 1
-            if cnt != 4:
-                continue
-
+    cnt = 0
+    for benchmark_models, allocate_cores, bias, pipeline_layers in zip(benchmark_modelss, allocate_coress, biass, pipeline_layerss):
+        cnt += 1
+        # FIXME: for debugging
+        if cnt != 4:
+            continue
+        search_dataflow = True
+        for w in w_candidate:
             # calculate names of layers
             layer_names = ["{}_layer{}".format(benchmark_models[idm], idl+1+bias[idm]) 
                     for idm in range(len(benchmark_models)) for idl in range(pipeline_layers[idm])]
@@ -66,8 +66,7 @@ def run():
 
             # invoke focus engine
             focus.run()
-
-        search_dataflow = False
+            search_dataflow = False
 
 if __name__ == "__main__":
     run()

@@ -5,7 +5,7 @@ result_dir = "result-512g"
 
 # --------------------- Trace Gen Backends --------------------
 
-trace_gen_backend = "NOTtimeloop"
+trace_gen_backend = "timeloop"
 
 # --------------------- Sampling Trace Generator --------------------
 
@@ -24,7 +24,7 @@ zipf_alpha = 2.
 
 # -------------------- Timeloop -------------------------
 
-timeloop_verbose = False
+timeloop_verbose = True
 # whether to invoke timeloop-mapper
 search_dataflow = False
 # Search time
@@ -76,7 +76,7 @@ hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
 
 # simulate_baseline = False
 #booksim_working_path = "/home/wangzhao/simulator/booksim2/src"
-booksim_working_path = "/home/parallelism/ypp_parallel/booksim_focus/src"
+booksim_working_path = "/home/yuanpeng/parallel/booksim_focus/src"
 
 
 # -------------------- FOCUS Scheduler -------------------------
