@@ -5,6 +5,7 @@ import sys
 from backup.global_control import debug_show
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import re
 import yaml
@@ -15,7 +16,8 @@ import types
 from functools import reduce
 from loop2map import Loop2Map
 import random
-import global_control as gc
+# import global_control as gc
+import utils.global_control as gc
 
 
 class Layer:

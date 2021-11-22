@@ -19,7 +19,7 @@ interval_distributions = {
 }
 
 # Region size ~ Zipf Distribution
-zipf_alpha = 2.
+zipf_alpha = 3
 
 
 # -------------------- Timeloop -------------------------

@@ -7,7 +7,7 @@ import numpy as np
 from server import layer_set
 from ts_scheduler import EA
 from ts_scheduler import individual
-import utils.global_control as gc
+from utils import global_control as gc
 
 pd.set_option('mode.chained_assignment', None)
 

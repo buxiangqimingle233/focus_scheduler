@@ -299,7 +299,7 @@ class Individual():
         # score = sum(working_trace.apply(lambda x: x["flit"] * 1024 * x["count"], axis=1)) / max(working_trace["issue_time"])
         slowdown = (working_trace["issue_time"] / (working_trace["count"] * working_trace["interval"]))
         score = -slowdown[slowdown > 1].mean()
-
+ 
         # score = -working_trace["delay"].sum()
         global best_solution
         if score > best_solution[1]:

@@ -376,6 +376,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
         df = df.rename({"map_src": "src", "map_dst": "dst"}, axis="columns")
         # collapse src & dst
         df = df.explode("src").explode("dst")
+
         # store
         self.trace = df
 

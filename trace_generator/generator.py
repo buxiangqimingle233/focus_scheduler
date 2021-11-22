@@ -42,7 +42,7 @@ def gen_trace():
     while sum_sampled_core < gc.array_size:
         # sample the region parameters
         region_size = min(2 ** floor(np.random.zipf(gc.zipf_alpha, size=1)),
-            gc.array_size - sum_sampled_core)
+            gc.array_size - sum_sampled_core, 16)
         sum_sampled_core += region_size
         global region_name
         region_name = "dummy_layer" + str(iter_cnt)
@@ -56,7 +56,10 @@ def gen_trace():
         gc.cores.append(region_size)
 
         iter_cnt += 1
+    # gc.debug_show(gc.cores)
+    print(gc.cores)
     return trace
 
 if __name__ == "__main__":
-    gen_trace()
+    for _ in range(10):
+        gen_trace()

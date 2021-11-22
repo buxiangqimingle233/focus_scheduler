@@ -1,5 +1,5 @@
 import os
-import utils.global_control as gc 
+from utils import global_control as gc
 import focus
 
 
