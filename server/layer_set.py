@@ -369,6 +369,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
 
     def _dumpTraceFileBooksim(self, traffic):
         df = deepcopy(traffic)
+
         df.loc[:, "depend"] = df["datatype"].map(lambda x: 2 if x == "output" else 0)
         df = df[["map_src", "map_dst", "flit", "interval", "counts", "depend"]]
         # df = df.rename({"interval": "computing_time", "counts": "max_iter", "depend": "wait_flows", \

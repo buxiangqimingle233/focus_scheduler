@@ -57,7 +57,7 @@ mapping_style = "Hilbert"
 
 
 model = "bert"
-layer_names = ["{}_layer{}".format(model, i + 1) for i in range(16)]
+layer_names = ["{}_layer{}".format(model, i + 1) for i in range(4)]
 cores = [2 for _ in layer_names]
 
 
@@ -69,7 +69,7 @@ mapper_verbose = True
 
 # -------------------- HNOCS -------------------------
 
-simulate_baseline = True
+simulate_baseline = False
 hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
 
 # -------------------- BookSim -------------------------
@@ -80,11 +80,11 @@ booksim_working_path = "/home/wangzhao/simulator/booksim2/src"
 
 # -------------------- FOCUS Scheduler -------------------------
 
-focus_schedule = False
-scheduler_verbose = False
+focus_schedule = True
+scheduler_verbose = True
 n_workers = 28
-population_size = 100
-n_evolution = 50
+population_size = 5
+n_evolution = 5
 
 result_file = "slowdown.csv"
 

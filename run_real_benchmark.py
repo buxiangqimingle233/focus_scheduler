@@ -35,7 +35,8 @@ pipeline_layerss = [
     [16, 4, 4, 8]
 ]
 
-w_candidate = range(512, 4097, 512)
+# w_candidate = range(512, 4097, 512)
+w_candidate = range(1024, 1025)
 search_dataflow = False
 
 def run():

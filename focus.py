@@ -40,10 +40,12 @@ def run():
 
         ea_controller.init_population(individual.individual_generator)
         best_individual, _ = ea_controller.run_evolution_search(gc.scheduler_verbose)
+        
+        # best_trace = best_individual.getTrace(
 
         # dump & print
         best_trace = best_individual.getTrace()
-        best_trace.to_csv("best_scheduling.csv")
+        best_trace.to_json("best_scheduling.json")
         slowdown = (best_trace["issue_time"] / (best_trace["interval"] * best_trace["count"]))
         best_mean = slowdown[slowdown > 1].mean()
         print("Sum Exceeded Latency: {}".format(best_mean))

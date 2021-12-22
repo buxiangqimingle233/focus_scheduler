@@ -93,7 +93,7 @@ class FocusLatencyModel():
         clk = 0
         working_pkts["unsolved"] = True
         working_pkts["delay"] = 0
-
+ 
         iter_cnt = 0
         while any(working_pkts["unsolved"]):
             
@@ -175,7 +175,7 @@ class FocusTemporalMapper():
 
 class Individual():
 
-    def __init__(self, trace, array_shape, iter_episode=1):
+    def __init__(self, trace, array_shape, iter_episode=10):
         
         trace["intermediate"] = [[] for _ in range(trace.shape[0])] 
         trace["path"] = [[] for _ in range(trace.shape[0])]
@@ -307,6 +307,8 @@ class Individual():
 
         print("Evaluate time: {} Score: {}".format(end_time-start_time, score))
         self.trace["issue_time"] = working_trace["issue_time"]
+        self.trace["delay"] = working_trace["delay"]
+        self.trace["is_bound"] = working_trace["is_bound"]
         return score
 
 
