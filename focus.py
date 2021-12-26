@@ -26,9 +26,9 @@ def run():
     if gc.simulate_baseline:
         prev_cwd = os.getcwd()
         os.chdir(gc.booksim_working_path)
-        os.system("./run.sh")
+        os.system("./SNNSimulator examples/focusconfig")
         os.chdir(prev_cwd)
-        working_layer_set._analyzeBookSim()
+        # working_layer_set._analyzeBookSim()
 
     if gc.focus_schedule:
         # generate scheduling

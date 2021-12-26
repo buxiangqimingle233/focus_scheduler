@@ -371,6 +371,9 @@ class WorkingLayerSetDR(WorkingLayerSet):
         df = deepcopy(traffic)
 
         df.loc[:, "depend"] = df["datatype"].map(lambda x: 2 if x == "output" else 0)
+        # df = df[df["datatype"] != "input"]
+        # print(df["datatype"])
+
         df = df[["map_src", "map_dst", "flit", "interval", "counts", "depend"]]
         # df = df.rename({"interval": "computing_time", "counts": "max_iter", "depend": "wait_flows", \
         #                 "flit": "size", }, axis='columns')

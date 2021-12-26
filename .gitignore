@@ -10,3 +10,6 @@ nohup.*
 /*.json
 /*.csv
 **.pyc
+result-512g/*
+result-256g/*
+result/*
