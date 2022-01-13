@@ -15,7 +15,7 @@ best_trace = pd.read_json("best_scheduling.json")
 best_trace["captain"] = best_trace["captain"].map(lambda x: [x] if not pd.isna(x) else x)
 best_trace.loc[best_trace["captain"].isna(), "captain"] = best_trace[best_trace["captain"].isna()]["src"]
 
-with open("utilization_result.csv", "w") as f:
+with open("focus-final-out/utilization_result.csv", "w") as f:
     analyze_start = 10000
     for s in range(25):
         begin, end = analyze_start + s * 400, analyze_start + (s + 1) * 400

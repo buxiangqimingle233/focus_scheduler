@@ -60,6 +60,7 @@ def run():
             # update global control infos
             gc.search_dataflow = search_dataflow
             gc.dump_comm_status = search_dataflow
+            gc.models = benchmark_models
             gc.layer_names = layer_names
             gc.cores = cores
             gc.flit_size = w

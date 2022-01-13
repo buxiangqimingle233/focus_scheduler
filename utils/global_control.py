@@ -38,7 +38,7 @@ mapping_style = "Hilbert"
 # -------------------- METRO Specs -------------------------
 
 # Enabling signal
-focus_schedule = False
+focus_schedule = True
 
 scheduler_verbose = False
 n_workers = 28
@@ -50,11 +50,6 @@ n_evolution = 5
 simulate_baseline = True
 booksim_working_path = "/home/wangzhao/simulator/booksim2"
 
-
-# Deprecated
-# hnocs_working_path = "/home/wangzhao/simulator/HNOCS/simulations"
-
-
 # -------------------- Hardware Descriptions -------------------------
 
 # hardware setup
@@ -64,23 +59,11 @@ array_size = array_diameter**2     # n = d * d
 flit_size = 4096                   # in bits
 
 
-# Deprecated
-# arch_config = {
-#     "p": 6, "cp_if": 6, "cp_of": 0, "tr": 1, "ts": 2, "tw": 1,
-#     "n": array_diameter**2,
-#     "d": array_diameter,
-#     "w": 4096
-# }
-
-
 # -------------------- Task Descriptions -------------------------
 
-model = "bert"
-models = []
-layer_names = ["{}_layer{}".format(model, i + 1) for i in range(4)]
+models = ["bert"]
+layer_names = ["{}_layer{}".format(model, i + 1) for i in range(4) for model in models]
 cores = [2 for _ in layer_names]
-
-
 
 # --------------------- Sampling Trace Generator --------------------
 
@@ -95,14 +78,6 @@ interval_distributions = {
 
 # Region size ~ Zipf Distribution
 zipf_alpha = 3
-
-
-
-# -------------------- [Deprecated] Estimator -------------------------
-
-use_estimator = False
-cv = 2
-
 
 # -------------------- Helping Funcions -------------------------
 

@@ -13,8 +13,7 @@ pd.set_option('mode.chained_assignment', None)
 
 def run():
 
-    # task_name = " ".join(gc.models)
-    task_name = "test"
+    task_name = " ".join(gc.models)
 
     # Instantiate the focus traffic trace generator
     working_layer_set = layer_set.WorkingLayerSetDR(gc.layer_names, gc.cores)
@@ -26,7 +25,9 @@ def run():
         os.chdir(gc.booksim_working_path)
         os.system("python run.py single --bm {}".format(task_name))
         os.chdir(prev_cwd)
-        # working_layer_set._analyzeBookSim()
+
+        # TODO: 
+        #  working_layer_set._analyzeBookSim()
 
     if gc.focus_schedule:
         # generate scheduling
@@ -43,7 +44,7 @@ def run():
 
         # dump & print
         best_trace = best_individual.getTrace()
-        best_trace.to_json("best_scheduling.json")
+        best_trace.to_json("focus-final-out/best_scheduling.json")
         slowdown = (best_trace["issue_time"] / (best_trace["interval"] * best_trace["count"]))
         best_mean = slowdown[slowdown > 1].mean()
         print("Sum Exceeded Latency: {}".format(best_mean))
