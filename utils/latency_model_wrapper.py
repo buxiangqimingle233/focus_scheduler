@@ -46,13 +46,13 @@ def evaluate_top_level_comm(layer: Layer, comm_bank):
             _, _, inject_rates = zip(*comm_graph_per_datatype)
             avg_inject_rate = avg(inject_rates)
             cv = math.sqrt(abs((
-                    (avg_interval - avg_packet_length / arch_config["w"]) * avg_inject_rate**2
-                    + (avg_packet_length / arch_config["w"]) * (arch_config["w"] / avg_packet_length - avg_inject_rate)**2
+                    (avg_interval - avg_packet_length / flit_size) * avg_inject_rate**2
+                    + (avg_packet_length / flit_size) * (flit_size / avg_packet_length - avg_inject_rate)**2
                 )) / avg_interval
             ) / avg_inject_rate
             
             cv = 0
-            comm_graph.append({"graph": comm_graph_per_datatype, "cv": cv, "avg_l": avg_packet_length / arch_config["w"]})
+            comm_graph.append({"graph": comm_graph_per_datatype, "cv": cv, "avg_l": avg_packet_length / flit_size})
             interval_graph.append(interval_graph_per_datatype)
             volume_graph.append(volume_graph_per_datatype)
         

@@ -4,7 +4,7 @@ import pandas as pd
 import utils.global_control as gc
 
 def link_length(node_list):
-    d = gc.arch_config["d"]
+    d = gc.array_diameter
     links = 0
     for i, ii in zip(node_list, node_list[1:] + [node_list[-1]]):
         links += abs(i % d - ii % d) + abs(i // d + ii // d)

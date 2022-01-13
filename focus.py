@@ -12,21 +12,19 @@ from utils import global_control as gc
 pd.set_option('mode.chained_assignment', None)
 
 def run():
+
+    # task_name = " ".join(gc.models)
+    task_name = "test"
+
     # Instantiate the focus traffic trace generator
     working_layer_set = layer_set.WorkingLayerSetDR(gc.layer_names, gc.cores)
-
-    if gc.trace_gen_backend == "timeloop":
-        # Generate traffic trace from real-world workloads, feeding the backends of focus and booksim
-        working_layer_set.getTraceFromTimeloop()
-    else:
-        # Generate traffic trace by randomly mixing traffic operations
-        working_layer_set.getTraceFromTraceGenerator()
+    working_layer_set.genTrace(backend=gc.trace_gen_backend, subdir_name=task_name)
 
     # Invoke Booksim
     if gc.simulate_baseline:
         prev_cwd = os.getcwd()
         os.chdir(gc.booksim_working_path)
-        os.system("./SNNSimulator examples/focusconfig")
+        os.system("python run.py single --bm {}".format(task_name))
         os.chdir(prev_cwd)
         # working_layer_set._analyzeBookSim()
 
@@ -50,10 +48,10 @@ def run():
         best_mean = slowdown[slowdown > 1].mean()
         print("Sum Exceeded Latency: {}".format(best_mean))
         with open(os.path.join("focus-final-out", gc.result_file), "a") as wf:
-            # print(arch_config["w"], best_mean, best_mean, sep=",", file=wf)
+            # print(flit_size, best_mean, best_mean, sep=",", file=wf)
             print(best_mean, file=wf)
 
 
 if __name__ == "__main__":
-    gc.arch_config["w"] = 1024
+    gc.flit_size = 1024
     run()

@@ -62,7 +62,7 @@ def run():
             gc.dump_comm_status = search_dataflow
             gc.layer_names = layer_names
             gc.cores = cores
-            gc.arch_config["w"] = w
+            gc.flit_size = w
             gc.result_file = "slowdown_{}.csv".format("_".join(benchmark_models))
 
             # invoke focus engine

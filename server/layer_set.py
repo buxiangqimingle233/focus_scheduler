@@ -1,5 +1,7 @@
 import sys
 import os
+
+from backup.global_control import debug_show
 sys.path.append(".")
 
 import re
@@ -7,15 +9,12 @@ import math
 import yaml
 import pandas as pd
 import numpy as np
-import seaborn as sns
 from functools import reduce
-from random import choice
 from copy import deepcopy
 
 from mapper import task_map
 from utils.latency_model import LatencyModel
 from utils.layer import Layer
-from utils.latency_model_wrapper import generate, analyze
 import utils.global_control as gc
 from mapper.spanningtree import SpanningTree
 from trace_generator import generator
@@ -54,7 +53,7 @@ class WorkingLayerSet():
                     # src, dst, interval, flits, count
                     df = df.append({
                         "src": single_comm[0], "dst": single_comm[1],
-                        "flit": max(single_buffer_access/gc.arch_config["w"], 4),
+                        "flit": max(single_buffer_access/gc.flit_size, 4),
                         "interval": single_interval
                     }, ignore_index=True)
         # store
@@ -117,7 +116,7 @@ class WorkingLayerSet():
 
                     if single_comm[0] != single_comm[1]:
                         # src, dst, interval, flits, count
-                        print(",".join(map(lambda x: str(x), [single_comm[0], single_comm[1], single_interval, max(single_buffer_access/arch_config["w"], 4), 20])), file=f)
+                        print(",".join(map(lambda x: str(x), [single_comm[0], single_comm[1], single_interval, max(single_buffer_access/flit_size, 4), 20])), file=f)
 
     def getPktSizes(self):
         return self.buffer_access
@@ -258,7 +257,7 @@ class WorkingLayerSet():
         return (merged_comm_graph, merged_interval, merged_access)
 
 
-class WorkingLayerSetDR(WorkingLayerSet):
+class WorkingLayerSetDR():
     '''Glue module as the interface for the two trace generation backends
     genTraceFromTimeloop(): invoke timeloop for the traffic trace from real-world workloads. The \
         workload is specified in utils/global_control.py
@@ -268,43 +267,56 @@ class WorkingLayerSetDR(WorkingLayerSet):
     traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])
 
     def __init__(self, layers, cores):
-        super().__init__(layers, cores, None)
+        self.layer_names = layers
+        self.cores = cores
+        self.model_names = [re.search(r"(^.+)_", layer).group(1) for layer in layers]
+        self.result_names = ["result_" + layer + ".yaml" for layer in layers]
+        self.prob_spec_names = [layer + ".yaml" for layer in layers]
+        self.exchange_file_name = "layer-set-exchange-info.yaml"
     
-    def getTraceFromTimeloop(self):
-        trace_from_tl = self._getExecInfo()
-        trace_to_sim = self._toSimTrace(trace_from_tl)
-        if gc.simulate_baseline:
-            self._dumpTraceFileBooksim(trace_to_sim)
-        if gc.use_estimator:
-            raise Exception("Dual-phased routing do not support estimator yet")
+    def genTrace(self, backend: str = "timeloop", subdir_name: str = "test"):
+        if backend == "timeloop":
+            trace_from_df_engine = self._getExecInfo()
+        else:
+            trace_from_df_engine = generator.gen_trace()
+
+        focus_trace = self._schedule(trace_from_df_engine)
         # dump for focus simulation
-        trace_to_sim.to_json("traceDR.json")
-        return trace_to_sim
-
-    def getTraceFromTraceGenerator(self):
-        trace_from_generator = generator.gen_trace()
-        trace_to_sim = self._toSimTrace(trace_from_generator)
+        focus_trace.to_json("traceDR.json")
         if gc.simulate_baseline:
-            self._dumpTraceFileBooksim(trace_to_sim)
-        trace_to_sim.to_json("traceDR.json")
-        return trace_to_sim
+            sim_trace = self._convertToSimTrace(focus_trace)
+            self._moveToSimFolder(sim_trace, subdir_name)
 
-    def _toSimTrace(self, traffic):
-        # FIXME: to accelerate simulation, we just account for the traffic with interval smaller than 50000
-        # traffic = traffic[traffic["interval"] < 50000]
+    # def genTraceFromTraceGenerator(self, benchmark_name: str = "test"):
+    #     trace_from_generator = generator.gen_trace()
+    #     trace_to_sim = self._schedule(trace_from_generator)
 
+    #     # dump for focus simulation
+    #     trace_to_sim.to_json("traceDR.json")
+    #     if gc.simulate_baseline:
+    #         trace_file = self._convertToSimTrace(trace_to_sim)
+
+    #         # self._moveToSimFolder(trace_file, benchmark_name)
+
+    def _schedule(self, traffic):
         # Instantiate the task mapper
         task_mapper = task_map.ml_mapping()
         # Generate task mapping
         core_map = task_mapper.map()
-        # FIXME: Doesn't work, visualize mapping results
+        # TODO: Doesn't work, visualize mapping results
         os.system("gnuplot mapper/mapping_vis.gp")
-        traffic = self._applyCoreMap(traffic, core_map)
-
+        traffic = self._applyMapping(traffic, core_map)
+        # Only for focus
         traffic = self._selectCaptain(traffic)
-
         traffic = self._genSpanningTree(traffic)
         return traffic
+
+    def _moveToSimFolder(self, trace_file, benchmark_name):
+        simulator_folder = os.path.join(gc.booksim_working_path, "benchmark", benchmark_name)
+        if not os.path.exists(simulator_folder):
+            os.mkdir(simulator_folder)
+        trace_in_simulator = os.path.join(simulator_folder, trace_file)
+        os.system("mv {} {}".format(trace_file, trace_in_simulator))
 
     def _getExecInfo(self):
         for layer, model, result, prob_spec, core in \
@@ -319,9 +331,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
 
         return self.traffic        
 
-    def _applyCoreMap(self, traffic, core_map):
-        # core_map = self.core_map
-        # debug_show(traffic[traffic["src"] == 64])
+    def _applyMapping(self, traffic, core_map):
 
         src_sel = traffic.apply(lambda x: max(x["src"]) < max(core_map[x["layer"]].keys()), axis=1)
         dst_sel = traffic.apply(lambda x: max(x["dst"]) < max(core_map[x["layer"]].keys()), axis=1)
@@ -367,33 +377,45 @@ class WorkingLayerSetDR(WorkingLayerSet):
         
         return traffic
 
-    def _dumpTraceFileBooksim(self, traffic):
+    def _convertToSimTrace(self, traffic):
         df = deepcopy(traffic)
 
-        df.loc[:, "depend"] = df["datatype"].map(lambda x: 2 if x == "output" else 0)
-        # df = df[df["datatype"] != "input"]
-        # print(df["datatype"])
+        # The traffic is the flow-centric data structure. We convert it to node-centric 
+        # structure to drive the spatial simulator. 
+        df = df.explode("map_src").explode("map_dst")
+        df.loc[:, "fid"] = range(df.shape[0])
 
-        df = df[["map_src", "map_dst", "flit", "interval", "counts", "depend"]]
-        # df = df.rename({"interval": "computing_time", "counts": "max_iter", "depend": "wait_flows", \
-        #                 "flit": "size", }, axis='columns')
-        df = df.rename({"map_src": "src", "map_dst": "dst"}, axis="columns")
-        # collapse src & dst
-        df = df.explode("src").explode("dst")
+        nodes = [{"nid": i} for i in range(gc.array_size)]
+        for n in nodes:
+            n["out_flows"] = df[df["map_src"] == n["nid"]]
+            n["in_flows"] = df[df["map_dst"] == n["nid"]]
+        
+        trace_file = "trace_{}.txt".format(gc.flit_size)
+        with open(trace_file, "w") as wf:
+            for n in nodes:
+                print("{} {}".format(n["nid"], n["out_flows"].shape[0]), file=wf)
+                for _, flow in n["out_flows"].iterrows():
+                    # flow = flow.astype("int").astype("str")
+                    if flow["datatype"] == "output":
+                        depend = n["in_flows"].shape[0]
+                    else:
+                        depend = 0
+                    print("%d %d %d %d %d %d" % 
+                        (flow["interval"], flow["counts"], depend, flow["flit"], flow["map_dst"], flow["map_src"]), 
+                        file=wf)
 
-        # store
-        self.trace = df
+        return trace_file
 
-        with open(os.path.join(gc.booksim_working_path, "trace.txt"), "w") as wf:
-            for nid in range(gc.array_diameter**2):
-                flows = df[df["src"] == nid]
-                print("{} {}".format(nid, flows.shape[0]), file=wf)
-                for _, f in flows.iterrows():
-                    f = f.astype("int").astype("str")
-                    print(" ".join([f["interval"], f["counts"], f["depend"], \
-                                    f["flit"], f["dst"], f["src"]]), file=wf)
+        # with open(os.path.join(gc.booksim_working_path, "trace_{}.txt".format()), "w") as wf:
+        #     for nid in range(gc.array_diameter**2):
+        #         flows = df[df["src"] == nid]
+        #         print("{} {}".format(nid, flows.shape[0]), file=wf)
+        #         for _, f in flows.iterrows():
+        #             f = f.astype("int").astype("str")
+        #             print(" ".join([f["interval"], f["counts"], f["depend"], \
+        #                             f["flit"], f["dst"], f["src"]]), file=wf)
 
-    def _analyzeBookSim(self):
+    def _analyzeSimResult(self):
         booksim_out = os.path.join(gc.booksim_working_path, "out.txt")
         booksim_res = pd.read_csv(booksim_out, header=None, names=["id", "mean", "max", "min", "slowdown"], index_col=False)
         # booksim_res = booksim_res.iloc[:array_size, :]
@@ -413,7 +435,7 @@ class WorkingLayerSetDR(WorkingLayerSet):
         mean_delay = booksim_res["mean"].mean()
 
         with open(os.path.join("focus-final-out", f"booksim_{gc.result_file}"), "a") as wf:
-            # print(arch_config["w"], mean_slowdown, mean_delay, file=wf, sep="\t")
+            # print(flit_size, mean_slowdown, mean_delay, file=wf, sep="\t")
             print(mean_slowdown, file=wf)
 
 
@@ -429,7 +451,7 @@ def embeddedFuncDR(layer: Layer, comm_bank):
                         "src": flow["srcs"],
                         "dst": flow["dsts"],
                         "interval": flow["pkt_interval"],
-                        "flit": flow["bit_volume"] / gc.arch_config["w"],
+                        "flit": flow["bit_volume"] / gc.flit_size,
                         "counts": flow["cnt"],
                         "datatype": gc.datatype[dti]
                     }, ignore_index=True)
@@ -504,12 +526,12 @@ def embeddedFunc(layer: Layer, comm_bank):
             _, _, inject_rates = zip(*comm_graph_per_datatype)
             avg_inject_rate = avg(inject_rates)
             cv = math.sqrt(abs((
-                    (avg_interval - avg_packet_length / gc.arch_config["w"]) * avg_inject_rate**2
-                    + (avg_packet_length / gc.arch_config["w"]) * (gc.arch_config["w"] / avg_packet_length - avg_inject_rate)**2
+                    (avg_interval - avg_packet_length / gc.flit_size) * avg_inject_rate**2
+                    + (avg_packet_length / gc.flit_size) * (gc.flit_size / avg_packet_length - avg_inject_rate)**2
                 )) / avg_interval
             ) / avg_inject_rate
             
-            comm_graph.append({"graph": comm_graph_per_datatype, "cv": cv, "avg_l": avg_packet_length / gc.arch_config["w"]})
+            comm_graph.append({"graph": comm_graph_per_datatype, "cv": cv, "avg_l": avg_packet_length / gc.flit_size})
             interval_graph.append(interval_graph_per_datatype)
             volume_graph.append(volume_graph_per_datatype)
         

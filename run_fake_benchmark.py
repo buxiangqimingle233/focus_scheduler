@@ -12,13 +12,13 @@ def run():
     gc.trace_gen_backend = "generator"
     gc.search_dataflow = False
     gc.result_file = result_file
-    gc.arch_config["w"] = 4096
+    gc.flit_size = 4096
 
     for _ in range(10):
         focus.run()
 
     # for w in widths:
-    #     gc.arch_config["w"] = w
+    #     gc.flit_size = w
     #     focus.run()
 
 
