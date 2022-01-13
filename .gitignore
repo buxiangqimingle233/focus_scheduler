@@ -1,12 +1,8 @@
 # redundant codes
-backup/*
 temp/*
+output/*
 
 # intermediate files
-result*/*
-__pycache__/*
-*.png
-nohup.*
-/*.json
-/*.csv
+**/__pycache__/*
+**/nohup.*
 **.pyc
