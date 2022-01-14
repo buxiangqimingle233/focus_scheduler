@@ -1,8 +1,6 @@
-from logging import debug
+import imp
 import os
 import sys
-
-from backup.global_control import debug_show
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -15,22 +13,21 @@ import signal
 import types
 from functools import reduce
 from loop2map import Loop2Map
-import random
-# import global_control as gc
-import utils.global_control as gc
+from utils import global_control as gc
+from utils.global_control import debug_show
 
 
 class Layer:
-    '''Conducting analysis for a single layer\n
-    Side effects:\n
-        1. Create root_dir/result directorty & create /result/`layer_name` directory
-        2. Set working directory to root_dir/result/`layer_name` (When function "execute" is called)
-        3. Invoke timeloop-mapper based on specifications in root_dir/db/*
-        4. Invoke timeloop-model and store communication status in root_dir/result/`layer_name`
-    Inputs:\n
-        layer_file_: yaml file of the layer (termed as problem specification file)
-        model_dir: subdirectory which contains problem specification file of this layer (`prob` in default)
-        prj_root: full path to the parent folder of db (parent folder of this python script in default)
+    r'''Conducting analysis for a single layer  \
+    Side effects:   \
+        1. Create `root_dir`/result directorty & create `root_dir`/result/`layer_name` directory    \
+        2. Set working directory to root_dir/result/`layer_name` (When function "execute" is called)    \
+        3. Invoke timeloop-mapper based on specifications in root_dir/db/*  \
+        4. Invoke timeloop-model and store communication status in root_dir/result/`layer_name` \
+    Inputs: \
+        layer_file_: yaml file of the layer (termed as problem specification file)  \
+        model_dir: subdirectory which contains problem specification file of this layer (`prob` in default) \
+        prj_root: full path to the parent folder of db (parent folder of this python script in default) \
     '''
 
     layer_name = None
@@ -154,7 +151,7 @@ class Layer:
         # dump the result file for the used dataflow
         transformer = Loop2Map()
         transformer.transform(self.mapper_map_file, self.prob_specs, self.dump_mapping_file)
-        
+
         self.dram_tile_spatial_size = transformer.getSpatialComponentSize(0)
 
         # invoke model for getting communication status, single process
@@ -226,7 +223,7 @@ class Layer:
                     ele["interval"]: interval cycles between two transmission packets\n
         '''
 
-        if gc.dump_comm_status:
+        if gc.extract_traffic:
             self._dump_invoke_timeloop_model()
 
         # parse files and calculate some useful variables
@@ -263,7 +260,7 @@ class Layer:
             print("No valid solution found, please check timeloop configuration")
             exit(-1)
 
-    def run_with_gc(self, analyze):
+    def run_with_gc(self, extractor):
         '''Similar with `run`, but use global_control to store variables
         '''
         # changing working dir to /result/layer_name directory to avoid file pollution
@@ -271,18 +268,18 @@ class Layer:
         old_cwd = os.getcwd()
         os.chdir(self.working_dir)
         print("Info:", "Working for", self.layer_name)
-        
+
         if self.top_level_cnt:
             self._modify_arch_specification(self.top_level_cnt)
         if gc.search_dataflow:
             self.search_optimal_dataflow(gc.timeout)
-        
+
         # comm_bank: full information of communication status
         comm_bank = self.collect_comm_status()
         # bind function `analyze` to myself
-        bounded_analyze = types.MethodType(analyze, self)
+        bounded_extractor = types.MethodType(extractor, self)
         # perform analysis
-        ret = bounded_analyze(comm_bank)
+        ret = bounded_extractor(comm_bank)
 
         # recover the working directory
         os.chdir(old_cwd)

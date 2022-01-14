@@ -1,0 +1,5 @@
+bert: 
+- bert_layer1: 2
+- bert_layer2: 2
+- bert_layer3: 2
+- bert_layer4: 2

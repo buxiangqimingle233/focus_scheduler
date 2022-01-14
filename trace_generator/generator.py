@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import pattern as P
-import utils.global_control as gc
+from utils import global_control as gc
 from math import floor
 # import matplotlib.pyplot as plt
 
@@ -33,7 +33,7 @@ def gen_inference_trace(core_list: list) -> dict:
     return region_trace
 
 
-def gen_trace():
+def gen_fake_trace():
     sum_sampled_core, iter_cnt = 0, 0
     trace = pd.DataFrame()
     gc.layer_names, gc.cores = [], []
@@ -62,4 +62,4 @@ def gen_trace():
 
 if __name__ == "__main__":
     for _ in range(10):
-        gen_trace()
+        gen_fake_trace()

@@ -8,7 +8,7 @@ import random
 import yaml
 from time import time
 
-import utils.global_control as gc
+from utils import global_control as gc
 
 INF = 1e10
 

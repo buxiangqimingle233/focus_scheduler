@@ -2,21 +2,20 @@
 
 # --------------------- Global Parameters --------------------
 
+taskname = "fake_trace"
 
-trace_gen_backend = "timeloop"      # Generate traffic trace from real-world workloads, 
+dataflow_engine = "timeloop"      # Generate traffic trace from real-world workloads,
                                     # feeding the backends of focus and booksim
-
 # trace_gen_backend = "fake"           # Generate traffic trace by randomly mixing traffic operations
 
 result_dir = "result-512g"
-result_file = "slowdown.csv"
 
-# -------------------- Timeloop Control -------------------------
+# -------------------- Timeloop Specs -------------------------
 
 # whether to invoke timeloop-mapper
 search_dataflow = False
 # whether to invoke timeloop-model
-dump_comm_status = False
+extract_traffic = False
 timeloop_verbose = False
 # Search time
 timeout = 30
@@ -48,7 +47,7 @@ n_evolution = 5
 # -------------------- Spatial Simulator Specs -------------------------
 
 simulate_baseline = True
-booksim_working_path = "/home/wangzhao/simulator/booksim2"
+spatial_simulator_path = "/home/wangzhao/simulator/booksim2"
 
 # -------------------- Hardware Descriptions -------------------------
 
@@ -65,7 +64,7 @@ models = ["bert"]
 layer_names = ["{}_layer{}".format(model, i + 1) for i in range(4) for model in models]
 cores = [2 for _ in layer_names]
 
-# --------------------- Sampling Trace Generator --------------------
+# --------------------- Trace Generator Specs --------------------
 
 # Packet intensity ~ Guassian Distribution
 intensity_distributions = {
@@ -78,6 +77,7 @@ interval_distributions = {
 
 # Region size ~ Zipf Distribution
 zipf_alpha = 3
+
 
 # -------------------- Helping Funcions -------------------------
 

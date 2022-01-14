@@ -10,8 +10,8 @@ import pandas as pd
 import time
 from tqdm import tqdm
 from copy import deepcopy
-import ts_scheduler.individual as indi
-import utils.global_control as gc
+import individual as indi
+from utils import global_control as gc
 
 class EvolutionController:
     def __init__(self, mutate_prob=0.1, population_size=100, n_evolution=50, parent_fraction=0.5, mutation_fraction=0.25, crossover_fraction=0.25, log_path='output/'):

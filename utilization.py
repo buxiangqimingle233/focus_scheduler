@@ -1,7 +1,6 @@
-from os import link
-from typing import ByteString
+
 import pandas as pd
-import utils.global_control as gc
+from utils import global_control as gc
 
 def link_length(node_list):
     d = gc.array_diameter
