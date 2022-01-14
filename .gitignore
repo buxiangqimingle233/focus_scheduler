@@ -7,3 +7,5 @@ output/*
 **/nohup.*
 **.pyc
 .vscode/*
+traceDR.json
+notes.md

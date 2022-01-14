@@ -1,3 +1,3 @@
 [submodule "result-512g"]
 	path = result-512g
-	url = ./result-512g/
+	url = ./result-512g
