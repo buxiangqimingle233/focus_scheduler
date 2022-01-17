@@ -43,11 +43,12 @@ scheduler_verbose = False
 n_workers = 28
 population_size = 5
 n_evolution = 5
+focus_trace_path = "buffer/traceDR.json"
 
 # -------------------- Spatial Simulator Specs -------------------------
 
 simulate_baseline = True
-spatial_simulator_path = "/home/wangzhao/simulator/booksim2"
+spt_sim_root = "/home/wangzhao/simulator/booksim2"
 
 # -------------------- Hardware Descriptions -------------------------
 

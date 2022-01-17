@@ -1,5 +1,3 @@
-import configparser as cp
-import imp
 import numpy as np
 import math
 import copy

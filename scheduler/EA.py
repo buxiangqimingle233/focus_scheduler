@@ -14,7 +14,7 @@ import individual as indi
 from utils import global_control as gc
 
 class EvolutionController:
-    def __init__(self, mutate_prob=0.1, population_size=100, n_evolution=50, parent_fraction=0.5, mutation_fraction=0.25, crossover_fraction=0.25, log_path='output/'):
+    def __init__(self, mutate_prob=0.1, population_size=100, n_evolution=50, parent_fraction=0.5, mutation_fraction=0.25, crossover_fraction=0.25, log_path='buffer/ea_ea_output/'):
         # evolution hyper-parameters
         # self.n_blocks_mutate_prob = kwargs.get('n_blocks_mutate_prob', 0.1)
         # self.n_base_channels_mutate_prob = kwargs.get('n_base_channels_mutate_prob', 0.5)
@@ -123,7 +123,7 @@ import multiprocessing as mp
 
 def individual_gen_process(pid,individual_generator):
     # print(f"start {pid}")
-    with open("output/individual.out", "a+") as outf:
+    with open("buffer/ea_output/individual.out", "a+") as outf:
         if not gc.scheduler_verbose:
             sys.stdout = outf
         individual=individual_generator()
@@ -132,7 +132,7 @@ def individual_gen_process(pid,individual_generator):
 
 def individual_mutation_process(pid,parent):
     # print(f"start {pid}")
-    with open("output/individual.out", "a+") as outf:
+    with open("buffer/ea_output/individual.out", "a+") as outf:
         if not gc.scheduler_verbose:
             sys.stdout = outf
         child=parent.mutate()
@@ -141,7 +141,7 @@ def individual_mutation_process(pid,parent):
 
 def individual_crossover_process(pid,parents):
     # print(f"start {pid}")
-    with open("output/individual.out", "a+") as outf:
+    with open("buffer/ea_output/individual.out", "a+") as outf:
         if not gc.scheduler_verbose:
             sys.stdout = outf
         child=parents[0].crossover(*parents)
@@ -150,7 +150,7 @@ def individual_crossover_process(pid,parents):
 
 
 class ParallelEvolutionController(EvolutionController):
-    def __init__(self, n_workers=8, mutate_prob=0.1, population_size=100, n_evolution=50, parent_fraction=0.5, mutation_fraction=0.25, crossover_fraction=0.25, log_path='output/'):
+    def __init__(self, n_workers=8, mutate_prob=0.1, population_size=100, n_evolution=50, parent_fraction=0.5, mutation_fraction=0.25, crossover_fraction=0.25, log_path='buffer/ea_output/'):
         super().__init__(mutate_prob=mutate_prob, population_size=population_size, n_evolution=n_evolution, parent_fraction=parent_fraction, mutation_fraction=mutation_fraction, crossover_fraction=crossover_fraction, log_path=log_path)
         self.n_workers=n_workers
 

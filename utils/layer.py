@@ -1,9 +1,7 @@
-import imp
 import os
 import sys
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 import re
 import yaml
@@ -91,7 +89,7 @@ class Layer:
                 return obj, arch_spec
         raise "keyword `architecture` has not been found"
 
-    def _modify_arch_specification(self, top_level_pe_cnt: int):
+    def _modify_array_size(self, top_level_pe_cnt: int):
         '''
             Create a modified architecture with `top_level_pe_cnt` based on the architecture
             specified by `arch_spec`, noted that we just change the number of second-level component\n
@@ -252,7 +250,7 @@ class Layer:
 
         return comm_bank
 
-    def search_optimal_dataflow(self, timeout):
+    def _search_dataflow(self, timeout):
         # search for optimal dataflows
         try:
             self._invoke_timeloop_mapper(timeout)
@@ -270,9 +268,9 @@ class Layer:
         print("Info:", "Working for", self.layer_name)
 
         if self.top_level_cnt:
-            self._modify_arch_specification(self.top_level_cnt)
+            self._modify_array_size(self.top_level_cnt)
         if gc.search_dataflow:
-            self.search_optimal_dataflow(gc.timeout)
+            self._search_dataflow(gc.timeout)
 
         # comm_bank: full information of communication status
         comm_bank = self.collect_comm_status()
@@ -299,10 +297,10 @@ class Layer:
         print("Info:", "Working for", self.layer_name)
 
         if top_level_pe_cnt:
-            self._modify_arch_specification(top_level_pe_cnt)
+            self._modify_array_size(top_level_pe_cnt)
         # # perform dataflow searching
         if search_dataflow:
-            self.search_optimal_dataflow(timeout)
+            self._search_dataflow(timeout)
 
         # comm_bank: full information of communication status
         comm_bank = self.collect_comm_status()

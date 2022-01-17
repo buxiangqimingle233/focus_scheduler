@@ -8,7 +8,7 @@ from utils.layer import Layer
 from utils import global_control as gc
 from mapper.task_map import ml_mapping
 from mapper.spanningtree import SpanningTree
-from trace_generator.generator import gen_fake_trace
+from tracegen.generator import gen_fake_trace
 
 
 class FocusToolChain():
@@ -30,7 +30,7 @@ class FocusToolChain():
         self.prob_spec_names = [layer + ".yaml" for layer in layers]
         self.exchange_file_name = "layer-set-exchange-info.yaml"
 
-    def compileTask(self, dataflow_engine: str = "timeloop", subdir_name: str = "test"):
+    def compileTask(self):
         r'''Invoke this compiling tool chain to generate the traffic trace. 
 
         ================================================================
@@ -39,7 +39,7 @@ class FocusToolChain():
             `timeloop` and `fake` now.
             subdir_name: str. The directory where trace files locate at the simulation folder.
         '''
-        if dataflow_engine == "timeloop":
+        if gc.dataflow_engine == "timeloop":
             vir_trace = self._invokeTimeloop()
         else:
             vir_trace = gen_fake_trace()
@@ -47,7 +47,9 @@ class FocusToolChain():
         # Mapping
         task_mapper = ml_mapping()
         mapped_trace = self._applyMapping(vir_trace, task_mapper.map())
-        os.system("gnuplot mapper/mapping_vis.gp")
+
+        # FIXME: gnuplot does not work now
+        # os.system("gnuplot ../mapper/mapping_vis.gp")
 
         # Dual-Phase Routing
         dual_phase_trace = self._selectHubNode(mapped_trace)
@@ -55,17 +57,15 @@ class FocusToolChain():
 
         # Dump the trace for FOCUS scheduling.
         trace_for_focus = dual_phase_trace
-        trace_for_focus.to_json("traceDR.json")
+        trace_for_focus.to_json(gc.focus_trace_path)
 
         # Dump the trace for simulation.
-        trace_to_sim = self._convertToSimTrace(trace_for_focus)
-        self._moveToSimFolder(trace_to_sim, subdir_name)
+        self._cvtAndStoreSimTrace(trace_for_focus)
 
-        return trace_for_focus
 
     def analyzeSimResult(self):
         result = pd.read_csv(
-            os.path.join(gc.spatial_simulator_path, "test", gc.taskname, "brief_report.csv"),
+            os.path.join(gc.spt_sim_root, "test", gc.taskname, "brief_report.csv"),
             header=None, index_col=None,
             names=["case", "cycle"]
         )
@@ -182,7 +182,7 @@ class FocusToolChain():
         
         return traffic
 
-    def _convertToSimTrace(self, traffic):
+    def _cvtAndStoreSimTrace(self, traffic):
         df = deepcopy(traffic)
 
         # The traffic is the flow-centric data structure. We convert it to node-centric 
@@ -196,7 +196,11 @@ class FocusToolChain():
             n["in_flows"] = df[df["map_dst"] == n["nid"]]
         
         trace_file = "trace_{}.txt".format(gc.flit_size)
-        with open(trace_file, "w") as wf:
+        dest_dir = os.path.join(gc.spt_sim_root, "benchmark", gc.taskname)
+        if not os.path.exists(dest_dir):
+            os.mkdir(dest_dir)
+
+        with open(os.path.join(dest_dir, trace_file), "w") as wf:
             for n in nodes:
                 print("{} {}".format(n["nid"], n["out_flows"].shape[0]), file=wf)
                 for _, flow in n["out_flows"].iterrows():
@@ -208,22 +212,3 @@ class FocusToolChain():
                     print("%d %d %d %d %d %d" % 
                         (flow["interval"], flow["counts"], depend, flow["flit"], flow["map_dst"], flow["map_src"]), 
                         file=wf)
-
-        return trace_file
-
-        # with open(os.path.join(gc.booksim_working_path, "trace_{}.txt".format()), "w") as wf:
-        #     for nid in range(gc.array_diameter**2):
-        #         flows = df[df["src"] == nid]
-        #         print("{} {}".format(nid, flows.shape[0]), file=wf)
-        #         for _, f in flows.iterrows():
-        #             f = f.astype("int").astype("str")
-        #             print(" ".join([f["interval"], f["counts"], f["depend"], \
-        #                             f["flit"], f["dst"], f["src"]]), file=wf)
-
-    def _moveToSimFolder(self, trace_file, benchmark_name):
-        simulator_folder = os.path.join(gc.spatial_simulator_path, "benchmark", benchmark_name)
-        if not os.path.exists(simulator_folder):
-            os.mkdir(simulator_folder)
-        trace_in_simulator = os.path.join(simulator_folder, trace_file)
-        os.system("mv {} {}".format(trace_file, trace_in_simulator))
-

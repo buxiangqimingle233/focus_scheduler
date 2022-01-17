@@ -152,7 +152,7 @@ class FocusLatencyModel():
 
 
 def individual_generator():
-    p = Individual(pd.read_json("traceDR.json"), (gc.array_diameter, gc.array_diameter),)
+    p = Individual(pd.read_json(gc.focus_trace_path), (gc.array_diameter, gc.array_diameter),)
     for i in range(np.random.randint(100)):
         p.mutate(inplace=True)
     return p

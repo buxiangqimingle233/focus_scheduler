@@ -5,66 +5,23 @@ import pandas as pd
 from functools import reduce
 
 from utils import global_control as gc
-from server.toolchain import FocusToolChain
-from focus_software import EA, individual
+from compiler.toolchain import FocusToolChain
+from scheduler import EA, individual
 
 pd.set_option('mode.chained_assignment', None)
 
 
-def run_single_task():
-    '''An E2E flow for the task specified in `global_control.py`.
-    '''
-
-    printSpecs()
-
-    # Invoke the FOCUS compiling toolchain to generate the original traffic trace.
-    toolchain = FocusToolChain(gc.layer_names, gc.cores)
-    toolchain.compileTask(dataflow_engine=gc.dataflow_engine, subdir_name=gc.taskname)
-
-    # Invoke simulator to estimate the performance of baseline interconnection architectures.
-    if gc.simulate_baseline:
-        prev_cwd = os.getcwd()
-        os.chdir(gc.spatial_simulator_path)
-        os.system("python run.py single --bm {}".format(gc.taskname))
-        os.chdir(prev_cwd)
-        toolchain.analyzeSimResult()
-
-    # Invoke the FOCUS software procedure to schedule the traffic.
-    if gc.focus_schedule:
-
-        # Generate an engine for heuristic search
-        ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers,
-            population_size=gc.population_size, n_evolution=gc.n_evolution)
-
-        # for debugging
-        # ea_controller = EA.EvolutionController()
-
-        ea_controller.init_population(individual.individual_generator)
-        best_individual, _ = ea_controller.run_evolution_search(gc.scheduler_verbose)
-        # dump & print
-        best_trace = best_individual.getTrace()
-        best_trace.to_json("focus-final-out/best_scheduling.json")
-
-        # FIXME: redesign the analysis functino
-        slowdown = (best_trace["issue_time"] / (best_trace["interval"] * best_trace["count"]))
-        best_mean = slowdown[slowdown > 1].mean()
-        print("Sum Exceeded Latency: {}".format(best_mean))
-        with open(os.path.join("focus-final-out", gc.result_file), "a") as wf:
-            # print(flit_size, best_mean, best_mean, sep=",", file=wf)
-            print(best_mean, file=wf)
-
-
 def getArgumentParser():
     parser = argparse.ArgumentParser(description="FOCUS Testing")
-    parser.add_argument("-bm", "--benchmark", dest="bm", type=str, metavar="test.yaml",
-                        default="test.yaml", help="Task to run")
+    parser.add_argument("-bm", "--benchmark", dest="bm", type=str, metavar="runfiles/test.yaml",
+                        default="runfiles/test.yaml", help="Spec file of task to run")
     parser.add_argument("-d", "--array_diameter", dest="d", type=int, metavar="D",
                         default=8, help="Diameter of the PE array")
     parser.add_argument("-f", "--flit_size", dest="f", type=int, metavar="F",
                         default=1024, help="Flit size")
     parser.add_argument("mode", type=str, metavar="tgesf", default="tesf",
                         help="Running mode, t: invoke timeloop-mapper, g: use fake trace generator, \
-                              e: invoke timeloop-model, s: simulate baseline, f: focus software")
+                              e: invoke timeloop-model, s: simulate baseline, f: invoke focus software")
     return parser
 
 
@@ -112,6 +69,40 @@ def printSpecs():
     print("task layers: {}".format(gc.models))
     print("PE Utilization: {:.2f}".format(sum(gc.cores) / gc.array_size))
     print("*"*60, "\n")
+
+
+def run_single_task():
+    '''An E2E flow for the task specified in `global_control.py`.
+    '''
+
+    printSpecs()
+
+    # Invoke the FOCUS compiling toolchain to generate the original traffic trace.
+    toolchain = FocusToolChain(gc.layer_names, gc.cores)
+    toolchain.compileTask()
+
+    # Invoke simulator to estimate the performance of baseline interconnection architectures.
+    if gc.simulate_baseline:
+        prev_cwd = os.getcwd()
+        os.chdir(gc.spt_sim_root)
+        os.system("python run.py single --bm {}".format(gc.taskname))
+        os.chdir(prev_cwd)
+        toolchain.analyzeSimResult()
+
+    # Invoke the FOCUS software procedure to schedule the traffic.
+    if gc.focus_schedule:
+        # Generate an engine for heuristic search
+        ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers,
+            population_size=gc.population_size, n_evolution=gc.n_evolution)
+
+        # for debugging
+        # ea_controller = EA.EvolutionController()
+
+        ea_controller.init_population(individual.individual_generator)
+        best_individual, _ = ea_controller.run_evolution_search(gc.scheduler_verbose)
+        # dump & print
+        best_trace = best_individual.getTrace()
+        best_trace.to_json("buffer/best_scheduling.json")
 
 
 if __name__ == "__main__":
