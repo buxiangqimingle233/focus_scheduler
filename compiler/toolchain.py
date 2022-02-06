@@ -3,6 +3,8 @@ import re
 import pandas as pd
 import numpy as np
 from copy import deepcopy
+from math import ceil
+from compiler.mapper import task_map
 
 from utils.layer import Layer
 from utils import global_control as gc
@@ -12,9 +14,9 @@ from tracegen.generator import gen_fake_trace
 
 
 class FocusToolChain():
-    r'''This module is the compiling toolchain for FOCUS-enabled spatial architectures. \
-    It takes the task specification as the input and generate the traffic trace to drive either simulation or
-    be leveraged by the FOCUS optimization procedure.   \
+    r'''This module is the compiling toolchain for FOCUS-like spatial architectures. \
+    It takes task specifications as the input and generate the traffic trace to drive subsequent procedures. 
+    Specifically, Focus-sim and Focus optimizer take its output. 
     The toolchain firstly schedules the dataflows for the tasks, then searches the core mapping,
     and selects the hub-node and generates spanning tree for each traffic flow. \
     The resulting trace file is stored in multiple places, including ./trace.json, `sim_folder`/benchmark/,
@@ -57,19 +59,24 @@ class FocusToolChain():
 
         # Dump the trace for FOCUS scheduling.
         trace_for_focus = dual_phase_trace
-        trace_for_focus.to_json(gc.focus_trace_path)
+        self._dumpFocusTrace(trace_for_focus)
 
         # Dump the trace for simulation.
-        self._cvtAndStoreSimTrace(trace_for_focus)
-
+        self._cvtAndDumpSimTrace(trace_for_focus)
 
     def analyzeSimResult(self):
         result = pd.read_csv(
             os.path.join(gc.spt_sim_root, "test", gc.taskname, "brief_report.csv"),
             header=None, index_col=None,
-            names=["case", "cycle"]
+            names=["name", "flit", "cycle"]
         )
-        compute_time = max(self.traffic["interval"] * self.traffic["counts"])
+
+        # restore original clock frequency
+        result["cycle"] *= gc.acc_ratio
+        result = result.sort_values(by=["flit"], ascending=True)
+
+        compute_time = (self.traffic["interval"] * self.traffic["counts"]).quantile(0.90)
+
         result.loc[:, "slowdown"] = result["cycle"] / compute_time
         result.to_csv(os.path.join("focus-final-out", "baseline_{}.csv".format(gc.taskname)))
         return result
@@ -182,13 +189,17 @@ class FocusToolChain():
         
         return traffic
 
-    def _cvtAndStoreSimTrace(self, traffic):
+    def _cvtAndDumpSimTrace(self, traffic):
         df = deepcopy(traffic)
 
         # The traffic is the flow-centric data structure. We convert it to node-centric 
         # structure to drive the spatial simulator. 
         df = df.explode("map_src").explode("map_dst")
         df.loc[:, "fid"] = range(df.shape[0])
+
+        # Scale the trace with the accelerating ratio
+        df["flit"] = df["flit"].map(lambda x: ceil(x / gc.acc_ratio))
+        df["interval"] = df["interval"].map(lambda x: ceil(x / gc.acc_ratio))
 
         nodes = [{"nid": i} for i in range(gc.array_size)]
         for n in nodes:
@@ -212,3 +223,6 @@ class FocusToolChain():
                     print("%d %d %d %d %d %d" % 
                         (flow["interval"], flow["counts"], depend, flow["flit"], flow["map_dst"], flow["map_src"]), 
                         file=wf)
+
+    def _dumpFocusTrace(self, traffic):
+        traffic.to_json(gc.focus_trace_path)

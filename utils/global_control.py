@@ -18,7 +18,7 @@ search_dataflow = False
 extract_traffic = False
 timeloop_verbose = False
 # Search time
-timeout = 30
+timeout = 60
 # Core numbers (default: number specified in db/arch/arch.yaml)
 top_level_cnt = None
 
@@ -50,6 +50,11 @@ focus_trace_path = "buffer/traceDR.json"
 simulate_baseline = True
 spt_sim_root = "/home/wangzhao/simulator/booksim2"
 
+# To accelerate simulation, we assume the higher clock frequency for both 
+# PEs and NoCs, the acc_ratio is the scaling factor. 
+# This parameter scales up the flit size as well as scales down intervals
+acc_ratio = 10.
+
 # -------------------- Hardware Descriptions -------------------------
 
 # hardware setup
@@ -57,7 +62,6 @@ spt_sim_root = "/home/wangzhao/simulator/booksim2"
 array_diameter = 4                 # d
 array_size = array_diameter**2     # n = d * d
 flit_size = 4096                   # in bits
-
 
 # -------------------- Task Descriptions -------------------------
 

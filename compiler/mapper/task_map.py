@@ -1,6 +1,8 @@
 import numpy as np
 import math
 import copy
+
+from pandas import array
 from .hilbert import hilbert_map
 from utils.global_control import debug_show
 from utils import global_control as gc
@@ -8,22 +10,26 @@ import seaborn as sns
 
 
 class ml_mapping():
-    controller_idx = [0, 0]
-    array_diameter = gc.array_diameter
 
-    mc_idx0 = array_diameter//2 - 1
-    mc_idx1 = array_diameter//2
-    memory_controllers = [
-        mc_idx0, mc_idx1,
-        mc_idx0 * array_diameter, mc_idx1 * array_diameter,
-        (mc_idx0 + 1) * array_diameter - 1, (mc_idx1 + 1) * array_diameter - 1,
-        (array_diameter - 1) * array_diameter + mc_idx0, (array_diameter - 1) * array_diameter + mc_idx1
-    ]
 
     def __init__(self):
         self.layer_num = 0
         self.layer_MACs = {}
         self.layer_tile_num = {}
+        self.controller_idx = [0, 0]
+        self.array_diameter = gc.array_diameter
+
+        self.mc_idx0 = self.array_diameter//2 - 1
+        self.mc_idx1 = self.array_diameter//2
+        self.memory_controllers = [
+            self.mc_idx0, self.mc_idx1,
+            self.mc_idx0 * self.array_diameter, self.mc_idx1 * self.array_diameter,
+            (self.mc_idx0 + 1) * self.array_diameter - 1, (self.mc_idx1 + 1) * self.array_diameter - 1,
+            (self.array_diameter - 1) * self.array_diameter + self.mc_idx0, (self.array_diameter - 1) * self.array_diameter + self.mc_idx1
+        ]
+
+        # An indicator for allocating memory controllers in round-robin style
+        self.pointer = 0
     
     def parse_config(self):
         self.layer_num = len(gc.layer_names)
@@ -48,6 +54,9 @@ class ml_mapping():
         self.layer_tile_num = sorted(self.layer_tile_num.items(), key=lambda x:x[1], reverse=True)
 
     def get_controller(self, memory_controllers, layer):
+        self.pointer = (self.pointer + 1) % len(self.memory_controllers)
+        return self.memory_controllers[self.pointer]
+
         x_sum = 0
         y_sum = 0
         array_diameter = self.array_diameter
@@ -150,6 +159,7 @@ class ml_mapping():
             # If pipelined, input is fetched from exit port of last layer, weight is fetched from memory controllers
             # For simplicity, we always allocate a memory controller for each layer, which is denoted as -3
             if is_pipelined[idl]:
+            # if False:
                 mapped_mc = {-1: res[layer_names[idl-1]][-2], 
                              -3: self.get_controller(self.memory_controllers, self.layer_tile_num[idl])}
             else:

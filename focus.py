@@ -12,16 +12,29 @@ pd.set_option('mode.chained_assignment', None)
 
 
 def getArgumentParser():
-    parser = argparse.ArgumentParser(description="FOCUS Testing")
+    example_text = '''example:
+    
+    Generate trace files: 
+        python focus.py -bm runfiles/test.yaml -d 4 -fr 1024-4096-512 d
+    Run the simulator with the already generated trace files: 
+        python focus.py -bm runfiles/test.yaml -d 4 s
+    '''
+
+    parser = argparse.ArgumentParser(description="FOCUS Testing", 
+                                     epilog=example_text, 
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+
     parser.add_argument("-bm", "--benchmark", dest="bm", type=str, metavar="runfiles/test.yaml",
                         default="runfiles/test.yaml", help="Spec file of task to run")
     parser.add_argument("-d", "--array_diameter", dest="d", type=int, metavar="D",
                         default=8, help="Diameter of the PE array")
-    parser.add_argument("-f", "--flit_size", dest="f", type=int, metavar="F",
-                        default=1024, help="Flit size")
-    parser.add_argument("mode", type=str, metavar="tgesf", default="tesf",
+    parser.add_argument("-fr", "--flit_size_range", dest="fr", type=str, metavar="Fmin-Fmax-Step",
+                        default="1024-1024-512", help="Flit size range from Fmin to Fmax, interleave with Step")
+    parser.add_argument("-debug", dest="debug", action="store_true")
+    parser.add_argument("mode", type=str, metavar="tgesf", default="",
                         help="Running mode, t: invoke timeloop-mapper, g: use fake trace generator, \
-                              e: invoke timeloop-model, s: simulate baseline, f: invoke focus software")
+                              e: invoke timeloop-model, s: simulate baseline, f: invoke focus scheduler \
+                              d: ONLY dump the trace file, do nothing else")
     return parser
 
 
@@ -37,6 +50,11 @@ def setEnvSpecs(args: argparse.Namespace):
     gc.extract_traffic = "e" in args.mode
     gc.simulate_baseline = "s" in args.mode
     gc.focus_schedule = "f" in args.mode
+
+    # set debug flags
+    gc.timeloop_verbose = args.debug
+    gc.scheduler_verbose = args.debug
+    gc.mapper_verbose = args.debug
 
     # set dataflow engine
     gc.dataflow_engine = "fake" if "g" in args.mode else "timeloop"
@@ -66,13 +84,13 @@ def printSpecs():
     print("invoke baseline simulator: {}, invoke focus software: {}"
           .format(gc.simulate_baseline, gc.focus_schedule))
     print("task name: {}".format(gc.taskname))
-    print("task layers: {}".format(gc.models))
+    print("task layers: {}".format(gc.layer_names))
     print("PE Utilization: {:.2f}".format(sum(gc.cores) / gc.array_size))
     print("*"*60, "\n")
 
 
 def run_single_task():
-    '''An E2E flow for the task specified in `global_control.py`.
+    '''An E2E flow for the task specified in `global_control.py`.z
     '''
 
     printSpecs()
@@ -108,5 +126,9 @@ def run_single_task():
 if __name__ == "__main__":
     parser = getArgumentParser()
     args = parser.parse_args()
-    setEnvSpecs(args)
-    run_single_task()
+    fmin, fmax, fstep = map(int, args.fr.split("-"))
+
+    for f in range(fmin, fmax + fstep, fstep):
+        vars(args)["f"] = f
+        setEnvSpecs(args)
+        run_single_task()
