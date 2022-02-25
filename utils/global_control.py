@@ -1,4 +1,5 @@
 # Global Variables for controling
+import os
 
 # --------------------- Global Parameters --------------------
 
@@ -9,6 +10,11 @@ dataflow_engine = "timeloop"      # Generate traffic trace from real-world workl
 # trace_gen_backend = "fake"           # Generate traffic trace by randomly mixing traffic operations
 
 result_dir = "result-512g"
+
+# To mitigate the long-tail issue caused by timeloop, we treat a quantile 
+# of PE ending times as the execution latency, but not their maximum. 
+
+quantile_ = 0.9
 
 # -------------------- Timeloop Specs -------------------------
 
@@ -40,20 +46,24 @@ mapping_style = "Hilbert"
 focus_schedule = True
 
 scheduler_verbose = False
-n_workers = 28
-population_size = 5
-n_evolution = 5
-focus_trace_path = "buffer/traceDR.json"
+n_workers = 30
+population_size = 30
+n_evolution = 50
 
 # -------------------- Spatial Simulator Specs -------------------------
 
 simulate_baseline = True
-spt_sim_root = "/home/wangzhao/simulator/booksim2"
+spt_sim_root = "booksim_focus"
 
 # To accelerate simulation, we assume the higher clock frequency for both 
-# PEs and NoCs, the acc_ratio is the scaling factor. 
-# This parameter scales up the flit size as well as scales down intervals
-acc_ratio = 10.
+# PEs and NoCs. 
+
+# This parameter reduces the packet size and computing time simultaneously.
+# It only effects baseline simulation
+overclock = 5.
+# This parameter describes how much iteration we take.
+# It effects both baseline simulation and focus software
+shrink = 0.5
 
 # -------------------- Hardware Descriptions -------------------------
 
@@ -91,3 +101,6 @@ def debug_show(item):
     pp = PrettyPrinter(indent=2)
     pp.pprint(item)
     exit(0)
+
+def get_ea_logpath():
+    return os.path.join("buffer", taskname, "ea_output")

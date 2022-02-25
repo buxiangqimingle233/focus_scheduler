@@ -37,7 +37,7 @@ def hilbert_curve(order, orientation):
 
 def hilbert_map(order):
     curve = hilbert_curve(order, 'u')
-
+    
     curve = np.array(curve)
     cumulative_curve = np.array([np.sum(curve[:i], 0) for i in range(len(curve)+1)])
     return cumulative_curve

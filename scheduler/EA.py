@@ -3,14 +3,9 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import copy
-import random
 import numpy as np
-import pandas as pd
-import time
+from time import time, strftime
 from tqdm import tqdm
-from copy import deepcopy
-import individual as indi
 from utils import global_control as gc
 
 class EvolutionController:
@@ -30,15 +25,19 @@ class EvolutionController:
         self.log_path = log_path
         if not os.path.exists(self.log_path):
             os.makedirs(self.log_path)
-        self.log_file = open(os.path.join(self.log_path,time.strftime('%Y%m%d_%H%M%S')), 'a+')
+        self.log_file = open(os.path.join(self.log_path, strftime('%Y%m%d_%H%M%S')), 'a+')
 
         self.population=[]
         self.scores=[]
 
+        # clean individual.out
+        with open(os.path.join(gc.get_ea_logpath(), "individual.out"), "w") as outf:
+            pass
+
     def add_individual(self,individual,score=None):
         self.population.append(individual)
         if score is None:
-            score=individual.evaluate()
+            score = individual.evaluate()
         self.scores.append(score)
 
     def init_population(self,individual_generator,allow_repeat=False,max_sample_times=1000):
@@ -80,7 +79,9 @@ class EvolutionController:
         best_score_history = []
 
         print('Start Evolution Search...')
-        t=tqdm(range(self.n_generations),desc="Evolutionary Search")
+        start_time = time()
+
+        t = tqdm(range(self.n_generations), desc="Evolutionary Search")
         for generation in t: 
             print(f'Start Generation={generation}')
             # sort
@@ -98,7 +99,8 @@ class EvolutionController:
             self.log_file.write(
                 f"==={generation}/{self.n_generations}===\n")
             for i in sorted_inds[:3]:
-                self.log_file.write(f"{self.scores[i]} {self.population[i]}\n")
+                # self.log_file.write(f"{self.scores[i]} {self.population[i]}\n")
+                self.log_file.write(f"{self.scores[i]}\n")
             self.log_file.flush()
             
             best_score_history.append(now_best_score)
@@ -114,38 +116,38 @@ class EvolutionController:
             self.crossover(parents)
 
         print('Finish Evolution Search')
-        ind=np.argmax(self.scores)
+        ind = np.argmax(self.scores)
+        end_time = time()
+        self.log_file.write("Evolution search time: {}".format(end_time - start_time))
+        self.log_file.flush()
         return self.population[ind], self.scores[ind]
-        # return indi, self.scores[ind]
 
 import multiprocessing as mp
 
 
-def individual_gen_process(pid,individual_generator):
-    # print(f"start {pid}")
-    with open("buffer/ea_output/individual.out", "a+") as outf:
+def individual_gen_process(pid, individual_generator):
+    with open(os.path.join(gc.get_ea_logpath(), "individual.out"), "a+") as outf:
         if not gc.scheduler_verbose:
             sys.stdout = outf
-        individual=individual_generator()
-        score=individual.evaluate()
+        individual = individual_generator()
+        score = individual.evaluate()
     return individual,score
 
-def individual_mutation_process(pid,parent):
-    # print(f"start {pid}")
-    with open("buffer/ea_output/individual.out", "a+") as outf:
+def individual_mutation_process(pid, parent):
+    with open(os.path.join(gc.get_ea_logpath(), "individual.out"), "a+") as outf:
         if not gc.scheduler_verbose:
             sys.stdout = outf
-        child=parent.mutate()
-        score=child.evaluate()
+        child = parent.mutate()
+        score = child.evaluate()
     return child,score
 
 def individual_crossover_process(pid,parents):
     # print(f"start {pid}")
-    with open("buffer/ea_output/individual.out", "a+") as outf:
+    with open(os.path.join(gc.get_ea_logpath(), "individual.out"), "a+") as outf:
         if not gc.scheduler_verbose:
             sys.stdout = outf
-        child=parents[0].crossover(*parents)
-        score=child.evaluate()
+        child = parents[0].crossover(*parents)
+        score = child.evaluate()
     return child,score
 
 
@@ -154,7 +156,7 @@ class ParallelEvolutionController(EvolutionController):
         super().__init__(mutate_prob=mutate_prob, population_size=population_size, n_evolution=n_evolution, parent_fraction=parent_fraction, mutation_fraction=mutation_fraction, crossover_fraction=crossover_fraction, log_path=log_path)
         self.n_workers=n_workers
 
-    def init_population(self,individual_generator,allow_repeat=False,max_sample_times=1000):
+    def init_population(self, individual_generator,allow_repeat=False,max_sample_times=1000):
         self.population.clear()
         print(f"Generate {self.population_size} individuals Parallel")
         if allow_repeat:
@@ -162,8 +164,8 @@ class ParallelEvolutionController(EvolutionController):
         else:
             n=max_sample_times
         
-        pool=mp.Pool(processes=self.n_workers)
-        rst=pool.starmap(individual_gen_process,[ (pid,individual_generator) for pid in range(self.population_size)])
+        pool = mp.Pool(processes=self.n_workers)
+        rst = pool.starmap(individual_gen_process,[ (pid, individual_generator) for pid in range(self.population_size)])
         for i,s in rst:
             self.add_individual(i,s)
         pool.close()

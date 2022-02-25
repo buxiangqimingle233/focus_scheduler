@@ -3,6 +3,7 @@ import argparse
 import yaml
 import pandas as pd
 from functools import reduce
+from time import time
 
 from utils import global_control as gc
 from compiler.toolchain import FocusToolChain
@@ -15,17 +16,17 @@ def getArgumentParser():
     example_text = '''example:
     
     Generate trace files: 
-        python focus.py -bm runfiles/test.yaml -d 4 -fr 1024-4096-512 d
+        python focus.py -bm benchmark/test.yaml -d 4 -fr 1024-4096-512 d
     Run the simulator with the already generated trace files: 
-        python focus.py -bm runfiles/test.yaml -d 4 s
+        python focus.py -bm benchmark/test.yaml -d 4 s
     '''
 
     parser = argparse.ArgumentParser(description="FOCUS Testing", 
                                      epilog=example_text, 
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
 
-    parser.add_argument("-bm", "--benchmark", dest="bm", type=str, metavar="runfiles/test.yaml",
-                        default="runfiles/test.yaml", help="Spec file of task to run")
+    parser.add_argument("-bm", "--benchmark", dest="bm", type=str, metavar="benchmark/test.yaml",
+                        default="benchmark/test.yaml", help="Spec file of task to run")
     parser.add_argument("-d", "--array_diameter", dest="d", type=int, metavar="D",
                         default=8, help="Diameter of the PE array")
     parser.add_argument("-fr", "--flit_size_range", dest="fr", type=str, metavar="Fmin-Fmax-Step",
@@ -43,8 +44,7 @@ def setEnvSpecs(args: argparse.Namespace):
     # set architecture parameters
     gc.array_diameter = args.d
     gc.array_size = args.d ** 2
-    gc.flit_size = args.f
-
+    gc.flit_size = args.f 
     # set running mode
     gc.search_dataflow = "t" in args.mode
     gc.extract_traffic = "e" in args.mode
@@ -60,7 +60,7 @@ def setEnvSpecs(args: argparse.Namespace):
     gc.dataflow_engine = "fake" if "g" in args.mode else "timeloop"
 
     # set task specifications
-    obj = yaml.load(open(args.bm, "r"), Loader=yaml.FullLoader)
+    obj = yaml.load(open(args.bm, "r"), Loader=yaml.FullLoader) 
     gc.models = list(obj.keys())
     gc.layer_names, gc.cores = [], []
     for model in obj.values():
@@ -97,6 +97,7 @@ def run_single_task():
 
     # Invoke the FOCUS compiling toolchain to generate the original traffic trace.
     toolchain = FocusToolChain(gc.layer_names, gc.cores)
+    start_time = time()
     toolchain.compileTask()
 
     # Invoke simulator to estimate the performance of baseline interconnection architectures.
@@ -109,18 +110,33 @@ def run_single_task():
 
     # Invoke the FOCUS software procedure to schedule the traffic.
     if gc.focus_schedule:
+        # Generate working directory
+        working_dir = os.path.join("buffer", gc.taskname)
+        if not os.path.exists(working_dir):
+            os.mkdir(working_dir)
+
         # Generate an engine for heuristic search
-        ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers,
-            population_size=gc.population_size, n_evolution=gc.n_evolution)
 
         # for debugging
-        # ea_controller = EA.EvolutionController()
+        if gc.scheduler_verbose:
+            ea_controller = EA.EvolutionController(population_size=gc.population_size, n_evolution=gc.n_evolution, 
+                                                log_path=os.path.join("buffer", gc.taskname, "ea_output"))
+        else:
+            ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers,
+                population_size=gc.population_size, n_evolution=gc.n_evolution,
+                log_path=gc.get_ea_logpath())
 
-        ea_controller.init_population(individual.individual_generator)
-        best_individual, _ = ea_controller.run_evolution_search(gc.scheduler_verbose)
-        # dump & print
-        best_trace = best_individual.getTrace()
-        best_trace.to_json("buffer/best_scheduling.json")
+            ea_controller.init_population(individual.individual_generator)
+            best_individual, _ = ea_controller.run_evolution_search(gc.scheduler_verbose)
+        # dump the EA's results
+        solution = best_individual.getTrace()
+        dump_file = os.path.join("buffer", gc.taskname, "solution_{}.json".format(gc.flit_size))
+        solution.to_json(dump_file)
+
+        toolchain.analyzeFocusResult()
+
+    end_time = time()
+    print("METRO software takes: {} seconds".format(end_time - start_time))
 
 
 if __name__ == "__main__":

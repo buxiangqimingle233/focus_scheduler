@@ -6,6 +6,7 @@ import pandas as pd
 from copy import deepcopy
 import random
 import yaml
+from math import ceil
 from time import time
 
 from utils import global_control as gc
@@ -70,7 +71,7 @@ class XYRouter:
             raise Exception("The two nodes are not neighbours!")
 
 
-class FocusLatencyModel():
+class InjectionHarmonizer():
 
     packets = pd.DataFrame(columns=["id", "src", "dst", "flit", "interval", "path", "issue_time", "count"])
     routers = pd.DataFrame(columns=["rid", "coordinate", "port", "grab_start", "grab_end"])
@@ -126,7 +127,7 @@ class FocusLatencyModel():
                 self.routers.loc[sel, "grab_start"] = issue_time
                 self.routers.loc[:, "grab_end"] = issue_time + grab_time
 
-                # mark this packet to have been issued
+                # mark this packet as already issued
                 remain_count = working_pkts.loc[issued_pkt["id"], "count"]
                 working_pkts.loc[issued_pkt["id"], "count"] = remain_count - 1
 
@@ -152,8 +153,9 @@ class FocusLatencyModel():
 
 
 def individual_generator():
-    p = Individual(pd.read_json(gc.focus_trace_path), (gc.array_diameter, gc.array_diameter),)
-    for i in range(np.random.randint(100)):
+    focus_trace = "buffer/{}/trace_{}.json".format(gc.taskname, gc.flit_size)
+    p = Individual(pd.read_json(focus_trace), (gc.array_diameter, gc.array_diameter),)
+    for _ in range(np.random.randint(100)):
         p.mutate(inplace=True)
     return p
 
@@ -181,7 +183,10 @@ class Individual():
         trace["path"] = [[] for _ in range(trace.shape[0])]
 
         # For reducing the time of simulating
-        trace["count"] = iter_episode
+        # FIXME: Only account for ping-pong buffer
+        # trace["count"] = iter_episode
+
+        trace["count"] = trace["counts"]
 
         # Change datatype
         trace.loc[:, "captain"] = trace["captain"].astype("Int64")
@@ -284,44 +289,38 @@ class Individual():
             working_trace.loc[idx] = row
 
         # temporal map
-        print("begin temporal mapping")
         temporal_mapper = FocusTemporalMapper()
         working_trace = temporal_mapper.temporal_map(working_trace)
 
-        print("begin estimating")
+        # accelerate harmonizer
+        working_trace["count"] = working_trace["count"].map(lambda x: ceil(x * gc.shrink))
+
         # estimate latency
-        latency_model = FocusLatencyModel(self.array_shape)
+        latency_model = InjectionHarmonizer(self.array_shape)
         working_trace = latency_model.run(working_trace)
         
+        working_trace["issue_time"] *= working_trace["counts"] / working_trace["count"]
+
         end_time = time()
-        
-        # TODO: 差一个pkt的长度，算overall bandwidth
+
+        # These scores are adopted when ping-pong buffer is assumed
+
         # score = sum(working_trace.apply(lambda x: x["flit"] * 1024 * x["count"], axis=1)) / max(working_trace["issue_time"])
-        slowdown = (working_trace["issue_time"] / (working_trace["count"] * working_trace["interval"]))
-        score = -slowdown[slowdown > 1].mean()
+        # slowdown = (working_trace["issue_time"] / (working_trace["count"] * working_trace["interval"]))
+        # score = -slowdown[slowdown > 1].mean()
+
+        # Ping-pong buffer, individually analyzing the slowdown for each layer
+        score = - (working_trace.groupby(by="layer").apply(lambda x: ((x["delay"] + x["interval"]) * x["counts"]).max())).quantile(gc.quantile_)
+
+        # The score without ping-pong buffers assumption
+        # score = - (working_trace["issue_time"] + working_trace["flit"]).quantile(gc.quantile_)
  
-        # score = -working_trace["delay"].sum()
         global best_solution
         if score > best_solution[1]:
             best_solution = (working_trace, score)
 
-        print("Evaluate time: {} Score: {}".format(end_time-start_time, score))
+        print("Evaluate time: {} Score: {}".format(end_time - start_time, score))
         self.trace["issue_time"] = working_trace["issue_time"]
         self.trace["delay"] = working_trace["delay"]
         self.trace["is_bound"] = working_trace["is_bound"]
         return score
-
-
-if __name__ == "__main__":
-    trace_file = "focus/ts_scheduler/trace.dat"
-    
-    ind1 = Individual(pd.read_csv(trace_file, header=0), (15, 15))
-    ind2=ind1.mutate()
-    ind1.crossover(ind1,ind2)
-
-    # print(Individual.crossover(ind1, ind2).getTrace())
-    # r = XYRouter((4, 4))
-    # # trace["path"] = 
-    
-    # path = r.getPath(7, 0)
-    # print(path)

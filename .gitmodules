@@ -1,3 +1,7 @@
 [submodule "result-512g"]
 	path = result-512g
 	url = ./result-512g
+[submodule "booksim_focus"]
+	path = booksim_focus
+	url = git@github.com:buxiangqimingle233/booksim_focus.git
+	branch = dev

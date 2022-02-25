@@ -1,6 +1,6 @@
 import numpy as np
 import math
-import copy
+import sys
 
 from pandas import array
 from .hilbert import hilbert_map
@@ -8,13 +8,11 @@ from utils.global_control import debug_show
 from utils import global_control as gc
 import seaborn as sns
 
-
 class ml_mapping():
 
 
     def __init__(self):
         self.layer_num = 0
-        self.layer_MACs = {}
         self.layer_tile_num = {}
         self.controller_idx = [0, 0]
         self.array_diameter = gc.array_diameter
@@ -30,28 +28,16 @@ class ml_mapping():
 
         # An indicator for allocating memory controllers in round-robin style
         self.pointer = 0
-    
-    def parse_config(self):
-        self.layer_num = len(gc.layer_names)
-        self.layer_MACs = {i: gc.cores[i] for i in range(self.layer_num)}
+
+    def _parse_config(self):
         self.tile_array_height = gc.array_diameter
         self.tile_array_width = gc.array_diameter
         self.mapping_style = gc.mapping_style
-
-    def cal_tile_num(self):
-        # total_MACs = 0
-        # for layer_i in self.layer_MACs:
-        #     total_MACs += self.layer_MACs[layer_i]
-
-        # for layer_i in self.layer_MACs:
-        #     self.layer_tile_num[layer_i] = round((self.layer_MACs[layer_i] * self.tile_array_height * self.tile_array_width) / total_MACs)
-            # self.layer_tile_num[layer_i] = (self.layer_MACs[layer_i] * self.tile_array_height * self.tile_array_width) // total_MACs
-            # print(f"Layer {layer_i} gets {self.layer_tile_num[layer_i]} tiles")
-
-        # TODO: We do not wish this module to change the sizes of layers
-        self.layer_tile_num = copy.copy(self.layer_MACs)
-
-        self.layer_tile_num = sorted(self.layer_tile_num.items(), key=lambda x:x[1], reverse=True)
+        self.layer_num = len(gc.layer_names)
+        self.layer_tile_num = sorted([(i, gc.cores[i]) for i in range(len(gc.cores))], key=lambda x:x[1], reverse=True)
+        if gc.array_size < len(self.memory_controllers) + sum(gc.cores):
+            print("Mapping error: allocated cores exceed free cores", file=sys.stderr)
+            exit(-1)
 
     def get_controller(self, memory_controllers, layer):
         self.pointer = (self.pointer + 1) % len(self.memory_controllers)
@@ -76,67 +62,82 @@ class ml_mapping():
                 mc_distance = abs(x_sum - mc_index[0]) + abs(y_sum - mc_index[1])
         return self.controller_idx[0] * array_diameter + self.controller_idx[1]
 
+    def map_tetris(self, mapping_result):
+        for layer in self.layer_tile_num:
+            height = int(math.sqrt(layer[1]))
+            width = math.ceil(math.sqrt(layer[1]))
+            if width * (width + height) < 2 * layer[1]:
+                height = width
+
+            flag = False
+            while(not flag):
+                for i in range(self.tile_array_height):
+                    for j in range(self.tile_array_width):
+                        if not flag:
+                            # print(height, width)
+                            if i + height <= self.tile_array_height and j + width <= self.tile_array_width and self.mapping_result[i : i + height, j : j + width].max() == -1:
+                                mapping_result[i : i + height, j : j + width] = layer[0]
+                                print(f'layer{layer[0]} requires: {layer[1]} height: {height} width: {width} latency: {self.layer_tile_num[layer[0]] / (height * width)}')
+                                flag = True
+                            elif i + width <= self.tile_array_height and j + height <= self.tile_array_width and self.mapping_result[i : i + width, j : j + height].max() == -1:
+                                mapping_result[i : i + width, j : j + height] = layer[0]
+                                print(f'layer{layer[0]} requires: {layer[1]} height: {width} width: {height} latency: {self.layer_tile_num[layer[0]] / (height * width)}')
+                                flag = True
+                if not flag:
+                    width -= 1
+                    if width == 0:
+                        print(f"{layer[0]} failed")
+                        return
+                    height = layer[1] // width
+        return mapping_result
+
+    def map_hilbert(self, mapping_result):
+        mapping_list = list(hilbert_map(np.log2(self.array_diameter)))
+
+        for lid, core_num in self.layer_tile_num:
+            for _ in range(core_num):
+                x, y = mapping_list.pop(0)
+                while x * self.array_diameter + y in self.memory_controllers:
+                    x, y = mapping_list.pop(0)
+                mapping_result[x][y] = lid
+
+        return mapping_result
+
+    def map_zigzag(self, mapping_result):
+        mapping_list = []
+        for i in range(self.array_diameter):
+            for j in range(self.array_diameter):
+                if i % 2 == 0:
+                    mapping_list.append([i, j])
+                else:
+                    mapping_list.append([i, self.array_diameter - 1 - j])
+
+        for lid, core_num in self.layer_tile_num:
+            for _ in range(core_num):
+                x, y = mapping_list.pop(0)
+                while x * self.array_diameter + y in self.memory_controllers:
+                    x, y = mapping_list.pop(0)
+                mapping_result[x][y] = lid
+        return mapping_result
+
+
     def map(self):
-        self.parse_config()
-        self.cal_tile_num()
+        self._parse_config()
 
-        self.mapping_result = np.full((self.tile_array_height, self.tile_array_width), -1, dtype=np.int)
-        mapping_style = gc.mapping_style
-        array_diameter = gc.array_diameter
-        if mapping_style == "Tetris":
-            for layer in self.layer_tile_num:
-                height = int(math.sqrt(layer[1]))
-                width = math.ceil(math.sqrt(layer[1]))
-                if width * (width + height) < 2 * layer[1]:
-                    height = width
+        board = np.full((self.tile_array_height, self.tile_array_width), -1, dtype=np.int)
 
-                flag = False
-                while(not flag):
-                    for i in range(self.tile_array_height):
-                        for j in range(self.tile_array_width):
-                            if not flag:
-                                # print(height, width)
-                                if i + height <= self.tile_array_height and j + width <= self.tile_array_width and self.mapping_result[i : i + height, j : j + width].max() == -1:
-                                    self.mapping_result[i : i + height, j : j + width] = layer[0]
-                                    print(f'layer{layer[0]} requires: {layer[1]} height: {height} width: {width} latency: {self.layer_MACs[layer[0]] / (height * width)}')
-                                    flag = True
-                                elif i + width <= self.tile_array_height and j + height <= self.tile_array_width and self.mapping_result[i : i + width, j : j + height].max() == -1:
-                                    self.mapping_result[i : i + width, j : j + height] = layer[0]
-                                    print(f'layer{layer[0]} requires: {layer[1]} height: {width} width: {height} latency: {self.layer_MACs[layer[0]] / (height * width)}')
-                                    flag = True
-                    if not flag:
-                        width -= 1
-                        if width == 0:
-                            print(f"{layer[0]} failed")
-                            return
-                        height = layer[1] // width
-
-        else:
-            mapping_list = []
-            if self.mapping_style == "Zig-Zag":
-                for i in range(array_diameter):
-                    for j in range(array_diameter):
-                        if i % 2 == 0:
-                            mapping_list.append([i, j])
-                        else:
-                            mapping_list.append([i, array_diameter - 1 - j])
-
-            elif self.mapping_style == "Hilbert":
-                mapping_list = list(hilbert_map(np.log2(array_diameter)))
-
-            for layer in self.layer_tile_num:
-                tile_num = layer[1]
-                while(tile_num > 0):
-                    self.mapping_result[mapping_list[0][0]][mapping_list[0][1]] = layer[0]
-                    mapping_list.pop(0)
-                    tile_num -= 1
+        if self.mapping_style == "Tetris":
+            self.mapping_result = self.map_tetris(board)
+        elif self.mapping_style == "Zig-Zag":
+            self.mapping_result = self.map_zigzag(board)
+        elif self.mapping_style == "Hilbert":
+            self.mapping_result = self.map_hilbert(board)
 
         if gc.mapper_verbose:
-            print(self.mapping_result)
             fig_name = "mapping_vis/map_result.png"
             fig = sns.heatmap(data=self.mapping_result, cmap="RdBu_r", linewidths=0.3, annot=True)
             heatmap = fig.get_figure()
-            heatmap.savefig(fig_name, dpi=400) 
+            heatmap.savefig(fig_name, dpi=400)
 
         f = open(f'mapping_vis/self.mapping_result_{self.mapping_style}.dat', 'w')
         for i in range(self.tile_array_height):
@@ -160,12 +161,12 @@ class ml_mapping():
             # For simplicity, we always allocate a memory controller for each layer, which is denoted as -3
             if is_pipelined[idl]:
             # if False:
-                mapped_mc = {-1: res[layer_names[idl-1]][-2], 
+                mapped_mc = {-1: res[layer_names[idl-1]][-2],
                              -3: self.get_controller(self.memory_controllers, self.layer_tile_num[idl])}
             else:
-                mapped_mc = {-1: self.get_controller(self.memory_controllers, self.layer_tile_num[idl]), 
+                mapped_mc = {-1: self.get_controller(self.memory_controllers, self.layer_tile_num[idl]),
                              -3: self.get_controller(self.memory_controllers, self.layer_tile_num[idl])}
-        
+
             res[layer_names[idl]] = {**mapped_mc, **mapped_core, **mapped_out}
 
         return res
