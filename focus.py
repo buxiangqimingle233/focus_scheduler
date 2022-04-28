@@ -6,7 +6,7 @@ from functools import reduce
 from time import time
 
 from utils import global_control as gc
-from compiler.toolchain import FocusToolChain
+from compiler.toolchain import TaskCompiler
 from scheduler import EA, individual
 
 pd.set_option('mode.chained_assignment', None)
@@ -90,13 +90,13 @@ def printSpecs():
 
 
 def run_single_task():
-    '''An E2E flow for the task specified in `global_control.py`.z
+    '''An E2E flow for the task specified in `global_control.py`.
     '''
 
     printSpecs()
 
     # Invoke the FOCUS compiling toolchain to generate the original traffic trace.
-    toolchain = FocusToolChain(gc.layer_names, gc.cores)
+    toolchain = TaskCompiler(gc.layer_names, gc.cores)
     start_time = time()
     toolchain.compileTask()
 
@@ -116,7 +116,6 @@ def run_single_task():
             os.mkdir(working_dir)
 
         # Generate an engine for heuristic search
-
         # for debugging
         if gc.scheduler_verbose:
             ea_controller = EA.EvolutionController(population_size=gc.population_size, n_evolution=gc.n_evolution, 

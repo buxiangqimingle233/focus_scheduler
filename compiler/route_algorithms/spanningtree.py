@@ -1,18 +1,15 @@
 import numpy as np
-import pandas as pd
 from functools import reduce
-from utils import global_control as gc
-
 
 class SpanningTree():
 
     rotate_to_mapper = {0: 3, 1: 4, 2: 2, 3: 5, 5: 1}
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, diameter):
+        self.diameter = diameter
 
     def wrapper_genST(self, captain, region):
-        array_diameter = gc.array_diameter
+        array_diameter = self.diameter
         array = np.asarray(region)
         array_x = (array / array_diameter).astype(np.int64)
         array_y = (array % array_diameter).astype(np.int64)

@@ -1,7 +1,7 @@
 import os
 import sys
 import re
-from layer import Layer
+from layer import TimeloopLayer
 
 
 class Model():
@@ -12,7 +12,7 @@ class Model():
         self.database_path = os.path.join(self.prj_root, "db")
         for root, _, files in os.walk(os.path.join(self.database_path, model_dir)):
             for file in files:
-                self.layers.append(Layer(layer_file=file, model_dir=model_dir, prj_root=self.prj_root))
+                self.layers.append(TimeloopLayer(layer_file=file, model_dir=model_dir, prj_root=self.prj_root))
 
     def _allocate_top_level_pe(self):
         mac_cnts = [layer.get_mac_number() for layer in self.layers]

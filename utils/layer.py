@@ -1,7 +1,4 @@
 import os
-import sys
-
-
 
 import re
 import yaml
@@ -9,14 +6,16 @@ import time
 import subprocess
 import signal
 import types
+import pandas as pd
+from copy import deepcopy
 from functools import reduce
 from loop2map import Loop2Map
 from utils import global_control as gc
 from utils.global_control import debug_show
 
 
-class Layer:
-    r'''Conducting analysis for a single layer  \
+class TimeloopLayer:
+    r'''An agent of a layer in timeloop
     Side effects:   \
         1. Create `root_dir`/result directorty & create `root_dir`/result/`layer_name` directory    \
         2. Set working directory to root_dir/result/`layer_name` (When function "execute" is called)    \
@@ -258,8 +257,8 @@ class Layer:
             print("No valid solution found, please check timeloop configuration")
             exit(-1)
 
-    def run_with_gc(self, extractor):
-        '''Similar with `run`, but use global_control to store variables
+    def run(self, analyzer):
+        '''Invoke timeloop kernel and execute analyzer to post-process the timeloop's outputs
         '''
         # changing working dir to /result/layer_name directory to avoid file pollution
 
@@ -275,7 +274,7 @@ class Layer:
         # comm_bank: full information of communication status
         comm_bank = self.collect_comm_status()
         # bind function `analyze` to myself
-        bounded_extractor = types.MethodType(extractor, self)
+        bounded_extractor = types.MethodType(analyzer, self)
         # perform analysis
         ret = bounded_extractor(comm_bank)
 
@@ -286,40 +285,59 @@ class Layer:
 
         return ret
 
+    @staticmethod
+    def report_as_dataframe(layer, comm_bank):
+        df = pd.DataFrame()
+        for dti in range(3):
+            for traffic_pertile in comm_bank[::-1]:
+                traffic_perdatatype = traffic_pertile[dti]
+                if traffic_perdatatype:
+                    for flow in traffic_perdatatype:
+                        df = df.append({
+                            "layer": layer.layer_name,
+                            "src": flow["srcs"],
+                            "dst": flow["dsts"],
+                            "interval": flow["pkt_interval"],
+                            "flit": flow["bit_volume"] / gc.flit_size,
+                            "counts": flow["cnt"],
+                            "datatype": gc.datatype[dti]
+                        }, ignore_index=True)
+                    df = df[df["flit"] > 0]
+                    df.loc[:, "flit"] = df["flit"].map(lambda x: int(max(x + 1, 2)))    # add headflits
+                    break
+        
+        # collapse all the datatypes
+        bcast = df[(df["dst"].map(len) > 1) & (df["src"].map(lambda x: x[0]) == -1)]
+        reduction = df[(df["dst"].map(lambda x: x[0]) == -1)]
+        other = df[(df["src"].map(len) == 1) & (df["dst"].map(lambda x: x[0]) != -1)]
 
-    def run(self, analyze, top_level_pe_cnt=None, search_dataflow=False, timeout=None):
-        '''Find optimal dataflow and perform analysis specified by callback function `analysis`\n
-        '''
-        print("Warning: This function is deprecated, please use `run_with_gc`")
-        # changing working dir to /result/layer_name directory to avoid file pollution
-        old_cwd = os.getcwd()
-        os.chdir(self.working_dir)
-        print("Info:", "Working for", self.layer_name)
+        # broadcast: keep destination, reduce source size to 1
+        bcast.loc[:, "src"] = bcast["src"].map(lambda x: x[:1])
 
-        if top_level_pe_cnt:
-            self._modify_array_size(top_level_pe_cnt)
-        # # perform dataflow searching
-        if search_dataflow:
-            self._search_dataflow(timeout)
+        # reduction: distribute
+        tmp = pd.DataFrame(columns=reduction.columns)
+        for idx, row in reduction.iterrows():
+            srcs = row["src"]
+            for s in srcs:
+                new_row = deepcopy(row)
+                new_row["src"] = [s]
+                new_row["dst"] = [-2]
+                new_row["delay"] = new_row["interval"]
+                tmp = tmp.append(new_row)
 
-        # comm_bank: full information of communication status
-        comm_bank = self.collect_comm_status()
-        # bind function `analyze` to myself
-        bounded_analyze = types.MethodType(analyze, self)
-        # perform analysis
-        ret = bounded_analyze(comm_bank)
+        reduction = deepcopy(tmp)
+        # other: keep still
 
-        # recover the working directory
-        os.chdir(old_cwd)
-        seperator = "====================== FINISH =========================\n\n"
-        print(seperator)
+        df = pd.concat([bcast, reduction, other])
 
-        return ret
+        # always set weight source to reserved MC, and input source to mapper-defined nodees
+        df.loc[df["datatype"] == "weight", "src"] = df[df["datatype"] == "weight"]["src"].map(lambda x: [-3] if x == [-1] else x)
+        return df
 
 
 if __name__ == "__main__":
-    layer = Layer("resnet50_layer54.yaml", model_dir="resnet50")
+    layer = TimeloopLayer("resnet50_layer54.yaml", model_dir="resnet50")
     # layer = Layer("vgg16_layer")
     layer.get_mac_number()
     # layer.run(lambda x, y: y, search_dataflow=False)
-    layer.run_with_gc(lambda x, y: y)
+    layer.run(lambda x, y: y)

@@ -53,7 +53,7 @@ n_evolution = 50
 # -------------------- Spatial Simulator Specs -------------------------
 
 simulate_baseline = True
-spt_sim_root = "booksim_focus"
+spt_sim_root = "/home/wangzhao/simulator/spatial_sim"
 
 # To accelerate simulation, we assume the higher clock frequency for both 
 # PEs and NoCs. 
