@@ -1,6 +1,5 @@
 import pandas as pd
 import networkx as nx
-import sys
 import re
 
 # traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])

@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import pattern as P
-from utils import global_control as gc
+from compiler import global_control as gc
 from math import floor
 # import matplotlib.pyplot as plt
 

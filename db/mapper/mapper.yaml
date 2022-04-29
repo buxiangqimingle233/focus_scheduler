@@ -1,9 +1,0 @@
-mapper:
-  # optimization-metrics: [ "delay", "energy" ]
-  optimization-metrics: [ "edp" ]
-  live-status: False
-  num-threads: 25
-  timeout: 250000
-  victory-condition: 2500
-  algorithm: hybrid
-  max-permutations-per-if-visit: 16

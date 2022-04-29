@@ -1,0 +1,8 @@
+,name,flit,cycle,slowdown
+0,bert-large_inception_unet_wide_resnet50_2_1024,1024,3657165.0,3.1002171834309897
+3,bert-large_inception_unet_wide_resnet50_2_1536,1536,2494810.0,2.114876641167535
+1,bert-large_inception_unet_wide_resnet50_2_2048,2048,1921805.0,1.629134284125434
+2,bert-large_inception_unet_wide_resnet50_2_2560,2560,1577560.0,1.3373141818576388
+6,bert-large_inception_unet_wide_resnet50_2_3072,3072,1366085.0,1.1580446031358507
+4,bert-large_inception_unet_wide_resnet50_2_3584,3584,1181995.0,1.0019895765516493
+5,bert-large_inception_unet_wide_resnet50_2_4096,4096,1089075.0,0.9232203165690104

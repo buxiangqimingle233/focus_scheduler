@@ -1,11 +1,11 @@
 import numpy as np
 import math
+import os
 import sys
 
-from pandas import array
 from .hilbert import hilbert_map
-from utils.global_control import debug_show
-from utils import global_control as gc
+from compiler import global_control as gc
+import matplotlib.pyplot as plt
 import seaborn as sns
 
 class ml_mapping():
@@ -134,15 +134,17 @@ class ml_mapping():
             self.mapping_result = self.map_hilbert(board)
 
         if gc.mapper_verbose:
-            fig_name = "mapping_vis/map_result.png"
+            fig_name = os.path.join(gc.visualization_root, "mapping.png")
             fig = sns.heatmap(data=self.mapping_result, cmap="RdBu_r", linewidths=0.3, annot=True)
             heatmap = fig.get_figure()
             heatmap.savefig(fig_name, dpi=400)
+            plt.close()
 
-        f = open(f'mapping_vis/self.mapping_result_{self.mapping_style}.dat', 'w')
-        for i in range(self.tile_array_height):
-            for j in range(self.tile_array_width):
-                print(i, j, self.mapping_result[i][j], file=f)
+        # TODO: This does not work 
+        # f = open(f'mapping_vis/self.mapping_result_{self.mapping_style}.dat', 'w')
+        # for i in range(self.tile_array_height):
+        #     for j in range(self.tile_array_width):
+        #         print(i, j, self.mapping_result[i][j], file=f)
 
         res = {}
         layer_names, cores = gc.layer_names, gc.cores

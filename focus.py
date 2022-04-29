@@ -5,9 +5,9 @@ import pandas as pd
 from functools import reduce
 from time import time
 
-from utils import global_control as gc
+from compiler import global_control as gc
 from compiler.toolchain import TaskCompiler
-from scheduler import EA, individual
+from compiler.focus import EA, individual
 
 pd.set_option('mode.chained_assignment', None)
 
@@ -103,7 +103,7 @@ def run_single_task():
     # Invoke simulator to estimate the performance of baseline interconnection architectures.
     if gc.simulate_baseline:
         prev_cwd = os.getcwd()
-        os.chdir(gc.spt_sim_root)
+        os.chdir(gc.spatial_sim_root)
         os.system("python run.py single --bm {}".format(gc.taskname))
         os.chdir(prev_cwd)
         toolchain.analyzeSimResult()
@@ -111,7 +111,7 @@ def run_single_task():
     # Invoke the FOCUS software procedure to schedule the traffic.
     if gc.focus_schedule:
         # Generate working directory
-        working_dir = os.path.join("buffer", gc.taskname)
+        working_dir = os.path.join(gc.focus_buffer, gc.taskname)
         if not os.path.exists(working_dir):
             os.mkdir(working_dir)
 
@@ -119,7 +119,7 @@ def run_single_task():
         # for debugging
         if gc.scheduler_verbose:
             ea_controller = EA.EvolutionController(population_size=gc.population_size, n_evolution=gc.n_evolution, 
-                                                log_path=os.path.join("buffer", gc.taskname, "ea_output"))
+                                                log_path=os.path.join(gc.focus_buffer, gc.taskname, "ea_output"))
         else:
             ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers,
                 population_size=gc.population_size, n_evolution=gc.n_evolution,
@@ -129,7 +129,7 @@ def run_single_task():
             best_individual, _ = ea_controller.run_evolution_search(gc.scheduler_verbose)
         # dump the EA's results
         solution = best_individual.getTrace()
-        dump_file = os.path.join("buffer", gc.taskname, "solution_{}.json".format(gc.flit_size))
+        dump_file = os.path.join(gc.focus_buffer, gc.taskname, "solution_{}.json".format(gc.flit_size))
         solution.to_json(dump_file)
 
         toolchain.analyzeFocusResult()

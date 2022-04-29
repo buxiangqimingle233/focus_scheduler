@@ -4,15 +4,14 @@ import pandas as pd
 from copy import deepcopy
 import networkx as nx
 import matplotlib.pyplot as plt
-from utils import global_control as gc
+from compiler import global_control as gc
 
-from mapper.task_map import ml_mapping
 from tracegen.generator import gen_fake_trace
 from op_graph.micro_op_graph import MicroOpGraph
+from mapper.task_map import ml_mapping
 from route_algorithms.mesh import MeshTreeRouter
 
-# TODO: change this into timeloop-agents
-from utils.layer import TimeloopLayer
+from timeloop_agents.layer import TimeloopLayer
 from spatialsim_agents.trace_gen import TraceGenerator
 
 
@@ -48,16 +47,14 @@ class TaskCompiler():
             # Fake trace generator has not been compatible with op_graph
             vir_trace = gen_fake_trace()
     
-        # FIXME: gnuplot does not work now
-        # os.system("gnuplot ../mapper/mapping_vis.gp")
+        nx.draw(op_graph.get_data())
+        plt.savefig(os.path.join(gc.visualization_root, "micro_operators.png"))
+        plt.close()
 
         # map tasks to pe array
         positions = ml_mapping().map()
         op_graph.set_physical_position(positions)
 
-        nx.draw(op_graph.get_data())
-        plt.savefig("graph.png")
-        
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
 
@@ -80,7 +77,7 @@ class TaskCompiler():
             zip(self.layer_names, self.model_names, self.prob_spec_names, self.cores):
             
             # Initialize the agent
-            layer = TimeloopLayer(prob_spec, model_dir=model, dram_spatial_size=core)
+            layer = TimeloopLayer(prob_spec, model_dir=model, dram_spatial_size=core, prj_root=gc.prj_root)
             # Invoke timeloop and get reports
             report = layer.run(TimeloopLayer.report_as_dataframe)
             op_graph.add_layer(report)
@@ -90,7 +87,7 @@ class TaskCompiler():
 
     def _to_spatialsim_trace(self, op_graph):
 
-        dest_dir = os.path.join(gc.spt_sim_root, "tasks", gc.taskname)
+        dest_dir = os.path.join(gc.spatial_sim_root, "tasks", gc.taskname)
         if not os.path.exists(dest_dir):
             os.mkdir(dest_dir)
         trace_files = {i: open(os.path.join(dest_dir, "c{}.inst".format(i)), "w") for i in range(gc.array_size)}
@@ -108,7 +105,7 @@ class TaskCompiler():
         pass
 
     def _dumpFocusTrace(self, traffic):
-        dest_dir = os.path.join("buffer/{}".format(gc.taskname))
+        dest_dir = os.path.join(gc.focus_buffer, gc.taskname)
         if not os.path.exists(dest_dir):
             os.mkdir(dest_dir)
         trace_file = "trace_{}.json".format(gc.flit_size)

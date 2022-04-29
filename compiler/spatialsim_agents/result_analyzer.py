@@ -1,13 +1,13 @@
 import os
 import pandas as pd
-from utils import global_control as gc
+from compiler import global_control as gc
 
 # FIXME: 
 class Analyzer:
 
     def analyzeSimResult(self):
         result = pd.read_csv(
-            os.path.join(gc.spt_sim_root, "test", gc.taskname, "brief_report.csv"),
+            os.path.join(gc.spatial_sim_root, "test", gc.taskname, "brief_report.csv"),
             header=None, index_col=None,
             names=["name", "flit", "cycle"]
         )
@@ -19,12 +19,12 @@ class Analyzer:
         compute_time = (self.traffic["interval"] * self.traffic["counts"]).quantile(gc.quantile_)
 
         result.loc[:, "slowdown"] = result["cycle"] / compute_time
-        result.to_csv(os.path.join("focus-final-out", "baseline_{}.csv".format(gc.taskname)))
+        result.to_csv(os.path.join(gc.result_root, "baseline_{}.csv".format(gc.taskname)))
         return result
     
     def getFocusResult(self):
         result = pd.read_json(
-            os.path.join("buffer", gc.taskname, "solution_{}.json".format(gc.flit_size))
+            os.path.join(gc.focus_buffer, gc.taskname, "solution_{}.json".format(gc.flit_size))
         )
 
         compute_time = (result.groupby(by="layer").apply(lambda x: (x["interval"] * x["counts"]).max())).quantile(gc.quantile_)
@@ -32,7 +32,7 @@ class Analyzer:
         slowdown = communicate_time / compute_time
 
         # Update the result file
-        result_file = os.path.join("focus-final-out", "focus_{}.csv".format(gc.taskname))
+        result_file = os.path.join(gc.result_root, "focus_{}.csv".format(gc.taskname))
         try:
             result = pd.read_csv(result_file, index_col=0)
         except FileNotFoundError:
@@ -46,4 +46,4 @@ class Analyzer:
         else:
             result[result["flit"] == gc.flit_size] = inserted_line
 
-        result.to_csv(os.path.join("focus-final-out", "focus_{}.csv".format(gc.taskname)))
+        result.to_csv(os.path.join(gc.result_root, "focus_{}.csv".format(gc.taskname)))

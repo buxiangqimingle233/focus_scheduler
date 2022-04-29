@@ -1,8 +1,0 @@
-,name,flit,cycle,slowdown
-0,bert-large_mnasnet_resnext50_32x4d_ssd_r34_1024,1024,1126795.0,1.403553242586097
-3,bert-large_mnasnet_resnext50_32x4d_ssd_r34_1536,1536,775465.0,0.9659311722735969
-1,bert-large_mnasnet_resnext50_32x4d_ssd_r34_2048,2048,743500.0,0.9261150749362245
-2,bert-large_mnasnet_resnext50_32x4d_ssd_r34_2560,2560,740430.0,0.9222910355548469
-6,bert-large_mnasnet_resnext50_32x4d_ssd_r34_3072,3072,737670.0,0.9188531369579082
-4,bert-large_mnasnet_resnext50_32x4d_ssd_r34_3584,3584,738185.0,0.91949462890625
-5,bert-large_mnasnet_resnext50_32x4d_ssd_r34_4096,4096,737965.0,0.9192205935108418
