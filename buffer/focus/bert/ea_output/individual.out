@@ -1,0 +1,900 @@
+Iteration counts: 64
+Evaluate time: 0.36542797088623047 Score: -5410.8
+Iteration counts: 54
+Evaluate time: 0.3245863914489746 Score: -8393.400000000001
+Iteration counts: 62
+Evaluate time: 0.346851110458374 Score: -7983.000000000001
+Iteration counts: 57
+Evaluate time: 0.34348535537719727 Score: -6546.6
+Iteration counts: 57
+Evaluate time: 0.34418272972106934 Score: -6841.800000000001
+Iteration counts: 62
+Evaluate time: 0.34836816787719727 Score: -7200.0
+Iteration counts: 58
+Evaluate time: 0.35278964042663574 Score: -5608.8
+Iteration counts: 59
+Evaluate time: 0.35484886169433594 Score: -10917.0
+Iteration counts: 59
+Evaluate time: 0.35695815086364746 Score: -6598.8
+Iteration counts: 61
+Evaluate time: 0.37168288230895996 Score: -6436.800000000001
+Iteration counts: 63
+Evaluate time: 0.3812382221221924 Score: -4669.2
+Iteration counts: 64
+Evaluate time: 0.3870081901550293 Score: -9613.8
+Iteration counts: 63
+Evaluate time: 0.3807518482208252 Score: -5688.0
+Iteration counts: 64
+Evaluate time: 0.3910653591156006 Score: -8001.000000000001
+Iteration counts: 57
+Evaluate time: 0.375103235244751 Score: -7972.200000000001
+Iteration counts: 72
+Evaluate time: 0.41028785705566406 Score: -10744.2
+Iteration counts: 57
+Evaluate time: 0.4030330181121826 Score: -7108.200000000001
+Iteration counts: 75
+Evaluate time: 0.42076802253723145 Score: -11329.200000000003
+Iteration counts: 70
+Evaluate time: 0.4190394878387451 Score: -5817.6
+Iteration counts: 74
+Evaluate time: 0.42775917053222656 Score: -9063.0
+Iteration counts: 74
+Evaluate time: 0.4273505210876465 Score: -6033.6
+Iteration counts: 71
+Evaluate time: 0.4235405921936035 Score: -8017.2
+Iteration counts: 64
+Evaluate time: 0.40562891960144043 Score: -7727.400000000001
+Iteration counts: 72
+Evaluate time: 0.4308946132659912 Score: -7583.4000000000015
+Iteration counts: 75
+Evaluate time: 0.44227051734924316 Score: -10449.0
+Iteration counts: 80
+Evaluate time: 0.4450984001159668 Score: -7507.8
+Iteration counts: 67
+Evaluate time: 0.4006819725036621 Score: -11772.0
+Iteration counts: 77
+Evaluate time: 0.45058321952819824 Score: -15125.400000000001
+Iteration counts: 91
+Evaluate time: 0.47816920280456543 Score: -11322.0
+Iteration counts: 92
+Evaluate time: 0.48200535774230957 Score: -11021.4
+Iteration counts: 52
+Evaluate time: 0.17322683334350586 Score: -5194.8
+Iteration counts: 63
+Evaluate time: 0.21232056617736816 Score: -5578.200000000001
+Iteration counts: 61
+Evaluate time: 0.2147059440612793 Score: -5058.0
+Iteration counts: 65
+Evaluate time: 0.22005152702331543 Score: -8996.4
+Iteration counts: 61
+Evaluate time: 0.21977472305297852 Score: -6323.4
+Iteration counts: 60
+Evaluate time: 0.2634406089782715 Score: -5605.200000000001
+Iteration counts: 60
+Evaluate time: 0.27073121070861816 Score: -6013.799999999999
+Iteration counts: 57
+Evaluate time: 0.19584894180297852 Score: -7666.200000000001
+Iteration counts: 62
+Evaluate time: 0.21053743362426758 Score: -4717.8
+Iteration counts: 63
+Evaluate time: 0.21588826179504395 Score: -4896.0
+Iteration counts: 64
+Evaluate time: 0.21854424476623535 Score: -7671.600000000001
+Iteration counts: 63
+Evaluate time: 0.23791289329528809 Score: -8038.8
+Iteration counts: 73
+Evaluate time: 0.24784302711486816 Score: -7338.6
+Iteration counts: 79
+Evaluate time: 0.2834606170654297 Score: -9669.6
+Iteration counts: 54
+Evaluate time: 0.20110845565795898 Score: -5299.200000000001
+Iteration counts: 57
+Evaluate time: 0.2031548023223877 Score: -5605.200000000001
+Iteration counts: 58
+Evaluate time: 0.20601987838745117 Score: -6008.400000000001
+Iteration counts: 61
+Evaluate time: 0.20660042762756348 Score: -6436.800000000001
+Iteration counts: 55
+Evaluate time: 0.21398568153381348 Score: -6102.0
+Iteration counts: 68
+Evaluate time: 0.22762775421142578 Score: -5751.0
+Iteration counts: 64
+Evaluate time: 0.24792814254760742 Score: -6336.0
+Iteration counts: 60
+Evaluate time: 0.20257902145385742 Score: -3573.0
+Iteration counts: 60
+Evaluate time: 0.20130610466003418 Score: -6672.6
+Iteration counts: 61
+Evaluate time: 0.20625567436218262 Score: -6323.4
+Iteration counts: 64
+Evaluate time: 0.21130943298339844 Score: -8796.6
+Iteration counts: 66
+Evaluate time: 0.22270822525024414 Score: -4811.400000000001
+Iteration counts: 72
+Evaluate time: 0.2418043613433838 Score: -6591.6
+Iteration counts: 76
+Evaluate time: 0.2551910877227783 Score: -13014.0
+Iteration counts: 60
+Evaluate time: 0.20813679695129395 Score: -6510.6
+Iteration counts: 59
+Evaluate time: 0.20886683464050293 Score: -6440.400000000001
+Iteration counts: 61
+Evaluate time: 0.22037458419799805 Score: -5925.6
+Iteration counts: 64
+Evaluate time: 0.2276005744934082 Score: -8645.400000000001
+Iteration counts: 67
+Evaluate time: 0.23173832893371582 Score: -8285.400000000001
+Iteration counts: 67
+Evaluate time: 0.2384340763092041 Score: -5425.200000000001
+Iteration counts: 84
+Evaluate time: 0.29137706756591797 Score: -9268.2
+Iteration counts: 50
+Evaluate time: 0.17460203170776367 Score: -3573.0
+Iteration counts: 54
+Evaluate time: 0.18596434593200684 Score: -4222.8
+Iteration counts: 59
+Evaluate time: 0.20962262153625488 Score: -4786.200000000001
+Iteration counts: 61
+Evaluate time: 0.2086162567138672 Score: -5335.200000000001
+Iteration counts: 60
+Evaluate time: 0.21066832542419434 Score: -6973.2
+Iteration counts: 64
+Evaluate time: 0.21585488319396973 Score: -8728.2
+Iteration counts: 66
+Evaluate time: 0.23319578170776367 Score: -5970.6
+Iteration counts: 67
+Evaluate time: 0.2232654094696045 Score: -8269.2
+Iteration counts: 65
+Evaluate time: 0.22486400604248047 Score: -8316.0
+Iteration counts: 68
+Evaluate time: 0.22869277000427246 Score: -6962.4
+Iteration counts: 66
+Evaluate time: 0.23701739311218262 Score: -5988.6
+Iteration counts: 76
+Evaluate time: 0.2596616744995117 Score: -8431.2
+Iteration counts: 80
+Evaluate time: 0.2691512107849121 Score: -7587.0
+Iteration counts: 75
+Evaluate time: 0.27164316177368164 Score: -8692.2
+Iteration counts: 59
+Evaluate time: 0.20857620239257812 Score: -7288.200000000002
+Iteration counts: 60
+Evaluate time: 0.21019697189331055 Score: -3573.0
+Iteration counts: 61
+Evaluate time: 0.21381688117980957 Score: -4687.200000000001
+Iteration counts: 61
+Evaluate time: 0.22255611419677734 Score: -5335.200000000001
+Iteration counts: 60
+Evaluate time: 0.23752403259277344 Score: -5317.2
+Iteration counts: 57
+Evaluate time: 0.23987126350402832 Score: -7284.600000000001
+Iteration counts: 67
+Evaluate time: 0.2472701072692871 Score: -8332.2
+Iteration counts: 53
+Evaluate time: 0.18565583229064941 Score: -5346.0
+Iteration counts: 57
+Evaluate time: 0.2018578052520752 Score: -5769.0
+Iteration counts: 59
+Evaluate time: 0.2058727741241455 Score: -5419.8
+Iteration counts: 69
+Evaluate time: 0.23761367797851562 Score: -6894.0
+Iteration counts: 72
+Evaluate time: 0.25463247299194336 Score: -6076.8
+Iteration counts: 76
+Evaluate time: 0.26308202743530273 Score: -5486.4
+Iteration counts: 68
+Evaluate time: 0.2787013053894043 Score: -6174.0
+Iteration counts: 55
+Evaluate time: 0.18542003631591797 Score: -7603.200000000001
+Iteration counts: 56
+Evaluate time: 0.2007739543914795 Score: -3947.4000000000005
+Iteration counts: 59
+Evaluate time: 0.2030785083770752 Score: -5461.200000000001
+Iteration counts: 71
+Evaluate time: 0.24502205848693848 Score: -6829.200000000001
+Iteration counts: 63
+Evaluate time: 0.26854634284973145 Score: -8440.2
+Iteration counts: 60
+Evaluate time: 0.3110499382019043 Score: -3573.0
+Iteration counts: 70
+Evaluate time: 0.35768723487854004 Score: -7072.2
+Iteration counts: 59
+Evaluate time: 0.21604490280151367 Score: -9417.6
+Iteration counts: 68
+Evaluate time: 0.2273101806640625 Score: -5590.8
+Iteration counts: 77
+Evaluate time: 0.26274633407592773 Score: -9739.800000000001
+Iteration counts: 62
+Evaluate time: 0.26459312438964844 Score: -7435.800000000001
+Iteration counts: 67
+Evaluate time: 0.266207218170166 Score: -6955.2
+Iteration counts: 69
+Evaluate time: 0.26929664611816406 Score: -6921.0
+Iteration counts: 71
+Evaluate time: 0.2836771011352539 Score: -7668.0
+Iteration counts: 55
+Evaluate time: 0.19130492210388184 Score: -3304.8
+Iteration counts: 54
+Evaluate time: 0.19301128387451172 Score: -5299.200000000001
+Iteration counts: 56
+Evaluate time: 0.19804954528808594 Score: -4933.8
+Iteration counts: 59
+Evaluate time: 0.20691514015197754 Score: -4786.200000000001
+Iteration counts: 61
+Evaluate time: 0.21216130256652832 Score: -2939.3999999999996
+Iteration counts: 60
+Evaluate time: 0.21878361701965332 Score: -9217.800000000001
+Iteration counts: 64
+Evaluate time: 0.22563481330871582 Score: -5623.200000000001
+Iteration counts: 55
+Evaluate time: 0.1835193634033203 Score: -5086.8
+Iteration counts: 56
+Evaluate time: 0.1859879493713379 Score: -4055.4
+Iteration counts: 59
+Evaluate time: 0.19947218894958496 Score: -4305.6
+Iteration counts: 59
+Evaluate time: 0.19615483283996582 Score: -4757.400000000001
+Iteration counts: 62
+Evaluate time: 0.20671796798706055 Score: -5376.6
+Iteration counts: 69
+Evaluate time: 0.23916077613830566 Score: -8013.6
+Iteration counts: 72
+Evaluate time: 0.24291110038757324 Score: -7531.200000000001
+Iteration counts: 56
+Evaluate time: 0.1999680995941162 Score: -4950.0
+Iteration counts: 58
+Evaluate time: 0.20599770545959473 Score: -4458.6
+Iteration counts: 61
+Evaluate time: 0.21265077590942383 Score: -7722.000000000001
+Iteration counts: 64
+Evaluate time: 0.22334790229797363 Score: -6172.2
+Iteration counts: 68
+Evaluate time: 0.2432858943939209 Score: -5826.6
+Iteration counts: 60
+Evaluate time: 0.31540989875793457 Score: -8154.000000000001
+Iteration counts: 62
+Evaluate time: 0.3187980651855469 Score: -4811.400000000001
+Iteration counts: 54
+Evaluate time: 0.1908104419708252 Score: -6555.600000000001
+Iteration counts: 62
+Evaluate time: 0.21897459030151367 Score: -5599.8
+Iteration counts: 65
+Evaluate time: 0.2228696346282959 Score: -9009.0
+Iteration counts: 65
+Evaluate time: 0.25250744819641113 Score: -8679.6
+Iteration counts: 57
+Evaluate time: 0.2574751377105713 Score: -7446.6
+Iteration counts: 59
+Evaluate time: 0.26235294342041016 Score: -4120.200000000001
+Iteration counts: 77
+Evaluate time: 0.27202892303466797 Score: -5797.8
+Iteration counts: 54
+Evaluate time: 0.19936752319335938 Score: -4222.8
+Iteration counts: 56
+Evaluate time: 0.20449399948120117 Score: -3304.8
+Iteration counts: 57
+Evaluate time: 0.20750737190246582 Score: -3421.8
+Iteration counts: 60
+Evaluate time: 0.2122199535369873 Score: -4140.0
+Iteration counts: 60
+Evaluate time: 0.21985483169555664 Score: -4010.4000000000005
+Iteration counts: 65
+Evaluate time: 0.2279961109161377 Score: -4392.0
+Iteration counts: 71
+Evaluate time: 0.2508275508880615 Score: -8780.4
+Iteration counts: 56
+Evaluate time: 0.19661951065063477 Score: -4035.6000000000004
+Iteration counts: 58
+Evaluate time: 0.2027585506439209 Score: -5169.6
+Iteration counts: 58
+Evaluate time: 0.20425009727478027 Score: -6683.4
+Iteration counts: 62
+Evaluate time: 0.22341418266296387 Score: -4012.2000000000003
+Iteration counts: 55
+Evaluate time: 0.22155308723449707 Score: -3970.8
+Iteration counts: 62
+Evaluate time: 0.24749755859375 Score: -8055.0
+Iteration counts: 73
+Evaluate time: 0.2528855800628662 Score: -9424.800000000001
+Iteration counts: 58
+Evaluate time: 0.19856715202331543 Score: -4039.2000000000003
+Iteration counts: 58
+Evaluate time: 0.19998788833618164 Score: -4228.2
+Iteration counts: 61
+Evaluate time: 0.21239924430847168 Score: -2939.3999999999996
+Iteration counts: 53
+Evaluate time: 0.21667957305908203 Score: -3088.8
+Iteration counts: 60
+Evaluate time: 0.22810626029968262 Score: -3573.0
+Iteration counts: 60
+Evaluate time: 0.23057842254638672 Score: -3573.0
+Iteration counts: 58
+Evaluate time: 0.2370750904083252 Score: -4798.8
+Iteration counts: 55
+Evaluate time: 0.2009279727935791 Score: -4206.6
+Iteration counts: 58
+Evaluate time: 0.20404839515686035 Score: -5472.0
+Iteration counts: 56
+Evaluate time: 0.22359085083007812 Score: -5587.200000000001
+Iteration counts: 68
+Evaluate time: 0.27301597595214844 Score: -5725.800000000001
+Iteration counts: 77
+Evaluate time: 0.2798950672149658 Score: -10737.0
+Iteration counts: 55
+Evaluate time: 0.2922661304473877 Score: -2934.0
+Iteration counts: 64
+Evaluate time: 0.32502102851867676 Score: -6048.0
+Iteration counts: 59
+Evaluate time: 0.20119762420654297 Score: -5470.200000000001
+Iteration counts: 60
+Evaluate time: 0.20292019844055176 Score: -3783.6000000000004
+Iteration counts: 61
+Evaluate time: 0.2098388671875 Score: -2939.3999999999996
+Iteration counts: 64
+Evaluate time: 0.21564173698425293 Score: -3947.4000000000005
+Iteration counts: 60
+Evaluate time: 0.21928191184997559 Score: -3573.0
+Iteration counts: 61
+Evaluate time: 0.2388920783996582 Score: -3909.6000000000004
+Iteration counts: 77
+Evaluate time: 0.28707027435302734 Score: -7770.6
+Iteration counts: 55
+Evaluate time: 0.18764305114746094 Score: -2934.0
+Iteration counts: 56
+Evaluate time: 0.19350385665893555 Score: -3421.8
+Iteration counts: 61
+Evaluate time: 0.20496344566345215 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.2130584716796875 Score: -2939.3999999999996
+Iteration counts: 60
+Evaluate time: 0.22875189781188965 Score: -2939.3999999999996
+Iteration counts: 59
+Evaluate time: 0.24387145042419434 Score: -6629.4000000000015
+Iteration counts: 60
+Evaluate time: 0.2438187599182129 Score: -3573.0
+Iteration counts: 54
+Evaluate time: 0.18083739280700684 Score: -3844.8
+Iteration counts: 54
+Evaluate time: 0.1914079189300537 Score: -3396.6
+Iteration counts: 58
+Evaluate time: 0.2051982879638672 Score: -5425.2
+Iteration counts: 54
+Evaluate time: 0.2129497528076172 Score: -2939.3999999999996
+Iteration counts: 58
+Evaluate time: 0.22072505950927734 Score: -4996.8
+Iteration counts: 59
+Evaluate time: 0.22096705436706543 Score: -6627.6
+Iteration counts: 57
+Evaluate time: 0.22746014595031738 Score: -6975.0
+Iteration counts: 55
+Evaluate time: 0.18912672996520996 Score: -3033.0
+Iteration counts: 59
+Evaluate time: 0.19588947296142578 Score: -3151.8
+Iteration counts: 66
+Evaluate time: 0.2175757884979248 Score: -5914.8
+Iteration counts: 67
+Evaluate time: 0.22068166732788086 Score: -7367.4000000000015
+Iteration counts: 69
+Evaluate time: 0.22757816314697266 Score: -7943.4
+Iteration counts: 66
+Evaluate time: 0.2772059440612793 Score: -5374.8
+Iteration counts: 68
+Evaluate time: 0.28447937965393066 Score: -4829.400000000001
+Iteration counts: 51
+Evaluate time: 0.17035555839538574 Score: -2971.7999999999997
+Iteration counts: 55
+Evaluate time: 0.18631792068481445 Score: -4597.200000000001
+Iteration counts: 54
+Evaluate time: 0.18660688400268555 Score: -2939.3999999999996
+Iteration counts: 57
+Evaluate time: 0.19902515411376953 Score: -2959.2
+Iteration counts: 61
+Evaluate time: 0.20315241813659668 Score: -2939.3999999999996
+Iteration counts: 65
+Evaluate time: 0.21886062622070312 Score: -5092.200000000001
+Iteration counts: 70
+Evaluate time: 0.23859834671020508 Score: -6368.400000000001
+Iteration counts: 63
+Evaluate time: 0.21236085891723633 Score: -6384.6
+Iteration counts: 65
+Evaluate time: 0.2165389060974121 Score: -5797.8
+Iteration counts: 63
+Evaluate time: 0.24273204803466797 Score: -4487.4
+Iteration counts: 70
+Evaluate time: 0.2516486644744873 Score: -7178.4
+Iteration counts: 79
+Evaluate time: 0.27553749084472656 Score: -8123.400000000001
+Iteration counts: 56
+Evaluate time: 0.2742908000946045 Score: -3432.6000000000004
+Iteration counts: 58
+Evaluate time: 0.2781047821044922 Score: -5054.4
+Iteration counts: 52
+Evaluate time: 0.17539596557617188 Score: -2959.2
+Iteration counts: 55
+Evaluate time: 0.18433094024658203 Score: -2934.0
+Iteration counts: 55
+Evaluate time: 0.18449020385742188 Score: -2939.3999999999996
+Iteration counts: 54
+Evaluate time: 0.18353629112243652 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.20850229263305664 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.210188627243042 Score: -2939.3999999999996
+Iteration counts: 59
+Evaluate time: 0.2731330394744873 Score: -2971.7999999999997
+Iteration counts: 54
+Evaluate time: 0.18350958824157715 Score: -4951.8
+Iteration counts: 55
+Evaluate time: 0.18491840362548828 Score: -3414.6
+Iteration counts: 56
+Evaluate time: 0.18885016441345215 Score: -3922.2000000000003
+Iteration counts: 61
+Evaluate time: 0.19918560981750488 Score: -5954.400000000001
+Iteration counts: 59
+Evaluate time: 0.19994354248046875 Score: -5329.8
+Iteration counts: 61
+Evaluate time: 0.2172374725341797 Score: -4960.8
+Iteration counts: 65
+Evaluate time: 0.23298954963684082 Score: -6832.8
+Iteration counts: 54
+Evaluate time: 0.17960381507873535 Score: -2939.3999999999996
+Iteration counts: 57
+Evaluate time: 0.18603897094726562 Score: -6627.6
+Iteration counts: 61
+Evaluate time: 0.20519471168518066 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.2038736343383789 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.20622849464416504 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.20604896545410156 Score: -3085.2
+Iteration counts: 61
+Evaluate time: 0.21225690841674805 Score: -2939.3999999999996
+Iteration counts: 56
+Evaluate time: 0.19267058372497559 Score: -5205.6
+Iteration counts: 55
+Evaluate time: 0.19486403465270996 Score: -3060.0
+Iteration counts: 58
+Evaluate time: 0.19553613662719727 Score: -2926.8
+Iteration counts: 59
+Evaluate time: 0.2005317211151123 Score: -4062.6000000000004
+Iteration counts: 66
+Evaluate time: 0.22418451309204102 Score: -6368.4000000000015
+Iteration counts: 60
+Evaluate time: 0.2625916004180908 Score: -4676.400000000001
+Iteration counts: 84
+Evaluate time: 0.2890770435333252 Score: -12630.600000000002
+Iteration counts: 61
+Evaluate time: 0.21367406845092773 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.21217942237854004 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.22417902946472168 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.22427916526794434 Score: -7489.799999999999
+Iteration counts: 61
+Evaluate time: 0.22422385215759277 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.24157238006591797 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.24590015411376953 Score: -2939.3999999999996
+Iteration counts: 54
+Evaluate time: 0.1900928020477295 Score: -3126.6000000000004
+Iteration counts: 56
+Evaluate time: 0.19165873527526855 Score: -3108.6
+Iteration counts: 56
+Evaluate time: 0.19675755500793457 Score: -3042.0
+Iteration counts: 58
+Evaluate time: 0.20918893814086914 Score: -2926.8
+Iteration counts: 61
+Evaluate time: 0.21410727500915527 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.21516799926757812 Score: -5155.200000000001
+Iteration counts: 65
+Evaluate time: 0.2211463451385498 Score: -5988.6
+Iteration counts: 51
+Evaluate time: 0.17127537727355957 Score: -2971.7999999999997
+Iteration counts: 54
+Evaluate time: 0.1815807819366455 Score: -3450.6
+Iteration counts: 54
+Evaluate time: 0.1808459758758545 Score: -2939.3999999999996
+Iteration counts: 54
+Evaluate time: 0.18540740013122559 Score: -2939.3999999999996
+Iteration counts: 54
+Evaluate time: 0.18903350830078125 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.20664215087890625 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.20963001251220703 Score: -2939.3999999999996
+Iteration counts: 53
+Evaluate time: 0.1891322135925293 Score: -3526.2000000000003
+Iteration counts: 57
+Evaluate time: 0.1931591033935547 Score: -5086.8
+Iteration counts: 57
+Evaluate time: 0.20058631896972656 Score: -6415.200000000001
+Iteration counts: 60
+Evaluate time: 0.202531099319458 Score: -3139.2
+Iteration counts: 56
+Evaluate time: 0.20069646835327148 Score: -4852.8
+Iteration counts: 64
+Evaluate time: 0.22789430618286133 Score: -8181.000000000001
+Iteration counts: 72
+Evaluate time: 0.24150300025939941 Score: -8157.6
+Iteration counts: 55
+Evaluate time: 0.18996930122375488 Score: -2934.0
+Iteration counts: 61
+Evaluate time: 0.2044820785522461 Score: -2939.3999999999996
+Iteration counts: 60
+Evaluate time: 0.20505857467651367 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.2095966339111328 Score: -2939.3999999999996
+Iteration counts: 60
+Evaluate time: 0.21076226234436035 Score: -7489.799999999999
+Iteration counts: 54
+Evaluate time: 0.283947229385376 Score: -2939.3999999999996
+Iteration counts: 60
+Evaluate time: 0.3069612979888916 Score: -2939.3999999999996
+Iteration counts: 55
+Evaluate time: 0.1859416961669922 Score: -5047.2
+Iteration counts: 65
+Evaluate time: 0.2224128246307373 Score: -5918.400000000001
+Iteration counts: 64
+Evaluate time: 0.22241902351379395 Score: -7740.0
+Iteration counts: 68
+Evaluate time: 0.22838163375854492 Score: -6264.0
+Iteration counts: 70
+Evaluate time: 0.23881030082702637 Score: -6490.800000000001
+Iteration counts: 69
+Evaluate time: 0.24832510948181152 Score: -5886.0
+Iteration counts: 74
+Evaluate time: 0.2557840347290039 Score: -10144.800000000001
+Iteration counts: 55
+Evaluate time: 0.18612980842590332 Score: -2971.7999999999997
+Iteration counts: 58
+Evaluate time: 0.2063887119293213 Score: -5130.0
+Iteration counts: 61
+Evaluate time: 0.2089083194732666 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.2086191177368164 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.21297478675842285 Score: -2939.3999999999996
+Iteration counts: 54
+Evaluate time: 0.2747323513031006 Score: -2912.3999999999996
+Iteration counts: 56
+Evaluate time: 0.28672146797180176 Score: -2971.7999999999997
+Iteration counts: 52
+Evaluate time: 0.18049383163452148 Score: -3173.4
+Iteration counts: 67
+Evaluate time: 0.22993779182434082 Score: -9381.6
+Iteration counts: 84
+Evaluate time: 0.28264331817626953 Score: -12468.600000000002
+Iteration counts: 60
+Evaluate time: 0.30535125732421875 Score: -4651.200000000001
+Iteration counts: 69
+Evaluate time: 0.30877184867858887 Score: -6118.2
+Iteration counts: 73
+Evaluate time: 0.3166348934173584 Score: -7452.0
+Iteration counts: 75
+Evaluate time: 0.36013293266296387 Score: -10447.200000000003
+Iteration counts: 57
+Evaluate time: 0.19289016723632812 Score: -2926.8
+Iteration counts: 57
+Evaluate time: 0.192612886428833 Score: -4028.4000000000005
+Iteration counts: 58
+Evaluate time: 0.19459819793701172 Score: -2959.2
+Iteration counts: 58
+Evaluate time: 0.19859528541564941 Score: -3978.0000000000005
+Iteration counts: 61
+Evaluate time: 0.20486664772033691 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.20540332794189453 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.2059028148651123 Score: -2939.3999999999996
+Iteration counts: 52
+Evaluate time: 0.18033123016357422 Score: -4762.8
+Iteration counts: 57
+Evaluate time: 0.19597625732421875 Score: -4608.0
+Iteration counts: 58
+Evaluate time: 0.19633746147155762 Score: -3661.2
+Iteration counts: 60
+Evaluate time: 0.21050548553466797 Score: -5241.6
+Iteration counts: 61
+Evaluate time: 0.21546649932861328 Score: -5013.0
+Iteration counts: 57
+Evaluate time: 0.25620317459106445 Score: -4933.8
+Iteration counts: 62
+Evaluate time: 0.28032588958740234 Score: -3893.4
+Iteration counts: 57
+Evaluate time: 0.20345067977905273 Score: -2959.2
+Iteration counts: 59
+Evaluate time: 0.2070009708404541 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.21158885955810547 Score: -2926.8
+Iteration counts: 61
+Evaluate time: 0.2161245346069336 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.22066187858581543 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.25686073303222656 Score: -4030.2000000000003
+Iteration counts: 62
+Evaluate time: 0.27633023262023926 Score: -5769.000000000001
+Iteration counts: 55
+Evaluate time: 0.19110655784606934 Score: -2934.0
+Iteration counts: 55
+Evaluate time: 0.19858717918395996 Score: -2934.0
+Iteration counts: 61
+Evaluate time: 0.21140575408935547 Score: -2939.3999999999996
+Iteration counts: 61
+Evaluate time: 0.21167254447937012 Score: -2926.8
+Iteration counts: 61
+Evaluate time: 0.2144176959991455 Score: -2939.3999999999996
+Iteration counts: 54
+Evaluate time: 0.28579044342041016 Score: -2912.3999999999996
+Iteration counts: 61
+Evaluate time: 0.3138406276702881 Score: -2899.8
+Iteration counts: 54
+Evaluate time: 0.1868896484375 Score: -2899.8
+Iteration counts: 55
+Evaluate time: 0.19129157066345215 Score: -2934.0
+Iteration counts: 57
+Evaluate time: 0.19675207138061523 Score: -2946.6
+Iteration counts: 56
+Evaluate time: 0.1979827880859375 Score: -2939.3999999999996
+Iteration counts: 59
+Evaluate time: 0.20854878425598145 Score: -2901.6000000000004
+Iteration counts: 62
+Evaluate time: 0.2132558822631836 Score: -2997.0
+Iteration counts: 61
+Evaluate time: 0.21331191062927246 Score: -2939.3999999999996
+Iteration counts: 57
+Evaluate time: 0.19049787521362305 Score: -4905.0
+Iteration counts: 56
+Evaluate time: 0.1912369728088379 Score: -4503.6
+Iteration counts: 56
+Evaluate time: 0.19311213493347168 Score: -3722.3999999999996
+Iteration counts: 58
+Evaluate time: 0.19638466835021973 Score: -4768.200000000001
+Iteration counts: 60
+Evaluate time: 0.2024986743927002 Score: -6759.0
+Iteration counts: 64
+Evaluate time: 0.2179725170135498 Score: -6703.200000000001
+Iteration counts: 65
+Evaluate time: 0.22584319114685059 Score: -5288.400000000001
+Iteration counts: 52
+Evaluate time: 0.17203235626220703 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.2033534049987793 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.21129584312438965 Score: -2926.8
+Iteration counts: 56
+Evaluate time: 0.21384334564208984 Score: -2926.8
+Iteration counts: 56
+Evaluate time: 0.21654629707336426 Score: -4030.2000000000003
+Iteration counts: 54
+Evaluate time: 0.24320101737976074 Score: -2926.8
+Iteration counts: 59
+Evaluate time: 0.2546203136444092 Score: -3052.8
+Iteration counts: 59
+Evaluate time: 0.20443344116210938 Score: -6607.800000000001
+Iteration counts: 57
+Evaluate time: 0.20739507675170898 Score: -3164.4
+Iteration counts: 60
+Evaluate time: 0.20810961723327637 Score: -2943.0
+Iteration counts: 59
+Evaluate time: 0.21651911735534668 Score: -4212.0
+Iteration counts: 59
+Evaluate time: 0.2183077335357666 Score: -5034.6
+Iteration counts: 69
+Evaluate time: 0.3026130199432373 Score: -9360.000000000002
+Iteration counts: 71
+Evaluate time: 0.312053918838501 Score: -3997.8
+Iteration counts: 54
+Evaluate time: 0.18802666664123535 Score: -2899.8
+Iteration counts: 56
+Evaluate time: 0.19601655006408691 Score: -2899.8
+Iteration counts: 58
+Evaluate time: 0.19945836067199707 Score: -2926.8
+Iteration counts: 61
+Evaluate time: 0.20845651626586914 Score: -2926.8
+Iteration counts: 61
+Evaluate time: 0.20930027961730957 Score: -2894.4
+Iteration counts: 61
+Evaluate time: 0.2106630802154541 Score: -2899.8
+Iteration counts: 62
+Evaluate time: 0.22016358375549316 Score: -2926.8
+Iteration counts: 54
+Evaluate time: 0.18636178970336914 Score: -3090.6
+Iteration counts: 57
+Evaluate time: 0.19443368911743164 Score: -4377.6
+Iteration counts: 63
+Evaluate time: 0.21385812759399414 Score: -5936.4
+Iteration counts: 70
+Evaluate time: 0.23172879219055176 Score: -7072.200000000001
+Iteration counts: 59
+Evaluate time: 0.24754571914672852 Score: -4606.200000000001
+Iteration counts: 76
+Evaluate time: 0.2592504024505615 Score: -6370.200000000001
+Iteration counts: 65
+Evaluate time: 0.3004271984100342 Score: -8989.2
+Iteration counts: 54
+Evaluate time: 0.1876537799835205 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.2131204605102539 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.2179274559020996 Score: -2899.8
+Iteration counts: 63
+Evaluate time: 0.21852779388427734 Score: -2959.2
+Iteration counts: 64
+Evaluate time: 0.23242616653442383 Score: -3191.4000000000005
+Iteration counts: 54
+Evaluate time: 0.2868313789367676 Score: -2912.3999999999996
+Iteration counts: 57
+Evaluate time: 0.29526305198669434 Score: -4028.4000000000005
+Iteration counts: 53
+Evaluate time: 0.18189382553100586 Score: -3096.0
+Iteration counts: 55
+Evaluate time: 0.1900022029876709 Score: -2899.8
+Iteration counts: 59
+Evaluate time: 0.2063443660736084 Score: -2941.2000000000003
+Iteration counts: 59
+Evaluate time: 0.2109968662261963 Score: -2899.8
+Iteration counts: 64
+Evaluate time: 0.2253427505493164 Score: -2916.0
+Iteration counts: 57
+Evaluate time: 0.29364705085754395 Score: -6404.4
+Iteration counts: 62
+Evaluate time: 0.30769801139831543 Score: -4008.6
+Iteration counts: 54
+Evaluate time: 0.1855762004852295 Score: -2899.8
+Iteration counts: 58
+Evaluate time: 0.20286130905151367 Score: -3781.8
+Iteration counts: 61
+Evaluate time: 0.2072749137878418 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.21139955520629883 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.21129512786865234 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.21572232246398926 Score: -2899.8
+Iteration counts: 58
+Evaluate time: 0.22133111953735352 Score: -2899.8
+Iteration counts: 57
+Evaluate time: 0.20355606079101562 Score: -3025.8
+Iteration counts: 58
+Evaluate time: 0.20289397239685059 Score: -4746.6
+Iteration counts: 60
+Evaluate time: 0.20451807975769043 Score: -5569.2
+Iteration counts: 62
+Evaluate time: 0.21010351181030273 Score: -5635.800000000001
+Iteration counts: 63
+Evaluate time: 0.21495866775512695 Score: -6352.200000000001
+Iteration counts: 61
+Evaluate time: 0.21574735641479492 Score: -3040.2
+Iteration counts: 75
+Evaluate time: 0.26073622703552246 Score: -6334.200000000001
+Iteration counts: 54
+Evaluate time: 0.18332338333129883 Score: -2899.8
+Iteration counts: 54
+Evaluate time: 0.1845715045928955 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.20941781997680664 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.20946407318115234 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.21797633171081543 Score: -2899.8
+Iteration counts: 52
+Evaluate time: 0.22821879386901855 Score: -2899.8
+Iteration counts: 54
+Evaluate time: 0.23874306678771973 Score: -2899.8
+Iteration counts: 66
+Evaluate time: 0.22120189666748047 Score: -8686.800000000001
+Iteration counts: 55
+Evaluate time: 0.2362515926361084 Score: -3819.6000000000004
+Iteration counts: 51
+Evaluate time: 0.26502156257629395 Score: -5655.6
+Iteration counts: 65
+Evaluate time: 0.2902846336364746 Score: -6485.4
+Iteration counts: 88
+Evaluate time: 0.3125629425048828 Score: -9788.400000000001
+Iteration counts: 69
+Evaluate time: 0.3221752643585205 Score: -10459.800000000001
+Iteration counts: 77
+Evaluate time: 0.32946133613586426 Score: -11397.600000000002
+Iteration counts: 54
+Evaluate time: 0.18236470222473145 Score: -2899.8
+Iteration counts: 53
+Evaluate time: 0.18117141723632812 Score: -2899.8
+Iteration counts: 58
+Evaluate time: 0.201005220413208 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.20831918716430664 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.2104799747467041 Score: -2899.8
+Iteration counts: 60
+Evaluate time: 0.22351884841918945 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.22850298881530762 Score: -2894.4
+Iteration counts: 53
+Evaluate time: 0.17717957496643066 Score: -3146.4
+Iteration counts: 55
+Evaluate time: 0.1833946704864502 Score: -3042.0
+Iteration counts: 55
+Evaluate time: 0.18852710723876953 Score: -5225.400000000001
+Iteration counts: 56
+Evaluate time: 0.18857359886169434 Score: -3047.4
+Iteration counts: 56
+Evaluate time: 0.19509410858154297 Score: -2894.4
+Iteration counts: 64
+Evaluate time: 0.2179722785949707 Score: -2964.6
+Iteration counts: 69
+Evaluate time: 0.23355650901794434 Score: -6962.400000000001
+Iteration counts: 54
+Evaluate time: 0.18270206451416016 Score: -2899.8
+Iteration counts: 54
+Evaluate time: 0.18337178230285645 Score: -2899.8
+Iteration counts: 54
+Evaluate time: 0.18877291679382324 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.2054307460784912 Score: -2894.4
+Iteration counts: 60
+Evaluate time: 0.20870566368103027 Score: -2894.4
+Iteration counts: 61
+Evaluate time: 0.2122328281402588 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.22948336601257324 Score: -2899.8
+Iteration counts: 54
+Evaluate time: 0.18085908889770508 Score: -2910.6
+Iteration counts: 54
+Evaluate time: 0.18473172187805176 Score: -3060.0
+Iteration counts: 56
+Evaluate time: 0.19025468826293945 Score: -2899.8
+Iteration counts: 60
+Evaluate time: 0.20345616340637207 Score: -4482.0
+Iteration counts: 72
+Evaluate time: 0.24291181564331055 Score: -6291.0
+Iteration counts: 64
+Evaluate time: 0.29682230949401855 Score: -3864.6000000000004
+Iteration counts: 63
+Evaluate time: 0.29659509658813477 Score: -4512.6
+Iteration counts: 53
+Evaluate time: 0.1784651279449463 Score: -2899.8
+Iteration counts: 54
+Evaluate time: 0.18543720245361328 Score: -2899.8
+Iteration counts: 56
+Evaluate time: 0.19377946853637695 Score: -2899.8
+Iteration counts: 61
+Evaluate time: 0.20501279830932617 Score: -2899.8
+Iteration counts: 60
+Evaluate time: 0.20368719100952148 Score: -2899.8
+Iteration counts: 60
+Evaluate time: 0.20934271812438965 Score: -2894.4
+Iteration counts: 60
+Evaluate time: 0.23511338233947754 Score: -2894.4
+Iteration counts: 59
+Evaluate time: 0.2063453197479248 Score: -3148.2
+Iteration counts: 63
+Evaluate time: 0.20736384391784668 Score: -4471.2
+Iteration counts: 62
+Evaluate time: 0.21373701095581055 Score: -4591.8
+Iteration counts: 71
+Evaluate time: 0.2316887378692627 Score: -8769.6
+Iteration counts: 60
+Evaluate time: 0.26980137825012207 Score: -6337.800000000001
+Iteration counts: 61
+Evaluate time: 0.27052879333496094 Score: -3159.0
+Iteration counts: 88
+Evaluate time: 0.30301666259765625 Score: -13411.800000000001
+Iteration counts: 54
+Evaluate time: 0.19117355346679688 Score: -2899.8
+Iteration counts: 54
+Evaluate time: 0.19419097900390625 Score: -2899.8
+Iteration counts: 56
+Evaluate time: 0.19802570343017578 Score: -2894.4
+Iteration counts: 60
+Evaluate time: 0.21510076522827148 Score: -2894.4
+Iteration counts: 60
+Evaluate time: 0.2156684398651123 Score: -2899.8
+Iteration counts: 60
+Evaluate time: 0.21706509590148926 Score: -2894.4
+Iteration counts: 60
+Evaluate time: 0.2236461639404297 Score: -2899.8

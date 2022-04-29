@@ -2,8 +2,8 @@
 temp/*
 output/*
 
+
 # intermediate files
-buffer/**
 **/__pycache__/*
 **/nohup.*
 **.pyc
