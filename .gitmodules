@@ -1,7 +1,7 @@
 [submodule "result-512g"]
 	path = result-512g
 	url = ./result-512g
-[submodule "spatial_sim"]
+[submodule "simulator"]
 	path = simulator
 	url = git@github.com:mass-spatialarch/spatial_sim.git
 	branch = dev

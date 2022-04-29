@@ -12,7 +12,7 @@ focus_buffer = os.path.join(buffer_root, "focus")
 timeloop_buffer = os.path.join(buffer_root, "timeloop-512g")
 
 visualization_root = os.path.join(prj_root, "visualization")
-spatial_sim_root = os.path.join(prj_root, "spatial_sim")
+spatial_sim_root = os.path.join(prj_root, "simulator")
 
 result_root = os.path.join(prj_root, "results")
 
