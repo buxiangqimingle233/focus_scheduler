@@ -47,64 +47,57 @@ class TaskCompiler():
             # Fake trace generator has not been compatible with op_graph
             vir_trace = gen_fake_trace()
     
-        nx.draw(op_graph.get_data())
-        plt.savefig(os.path.join(gc.visualization_root, "micro_operators.png"))
-        plt.close()
+        op_graph.draw(os.path.join(gc.visualization_root, "micro_operators.png"))
 
         # map tasks to pe array
-        positions = ml_mapping().map()
-        op_graph.set_physical_position(positions)
+        self._map_operators(op_graph)
 
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
 
 
-        # # Dual-Phase Routing
-        # dual_phase_trace = self._selectHubNode(mapped_trace)
-        # dual_phase_trace = self._genSpanningTree(dual_phase_trace)
-
-        # # Dump the trace for FOCUS scheduling.
-        # trace_for_focus = dual_phase_trace
-        # self._dumpFocusTrace(trace_for_focus)
-
-        # # Dump the trace for simulation.
-        # self._cvtAndDumpSimTrace(trace_for_focus)
-
-
     def _gen_op_graph(self):
         op_graph = MicroOpGraph()
-        for layer, model, prob_spec, core in \
-            zip(self.layer_names, self.model_names, self.prob_spec_names, self.cores):
-            
+
+        for model, prob_spec, core in zip(self.model_names, self.prob_spec_names, self.cores):
             # Initialize the agent
-            layer = TimeloopLayer(prob_spec, model_dir=model, dram_spatial_size=core, prj_root=gc.prj_root)
+            agent = TimeloopLayer(prob_spec, model_dir=model, dram_spatial_size=core, prj_root=gc.prj_root)
             # Invoke timeloop and get reports
-            report = layer.run(TimeloopLayer.report_as_dataframe)
-            op_graph.add_layer(report)
+            timeloop_report = agent.run(TimeloopLayer.report_as_dataframe)
+            op_graph.add_layer(timeloop_report)
 
         return op_graph
 
 
-    def _to_spatialsim_trace(self, op_graph):
+    def _map_operators(self, op_graph):
+        positions = ml_mapping().map()
+        op_graph.set_physical_position(positions)
 
+
+    def _to_spatialsim_trace(self, op_graph):
+        
+        # Do some path handling
         dest_dir = os.path.join(gc.spatial_sim_root, "tasks", gc.taskname)
         if not os.path.exists(dest_dir):
             os.mkdir(dest_dir)
         trace_files = {i: open(os.path.join(dest_dir, "c{}.inst".format(i)), "w") for i in range(gc.array_size)}
         routing_board_file = open(os.path.join(dest_dir, "routing_board"), "w")
 
+        # Generate multicast tree for multi-end packets
         router = MeshTreeRouter(gc.array_diameter)
-        generator = TraceGenerator(router)
-        generator.gen_trace(trace_files, routing_board_file, op_graph)
+        TraceGenerator().gen_trace(trace_files, routing_board_file, op_graph, router)
 
         for f in trace_files.values():
             f.close()
         routing_board_file.close()
 
+
     def _to_focus_trace(self, op_graph):
         pass
 
+
     def _dumpFocusTrace(self, traffic):
+        # FIXME: Deprecated
         dest_dir = os.path.join(gc.focus_buffer, gc.taskname)
         if not os.path.exists(dest_dir):
             os.mkdir(dest_dir)

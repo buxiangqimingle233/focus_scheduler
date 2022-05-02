@@ -14,6 +14,9 @@ timeloop_buffer = os.path.join(buffer_root, "timeloop-512g")
 visualization_root = os.path.join(prj_root, "visualization")
 spatial_sim_root = os.path.join(prj_root, "simulator")
 
+# debug
+spatial_sim_root = "/home/wangzhao/simulator/spatial_sim"
+
 result_root = os.path.join(prj_root, "results")
 
 dataflow_engine = "timeloop"      # Generate traffic trace from real-world workloads,

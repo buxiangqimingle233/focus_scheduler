@@ -1,5 +1,7 @@
 import pandas as pd
 import networkx as nx
+import matplotlib as mpl
+import matplotlib.pyplot as plt
 import re
 
 # traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])
@@ -55,16 +57,21 @@ class MicroOpGraph:
         i_delay = group.get_group("input")["interval"].iloc[0]
         op_graph.add_node(i_source, layer=layer, op_type="insrc", v_pe=i_source_magic, delay=i_delay, cnt=i_cnt)
         # Add control signals: the input source should wait for preceeding layer to finish
-        # TODO: We put hard syncronization barrire between two layers. However, in some cases, e.g. oc-tiling to ic-tiling,
+        # TODO: We put hard syncronization bairrer between two adjacent layers. However, in some cases, e.g. oc-tiling to ic-tiling,
         # the suceeding layer does not have to wait for whole preceeding layer to finish, it can start once a channel is 
         # generated.
+
+        # FIXME: What does the sink push to next layer's isource, a control signal, or the entire output data ?
+        i_data_amount = group.get_group("input")["flit"].iloc[0] * group.get_group("input")["counts"].iloc[0]
         for s in pre_layer_sinks:
-            op_graph.add_edge(s, i_source, edge_type="control")
+            op_graph.add_edge(s, i_source, edge_type="data", fid=MicroOpGraph.flow_cnt, size=i_data_amount)
+            MicroOpGraph.flow_cnt += 1
+            # op_graph.add_edge(s, i_source, edge_type="control")
 
         # Setup sink (merger)
         o_cnt = group.get_group("output")["counts"].iloc[0]
         o_delay = group.get_group("output")["interval"].iloc[0]
-        op_graph.add_node(sink, layer=layer, op_type="sink", v_pe=sink_magic, delay=0, cnt=o_cnt)
+        op_graph.add_node(sink, layer=layer, op_type="sink", v_pe=sink_magic, delay=0, cnt=1)   # FIXME: need test
 
         print(streams)
         # Setup workers
@@ -95,3 +102,34 @@ class MicroOpGraph:
 
     def get_data(self):
         return self.graph
+
+    def draw(self, fig_path):
+        seed = 123467
+
+        G = self.get_data()
+        pos = nx.spring_layout(G, seed=seed)
+
+        cmap = plt.cm.plasma
+        plt.rcParams["lines.linewidth"] = 3
+        plt.rcParams["lines.linewidth"] = 2.5
+        plt.rcParams["lines.markersize"] = 10
+        plt.rcParams["lines.markerfacecolor"] = "7f7f7f"
+        plt.rcParams["lines.markeredgecolor"] = "ffffff"
+        plt.rcParams["lines.markeredgewidth"] = 10
+
+        nodes = nx.draw_networkx_nodes(G, pos, node_size=80, node_color="#000000")
+        edges = nx.draw_networkx_edges(
+            G,
+            pos,
+            node_size=80,
+            arrowstyle="->",
+            arrowsize=10,
+            edge_cmap=cmap,
+            width=2,
+            edge_color="#7f7f00"
+        )
+
+        ax = plt.gca()
+        ax.set_axis_off()
+        plt.savefig(fig_path)
+        plt.close()
