@@ -2,17 +2,16 @@ import os
 import re
 import pandas as pd
 from copy import deepcopy
-import networkx as nx
-import matplotlib.pyplot as plt
 from compiler import global_control as gc
 
 from tracegen.generator import gen_fake_trace
-from op_graph.micro_op_graph import MicroOpGraph
 from mapper.task_map import ml_mapping
-from route_algorithms.mesh import MeshTreeRouter
-
+from op_graph.micro_op_graph import MicroOpGraph
 from timeloop_agents.layer import TimeloopLayer
 from spatialsim_agents.trace_gen import TraceGenerator
+from mapper.Mapper import Mapper
+from route_algorithms.mesh import MeshTreeRouter
+
 
 
 class TaskCompiler():
@@ -70,8 +69,12 @@ class TaskCompiler():
 
 
     def _map_operators(self, op_graph):
-        positions = ml_mapping().map()
-        op_graph.set_physical_position(positions)
+        cores = list(range(4, gc.array_size))
+        mems = list(range(4))
+        mapper = Mapper(cores, mems)
+        mapper.map(op_graph.get_data())
+        # positions = ml_mapping().map()
+        # op_graph.set_physical_position(positions)
 
 
     def _to_spatialsim_trace(self, op_graph):

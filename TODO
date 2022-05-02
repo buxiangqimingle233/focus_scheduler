@@ -1,0 +1,5 @@
+bug: stall when parsing instructions
+
+
+opt: simulator with python wrapper
+opt: parallel
