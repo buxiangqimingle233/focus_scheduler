@@ -1,6 +1,7 @@
 import networkx as nx
 from router import Router
 import copy
+import random
 
 class MeshTreeRouter(Router):
 
@@ -32,14 +33,14 @@ class RPMTreeRouter(Router):
         neighbors = nx.neighbors(tree, v)
         if_pruned_all = True
         if (p_node and pp_node):
-            if ((p_node // self.diameter == pp_node // self.diameter) and (p_node // self.diameter == v // self.diameter))  \
-                or ((p_node % self.diameter == pp_node % self.diameter) and (p_node % self.diameter == v % self.diameter))  \
-                or ((p_node // self.diameter == pp_node // self.diameter) and (p_node % self.diameter == v % self.diameter)):
+            if (p_node // self.diameter == pp_node // self.diameter) or (p_node % self.diameter == v % self.diameter):
                 if len(list(nx.neighbors(tree, p_node))) == 1 and (not tree.nodes[p_node]['dest']):
                     tree.remove_edge(pp_node, p_node)
                     tree.remove_edge(p_node, v)
                     tree.remove_node(p_node)
                     tree.add_edge(pp_node, v)
+                    p_node = pp_node
+                    if_pruned_all = False
 
         for i in list(neighbors):
             if not self.tree_pruner(tree, i, v, p_node):
@@ -147,19 +148,102 @@ class WhirlTreeRouter(Router):
 
     def __init__(self, diameter) -> None:
         super().__init__(diameter)
+
+    def tree_pruner(self, tree, v, p_node, pp_node):
+        neighbors = nx.neighbors(tree, v)
+        if_pruned_all = True
+        if (p_node and pp_node):
+            if (p_node // self.diameter == pp_node // self.diameter) or (p_node % self.diameter == v % self.diameter):
+                if len(list(nx.neighbors(tree, p_node))) == 1 and (not tree.nodes[p_node]['dest']):
+                    tree.remove_edge(pp_node, p_node)
+                    tree.remove_edge(p_node, v)
+                    tree.remove_node(p_node)
+                    tree.add_edge(pp_node, v)
+                    p_node = pp_node
+                    if_pruned_all = False
+
+        for i in list(neighbors):
+            if not self.tree_pruner(tree, i, v, p_node):
+                if_pruned_all = False
+        return if_pruned_all
+
+    def dest_pruner(self, tree, v, p_node):
+        neighbors = list(nx.neighbors(tree, v))
+        if_pruned_all = True
+        if len(neighbors) == 0 and p_node and (not tree.nodes[v]['dest']):
+            tree.remove_edge(p_node, v)
+            tree.remove_node(v)
+            if_pruned_all = False
+        
+        for i in neighbors:
+            if not self.dest_pruner(tree, i, v):
+                if_pruned_all = False
+        return if_pruned_all
     
-    def route(self, source: int, dests: list) -> nx.DiGraph:
+    def route(self, source: int, dests: list, x = -1) -> nx.DiGraph:
         tree = nx.DiGraph()
-        # Connect dests directly to the source. 
-        # This is very likely to violate the spatial-sim's tree-generation rules.
         tree.add_node(source, root=True)
-        tree.add_nodes_from(dests, root=False)
-        tree.add_edges_from((source, d) for d in dests)
+
+        if x == -1: #we allow setting x manually
+            x = random.randint(0, 15) #four bit corresponding to LTBw, LTBn, LTBe, LTBs
+        # LTBw = x & 8, LTBn = x & 4, LTBe = x & 2, LTBs = x & 1
+        # RTBs = not LTBw, RTBw = not LTBn, RTBn = not LTBe, RTBe = not LTBs
+        
+        delta = [self.diameter, 1, -self.diameter, -1]
+        for i in range(4): #to traversing from s to w
+            LTB = x & (1 << i)
+            RTB = not (x & 1 << ((i + 3) % 4))
+
+            current_node = source
+            next_node = source + delta[i]
+            while ((next_node % self.diameter == current_node % self.diameter) or (next_node // self.diameter == current_node // self.diameter)) \
+                  and next_node >= 0 and next_node < self.diameter * self.diameter:
+                tree.add_node(current_node)
+                tree.add_node(next_node)
+                tree.add_edge(current_node, next_node)
+                if LTB:
+                    current_node2 = next_node
+                    next_node2 = current_node2 + delta[(i+1)%4]
+                    while ((next_node2 % self.diameter == current_node2 % self.diameter) or (next_node2 // self.diameter == current_node2 // self.diameter))\
+                          and next_node2 >= 0 and next_node2 < self.diameter * self.diameter:
+                        tree.add_node(current_node2)
+                        tree.add_node(next_node2)
+                        tree.add_edge(current_node2, next_node2)
+
+                        current_node2 += delta[(i+1)%4]
+                        next_node2 += delta[(i+1)%4]
+                if RTB:
+                    current_node2 = next_node
+                    next_node2 = current_node2 + delta[(i+3)%4]
+                    while ((next_node2 % self.diameter == current_node2 % self.diameter) or (next_node2 // self.diameter == current_node2 // self.diameter))\
+                          and next_node2 >= 0 and next_node2 < self.diameter * self.diameter:
+                        tree.add_node(current_node2)
+                        tree.add_node(next_node2)
+                        tree.add_edge(current_node2, next_node2)
+
+                        current_node2 += delta[(i+3)%4]
+                        next_node2 += delta[(i+3)%4]
+                
+                current_node += delta[i]
+                next_node += delta[i]
+        
+        for i in tree.nodes():
+            if i in dests:
+                tree.nodes[i]['dest'] = True
+            else:
+                tree.nodes[i]['dest'] = False
+        
+        while not self.dest_pruner(tree, source, None):
+            pass
+
+        while not self.tree_pruner(tree, source, None, None):
+            pass
 
         return tree
 
 
 
 if __name__ == "__main__":
+    #router = WhirlTreeRouter(4)
     router = RPMTreeRouter(4)
     print(router.route(9, [0, 2, 3, 13, 15]).edges())
