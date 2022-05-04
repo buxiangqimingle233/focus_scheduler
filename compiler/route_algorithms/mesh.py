@@ -1,3 +1,5 @@
+#from tkinter.tix import MAX
+from xmlrpc.client import MAXINT
 import networkx as nx
 from router import Router
 import copy
@@ -33,7 +35,7 @@ class RPMTreeRouter(Router):
     def tree_pruner(self, tree, v, p_node, pp_node):
         neighbors = nx.neighbors(tree, v)
         if_pruned_all = True
-        if (p_node and pp_node):
+        if (p_node != None and pp_node != None):
             if (p_node // self.diameter == pp_node // self.diameter) or (p_node % self.diameter == v % self.diameter):
                 if len(list(nx.neighbors(tree, p_node))) == 1 and (not tree.nodes[p_node]['dest']):
                     tree.remove_edge(pp_node, p_node)
@@ -153,7 +155,7 @@ class WhirlTreeRouter(Router):
     def tree_pruner(self, tree, v, p_node, pp_node):
         neighbors = nx.neighbors(tree, v)
         if_pruned_all = True
-        if (p_node and pp_node):
+        if (p_node != None and pp_node != None):
             if (p_node // self.diameter == pp_node // self.diameter) or (p_node % self.diameter == v % self.diameter):
                 if len(list(nx.neighbors(tree, p_node))) == 1 and (not tree.nodes[p_node]['dest']):
                     tree.remove_edge(pp_node, p_node)
@@ -252,7 +254,7 @@ class BAMTreeRouter(Router):
     def tree_pruner(self, tree, v, p_node, pp_node):
         neighbors = nx.neighbors(tree, v)
         if_pruned_all = True
-        if (p_node and pp_node):
+        if (p_node != None and pp_node != None):
             if (p_node // self.diameter == pp_node // self.diameter) or (p_node % self.diameter == v % self.diameter):
                 if len(list(nx.neighbors(tree, p_node))) == 1 and (not tree.nodes[p_node]['dest']):
                     tree.remove_edge(pp_node, p_node)
@@ -387,10 +389,140 @@ class BAMTreeRouter(Router):
 
         return tree
 
+class Steiner_TreeRouter(Router):
+
+    def __init__(self, diameter) -> None:
+        super().__init__(diameter)
+
+    def tree_pruner(self, tree, v, p_node, pp_node):
+        neighbors = nx.neighbors(tree, v)
+        if_pruned_all = True
+        if (p_node != None and pp_node != None):
+            if (p_node // self.diameter == pp_node // self.diameter) or (p_node % self.diameter == v % self.diameter):
+                if len(list(nx.neighbors(tree, p_node))) == 1 and (not tree.nodes[p_node]['dest']):
+                    tree.remove_edge(pp_node, p_node)
+                    tree.remove_edge(p_node, v)
+                    tree.remove_node(p_node)
+                    tree.add_edge(pp_node, v)
+                    
+                    p_node = pp_node
+                    if_pruned_all = False
+
+        for i in list(neighbors):
+            if not self.tree_pruner(tree, i, v, p_node):
+                if_pruned_all = False
+        return if_pruned_all
+    
+    def p2p_distance(self, x, y):
+        return abs(x // self.diameter - y // self.diameter) + abs(x % self.diameter - y % self.diameter)
+
+    def p2t_distance(self, x, tree):
+        min_dis = MAXINT
+        for v in tree.nodes():
+            min_dis = min(self.p2p_distance(v, x), min_dis)
+        return min_dis
+
+    def add_point(self, x, tree):
+        min_dis = MAXINT
+        connect_v = None
+        for v in tree.nodes():
+            if min_dis > self.p2p_distance(v, x):
+                connect_v = v
+                min_dis = self.p2p_distance(v, x)
+
+        temp = random.randint(0,1) #0:x-y path, 1:y-x path
+        if temp:
+            mid_v = x - x % self.diameter + connect_v % self.diameter
+            pre_node = connect_v
+            step = self.diameter
+            if connect_v != mid_v:
+                step = ((mid_v-connect_v)//(abs(mid_v-connect_v))) * self.diameter
+            for i in range(connect_v, mid_v, step):
+                if i != connect_v:
+                    tree.add_node(i)
+                    tree.add_edge(pre_node, i)
+                    pre_node = i
+
+            if mid_v != connect_v:
+                tree.add_node(mid_v)
+                tree.add_edge(pre_node, mid_v)
+
+            pre_node = mid_v
+            step = 1
+            if x != mid_v:
+                step = (x-mid_v)//(abs(x-mid_v))
+            for i in range(mid_v, x, step):
+                if i != mid_v:
+                    tree.add_node(i)
+                    tree.add_edge(pre_node, i)
+                    pre_node = i
+            if mid_v != x:   #to avoid add self-to-self edge
+                tree.add_node(x)
+                tree.add_edge(pre_node, x)
+
+        else:
+            mid_v = connect_v - connect_v % self.diameter + x % self.diameter
+            pre_node = connect_v
+
+            step = 1
+            if connect_v != mid_v:
+                step = (mid_v-connect_v)//(abs(mid_v-connect_v))
+
+            for i in range(connect_v, mid_v, step):
+                if i != connect_v:
+                    tree.add_node(i)
+                    tree.add_edge(pre_node, i)
+                    pre_node = i
+            
+            if mid_v != connect_v:
+                tree.add_node(mid_v)
+                tree.add_edge(pre_node, mid_v)
+
+            pre_node = mid_v
+            step = self.diameter
+            if x != mid_v:
+                step = ((x-mid_v)//(abs(x-mid_v))) * self.diameter
+            for i in range(mid_v, x, step):
+                if i != mid_v:
+                    tree.add_node(i)
+                    tree.add_edge(pre_node, i)
+                    pre_node = i
+            if mid_v != x:
+                tree.add_node(x)
+                tree.add_edge(pre_node, x)
+    
+    def route(self, source: int, dests: list) -> nx.DiGraph:
+        tree = nx.DiGraph()
+        tree.add_node(source, root=True)
+        dests_temp = copy.deepcopy(dests)
+
+        while dests_temp:
+            min_dis = MAXINT
+            add_p = None
+            for i in dests_temp:  #to choose a point which is closest to the tree
+                dis = self.p2t_distance(i, tree)
+                if min_dis > dis:
+                    min_dis = dis
+                    add_p = i
+            self.add_point(add_p, tree)
+            dests_temp.remove(add_p)
+
+        print(tree.edges())
+        for i in tree.nodes():
+            if i in dests:
+                tree.nodes[i]['dest'] = True
+            else:
+                tree.nodes[i]['dest'] = False
+
+        while not self.tree_pruner(tree, source, None, None):
+            pass
+
+        return tree
 
 
 if __name__ == "__main__":
     #router = WhirlTreeRouter(4)
     #router = RPMTreeRouter(4)
-    router = BAMTreeRouter(4)
+    #router = BAMTreeRouter(4)
+    router = Steiner_TreeRouter(4)
     print(router.route(9, [0, 2, 3, 13, 15]).edges())
