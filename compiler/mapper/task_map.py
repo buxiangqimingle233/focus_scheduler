@@ -133,6 +133,8 @@ class ml_mapping():
         elif self.mapping_style == "Hilbert":
             self.mapping_result = self.map_hilbert(board)
 
+        print(self.mapping_result)
+
         if gc.mapper_verbose:
             fig_name = os.path.join(gc.visualization_root, "mapping.png")
             fig = sns.heatmap(data=self.mapping_result, cmap="RdBu_r", linewidths=0.3, annot=True)
@@ -148,6 +150,7 @@ class ml_mapping():
 
         res = {}
         layer_names, cores = gc.layer_names, gc.cores
+        
         is_pipelined = [False] + [layer_names[idl-1][:6] == layer_names[idl][:6] for idl in range(1, len(layer_names))]
         for idl in range(len(layer_names)):
             mapped_core = [x * self.tile_array_width + y for x, y in zip(*np.where(self.mapping_result == idl))]
