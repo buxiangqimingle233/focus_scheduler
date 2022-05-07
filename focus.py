@@ -106,7 +106,7 @@ def run_single_task():
         os.chdir(gc.spatial_sim_root)
         os.system("python run.py single --bm {}".format(gc.taskname))
         os.chdir(prev_cwd)
-        toolchain.analyzeSimResult()
+        # toolchain.analyzeSimResult()
 
     # Invoke the FOCUS software procedure to schedule the traffic.
     if gc.focus_schedule:
