@@ -5,10 +5,12 @@ from copy import deepcopy
 import networkx as nx
 import matplotlib.pyplot as plt
 from compiler import global_control as gc
+import numpy as np
 
 from tracegen.generator import gen_fake_trace
 from op_graph.micro_op_graph import MicroOpGraph
 from mapper.task_map import ml_mapping
+from ATM.gen_mapping import gen_mapping
 from route_algorithms.mesh import MeshTreeRouter
 
 from timeloop_agents.layer import TimeloopLayer
@@ -52,7 +54,13 @@ class TaskCompiler():
         plt.close()
 
         # map tasks to pe array
-        positions = ml_mapping().map()
+        # positions = ml_mapping().map()
+        # op_graph.set_physical_position(positions)
+
+        mapping = np.load(gc.mapping)
+        mapping = mapping.tolist()
+        print(mapping)
+        positions = gen_mapping().map(mapping)
         op_graph.set_physical_position(positions)
 
         # dump as spatialsim trace

@@ -33,7 +33,7 @@ search_dataflow = False
 extract_traffic = False
 timeloop_verbose = False
 # Search time
-timeout = 30
+timeout = 10
 # Core numbers (default: number specified in database/arch/arch.yaml)
 top_level_cnt = None
 
@@ -47,7 +47,7 @@ mapper_verbose = True
 # mapping_style = "Tetris"
 # mapping_style = "Zig-Zag"
 mapping_style = "Hilbert"
-
+mapping = "./ATM/mapping.npy"
 
 # -------------------- METRO Specs -------------------------
 
