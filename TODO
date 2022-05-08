@@ -1,5 +1,6 @@
-bug: stall when parsing instructions
+bug: Stall when parsing instructions
+feature: buffer constraints
 
-
-opt: simulator with python wrapper
-opt: parallel
+e2u: Automatically source the timeloop's dynamic libraries at run.sh
+opt: Simulator with python wrapper
+opt: Parallel

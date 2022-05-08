@@ -273,7 +273,6 @@ class TimeloopLayer:
 
         old_cwd = os.getcwd()
         os.chdir(self.working_dir)
-        print("Info:", "Working for", self.layer_name)
 
         if self.top_level_cnt:
             self._modify_array_size(self.top_level_cnt)
@@ -289,14 +288,14 @@ class TimeloopLayer:
 
         # recover the working directory
         os.chdir(old_cwd)
-        seperator = "====================== FINISH =========================\n\n"
-        print(seperator)
 
         return ret
 
     @staticmethod
     def report_as_dataframe(layer, comm_bank):
         df = pd.DataFrame()
+        # The order of tensors 
+        datatype = ["weight", "input", "output"]
         for dti in range(3):
             for traffic_pertile in comm_bank[::-1]:
                 traffic_perdatatype = traffic_pertile[dti]
@@ -309,7 +308,7 @@ class TimeloopLayer:
                             "interval": flow["pkt_interval"],
                             "flit": flow["bit_volume"] / gc.flit_size,
                             "counts": flow["cnt"],
-                            "datatype": gc.datatype[dti]
+                            "datatype": datatype[dti]
                         }, ignore_index=True)
                     df = df[df["flit"] > 0]
                     df.loc[:, "flit"] = df["flit"].map(lambda x: int(max(x + 1, 2)))    # add headflits

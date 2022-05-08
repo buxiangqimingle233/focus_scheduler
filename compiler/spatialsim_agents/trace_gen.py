@@ -1,7 +1,7 @@
 import networkx as nx
 from copy import deepcopy
 from op_graph.micro_op_graph import MicroOpGraph
-from route_algorithms import router
+from routing_algorithms import router
 from io import TextIOWrapper
 
 

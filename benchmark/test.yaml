@@ -8,7 +8,7 @@ inception:
 wide_resnet50_2:
 - wide_resnet50_2_layer59: 4
 - wide_resnet50_2_layer60: 4
-# - wide_resnet50_2_layer61: 4
+- wide_resnet50_2_layer61: 4
 # - wide_resnet50_2_layer62: 4
 # - wide_resnet50_2_layer63: 4
 # - wide_resnet50_2_layer64: 4
