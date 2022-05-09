@@ -19,12 +19,14 @@ def convert2mapping(mapping):
     return mapping_res
     # print(mapping_res)
 
-
+def parse_performance(log_file):
+    return
 
 def get_performance(mapping):
     task_list = "./ATM/task_list.yaml"
     bm_file = "./benchmark/test.yaml"
     mapping_file = "./ATM/mapping.npy"
+    log_file = "./simulator/out.log"
 
     gen_benchmark(task_list, mapping, bm_file)
     global_control.array_diameter = 6
@@ -41,6 +43,7 @@ def get_performance(mapping):
     os.chdir(f"{os.getcwd()}/simulator")
     # os.system(f"build/bin/spatialsim tasks/resnet50_resnext50_32x4d_vgg16_wide_resnet50_2/spatial_spec")
     os.system(f"build/bin/spatialsim tasks/bert/spatial_spec")
+    return parse_performance(log_file)
 
 if __name__ == "__main__":
     mapping = [1, 1, 2, 2, 1, 1, 0, 0, 3, 3, 2, 2, 4, 4, 4, 4]
