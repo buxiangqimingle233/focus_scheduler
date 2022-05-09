@@ -13,6 +13,7 @@ from timeloop_agents.layer import TimeloopLayer
 # Task Mapper
 from mapping_algorithms.random_mapper import RandomMapper
 from mapping_algorithms.hilbert_mapper import HilbertMapper
+from mapping_algorithms.genetic_mapper import GeneticMapper
 # Tree Generator
 from compiler.routing_algorithms.meshtree_router import MeshTreeRouter
 # The backend to generate trace for spatial_sim
@@ -86,12 +87,12 @@ class TaskCompiler():
             print("====================== FINISH =========================\n\n")
 
         return op_graph
-
-
+        
     def _map_operators(self, op_graph):
         layout = self._gen_physical_layout()
         # mapper = RandomMapper(op_graph, layout)
-        mapper = HilbertMapper(op_graph, layout, gc.array_diameter)
+        # mapper = HilbertMapper(op_graph, layout, gc.array_diameter)
+        mapper = GeneticMapper(op_graph, layout, gc.array_diameter)
         mapper.map()
 
     def _to_spatialsim_trace(self, op_graph):
@@ -112,8 +113,16 @@ class TaskCompiler():
         routing_board_file.close()
 
     def _gen_physical_layout(self):
-        cores = list(range(8, gc.array_size))
-        mems = list(range(8))
+        cores = []
+        mems = []
+        for i in range(gc.array_diameter):
+            for j in range(gc.array_diameter):
+                if i == 0:
+                    mems.append(i * gc.array_diameter + j)
+                else:
+                    cores.append(i * gc.array_diameter + j)
+        # cores = list(range(8, gc.array_size))
+        # mems = list(range(8))
         layout = {i: "core" for i in cores}
         layout.update({i: "mem" for i in mems})
         return layout

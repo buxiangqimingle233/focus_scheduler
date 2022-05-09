@@ -103,9 +103,9 @@ def run_single_task():
     # Invoke simulator to estimate the performance of baseline interconnection architectures.
     if gc.simulate_baseline:
         prev_cwd = os.getcwd()
-        os.chdir(gc.spatial_sim_root)
-        os.system("python run.py single --bm {}".format(gc.taskname))
-        os.chdir(prev_cwd)
+        # os.chdir(gc.spatial_sim_root)
+        # os.system("python run.py single --bm {}".format(gc.taskname))
+        # os.chdir(prev_cwd)
         # toolchain.analyzeSimResult()
 
     # Invoke the FOCUS software procedure to schedule the traffic.

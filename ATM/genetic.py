@@ -21,6 +21,16 @@ class Strategies(Enum):
     Crossover = 2
 
 def _generate_parent(length, geneSet, get_fitness):
+    # while(True):
+    #     genes = []
+    #     while len(genes) < length:
+    #         sampleSize = min(length - len(genes), len(geneSet))
+    #         genes.extend(random.sample(geneSet, sampleSize))
+    #     flag = False
+    #     for g in geneSet:
+    #         flag |= (g in genes)
+    #     if (flag):
+    #         break
     genes = []
     while len(genes) < length:
         sampleSize = min(length - len(genes), len(geneSet))

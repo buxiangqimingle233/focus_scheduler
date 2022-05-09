@@ -17,7 +17,7 @@
 
 
 # Invoke the simulator
-python focus.py -bm benchmark/multi-model-1.yaml -d 16 es
+# python focus.py -bm benchmark/multi-model-1.yaml -d 16 tes
 # python focus.py -bm benchmark/multi-model-2.yaml -d 16 tes
 # python focus.py -bm benchmark/multi-model-3.yaml -d 16 d
 # python focus.py -bm benchmark/pipeline.yaml -d 18 d
@@ -28,5 +28,5 @@ python focus.py -bm benchmark/multi-model-1.yaml -d 16 es
 # python focus.py -bm benchmark/multi-model-1.yaml -d 16 s
 
 # test
-# python focus.py -bm benchmark/test.yaml -d 6 tes
+python focus.py -bm benchmark/test.yaml -d 6 es
 

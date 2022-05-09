@@ -11,7 +11,7 @@ def gen_benchmark(task_list, mapping_res, bm_file):
         layer_names += reduce(lambda x, y: x + y, map(lambda x: list(x.keys()), model))
         cores += reduce(lambda x, y: x + y, map(lambda x: list(x.values()), model))
     for task_id in mapping_res:
-        cores[task_id] += 1
+        cores[task_id] += (task_id >= 0)
 
     for model in obj.values():
         for layers in model:
@@ -19,6 +19,7 @@ def gen_benchmark(task_list, mapping_res, bm_file):
                 layers[layer_name] = cores[layer_names.index(layer_name)]
     # print(obj)
     benchmark_file = open(bm_file, "w")
+    # print(obj)
     yaml.dump(obj, benchmark_file)
 
 

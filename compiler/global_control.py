@@ -16,7 +16,7 @@ spatial_sim_root = os.path.join(prj_root, "simulator")
 result_root = os.path.join(prj_root, "results")
 
 # debug
-spatial_sim_root = "/home/wangzhao/simulator/spatial_sim"
+spatial_sim_root = "./simulator"
 
 
 dataflow_engine = "timeloop"      # Generate traffic trace from real-world workloads,
