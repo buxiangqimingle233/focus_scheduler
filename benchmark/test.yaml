@@ -1,6 +1,14 @@
 bert:
 - bert_layer1: 2
-- bert_layer2: 4
-- bert_layer3: 4
-- bert_layer4: 2
-- bert_layer5: 4
+- bert_layer2: 2
+# - bert_layer3: 2
+# - bert_layer4: 2
+inception:
+- inception_layer1: 4
+wide_resnet50_2:
+- wide_resnet50_2_layer59: 4
+- wide_resnet50_2_layer60: 4
+- wide_resnet50_2_layer61: 4
+# - wide_resnet50_2_layer62: 4
+# - wide_resnet50_2_layer63: 4
+# - wide_resnet50_2_layer64: 4

@@ -1,6 +1,13 @@
+import os
+import re
 import pandas as pd
 import networkx as nx
-import re
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from compiler import global_control as gc
 
 # traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])
 
@@ -14,6 +21,9 @@ class MicroOpGraph:
     @staticmethod
     def __hash_node(layer_, vpe_):
         return hash(repr(str(layer_) + str(vpe_)))
+
+    def get_data(self):
+        return self.graph
 
     def add_layer(self, streams: pd.DataFrame):
         op_graph = self.graph
@@ -55,16 +65,21 @@ class MicroOpGraph:
         i_delay = group.get_group("input")["interval"].iloc[0]
         op_graph.add_node(i_source, layer=layer, op_type="insrc", v_pe=i_source_magic, delay=i_delay, cnt=i_cnt)
         # Add control signals: the input source should wait for preceeding layer to finish
-        # TODO: We put hard syncronization barrire between two layers. However, in some cases, e.g. oc-tiling to ic-tiling,
+        # TODO: We put hard syncronization bairrer between two adjacent layers. However, in some cases, e.g. oc-tiling to ic-tiling,
         # the suceeding layer does not have to wait for whole preceeding layer to finish, it can start once a channel is 
         # generated.
+
+        # FIXME: What does the sink push to next layer's isource, a control signal, or the entire output data ?
+        i_data_amount = group.get_group("input")["flit"].iloc[0] * group.get_group("input")["counts"].iloc[0]
         for s in pre_layer_sinks:
-            op_graph.add_edge(s, i_source, edge_type="control")
+            op_graph.add_edge(s, i_source, edge_type="data", fid=MicroOpGraph.flow_cnt, size=i_data_amount)
+            MicroOpGraph.flow_cnt += 1
+            # op_graph.add_edge(s, i_source, edge_type="control")
 
         # Setup sink (merger)
         o_cnt = group.get_group("output")["counts"].iloc[0]
         o_delay = group.get_group("output")["interval"].iloc[0]
-        op_graph.add_node(sink, layer=layer, op_type="sink", v_pe=sink_magic, delay=0, cnt=o_cnt)
+        op_graph.add_node(sink, layer=layer, op_type="sink", v_pe=sink_magic, delay=0, cnt=1)   # FIXME: need test
 
         print(streams)
         # Setup workers
@@ -85,13 +100,57 @@ class MicroOpGraph:
             o_flow = edges[(w, sink_magic)]
             op_graph.add_edge(worker, sink, edge_type="data", fid=o_flow[0], size=o_flow[1])
 
-    def set_physical_position(self, vir_to_phy_map):
-        op_graph = self.graph
-        for _, attr in op_graph.nodes(data=True):
-            layer, v_pe = attr["layer"], attr["v_pe"]
-            assert layer in vir_to_phy_map and v_pe in vir_to_phy_map[layer]
-            attr["p_pe"] = vir_to_phy_map[layer][v_pe]
+    def set_physical_pe(self, nodes: set, pe: int):
+        for n in nodes:
+            self.graph.nodes[n]["p_pe"] = pe
+
+    def get_operator_type(self, node) -> str:
+        return self.graph.nodes[node]["op_type"]
+
+    def draw_graph(self, fig_path):
+        seed = 123467
+
+        G = self.get_data()
+        red_edges = [(u, v) for u, v, t in G.edges(data="edge_type") if t == "control"]
+        black_edges = [(u, v) for u, v in G.edges() if (u, v) not in red_edges]
+
+        pos = nx.spring_layout(G, seed=seed, k=0.4, iterations=20)
+        node_color_map = {
+            "wsrc": 0,
+            "insrc": 0.25,
+            "worker": 0.5,
+            "sink": 0.75
+        }
+        node_color = [node_color_map[node_type] for _, node_type in G.nodes(data="op_type")]
+
+        nx.draw_networkx_nodes(G, pos, cmap=plt.get_cmap("Dark2"), node_size=500, node_color=node_color)
+        nx.draw_networkx_labels(G, pos, labels={n: int(G.nodes[n]["delay"]) for n in G.nodes()}, font_size=10)
+        nx.draw_networkx_edges(G, pos, edgelist=black_edges, arrowstyle="-|>", arrowsize=10)
+        nx.draw_networkx_edges(G, pos, edgelist=red_edges, arrowstyle="-|>", arrowsize=10, edge_color="r")
+
+        ax = plt.gca()
+        ax.set_axis_off()
+        plt.savefig(fig_path, dpi=500)
+        plt.close()
 
 
-    def get_data(self):
-        return self.graph
+    def draw_mapping(self, fig_path):
+        G = self.get_data()
+        # some magic numbers
+        NULL, CTRL = -2, -1
+
+        name_to_idx = {gc.layer_names[i]: i for i in range(len(gc.layer_names))}
+        board = np.full((gc.array_size, ), NULL, dtype=float)
+        for _, attr in G.nodes(data=True):
+            value = name_to_idx[attr["layer"]]
+            if attr["op_type"] == "sink":
+                value += 0.5
+            if attr["op_type"] not in ["wsrc", "insrc"]:
+                board[attr["p_pe"]] = value
+
+        board = board.reshape((gc.array_diameter, gc.array_diameter))
+        fig = sns.heatmap(data=board, cmap="RdBu_r", linewidths=0.3, annot=True)
+        plt.text(60, 60, "NULL: {}, CTRL: {}".format(NULL, CTRL))
+        heatmap = fig.get_figure()
+        heatmap.savefig(fig_path, dpi=500)
+        plt.close()

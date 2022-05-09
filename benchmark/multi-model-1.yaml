@@ -54,3 +54,16 @@ wide_resnet50_2:
 # - wide_resnet50_2_layer14: 5
 # - wide_resnet50_2_layer15: 5
 # - wide_resnet50_2_layer16: 5
+- wide_resnet50_2_layer2: 5 
+- wide_resnet50_2_layer3: 5
+- wide_resnet50_2_layer4: 5
+- wide_resnet50_2_layer5: 5
+- wide_resnet50_2_layer6: 5
+- wide_resnet50_2_layer7: 5
+- wide_resnet50_2_layer8: 5
+- wide_resnet50_2_layer9: 5
+- wide_resnet50_2_layer10: 5
+- wide_resnet50_2_layer11: 5
+- wide_resnet50_2_layer12: 5
+- wide_resnet50_2_layer13: 5
+

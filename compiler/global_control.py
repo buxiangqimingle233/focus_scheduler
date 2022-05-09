@@ -13,8 +13,11 @@ timeloop_buffer = os.path.join(buffer_root, "timeloop-512g")
 
 visualization_root = os.path.join(prj_root, "visualization")
 spatial_sim_root = os.path.join(prj_root, "simulator")
-
 result_root = os.path.join(prj_root, "results")
+
+# debug
+spatial_sim_root = "/home/wangzhao/simulator/spatial_sim"
+
 
 dataflow_engine = "timeloop"      # Generate traffic trace from real-world workloads,
                                     # feeding the backends of focus and booksim
@@ -36,10 +39,6 @@ timeloop_verbose = False
 timeout = 10
 # Core numbers (default: number specified in database/arch/arch.yaml)
 top_level_cnt = None
-
-# data orders
-datatype = ["weight", "input", "output"]
-
 
 # -------------------- Task Mapper Specs -------------------------
 
@@ -77,9 +76,9 @@ shrink = 0.5
 
 # hardware setup
 
-array_diameter = 4                 # d
-array_size = array_diameter**2     # n = d * d
-flit_size = 4096                   # in bits
+array_diameter = 4                              # d
+array_size = array_diameter**2                  # n = d * d
+flit_size = 4096                                # in bits
 
 # -------------------- Task Descriptions -------------------------
 

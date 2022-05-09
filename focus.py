@@ -96,7 +96,7 @@ def run_single_task():
     printSpecs()
 
     # Invoke the FOCUS compiling toolchain to generate the original traffic trace.
-    toolchain = TaskCompiler(gc.layer_names, gc.cores)
+    toolchain = TaskCompiler()
     start_time = time()
     toolchain.compileTask()
 
