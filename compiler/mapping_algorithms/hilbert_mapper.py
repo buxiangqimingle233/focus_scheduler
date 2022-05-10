@@ -2,7 +2,6 @@ import sys
 from math import ceil, log2
 from random import sample
 
-from cv2 import sort
 from compiler.mapping_algorithms.hilbert import hilbert_map
 from op_graph.micro_op_graph import MicroOpGraph
 from mapper import Mapper

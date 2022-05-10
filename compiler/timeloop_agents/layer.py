@@ -37,6 +37,7 @@ class TimeloopLayer:
     comm_report_file = "communication.yaml"
 
     def __init__(self, layer_file, model_dir="prob", prj_root=None, dram_spatial_size=None):
+
         if not prj_root:
             self.prj_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         else:
@@ -47,9 +48,14 @@ class TimeloopLayer:
         #     "model": "timeloop-model"
         # }
         self.timeloop_bins = {
-            "mapper": os.path.join(os.path.dirname(os.path.abspath(__file__)), "timeloop-bins", "timeloop-mapper"),
-            "model": os.path.join(os.path.dirname(os.path.abspath(__file__)), "timeloop-bins", "timeloop-model")
+            "mapper": os.path.join(self.prj_root, "libs", "timeloop-mapper"),
+            "model": os.path.join(self.prj_root, "libs", "timeloop-model")
         }
+
+        # link dynamic libraries required by timeloop
+        env = os.environ.copy()
+        env["LD_LIBRARY_PATH"] = "{}:{}".format(os.path.join(self.prj_root, "libs"), env["LD_LIBRARY_PATH"])
+        self.sub_process_env = env
 
         result_root = os.path.join(self.prj_root, gc.timeloop_buffer)
         if not os.path.exists(result_root):
@@ -131,10 +137,12 @@ class TimeloopLayer:
                             self.constraint_specs, self.prob_specs])
         try:
             if gc.timeloop_verbose:
-                mapper_sp = subprocess.Popen(command, cwd=self.working_dir, shell=True, preexec_fn=os.setpgrp)
+                mapper_sp = subprocess.Popen(command, cwd=self.working_dir, shell=True, env=self.sub_process_env, 
+                                             preexec_fn=os.setpgrp)
             else:
                 mapper_sp = subprocess.Popen(command, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
-                                                            cwd=self.working_dir, shell=True, preexec_fn=os.setpgrp)
+                                             cwd=self.working_dir, shell=True, env=self.sub_process_env, 
+                                             preexec_fn=os.setpgrp)
 
             # Register sigint handler
             def sigint_handler(signum, frame):
@@ -148,7 +156,7 @@ class TimeloopLayer:
                 os.killpg(os.getpgid(mapper_sp.pid), signal.SIGINT)
             mapper_sp.wait()
 
-            print("Info: Mapper timeout!!")
+            print("Info: Mapper timeout, stop searching now.")
         except ProcessLookupError:
             print("Info: Mapper has found optimal solution")
         print("Info: Mapper search finished")
@@ -164,10 +172,10 @@ class TimeloopLayer:
         executable = self.timeloop_bins["model"]
         command = " ".join([executable, self.arch_specs, self.dump_mapping_file, self.prob_specs])
         if gc.timeloop_verbose:
-            model_sp = subprocess.Popen(command, shell=True, cwd=self.working_dir)
+            model_sp = subprocess.Popen(command, shell=True, cwd=self.working_dir, env=self.sub_process_env)
         else:
             model_sp = subprocess.Popen(command, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
-                                        cwd=self.working_dir, shell=True)
+                                        cwd=self.working_dir, shell=True, env=self.sub_process_env)
         model_sp.wait()
 
         print("Info: Communication status extraction finished")
