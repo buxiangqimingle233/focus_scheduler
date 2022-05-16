@@ -3,7 +3,7 @@ from mapper import Mapper
 from random import sample
 from compiler import global_control as gc
 import numpy as np
-
+import sys
 
 class GeneticMapper(Mapper):
 

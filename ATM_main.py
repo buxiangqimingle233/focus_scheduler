@@ -59,5 +59,5 @@ def get_performance(mapping):
 
 if __name__ == "__main__":
     # mapping = [1, 1, 1, 1, 2, 2, 2, 0, 2, 3, 0, 3, 4, 4, 4, 4]
-    mapping = [1, 2, 3, 4, 0, 2, 1, 4, 3, 0, 0, 2, 4, 3, 1, 4]
+    mapping = [2, 4, 1, 3, 0, 1, 4, 3, 0, 2, 1, 4, 3, 0, 2, 2]
     print(f"*** Performance: {get_performance(mapping)} cycles ***")

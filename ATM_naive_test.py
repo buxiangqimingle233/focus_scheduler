@@ -32,13 +32,15 @@ def convert2mapping(mapping):
     return mapping_res
 
 def get_fitness(mapping_res, target):
-    return -1 * get_performance(mapping_res)
+    performance = get_performance(mapping_res)
+    print(f"### Performance: {performance} cycles ###")
+    return -1 * performance
     # get_performance(mapping_res)
     # return sum(1 for expected, actual in zip(mapping_res, target) if expected == actual)
     
 def display(candidate, startTime):
     timeDiff = datetime.datetime.now() - startTime
-    print("{}\t{}\t{}".format(
+    print("### Genetic ### {}\t{}\t{}".format(
         candidate.Genes, -1 * candidate.Fitness, timeDiff))
 
 def get_performance(mapping):
