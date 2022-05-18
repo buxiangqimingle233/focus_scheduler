@@ -10,14 +10,22 @@ def convert2mapping(mapping):
         for j in range(gc.array_diameter):
             mapping_res.append(-1)
     
+    # for i in range(gc.array_diameter):
+    #     for j in range(gc.array_diameter):
+    #         if i == 0 or j == 0 or i == gc.array_diameter - 1 or j == gc.array_diameter - 1:
+    #             mapping_res[i * gc.array_diameter + j] = -1
+    #         else:
+    #             mapping_res[i * gc.array_diameter + j] = mapping[(i - 1) * (gc.array_diameter - 2) + (j - 1)]
+
     for i in range(gc.array_diameter):
         for j in range(gc.array_diameter):
-            if i == 0 or j == 0 or i == gc.array_diameter - 1 or j == gc.array_diameter - 1:
+            if i == 0:
                 mapping_res[i * gc.array_diameter + j] = -1
             else:
-                mapping_res[i * gc.array_diameter + j] = mapping[(i - 1) * (gc.array_diameter - 2) + (j - 1)]
+                mapping_res[i * gc.array_diameter + j] = mapping[(i - 1) * gc.array_diameter + j]
+    print(mapping_res)
+
     return mapping_res
-    # print(mapping_res)
 
 def parse_performance(log_file):
     with open(log_file, 'r') as f:
@@ -42,6 +50,7 @@ def get_performance(mapping):
     gc.array_diameter = array_diameter
 
     mf = np.array(convert2mapping(mapping))
+    # mf = np.array(mapping)
     np.save(mapping_file, mf)
 
     obj = yaml.load(open(task_list, "r"), Loader=yaml.FullLoader)
@@ -59,5 +68,9 @@ def get_performance(mapping):
 
 if __name__ == "__main__":
     # mapping = [1, 1, 1, 1, 2, 2, 2, 0, 2, 3, 0, 3, 4, 4, 4, 4]
-    mapping = [2, 4, 1, 3, 0, 1, 4, 3, 0, 2, 1, 4, 3, 0, 2, 2]
+    mapping = [3, 1, 0, 2, 4, 1, 3, 0, 2, 4, 3, 0, 4, 1, 0, 1, 4, 3, 0, 2, 1, 4, 2, 3, 0, 2, 3, 4, 4, 0]
+    # mapping = []
+    # for i in range(5):
+    #     for _ in range(32):
+    #         mapping.append(i)
     print(f"*** Performance: {get_performance(mapping)} cycles ***")

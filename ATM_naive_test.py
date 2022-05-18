@@ -23,12 +23,20 @@ def convert2mapping(mapping):
         for j in range(gc.array_diameter):
             mapping_res.append(-1)
     
+    # for i in range(gc.array_diameter):
+    #     for j in range(gc.array_diameter):
+    #         if i == 0 or j == 0 or i == gc.array_diameter - 1 or j == gc.array_diameter - 1:
+    #             mapping_res[i * gc.array_diameter + j] = -1
+    #         else:
+    #             mapping_res[i * gc.array_diameter + j] = mapping[(i - 1) * (gc.array_diameter - 2) + (j - 1)]
+
     for i in range(gc.array_diameter):
         for j in range(gc.array_diameter):
-            if i == 0 or j == 0 or i == gc.array_diameter - 1 or j == gc.array_diameter - 1:
+            if i == 0:
                 mapping_res[i * gc.array_diameter + j] = -1
             else:
-                mapping_res[i * gc.array_diameter + j] = mapping[(i - 1) * (gc.array_diameter - 2) + (j - 1)]
+                mapping_res[i * gc.array_diameter + j] = mapping[(i - 1) * gc.array_diameter + j]
+
     return mapping_res
 
 def get_fitness(mapping_res, target):
@@ -80,7 +88,7 @@ class GuessmappingTests():
         geneset.append(i)
 
     def test_Hello_World(self):
-        target = list(-1 for i in range(16))
+        target = list(-1 for i in range(30))
         # target = [1, 1, 2, 2, 1, 1, 0, 0, 3, 3, 2, 2, 4, 4, 4, 4]
         # 1 1 2 2
         # 1 1 0 0

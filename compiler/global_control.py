@@ -36,7 +36,7 @@ search_dataflow = False
 extract_traffic = False
 timeloop_verbose = False
 # Search time
-timeout = 60
+timeout = 30
 # Core numbers (default: number specified in database/arch/arch.yaml)
 top_level_cnt = None
 

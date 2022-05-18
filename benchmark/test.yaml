@@ -1,6 +1,6 @@
 bert:
-- bert_layer1: 4
-- bert_layer2: 3
+- bert_layer1: 6
+- bert_layer2: 4
 - bert_layer3: 4
-- bert_layer4: 3
-- bert_layer5: 2
+- bert_layer4: 5
+- bert_layer5: 6

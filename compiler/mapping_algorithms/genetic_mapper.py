@@ -52,13 +52,17 @@ class GeneticMapper(Mapper):
         ele = list(selected_cluster)[0]
         type = G.nodes[ele]["op_type"]
 
-        if type == "worker":
-            # print(f"Applying Mapping: {self.mapping_res}")
-            pe = self.mapping_res.index(value)
-            self.mapping_res[pe] = -1
-            return pe
-        else:
-            return self.diameter * (self.diameter - 1) + value
+        # if type == "worker":
+        #     # print(f"Applying Mapping: {self.mapping_res}")
+        #     pe = self.mapping_res.index(value)
+        #     self.mapping_res[pe] = -1
+        #     return pe
+        # else:
+        #     return self.diameter * (self.diameter - 1) + value
+
+        pe = sample([idx for idx,_ in enumerate(self.mapping_res) if _==value], 1)[0]
+        self.mapping_res[pe] = -1
+        return pe
 
     def __map_to_mem_ctrl(self, selected_cluster):
         return sample(self.mems, 1)[0]

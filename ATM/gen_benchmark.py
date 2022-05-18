@@ -16,7 +16,7 @@ def gen_benchmark(task_list, mapping_res, bm_file):
     for model in obj.values():
         for layers in model:
             for layer_name in layers.keys():
-                layers[layer_name] = cores[layer_names.index(layer_name)]
+                layers[layer_name] = cores[layer_names.index(layer_name)] - 1
     # print(obj)
     benchmark_file = open(bm_file, "w")
     # print(obj)
