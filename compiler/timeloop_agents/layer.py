@@ -54,7 +54,10 @@ class TimeloopLayer:
 
         # link dynamic libraries required by timeloop
         env = os.environ.copy()
-        env["LD_LIBRARY_PATH"] = "{}:{}".format(os.path.join(self.prj_root, "libs"), env["LD_LIBRARY_PATH"])
+        if "LD_LIBRARY_PATH" in env:
+            env["LD_LIBRARY_PATH"] = "{}:{}".format(os.path.join(self.prj_root, "libs"), env["LD_LIBRARY_PATH"])
+        else:
+            env["LD_LIBRARY_PATH"] = "{}".format(os.path.join(self.prj_root, "libs"))
         self.sub_process_env = env
 
         result_root = os.path.join(self.prj_root, gc.timeloop_buffer)

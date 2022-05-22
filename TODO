@@ -1,5 +1,4 @@
 bug: Stall when parsing instructions
 feature: buffer constraints
 
-opt: Simulator with python wrapper
 opt: Parallel
