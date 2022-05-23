@@ -29,4 +29,4 @@
 # python focus.py -bm benchmark/multi-model-1.yaml -d 16 s
 
 # test
-python3 focus.py -bm benchmark/test.yaml -debug -d 8 d
+python3 focus.py -bm benchmark/test.yaml -debug -d 8 s

@@ -25,7 +25,6 @@ class MeshTreeRouter(Router):
 
 
 
-
 class RPMTreeRouter(Router):
 
     def __init__(self, diameter) -> None:

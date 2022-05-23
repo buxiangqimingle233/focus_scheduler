@@ -3,7 +3,10 @@ from copy import deepcopy
 from op_graph.micro_op_graph import MicroOpGraph
 from routing_algorithms import router
 from io import TextIOWrapper
-
+from variables import Variables
+from compiler import global_control as gc
+import re
+import os
 
 class TraceGenerator:
     '''Act as the driver for spatial-simulator. 
@@ -18,7 +21,9 @@ class TraceGenerator:
             "sync": "assemble # NI.sync"
         }
 
-    def gen_trace(self, trace_to: dict, routing_board_to: TextIOWrapper, graph: MicroOpGraph, router: router.Router):
+    def gen_trace(self, trace_to: dict, routing_board_to: TextIOWrapper, spec_to: TextIOWrapper, \
+            spec_ref: TextIOWrapper, graph: MicroOpGraph, router: router.Router):
+
         op_graph = deepcopy(graph.get_data())
 
         # Operator field
@@ -33,6 +38,35 @@ class TraceGenerator:
 
         # Multicast tree
         self.__gen_routing_board(routing_board_to, op_graph, router)
+
+        # Specification
+        self.__gen_specification(spec_to, spec_ref)
+
+
+    def __gen_specification(self, to: TextIOWrapper, ref: TextIOWrapper):
+        trace_file_names = Variables.get_trace_file_names(gc.array_size)
+        working_dir = Variables.gen_working_dir(gc.spatial_sim_root, gc.taskname)
+        inst_latency_path = Variables.get_inst_latency_path(gc.spatial_sim_root)
+        routing_board_path = Variables.get_routing_board_path(gc.spatial_sim_root, gc.taskname)
+
+        task_pattern = re.compile(r"^tasks\s*=\s*{.*?};.*$")
+        dir_pattern = re.compile(r"^working_directory\s*=.*?;.*$")
+        k_pattern = re.compile(r"^k\s*=.*?;.*$")
+        latency_pattern = re.compile(r"^micro_instr_latency\s*=.*?;.*$")
+        rb_pattern = re.compile(r"^routing_board\s*=.*?;.*$")
+
+        for line in ref:
+            if task_pattern.match(line):
+                line = r"tasks = {" + ",".join(trace_file_names) + r"};" + "\n"
+            elif dir_pattern.match(line):
+                line = "working_directory = {};\n".format(working_dir)
+            elif k_pattern.match(line):
+                line = "k = {};\n".format(gc.array_diameter)
+            elif latency_pattern.match(line):
+                line = "micro_instr_latency = {};\n".format(inst_latency_path)
+            elif rb_pattern.match(line):
+                line = "routing_board = {};\n".format(routing_board_path)
+            print(line, file=to, end="")
 
 
     def __gen_routing_board(self, to: TextIOWrapper, op_graph: nx.DiGraph, router: router.Router):

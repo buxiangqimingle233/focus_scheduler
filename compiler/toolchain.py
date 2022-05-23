@@ -14,8 +14,8 @@ from mapping_algorithms.hilbert_mapper import HilbertMapper
 # Tree Generator
 from compiler.routing_algorithms.meshtree_router import MeshTreeRouter
 # The backend to generate trace for spatial_sim
-from spatialsim_agents.trace_gen import TraceGenerator
-
+from compiler.spatialsim_agents.trace_generator import TraceGenerator
+from compiler.spatialsim_agents.variables import Variables
 
 class TaskCompiler():
     r'''This module compiles tasks for FOCUS-like spatial architectures. \
@@ -82,22 +82,30 @@ class TaskCompiler():
         mapper = HilbertMapper(op_graph, layout, gc.array_diameter)
         mapper.map()
 
+
     def _to_spatialsim_trace(self, op_graph):
 
         # Do some path handling works
-        dest_dir = os.path.join(gc.spatial_sim_root, "tasks", gc.taskname)
-        if not os.path.exists(dest_dir):
-            os.mkdir(dest_dir)
-        trace_files = {i: open(os.path.join(dest_dir, "c{}.inst".format(i)), "w") for i in range(gc.array_size)}
-        routing_board_file = open(os.path.join(dest_dir, "routing_board"), "w")
+        Variables.gen_working_dir(gc.spatial_sim_root, gc.taskname)
+
+        trace_files = {key: open(value, "w") for key, value in \
+            Variables.get_trace_file_path_dict(gc.spatial_sim_root, gc.taskname, gc.array_size).items()}
+
+        routing_board_file = open(Variables.get_routing_board_path(gc.spatial_sim_root, gc.taskname), "w")
+        specification_file = open(Variables.get_spec_path(gc.spatial_sim_root, gc.taskname), "w")
+        specification_ref_file = open(Variables.get_ref_spec_path(gc.spatial_sim_root), "r")
 
         # Generate multicast tree for multi-end packets
         router = MeshTreeRouter(gc.array_diameter)
-        TraceGenerator().gen_trace(trace_files, routing_board_file, op_graph, router)
+        TraceGenerator().gen_trace(trace_files, routing_board_file, specification_file, \
+            specification_ref_file, op_graph, router)
 
         for f in trace_files.values():
             f.close()
         routing_board_file.close()
+        specification_ref_file.close()
+        specification_file.close()
+
 
     def _gen_physical_layout(self):
         cores = list(range(8, gc.array_size))
@@ -106,8 +114,10 @@ class TaskCompiler():
         layout.update({i: "mem" for i in mems})
         return layout
 
+
     def _to_focus_trace(self, op_graph):
         pass
+
 
     def _dumpFocusTrace(self, traffic):
         # FIXME: Deprecated

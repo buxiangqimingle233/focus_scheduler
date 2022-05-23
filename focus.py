@@ -8,6 +8,8 @@ from time import time
 from compiler import global_control as gc
 from compiler.toolchain import TaskCompiler
 from compiler.focus import EA, individual
+from simulator.pyAPI.agent import Simulator
+from compiler.spatialsim_agents.variables import Variables
 
 pd.set_option('mode.chained_assignment', None)
 
@@ -100,39 +102,44 @@ def run_single_task():
     start_time = time()
     toolchain.compileTask()
 
-    # Invoke simulator to estimate the performance of baseline interconnection architectures.
     if gc.simulate_baseline:
-        prev_cwd = os.getcwd()
-        os.chdir(gc.spatial_sim_root)
-        os.system("python run.py single --bm {}".format(gc.taskname))
-        os.chdir(prev_cwd)
-        toolchain.analyzeSimResult()
+        working_dir = Variables.gen_working_dir(gc.spatial_sim_root, gc.taskname)
+        spec = Variables.get_spec_path(gc.spatial_sim_root, gc.taskname)
+        Simulator(working_dir, spec).run()
 
-    # Invoke the FOCUS software procedure to schedule the traffic.
-    if gc.focus_schedule:
-        # Generate working directory
-        working_dir = os.path.join(gc.focus_buffer, gc.taskname)
-        if not os.path.exists(working_dir):
-            os.mkdir(working_dir)
+    # # Invoke simulator to estimate the performance of baseline interconnection architectures.
+    # if gc.simulate_baseline:
+    #     prev_cwd = os.getcwd()
+    #     os.chdir(gc.spatial_sim_root)
+    #     os.system("python run.py single --bm {}".format(gc.taskname))
+    #     os.chdir(prev_cwd)
+    #     toolchain.analyzeSimResult()
 
-        # Generate an engine for heuristic search
-        # for debugging
-        if gc.scheduler_verbose:
-            ea_controller = EA.EvolutionController(population_size=gc.population_size, n_evolution=gc.n_evolution, 
-                                                log_path=os.path.join(gc.focus_buffer, gc.taskname, "ea_output"))
-        else:
-            ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers,
-                population_size=gc.population_size, n_evolution=gc.n_evolution,
-                log_path=gc.get_ea_logpath())
+    # # Invoke the FOCUS software procedure to schedule the traffic.
+    # if gc.focus_schedule:
+    #     # Generate working directory
+    #     working_dir = os.path.join(gc.focus_buffer, gc.taskname)
+    #     if not os.path.exists(working_dir):
+    #         os.mkdir(working_dir)
 
-            ea_controller.init_population(individual.individual_generator)
-            best_individual, _ = ea_controller.run_evolution_search(gc.scheduler_verbose)
-        # dump the EA's results
-        solution = best_individual.getTrace()
-        dump_file = os.path.join(gc.focus_buffer, gc.taskname, "solution_{}.json".format(gc.flit_size))
-        solution.to_json(dump_file)
+    #     # Generate an engine for heuristic search
+    #     # for debugging
+    #     if gc.scheduler_verbose:
+    #         ea_controller = EA.EvolutionController(population_size=gc.population_size, n_evolution=gc.n_evolution, 
+    #                                             log_path=os.path.join(gc.focus_buffer, gc.taskname, "ea_output"))
+    #     else:
+    #         ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers,
+    #             population_size=gc.population_size, n_evolution=gc.n_evolution,
+    #             log_path=gc.get_ea_logpath())
 
-        toolchain.analyzeFocusResult()
+    #         ea_controller.init_population(individual.individual_generator)
+    #         best_individual, _ = ea_controller.run_evolution_search(gc.scheduler_verbose)
+    #     # dump the EA's results
+    #     solution = best_individual.getTrace()
+    #     dump_file = os.path.join(gc.focus_buffer, gc.taskname, "solution_{}.json".format(gc.flit_size))
+    #     solution.to_json(dump_file)
+
+    #     toolchain.analyzeFocusResult()
 
     end_time = time()
     print("METRO software takes: {} seconds".format(end_time - start_time))
