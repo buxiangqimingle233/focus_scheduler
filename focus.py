@@ -1,9 +1,12 @@
+from curses import meta
 import os
 import argparse
+from sys import stderr
 import yaml
 import pandas as pd
 from functools import reduce
 from time import time
+import random
 
 from compiler import global_control as gc
 from compiler.toolchain import TaskCompiler
@@ -12,7 +15,7 @@ from simulator.pyAPI.agent import Simulator
 from compiler.spatialsim_agents.variables import Variables
 
 pd.set_option('mode.chained_assignment', None)
-
+random.seed(114514)
 
 def getArgumentParser():
     example_text = '''example:
@@ -29,10 +32,11 @@ def getArgumentParser():
 
     parser.add_argument("-bm", "--benchmark", dest="bm", type=str, metavar="benchmark/test.yaml",
                         default="benchmark/test.yaml", help="Spec file of task to run")
-    parser.add_argument("-d", "--array_diameter", dest="d", type=int, metavar="D",
+    parser.add_argument("-d", "--array_diameter", dest="d", type=int, metavar="8",
                         default=8, help="Diameter of the PE array")
     parser.add_argument("-fr", "--flit_size_range", dest="fr", type=str, metavar="Fmin-Fmax-Step",
                         default="1024-1024-512", help="Flit size range from Fmin to Fmax, interleave with Step")
+    parser.add_argument("-b", "--batch", dest="b", type=int, default=1, metavar="4")
     parser.add_argument("-debug", dest="debug", action="store_true")
     parser.add_argument("mode", type=str, metavar="tgesf", default="",
                         help="Running mode, t: invoke timeloop-mapper, g: use fake trace generator, \
@@ -47,11 +51,14 @@ def setEnvSpecs(args: argparse.Namespace):
     gc.array_diameter = args.d
     gc.array_size = args.d ** 2
     gc.flit_size = args.f 
+    gc.batch = args.b
+
     # set running mode
     gc.search_dataflow = "t" in args.mode
     gc.extract_traffic = "e" in args.mode
     gc.simulate_baseline = "s" in args.mode
     gc.focus_schedule = "f" in args.mode
+    gc.compile_task = "d" in args.mode
 
     # set debug flags
     gc.timeloop_verbose = args.debug
@@ -71,7 +78,7 @@ def setEnvSpecs(args: argparse.Namespace):
 
     # set task name and result file
     if gc.dataflow_engine is "timeloop":
-        gc.taskname = "_".join(gc.models)
+        gc.taskname = "_".join(gc.models) + "_b{}w{}".format(gc.batch, gc.flit_size)
     else:
         gc.taskname = "fake_task"
 
@@ -97,23 +104,23 @@ def run_single_task():
 
     printSpecs()
 
-    # Invoke the FOCUS compiling toolchain to generate the original traffic trace.
-    toolchain = TaskCompiler()
     start_time = time()
-    toolchain.compileTask()
+    # Invoke FOCUS compiling toolchain 
+    if gc.compile_task:
+        toolchain = TaskCompiler()
+        toolchain.compile()
+        compute_cycle = toolchain.get_compute_cycle()
 
+    # Invoke simulator
     if gc.simulate_baseline:
         working_dir = Variables.gen_working_dir(gc.spatial_sim_root, gc.taskname)
-        spec = Variables.get_spec_path(gc.spatial_sim_root, gc.taskname)
-        Simulator(working_dir, spec).run()
-
-    # # Invoke simulator to estimate the performance of baseline interconnection architectures.
-    # if gc.simulate_baseline:
-    #     prev_cwd = os.getcwd()
-    #     os.chdir(gc.spatial_sim_root)
-    #     os.system("python run.py single --bm {}".format(gc.taskname))
-    #     os.chdir(prev_cwd)
-    #     toolchain.analyzeSimResult()
+        sim_config = Variables.get_spec_path(gc.spatial_sim_root, gc.taskname)
+        simulator = Simulator(working_dir, sim_config)
+        simulate_cycle = simulator.run()
+    
+    if gc.compile_task and gc.simulate_baseline:
+        print("Ideal performance: {} cycles, simulate performance: {} cycles, divication ratio: {}" \
+              .format(compute_cycle, simulate_cycle, (simulate_cycle-compute_cycle)/compute_cycle), file=stderr)
 
     # # Invoke the FOCUS software procedure to schedule the traffic.
     # if gc.focus_schedule:

@@ -131,8 +131,6 @@ class TimeloopLayer:
             Invoking timeloop-mapper for finding optimal dataflow,
             and calling timeloop-model for obtaining communcation status
         '''
-
-
         # invoke mapper for searching for the optimal dataflow, searching `timeout` times
         executable = self.timeloop_bins["mapper"]
 

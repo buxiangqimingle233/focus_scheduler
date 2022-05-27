@@ -68,7 +68,6 @@ class TraceGenerator:
                 line = "routing_board = {};\n".format(routing_board_path)
             print(line, file=to, end="")
 
-
     def __gen_routing_board(self, to: TextIOWrapper, op_graph: nx.DiGraph, router: router.Router):
 
         # The Branching Tree
@@ -152,7 +151,7 @@ class TraceGenerator:
             for it in instrution_list:
                 it.append("{} {:.0f}".format(pf["comp"], nattr["delay"]))
 
-            # Thirdly, to every output data-edges, the operator generates an tensor per iteration
+            # Thirdly, for every output data-edge, the operator generates one tensor per iteration.
             # We ignore the packet sent to the sender itself
             data_edges = [(u, v) for u, v, t in op_graph.out_edges(node, data="edge_type") if t == "data" and node2pe(u) != node2pe(v)]
             for it in instrution_list:
@@ -160,7 +159,7 @@ class TraceGenerator:
                 fid_to_pid = {fid: pid for fid, pid in zip(flows, range(self.pkt_counter, self.pkt_counter+len(flows)))}
                 self.pkt_counter += len(fid_to_pid)
 
-                # Push tensors into its out edges
+                # Push tensors to its out edges
                 pid_to_dests = {pid: [] for pid in fid_to_pid.values()}
                 for u, v in data_edges:
                     pid = fid_to_pid[op_graph.edges[u, v]["fid"]]
@@ -168,7 +167,7 @@ class TraceGenerator:
                     op_graph.edges[u, v]["vis"] = True
                     pid_to_dests[pid].append(op_graph.nodes[v]["p_pe"])
 
-                # Generate send instructions 
+                # Generate send instructions
                 for pid, dests in pid_to_dests.items():
                     it.append("{} {:.0f} {}".format(pf["send"], pid, " ".join(map(str, dests))))
 

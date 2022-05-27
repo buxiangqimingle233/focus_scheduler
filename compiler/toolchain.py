@@ -31,7 +31,7 @@ class TaskCompiler():
 
     # Deprecated
     # traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])
-    
+
     def __init__(self):
         self.layer_names = gc.layer_names
         self.cores = gc.cores
@@ -40,7 +40,7 @@ class TaskCompiler():
         self.prob_spec_names = [layer + ".yaml" for layer in gc.layer_names]
 
 
-    def compileTask(self):
+    def compile(self):
 
         if gc.dataflow_engine == "timeloop":
             op_graph = self._gen_op_graph()
@@ -49,16 +49,19 @@ class TaskCompiler():
             # Fake trace generator has not been compatible with op_graph
             vir_trace = gen_fake_trace()
 
-        op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators.png"))
-
         # map tasks to pe array
-        self._map_operators(op_graph)
+        op_graph = self._map_operators(op_graph)
 
+        op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators.png"))
         op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping.png"))
+        self.compute_cycles = op_graph.compute_cycles()
 
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
 
+    def get_compute_cycle(self):
+        assert hasattr(self, "compute_cycles")
+        return self.compute_cycles
 
     def _gen_op_graph(self):
         print("Generating the operator graph using timeloop")
@@ -70,7 +73,7 @@ class TaskCompiler():
             tlagent = TimeloopLayer(prob_spec, model_dir=model, dram_spatial_size=core, prj_root=gc.prj_root)
             # Invoke timeloop for dataflow reports
             timeloop_report = tlagent.run(TimeloopLayer.report_as_dataframe)
-            op_graph.add_layer(timeloop_report)
+            op_graph.add_layer(timeloop_report, gc.batch)
             print("====================== FINISH =========================\n\n")
 
         return op_graph
@@ -80,7 +83,7 @@ class TaskCompiler():
         layout = self._gen_physical_layout()
         # mapper = RandomMapper(op_graph, layout)
         mapper = HilbertMapper(op_graph, layout, gc.array_diameter)
-        mapper.map()
+        return mapper.map()
 
 
     def _to_spatialsim_trace(self, op_graph):

@@ -28,5 +28,23 @@
 # Invoke the focus-scheduler
 # python focus.py -bm benchmark/multi-model-1.yaml -d 16 s
 
+# python focus.py -bm benchmark/test.yaml -d 10 -b 1 d
+
+# ulimit -u 30
+
+cat /dev/null > result.out
 # test
-python3 focus.py -bm benchmark/test.yaml -debug -d 8 s
+for expr in {4..8}
+do
+{
+    width=$[ 2 ** $expr ]
+    for batch in {1..1..1}
+    do
+    {
+        python3 focus.py -bm benchmark/test.yaml -debug -d 10 -b $batch -fr $width-$width-512 ds > /dev/null 2>>result.out
+        echo "batch: $batch, link width: $width" >> result.out
+    } &
+    done
+} &
+done
+

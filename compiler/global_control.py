@@ -28,6 +28,9 @@ dataflow_engine = "timeloop"      # Generate traffic trace from real-world workl
 # of PE ending times as the execution latency, but not their maximum. 
 quantile_ = 0.9
 
+# -------------------- Toolchain Specs -------------------------
+compile_task = True
+
 # -------------------- Timeloop Specs -------------------------
 
 # whether to invoke timeloop-mapper
@@ -85,6 +88,7 @@ flit_size = 4096                                # in bits
 models = ["bert"]
 layer_names = ["{}_layer{}".format(model, i + 1) for i in range(4) for model in models]
 cores = [2 for _ in layer_names]
+batch = 1
 
 # --------------------- Trace Generator Specs --------------------
 

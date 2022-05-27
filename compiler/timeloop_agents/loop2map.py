@@ -116,19 +116,19 @@ class Loop2Map():
         yaml.dump(map_root_node, open(out_file_path, "w"))
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("p", help="problem specification yaml")
-    args = parser.parse_args()
+# if __name__ == "__main__":
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument("p", help="problem specification yaml")
+#     args = parser.parse_args()
 
-    root = os.path.dirname(os.path.abspath(__file__))
-    mapping_dir = root + "/mapping"
-    if not os.path.exists(mapping_dir):
-        os.makedirs(mapping_dir)
-    mapping_file = mapping_dir + "/dump_mapping.yaml"
+#     root = os.path.dirname(os.path.abspath(__file__))
+#     mapping_dir = root + "/mapping"
+#     if not os.path.exists(mapping_dir):
+#         os.makedirs(mapping_dir)
+#     mapping_file = mapping_dir + "/dump_mapping.yaml"
 
-    # FIXME: specified root
-    map_report = root + "/timeloop-mapper.map.txt"
+#     # FIXME: specified root
+#     map_report = root + "/timeloop-mapper.map.txt"
 
-    l2m = Loop2Map()
-    l2m.transform(map_report, args.p, mapping_file)
+#     l2m = Loop2Map()
+#     l2m.transform(map_report, args.p, mapping_file)
