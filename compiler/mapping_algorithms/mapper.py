@@ -1,4 +1,7 @@
+from random import sample
 import networkx as nx
+import re
+from compiler import global_control
 from op_graph.micro_op_graph import MicroOpGraph
 from copy import deepcopy
 
@@ -27,8 +30,11 @@ class Mapper:
 
 
     def _clustering(self) -> list:
-        # TODO: need refactor
-        
+        '''Cluser the operators connected with ``map_constraint`` edges to map together.
+        Returned clusters are guaranteed a partial order: layers from the same \
+            model follows the desending order of their layer number.
+        '''
+
         # Sink nodes at layer x and isource nodes at layer x+1 should be mapped to the 
         # same physical processing element to exploit data reuse. 
         G = deepcopy(self.working_graph.get_data())
@@ -37,12 +43,20 @@ class Mapper:
             sinks = [u for u, _ in G.in_edges(insrc) if G.nodes[u]["op_type"] == "sink"]
             for s in sinks:
                 G.add_edge(insrc, s)    # Add the reverse edge to build strong connected components
-        
+
         constraint_edges = [(u, v) for u, v, type_ in G.edges(data="edge_type") if type_ == "map_constraint"]
         for u, v in constraint_edges:
             G.add_edge(v, u)
 
-        return list(nx.strongly_connected_components(G))
+        get_number = lambda x: re.findall(r"\d+", x)[-1]
+        get_layer = lambda x: x[:-len(get_number(x))]
+        get_val = lambda x: hash(get_layer(x)) + int(get_number(x))
+
+        op_priority = {"sink": 0, "insrc": 1, "wsrc": 2, "worker": 3}
+        leading_op = lambda cluster: list(sorted(cluster, key=lambda x: op_priority[G.nodes[x]["op_type"]]))[0]
+
+        topo_sort = sorted(list(nx.strongly_connected_components(G)), key=lambda x: get_val(G.nodes[leading_op(x)]["layer"]))
+        return topo_sort
 
 
     def _generate_ret(self):

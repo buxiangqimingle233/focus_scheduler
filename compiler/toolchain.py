@@ -1,6 +1,7 @@
 import os
 import re
 from copy import deepcopy
+import networkx as nx
 from compiler import global_control as gc
 
 from op_graph.micro_op_graph import MicroOpGraph
@@ -52,6 +53,8 @@ class TaskCompiler():
         # map tasks to pe array
         op_graph = self._map_operators(op_graph)
 
+        nx.write_gpickle(op_graph, "test.gpickle")
+
         op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators.png"))
         op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping.png"))
         self.compute_cycles = op_graph.compute_cycles()
@@ -82,7 +85,7 @@ class TaskCompiler():
     def _map_operators(self, op_graph):
         layout = self._gen_physical_layout()
         # mapper = RandomMapper(op_graph, layout)
-        mapper = HilbertMapper(op_graph, layout, gc.array_diameter)
+        mapper = HilbertMapper(op_graph, layout, gc.array_diameter, gc.virtualization)
         return mapper.map()
 
 
@@ -111,16 +114,20 @@ class TaskCompiler():
 
 
     def _gen_physical_layout(self):
-        cores = list(range(8, gc.array_size))
-        mems = list(range(8))
+        d = gc.array_diameter - 1
+        mems = [
+            d // 2, d // 2 + 1,
+            d // 2 * gc.array_diameter, (d // 2 + 1) * gc.array_diameter, 
+            d // 2 * gc.array_diameter + d, (d // 2 + 1) * gc.array_diameter + d, 
+            d * gc.array_diameter + d // 2, d * gc.array_diameter + d // 2 + 1
+        ]
+        cores = [i for i in range(gc.array_size) if i not in mems]
         layout = {i: "core" for i in cores}
         layout.update({i: "mem" for i in mems})
         return layout
 
-
     def _to_focus_trace(self, op_graph):
         pass
-
 
     def _dumpFocusTrace(self, traffic):
         # FIXME: Deprecated

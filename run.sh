@@ -34,17 +34,18 @@
 
 cat /dev/null > result.out
 # test
-for expr in {4..8}
+for expr in {4..7}
 do
 {
     width=$[ 2 ** $expr ]
-    for batch in {1..1..1}
+    for diameter in {4..8}
     do
     {
-        python3 focus.py -bm benchmark/test.yaml -debug -d 10 -b $batch -fr $width-$width-512 ds > /dev/null 2>>result.out
-        echo "batch: $batch, link width: $width" >> result.out
+        python3 focus.py -bm benchmark/16_16.yaml -debug -d $diameter -b 4 -fr $width-$width-512 ds > /dev/null 2>>result.out
+        # echo "batch: $batch, link width: $width" >> result.out
     } &
     done
+    python3 focus.py -bm benchmark/16_16.yaml -debug -d 16 -b 4 -fr $width-$width-512 ds > /dev/null 2>>result.out
 } &
 done
 

@@ -207,11 +207,11 @@ class MicroOpGraph:
         G = self.get_data()
         # some magic numbers
         NULL, CTRL = -2, -1
+        get_number = lambda x: int(re.findall(r"\d+", x)[-1])
 
-        name_to_idx = {gc.layer_names[i]: i for i in range(len(gc.layer_names))}
         board = np.full((gc.array_size, ), NULL, dtype=float)
         for _, attr in G.nodes(data=True):
-            value = name_to_idx[attr["layer"]]
+            value = get_number(attr["layer"])
             if attr["op_type"] == "sink":
                 value += 0.5
             if attr["op_type"] not in ["wsrc", "insrc"]:

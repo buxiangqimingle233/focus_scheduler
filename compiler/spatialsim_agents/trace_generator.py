@@ -1,5 +1,7 @@
 import networkx as nx
 from copy import deepcopy
+
+from scipy.fft import dst
 from op_graph.micro_op_graph import MicroOpGraph
 from routing_algorithms import router
 from io import TextIOWrapper
@@ -18,7 +20,8 @@ class TraceGenerator:
             "send": "assemble # NI.send", 
             "recv": "assemble # NI.recv",
             "comp": "assemble # CPU.sleep",
-            "sync": "assemble # NI.sync"
+            # "sync": "assemble # NI.sync"
+            "sync": "assemble # NI.recv"
         }
 
     def gen_trace(self, trace_to: dict, routing_board_to: TextIOWrapper, spec_to: TextIOWrapper, \
@@ -72,6 +75,7 @@ class TraceGenerator:
 
         # The Branching Tree
         data_pkt_endpoints = self.__get_pkt_endpoints(op_graph, "data")
+        node2pe = lambda x: op_graph.nodes[x]["p_pe"]
 
         cache = {}
         for pid, endpoints in data_pkt_endpoints.items():
@@ -79,10 +83,8 @@ class TraceGenerator:
             if len(endpoints["dst"]) == 1:
                 continue
             if endpoints["fid"] not in cache:
-                node2core = lambda x: op_graph.nodes[x]["p_pe"]
-                src = node2core(endpoints["src"])
-                dsts = list(map(node2core, endpoints["dst"]))
-
+                src = node2pe(endpoints["src"])
+                dsts = list(map(node2pe, endpoints["dst"]))
                 mc_tree = router.route(src, dsts)
                 cache[endpoints["fid"]] = mc_tree
             else:
@@ -148,8 +150,9 @@ class TraceGenerator:
                     self.__observe_sync_signal(eattr["pkt"], instrution_list, pf["sync"])
  
             # Secondly, the operator occupies the CPU or Acc several cycles ... 
+            # FIXME: overclock
             for it in instrution_list:
-                it.append("{} {:.0f}".format(pf["comp"], nattr["delay"]))
+                it.append("{} {:.0f}".format(pf["comp"], nattr["delay"] / gc.overclock))
 
             # Thirdly, for every output data-edge, the operator generates one tensor per iteration.
             # We ignore the packet sent to the sender itself
@@ -165,7 +168,7 @@ class TraceGenerator:
                     pid = fid_to_pid[op_graph.edges[u, v]["fid"]]
                     op_graph.edges[u, v]["pkt"].append(pid)
                     op_graph.edges[u, v]["vis"] = True
-                    pid_to_dests[pid].append(op_graph.nodes[v]["p_pe"])
+                    pid_to_dests[pid].append(node2pe(v))
 
                 # Generate send instructions
                 for pid, dests in pid_to_dests.items():
@@ -187,6 +190,7 @@ class TraceGenerator:
 
     def __get_pkt_endpoints(self, op_graph: nx.DiGraph, edge_type: str) -> dict:
         # {pid: {"src": src, "dst": [d1, d2], "size": size}}
+        node2pe = lambda x: op_graph.nodes[x]["p_pe"]
         if edge_type == "data":
             data_graph = nx.subgraph_view(op_graph, filter_edge= \
                 lambda u, v: op_graph.edges[u, v]["edge_type"] == "data")
@@ -197,8 +201,10 @@ class TraceGenerator:
                 src = fid_to_endpoints[f]["src"]
                 assert src == -1 or data_graph.nodes[src]["p_pe"] == data_graph.nodes[u]["p_pe"]
                 fid_to_endpoints[f]["src"] = u
-                fid_to_endpoints[f]["dst"].append(v)
                 fid_to_endpoints[f]["fid"] = f
+                # remove self-sending packets
+                if node2pe(u) != node2pe(v):
+                    fid_to_endpoints[f]["dst"].append(v)
 
             pid_to_fid = {}
             for _, __, eattr in data_graph.edges(data=True):

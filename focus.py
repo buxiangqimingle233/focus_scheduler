@@ -78,7 +78,8 @@ def setEnvSpecs(args: argparse.Namespace):
 
     # set task name and result file
     if gc.dataflow_engine is "timeloop":
-        gc.taskname = "_".join(gc.models) + "_b{}w{}".format(gc.batch, gc.flit_size)
+        gc.taskname = "_".join(gc.models) + "_b{}w{}".format(gc.batch, gc.flit_size) \
+                                          + "_{}x{}".format(gc.array_diameter, gc.array_diameter)
     else:
         gc.taskname = "fake_task"
 
@@ -109,7 +110,8 @@ def run_single_task():
     if gc.compile_task:
         toolchain = TaskCompiler()
         toolchain.compile()
-        compute_cycle = toolchain.get_compute_cycle()
+        compute_cycle = toolchain.get_compute_cycle() / gc.overclock
+        print("compute cycle", compute_cycle)
 
     # Invoke simulator
     if gc.simulate_baseline:
@@ -117,10 +119,12 @@ def run_single_task():
         sim_config = Variables.get_spec_path(gc.spatial_sim_root, gc.taskname)
         simulator = Simulator(working_dir, sim_config)
         simulate_cycle = simulator.run()
-    
+
     if gc.compile_task and gc.simulate_baseline:
-        print("Ideal performance: {} cycles, simulate performance: {} cycles, divication ratio: {}" \
-              .format(compute_cycle, simulate_cycle, (simulate_cycle-compute_cycle)/compute_cycle), file=stderr)
+        print("{} {} {} {} {}".format(gc.array_diameter, gc.flit_size, (simulate_cycle-compute_cycle)/compute_cycle, compute_cycle, simulate_cycle), file=stderr)
+        # print("Batch: {}, link width: {}".format(gc.batch, gc.flit_size), file=stderr)
+        # print("Ideal performance: {} cycles, simulate performance: {} cycles, deviation ratio: {}" \
+        #       .format(compute_cycle, simulate_cycle, (simulate_cycle-compute_cycle)/simulate_cycle), file=stderr)
 
     # # Invoke the FOCUS software procedure to schedule the traffic.
     # if gc.focus_schedule:
