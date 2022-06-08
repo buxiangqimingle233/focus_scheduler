@@ -56,6 +56,7 @@ class Loop2Map():
                                         "size": int(match_obj.group(2)), "is_spatial": is_spatial, "is_spatial_Y": is_spatial_Y})
                     line = f.readline()
 
+
     def __exportYaml(self, problem_file_path, out_file_path):
         prb_root_node = yaml.load(open(problem_file_path), Loader=yaml.FullLoader)
         dimensions = prb_root_node["problem"]["shape"]["dimensions"]

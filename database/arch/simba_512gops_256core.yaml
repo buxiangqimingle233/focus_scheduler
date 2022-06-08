@@ -18,10 +18,9 @@ architecture:
       - attributes:
           block-size: 32
           depth: 2048
-          meshX: 1
           nbanks: 4
           nports: 2
-          width: 128
+          width: 512
           word-bits: 8
         class: storage
         name: GlobalBuffer
@@ -32,7 +31,6 @@ architecture:
         - attributes:
             block-size: 8
             depth: 512
-            meshX: 4
             width: 64
             word-bits: 8
           class: storage
@@ -41,7 +39,6 @@ architecture:
         - attributes:
             block-size: 8
             depth: 512
-            meshX: 16
             nbanks: 8
             word-bits: 8
           class: storage
@@ -50,7 +47,6 @@ architecture:
         - attributes:
             datawidth: 24
             depth: 16
-            meshX: 16
             word-bits: 24
           class: storage
           name: PEAccuBuffer[0..3]
@@ -58,7 +54,6 @@ architecture:
         - attributes:
             cluster-size: 64
             depth: 1
-            meshX: 16
             num-ports: 2
             word-bits: 8
           class: storage
@@ -66,9 +61,8 @@ architecture:
           subclass: reg_storage
         - attributes:
             datawidth: 8
-            meshX: 16
           class: compute
           name: LMAC[0..15]
           subclass: lmac
-        name: PE[0..15]
+        name: PE[0..9]
   version: 0.3

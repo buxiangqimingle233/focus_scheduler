@@ -1,20 +1,3 @@
-#Core
-buffer_size = 0
-buffer_bandwidth = 0
-mac_number = 0
-noc_bandwidth = 0
-noc_router_design = 0
-
-#Reticle
-inter_reticle_bandwidth = 0
-core_array_height = 0
-core_array_width = 0
-
-#Wafer
-off_chip_memory_bandwidth = 0
-reticle_array_height = 0
-reticle_array_width = 0
-
 import argparse
 import yaml
 import re
@@ -23,7 +6,7 @@ import os
 def getArgumentParser():
     example_text = '''example:
 
-    python3 interface.py -bm benchmark/small_test.yaml -d 4 -fr 1024-1024-512 tesd --buffersize 2048 --bufferbw 512 --macnum 15 --nocbw 128
+    python3 interface.py -bm benchmark/small_test.yaml -d 4 -fr 1024-1024-512 tesd --buffersize 2048 --bufferbw 512 --macnum 16 --nocbw 128
     '''
 
     parser = argparse.ArgumentParser(description="FOCUS Testing", 
@@ -54,25 +37,38 @@ def getArgumentParser():
 if __name__ == '__main__':
     parser = getArgumentParser()
     args = parser.parse_args()
+
+
     f = open('./database/arch/simba_512gops_256core.yaml','r+')
     arch_yaml = yaml.safe_load(f)
-
     arch_yaml["architecture"]["subtree"][0]["subtree"][0]["local"][0]['attributes']['depth'] = args.bs
     arch_yaml["architecture"]["subtree"][0]["subtree"][0]["local"][0]['attributes']['width'] = args.bbw
-    arch_yaml["architecture"]["subtree"][0]["subtree"][0]["subtree"][0]['name'] = f"PE[0..{args.mn}]"
-    arch_yaml["architecture"]["subtree"][0]["subtree"][0]["subtree"][0]['local'][4]['name'] = f'LMAC[0..{args.mn}]'
-
+    arch_yaml["architecture"]["subtree"][0]["subtree"][0]["subtree"][0]['name'] = f"PE[0..{args.mn - 1}]"
+    # arch_yaml["architecture"]["subtree"][0]["subtree"][0]["subtree"][0]['local'][4]['name'] = f'LMAC[0..{args.mn * args.mn-1}]'
     f.close()
     f = open('./database/arch/simba_512gops_256core.yaml','w+')
     yaml.dump(arch_yaml, f)
     f.close()
+
+
+    # f = open('./database/constraints/simba_constraints.yaml','r+')
+    # arch_yaml = yaml.safe_load(f)
+    # arch_yaml["mapspace_constraints"]["targets"][3]["factors"] = f'C={args.mn}'
+    # arch_yaml["mapspace_constraints"]["targets"][4]["factors"] = f'M={args.mn}'
+    # f.close()
+    # f = open('./database/constraints/simba_constraints.yaml','w+')
+    # yaml.dump(arch_yaml, f)
+    # f.close()
+
+
     f = open('./simulator/runfiles/spatial_spec_ref','r+')
     lines_list = f.readlines()
-    lines_list[21] = f'channel_width = {args.nbw};    // Only work for power simulation'
+    lines_list[21] = f'channel_width = {args.nbw};    // Only work for power simulation\n'
     f.close()
     f = open('./simulator/runfiles/spatial_spec_ref','w+')
     f.writelines(lines_list)
-
     f.close()
+
+
 
     os.system(f"python3 focus.py -bm {args.bm} -d {args.d} -b {args.b} -fr {args.fr} teds")
