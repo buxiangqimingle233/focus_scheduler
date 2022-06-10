@@ -27,7 +27,7 @@ class HilbertMapper(Mapper):
             exit(0)
 
         # self.sorted_clusters = sorted(self.clusters, key=self.__belonging_layer)
-        
+
         self.diameter = diameter
         if diameter & (diameter - 1) == 0:
             quantilized_diameter = diameter

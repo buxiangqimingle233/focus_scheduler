@@ -77,7 +77,7 @@ def setEnvSpecs(args: argparse.Namespace):
         gc.cores += reduce(lambda x, y: x + y, map(lambda x: list(x.values()), model))
 
     # set task name and result file
-    if gc.dataflow_engine is "timeloop":
+    if gc.dataflow_engine == "timeloop":
         gc.taskname = "_".join(gc.models) + "_b{}w{}".format(gc.batch, gc.flit_size) \
                                           + "_{}x{}".format(gc.array_diameter, gc.array_diameter)
     else:
