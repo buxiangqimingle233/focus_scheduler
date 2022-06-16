@@ -13,7 +13,7 @@ from timeloop_agents.layer import TimeloopLayer
 from mapping_algorithms.random_mapper import RandomMapper
 from mapping_algorithms.hilbert_mapper import HilbertMapper
 # Tree Generator
-from compiler.routing_algorithms.meshtree_router import MeshTreeRouter
+from compiler.routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, WhirlTreeRouter
 # The backend to generate trace for spatial_sim
 from compiler.spatialsim_agents.trace_generator import TraceGenerator
 from compiler.spatialsim_agents.variables import Variables
@@ -57,14 +57,15 @@ class TaskCompiler():
 
         op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators.png"))
         op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping.png"))
-        self.compute_cycles = op_graph.compute_cycles()
+
+        self.compute_cycle_lower_bound = op_graph.total_compute_cycles()
 
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
 
     def get_compute_cycle(self):
-        assert hasattr(self, "compute_cycles")
-        return self.compute_cycles
+        assert hasattr(self, "compute_cycle_lower_bound")
+        return self.compute_cycle_lower_bound
 
     def _gen_op_graph(self):
         print("Generating the operator graph using timeloop")
@@ -103,6 +104,8 @@ class TaskCompiler():
 
         # Generate multicast tree for multi-end packets
         router = MeshTreeRouter(gc.array_diameter)
+        # router = RPMTreeRouter(gc.array_diameter)
+        # router = WhirlTreeRouter(gc.array_diameter)
         TraceGenerator().gen_trace(trace_files, routing_board_file, specification_file, \
             specification_ref_file, op_graph, router)
 

@@ -23,8 +23,6 @@ class MeshTreeRouter(Router):
 
 
 
-
-
 class RPMTreeRouter(Router):
 
     def __init__(self, diameter) -> None:
@@ -48,9 +46,7 @@ class RPMTreeRouter(Router):
             if not self.tree_pruner(tree, i, v, p_node):
                 if_pruned_all = False
         return if_pruned_all
-
         
-
 
     def get_tree(self, tree, node: int, dests: list) -> None:
         if node in dests:
