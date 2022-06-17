@@ -119,8 +119,15 @@ class TaskCompiler():
             d // 2, d // 2 + 1,
             d // 2 * gc.array_diameter, (d // 2 + 1) * gc.array_diameter, 
             d // 2 * gc.array_diameter + d, (d // 2 + 1) * gc.array_diameter + d, 
-            d * gc.array_diameter + d // 2, d * gc.array_diameter + d // 2 + 1
+            d * gc.array_diameter + d // 2, d * gc.array_diameter + d // 2 + 1,
         ]
+
+        # test
+        mems.append(gc.array_size - 1)
+        mems.append(gc.array_size - 2)
+        mems.append(0)
+        mems.append(1)
+
         cores = [i for i in range(gc.array_size) if i not in mems]
         layout = {i: "core" for i in cores}
         layout.update({i: "mem" for i in mems})
