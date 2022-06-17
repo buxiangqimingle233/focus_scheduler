@@ -13,7 +13,7 @@ from timeloop_agents.layer import TimeloopLayer
 from mapping_algorithms.random_mapper import RandomMapper
 from mapping_algorithms.hilbert_mapper import HilbertMapper
 # Tree Generator
-from compiler.routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, WhirlTreeRouter
+from compiler.routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, WhirlTreeRouter, BAMTreeRouter, Steiner_TreeRouter
 # The backend to generate trace for spatial_sim
 from compiler.spatialsim_agents.trace_generator import TraceGenerator
 from compiler.spatialsim_agents.variables import Variables
@@ -72,7 +72,7 @@ class TaskCompiler():
 
         op_graph = MicroOpGraph()
         for layer, model, prob_spec, core in zip(self.layer_names, self.model_names, self.prob_spec_names, self.cores):
-            print("Info:", "Working for", layer)
+            print("Info:", "Working for", layer)    
             # Initialize the agent
             tlagent = TimeloopLayer(prob_spec, model_dir=model, dram_spatial_size=core, prj_root=gc.prj_root)
             # Invoke timeloop for dataflow reports
@@ -103,9 +103,11 @@ class TaskCompiler():
         specification_ref_file = open(Variables.get_ref_spec_path(gc.spatial_sim_root), "r")
 
         # Generate multicast tree for multi-end packets
-        router = MeshTreeRouter(gc.array_diameter)
-        # router = RPMTreeRouter(gc.array_diameter)
-        # router = WhirlTreeRouter(gc.array_diameter)
+        #router = MeshTreeRouter(gc.array_diameter)
+        #router = RPMTreeRouter(gc.array_diameter)
+        #router = WhirlTreeRouter(gc.array_diameter)
+        #router = BAMTreeRouter(gc.array_diameter)
+        router = Steiner_TreeRouter(gc.array_diameter)
         TraceGenerator().gen_trace(trace_files, routing_board_file, specification_file, \
             specification_ref_file, op_graph, router)
 
