@@ -42,7 +42,7 @@ if __name__ == '__main__':
     f = open('./database/arch/simba_512gops_256core.yaml','r+')
     arch_yaml = yaml.safe_load(f)
     arch_yaml["architecture"]["subtree"][0]["subtree"][0]["local"][0]['attributes']['depth'] = args.bs
-    arch_yaml["architecture"]["subtree"][0]["subtree"][0]["local"][0]['attributes']['width'] = args.bbw
+    arch_yaml["architecture"]["subtree"][0]["subtree"][0]["local"][0]['attributes']['width'] = args.bbw * 8
     arch_yaml["architecture"]["subtree"][0]["subtree"][0]["subtree"][0]['name'] = f"PE[0..{args.mn - 1}]"
     # arch_yaml["architecture"]["subtree"][0]["subtree"][0]["subtree"][0]['local'][4]['name'] = f'LMAC[0..{args.mn * args.mn-1}]'
     f.close()
@@ -71,4 +71,5 @@ if __name__ == '__main__':
 
 
 
-    os.system(f"python3 focus.py -bm {args.bm} -d {args.d} -b {args.b} -fr {args.fr} teds")
+    # os.system(f"python3 -W ignore focus.py -bm {args.bm} -d {args.d} -b {args.b} -fr {args.fr} teds")
+    os.system(f"python3 -W ignore focus.py -bm {args.bm} -d {args.d} -b {args.b} -fr {args.fr} teds")

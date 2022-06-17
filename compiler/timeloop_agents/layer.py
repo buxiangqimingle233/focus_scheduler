@@ -319,6 +319,16 @@ class TimeloopLayer:
                             "counts": flow["cnt"],
                             "datatype": datatype[dti]
                         }, ignore_index=True)
+                        # df_new_row = pd.DataFrame({
+                        #     "layer": [layer.layer_name],
+                        #     "src": [flow["srcs"]],
+                        #     "dst": [flow["dsts"]],
+                        #     "interval": [flow["pkt_interval"]],
+                        #     "flit": [flow["bit_volume"] / gc.flit_size],
+                        #     "counts": [flow["cnt"]],
+                        #     "datatype": [datatype[dti]]
+                        # })
+                        # df = pd.concat([df, df_new_row])
                     df = df[df["flit"] > 0]
                     df.loc[:, "flit"] = df["flit"].map(lambda x: int(max(x + 1, 2)))    # add headflits
                     break

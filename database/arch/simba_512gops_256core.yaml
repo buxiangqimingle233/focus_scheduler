@@ -17,10 +17,10 @@ architecture:
     - local:
       - attributes:
           block-size: 32
-          depth: 2048
+          depth: 1024
           nbanks: 4
           nports: 2
-          width: 512
+          width: 3072
           word-bits: 8
         class: storage
         name: GlobalBuffer
@@ -64,5 +64,5 @@ architecture:
           class: compute
           name: LMAC[0..15]
           subclass: lmac
-        name: PE[0..9]
+        name: PE[0..31]
   version: 0.3

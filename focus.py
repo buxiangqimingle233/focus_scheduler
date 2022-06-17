@@ -77,7 +77,7 @@ def setEnvSpecs(args: argparse.Namespace):
         gc.cores += reduce(lambda x, y: x + y, map(lambda x: list(x.values()), model))
 
     # set task name and result file
-    if gc.dataflow_engine is "timeloop":
+    if gc.dataflow_engine == "timeloop":
         gc.taskname = "_".join(gc.models) + "_b{}w{}".format(gc.batch, gc.flit_size) \
                                           + "_{}x{}".format(gc.array_diameter, gc.array_diameter)
     else:
@@ -103,7 +103,7 @@ def run_single_task():
     '''An E2E flow for the task specified in `global_control.py`.
     '''
 
-    printSpecs()
+    # printSpecs()
 
     start_time = time()
     # Invoke FOCUS compiling toolchain 
@@ -111,7 +111,7 @@ def run_single_task():
         toolchain = TaskCompiler()
         toolchain.compile()
         compute_cycle = toolchain.get_compute_cycle() / gc.overclock
-        print("compute cycle", compute_cycle)
+        # print("compute cycle", compute_cycle, file=stderr)
 
     # Invoke simulator
     if gc.simulate_baseline:
@@ -121,7 +121,9 @@ def run_single_task():
         simulate_cycle = simulator.run()
 
     if gc.compile_task and gc.simulate_baseline:
-        print("{} {} {} {} {}".format(gc.array_diameter, gc.flit_size, (simulate_cycle-compute_cycle)/compute_cycle, compute_cycle, simulate_cycle), file=stderr)
+        # print("{} {} {} {} {}".format(gc.array_diameter, gc.flit_size, (simulate_cycle-compute_cycle)/compute_cycle, compute_cycle, simulate_cycle), file=stderr)
+        f = open("DSE_result.temp", "w")
+        print(simulate_cycle, file=f)
         # print("Batch: {}, link width: {}".format(gc.batch, gc.flit_size), file=stderr)
         # print("Ideal performance: {} cycles, simulate performance: {} cycles, deviation ratio: {}" \
         #       .format(compute_cycle, simulate_cycle, (simulate_cycle-compute_cycle)/simulate_cycle), file=stderr)
@@ -153,7 +155,7 @@ def run_single_task():
     #     toolchain.analyzeFocusResult()
 
     end_time = time()
-    print("METRO software takes: {} seconds".format(end_time - start_time))
+    # print("METRO software takes: {} seconds".format(end_time - start_time))
 
 
 if __name__ == "__main__":
