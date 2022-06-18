@@ -292,8 +292,6 @@ class TraceGenerator:
                                                             if eattr["edge_type"] == "control" and node2pe(u) != node2pe(v)]
                     for u, v, eattr in out_control_edges:
                         assert len(eattr["pkt"]) == 1
-                        if eattr["pkt"][0] == 161:
-                            print("aa")
                         instruction_list[-1].append("{} {:.0f} {}".format(pf["send"], eattr["pkt"][0], node2pe(v)))
 
                     # Write to the trace file

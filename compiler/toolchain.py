@@ -1,19 +1,19 @@
 import os
 import re
 from copy import deepcopy
-import networkx as nx
 from compiler import global_control as gc
+import pickle
 
 from op_graph.micro_op_graph import MicroOpGraph
 # Fake trace generator
 from fake_trace_generator.generator import gen_fake_trace
 # Timeloop agents
-from timeloop_agents.layer import TimeloopLayer
+from compiler.timeloop_agents.agent import TimeloopLayer
 # Task Mapper
 from mapping_algorithms.random_mapper import RandomMapper
 from mapping_algorithms.hilbert_mapper import HilbertMapper
 # Tree Generator
-from compiler.routing_algorithms.meshtree_router import MeshTreeRouter
+from compiler.routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, WhirlTreeRouter
 # The backend to generate trace for spatial_sim
 from compiler.spatialsim_agents.trace_generator import TraceGenerator
 from compiler.spatialsim_agents.variables import Variables
@@ -53,14 +53,19 @@ class TaskCompiler():
         # map tasks to pe array
         op_graph = self._map_operators(op_graph)
 
-        nx.write_gpickle(op_graph, "test.gpickle")
-
-        op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators.png"))
-        op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping.png"))
+        op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators_{}.png".format(gc.taskname)))
+        op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping_{}.png".format(gc.taskname)), gc.array_diameter)
         self.compute_cycles = op_graph.compute_cycles()
 
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
+
+        with open(os.path.join(gc.op_graph_buffer, "op_graph_{}.gpickle".format(gc.taskname)), "wb+") as f:
+            pickle.dump(op_graph, f)
+        self.op_grpah = op_graph
+
+    def get_working_graph(self):
+        return self.op_grpah
 
     def get_compute_cycle(self):
         assert hasattr(self, "compute_cycles")
@@ -81,9 +86,8 @@ class TaskCompiler():
 
         return op_graph
 
-
     def _map_operators(self, op_graph):
-        layout = self._gen_physical_layout()
+        layout = self.gen_physical_layout()
         # mapper = RandomMapper(op_graph, layout)
         mapper = HilbertMapper(op_graph, layout, gc.array_diameter, gc.virtualization)
         return mapper.map()
@@ -102,7 +106,7 @@ class TaskCompiler():
         specification_ref_file = open(Variables.get_ref_spec_path(gc.spatial_sim_root), "r")
 
         # Generate multicast tree for multi-end packets
-        router = MeshTreeRouter(gc.array_diameter)
+        router = RPMTreeRouter(gc.array_diameter)
         TraceGenerator().gen_trace(trace_files, routing_board_file, specification_file, \
             specification_ref_file, op_graph, router)
 
@@ -113,7 +117,7 @@ class TaskCompiler():
         specification_file.close()
 
 
-    def _gen_physical_layout(self):
+    def gen_physical_layout(self):
         d = gc.array_diameter - 1
         mems = [
             d // 2, d // 2 + 1,
@@ -122,11 +126,14 @@ class TaskCompiler():
             d * gc.array_diameter + d // 2, d * gc.array_diameter + d // 2 + 1,
         ]
 
+        # FIXME: 
+        # mems = list(range(gc.array_diameter)) + list(range(gc.array_size, gc.array_size - gc.array_diameter, -1))
+
         # test
-        mems.append(gc.array_size - 1)
-        mems.append(gc.array_size - 2)
-        mems.append(0)
-        mems.append(1)
+        # mems.append(gc.array_size - 1)
+        # mems.append(gc.array_size - 2)
+        # mems.append(0)
+        # mems.append(1)
 
         cores = [i for i in range(gc.array_size) if i not in mems]
         layout = {i: "core" for i in cores}

@@ -10,6 +10,7 @@ prj_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 buffer_root = os.path.join(prj_root, "buffer")
 focus_buffer = os.path.join(buffer_root, "focus")
 timeloop_buffer = os.path.join(buffer_root, "timeloop-512g")
+op_graph_buffer = os.path.join(buffer_root, "op_graph")
 
 visualization_root = os.path.join(prj_root, "visualization")
 spatial_sim_root = os.path.join(prj_root, "simulator")

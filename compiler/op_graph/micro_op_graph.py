@@ -7,8 +7,6 @@ import copy
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-from compiler import global_control as gc
-
 # traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])
 
 class MicroOpGraph:
@@ -177,6 +175,32 @@ class MicroOpGraph:
         cycle = nx.dag_longest_path_length(wg, weight="cycle", default_weight=0)
         return cycle
 
+    def get_flow_endpoints(self) -> dict:
+        '''Get data packets to send ( unicast + multicasat )
+            Return: {fid: {"src": src, "dst": [d1, d2], "total_bytes": bytes}}
+        '''
+
+        op_graph = self.graph
+        node2pe = lambda x: op_graph.nodes[x]["p_pe"]
+        data_graph = nx.subgraph_view(op_graph, filter_edge = \
+            lambda u, v: op_graph.edges[u, v]["edge_type"] == "data")
+
+        fid_to_endpoints = {f: {"src": -1, "dst": [], "size": -1} for _, _, f in data_graph.edges(data="fid")}
+        for u, v, f in data_graph.edges(data="fid"):
+            assert data_graph.edges[u, v]["edge_type"] == "data"
+            # assert fid_to_endpoints[f]["src"] == -1 or data_graph.nodes[src]["p_pe"] == data_graph.nodes[u]["p_pe"]
+
+            src = fid_to_endpoints[f]["src"]
+            fid_to_endpoints[f]["src"] = node2pe(u)
+            fid_to_endpoints[f]["total_bytes"] = data_graph.edges[u, v]["size"] * data_graph.nodes[u]["cnt"]
+
+            # remove self-sending packets
+            if node2pe(u) != node2pe(v):
+                fid_to_endpoints[f]["dst"].append(node2pe(v))
+
+        return fid_to_endpoints
+
+
     def draw_graph(self, fig_path):
         seed = 123467
 
@@ -203,13 +227,13 @@ class MicroOpGraph:
         plt.savefig(fig_path, dpi=500)
         plt.close()
 
-    def draw_mapping(self, fig_path):
+    def draw_mapping(self, fig_path, diameter):
         G = self.get_data()
         # some magic numbers
         NULL, CTRL = -2, -1
         get_number = lambda x: int(re.findall(r"\d+", x)[-1])
 
-        board = np.full((gc.array_size, ), NULL, dtype=float)
+        board = np.full((diameter**2, ), NULL, dtype=float)
         for _, attr in G.nodes(data=True):
             value = get_number(attr["layer"])
             if attr["op_type"] == "sink":
@@ -217,7 +241,7 @@ class MicroOpGraph:
             if attr["op_type"] not in ["wsrc", "insrc"]:
                 board[attr["p_pe"]] = value
 
-        board = board.reshape((gc.array_diameter, gc.array_diameter))
+        board = board.reshape((diameter, diameter))
         fig = sns.heatmap(data=board, cmap="RdBu_r", linewidths=0.3, annot=True)
         plt.text(60, 60, "NULL: {}, CTRL: {}".format(NULL, CTRL))
         heatmap = fig.get_figure()

@@ -1,7 +1,7 @@
 import os
 import sys
 import re
-from compiler.timeloop_agents.layer import TimeloopLayer
+from compiler.timeloop_agents.agent import TimeloopLayer
 
 
 class Model():

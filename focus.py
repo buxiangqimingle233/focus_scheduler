@@ -1,18 +1,17 @@
-from curses import meta
 import os
 import argparse
-from sys import stderr
-import yaml
-import pandas as pd
-from functools import reduce
-from time import time
 import random
+from sys import stderr
+from time import time
+from functools import reduce
+import pandas as pd
+import yaml
 
 from compiler import global_control as gc
 from compiler.toolchain import TaskCompiler
-from compiler.focus import EA, individual
-from simulator.pyAPI.agent import Simulator
 from compiler.spatialsim_agents.variables import Variables
+from simulator.pyAPI.agent import Simulator
+
 
 pd.set_option('mode.chained_assignment', None)
 random.seed(114514)
@@ -76,7 +75,7 @@ def setEnvSpecs(args: argparse.Namespace):
         gc.layer_names += reduce(lambda x, y: x + y, map(lambda x: list(x.keys()), model))
         gc.cores += reduce(lambda x, y: x + y, map(lambda x: list(x.values()), model))
 
-    # set task name and result file
+    # set the task name that exclusively identify the task
     if gc.dataflow_engine == "timeloop":
         gc.taskname = "_".join(gc.models) + "_b{}w{}".format(gc.batch, gc.flit_size) \
                                           + "_{}x{}".format(gc.array_diameter, gc.array_diameter)
@@ -119,12 +118,25 @@ def run_single_task():
         sim_config = Variables.get_spec_path(gc.spatial_sim_root, gc.taskname)
         simulator = Simulator(working_dir, sim_config)
         simulate_cycle = simulator.run()
+        mems = [k for k, v in TaskCompiler().gen_physical_layout().items() if v != "mems"]
+        simulator.plot_busy_ratio(os.path.join(gc.visualization_root, "ratio{}.png".format(gc.taskname)), set(mems))
 
     if gc.compile_task and gc.simulate_baseline:
         print("{} {} {} {} {}".format(gc.array_diameter, gc.flit_size, (simulate_cycle-compute_cycle)/compute_cycle, compute_cycle, simulate_cycle), file=stderr)
-        # print("Batch: {}, link width: {}".format(gc.batch, gc.flit_size), file=stderr)
-        # print("Ideal performance: {} cycles, simulate performance: {} cycles, deviation ratio: {}" \
-        #       .format(compute_cycle, simulate_cycle, (simulate_cycle-compute_cycle)/simulate_cycle), file=stderr)
+
+    end_time = time()
+    print("METRO software takes: {} seconds".format(end_time - start_time))
+
+
+if __name__ == "__main__":
+    parser = getArgumentParser()
+    args = parser.parse_args()
+    fmin, fmax, fstep = map(int, args.fr.split("-"))
+
+    for f in range(fmin, fmax + fstep, fstep):
+        vars(args)["f"] = f
+        setEnvSpecs(args)
+        run_single_task()
 
     # # Invoke the FOCUS software procedure to schedule the traffic.
     # if gc.focus_schedule:
@@ -151,17 +163,3 @@ def run_single_task():
     #     solution.to_json(dump_file)
 
     #     toolchain.analyzeFocusResult()
-
-    end_time = time()
-    print("METRO software takes: {} seconds".format(end_time - start_time))
-
-
-if __name__ == "__main__":
-    parser = getArgumentParser()
-    args = parser.parse_args()
-    fmin, fmax, fstep = map(int, args.fr.split("-"))
-
-    for f in range(fmin, fmax + fstep, fstep):
-        vars(args)["f"] = f
-        setEnvSpecs(args)
-        run_single_task()
