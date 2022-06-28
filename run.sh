@@ -49,3 +49,4 @@ do
 } &
 done
 
+python3 focus.py -bm benchmark/4_4.yaml -d 5 -b 1 -fr 128-128-512 teds

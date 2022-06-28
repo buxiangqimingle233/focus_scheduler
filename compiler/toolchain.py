@@ -60,6 +60,17 @@ class TaskCompiler():
 
         self.compute_cycle_lower_bound = op_graph.total_compute_cycles()
 
+        for node, attr in op_graph.get_data().nodes(data=True):
+            attr['count'] = 1
+        start = 100000
+        for u, v, eattr in op_graph.get_data().edges(data=True):
+            if eattr['edge_type'] == "control":
+                eattr['fid'] = start
+                eattr['size'] = 1
+                start += 1 
+
+        nx.write_gpickle(op_graph.get_data(), f'./try.gpickle')
+
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
 
@@ -104,10 +115,10 @@ class TaskCompiler():
 
         # Generate multicast tree for multi-end packets
         #router = MeshTreeRouter(gc.array_diameter)
-        #router = RPMTreeRouter(gc.array_diameter)
+        router = RPMTreeRouter(gc.array_diameter)
         #router = WhirlTreeRouter(gc.array_diameter)
         #router = BAMTreeRouter(gc.array_diameter)
-        router = Steiner_TreeRouter(gc.array_diameter)
+        #router = Steiner_TreeRouter(gc.array_diameter)
         TraceGenerator().gen_trace(trace_files, routing_board_file, specification_file, \
             specification_ref_file, op_graph, router)
 

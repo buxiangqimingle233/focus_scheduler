@@ -504,7 +504,7 @@ class Steiner_TreeRouter(Router):
             self.add_point(add_p, tree)
             dests_temp.remove(add_p)
 
-        print(tree.edges())
+        # print(tree.edges())
         for i in tree.nodes():
             if i in dests:
                 tree.nodes[i]['dest'] = True

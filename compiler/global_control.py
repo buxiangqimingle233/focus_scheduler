@@ -39,14 +39,14 @@ search_dataflow = False
 extract_traffic = False
 timeloop_verbose = False
 # Search time
-timeout = 60
+timeout = 5
 # Core numbers (default: number specified in database/arch/arch.yaml)
 top_level_cnt = None
 
 # -------------------- Task Mapper Specs -------------------------
 
 mapper_verbose = True
-virtualization = True
+virtualization = False
 # mapping_style = "Tetris"
 # mapping_style = "Zig-Zag"
 mapping_style = "Hilbert"
