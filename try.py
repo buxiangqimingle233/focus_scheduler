@@ -22,4 +22,16 @@ print(G.edges())
 G.remove_nodes_from([2])
 print(G.edges())
 
+class A:
+    def __init__(self) -> None:
+        l = [3,4,5,6,7,8,9,1,2]
+        l.sort(key=self.func)
+        print(l)
+        pass
+
+    def func(self, e):
+        return e
+
+
+temp = A()
 

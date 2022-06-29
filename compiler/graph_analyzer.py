@@ -7,11 +7,13 @@ import matplotlib.pyplot as plt
 
 class Graph_analyzer:
 
-    def __init__(self, diameter, graph = None, router = RPMTreeRouter, multi_task_per_core = False, per_layer_topology = False) -> None:
+    def __init__(self, diameter, graph = None, router = RPMTreeRouter, multi_task_per_core = False, per_layer_topology = False, \
+                 edge_priority = False) -> None:
         # super.__init__()
         self.diameter = diameter
         self.multi_task_per_core = multi_task_per_core
         self.per_layer_topology = per_layer_topology
+        self.edge_priority = edge_priority
         self.edge_occupied = {}
         self.p_node_occupied = {}
         self.router = router(self.diameter)
@@ -43,26 +45,83 @@ class Graph_analyzer:
 
         return G_backup, topo_node_list
 
+    def edge_priority_func(self, edge):
+        return -self.graph.edges[edge[0]]['priority']
+
+    def edge_fid_func(self, edge):
+        return self.graph.edges[edge]['fid']
+
     def analyze(self, critical_path = False):
         G_backup, topo_node_list = self.init_graph()
         self.graph = copy.deepcopy(G_backup)
         self.max_time = 0
         #debug
         # print(topo_node_list)
+        #if we give each edge a priority, we can use it to decide excute order per-layer
+        if self.edge_priority:
+            nodes_lists = []
+            edges_lists = []
+            graph_backup = copy.deepcopy(self.graph)
+            while graph_backup.nodes():
+                temp_node_list = []
+                temp_edge_list = []    #edges in a layer
+                for v in graph_backup.nodes():
+                    if graph_backup.in_degree(v) == 0:
+                        temp_node_list.append(v)
+                        edge_list_a_node = list(graph_backup.edges(v))
+                        edge_list_a_node.sort(key=self.edge_fid_func)
 
-        for v in topo_node_list:
-            while G_backup.edges(v):
-                edge = list(G_backup.edges(v))[0]
-                id = G_backup.edges[edge]['fid']
-                dest = [u for u in G_backup[v].keys()]
+                        pre_fid = None
+                        if edge_list_a_node:
+                            pre_fid = self.graph.edges[edge_list_a_node[0]]['fid']
+                        hyper_edge = []
+                        for e in edge_list_a_node:
+                            if self.graph.edges[e]['fid'] == pre_fid:
+                                hyper_edge.append(e)
+                            else:
+                                temp_edge_list.append(hyper_edge)
+                                hyper_edge = []
+                                pre_fid = self.graph.edges[e]['fid']
+                                hyper_edge.append(e)
+                        if hyper_edge:
+                            temp_edge_list.append(hyper_edge)
 
-                if critical_path:
-                    G_backup = self.critical_path_update(v, dest, G_backup)
-                else:
-                    G_backup = self.update(v, id, edge, dest, G_backup)
+                nodes_lists.append(temp_node_list)
+                edges_lists.append(temp_edge_list)
+                graph_backup.remove_nodes_from(temp_node_list)
+            
+            for l in edges_lists:
+                l.sort(key=self.edge_priority_func)
 
-                G_backup.remove_edges_from([e for e in G_backup.edges(v) if G_backup.edges()[e]['fid'] == id])
-            G_backup.remove_node(v)
+            # print(edges_lists)
+
+            for l in edges_lists:
+                for e in l:
+                    edge = e[0]
+                    id = G_backup.edges[e[0]]['fid']
+                    dest = [u[1] for u in e]
+
+                    if critical_path:
+                        G_backup = self.critical_path_update(e[0][0], dest, G_backup)
+                    else:
+                        G_backup = self.update(e[0][0], id, edge, dest, G_backup)
+                    
+            
+            
+        else:
+            for v in topo_node_list:
+                while G_backup.edges(v):
+                    edge = list(G_backup.edges(v))[0]
+                    id = G_backup.edges[edge]['fid']
+                    dest = [u for u in G_backup[v].keys()]
+
+                    if critical_path:
+                        G_backup = self.critical_path_update(v, dest, G_backup)
+                    else:
+                        G_backup = self.update(v, id, edge, dest, G_backup)
+
+                    G_backup.remove_edges_from([e for e in G_backup.edges(v) if G_backup.edges()[e]['fid'] == id])
+                G_backup.remove_node(v)
 
         return self.max_time
     
@@ -110,7 +169,7 @@ class Graph_analyzer:
 
             self.graph.nodes[v]['start'] = transfering_time + transfer_start + max_waiting_time + size
         
-        # if vector == 7:
+        # if vector in [5,6]:
         #     print(vector, p_source, transfering_time, transfer_start, max_waiting_time, size, sep=' ')
 
         return graph
@@ -175,14 +234,21 @@ if __name__ == "__main__":
     # graph = nx.DiGraph()
     # graph.add_nodes_from([(1,{'delay':0, 'p_pe':12}), (2,{'delay':0, 'p_pe':12}), (3,{'delay':0, 'p_pe':12}), (4,{'delay':0, 'p_pe':12}), \
     #                       (5,{'delay':3, 'p_pe':8}), (6,{'delay':4, 'p_pe':15}), (7,{'delay':5, 'p_pe':2}), (8,{'delay':0, 'p_pe':12})])
-    # graph.add_edges_from([(1,5,{'fid':0, 'size':4}), (2,5,{'fid':0, 'size':3}), (3,6,{'fid':0, 'size':2}), (4,6,{'fid':0, 'size':1}), \
-    #                       (5,7,{'fid':0, 'size':1}), (6,7,{'fid':0, 'size':2}), (7,8,{'fid':0, 'size':3})])
+    # graph.add_edges_from([(1,5,{'fid':0, 'size':4, 'priority':4}), (2,5,{'fid':0, 'size':3, 'priority':3}), (3,6,{'fid':0, 'size':2, 'priority':2}), (4,6,{'fid':0, 'size':1, 'priority':4}), \
+    #                       (5,7,{'fid':0, 'size':1, 'priority':1}), (6,7,{'fid':0, 'size':2, 'priority':2}), (7,8,{'fid':0, 'size':3, 'priority':3})])
+
+    # a = Graph_analyzer(4, graph=graph, router=WhirlTreeRouter, per_layer_topology=True, edge_priority=True)
+    # print("total cycles:",a.analyze())
+    # print("critical cycles:", a.analyze(critical_path=True))
 
     # temp = Graph_analyzer(4)
     # print(temp.per_layer_topological_sort(graph))
 
-
+    #######################################################################3
     graph = nx.read_gpickle('./try.gpickle')
+    for e in graph.edges():
+        graph.edges[e]['priority'] = -1
+
 
     # for v in graph.nodes():
     #     print(graph.nodes[v])
@@ -205,10 +271,7 @@ if __name__ == "__main__":
     # plt.draw()  # pyplot draw()
     # plt.savefig('./figure.png')
 
-
-
-    a = Graph_analyzer(20, graph=graph, router=RPMTreeRouter, per_layer_topology=True)
+    a = Graph_analyzer(9, graph=graph, router=RPMTreeRouter, per_layer_topology=True)
     print("total cycles:",a.analyze())
-
     print("critical cycles:", a.analyze(critical_path=True))
     
