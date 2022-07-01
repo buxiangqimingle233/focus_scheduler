@@ -17,7 +17,7 @@ class Mapper:
         self.clusters = self._clustering()
 
 
-    def map(self) -> nx.DiGraph:
+    def map(self) -> MicroOpGraph:
         clusters = self.clusters
         cluster_to_map = self._select(clusters)
         while cluster_to_map:

@@ -1,14 +1,16 @@
 import os
 import re
 from copy import deepcopy
-import networkx as nx
 from compiler import global_control as gc
+import pickle
+
+import networkx as nx
 
 from op_graph.micro_op_graph import MicroOpGraph
 # Fake trace generator
 from fake_trace_generator.generator import gen_fake_trace
 # Timeloop agents
-from timeloop_agents.layer import TimeloopLayer
+from compiler.timeloop_agents.agent import TimeloopLayer
 # Task Mapper
 from mapping_algorithms.random_mapper import RandomMapper
 from mapping_algorithms.hilbert_mapper import HilbertMapper
@@ -71,8 +73,24 @@ class TaskCompiler():
 
         nx.write_gpickle(op_graph.get_data(), f'./try.gpickle')
 
+        for node, attr in op_graph.get_data().nodes(data=True):
+            attr["count"] = 1
+        start = 100000
+        for u, v, eattr in op_graph.get_data().edges(data=True):
+            if eattr["edge_type"] == "control":
+                eattr["fid"] = start
+                eattr["size"] = 1
+                start += 1
+
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
+
+        with open(os.path.join(gc.op_graph_buffer, "op_graph_{}.gpickle".format(gc.taskname)), "wb+") as f:
+            pickle.dump(op_graph, f)
+        self.op_grpah = op_graph
+
+    def get_working_graph(self):
+        return self.op_grpah
 
     def get_compute_cycle(self):
         assert hasattr(self, "compute_cycle_lower_bound")
@@ -93,9 +111,8 @@ class TaskCompiler():
 
         return op_graph
 
-
     def _map_operators(self, op_graph):
-        layout = self._gen_physical_layout()
+        layout = self.gen_physical_layout()
         # mapper = RandomMapper(op_graph, layout)
         mapper = HilbertMapper(op_graph, layout, gc.array_diameter, gc.virtualization)
         return mapper.map()
@@ -129,7 +146,7 @@ class TaskCompiler():
         specification_file.close()
 
 
-    def _gen_physical_layout(self):
+    def gen_physical_layout(self):
         d = gc.array_diameter - 1
         mems = [
             d // 2, d // 2 + 1,
@@ -138,11 +155,14 @@ class TaskCompiler():
             d * gc.array_diameter + d // 2, d * gc.array_diameter + d // 2 + 1,
         ]
 
+        # FIXME: 
+        # mems = list(range(gc.array_diameter)) + list(range(gc.array_size, gc.array_size - gc.array_diameter, -1))
+
         # test
-        mems.append(gc.array_size - 1)
-        mems.append(gc.array_size - 2)
-        mems.append(0)
-        mems.append(1)
+        # mems.append(gc.array_size - 1)
+        # mems.append(gc.array_size - 2)
+        # mems.append(0)
+        # mems.append(1)
 
         cores = [i for i in range(gc.array_size) if i not in mems]
         layout = {i: "core" for i in cores}

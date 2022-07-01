@@ -1,8 +1,8 @@
 mapper:
-  # optimization-metrics: [ "delay", "energy" ]
-  optimization-metrics: [ "edp" ]
+  optimization-metrics: [ "delay" ]
+  # optimization-metrics: [ "edp" ]
   live-status: False
-  num-threads: 25
+  num-threads: 20
   timeout: 250000
   victory-condition: 2500
   algorithm: hybrid
