@@ -180,7 +180,7 @@ class WhirlTreeRouter(Router):
                 if_pruned_all = False
         return if_pruned_all
     
-    def route(self, source: int, dests: list, x = -1) -> nx.DiGraph:
+    def route(self, source: int, dests: list, x = -1, xy_format=True) -> nx.DiGraph:
         tree = nx.DiGraph()
         tree.add_node(source, root=True)
 
@@ -235,9 +235,10 @@ class WhirlTreeRouter(Router):
 
         while not self.dest_pruner(tree, source, None):
             pass
-
-        while not self.tree_pruner(tree, source, None, None):
-            pass
+        
+        if xy_format:
+            while not self.tree_pruner(tree, source, None, None):
+                pass
 
         return tree
 

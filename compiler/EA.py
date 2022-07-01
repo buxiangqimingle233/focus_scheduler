@@ -6,6 +6,87 @@ import os
 from tqdm import tqdm
 import sys
 import scipy.stats
+from routing_algorithms.router import Router
+from routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, WhirlTreeRouter
+import networkx as nx
+import functools
+
+def edge_cmp(a, b):
+    if a[0] < b[0]:
+        return -1
+    elif a[0] > b[0]:
+        return 1
+    else:
+        if a[1] < b[1]:
+            return -1
+        elif a[1] > b[1]:
+            return 1
+        else:
+            return 0
+
+
+class RouterIndividual:
+    def __init__(self, graph, diameter, init_method=WhirlTreeRouter) -> None:
+        self.graph = graph
+        self.diameter = diameter
+        self.router = {}
+        self.init_router = init_method(self.diameter)
+        
+        nodes_lists = []
+        edges_lists = []
+        hyper_edges_list = []
+        graph_backup = copy.deepcopy(self.graph)
+        while graph_backup.nodes():
+            temp_node_list = []
+            temp_edge_list = []    #edges in a layer
+            
+            for v in graph_backup.nodes():
+                if graph_backup.in_degree(v) == 0:
+                    temp_node_list.append(v)
+                    edge_list_a_node = list(graph_backup.edges(v))
+                    edge_list_a_node.sort(key=self.edge_fid_func)
+
+                    pre_fid = None
+                    if edge_list_a_node:
+                        pre_fid = self.graph.edges[edge_list_a_node[0]]['fid']
+                    hyper_edge = []
+                    for e in edge_list_a_node:
+                        if self.graph.edges[e]['fid'] == pre_fid:
+                            hyper_edge.append(e)
+                        else:
+                            temp_edge_list.append(hyper_edge)
+                            hyper_edge = []
+                            pre_fid = self.graph.edges[e]['fid']
+                            hyper_edge.append(e)
+                    if hyper_edge:
+                        temp_edge_list.append(hyper_edge)
+                        hyper_edges_list.append(hyper_edge)
+
+            nodes_lists.append(temp_node_list)
+            edges_lists.append(temp_edge_list)
+            graph_backup.remove_nodes_from(temp_node_list)
+
+        for e in hyper_edges_list:
+            e.sort(key=functools.cmp_to_key(edge_cmp))
+            source = self.graph.nodes[e[0][0]]['p_pe']
+            dests = []
+            for i in e:
+                dests.append(self.graph.nodes[i[1]]['p_pe'])
+            self.router[tuple(e)] = self.init_router.route(source=source, dests=dests, xy_format=False)
+
+        self.hyper_edges_list = hyper_edges_list
+
+    def mutate():
+        pass
+
+            
+        
+
+
+        
+
+
+    
 
 
 class StrategyIndividual:

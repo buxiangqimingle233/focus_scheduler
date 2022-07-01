@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 import pandas as pd
 import argparse
-import EA
+import compiler.EA as EA
 from .individual import Individual
 from copy import deepcopy
 import numpy as np
