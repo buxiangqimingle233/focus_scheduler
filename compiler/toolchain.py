@@ -57,8 +57,8 @@ class TaskCompiler():
 
         nx.write_gpickle(op_graph, "test.gpickle")
 
-        op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators.png"))
-        op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping.png"))
+        # op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators.png"))
+        # op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping.png"))
 
         self.compute_cycle_lower_bound = op_graph.total_compute_cycles()
 
@@ -72,15 +72,6 @@ class TaskCompiler():
                 start += 1 
 
         nx.write_gpickle(op_graph.get_data(), f'./try.gpickle')
-
-        for node, attr in op_graph.get_data().nodes(data=True):
-            attr["count"] = 1
-        start = 100000
-        for u, v, eattr in op_graph.get_data().edges(data=True):
-            if eattr["edge_type"] == "control":
-                eattr["fid"] = start
-                eattr["size"] = 1
-                start += 1
 
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)

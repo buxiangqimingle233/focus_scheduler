@@ -7,11 +7,8 @@ import pandas as pd
 import copy
 import seaborn as sns
 import matplotlib.pyplot as plt
-<<<<<<< HEAD
 from functools import reduce
 from compiler import global_control as gc
-=======
->>>>>>> analysis
 
 # traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])
 
