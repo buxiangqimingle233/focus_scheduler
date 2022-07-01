@@ -200,7 +200,6 @@ class MicroOpGraph:
 
         return fid_to_endpoints
 
-
     def draw_graph(self, fig_path):
         seed = 123467
 

@@ -13,7 +13,9 @@ from compiler import global_control as gc
 
 
 
-def channel_load(op_graph: MicroOpGraph):
+def plot_channel_load(op_graph: MicroOpGraph):
+    plt.cla()
+    plt.clf()
     flows = op_graph.get_flow_endpoints()
 
     # tree_router = RPMTreeRouter(gc.array_diameter)
@@ -28,9 +30,13 @@ def channel_load(op_graph: MicroOpGraph):
             passing_channels = path_router.getPath(src, dst)
             for c in passing_channels:
                 channels[c[0]][c[1]] += endpoints["total_bytes"]
-    print(channels)
+    # print(channels)
     board = np.full((gc.array_size, ), 0, dtype=float)
     channel_board = np.asarray_chkfinite(channels, dtype=float)
+
+    with open(os.path.join(gc.op_graph_buffer, "channel_loads_{}.npy".format(gc.taskname)), "wb") as f:
+        np.save(f, channel_board)
+
     channel_board = channel_board.reshape((gc.array_size * 6, ))
     for router in range(gc.array_size):
         board[router] = sum(channels[router])

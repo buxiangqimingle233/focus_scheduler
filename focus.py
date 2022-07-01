@@ -5,12 +5,18 @@ from sys import stderr
 from time import time
 from functools import reduce
 import pandas as pd
+import numpy as np
 import yaml
 
 from compiler import global_control as gc
 from compiler.toolchain import TaskCompiler
 from compiler.spatialsim_agents.variables import Variables
+from scripts.message_distribution import plot_msg_size_dist
 from simulator.pyAPI.agent import Simulator
+
+from scripts.channel_utilization import plot_channel_load
+from scripts.router_conflict_factors import plot_router_conflict_factors
+from scripts.core_busy_ratio import plot_core_busy_ratio
 
 
 pd.set_option('mode.chained_assignment', None)
@@ -112,14 +118,27 @@ def run_single_task():
         compute_cycle = toolchain.get_compute_cycle() / gc.overclock
         print("compute cycle", compute_cycle)
 
+        # plot channel loads
+        plot_channel_load(toolchain.get_working_graph())
+        # plot message size distribution
+        plot_msg_size_dist(toolchain.get_working_graph())
+
     # Invoke simulator
     if gc.simulate_baseline:
         working_dir = Variables.gen_working_dir(gc.spatial_sim_root, gc.taskname)
         sim_config = Variables.get_spec_path(gc.spatial_sim_root, gc.taskname)
         simulator = Simulator(working_dir, sim_config)
+
+        # activate simulator
         simulate_cycle = simulator.run()
+        
+        # plot core busy ratios
         mems = [k for k, v in TaskCompiler().gen_physical_layout().items() if v != "mems"]
-        simulator.plot_busy_ratio(os.path.join(gc.visualization_root, "ratio{}.png".format(gc.taskname)), set(mems))
+        plot_core_busy_ratio(simulator.core_busy_ratio(), mems)
+
+        # plot router conflict factors
+        plot_router_conflict_factors(simulator.router_conflict_factor())
+
 
     if gc.compile_task and gc.simulate_baseline:
         print("{} {} {} {} {}".format(gc.array_diameter, gc.flit_size, (simulate_cycle-compute_cycle)/compute_cycle, compute_cycle, simulate_cycle), file=stderr)

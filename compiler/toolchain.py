@@ -57,6 +57,15 @@ class TaskCompiler():
         op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping_{}.png".format(gc.taskname)), gc.array_diameter)
         self.compute_cycles = op_graph.compute_cycles()
 
+        for node, attr in op_graph.get_data().nodes(data=True):
+            attr["count"] = 1
+        start = 100000
+        for u, v, eattr in op_graph.get_data().edges(data=True):
+            if eattr["edge_type"] == "control":
+                eattr["fid"] = start
+                eattr["size"] = 1
+                start += 1
+
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
 
