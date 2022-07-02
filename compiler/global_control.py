@@ -48,7 +48,7 @@ top_level_cnt = None
 # -------------------- Task Mapper Specs -------------------------
 
 mapper_verbose = True
-virtualization = False
+virtualization = True
 # mapping_style = "Tetris"
 # mapping_style = "Zig-Zag"
 mapping_style = "Hilbert"
@@ -118,3 +118,11 @@ def debug_show(item):
 
 def get_ea_logpath():
     return os.path.join(focus_buffer, taskname, "ea_output")
+
+
+# -------------------- Router -----------------------------------
+
+from routing_algorithms.meshtree_router import RPMTreeRouter, WhirlTreeRouter
+
+Router = RPMTreeRouter
+benchmark_name = None

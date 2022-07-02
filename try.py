@@ -9,6 +9,8 @@ G.add_edge(1,2, id = 1, size = 5)
 G.add_edge(1,3, id = 2, size = 5)
 G.add_edge(2,4, id = 1, size = 5)
 
+print(G.in_degree(2))
+
 
 
 
@@ -34,4 +36,11 @@ class A:
 
 
 temp = A()
+
+
+def A(a, b, c):
+    print(a+b+c)
+
+d = (1,2,3)
+A(*d)
 

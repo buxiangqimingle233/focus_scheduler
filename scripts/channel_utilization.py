@@ -49,5 +49,5 @@ def plot_channel_load(op_graph: MicroOpGraph):
     # board = board.reshape((gc.array_diameter, gc.array_diameter))
     # fig = sns.heatmap(data=board, cmap="RdBu_r", linewidths=0.3, annot=False)
     heatmap = fig.get_figure()
-    heatmap.savefig(os.path.join(gc.visualization_root, "channel_loads_{}.png".format(gc.taskname)), dpi=500)
+    heatmap.savefig(os.path.join(gc.visualization_root, "channel_loads_{}_{}.png".format(gc.taskname, gc.benchmark_name[10:])), dpi=500)
     plt.close()

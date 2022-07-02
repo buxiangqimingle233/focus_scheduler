@@ -10,6 +10,8 @@ from routing_algorithms.router import Router
 from routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, WhirlTreeRouter
 import networkx as nx
 import functools
+import random
+from graph_analyzer import Graph_analyzer
 
 def edge_cmp(a, b):
     if a[0] < b[0]:
@@ -26,16 +28,22 @@ def edge_cmp(a, b):
 
 
 class RouterIndividual:
-    def __init__(self, graph, diameter, init_method=WhirlTreeRouter) -> None:
+    def edge_fid_func(self, e):
+        return self.graph.edges[e]['fid']
+
+
+    def __init__(self, graph, diameter, init_method=WhirlTreeRouter, mutate_k = 1, tree_generate_rate = 0.5) -> None:
         self.graph = graph
         self.diameter = diameter
         self.router = {}
         self.init_router = init_method(self.diameter)
+        self.mutate_k = mutate_k
+        self.tree_generate_rate = tree_generate_rate
         
         nodes_lists = []
         edges_lists = []
         hyper_edges_list = []
-        graph_backup = copy.deepcopy(self.graph)
+        graph_backup = copy.deepcopy(graph)
         while graph_backup.nodes():
             temp_node_list = []
             temp_edge_list = []    #edges in a layer
@@ -48,15 +56,16 @@ class RouterIndividual:
 
                     pre_fid = None
                     if edge_list_a_node:
-                        pre_fid = self.graph.edges[edge_list_a_node[0]]['fid']
+                        pre_fid = graph.edges[edge_list_a_node[0]]['fid']
                     hyper_edge = []
                     for e in edge_list_a_node:
-                        if self.graph.edges[e]['fid'] == pre_fid:
+                        if graph.edges[e]['fid'] == pre_fid:
                             hyper_edge.append(e)
                         else:
                             temp_edge_list.append(hyper_edge)
+                            hyper_edges_list.append(hyper_edge)
                             hyper_edge = []
-                            pre_fid = self.graph.edges[e]['fid']
+                            pre_fid = graph.edges[e]['fid']
                             hyper_edge.append(e)
                     if hyper_edge:
                         temp_edge_list.append(hyper_edge)
@@ -66,65 +75,184 @@ class RouterIndividual:
             edges_lists.append(temp_edge_list)
             graph_backup.remove_nodes_from(temp_node_list)
 
+        
+        # print(hyper_edges_list)
+        # print(edges_lists)
+
         for e in hyper_edges_list:
             e.sort(key=functools.cmp_to_key(edge_cmp))
-            source = self.graph.nodes[e[0][0]]['p_pe']
+            source = graph.nodes[e[0][0]]['p_pe']
             dests = []
             for i in e:
-                dests.append(self.graph.nodes[i[1]]['p_pe'])
+                dests.append(graph.nodes[i[1]]['p_pe'])
             self.router[tuple(e)] = self.init_router.route(source=source, dests=dests, xy_format=False)
+    
 
         self.hyper_edges_list = hyper_edges_list
+        self.routing_strategies = len(list(self.router.keys()))
 
-    def mutate():
-        pass
+    def mutate(self):
+        keys_list = list(self.router.keys())
+        mutate_obj = random.sample(keys_list, self.mutate_k)
 
-            
+        child = copy.deepcopy(self)
+
+        for i in mutate_obj:
+            child.router[i] = self.disturb(child.router[i])
         
+        return child
 
+    def crossover(self, A, B):
+        paths_to_change = random.sample(list(A.router.keys()), A.routing_strategies // 2)
+        child1 = copy.deepcopy(A)
+        child2 = copy.deepcopy(B)
+        for i in paths_to_change:
+            temp = child1.router[i]
+            child1.router[i] = child2.router[i]
+            child2.router[i] = temp
 
+        temp = random.random()
+        child = child1
+        if temp < 0.5:
+            child = child2
         
+        return child
 
 
     
+    def disturb(self, tree):
+        nodes_list = list(tree.nodes())
+        # center_node = (random.sample(nodes_list, 1))[0]
+        start_node = None
+        if len(list(tree.nodes())) == 1:
+            return tree
+        while start_node == None or tree.nodes[start_node]['dest'] == True:
+            start_node = (random.sample(nodes_list, 1))[0]
+            
+
+
+        sub_tree_nodes = []
+        edge_nodes = []
+
+        self.point_to_tree(tree, start_node, sub_tree_nodes, edge_nodes)
+
+        if sub_tree_nodes:
+            #delete subtree add a new node and treat it as a source to build a tree
+            for v in sub_tree_nodes:
+                tree.remove_node(v)
+            
+            temp = True
+            while temp:
+                
+                center_p = random.sample(sub_tree_nodes, 1)[0]
+                movement = random.sample([self.diameter, -self.diameter, 1, -1, 0], 1)[0]
+                center_p += movement
+                if center_p >= 0 and center_p < self.diameter**2 and (not center_p in edge_nodes):
+                    
+                    center_to_edge = self.init_router.route(center_p, edge_nodes, xy_format=False)
+                    start_to_center = None
+                    if center_p != start_node:
+                        start_to_center = self.init_router.route(start_node, [center_p], xy_format=False)
+
+                    edges_list = list(tree.edges()) + list(center_to_edge.edges())
+                    if start_to_center:
+                        edges_list += list(start_to_center.edges())
+                    
+                    ## make sure there is no loop in the new graph
+                    temp_edges_list = []
+                    for e in edges_list:
+                        temp_edges_list.append((e[1], e[0]))
+                    
+                    edges_list += temp_edges_list
+                    
+                    edges_set = set(edges_list)
+                    if len(edges_list) == len(edges_set):
+                        temp = False
+                        for v in center_to_edge.nodes():
+                            tree.add_node(v)
+                            tree.nodes[v]['dest'] = False
+                        for e in center_to_edge.edges():
+                            tree.add_edge(*e)
+                        
+                        if start_to_center:
+                            for v in start_to_center.nodes():
+                                tree.add_node(v)
+                                tree.nodes[v]['dest'] = False
+                            for e in start_to_center.edges():
+                                tree.add_edge(*e)
+
+        # for v in tree.nodes():
+        #     print(tree.nodes[v], v, sep=' ')
+
+        # print("####")
+            
+        return tree
+                    
+
+
+    def point_to_tree(self, tree, point, sub_tree_nodes, edge_nodes):
+        for e in tree.edges(point):
+            if_continue = False
+            temp = random.random()
+            if temp < self.tree_generate_rate:
+                if_continue = True
+
+            if if_continue and (not tree.nodes[e[1]]['dest']):
+                sub_tree_nodes.append(e[1])
+                self.point_to_tree(tree, e[1], sub_tree_nodes,edge_nodes=edge_nodes)
+
+            else:
+                edge_nodes.append(e[1])
+
+
 
 
 class StrategyIndividual:
-    def __init__(self) -> None:
-        pass
+    def __init__(self, graph, diameter, init_method = WhirlTreeRouter, mutate_k = 1, tree_generate_rate=0.5) -> None:
+        self.router = RouterIndividual(graph, diameter, init_method=init_method, mutate_k=mutate_k, tree_generate_rate=tree_generate_rate)
+        self.mutate_k = mutate_k
+        self.graph = graph
+        self.diameter = diameter
+        # self.graph_analyzer = Graph_analyzer(9, graph=graph, router=RPMTreeRouter, per_layer_topology=True)
+        
+
 
         
     
     def evaluate(self):
-        for i in range(self.convs_num):
-            self.convs[i].use_index_weight(change_row_index=self.reorder_index[i])
-            self.convs[i+1].use_index_weight(change_col_index=self.reorder_index[i])
+        graph_analyzer = Graph_analyzer(self.diameter, graph=self.graph, router=self.router, per_layer_topology=True,edge_priority=True, user_defined_router=True)
 
-        out=self.block.forward_backup(self.x)
-        similarity = self.get_similarity(out, self.raw_out)
-
-        for i in range(self.convs_num):
-            self.convs[i].restore_index_weight(change_row_index=self.reorder_index[i])
-            self.convs[i+1].restore_index_weight(change_col_index=self.reorder_index[i])
-        return similarity
+        return -graph_analyzer.analyze()
     
     def mutate(self):
-        child = ReorderIndividual(self.block, self.conv_wrapper, self.raw_inputs, self.raw_outs, self.x, self.similarity_mode, self.convs_num)
-        child.reorder_index = copy.deepcopy(self.reorder_index)
-        child.reorder_move()
-        return child
+        child = copy.deepcopy(self)
+        child.router = child.router.mutate()
+
+        mutate_edges = random.sample(list(child.graph.edges()), 2*self.mutate_k)
         
+        for i in range(self.mutate_k):
+            temp = child.graph.edges[mutate_edges[i]]['priority']
+            child.graph.edges[mutate_edges[i]]['priority'] = child.graph.edges[mutate_edges[2*self.mutate_k - i - 1]]['priority']
+            child.graph.edges[mutate_edges[2*self.mutate_k - i - 1]]['priority'] = temp
+
+        return child
+
+    def crossover(self, A, B):
+        child = copy.deepcopy(A)
+        child.router = child.router.crossover(A.router, B.router)
+        
+        temp = A.graph
+        r = random.random()
+        if r < 0.5:
+            temp = B.graph
+
+        child.graph = copy.deepcopy(temp)
+        return child
 
 
 class EvolutionController:
     def __init__(self, mutate_prob=0.1, population_size=100, n_evolution=25, parent_fraction=0.5, mutation_fraction=0.5, crossover_fraction=0, log_path='output/'):
-        # evolution hyper-parameters
-        # self.n_blocks_mutate_prob = kwargs.get('n_blocks_mutate_prob', 0.1)
-        # self.n_base_channels_mutate_prob = kwargs.get('n_base_channels_mutate_prob', 0.5)
         self.mutate_prob = mutate_prob
-        # self.n_blocks_mutate_prob = kwargs.get('n_blocks_mutate_prob', 0.1)
-        # self.n_channels_mutate_prob = kwargs.get(
-        #     'n_base_channels_mutate_prob', 0.1)
         self.population_size = population_size
         self.n_generations = n_evolution
         self.parent_num = int(self.population_size*parent_fraction)
@@ -215,69 +343,22 @@ class EvolutionController:
         ind=np.argmax(self.scores)
         return self.population[ind],self.scores[ind]
 
-import multiprocessing as mp
 
 
-def individual_gen_process(pid,individual_generator):
-    # print(f"start {pid}")
-    sys.stdout = open("output/individual.out", "a+")
-    individual=individual_generator()
-    score=individual.evaluate()
-    return individual,score
+if __name__ == "__main__":
+    # graph = nx.DiGraph()
+    # graph.add_nodes_from([(1,{'delay':0, 'p_pe':12}), (2,{'delay':0, 'p_pe':12}), (3,{'delay':0, 'p_pe':12}), (4,{'delay':0, 'p_pe':12}), \
+    #                       (5,{'delay':3, 'p_pe':8}), (6,{'delay':4, 'p_pe':15}), (7,{'delay':5, 'p_pe':2}), (8,{'delay':0, 'p_pe':12})])
+    # graph.add_edges_from([(1,5,{'fid':0, 'size':4, 'priority':4}), (2,5,{'fid':0, 'size':3, 'priority':3}), (3,6,{'fid':0, 'size':2, 'priority':2}), (4,6,{'fid':0, 'size':1, 'priority':4}), \
+    #                       (5,7,{'fid':0, 'size':1, 'priority':1}), (6,7,{'fid':0, 'size':2, 'priority':2}), (7,8,{'fid':0, 'size':3, 'priority':3})])
+    graph = nx.read_gpickle('./try.gpickle')
+    for e in graph.edges():
+        graph.edges[e]['priority'] = -1
 
-def individual_mutation_process(pid,parent):
-    # print(f"start {pid}")
-    sys.stdout = open("output/individual.out", "a+")
-    child=parent.mutate()
-    score=child.evaluate()
-    return child,score
 
-def individual_crossover_process(pid,parents):
-    # print(f"start {pid}")
-    sys.stdout = open("output/individual.out", "a+")
-    child=parents[0].crossover(*parents)
-    score=child.evaluate()
-    return child,score
-
-class ParallelEvolutionController(EvolutionController):
-    def __init__(self, n_workers=8, mutate_prob=0.1, population_size=100, n_evolution=50, parent_fraction=0.5, mutation_fraction=0.25, crossover_fraction=0.25, log_path='output/'):
-        super().__init__(mutate_prob=mutate_prob, population_size=population_size, n_evolution=n_evolution, parent_fraction=parent_fraction, mutation_fraction=mutation_fraction, crossover_fraction=crossover_fraction, log_path=log_path)
-        self.n_workers=n_workers
-
-    def init_population(self,individual_generator,allow_repeat=False,max_sample_times=1000):
-        self.population.clear()
-        print(f"Generate {self.population_size} individuals Parallel")
-        if allow_repeat:
-            n=1
-        else:
-            n=max_sample_times
-        
-        pool=mp.Pool(processes=self.n_workers)
-        rst=pool.starmap(individual_gen_process,[ (pid,individual_generator) for pid in range(self.population_size)])
-        for i,s in rst:
-            self.add_individual(i,s)
-            
-
-    def mutation(self, parents):
-        pool=mp.Pool(processes=self.n_workers)
-        selected_parents=[]
-        for _ in range(self.mutation_num):
-            selected_parent = parents[np.random.randint(self.parent_num)]
-            print(selected_parent)
-            selected_parents.append(selected_parent)
-        
-        rst=pool.starmap(individual_mutation_process,[ (pid,parent) for pid,parent in enumerate(selected_parents)])
-        for i,s in rst:
-            self.add_individual(i,s)
+    controller = EvolutionController(population_size=100, n_evolution=2, parent_fraction=0.5, mutation_fraction=0.3, crossover_fraction=0.2)
     
-    def crossover(self, parents):
-        pool=mp.Pool(processes=self.n_workers,)
-        selected_parents=[]
-        for _ in range(self.mutation_num):
-            selected_parent1=parents[np.random.randint(self.parent_num)]
-            selected_parent2=parents[np.random.randint(self.parent_num)]
-            selected_parents.append([selected_parent1,selected_parent2])
-        
-        rst=pool.starmap(individual_crossover_process,[ (pid,parent) for pid,parent in enumerate(selected_parents)])
-        for i,s in rst:
-            self.add_individual(i,s)
+    for individual_i in range(controller.population_size):
+        individual=StrategyIndividual(graph=graph, diameter=5)
+        controller.add_individual(individual)
+    best_individual,best_similarity=controller.run_evolution_search()

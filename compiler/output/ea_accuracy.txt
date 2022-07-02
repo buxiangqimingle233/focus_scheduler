@@ -1,0 +1,1296 @@
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f2b75a3f358>
+30 <__main__.StrategyIndividual object at 0x7f2b75bc8c18>
+30 <__main__.StrategyIndividual object at 0x7f2b75d1d748>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7fb56959d978>
+30 <__main__.StrategyIndividual object at 0x7fb569389eb8>
+30 <__main__.StrategyIndividual object at 0x7fb56941ba58>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f70a5ad6278>
+30 <__main__.StrategyIndividual object at 0x7f70a59f3f60>
+30 <__main__.StrategyIndividual object at 0x7f70a5a1f9b0>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f493c6df390>
+30 <__main__.StrategyIndividual object at 0x7f493c98c390>
+30 <__main__.StrategyIndividual object at 0x7f493c81d4e0>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f877eda4278>
+30 <__main__.StrategyIndividual object at 0x7f877ed1dda0>
+30 <__main__.StrategyIndividual object at 0x7f877ed54160>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7fa158f8b320>
+30 <__main__.StrategyIndividual object at 0x7fa1590b52b0>
+30 <__main__.StrategyIndividual object at 0x7fa159097a20>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f4085e35ef0>
+30 <__main__.StrategyIndividual object at 0x7f4085f6bb70>
+30 <__main__.StrategyIndividual object at 0x7f4085dbcd30>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f7707713a20>
+30 <__main__.StrategyIndividual object at 0x7f77079244e0>
+30 <__main__.StrategyIndividual object at 0x7f770781d780>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f5c9cfe63c8>
+30 <__main__.StrategyIndividual object at 0x7f5c9d22ec18>
+30 <__main__.StrategyIndividual object at 0x7f5c9d15ac18>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f2749beca90>
+30 <__main__.StrategyIndividual object at 0x7f2749b6d400>
+30 <__main__.StrategyIndividual object at 0x7f2749c4ebe0>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7fcb0e90aef0>
+30 <__main__.StrategyIndividual object at 0x7fcb0e924da0>
+30 <__main__.StrategyIndividual object at 0x7fcb0e7ff7f0>
+===1/25===
+31 <__main__.StrategyIndividual object at 0x7fcb0e7bad68>
+31 <__main__.StrategyIndividual object at 0x7fcb0e7ca400>
+31 <__main__.StrategyIndividual object at 0x7fcb0e87dd30>
+===2/25===
+31 <__main__.StrategyIndividual object at 0x7fcb0e7bad68>
+31 <__main__.StrategyIndividual object at 0x7fcb0e7ca400>
+31 <__main__.StrategyIndividual object at 0x7fcb0e87dd30>
+===3/25===
+31 <__main__.StrategyIndividual object at 0x7fcb0e7bad68>
+31 <__main__.StrategyIndividual object at 0x7fcb0e88bd30>
+31 <__main__.StrategyIndividual object at 0x7fcb0ea3f5f8>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f412321ba20>
+30 <__main__.StrategyIndividual object at 0x7f412342d9b0>
+30 <__main__.StrategyIndividual object at 0x7f41232bb470>
+===1/25===
+31 <__main__.StrategyIndividual object at 0x7f41232fde80>
+30 <__main__.StrategyIndividual object at 0x7f412321ba20>
+30 <__main__.StrategyIndividual object at 0x7f41231b6c18>
+===2/25===
+31 <__main__.StrategyIndividual object at 0x7f41232fde80>
+31 <__main__.StrategyIndividual object at 0x7f41232918d0>
+30 <__main__.StrategyIndividual object at 0x7f41233098d0>
+===3/25===
+31 <__main__.StrategyIndividual object at 0x7f41232fde80>
+31 <__main__.StrategyIndividual object at 0x7f41232918d0>
+31 <__main__.StrategyIndividual object at 0x7f4123325390>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7ff2796fcf28>
+30 <__main__.StrategyIndividual object at 0x7ff2796833c8>
+30 <__main__.StrategyIndividual object at 0x7ff279652e48>
+===1/25===
+31 <__main__.StrategyIndividual object at 0x7ff279558fd0>
+30 <__main__.StrategyIndividual object at 0x7ff2796fcf28>
+30 <__main__.StrategyIndividual object at 0x7ff27984fa58>
+===2/25===
+31 <__main__.StrategyIndividual object at 0x7ff279558fd0>
+31 <__main__.StrategyIndividual object at 0x7ff279894048>
+30 <__main__.StrategyIndividual object at 0x7ff279636128>
+===3/25===
+31 <__main__.StrategyIndividual object at 0x7ff279558fd0>
+31 <__main__.StrategyIndividual object at 0x7ff279894048>
+31 <__main__.StrategyIndividual object at 0x7ff279113dd8>
+===4/25===
+31 <__main__.StrategyIndividual object at 0x7ff279558fd0>
+31 <__main__.StrategyIndividual object at 0x7ff27984f208>
+31 <__main__.StrategyIndividual object at 0x7ff2795de2e8>
+===5/25===
+31 <__main__.StrategyIndividual object at 0x7ff279558fd0>
+31 <__main__.StrategyIndividual object at 0x7ff2795de470>
+31 <__main__.StrategyIndividual object at 0x7ff279788ac8>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7fdd74fb52e8>
+30 <__main__.StrategyIndividual object at 0x7fdd74dab080>
+30 <__main__.StrategyIndividual object at 0x7fdd74f93a90>
+===1/25===
+30 <__main__.StrategyIndividual object at 0x7fdd74fb52e8>
+30 <__main__.StrategyIndividual object at 0x7fdd74e41e48>
+30 <__main__.StrategyIndividual object at 0x7fdd74ed2160>
+===2/25===
+31 <__main__.StrategyIndividual object at 0x7fdd74f63b38>
+31 <__main__.StrategyIndividual object at 0x7fdd74d35d30>
+31 <__main__.StrategyIndividual object at 0x7fdd74ea3860>
+===3/25===
+31 <__main__.StrategyIndividual object at 0x7fdd74f63b38>
+31 <__main__.StrategyIndividual object at 0x7fdd74d35d30>
+31 <__main__.StrategyIndividual object at 0x7fdd74ea3860>
+===4/25===
+31 <__main__.StrategyIndividual object at 0x7fdd74f63b38>
+31 <__main__.StrategyIndividual object at 0x7fdd74ed2ba8>
+31 <__main__.StrategyIndividual object at 0x7fdd74f1b860>
+===5/25===
+31 <__main__.StrategyIndividual object at 0x7fdd74f63b38>
+31 <__main__.StrategyIndividual object at 0x7fdd74effeb8>
+31 <__main__.StrategyIndividual object at 0x7fdd74f47ef0>
+===6/25===
+31 <__main__.StrategyIndividual object at 0x7fdd74f63b38>
+31 <__main__.StrategyIndividual object at 0x7fdd74f63748>
+31 <__main__.StrategyIndividual object at 0x7fdd74d9c0b8>
+===7/25===
+31 <__main__.StrategyIndividual object at 0x7fdd74f63b38>
+31 <__main__.StrategyIndividual object at 0x7fdd74d43c50>
+31 <__main__.StrategyIndividual object at 0x7fdd74d1fd68>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f23d40fbc88>
+30 <__main__.StrategyIndividual object at 0x7f23d3f02ba8>
+30 <__main__.StrategyIndividual object at 0x7f23d40546d8>
+===1/25===
+31 <__main__.StrategyIndividual object at 0x7f23d41672e8>
+31 <__main__.StrategyIndividual object at 0x7f23d3fa74a8>
+31 <__main__.StrategyIndividual object at 0x7f23d3e71d68>
+===2/25===
+31 <__main__.StrategyIndividual object at 0x7f23d41672e8>
+31 <__main__.StrategyIndividual object at 0x7f23d4136ef0>
+31 <__main__.StrategyIndividual object at 0x7f23d40dbeb8>
+===3/25===
+31 <__main__.StrategyIndividual object at 0x7f23d41672e8>
+31 <__main__.StrategyIndividual object at 0x7f23d40831d0>
+31 <__main__.StrategyIndividual object at 0x7f23d4167a90>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7f3cfc38df60>
+30 <__main__.StrategyIndividual object at 0x7f3cfc29bbe0>
+30 <__main__.StrategyIndividual object at 0x7f3cfc3ef710>
+===1/25===
+31 <__main__.StrategyIndividual object at 0x7f3cfc493da0>
+31 <__main__.StrategyIndividual object at 0x7f3cfc1ba5f8>
+31 <__main__.StrategyIndividual object at 0x7f3cfc3689b0>
+===2/25===
+31 <__main__.StrategyIndividual object at 0x7f3cfc493da0>
+31 <__main__.StrategyIndividual object at 0x7f3cfc1ba5f8>
+31 <__main__.StrategyIndividual object at 0x7f3cfc3689b0>
+===3/25===
+31 <__main__.StrategyIndividual object at 0x7f3cfc493da0>
+31 <__main__.StrategyIndividual object at 0x7f3cfc1ba5f8>
+31 <__main__.StrategyIndividual object at 0x7f3cfc3689b0>
+===4/25===
+31 <__main__.StrategyIndividual object at 0x7f3cfc493da0>
+31 <__main__.StrategyIndividual object at 0x7f3cfc44cf98>
+31 <__main__.StrategyIndividual object at 0x7f3cfc1e86a0>
+===5/25===
+31 <__main__.StrategyIndividual object at 0x7f3cfc493da0>
+31 <__main__.StrategyIndividual object at 0x7f3cfc3b8940>
+31 <__main__.StrategyIndividual object at 0x7f3cfc2caa20>
+===6/25===
+31 <__main__.StrategyIndividual object at 0x7f3cfc493da0>
+31 <__main__.StrategyIndividual object at 0x7f3cfc4af8d0>
+31 <__main__.StrategyIndividual object at 0x7f3cfc2f8668>
+===0/25===
+30 <__main__.StrategyIndividual object at 0x7ff08900acc0>
+30 <__main__.StrategyIndividual object at 0x7ff088f4a860>
+30 <__main__.StrategyIndividual object at 0x7ff088f79780>
+===1/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+30 <__main__.StrategyIndividual object at 0x7ff0889dad30>
+30 <__main__.StrategyIndividual object at 0x7ff088fa7b70>
+===2/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff0892029e8>
+31 <__main__.StrategyIndividual object at 0x7ff089142f60>
+===3/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff0890fb278>
+31 <__main__.StrategyIndividual object at 0x7ff088ff6c88>
+===4/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff088ec6630>
+31 <__main__.StrategyIndividual object at 0x7ff0891e09b0>
+===5/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff088eee0f0>
+31 <__main__.StrategyIndividual object at 0x7ff08901f550>
+===6/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff0890fb278>
+31 <__main__.StrategyIndividual object at 0x7ff08901fd68>
+===7/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff0891bb128>
+31 <__main__.StrategyIndividual object at 0x7ff08903b5f8>
+===8/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff08912a240>
+31 <__main__.StrategyIndividual object at 0x7ff0890db9b0>
+===9/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff0892029e8>
+31 <__main__.StrategyIndividual object at 0x7ff08918e208>
+===10/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff0891bb128>
+31 <__main__.StrategyIndividual object at 0x7ff08912ad68>
+===11/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff08903b5f8>
+31 <__main__.StrategyIndividual object at 0x7ff08901f550>
+===12/25===
+31 <__main__.StrategyIndividual object at 0x7ff08901df98>
+31 <__main__.StrategyIndividual object at 0x7ff088ff6c88>
+31 <__main__.StrategyIndividual object at 0x7ff08903bf28>
+===13/25===
+31 <__main__.StrategyIndividual object at 0x7ff088fd6320>
+31 <__main__.StrategyIndividual object at 0x7ff088eee0f0>
+31 <__main__.StrategyIndividual object at 0x7ff0890301d0>
+===14/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff088ec6630>
+31 <__main__.StrategyIndividual object at 0x7ff0890fb278>
+===15/25===
+31 <__main__.StrategyIndividual object at 0x7ff089142fd0>
+31 <__main__.StrategyIndividual object at 0x7ff08916b780>
+31 <__main__.StrategyIndividual object at 0x7ff0891e09b0>
+===16/25===
+31 <__main__.StrategyIndividual object at 0x7ff08918cd68>
+31 <__main__.StrategyIndividual object at 0x7ff089113908>
+31 <__main__.StrategyIndividual object at 0x7ff088f6b3c8>
+===17/25===
+31 <__main__.StrategyIndividual object at 0x7ff088fd6208>
+31 <__main__.StrategyIndividual object at 0x7ff08916b358>
+31 <__main__.StrategyIndividual object at 0x7ff08900b390>
+===18/25===
+31 <__main__.StrategyIndividual object at 0x7ff0890687b8>
+31 <__main__.StrategyIndividual object at 0x7ff08918c048>
+31 <__main__.StrategyIndividual object at 0x7ff08901fd68>
+===19/25===
+31 <__main__.StrategyIndividual object at 0x7ff088e98588>
+31 <__main__.StrategyIndividual object at 0x7ff089202ef0>
+31 <__main__.StrategyIndividual object at 0x7ff0890b0cc0>
+===20/25===
+31 <__main__.StrategyIndividual object at 0x7ff0890687b8>
+31 <__main__.StrategyIndividual object at 0x7ff088ff6cf8>
+31 <__main__.StrategyIndividual object at 0x7ff0891bbe48>
+===21/25===
+31 <__main__.StrategyIndividual object at 0x7ff088fd6a58>
+31 <__main__.StrategyIndividual object at 0x7ff089096dd8>
+31 <__main__.StrategyIndividual object at 0x7ff089142f60>
+===22/25===
+31 <__main__.StrategyIndividual object at 0x7ff08900a320>
+31 <__main__.StrategyIndividual object at 0x7ff08918ecc0>
+31 <__main__.StrategyIndividual object at 0x7ff088f6b588>
+===23/25===
+31 <__main__.StrategyIndividual object at 0x7ff0891bb4e0>
+31 <__main__.StrategyIndividual object at 0x7ff088a0b668>
+31 <__main__.StrategyIndividual object at 0x7ff0892029e8>
+===24/25===
+31 <__main__.StrategyIndividual object at 0x7ff08900a320>
+31 <__main__.StrategyIndividual object at 0x7ff08918e1d0>
+31 <__main__.StrategyIndividual object at 0x7ff08912a240>
+===0/25===
+12755.0 <__main__.StrategyIndividual object at 0x7fa6b2c42828>
+12602.0 <__main__.StrategyIndividual object at 0x7fa6b2a5d908>
+12602.0 <__main__.StrategyIndividual object at 0x7fa6b2e73b70>
+===1/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12893.0 <__main__.StrategyIndividual object at 0x7fa69a4a3a58>
+12755.0 <__main__.StrategyIndividual object at 0x7fa6b2c42828>
+===2/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12893.0 <__main__.StrategyIndividual object at 0x7fa69a4a3a58>
+12755.0 <__main__.StrategyIndividual object at 0x7fa6b2c42828>
+===3/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12893.0 <__main__.StrategyIndividual object at 0x7fa69a4a3a58>
+12755.0 <__main__.StrategyIndividual object at 0x7fa6b2c42828>
+===4/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12893.0 <__main__.StrategyIndividual object at 0x7fa69a4a3a58>
+12755.0 <__main__.StrategyIndividual object at 0x7fa69a284f28>
+===5/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12893.0 <__main__.StrategyIndividual object at 0x7fa69a4a3a58>
+12893.0 <__main__.StrategyIndividual object at 0x7fa69a3e0cf8>
+===6/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12893.0 <__main__.StrategyIndividual object at 0x7fa69a4a3a58>
+12893.0 <__main__.StrategyIndividual object at 0x7fa69a3e0cf8>
+===7/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12893.0 <__main__.StrategyIndividual object at 0x7fa69a4a3a58>
+12893.0 <__main__.StrategyIndividual object at 0x7fa69a3e0cf8>
+===8/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2bde828>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ad17f0>
+===9/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2bde828>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ad17f0>
+===10/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2bde828>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ad17f0>
+===11/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2bde828>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ad17f0>
+===12/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2bde828>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ad17f0>
+===13/25===
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2bde828>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ad17f0>
+===14/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2bde828>
+===15/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2bde828>
+===16/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2bde828>
+===17/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12900.0 <__main__.StrategyIndividual object at 0x7fa69a26c550>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2ed1a58>
+===18/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2a82400>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2a00860>
+===19/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12911.0 <__main__.StrategyIndividual object at 0x7fa6b2ba9400>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2a82400>
+===20/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12911.0 <__main__.StrategyIndividual object at 0x7fa6b2ba9400>
+12900.0 <__main__.StrategyIndividual object at 0x7fa6b2dc24e0>
+===21/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12911.0 <__main__.StrategyIndividual object at 0x7fa6b2ba9400>
+12907.0 <__main__.StrategyIndividual object at 0x7fa6b2daacf8>
+===22/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12911.0 <__main__.StrategyIndividual object at 0x7fa6b2ba9400>
+12911.0 <__main__.StrategyIndividual object at 0x7fa6b29bda20>
+===23/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12911.0 <__main__.StrategyIndividual object at 0x7fa6b2ba9400>
+12911.0 <__main__.StrategyIndividual object at 0x7fa6b29bda20>
+===24/25===
+12918.0 <__main__.StrategyIndividual object at 0x7fa6b2e5cac8>
+12911.0 <__main__.StrategyIndividual object at 0x7fa6b2ba9400>
+12911.0 <__main__.StrategyIndividual object at 0x7fa6b29bda20>
+===0/25===
+-6569.0 <__main__.StrategyIndividual object at 0x7f3d4fc73be0>
+-6587.0 <__main__.StrategyIndividual object at 0x7f3d4fe38668>
+-6587.0 <__main__.StrategyIndividual object at 0x7f3d4fbc5c50>
+===1/25===
+-6569.0 <__main__.StrategyIndividual object at 0x7f3d4fc73be0>
+-6587.0 <__main__.StrategyIndividual object at 0x7f3d4fe38668>
+-6587.0 <__main__.StrategyIndividual object at 0x7f3d4fbc5c50>
+===2/25===
+-6569.0 <__main__.StrategyIndividual object at 0x7f3d4fc73be0>
+-6569.0 <__main__.StrategyIndividual object at 0x7f3d4fcf37b8>
+-6575.0 <__main__.StrategyIndividual object at 0x7f3d5feb8048>
+===3/25===
+-6569.0 <__main__.StrategyIndividual object at 0x7f3d4fc73be0>
+-6569.0 <__main__.StrategyIndividual object at 0x7f3d4fcf37b8>
+-6575.0 <__main__.StrategyIndividual object at 0x7f3d5feb8048>
+===4/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6459.0 <__main__.StrategyIndividual object at 0x7f3d4fe75080>
+-6569.0 <__main__.StrategyIndividual object at 0x7f3d4fc73be0>
+===5/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6459.0 <__main__.StrategyIndividual object at 0x7f3d4fe75080>
+===6/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6459.0 <__main__.StrategyIndividual object at 0x7f3d4fe75080>
+===7/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6459.0 <__main__.StrategyIndividual object at 0x7f3d4fe75080>
+===8/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6459.0 <__main__.StrategyIndividual object at 0x7f3d4fe75080>
+===9/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6459.0 <__main__.StrategyIndividual object at 0x7f3d4fe75080>
+===10/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6459.0 <__main__.StrategyIndividual object at 0x7f3d4fe75080>
+===11/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6459.0 <__main__.StrategyIndividual object at 0x7f3d4fe75080>
+===12/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===13/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===14/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===15/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===16/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===17/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===18/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===19/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===20/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===21/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===22/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===23/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===24/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f3d4fb4aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4f9c5f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f3d4fcdc780>
+===0/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6585.0 <__main__.StrategyIndividual object at 0x7f00deaa1d68>
+-6716.0 <__main__.StrategyIndividual object at 0x7f00de9f4dd8>
+===1/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6585.0 <__main__.StrategyIndividual object at 0x7f00deaa1d68>
+-6716.0 <__main__.StrategyIndividual object at 0x7f00de9f4dd8>
+===2/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6459.0 <__main__.StrategyIndividual object at 0x7f00de95d898>
+-6571.0 <__main__.StrategyIndividual object at 0x7f00ce27be10>
+===3/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6459.0 <__main__.StrategyIndividual object at 0x7f00de95d898>
+-6571.0 <__main__.StrategyIndividual object at 0x7f00ce27be10>
+===4/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6459.0 <__main__.StrategyIndividual object at 0x7f00de95d898>
+-6571.0 <__main__.StrategyIndividual object at 0x7f00ce27be10>
+===5/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6459.0 <__main__.StrategyIndividual object at 0x7f00de95d898>
+-6571.0 <__main__.StrategyIndividual object at 0x7f00ce27be10>
+===6/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6459.0 <__main__.StrategyIndividual object at 0x7f00de95d898>
+-6571.0 <__main__.StrategyIndividual object at 0x7f00ce27be10>
+===7/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6443.0 <__main__.StrategyIndividual object at 0x7f00ded322b0>
+-6459.0 <__main__.StrategyIndividual object at 0x7f00de95d898>
+===8/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6443.0 <__main__.StrategyIndividual object at 0x7f00ded322b0>
+-6459.0 <__main__.StrategyIndividual object at 0x7f00de95d898>
+===9/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6443.0 <__main__.StrategyIndividual object at 0x7f00ded322b0>
+-6459.0 <__main__.StrategyIndividual object at 0x7f00de95d898>
+===10/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6443.0 <__main__.StrategyIndividual object at 0x7f00ded322b0>
+-6459.0 <__main__.StrategyIndividual object at 0x7f00de95d898>
+===11/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6443.0 <__main__.StrategyIndividual object at 0x7f00deb85eb8>
+-6443.0 <__main__.StrategyIndividual object at 0x7f00ded322b0>
+===12/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+-6443.0 <__main__.StrategyIndividual object at 0x7f00deb85eb8>
+===13/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===14/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===15/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===16/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===17/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===18/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===19/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===20/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===21/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===22/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===23/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===24/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f00dec847b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00debaf6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f00dedce240>
+===0/25===
+-5368.0 <__main__.StrategyIndividual object at 0x7fa5065eb668>
+-6578.0 <__main__.StrategyIndividual object at 0x7fa50678cb00>
+-6603.0 <__main__.StrategyIndividual object at 0x7fa506231780>
+===0/25===
+-6587.0 <__main__.StrategyIndividual object at 0x7ffa6b3aa9b0>
+-6713.0 <__main__.StrategyIndividual object at 0x7ffa73b00160>
+-6720.0 <__main__.StrategyIndividual object at 0x7ffa7383cf60>
+===0/25===
+-6587.0 <__main__.StrategyIndividual object at 0x7f1524abe048>
+-6608.0 <__main__.StrategyIndividual object at 0x7f1524ca6e80>
+-6715.0 <__main__.StrategyIndividual object at 0x7f1524d1c588>
+===0/25===
+-5513.0 <__main__.StrategyIndividual object at 0x7f115960e8d0>
+-6575.0 <__main__.StrategyIndividual object at 0x7f11590d5b70>
+-6585.0 <__main__.StrategyIndividual object at 0x7f11594edfd0>
+===0/25===
+-6569.0 <__main__.StrategyIndividual object at 0x7ffa80fd5a20>
+-6594.0 <__main__.StrategyIndividual object at 0x7ffa80ffaef0>
+-6717.0 <__main__.StrategyIndividual object at 0x7ffa8104ab70>
+===1/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8111aef0>
+-6569.0 <__main__.StrategyIndividual object at 0x7ffa80fd5a20>
+-6569.0 <__main__.StrategyIndividual object at 0x7ffa813ea710>
+===2/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8111aef0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa814d7978>
+-6569.0 <__main__.StrategyIndividual object at 0x7ffa80f96358>
+===3/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8111aef0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80e74780>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80e57c88>
+===4/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8111aef0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80d9c128>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa815877b8>
+===5/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8111aef0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa814415c0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80f5c400>
+===6/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8111aef0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa814d7978>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa812e9e48>
+===7/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8111aef0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80f5c400>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80d9c550>
+===8/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80e3aeb8>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8118e2e8>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa812e9e48>
+===9/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa814ee9b0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8122e400>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80d9c550>
+===10/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa811cc7f0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80f5c400>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa81536cf8>
+===11/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8149c9b0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80e2df28>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8138ab00>
+===12/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa811ccd30>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8156f358>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80e2d978>
+===13/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80e1b0f0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa812dc550>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa816127b8>
+===14/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa811ba4e0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8106e630>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa81155e48>
+===15/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80f40828>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa810bfc50>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa814d7978>
+===16/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa81206cc0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa811ba4a8>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa81155748>
+===17/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8138a4e0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80d9c550>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa811ba550>
+===18/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa815877b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80f5c400>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80e2d198>
+===19/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa810f1908>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80e2df28>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa81441b00>
+===20/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa810f1a90>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8104aa90>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80d9c128>
+===21/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa8104a0b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa816127b8>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa81536518>
+===22/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa81441400>
+-6441.0 <__main__.StrategyIndividual object at 0x7ff9887dca90>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa813ea198>
+===23/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa81544780>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa814d7978>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80e74cf8>
+===24/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa806dec88>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa80e572b0>
+-6441.0 <__main__.StrategyIndividual object at 0x7ffa815a9ac8>
+===0/25===
+-6733.0 <__main__.StrategyIndividual object at 0x7fa7eda75668>
+-6740.0 <__main__.StrategyIndividual object at 0x7fa7ed7cc4a8>
+-6844.0 <__main__.StrategyIndividual object at 0x7fa7edc140b8>
+===1/25===
+-6733.0 <__main__.StrategyIndividual object at 0x7fa7eda75668>
+-6733.0 <__main__.StrategyIndividual object at 0x7fa7ed989eb8>
+-6740.0 <__main__.StrategyIndividual object at 0x7fa7ed7cc4a8>
+===2/25===
+-6711.0 <__main__.StrategyIndividual object at 0x7fa7d507c0b8>
+-6733.0 <__main__.StrategyIndividual object at 0x7fa7eda75668>
+-6733.0 <__main__.StrategyIndividual object at 0x7fa7eda1cda0>
+===3/25===
+-6569.0 <__main__.StrategyIndividual object at 0x7fa7edb83a20>
+-6572.0 <__main__.StrategyIndividual object at 0x7fa7edc35438>
+-6585.0 <__main__.StrategyIndividual object at 0x7fa7edde4b38>
+===4/25===
+-6440.0 <__main__.StrategyIndividual object at 0x7fa7ede0c470>
+-6569.0 <__main__.StrategyIndividual object at 0x7fa7edb83a20>
+-6569.0 <__main__.StrategyIndividual object at 0x7fa7edacacf8>
+===5/25===
+-6440.0 <__main__.StrategyIndividual object at 0x7fa7ede0c470>
+-6440.0 <__main__.StrategyIndividual object at 0x7fa7d55317f0>
+-6461.0 <__main__.StrategyIndividual object at 0x7fa7edd12710>
+===6/25===
+-6440.0 <__main__.StrategyIndividual object at 0x7fa7ede0c470>
+-6440.0 <__main__.StrategyIndividual object at 0x7fa7ed69b9e8>
+-6440.0 <__main__.StrategyIndividual object at 0x7fa7ed6d0470>
+===7/25===
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7ed807080>
+-6440.0 <__main__.StrategyIndividual object at 0x7fa7ede0c470>
+-6440.0 <__main__.StrategyIndividual object at 0x7fa7edd93400>
+===8/25===
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7ed807080>
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7ed768048>
+-6440.0 <__main__.StrategyIndividual object at 0x7fa7edde4240>
+===9/25===
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7ed807080>
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7ed9c32b0>
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7ed768048>
+===10/25===
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7ed807080>
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7d507cda0>
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7eddb9dd8>
+===11/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edbbfcf8>
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7ed807080>
+-6424.0 <__main__.StrategyIndividual object at 0x7fa7d55179b0>
+===12/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edbbfcf8>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd554e0>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd55320>
+===13/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edbbfcf8>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd554e0>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd55320>
+===14/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edbbfcf8>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7ed5a8550>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7eda39978>
+===15/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edbbfcf8>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd55320>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd41978>
+===16/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edbbfcf8>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7d507c4a8>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7ed88e358>
+===17/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edbbfcf8>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7ed99d9b0>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edb5c358>
+===18/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7ed9896d8>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd55f60>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd121d0>
+===19/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7ed69ba58>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd55320>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7ed56e518>
+===20/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edb457f0>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd41a90>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edb5c358>
+===21/25===
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7ed5cf710>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edd554e0>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7edcd6828>
+===22/25===
+-4711.0 <__main__.StrategyIndividual object at 0x7fa7edca9c50>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7ed98cef0>
+-4722.0 <__main__.StrategyIndividual object at 0x7fa7ed926b38>
+===23/25===
+-4704.0 <__main__.StrategyIndividual object at 0x7fa7edb0c400>
+-4711.0 <__main__.StrategyIndividual object at 0x7fa7edca9c50>
+-4711.0 <__main__.StrategyIndividual object at 0x7fa7edbbfb70>
+===24/25===
+-4704.0 <__main__.StrategyIndividual object at 0x7fa7edb0c400>
+-4704.0 <__main__.StrategyIndividual object at 0x7fa7edd08940>
+-4711.0 <__main__.StrategyIndividual object at 0x7fa7edca9c50>
+===0/25===
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11dc390b8>
+-6610.0 <__main__.StrategyIndividual object at 0x7fd11dd7a8d0>
+-6734.0 <__main__.StrategyIndividual object at 0x7fd11d9b23c8>
+===1/25===
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11dc390b8>
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11d7f1eb8>
+-6610.0 <__main__.StrategyIndividual object at 0x7fd11dd7a8d0>
+===2/25===
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11dc390b8>
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11d7f1eb8>
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11d613f60>
+===3/25===
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11dc390b8>
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11d7f1eb8>
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11dddfef0>
+===4/25===
+-6569.0 <__main__.StrategyIndividual object at 0x7fd11d71c7f0>
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11dc390b8>
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11d64fd68>
+===5/25===
+-6569.0 <__main__.StrategyIndividual object at 0x7fd11d71c7f0>
+-6569.0 <__main__.StrategyIndividual object at 0x7fd11d71c550>
+-6585.0 <__main__.StrategyIndividual object at 0x7fd11d613f60>
+===6/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d866208>
+-6569.0 <__main__.StrategyIndividual object at 0x7fd11d71c7f0>
+-6569.0 <__main__.StrategyIndividual object at 0x7fd11dd670b8>
+===7/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d866208>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d7558d0>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dbe5860>
+===8/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d0ce400>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11da7a4e0>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d7558d0>
+===9/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d0ce400>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dda2c18>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dcfda20>
+===10/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d0ce400>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d613278>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11db491d0>
+===11/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d0ce400>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d5f54e0>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dbe5860>
+===12/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d87f208>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d613a58>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d8a3518>
+===13/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11db49780>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11de31048>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dd7acf8>
+===14/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d80e5c0>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d78e048>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dad4da0>
+===15/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dd7a828>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d5f5eb8>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd15da78160>
+===16/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d7f2f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d613278>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dcfd8d0>
+===17/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11da42ac8>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d7558d0>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dc1e748>
+===18/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11db49b00>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11da5bd30>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d87f320>
+===19/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d974cc0>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d94d978>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dd07518>
+===20/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d7f2cc0>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d5f5a20>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dbf8390>
+===21/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11db6b080>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dbaa160>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dcfda20>
+===22/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d5f58d0>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11de2f588>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11db82860>
+===23/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d632d68>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11d9c2320>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11dddf828>
+===24/25===
+-6431.0 <__main__.StrategyIndividual object at 0x7fd11d9858d0>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11cf83550>
+-6441.0 <__main__.StrategyIndividual object at 0x7fd11db491d0>
+===0/25===
+-6461.0 <__main__.StrategyIndividual object at 0x7f199d09a9e8>
+-6576.0 <__main__.StrategyIndividual object at 0x7f1994f99748>
+-6605.0 <__main__.StrategyIndividual object at 0x7f1994c539b0>
+===1/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9b3278>
+-6461.0 <__main__.StrategyIndividual object at 0x7f199d09a9e8>
+-6461.0 <__main__.StrategyIndividual object at 0x7f1994c53048>
+===2/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9b3278>
+-6461.0 <__main__.StrategyIndividual object at 0x7f1994c53048>
+-6461.0 <__main__.StrategyIndividual object at 0x7f19ad94de48>
+===3/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9b3278>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1995045978>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d3a69b0>
+===4/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9b3278>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1995045978>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d3a69b0>
+===5/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9b3278>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d3a69b0>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994eb0f60>
+===6/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9b3278>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994eeb518>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994eb0f60>
+===7/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9b3278>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994f77400>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1995072668>
+===8/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9b3278>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994eb0f60>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994fbff60>
+===9/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9b3278>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994f77400>
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9c29e8>
+===10/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad9b3278>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994cd3f60>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d3c12e8>
+===11/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994d47ac8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994f63cc0>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1995072be0>
+===12/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994f99828>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994d66780>
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad8da4a8>
+===13/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d172eb8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994f77400>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d281a58>
+===14/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad8e4ef0>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1a03e77278>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994fbff60>
+===15/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f198c290908>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d2bca58>
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad926128>
+===16/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994df8a58>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994c8e080>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1995045978>
+===17/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f1995072908>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d3a6940>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994c8e4e0>
+===18/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f198c2d4f60>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994f96278>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994eb2080>
+===19/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad926240>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d3a69b0>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d220080>
+===20/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994f77908>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994eb0f60>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994dfbf28>
+===21/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994fd56a0>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994f39f28>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1994d0f860>
+===22/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d1df4a8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1995072668>
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad8e4f60>
+===23/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d172da0>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d209f98>
+-6441.0 <__main__.StrategyIndividual object at 0x7f1995045668>
+===24/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f19ad926b38>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d1df6d8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f199d1c8dd8>
+===0/25===
+-6575.0 <__main__.StrategyIndividual object at 0x7f0e5d5c2588>
+-6583.0 <__main__.StrategyIndividual object at 0x7f0e5dbeb588>
+-6587.0 <__main__.StrategyIndividual object at 0x7f0e5dd6fe48>
+===1/25===
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5d98bb38>
+-6575.0 <__main__.StrategyIndividual object at 0x7f0e5d5c2588>
+-6583.0 <__main__.StrategyIndividual object at 0x7f0e5dbeb588>
+===2/25===
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5d98bb38>
+-6575.0 <__main__.StrategyIndividual object at 0x7f0e5d5c2588>
+-6583.0 <__main__.StrategyIndividual object at 0x7f0e5dbeb588>
+===3/25===
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5d98bb38>
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5d97a208>
+-6571.0 <__main__.StrategyIndividual object at 0x7f0e5d6500f0>
+===4/25===
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5d98bb38>
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5d97a208>
+-6571.0 <__main__.StrategyIndividual object at 0x7f0e5d6500f0>
+===5/25===
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5d98bb38>
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5dcf7748>
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5d97ac18>
+===6/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d9b5e80>
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5d98bb38>
+-6459.0 <__main__.StrategyIndividual object at 0x7f0e5dcf7748>
+===7/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d9b5e80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5ddc2e80>
+-6448.0 <__main__.StrategyIndividual object at 0x7f0e5dbc81d0>
+===8/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d9b5e80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5ddc2e80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d4ce630>
+===9/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d9b5e80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5ddc2e80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d4ce630>
+===10/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d9b5e80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5dcbc588>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5ddc2e80>
+===11/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d9b5e80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d97a438>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d97a400>
+===12/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d9b5e80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5dcbc588>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d4ce630>
+===13/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5da98710>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d97ae80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d97a438>
+===14/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d7d3ac8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d4ce160>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5dcbc588>
+===15/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d7d3c50>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d79d240>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5dd0bb38>
+===16/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d833240>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5ddc2e80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d86d160>
+===17/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d7d3c18>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5db757f0>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5da644e0>
+===18/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5da98748>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d86dcf8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5dc694e0>
+===19/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d98e320>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d9b5780>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5da08b70>
+===20/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d7da4e0>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d4ce630>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5dd0b160>
+===21/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d6e7780>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d8dde80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5dc695c0>
+===22/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d9b5828>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d9b5e80>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d298668>
+===23/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d782358>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d98b2b0>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d5a3198>
+===24/25===
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d8dd048>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5d952cf8>
+-6441.0 <__main__.StrategyIndividual object at 0x7f0e5dad9320>
+===0/25===
+-6461.0 <__main__.StrategyIndividual object at 0x7f95b8230128>
+-6587.0 <__main__.StrategyIndividual object at 0x7f95b8842550>
+-6588.0 <__main__.StrategyIndividual object at 0x7f95b88dab70>
+===1/25===
+-6461.0 <__main__.StrategyIndividual object at 0x7f95b8230128>
+-6587.0 <__main__.StrategyIndividual object at 0x7f95b894b668>
+-6587.0 <__main__.StrategyIndividual object at 0x7f95b859bef0>
+===2/25===
+-6450.0 <__main__.StrategyIndividual object at 0x7f95b89c7eb8>
+-6461.0 <__main__.StrategyIndividual object at 0x7f95b8230128>
+-6587.0 <__main__.StrategyIndividual object at 0x7f95b8842550>
+===3/25===
+-6450.0 <__main__.StrategyIndividual object at 0x7f95b89c7eb8>
+-6461.0 <__main__.StrategyIndividual object at 0x7f95b8230128>
+-6587.0 <__main__.StrategyIndividual object at 0x7f95b871d2b0>
+===4/25===
+-6450.0 <__main__.StrategyIndividual object at 0x7f95b89c7eb8>
+-6450.0 <__main__.StrategyIndividual object at 0x7f95b89c7860>
+-6450.0 <__main__.StrategyIndividual object at 0x7f95b8254e48>
+===5/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b86f7b38>
+-6450.0 <__main__.StrategyIndividual object at 0x7f95b89c7eb8>
+-6450.0 <__main__.StrategyIndividual object at 0x7f95b89c7860>
+===6/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b86f7b38>
+-6450.0 <__main__.StrategyIndividual object at 0x7f95b89c7908>
+-6450.0 <__main__.StrategyIndividual object at 0x7f95b871dfd0>
+===7/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b86f7b38>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b83eeef0>
+-6450.0 <__main__.StrategyIndividual object at 0x7f95b7abcc18>
+===8/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b86f7b38>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b83eeef0>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b871d860>
+===9/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b86f7b38>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b87a7470>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b83eeef0>
+===10/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b86f7b38>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b85ad400>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b8535128>
+===11/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b86f7b38>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b84df080>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b87cdfd0>
+===12/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b86f7b38>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b871d860>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b85ad400>
+===13/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b86f7b38>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b84f7278>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b88b7a20>
+===14/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b894b3c8>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b8825828>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b83d9ef0>
+===15/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b878fcf8>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b877c470>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b860e208>
+===16/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b89c7908>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b87a7470>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b88f2d30>
+===17/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b856f2e8>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b848a278>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b872e5c0>
+===18/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b86495f8>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b860ed68>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b8649128>
+===19/25===
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b8216048>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b859b470>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b88b7a20>
+===20/25===
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b8216048>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b87cdfd0>
+-6443.0 <__main__.StrategyIndividual object at 0x7f95b87cd4a8>
+===21/25===
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b8216048>
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b83d9ac8>
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b82cb160>
+===22/25===
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b8216048>
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b82cb160>
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b8913940>
+===23/25===
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b8216048>
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b82cb160>
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b8913940>
+===24/25===
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b8216048>
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b8913588>
+-6429.0 <__main__.StrategyIndividual object at 0x7f95b8988400>
+===0/25===
+-6603.0 <__main__.StrategyIndividual object at 0x7fc471caaf98>
+-6717.0 <__main__.StrategyIndividual object at 0x7fc4719d6908>
+-6719.0 <__main__.StrategyIndividual object at 0x7fc471662080>
+===1/25===
+-6587.0 <__main__.StrategyIndividual object at 0x7fc471d410b8>
+-6592.0 <__main__.StrategyIndividual object at 0x7fc471854b00>
+-6603.0 <__main__.StrategyIndividual object at 0x7fc471caaf98>
+===2/25===
+-6587.0 <__main__.StrategyIndividual object at 0x7fc471d410b8>
+-6587.0 <__main__.StrategyIndividual object at 0x7fc47195e8d0>
+-6592.0 <__main__.StrategyIndividual object at 0x7fc471854b00>
+===3/25===
+-6587.0 <__main__.StrategyIndividual object at 0x7fc471d410b8>
+-6587.0 <__main__.StrategyIndividual object at 0x7fc47195e8d0>
+-6592.0 <__main__.StrategyIndividual object at 0x7fc471854b00>
+===4/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7fc471bd0fd0>
+-6587.0 <__main__.StrategyIndividual object at 0x7fc471b5d208>
+-6587.0 <__main__.StrategyIndividual object at 0x7fc47195e8d0>
+===5/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7fc471bd0fd0>
+-6443.0 <__main__.StrategyIndividual object at 0x7fc471e2e5c0>
+-6569.0 <__main__.StrategyIndividual object at 0x7fc47176c588>
+===6/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7fc471bd0fd0>
+-6443.0 <__main__.StrategyIndividual object at 0x7fc471e2e5c0>
+-6443.0 <__main__.StrategyIndividual object at 0x7fc471caa5f8>
+===7/25===
+-6443.0 <__main__.StrategyIndividual object at 0x7fc471bd0fd0>
+-6443.0 <__main__.StrategyIndividual object at 0x7fc471caa470>
+-6443.0 <__main__.StrategyIndividual object at 0x7fc471e2e5c0>
+===8/25===
+-6303.0 <__main__.StrategyIndividual object at 0x7fc471c34908>
+-6303.0 <__main__.StrategyIndividual object at 0x7fc471732d68>
+-6303.0 <__main__.StrategyIndividual object at 0x7fc471b95080>
+===9/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d1eb38>
+-6303.0 <__main__.StrategyIndividual object at 0x7fc471c34908>
+-6303.0 <__main__.StrategyIndividual object at 0x7fc471732d68>
+===10/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d1eb38>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d419e8>
+-6303.0 <__main__.StrategyIndividual object at 0x7fc471def6a0>
+===11/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d1eb38>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471bf9c18>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471b5d940>
+===12/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d1eb38>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471bd01d0>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471bf9c18>
+===13/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d1eb38>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d419e8>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471854cc0>
+===14/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d1eb38>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471906b70>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc459117208>
+===15/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d1eb38>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471854cc0>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d1eb00>
+===16/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471819e80>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc45958d390>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471bf9c18>
+===17/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471697dd8>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc4716810b8>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471854cc0>
+===18/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471b5d828>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471bd01d0>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471c0ce10>
+===19/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471a725f8>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471c34400>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc459348fd0>
+===20/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471dcae48>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc4717328d0>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471a72860>
+===21/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc4718417b8>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471dca2e8>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc47171e320>
+===22/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471def278>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471dcada0>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d419e8>
+===23/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc450d0f400>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471d1eb00>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471841438>
+===24/25===
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471854e80>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471caacf8>
+-6298.0 <__main__.StrategyIndividual object at 0x7fc471819198>
+===0/2===
+-6569.0 <__main__.StrategyIndividual object at 0x7f84cb449cc0>
+-6608.0 <__main__.StrategyIndividual object at 0x7f84cb39c080>
+-6715.0 <__main__.StrategyIndividual object at 0x7f84cb3f35f8>
+===1/2===
+-6459.0 <__main__.StrategyIndividual object at 0x7f84cb7e4978>
+-6569.0 <__main__.StrategyIndividual object at 0x7f84cb449cc0>
+-6569.0 <__main__.StrategyIndividual object at 0x7f84cb4b7390>

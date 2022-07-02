@@ -13,10 +13,10 @@ def plot_core_busy_ratio(data, ignore):
     plot = sns.histplot(busy_ratio, bins=10, binrange=(0, 1), common_norm=True)
     fig = plot.get_figure()
 
-    fig_path = os.path.join(gc.visualization_root, "core_busy_ratio_{}.png".format(gc.taskname))
+    fig_path = os.path.join(gc.visualization_root, "core_busy_ratio_{}_{}.png".format(gc.taskname, gc.benchmark_name[10:]))
     fig.savefig(fig_path)
     plt.close()
 
-    data_path = os.path.join(gc.op_graph_buffer, "core_busy_ratio_{}.npy".format(gc.taskname))
+    data_path = os.path.join(gc.op_graph_buffer, "core_busy_ratio_{}_{}.npy".format(gc.taskname, gc.benchmark_name[10:]))
     with open(data_path, "wb") as f:
         np.save(f, busy_ratio)

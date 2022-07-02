@@ -52,6 +52,8 @@ def getArgumentParser():
 
 def setEnvSpecs(args: argparse.Namespace):
 
+    gc.benchmark_name = args.bm
+
     # set architecture parameters
     gc.array_diameter = args.d
     gc.array_size = args.d ** 2
@@ -104,7 +106,7 @@ def printSpecs():
     print("*"*60, "\n")
 
 
-def run_single_task():
+def run_single_task(args):
     '''An E2E flow for the task specified in `global_control.py`.
     '''
 
@@ -141,7 +143,7 @@ def run_single_task():
 
 
     if gc.compile_task and gc.simulate_baseline:
-        print("{} {} {} {} {}".format(gc.array_diameter, gc.flit_size, (simulate_cycle-compute_cycle)/compute_cycle, compute_cycle, simulate_cycle), file=stderr)
+        print("{} {} {} {} {} {}".format(args.bm, gc.array_diameter, gc.flit_size, (simulate_cycle-compute_cycle)/compute_cycle, compute_cycle, simulate_cycle), file=stderr)
 
     end_time = time()
     print("METRO software takes: {} seconds".format(end_time - start_time))
@@ -155,7 +157,7 @@ if __name__ == "__main__":
     for f in range(fmin, fmax + fstep, fstep):
         vars(args)["f"] = f
         setEnvSpecs(args)
-        run_single_task()
+        run_single_task(args)
 
     # # Invoke the FOCUS software procedure to schedule the traffic.
     # if gc.focus_schedule:

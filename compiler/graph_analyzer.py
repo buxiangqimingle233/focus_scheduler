@@ -4,11 +4,25 @@ import networkx as nx
 # from op_graph.micro_op_graph import MicroOpGraph
 from routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, WhirlTreeRouter
 import matplotlib.pyplot as plt
+import functools
+
+def edge_cmp(a, b):
+    if a[0] < b[0]:
+        return -1
+    elif a[0] > b[0]:
+        return 1
+    else:
+        if a[1] < b[1]:
+            return -1
+        elif a[1] > b[1]:
+            return 1
+        else:
+            return 0
 
 class Graph_analyzer:
 
     def __init__(self, diameter, graph = None, router = RPMTreeRouter, multi_task_per_core = False, per_layer_topology = False, \
-                 edge_priority = False) -> None:
+                 edge_priority = False, user_defined_router = False) -> None:
         # super.__init__()
         self.diameter = diameter
         self.multi_task_per_core = multi_task_per_core
@@ -16,7 +30,12 @@ class Graph_analyzer:
         self.edge_priority = edge_priority
         self.edge_occupied = {}
         self.p_node_occupied = {}
-        self.router = router(self.diameter)
+        if not user_defined_router:
+            self.router = router(self.diameter)
+        #user defined router: a mapping from hyper edge to route path
+        self.user_defined_router = user_defined_router
+        if user_defined_router:
+            self.router = router
         self.max_time = 0
         if graph != None:
             self.graph = copy.deepcopy(graph)
@@ -93,7 +112,7 @@ class Graph_analyzer:
             for l in edges_lists:
                 l.sort(key=self.edge_priority_func)
 
-            # print(edges_lists)
+            # print(edges_lists, "%%%%%%%")
 
             for l in edges_lists:
                 for e in l:
@@ -104,7 +123,7 @@ class Graph_analyzer:
                     if critical_path:
                         G_backup = self.critical_path_update(e[0][0], dest, G_backup)
                     else:
-                        G_backup = self.update(e[0][0], id, edge, dest, G_backup)
+                        G_backup = self.update(e[0][0], id, edge, dest, G_backup, hyper_edge=e)
                     
             
             
@@ -126,8 +145,14 @@ class Graph_analyzer:
         return self.max_time
     
     #update mesh_edge occupied time, node start, self.max_time, edge waiting time, mesh_node occupied time
-    def update(self, vector, edge_id, edge, dest, graph):
-        routing_tree = self.router.route(graph.nodes[vector]['p_pe'], [graph.nodes[u]['p_pe'] for u in dest])
+    def update(self, vector, edge_id, edge, dest, graph, hyper_edge=None):
+        routing_tree = None
+        if not self.user_defined_router:
+            routing_tree = self.router.route(graph.nodes[vector]['p_pe'], [graph.nodes[u]['p_pe'] for u in dest])
+        else:
+            hyper_edge.sort(key=functools.cmp_to_key(edge_cmp))
+            # print(list(self.router.router.keys()))
+            routing_tree = self.router.router[tuple(hyper_edge)]
         p_source = graph.nodes[vector]['p_pe']
         edges_list = self.tree_to_edges(routing_tree)
         temp_edge_occupied = {}
@@ -168,6 +193,9 @@ class Graph_analyzer:
             graph.nodes[v]['start'] = transfering_time + transfer_start + max_waiting_time + size
 
             self.graph.nodes[v]['start'] = transfering_time + transfer_start + max_waiting_time + size
+            # if in the same core, transfermation is unnecessary
+            if p_source == p_pe:
+                self.graph.nodes[v]['start'] = transfer_start
         
         # if vector in [5,6]:
         #     print(vector, p_source, transfering_time, transfer_start, max_waiting_time, size, sep=' ')
@@ -250,26 +278,26 @@ if __name__ == "__main__":
         graph.edges[e]['priority'] = -1
 
 
-    # for v in graph.nodes():
-    #     print(graph.nodes[v])
+    for v in graph.nodes():
+        print(graph.nodes[v])
     
-    # mapping = {}
-    # label = 1
-    # for v in graph.nodes():
-    #     mapping[v] = f"{label}:{graph.nodes[v]['delay']}"
-    #     # print(label, graph.nodes[v], sep = ' ')
-    #     label += 1
-    # graph = nx.relabel_nodes(graph, mapping=mapping)
+    mapping = {}
+    label = 1
+    for v in graph.nodes():
+        mapping[v] = f"{label}:{graph.nodes[v]['delay']}"
+        # print(label, graph.nodes[v], sep = ' ')
+        label += 1
+    graph = nx.relabel_nodes(graph, mapping=mapping)
 
-    # for e in graph.edges():
-    #     print(e, graph.edges[e], sep=' ')
+    for e in graph.edges():
+        print(e, graph.edges[e], sep=' ')
 
     
 
-    # nx.draw_networkx(graph)  # networkx draw()
+    nx.draw_networkx(graph)  # networkx draw()
     
-    # plt.draw()  # pyplot draw()
-    # plt.savefig('./figure.png')
+    plt.draw()  # pyplot draw()
+    plt.savefig('./figure.png')
 
     a = Graph_analyzer(9, graph=graph, router=RPMTreeRouter, per_layer_topology=True)
     print("total cycles:",a.analyze())
