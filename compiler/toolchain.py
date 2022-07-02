@@ -2,6 +2,8 @@ import os
 import re
 from copy import deepcopy
 from compiler import global_control as gc
+import networkx as nx
+from math import ceil
 import pickle
 
 import networkx as nx
@@ -62,15 +64,18 @@ class TaskCompiler():
 
         self.compute_cycle_lower_bound = op_graph.total_compute_cycles()
 
-        for node, attr in op_graph.get_data().nodes(data=True):
-            attr['cnt'] = 1
-            pass
-        start = 100000
-        for u, v, eattr in op_graph.get_data().edges(data=True):
-            if eattr['edge_type'] == "control":
-                eattr['fid'] = start
-                eattr['size'] = 1
-                start += 1
+        # for node, attr in op_graph.get_data().nodes(data=True):
+        #     attr['cnt'] = 1
+        #     pass
+        # start = 100000
+        # for u, v, eattr in op_graph.get_data().edges(data=True):
+        #     if eattr['edge_type'] == "control":
+        #         eattr['fid'] = start
+        #         eattr['size'] = 1
+        #         start += 1
+        
+
+        flattened = self.flatten(op_graph)
 
         nx.write_gpickle(op_graph.get_data(), f'./try.gpickle')
 
@@ -109,7 +114,6 @@ class TaskCompiler():
         mapper = HilbertMapper(op_graph, layout, gc.array_diameter, gc.virtualization)
         return mapper.map()
 
-
     def _to_spatialsim_trace(self, op_graph):
 
         # Do some path handling works
@@ -137,7 +141,6 @@ class TaskCompiler():
         specification_ref_file.close()
         specification_file.close()
 
-
     def gen_physical_layout(self):
         d = gc.array_diameter - 1
         mems = [
@@ -160,6 +163,73 @@ class TaskCompiler():
         layout = {i: "core" for i in cores}
         layout.update({i: "mem" for i in mems})
         return layout
+
+    def flatten(self, op_graph: MicroOpGraph) -> nx.DiGraph():
+        ret = nx.DiGraph()
+        G = deepcopy(op_graph.get_data())
+
+        for _, __, eattr in G.edges(data=True):
+            eattr["priority"] = 55
+            eattr["pkt"] = []
+
+        op_hash_to_node_hash = {node: [] for node in G.nodes()}
+        pkt_counter = 0
+
+        for node, nattr in G.nodes(data=True):
+            iteraction_cnt = int(nattr["cnt"])
+
+            for i in range(iteraction_cnt):
+                flatten_node_hash = MicroOpGraph.hash_node(nattr["layer"], nattr["v_pe"], nattr["batch"] * gc.batch + i)
+                ret.add_node(flatten_node_hash, **nattr)
+                ret.nodes[flatten_node_hash]["cnt"] = 1
+                op_hash_to_node_hash[node].append(flatten_node_hash)
+
+            for i in range(1, iteraction_cnt):
+                ret.add_edge(op_hash_to_node_hash[node][i - 1], op_hash_to_node_hash[node][i], fid=pkt_counter, size=0, priority=-1, edge_type="data")
+                pkt_counter += 1
+
+            # propagate data 
+            out_data_edges = [(u, v) for u, v, t in G.out_edges(node, data="edge_type") if t == "data"]
+            for _ in range(iteraction_cnt):
+                flows = {G.edges[e]["fid"] for e in out_data_edges}
+                fid_to_pid = {fid: pid for fid, pid in zip(flows, range(pkt_counter, pkt_counter + len(flows)))}
+                pkt_counter += len(flows)
+
+                for u, v in out_data_edges:
+                    fid = G.edges[u, v]["fid"]
+                    pid = fid_to_pid[fid]
+                    G.edges[u, v]["pkt"].append(pid)
+                    G.edges[u, v]["vis"] = True
+
+            # propagate control signals
+            out_control_edges = [(u, v) for u, v, t in G.out_edges(node, data="edge_type") if t == "control"]
+            for u, v in out_control_edges:
+                pid = pkt_counter
+                pkt_counter += 1
+                G.edges[u, v]["pkt"].append(pid)
+                G.edges[u, v]["vis"] = True
+
+        for u, v, eattr in G.edges(data=True): 
+            sources = op_hash_to_node_hash[u]
+            destinations = op_hash_to_node_hash[v]
+            pkt = eattr["pkt"]
+            assert len(pkt) == len(sources)
+            if eattr["edge_type"] == "data":
+                assert len(sources) % len(destinations) == 0 or len(destinations) % len(sources) == 0
+                # one dest, multiple source
+                if len(sources) <= len(destinations):
+                    interval = len(destinations) // len(sources)
+                    for i in range(0, len(destinations), interval):
+                        ret.add_edge(sources[i // interval], destinations[i], size=eattr["size"], priority=eattr["priority"], fid=pkt[i // interval])
+                else:
+                    data_per_iter = len(sources) // len(destinations)
+                    for i in range(len(destinations)):
+                        for j in range(data_per_iter):
+                            ret.add_edge(sources[i * data_per_iter + j], destinations[i], size=eattr["size"], priority=eattr["priority"], fid=pkt[i * data_per_iter + j])
+            elif eattr["edge_type"] == "control":
+                ret.add_edge(sources[-1], destinations[0], fid=pkt[0], priority=eattr["priority"], size=1)
+
+        return ret
 
     def _to_focus_trace(self, op_graph):
         pass
