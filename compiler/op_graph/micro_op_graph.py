@@ -28,7 +28,7 @@ class MicroOpGraph:
         self.graph = nx.DiGraph()
 
     @staticmethod
-    def __hash_node(layer_, vpe_, batch_):
+    def hash_node(layer_, vpe_, batch_):
         return hash(repr("{}#{}#{}".format(layer_, vpe_, batch_)))
 
     def get_data(self):
@@ -69,9 +69,9 @@ class MicroOpGraph:
         # some magic numbers ... 
         i_source_magic, w_source_magic, sink_magic = -1, -3, -2
 
-        i_source = MicroOpGraph.__hash_node(layer, i_source_magic, batch)
-        w_source = MicroOpGraph.__hash_node(layer, w_source_magic, batch)
-        sink = MicroOpGraph.__hash_node(layer, sink_magic, batch)
+        i_source = MicroOpGraph.hash_node(layer, i_source_magic, batch)
+        w_source = MicroOpGraph.hash_node(layer, w_source_magic, batch)
+        sink = MicroOpGraph.hash_node(layer, sink_magic, batch)
 
 
         def get_prelayer_name(name):
@@ -89,7 +89,7 @@ class MicroOpGraph:
         # Setup weight source
         w_cnt = group.get_group("weight")["counts"].iloc[0]
         w_delay = group.get_group("weight")["interval"].iloc[0]
-        self.add_node(hash_=w_source, layer=layer, type_="wsrc", v_pe=w_source_magic, delay=w_delay, count=w_cnt, batch=batch)
+        self.add_node(hash_=w_source, layer=layer, type_="wsrc", v_pe=w_source_magic, delay=w_delay, cnt=w_cnt, batch=batch)
         operators.append(w_source)
         
         # Add Control signals: the weight source won't activate until its preceeding layer finishes
@@ -100,7 +100,7 @@ class MicroOpGraph:
         # Setup input source
         i_cnt = group.get_group("input")["counts"].iloc[0]
         i_delay = group.get_group("input")["interval"].iloc[0]
-        self.add_node(hash_=i_source, layer=layer, type_="insrc", v_pe=i_source_magic, delay=i_delay, count=i_cnt, batch=batch)
+        self.add_node(hash_=i_source, layer=layer, type_="insrc", v_pe=i_source_magic, delay=i_delay, cnt=i_cnt, batch=batch)
         operators.append(i_source)
         # Add control signals: the input source should wait for preceeding layer to finish
         # TODO: We put hard syncronization bairrer between two adjacent layers. However, in some cases, e.g. oc-tiling to ic-tiling,
@@ -116,14 +116,14 @@ class MicroOpGraph:
         # Setup sink (merger)
         o_cnt = group.get_group("output")["counts"].iloc[0]
         o_delay = group.get_group("output")["interval"].iloc[0]
-        self.add_node(hash_=sink, layer=layer, type_="sink", v_pe=sink_magic, delay=0, count=1, batch=batch)
+        self.add_node(hash_=sink, layer=layer, type_="sink", v_pe=sink_magic, delay=0, cnt=1, batch=batch)
         operators.append(sink)
 
         # Setup workers
         edges = {(r["src"], r["dst"]): (r["fid"], r["flit"]) for _, r in streams.explode("src").explode("dst").iterrows()}
         for w in range(worker_num):
-            worker = MicroOpGraph.__hash_node(layer, w, batch)
-            self.add_node(hash_=worker, layer=layer, type_="worker", v_pe=w, delay=o_delay, count=o_cnt, batch=batch)
+            worker = MicroOpGraph.hash_node(layer, w, batch)
+            self.add_node(hash_=worker, layer=layer, type_="worker", v_pe=w, delay=o_delay, cnt=o_cnt, batch=batch)
             operators.append(worker)
 
             # Connect weight source to the worker
@@ -153,9 +153,9 @@ class MicroOpGraph:
         self.graph.remove_edge(u, v)
 
     # TODO: one function for one node type
-    def add_node(self, hash_: int, type_: str, layer: int, v_pe: int, delay: int, count: int, batch: int):
+    def add_node(self, hash_: int, type_: str, layer: int, v_pe: int, delay: int, cnt: int, batch: int):
         assert type_ in self.node_types
-        self.graph.add_node(hash_, op_type=type_, layer=layer, v_pe=v_pe, delay=delay, cnt=count, batch=batch)
+        self.graph.add_node(hash_, op_type=type_, layer=layer, v_pe=v_pe, delay=delay, cnt=cnt, batch=batch)
 
     def set_physical_pe(self, node: int, pe: int):
         self.graph.nodes[node]["p_pe"] = pe

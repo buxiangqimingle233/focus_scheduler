@@ -1,4 +1,4 @@
-
+#!/bin/bash
 # cat /dev/null > nohup.out
 
 
@@ -23,8 +23,5 @@
 # python focus.py -bm benchmark/multi-model-3.yaml -d 16 d
 # python focus.py -bm benchmark/pipeline.yaml -d 18 d
 # wait
-# python focus.py -bm benchmark/8_8.yaml -d 8 -b 8
-
-
-
-
+python focus.py -bm benchmark/16_16.yaml -d 8 -b 1 -fr 1024-1024-1024 ds &
+# python focus.py -bm benchmark/

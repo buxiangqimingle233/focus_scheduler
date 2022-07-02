@@ -115,7 +115,7 @@ def run_single_task():
     if gc.compile_task:
         toolchain = TaskCompiler()
         toolchain.compile()
-        compute_cycle = toolchain.get_compute_cycle() / gc.overclock
+        compute_cycle = toolchain.get_compute_cycle() # * gc.overclock
         print("compute cycle", compute_cycle)
 
         # plot channel loads
