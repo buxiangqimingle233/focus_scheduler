@@ -141,7 +141,7 @@ def run_single_task():
 
 
     if gc.compile_task and gc.simulate_baseline:
-        print("{} {} {} {} {}".format(gc.array_diameter, gc.flit_size, (simulate_cycle-compute_cycle)/compute_cycle, compute_cycle, simulate_cycle), file=stderr)
+        print("{} {} {} {} {} {}".format(gc.taskname, gc.array_diameter, gc.flit_size, (simulate_cycle-compute_cycle)/compute_cycle, compute_cycle, simulate_cycle), file=stderr)
 
     end_time = time()
     print("METRO software takes: {} seconds".format(end_time - start_time))

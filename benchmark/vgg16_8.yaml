@@ -1,0 +1,17 @@
+vgg16:
+- vgg16_layer1: 16
+- vgg16_layer2: 16
+- vgg16_layer3: 16
+- vgg16_layer4: 16
+- vgg16_layer5: 16
+- vgg16_layer6: 16
+- vgg16_layer7: 16
+- vgg16_layer8: 16
+- vgg16_layer9: 16
+- vgg16_layer10: 16
+- vgg16_layer11: 16
+- vgg16_layer12: 16
+- vgg16_layer13: 16
+- vgg16_layer14: 16
+- vgg16_layer15: 16
+- vgg16_layer16: 16

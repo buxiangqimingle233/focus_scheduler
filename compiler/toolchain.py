@@ -115,8 +115,10 @@ class TaskCompiler():
         # Do some path handling works
         Variables.gen_working_dir(gc.spatial_sim_root, gc.taskname)
 
-        trace_files = {key: open(value, "w") for key, value in \
-            Variables.get_trace_file_path_dict(gc.spatial_sim_root, gc.taskname, gc.array_size).items()}
+        # trace_files = {key: open(value, "w") for key, value in \
+        #     Variables.get_trace_file_path_dict(gc.spatial_sim_root, gc.taskname, gc.array_size).items()}
+
+        trace_files = Variables.get_trace_file_path_dict(gc.spatial_sim_root, gc.taskname, gc.array_size)
 
         routing_board_file = open(Variables.get_routing_board_path(gc.spatial_sim_root, gc.taskname), "w")
         specification_file = open(Variables.get_spec_path(gc.spatial_sim_root, gc.taskname), "w")
@@ -127,25 +129,31 @@ class TaskCompiler():
         TraceGenerator().gen_trace(trace_files, routing_board_file, specification_file, \
             specification_ref_file, op_graph, router)
 
-        for f in trace_files.values():
-            f.close()
+        # for f in trace_files.values():
+        #     f.close()
         routing_board_file.close()
         specification_ref_file.close()
         specification_file.close()
 
     def gen_physical_layout(self):
         d = gc.array_diameter - 1
+        # mems = [
+        #     d // 2, d // 2 + 1,
+        #     d // 2 * gc.array_diameter, (d // 2 + 1) * gc.array_diameter, 
+        #     d // 2 * gc.array_diameter + d, (d // 2 + 1) * gc.array_diameter + d, 
+        #     d * gc.array_diameter + d // 2, d * gc.array_diameter + d // 2 + 1,
+        # ]
         mems = [
-            d // 2, d // 2 + 1,
-            d // 2 * gc.array_diameter, (d // 2 + 1) * gc.array_diameter, 
-            d // 2 * gc.array_diameter + d, (d // 2 + 1) * gc.array_diameter + d, 
-            d * gc.array_diameter + d // 2, d * gc.array_diameter + d // 2 + 1,
+            d // 2, d // 2 + 1, d // 2 - 1, d // 2 + 2,
+            d // 2 * gc.array_diameter, (d // 2 + 1) * gc.array_diameter, (d // 2 - 1) * gc.array_diameter, (d // 2 + 2) * gc.array_diameter,
+            d // 2 * gc.array_diameter + d, (d // 2 + 1) * gc.array_diameter + d, (d // 2 - 1) * gc.array_diameter + d, (d // 2 + 2) * gc.array_diameter + d,
+            d * gc.array_diameter + d // 2, d * gc.array_diameter + d // 2 + 1, d * gc.array_diameter + d // 2 - 1, d * gc.array_diameter + d // 2 + 2
         ]
 
         # FIXME: 
         # mems = list(range(gc.array_diameter)) + list(range(gc.array_size, gc.array_size - gc.array_diameter, -1))
 
-        # test
+        # # test
         # mems.append(gc.array_size - 1)
         # mems.append(gc.array_size - 2)
         # mems.append(0)

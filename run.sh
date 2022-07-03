@@ -1,27 +1,30 @@
 #!/bin/bash
 # cat /dev/null > nohup.out
 
+# python focus.py -bm benchmark/bert_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ted
+# python focus.py -bm benchmark/bert_large_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ted
+# python focus.py -bm benchmark/mobilenet_v3_large_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ted
+# python focus.py -bm benchmark/resnet50_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ted
+# python focus.py -bm benchmark/wide_resnet50_2_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ted
+# python focus.py -bm benchmark/vgg16_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ted
 
-# search
-# python focus.py -bm benchmark/pipeline.yaml -d 16 -f 1024 te
-# python focus.py -bm benchmark/multi-model-1.yaml -d 16 -f 1024 te
-# python focus.py -bm benchmark/multi-model-2.yaml -d 16 -f 1024 te
-# python focus.py -bm benchmark/multi-model-3.yaml -d 16 -f 1024 te
+# python focus.py -bm benchmark/bert_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ds &
+# python focus.py -bm benchmark/bert_large_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ds & 
+# python focus.py -bm benchmark/mobilenet_v3_large_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ds &
+# python focus.py -bm benchmark/resnet50_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ds &
+# python focus.py -bm benchmark/wide_resnet50_2_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ds &
+# python focus.py -bm benchmark/vgg16_8.yaml -d 32 -b 1 -fr 1024-1024-1024 ds &
 
+# python focus.py -bm benchmark/bert_8.yaml -d 32 -b 1 -fr 512-512-1024 ds &
+# python focus.py -bm benchmark/bert_large_8.yaml -d 32 -b 1 -fr 512-512-1024 ds & 
+# python focus.py -bm benchmark/mobilenet_v3_large_8.yaml -d 32 -b 1 -fr 512-512-1024 ds &
+# python focus.py -bm benchmark/resnet50_8.yaml -d 32 -b 1 -fr 512-512-1024 ds &
+# python focus.py -bm benchmark/wide_resnet50_2_8.yaml -d 32 -b 1 -fr 512-512-1024 ds &
+# python focus.py -bm benchmark/vgg16_8.yaml -d 32 -b 1 -fr 512-512-1024 ds &
 
-# Generate traffic trace from focus toolchain
-# python focus.py -bm benchmark/multi-model-1.yaml -d 16 -fr 1024-4096-512 d &
-# python focus.py -bm benchmark/multi-model-2.yaml -d 16 -fr 1024-4096-512 d &
-# python focus.py -bm benchmark/multi-model-3.yaml -d 16 -fr 1024-4096-512 d &
-# python focus.py -bm benchmark/pipeline.yaml -d 16 -fr 1024-4096-512 d &
-# wait
+python focus.py -bm benchmark/bert_8.yaml -d 32 -b 1 -fr 512-512-1024 ds &
+python focus.py -bm benchmark/mobilenet_v3_large_8.yaml -d 32 -b 1 -fr 512-512-1024 ds &
+python focus.py -bm benchmark/resnet50_8.yaml -d 32 -b 1 -fr 512-512-1024 ds &
+python focus.py -bm benchmark/wide_resnet50_2_8.yaml -d 32 -b 1 -fr 512-512-1024 ds &
 
-
-# Invoke the simulator
-# python focus.py -bm benchmark/multi-model-1.yaml -d 16 d
-# python focus.py -bm benchmark/multi-model-2.yaml -d 16 d
-# python focus.py -bm benchmark/multi-model-3.yaml -d 16 d
-# python focus.py -bm benchmark/pipeline.yaml -d 18 d
-# wait
-python focus.py -bm benchmark/16_16.yaml -d 8 -b 1 -fr 1024-1024-1024 ds &
-# python focus.py -bm benchmark/
+wait

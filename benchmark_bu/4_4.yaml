@@ -1,3 +1,4 @@
 bert-large:
 - bert-large_layer1: 2
 - bert-large_layer2: 2
+- bert-large_layer3: 2

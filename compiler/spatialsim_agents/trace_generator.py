@@ -1,11 +1,11 @@
 import networkx as nx
 from copy import deepcopy
 
+from compiler import global_control as gc
 from op_graph.micro_op_graph import MicroOpGraph
 from routing_algorithms import router
 from io import TextIOWrapper
 from variables import Variables
-from compiler import global_control as gc
 import re
 
 class TraceGenerator:
@@ -28,14 +28,16 @@ class TraceGenerator:
         op_graph = deepcopy(graph.get_data())
 
         # Operator field
-        for f in trace_to.values():
-            print("operators:", file=f)
+        for filename in trace_to.values():
+            with open(filename, "w") as f:
+                print("operators:", file=f)
         # self.__gen_serial_op_field(trace_to, op_graph)
         self.__gen_parallel_op_field(trace_to, op_graph)
 
         # Data field
-        for f in trace_to.values():
-            print("\n\ndata:", file=f)
+        for filename in trace_to.values():
+            with open(filename, "a") as f:
+                print("\n\ndata:", file=f)
         self.__gen_data_field(trace_to, op_graph)
 
         # Multicast tree
@@ -95,24 +97,45 @@ class TraceGenerator:
     def __gen_data_field(self, to: dict, op_graph: nx.DiGraph):
         # generate data packets
         data_pkt_tuples = self.__get_pkt_endpoints(op_graph, "data")
+        src_to_data_pkt_tuples = {pe: [] for pe in to.keys()}
+
         for pid, pkt_endpoints in data_pkt_tuples.items():
             assert len(pkt_endpoints["dst"]) >= 1
             src, dsts = pkt_endpoints["src"], pkt_endpoints["dst"]
-            size = op_graph.edges[src, dsts[0]]["size"]
             src_core = op_graph.nodes[src]["p_pe"]
-            dst_cores = map(lambda x: op_graph.nodes[x]["p_pe"], dsts)
-            print("{} # {} # {}".format(pid, ", ".join(map(str, dst_cores)), size), file=to[src_core])
+            src_to_data_pkt_tuples[src_core].append((pid, pkt_endpoints))
+
+        for pe, pkts in src_to_data_pkt_tuples.items():
+            with open(to[pe], "a") as f:
+                for pid, pkt_endpoints in pkts:
+                    src, dsts = pkt_endpoints["src"], pkt_endpoints["dst"]
+                    size = op_graph.edges[src, dsts[0]]["size"]
+                    src_core = op_graph.nodes[src]["p_pe"]
+                    dst_cores = map(lambda x: op_graph.nodes[x]["p_pe"], dsts)
+                    print("{} # {} # {}".format(pid, ", ".join(map(str, dst_cores)), size), file=f)
+
+
+        # for pid, pkt_endpoints in data_pkt_tuples.items():
 
         # generate control packets
         control_pkt_tuples = self.__get_pkt_endpoints(op_graph, "control")
+        src_to_ctrl_pkt_tuples = {pe: [] for pe in to.keys()}
+
         for pid, pkt_endpoints in control_pkt_tuples.items():
             assert len(pkt_endpoints["dst"]) == 1
-            size = 1
             src, dsts = pkt_endpoints["src"], pkt_endpoints["dst"]
             src_core = op_graph.nodes[src]["p_pe"]
-            dst_cores = map(lambda x: op_graph.nodes[x]["p_pe"], dsts)
-            print("{} # {} # {}".format(pid, ", ".join(map(str, dst_cores)), size), file=to[src_core])
+            src_to_ctrl_pkt_tuples[src_core].append((pid, pkt_endpoints))
 
+        for pe, pkts in src_to_data_pkt_tuples.items():
+            with open(to[pe], "a") as f:
+                for pid, pkt_endpoints in control_pkt_tuples.items():
+                    assert len(pkt_endpoints["dst"]) == 1
+                    size = 1
+                    src, dsts = pkt_endpoints["src"], pkt_endpoints["dst"]
+                    src_core = op_graph.nodes[src]["p_pe"]
+                    dst_cores = map(lambda x: op_graph.nodes[x]["p_pe"], dsts)
+                    print("{} # {} # {}".format(pid, ", ".join(map(str, dst_cores)), size), file=f)
 
     def __gen_serial_op_field(self, to: dict, op_graph: nx.DiGraph):
 
@@ -228,12 +251,13 @@ class TraceGenerator:
                 op_graph.edges[u, v]["vis"] = True
 
         for pe in range(gc.array_size):
+            instr = open(instrs[pe], "a")
             tasks_on_pe = nx.subgraph_view(op_graph, filter_node=lambda x: node2pe(x) == pe)
             for serial_tasks in nx.weakly_connected_components(tasks_on_pe):
-                print("{", file=instrs[pe])
+                print("{", file=instr)
 
-                # TODO: Some hacks: To enable pipeline, the operators at batch T should be issued before 
-                # the operators at batch T + 1. 
+                # TODO: Some hacks: To enable pipeline, the operators at batch T should be issued before
+                # the operators at batch T + 1.
 
                 serial_graph = nx.DiGraph(nx.subgraph(op_graph, serial_tasks))
                 # org = len(serial_graph.edges())
@@ -297,9 +321,11 @@ class TraceGenerator:
                     # Write to the trace file
                     collapse = [instr for step in instruction_list for instr in step]
                     for inst in collapse:
-                        print(inst, file=instrs[pe])
+                        print(inst, file=instr)
 
-                print("}", file=instrs[pe])
+                print("}", file=instr)
+            instr.flush()
+            instr.close()
 
 
     def __get_pkt_endpoints(self, op_graph: nx.DiGraph, edge_type: str) -> dict:

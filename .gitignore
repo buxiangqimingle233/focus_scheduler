@@ -10,7 +10,4 @@ output/*
 .vscode/*
 traceDR.json
 notes.md
-*.log
-*.out
-TODO
 visualization/*

@@ -41,7 +41,7 @@ search_dataflow = False
 extract_traffic = False
 timeloop_verbose = False
 # Search time
-timeout = 60
+timeout = 15
 # Core numbers (default: number specified in database/arch/arch.yaml)
 top_level_cnt = None
 
@@ -72,7 +72,7 @@ simulate_baseline = True
 # PEs and NoCs. 
 # This parameter reduces the packet size and computing time simultaneously.
 # It only effects baseline simulation
-overclock = 20
+overclock = 1
 
 # This parameter describes how much iteration we take.
 # It effects both baseline simulation and focus software

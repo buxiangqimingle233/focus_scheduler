@@ -1,0 +1,1264 @@
+
+
+******************** Running Environment ********************
+array size: 1024, flit size: 512
+dataflow engine: timeloop
+invoke timeloop-mapper: False, invoke timeloop-model: False
+invoke baseline simulator: True, invoke focus software: False
+task name: mobilenet_v3_large_b1w512_32x32
+task layers: ['mobilenet_v3_large_layer1', 'mobilenet_v3_large_layer2', 'mobilenet_v3_large_layer3', 'mobilenet_v3_large_layer4', 'mobilenet_v3_large_layer5', 'mobilenet_v3_large_layer6', 'mobilenet_v3_large_layer7', 'mobilenet_v3_large_layer8', 'mobilenet_v3_large_layer9', 'mobilenet_v3_large_layer10', 'mobilenet_v3_large_layer11', 'mobilenet_v3_large_layer12', 'mobilenet_v3_large_layer13', 'mobilenet_v3_large_layer14', 'mobilenet_v3_large_layer15', 'mobilenet_v3_large_layer16', 'mobilenet_v3_large_layer17', 'mobilenet_v3_large_layer18', 'mobilenet_v3_large_layer19', 'mobilenet_v3_large_layer20', 'mobilenet_v3_large_layer21', 'mobilenet_v3_large_layer22', 'mobilenet_v3_large_layer23', 'mobilenet_v3_large_layer24', 'mobilenet_v3_large_layer25', 'mobilenet_v3_large_layer26', 'mobilenet_v3_large_layer27', 'mobilenet_v3_large_layer28', 'mobilenet_v3_large_layer29', 'mobilenet_v3_large_layer30', 'mobilenet_v3_large_layer31', 'mobilenet_v3_large_layer32', 'mobilenet_v3_large_layer33', 'mobilenet_v3_large_layer34', 'mobilenet_v3_large_layer35', 'mobilenet_v3_large_layer36', 'mobilenet_v3_large_layer37', 'mobilenet_v3_large_layer38', 'mobilenet_v3_large_layer39', 'mobilenet_v3_large_layer40', 'mobilenet_v3_large_layer41', 'mobilenet_v3_large_layer42', 'mobilenet_v3_large_layer43', 'mobilenet_v3_large_layer44', 'mobilenet_v3_large_layer45', 'mobilenet_v3_large_layer46', 'mobilenet_v3_large_layer47', 'mobilenet_v3_large_layer48', 'mobilenet_v3_large_layer49', 'mobilenet_v3_large_layer50', 'mobilenet_v3_large_layer51', 'mobilenet_v3_large_layer52', 'mobilenet_v3_large_layer53', 'mobilenet_v3_large_layer54', 'mobilenet_v3_large_layer55', 'mobilenet_v3_large_layer56', 'mobilenet_v3_large_layer57', 'mobilenet_v3_large_layer58', 'mobilenet_v3_large_layer59', 'mobilenet_v3_large_layer60', 'mobilenet_v3_large_layer61', 'mobilenet_v3_large_layer62', 'mobilenet_v3_large_layer63', 'mobilenet_v3_large_layer64']
+PE Utilization: 0.50
+************************************************************ 
+
+Generating the operator graph using timeloop
+Info: Working for mobilenet_v3_large_layer1
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer2
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer3
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer4
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer5
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer6
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer7
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer8
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer9
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer10
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer11
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer12
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer13
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer14
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer15
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer16
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer17
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer18
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer19
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer20
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer21
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer22
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer23
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer24
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer25
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer26
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer27
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer28
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer29
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer30
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer31
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer32
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer33
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer34
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer35
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer36
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer37
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer38
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer39
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer40
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer41
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer42
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer43
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer44
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer45
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer46
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer47
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer48
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer49
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer50
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer51
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer52
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer53
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer54
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer55
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer56
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer57
+====================== FINISH =========================
+
+
+
+******************** Running Environment ********************
+array size: 1024, flit size: 512
+dataflow engine: timeloop
+invoke timeloop-mapper: False, invoke timeloop-model: False
+invoke baseline simulator: True, invoke focus software: False
+task name: resnet50_b1w512_32x32
+task layers: ['resnet50_layer1', 'resnet50_layer2', 'resnet50_layer3', 'resnet50_layer4', 'resnet50_layer5', 'resnet50_layer6', 'resnet50_layer7', 'resnet50_layer8', 'resnet50_layer9', 'resnet50_layer10', 'resnet50_layer11', 'resnet50_layer12', 'resnet50_layer13', 'resnet50_layer14', 'resnet50_layer15', 'resnet50_layer16', 'resnet50_layer17', 'resnet50_layer18', 'resnet50_layer19', 'resnet50_layer20', 'resnet50_layer21', 'resnet50_layer22', 'resnet50_layer23', 'resnet50_layer24', 'resnet50_layer25', 'resnet50_layer26', 'resnet50_layer27', 'resnet50_layer28', 'resnet50_layer29', 'resnet50_layer30', 'resnet50_layer31', 'resnet50_layer32', 'resnet50_layer33', 'resnet50_layer34', 'resnet50_layer35', 'resnet50_layer36', 'resnet50_layer37', 'resnet50_layer38', 'resnet50_layer39', 'resnet50_layer40', 'resnet50_layer41', 'resnet50_layer42', 'resnet50_layer43', 'resnet50_layer44', 'resnet50_layer45', 'resnet50_layer46', 'resnet50_layer47', 'resnet50_layer48', 'resnet50_layer49', 'resnet50_layer50', 'resnet50_layer51', 'resnet50_layer52', 'resnet50_layer53', 'resnet50_layer54']
+PE Utilization: 0.42
+************************************************************ 
+
+Generating the operator graph using timeloop
+Info: Working for resnet50_layer1
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer2
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer3
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer4
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer5
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer6
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer7
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer8
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer9
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer10
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer11
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer12
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer13
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer14
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer15
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer16
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer17
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer18
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer19
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer20
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer21
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer22
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer23
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer24
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer25
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer26
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer27
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer28
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer29
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer30
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer31
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer32
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer33
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer34
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer35
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer36
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer37
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer38
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer39
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer40
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer41
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer42
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer43
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer44
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer45
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer46
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer47
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer48
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer49
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer50
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer51
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer52
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer53
+====================== FINISH =========================
+
+
+Info: Working for resnet50_layer54
+====================== FINISH =========================
+
+
+core:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1000, 1001, 1002, 1003, 1004, 1005, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023]
+
+******************** Running Environment ********************
+array size: 1024, flit size: 512
+dataflow engine: timeloop
+invoke timeloop-mapper: False, invoke timeloop-model: False
+invoke baseline simulator: True, invoke focus software: False
+task name: wide_resnet50_2_b1w512_32x32
+task layers: ['wide_resnet50_2_layer1', 'wide_resnet50_2_layer2', 'wide_resnet50_2_layer3', 'wide_resnet50_2_layer4', 'wide_resnet50_2_layer5', 'wide_resnet50_2_layer6', 'wide_resnet50_2_layer7', 'wide_resnet50_2_layer8', 'wide_resnet50_2_layer9', 'wide_resnet50_2_layer10', 'wide_resnet50_2_layer11', 'wide_resnet50_2_layer12', 'wide_resnet50_2_layer13', 'wide_resnet50_2_layer14', 'wide_resnet50_2_layer15', 'wide_resnet50_2_layer16', 'wide_resnet50_2_layer17', 'wide_resnet50_2_layer18', 'wide_resnet50_2_layer19', 'wide_resnet50_2_layer20', 'wide_resnet50_2_layer21', 'wide_resnet50_2_layer22', 'wide_resnet50_2_layer23', 'wide_resnet50_2_layer24', 'wide_resnet50_2_layer25', 'wide_resnet50_2_layer26', 'wide_resnet50_2_layer27', 'wide_resnet50_2_layer28', 'wide_resnet50_2_layer29', 'wide_resnet50_2_layer30', 'wide_resnet50_2_layer31', 'wide_resnet50_2_layer32', 'wide_resnet50_2_layer33', 'wide_resnet50_2_layer34', 'wide_resnet50_2_layer35', 'wide_resnet50_2_layer36', 'wide_resnet50_2_layer37', 'wide_resnet50_2_layer38', 'wide_resnet50_2_layer39', 'wide_resnet50_2_layer40', 'wide_resnet50_2_layer41', 'wide_resnet50_2_layer42', 'wide_resnet50_2_layer43', 'wide_resnet50_2_layer44', 'wide_resnet50_2_layer45', 'wide_resnet50_2_layer46', 'wide_resnet50_2_layer47', 'wide_resnet50_2_layer48', 'wide_resnet50_2_layer49', 'wide_resnet50_2_layer50', 'wide_resnet50_2_layer51', 'wide_resnet50_2_layer52', 'wide_resnet50_2_layer53', 'wide_resnet50_2_layer54', 'wide_resnet50_2_layer55', 'wide_resnet50_2_layer56', 'wide_resnet50_2_layer57', 'wide_resnet50_2_layer58', 'wide_resnet50_2_layer59', 'wide_resnet50_2_layer60', 'wide_resnet50_2_layer61', 'wide_resnet50_2_layer62', 'wide_resnet50_2_layer63', 'wide_resnet50_2_layer64']
+PE Utilization: 0.50
+************************************************************ 
+
+Generating the operator graph using timeloop
+Info: Working for wide_resnet50_2_layer1
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer2
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer3
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer4
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer5
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer6
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer7
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer8
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer9
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer10
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer11
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer12
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer13
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer14
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer15
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer16
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer17
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer18
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer19
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer20
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer21
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer22
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer23
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer24
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer25
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer26
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer27
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer28
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer29
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer30
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer31
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer32
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer33
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer34
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer35
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer36
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer37
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer38
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer39
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer40
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer41
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer42
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer43
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer44
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer45
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer46
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer47
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer48
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer49
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer50
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer51
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer52
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer53
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer54
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer55
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer56
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer57
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer58
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer59
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer60
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer61
+====================== FINISH =========================
+
+
+
+******************** Running Environment ********************
+array size: 1024, flit size: 512
+dataflow engine: timeloop
+invoke timeloop-mapper: False, invoke timeloop-model: False
+invoke baseline simulator: True, invoke focus software: False
+task name: bert_b1w512_32x32
+task layers: ['bert_layer1', 'bert_layer2', 'bert_layer3', 'bert_layer4', 'bert_layer5', 'bert_layer6', 'bert_layer7', 'bert_layer8', 'bert_layer9', 'bert_layer10', 'bert_layer11', 'bert_layer12', 'bert_layer13', 'bert_layer14', 'bert_layer15', 'bert_layer16', 'bert_layer17', 'bert_layer18', 'bert_layer19', 'bert_layer20', 'bert_layer21', 'bert_layer22', 'bert_layer23', 'bert_layer24', 'bert_layer25', 'bert_layer26', 'bert_layer27', 'bert_layer28', 'bert_layer29', 'bert_layer30', 'bert_layer31', 'bert_layer32', 'bert_layer33', 'bert_layer34', 'bert_layer35', 'bert_layer36', 'bert_layer37', 'bert_layer38', 'bert_layer39', 'bert_layer40', 'bert_layer41', 'bert_layer42', 'bert_layer43', 'bert_layer44', 'bert_layer45', 'bert_layer46', 'bert_layer47', 'bert_layer48', 'bert_layer49', 'bert_layer50', 'bert_layer51', 'bert_layer52', 'bert_layer53', 'bert_layer54', 'bert_layer55', 'bert_layer56', 'bert_layer57', 'bert_layer58', 'bert_layer59', 'bert_layer60', 'bert_layer61', 'bert_layer62', 'bert_layer63', 'bert_layer64', 'bert_layer65', 'bert_layer66', 'bert_layer67', 'bert_layer68', 'bert_layer69', 'bert_layer70', 'bert_layer71', 'bert_layer72', 'bert_layer73']
+PE Utilization: 0.57
+************************************************************ 
+
+Generating the operator graph using timeloop
+Info: Working for bert_layer1
+====================== FINISH =========================
+
+
+Info: Working for bert_layer2
+====================== FINISH =========================
+
+
+Info: Working for bert_layer3
+====================== FINISH =========================
+
+
+Info: Working for bert_layer4
+====================== FINISH =========================
+
+
+Info: Working for bert_layer5
+====================== FINISH =========================
+
+
+Info: Working for bert_layer6
+====================== FINISH =========================
+
+
+Info: Working for bert_layer7
+====================== FINISH =========================
+
+
+Info: Working for bert_layer8
+====================== FINISH =========================
+
+
+Info: Working for bert_layer9
+====================== FINISH =========================
+
+
+Info: Working for bert_layer10
+====================== FINISH =========================
+
+
+Info: Working for bert_layer11
+====================== FINISH =========================
+
+
+Info: Working for bert_layer12
+====================== FINISH =========================
+
+
+Info: Working for bert_layer13
+====================== FINISH =========================
+
+
+Info: Working for bert_layer14
+====================== FINISH =========================
+
+
+Info: Working for bert_layer15
+====================== FINISH =========================
+
+
+Info: Working for bert_layer16
+====================== FINISH =========================
+
+
+Info: Working for bert_layer17
+====================== FINISH =========================
+
+
+Info: Working for bert_layer18
+====================== FINISH =========================
+
+
+Info: Working for bert_layer19
+====================== FINISH =========================
+
+
+Info: Working for bert_layer20
+====================== FINISH =========================
+
+
+Info: Working for bert_layer21
+====================== FINISH =========================
+
+
+Info: Working for bert_layer22
+====================== FINISH =========================
+
+
+Info: Working for bert_layer23
+====================== FINISH =========================
+
+
+Info: Working for bert_layer24
+====================== FINISH =========================
+
+
+Info: Working for bert_layer25
+====================== FINISH =========================
+
+
+Info: Working for bert_layer26
+====================== FINISH =========================
+
+
+Info: Working for bert_layer27
+====================== FINISH =========================
+
+
+Info: Working for bert_layer28
+====================== FINISH =========================
+
+
+Info: Working for bert_layer29
+====================== FINISH =========================
+
+
+Info: Working for bert_layer30
+====================== FINISH =========================
+
+
+Info: Working for bert_layer31
+====================== FINISH =========================
+
+
+Info: Working for bert_layer32
+====================== FINISH =========================
+
+
+Info: Working for bert_layer33
+====================== FINISH =========================
+
+
+Info: Working for bert_layer34
+====================== FINISH =========================
+
+
+Info: Working for bert_layer35
+====================== FINISH =========================
+
+
+Info: Working for bert_layer36
+====================== FINISH =========================
+
+
+Info: Working for bert_layer37
+====================== FINISH =========================
+
+
+Info: Working for bert_layer38
+====================== FINISH =========================
+
+
+Info: Working for bert_layer39
+====================== FINISH =========================
+
+
+Info: Working for bert_layer40
+====================== FINISH =========================
+
+
+Info: Working for bert_layer41
+====================== FINISH =========================
+
+
+Info: Working for bert_layer42
+====================== FINISH =========================
+
+
+Info: Working for bert_layer43
+====================== FINISH =========================
+
+
+Info: Working for bert_layer44
+====================== FINISH =========================
+
+
+Info: Working for bert_layer45
+====================== FINISH =========================
+
+
+Info: Working for bert_layer46
+====================== FINISH =========================
+
+
+Info: Working for bert_layer47
+====================== FINISH =========================
+
+
+Info: Working for bert_layer48
+====================== FINISH =========================
+
+
+Info: Working for bert_layer49
+====================== FINISH =========================
+
+
+Info: Working for bert_layer50
+====================== FINISH =========================
+
+
+Info: Working for bert_layer51
+====================== FINISH =========================
+
+
+Info: Working for bert_layer52
+====================== FINISH =========================
+
+
+Info: Working for bert_layer53
+====================== FINISH =========================
+
+
+Info: Working for bert_layer54
+====================== FINISH =========================
+
+
+Info: Working for bert_layer55
+====================== FINISH =========================
+
+
+Info: Working for bert_layer56
+====================== FINISH =========================
+
+
+Info: Working for bert_layer57
+====================== FINISH =========================
+
+
+Info: Working for bert_layer58
+====================== FINISH =========================
+
+
+Info: Working for bert_layer59
+====================== FINISH =========================
+
+
+Info: Working for bert_layer60
+====================== FINISH =========================
+
+
+Info: Working for bert_layer61
+====================== FINISH =========================
+
+
+Info: Working for bert_layer62
+====================== FINISH =========================
+
+
+Info: Working for bert_layer63
+====================== FINISH =========================
+
+
+Info: Working for bert_layer64
+====================== FINISH =========================
+
+
+Info: Working for bert_layer65
+====================== FINISH =========================
+
+
+Info: Working for bert_layer66
+====================== FINISH =========================
+
+
+Info: Working for bert_layer67
+====================== FINISH =========================
+
+
+Info: Working for bert_layer68
+====================== FINISH =========================
+
+
+Info: Working for bert_layer69
+====================== FINISH =========================
+
+
+Info: Working for bert_layer70
+====================== FINISH =========================
+
+
+Info: Working for bert_layer71
+====================== FINISH =========================
+
+
+Info: Working for bert_layer72
+====================== FINISH =========================
+
+
+Info: Working for bert_layer73
+====================== FINISH =========================
+
+
+core:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1000, 1001, 1002, 1003, 1004, 1005, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023]BEGIN Configuration File: /home/wangzhao/timeloop-dev/focus/simulator/tasks/mobilenet_v3_large_b1w512_32x32/spatial_spec
+// log_file = /dev/null;
+log_file = out.log;
+// log_file = -;
+
+
+// Core array speficication
+threshold = 10240;
+working_directory = /home/wangzhao/timeloop-dev/focus/simulator/tasks/mobilenet_v3_large_b1w512_32x32;
+tasks = {c0.inst,c1.inst,c2.inst,c3.inst,c4.inst,c5.inst,c6.inst,c7.inst,c8.inst,c9.inst,c10.inst,c11.inst,c12.inst,c13.inst,c14.inst,c15.inst,c16.inst,c17.inst,c18.inst,c19.inst,c20.inst,c21.inst,c22.inst,c23.inst,c24.inst,c25.inst,c26.inst,c27.inst,c28.inst,c29.inst,c30.inst,c31.inst,c32.inst,c33.inst,c34.inst,c35.inst,c36.inst,c37.inst,c38.inst,c39.inst,c40.inst,c41.inst,c42.inst,c43.inst,c44.inst,c45.inst,c46.inst,c47.inst,c48.inst,c49.inst,c50.inst,c51.inst,c52.inst,c53.inst,c54.inst,c55.inst,c56.inst,c57.inst,c58.inst,c59.inst,c60.inst,c61.inst,c62.inst,c63.inst,c64.inst,c65.inst,c66.inst,c67.inst,c68.inst,c69.inst,c70.inst,c71.inst,c72.inst,c73.inst,c74.inst,c75.inst,c76.inst,c77.inst,c78.inst,c79.inst,c80.inst,c81.inst,c82.inst,c83.inst,c84.inst,c85.inst,c86.inst,c87.inst,c88.inst,c89.inst,c90.inst,c91.inst,c92.inst,c93.inst,c94.inst,c95.inst,c96.inst,c97.inst,c98.inst,c99.inst,c100.inst,c101.inst,c102.inst,c103.inst,c104.inst,c105.inst,c106.inst,c107.inst,c108.inst,c109.inst,c110.inst,c111.inst,c112.inst,c113.inst,c114.inst,c115.inst,c116.inst,c117.inst,c118.inst,c119.inst,c120.inst,c121.inst,c122.inst,c123.inst,c124.inst,c125.inst,c126.inst,c127.inst,c128.inst,c129.inst,c130.inst,c131.inst,c132.inst,c133.inst,c134.inst,c135.inst,c136.inst,c137.inst,c138.inst,c139.inst,c140.inst,c141.inst,c142.inst,c143.inst,c144.inst,c145.inst,c146.inst,c147.inst,c148.inst,c149.inst,c150.inst,c151.inst,c152.inst,c153.inst,c154.inst,c155.inst,c156.inst,c157.inst,c158.inst,c159.inst,c160.inst,c161.inst,c162.inst,c163.inst,c164.inst,c165.inst,c166.inst,c167.inst,c168.inst,c169.inst,c170.inst,c171.inst,c172.inst,c173.inst,c174.inst,c175.inst,c176.inst,c177.inst,c178.inst,c179.inst,c180.inst,c181.inst,c182.inst,c183.inst,c184.inst,c185.inst,c186.inst,c187.inst,c188.inst,c189.inst,c190.inst,c191.inst,c192.inst,c193.inst,c194.inst,c195.inst,c196.inst,c197.inst,c198.inst,c199.inst,c200.inst,c201.inst,c202.inst,c203.inst,c204.inst,c205.inst,c206.inst,c207.inst,c208.inst,c209.inst,c210.inst,c211.inst,c212.inst,c213.inst,c214.inst,c215.inst,c216.inst,c217.inst,c218.inst,c219.inst,c220.inst,c221.inst,c222.inst,c223.inst,c224.inst,c225.inst,c226.inst,c227.inst,c228.inst,c229.inst,c230.inst,c231.inst,c232.inst,c233.inst,c234.inst,c235.inst,c236.inst,c237.inst,c238.inst,c239.inst,c240.inst,c241.inst,c242.inst,c243.inst,c244.inst,c245.inst,c246.inst,c247.inst,c248.inst,c249.inst,c250.inst,c251.inst,c252.inst,c253.inst,c254.inst,c255.inst,c256.inst,c257.inst,c258.inst,c259.inst,c260.inst,c261.inst,c262.inst,c263.inst,c264.inst,c265.inst,c266.inst,c267.inst,c268.inst,c269.inst,c270.inst,c271.inst,c272.inst,c273.inst,c274.inst,c275.inst,c276.inst,c277.inst,c278.inst,c279.inst,c280.inst,c281.inst,c282.inst,c283.inst,c284.inst,c285.inst,c286.inst,c287.inst,c288.inst,c289.inst,c290.inst,c291.inst,c292.inst,c293.inst,c294.inst,c295.inst,c296.inst,c297.inst,c298.inst,c299.inst,c300.inst,c301.inst,c302.inst,c303.inst,c304.inst,c305.inst,c306.inst,c307.inst,c308.inst,c309.inst,c310.inst,c311.inst,c312.inst,c313.inst,c314.inst,c315.inst,c316.inst,c317.inst,c318.inst,c319.inst,c320.inst,c321.inst,c322.inst,c323.inst,c324.inst,c325.inst,c326.inst,c327.inst,c328.inst,c329.inst,c330.inst,c331.inst,c332.inst,c333.inst,c334.inst,c335.inst,c336.inst,c337.inst,c338.inst,c339.inst,c340.inst,c341.inst,c342.inst,c343.inst,c344.inst,c345.inst,c346.inst,c347.inst,c348.inst,c349.inst,c350.inst,c351.inst,c352.inst,c353.inst,c354.inst,c355.inst,c356.inst,c357.inst,c358.inst,c359.inst,c360.inst,c361.inst,c362.inst,c363.inst,c364.inst,c365.inst,c366.inst,c367.inst,c368.inst,c369.inst,c370.inst,c371.inst,c372.inst,c373.inst,c374.inst,c375.inst,c376.inst,c377.inst,c378.inst,c379.inst,c380.inst,c381.inst,c382.inst,c383.inst,c384.inst,c385.inst,c386.inst,c387.inst,c388.inst,c389.inst,c390.inst,c391.inst,c392.inst,c393.inst,c394.inst,c395.inst,c396.inst,c397.inst,c398.inst,c399.inst,c400.inst,c401.inst,c402.inst,c403.inst,c404.inst,c405.inst,c406.inst,c407.inst,c408.inst,c409.inst,c410.inst,c411.inst,c412.inst,c413.inst,c414.inst,c415.inst,c416.inst,c417.inst,c418.inst,c419.inst,c420.inst,c421.inst,c422.inst,c423.inst,c424.inst,c425.inst,c426.inst,c427.inst,c428.inst,c429.inst,c430.inst,c431.inst,c432.inst,c433.inst,c434.inst,c435.inst,c436.inst,c437.inst,c438.inst,c439.inst,c440.inst,c441.inst,c442.inst,c443.inst,c444.inst,c445.inst,c446.inst,c447.inst,c448.inst,c449.inst,c450.inst,c451.inst,c452.inst,c453.inst,c454.inst,c455.inst,c456.inst,c457.inst,c458.inst,c459.inst,c460.inst,c461.inst,c462.inst,c463.inst,c464.inst,c465.inst,c466.inst,c467.inst,c468.inst,c469.inst,c470.inst,c471.inst,c472.inst,c473.inst,c474.inst,c475.inst,c476.inst,c477.inst,c478.inst,c479.inst,c480.inst,c481.inst,c482.inst,c483.inst,c484.inst,c485.inst,c486.inst,c487.inst,c488.inst,c489.inst,c490.inst,c491.inst,c492.inst,c493.inst,c494.inst,c495.inst,c496.inst,c497.inst,c498.inst,c499.inst,c500.inst,c501.inst,c502.inst,c503.inst,c504.inst,c505.inst,c506.inst,c507.inst,c508.inst,c509.inst,c510.inst,c511.inst,c512.inst,c513.inst,c514.inst,c515.inst,c516.inst,c517.inst,c518.inst,c519.inst,c520.inst,c521.inst,c522.inst,c523.inst,c524.inst,c525.inst,c526.inst,c527.inst,c528.inst,c529.inst,c530.inst,c531.inst,c532.inst,c533.inst,c534.inst,c535.inst,c536.inst,c537.inst,c538.inst,c539.inst,c540.inst,c541.inst,c542.inst,c543.inst,c544.inst,c545.inst,c546.inst,c547.inst,c548.inst,c549.inst,c550.inst,c551.inst,c552.inst,c553.inst,c554.inst,c555.inst,c556.inst,c557.inst,c558.inst,c559.inst,c560.inst,c561.inst,c562.inst,c563.inst,c564.inst,c565.inst,c566.inst,c567.inst,c568.inst,c569.inst,c570.inst,c571.inst,c572.inst,c573.inst,c574.inst,c575.inst,c576.inst,c577.inst,c578.inst,c579.inst,c580.inst,c581.inst,c582.inst,c583.inst,c584.inst,c585.inst,c586.inst,c587.inst,c588.inst,c589.inst,c590.inst,c591.inst,c592.inst,c593.inst,c594.inst,c595.inst,c596.inst,c597.inst,c598.inst,c599.inst,c600.inst,c601.inst,c602.inst,c603.inst,c604.inst,c605.inst,c606.inst,c607.inst,c608.inst,c609.inst,c610.inst,c611.inst,c612.inst,c613.inst,c614.inst,c615.inst,c616.inst,c617.inst,c618.inst,c619.inst,c620.inst,c621.inst,c622.inst,c623.inst,c624.inst,c625.inst,c626.inst,c627.inst,c628.inst,c629.inst,c630.inst,c631.inst,c632.inst,c633.inst,c634.inst,c635.inst,c636.inst,c637.inst,c638.inst,c639.inst,c640.inst,c641.inst,c642.inst,c643.inst,c644.inst,c645.inst,c646.inst,c647.inst,c648.inst,c649.inst,c650.inst,c651.inst,c652.inst,c653.inst,c654.inst,c655.inst,c656.inst,c657.inst,c658.inst,c659.inst,c660.inst,c661.inst,c662.inst,c663.inst,c664.inst,c665.inst,c666.inst,c667.inst,c668.inst,c669.inst,c670.inst,c671.inst,c672.inst,c673.inst,c674.inst,c675.inst,c676.inst,c677.inst,c678.inst,c679.inst,c680.inst,c681.inst,c682.inst,c683.inst,c684.inst,c685.inst,c686.inst,c687.inst,c688.inst,c689.inst,c690.inst,c691.inst,c692.inst,c693.inst,c694.inst,c695.inst,c696.inst,c697.inst,c698.inst,c699.inst,c700.inst,c701.inst,c702.inst,c703.inst,c704.inst,c705.inst,c706.inst,c707.inst,c708.inst,c709.inst,c710.inst,c711.inst,c712.inst,c713.inst,c714.inst,c715.inst,c716.inst,c717.inst,c718.inst,c719.inst,c720.inst,c721.inst,c722.inst,c723.inst,c724.inst,c725.inst,c726.inst,c727.inst,c728.inst,c729.inst,c730.inst,c731.inst,c732.inst,c733.inst,c734.inst,c735.inst,c736.inst,c737.inst,c738.inst,c739.inst,c740.inst,c741.inst,c742.inst,c743.inst,c744.inst,c745.inst,c746.inst,c747.inst,c748.inst,c749.inst,c750.inst,c751.inst,c752.inst,c753.inst,c754.inst,c755.inst,c756.inst,c757.inst,c758.inst,c759.inst,c760.inst,c761.inst,c762.inst,c763.inst,c764.inst,c765.inst,c766.inst,c767.inst,c768.inst,c769.inst,c770.inst,c771.inst,c772.inst,c773.inst,c774.inst,c775.inst,c776.inst,c777.inst,c778.inst,c779.inst,c780.inst,c781.inst,c782.inst,c783.inst,c784.inst,c785.inst,c786.inst,c787.inst,c788.inst,c789.inst,c790.inst,c791.inst,c792.inst,c793.inst,c794.inst,c795.inst,c796.inst,c797.inst,c798.inst,c799.inst,c800.inst,c801.inst,c802.inst,c803.inst,c804.inst,c805.inst,c806.inst,c807.inst,c808.inst,c809.inst,c810.inst,c811.inst,c812.inst,c813.inst,c814.inst,c815.inst,c816.inst,c817.inst,c818.inst,c819.inst,c820.inst,c821.inst,c822.inst,c823.inst,c824.inst,c825.inst,c826.inst,c827.inst,c828.inst,c829.inst,c830.inst,c831.inst,c832.inst,c833.inst,c834.inst,c835.inst,c836.inst,c837.inst,c838.inst,c839.inst,c840.inst,c841.inst,c842.inst,c843.inst,c844.inst,c845.inst,c846.inst,c847.inst,c848.inst,c849.inst,c850.inst,c851.inst,c852.inst,c853.inst,c854.inst,c855.inst,c856.inst,c857.inst,c858.inst,c859.inst,c860.inst,c861.inst,c862.inst,c863.inst,c864.inst,c865.inst,c866.inst,c867.inst,c868.inst,c869.inst,c870.inst,c871.inst,c872.inst,c873.inst,c874.inst,c875.inst,c876.inst,c877.inst,c878.inst,c879.inst,c880.inst,c881.inst,c882.inst,c883.inst,c884.inst,c885.inst,c886.inst,c887.inst,c888.inst,c889.inst,c890.inst,c891.inst,c892.inst,c893.inst,c894.inst,c895.inst,c896.inst,c897.inst,c898.inst,c899.inst,c900.inst,c901.inst,c902.inst,c903.inst,c904.inst,c905.inst,c906.inst,c907.inst,c908.inst,c909.inst,c910.inst,c911.inst,c912.inst,c913.inst,c914.inst,c915.inst,c916.inst,c917.inst,c918.inst,c919.inst,c920.inst,c921.inst,c922.inst,c923.inst,c924.inst,c925.inst,c926.inst,c927.inst,c928.inst,c929.inst,c930.inst,c931.inst,c932.inst,c933.inst,c934.inst,c935.inst,c936.inst,c937.inst,c938.inst,c939.inst,c940.inst,c941.inst,c942.inst,c943.inst,c944.inst,c945.inst,c946.inst,c947.inst,c948.inst,c949.inst,c950.inst,c951.inst,c952.inst,c953.inst,c954.inst,c955.inst,c956.inst,c957.inst,c958.inst,c959.inst,c960.inst,c961.inst,c962.inst,c963.inst,c964.inst,c965.inst,c966.inst,c967.inst,c968.inst,c969.inst,c970.inst,c971.inst,c972.inst,c973.inst,c974.inst,c975.inst,c976.inst,c977.inst,c978.inst,c979.inst,c980.inst,c981.inst,c982.inst,c983.inst,c984.inst,c985.inst,c986.inst,c987.inst,c988.inst,c989.inst,c990.inst,c991.inst,c992.inst,c993.inst,c994.inst,c995.inst,c996.inst,c997.inst,c998.inst,c999.inst,c1000.inst,c1001.inst,c1002.inst,c1003.inst,c1004.inst,c1005.inst,c1006.inst,c1007.inst,c1008.inst,c1009.inst,c1010.inst,c1011.inst,c1012.inst,c1013.inst,c1014.inst,c1015.inst,c1016.inst,c1017.inst,c1018.inst,c1019.inst,c1020.inst,c1021.inst,c1022.inst,c1023.inst};
+micro_instr_latency = /home/wangzhao/timeloop-dev/focus/simulator/runfiles/instr_latency;
+routing_board = /home/wangzhao/timeloop-dev/focus/simulator/tasks/mobilenet_v3_large_b1w512_32x32/routing_board;
+deadlock_check_freq = 100000;
+
+// NoC speficication, copied from booksim
+topology = mesh;
+k = 32;
+n = 2;      // # dims
+
+sim_type = throughput;
+
+sim_power = 1;
+channel_width = 128;    // Only work for power simulation
+
+// Routing
+// routing_function = dim_order;
+// routing_function = min_adapt;
+// routing_function = xy_yx;
+// routing_function = romm;
+routing_function = src_routing;
+
+
+num_vcs = 4;
+vc_buf_size = 2;
+
+tech_file = runfiles/noc/techfile.txt;
+watch_out = booksim.log;
+// watch_packets = {247};
+// watch_flits = {297};
+// watch_flits = {19,20,21,22,23,24,25,26};
+// watch_packets = {0,1,2,3,4,5,6,7,8,9,10};
+
+END Configuration File: /home/wangzhao/timeloop-dev/focus/simulator/tasks/mobilenet_v3_large_b1w512_32x32/spatial_spec
+BEGIN Configuration File: /home/wangzhao/timeloop-dev/focus/simulator/tasks/bert_b1w512_32x32/spatial_spec
+// log_file = /dev/null;
+log_file = out.log;
+// log_file = -;
+
+
+// Core array speficication
+threshold = 10240;
+working_directory = /home/wangzhao/timeloop-dev/focus/simulator/tasks/bert_b1w512_32x32;
+tasks = {c0.inst,c1.inst,c2.inst,c3.inst,c4.inst,c5.inst,c6.inst,c7.inst,c8.inst,c9.inst,c10.inst,c11.inst,c12.inst,c13.inst,c14.inst,c15.inst,c16.inst,c17.inst,c18.inst,c19.inst,c20.inst,c21.inst,c22.inst,c23.inst,c24.inst,c25.inst,c26.inst,c27.inst,c28.inst,c29.inst,c30.inst,c31.inst,c32.inst,c33.inst,c34.inst,c35.inst,c36.inst,c37.inst,c38.inst,c39.inst,c40.inst,c41.inst,c42.inst,c43.inst,c44.inst,c45.inst,c46.inst,c47.inst,c48.inst,c49.inst,c50.inst,c51.inst,c52.inst,c53.inst,c54.inst,c55.inst,c56.inst,c57.inst,c58.inst,c59.inst,c60.inst,c61.inst,c62.inst,c63.inst,c64.inst,c65.inst,c66.inst,c67.inst,c68.inst,c69.inst,c70.inst,c71.inst,c72.inst,c73.inst,c74.inst,c75.inst,c76.inst,c77.inst,c78.inst,c79.inst,c80.inst,c81.inst,c82.inst,c83.inst,c84.inst,c85.inst,c86.inst,c87.inst,c88.inst,c89.inst,c90.inst,c91.inst,c92.inst,c93.inst,c94.inst,c95.inst,c96.inst,c97.inst,c98.inst,c99.inst,c100.inst,c101.inst,c102.inst,c103.inst,c104.inst,c105.inst,c106.inst,c107.inst,c108.inst,c109.inst,c110.inst,c111.inst,c112.inst,c113.inst,c114.inst,c115.inst,c116.inst,c117.inst,c118.inst,c119.inst,c120.inst,c121.inst,c122.inst,c123.inst,c124.inst,c125.inst,c126.inst,c127.inst,c128.inst,c129.inst,c130.inst,c131.inst,c132.inst,c133.inst,c134.inst,c135.inst,c136.inst,c137.inst,c138.inst,c139.inst,c140.inst,c141.inst,c142.inst,c143.inst,c144.inst,c145.inst,c146.inst,c147.inst,c148.inst,c149.inst,c150.inst,c151.inst,c152.inst,c153.inst,c154.inst,c155.inst,c156.inst,c157.inst,c158.inst,c159.inst,c160.inst,c161.inst,c162.inst,c163.inst,c164.inst,c165.inst,c166.inst,c167.inst,c168.inst,c169.inst,c170.inst,c171.inst,c172.inst,c173.inst,c174.inst,c175.inst,c176.inst,c177.inst,c178.inst,c179.inst,c180.inst,c181.inst,c182.inst,c183.inst,c184.inst,c185.inst,c186.inst,c187.inst,c188.inst,c189.inst,c190.inst,c191.inst,c192.inst,c193.inst,c194.inst,c195.inst,c196.inst,c197.inst,c198.inst,c199.inst,c200.inst,c201.inst,c202.inst,c203.inst,c204.inst,c205.inst,c206.inst,c207.inst,c208.inst,c209.inst,c210.inst,c211.inst,c212.inst,c213.inst,c214.inst,c215.inst,c216.inst,c217.inst,c218.inst,c219.inst,c220.inst,c221.inst,c222.inst,c223.inst,c224.inst,c225.inst,c226.inst,c227.inst,c228.inst,c229.inst,c230.inst,c231.inst,c232.inst,c233.inst,c234.inst,c235.inst,c236.inst,c237.inst,c238.inst,c239.inst,c240.inst,c241.inst,c242.inst,c243.inst,c244.inst,c245.inst,c246.inst,c247.inst,c248.inst,c249.inst,c250.inst,c251.inst,c252.inst,c253.inst,c254.inst,c255.inst,c256.inst,c257.inst,c258.inst,c259.inst,c260.inst,c261.inst,c262.inst,c263.inst,c264.inst,c265.inst,c266.inst,c267.inst,c268.inst,c269.inst,c270.inst,c271.inst,c272.inst,c273.inst,c274.inst,c275.inst,c276.inst,c277.inst,c278.inst,c279.inst,c280.inst,c281.inst,c282.inst,c283.inst,c284.inst,c285.inst,c286.inst,c287.inst,c288.inst,c289.inst,c290.inst,c291.inst,c292.inst,c293.inst,c294.inst,c295.inst,c296.inst,c297.inst,c298.inst,c299.inst,c300.inst,c301.inst,c302.inst,c303.inst,c304.inst,c305.inst,c306.inst,c307.inst,c308.inst,c309.inst,c310.inst,c311.inst,c312.inst,c313.inst,c314.inst,c315.inst,c316.inst,c317.inst,c318.inst,c319.inst,c320.inst,c321.inst,c322.inst,c323.inst,c324.inst,c325.inst,c326.inst,c327.inst,c328.inst,c329.inst,c330.inst,c331.inst,c332.inst,c333.inst,c334.inst,c335.inst,c336.inst,c337.inst,c338.inst,c339.inst,c340.inst,c341.inst,c342.inst,c343.inst,c344.inst,c345.inst,c346.inst,c347.inst,c348.inst,c349.inst,c350.inst,c351.inst,c352.inst,c353.inst,c354.inst,c355.inst,c356.inst,c357.inst,c358.inst,c359.inst,c360.inst,c361.inst,c362.inst,c363.inst,c364.inst,c365.inst,c366.inst,c367.inst,c368.inst,c369.inst,c370.inst,c371.inst,c372.inst,c373.inst,c374.inst,c375.inst,c376.inst,c377.inst,c378.inst,c379.inst,c380.inst,c381.inst,c382.inst,c383.inst,c384.inst,c385.inst,c386.inst,c387.inst,c388.inst,c389.inst,c390.inst,c391.inst,c392.inst,c393.inst,c394.inst,c395.inst,c396.inst,c397.inst,c398.inst,c399.inst,c400.inst,c401.inst,c402.inst,c403.inst,c404.inst,c405.inst,c406.inst,c407.inst,c408.inst,c409.inst,c410.inst,c411.inst,c412.inst,c413.inst,c414.inst,c415.inst,c416.inst,c417.inst,c418.inst,c419.inst,c420.inst,c421.inst,c422.inst,c423.inst,c424.inst,c425.inst,c426.inst,c427.inst,c428.inst,c429.inst,c430.inst,c431.inst,c432.inst,c433.inst,c434.inst,c435.inst,c436.inst,c437.inst,c438.inst,c439.inst,c440.inst,c441.inst,c442.inst,c443.inst,c444.inst,c445.inst,c446.inst,c447.inst,c448.inst,c449.inst,c450.inst,c451.inst,c452.inst,c453.inst,c454.inst,c455.inst,c456.inst,c457.inst,c458.inst,c459.inst,c460.inst,c461.inst,c462.inst,c463.inst,c464.inst,c465.inst,c466.inst,c467.inst,c468.inst,c469.inst,c470.inst,c471.inst,c472.inst,c473.inst,c474.inst,c475.inst,c476.inst,c477.inst,c478.inst,c479.inst,c480.inst,c481.inst,c482.inst,c483.inst,c484.inst,c485.inst,c486.inst,c487.inst,c488.inst,c489.inst,c490.inst,c491.inst,c492.inst,c493.inst,c494.inst,c495.inst,c496.inst,c497.inst,c498.inst,c499.inst,c500.inst,c501.inst,c502.inst,c503.inst,c504.inst,c505.inst,c506.inst,c507.inst,c508.inst,c509.inst,c510.inst,c511.inst,c512.inst,c513.inst,c514.inst,c515.inst,c516.inst,c517.inst,c518.inst,c519.inst,c520.inst,c521.inst,c522.inst,c523.inst,c524.inst,c525.inst,c526.inst,c527.inst,c528.inst,c529.inst,c530.inst,c531.inst,c532.inst,c533.inst,c534.inst,c535.inst,c536.inst,c537.inst,c538.inst,c539.inst,c540.inst,c541.inst,c542.inst,c543.inst,c544.inst,c545.inst,c546.inst,c547.inst,c548.inst,c549.inst,c550.inst,c551.inst,c552.inst,c553.inst,c554.inst,c555.inst,c556.inst,c557.inst,c558.inst,c559.inst,c560.inst,c561.inst,c562.inst,c563.inst,c564.inst,c565.inst,c566.inst,c567.inst,c568.inst,c569.inst,c570.inst,c571.inst,c572.inst,c573.inst,c574.inst,c575.inst,c576.inst,c577.inst,c578.inst,c579.inst,c580.inst,c581.inst,c582.inst,c583.inst,c584.inst,c585.inst,c586.inst,c587.inst,c588.inst,c589.inst,c590.inst,c591.inst,c592.inst,c593.inst,c594.inst,c595.inst,c596.inst,c597.inst,c598.inst,c599.inst,c600.inst,c601.inst,c602.inst,c603.inst,c604.inst,c605.inst,c606.inst,c607.inst,c608.inst,c609.inst,c610.inst,c611.inst,c612.inst,c613.inst,c614.inst,c615.inst,c616.inst,c617.inst,c618.inst,c619.inst,c620.inst,c621.inst,c622.inst,c623.inst,c624.inst,c625.inst,c626.inst,c627.inst,c628.inst,c629.inst,c630.inst,c631.inst,c632.inst,c633.inst,c634.inst,c635.inst,c636.inst,c637.inst,c638.inst,c639.inst,c640.inst,c641.inst,c642.inst,c643.inst,c644.inst,c645.inst,c646.inst,c647.inst,c648.inst,c649.inst,c650.inst,c651.inst,c652.inst,c653.inst,c654.inst,c655.inst,c656.inst,c657.inst,c658.inst,c659.inst,c660.inst,c661.inst,c662.inst,c663.inst,c664.inst,c665.inst,c666.inst,c667.inst,c668.inst,c669.inst,c670.inst,c671.inst,c672.inst,c673.inst,c674.inst,c675.inst,c676.inst,c677.inst,c678.inst,c679.inst,c680.inst,c681.inst,c682.inst,c683.inst,c684.inst,c685.inst,c686.inst,c687.inst,c688.inst,c689.inst,c690.inst,c691.inst,c692.inst,c693.inst,c694.inst,c695.inst,c696.inst,c697.inst,c698.inst,c699.inst,c700.inst,c701.inst,c702.inst,c703.inst,c704.inst,c705.inst,c706.inst,c707.inst,c708.inst,c709.inst,c710.inst,c711.inst,c712.inst,c713.inst,c714.inst,c715.inst,c716.inst,c717.inst,c718.inst,c719.inst,c720.inst,c721.inst,c722.inst,c723.inst,c724.inst,c725.inst,c726.inst,c727.inst,c728.inst,c729.inst,c730.inst,c731.inst,c732.inst,c733.inst,c734.inst,c735.inst,c736.inst,c737.inst,c738.inst,c739.inst,c740.inst,c741.inst,c742.inst,c743.inst,c744.inst,c745.inst,c746.inst,c747.inst,c748.inst,c749.inst,c750.inst,c751.inst,c752.inst,c753.inst,c754.inst,c755.inst,c756.inst,c757.inst,c758.inst,c759.inst,c760.inst,c761.inst,c762.inst,c763.inst,c764.inst,c765.inst,c766.inst,c767.inst,c768.inst,c769.inst,c770.inst,c771.inst,c772.inst,c773.inst,c774.inst,c775.inst,c776.inst,c777.inst,c778.inst,c779.inst,c780.inst,c781.inst,c782.inst,c783.inst,c784.inst,c785.inst,c786.inst,c787.inst,c788.inst,c789.inst,c790.inst,c791.inst,c792.inst,c793.inst,c794.inst,c795.inst,c796.inst,c797.inst,c798.inst,c799.inst,c800.inst,c801.inst,c802.inst,c803.inst,c804.inst,c805.inst,c806.inst,c807.inst,c808.inst,c809.inst,c810.inst,c811.inst,c812.inst,c813.inst,c814.inst,c815.inst,c816.inst,c817.inst,c818.inst,c819.inst,c820.inst,c821.inst,c822.inst,c823.inst,c824.inst,c825.inst,c826.inst,c827.inst,c828.inst,c829.inst,c830.inst,c831.inst,c832.inst,c833.inst,c834.inst,c835.inst,c836.inst,c837.inst,c838.inst,c839.inst,c840.inst,c841.inst,c842.inst,c843.inst,c844.inst,c845.inst,c846.inst,c847.inst,c848.inst,c849.inst,c850.inst,c851.inst,c852.inst,c853.inst,c854.inst,c855.inst,c856.inst,c857.inst,c858.inst,c859.inst,c860.inst,c861.inst,c862.inst,c863.inst,c864.inst,c865.inst,c866.inst,c867.inst,c868.inst,c869.inst,c870.inst,c871.inst,c872.inst,c873.inst,c874.inst,c875.inst,c876.inst,c877.inst,c878.inst,c879.inst,c880.inst,c881.inst,c882.inst,c883.inst,c884.inst,c885.inst,c886.inst,c887.inst,c888.inst,c889.inst,c890.inst,c891.inst,c892.inst,c893.inst,c894.inst,c895.inst,c896.inst,c897.inst,c898.inst,c899.inst,c900.inst,c901.inst,c902.inst,c903.inst,c904.inst,c905.inst,c906.inst,c907.inst,c908.inst,c909.inst,c910.inst,c911.inst,c912.inst,c913.inst,c914.inst,c915.inst,c916.inst,c917.inst,c918.inst,c919.inst,c920.inst,c921.inst,c922.inst,c923.inst,c924.inst,c925.inst,c926.inst,c927.inst,c928.inst,c929.inst,c930.inst,c931.inst,c932.inst,c933.inst,c934.inst,c935.inst,c936.inst,c937.inst,c938.inst,c939.inst,c940.inst,c941.inst,c942.inst,c943.inst,c944.inst,c945.inst,c946.inst,c947.inst,c948.inst,c949.inst,c950.inst,c951.inst,c952.inst,c953.inst,c954.inst,c955.inst,c956.inst,c957.inst,c958.inst,c959.inst,c960.inst,c961.inst,c962.inst,c963.inst,c964.inst,c965.inst,c966.inst,c967.inst,c968.inst,c969.inst,c970.inst,c971.inst,c972.inst,c973.inst,c974.inst,c975.inst,c976.inst,c977.inst,c978.inst,c979.inst,c980.inst,c981.inst,c982.inst,c983.inst,c984.inst,c985.inst,c986.inst,c987.inst,c988.inst,c989.inst,c990.inst,c991.inst,c992.inst,c993.inst,c994.inst,c995.inst,c996.inst,c997.inst,c998.inst,c999.inst,c1000.inst,c1001.inst,c1002.inst,c1003.inst,c1004.inst,c1005.inst,c1006.inst,c1007.inst,c1008.inst,c1009.inst,c1010.inst,c1011.inst,c1012.inst,c1013.inst,c1014.inst,c1015.inst,c1016.inst,c1017.inst,c1018.inst,c1019.inst,c1020.inst,c1021.inst,c1022.inst,c1023.inst};
+micro_instr_latency = /home/wangzhao/timeloop-dev/focus/simulator/runfiles/instr_latency;
+routing_board = /home/wangzhao/timeloop-dev/focus/simulator/tasks/bert_b1w512_32x32/routing_board;
+deadlock_check_freq = 100000;
+
+// NoC speficication, copied from booksim
+topology = mesh;
+k = 32;
+n = 2;      // # dims
+
+sim_type = throughput;
+
+sim_power = 1;
+channel_width = 128;    // Only work for power simulation
+
+// Routing
+// routing_function = dim_order;
+// routing_function = min_adapt;
+// routing_function = xy_yx;
+// routing_function = romm;
+routing_function = src_routing;
+
+
+num_vcs = 4;
+vc_buf_size = 2;
+
+tech_file = runfiles/noc/techfile.txt;
+watch_out = booksim.log;
+// watch_packets = {247};
+// watch_flits = {297};
+// watch_flits = {19,20,21,22,23,24,25,26};
+// watch_packets = {0,1,2,3,4,5,6,7,8,9,10};
+
+END Configuration File: /home/wangzhao/timeloop-dev/focus/simulator/tasks/bert_b1w512_32x32/spatial_spec
+BEGIN Configuration File: /home/wangzhao/timeloop-dev/focus/simulator/tasks/resnet50_b1w512_32x32/spatial_spec
+// log_file = /dev/null;
+log_file = out.log;
+// log_file = -;
+
+
+// Core array speficication
+threshold = 10240;
+working_directory = /home/wangzhao/timeloop-dev/focus/simulator/tasks/resnet50_b1w512_32x32;
+tasks = {c0.inst,c1.inst,c2.inst,c3.inst,c4.inst,c5.inst,c6.inst,c7.inst,c8.inst,c9.inst,c10.inst,c11.inst,c12.inst,c13.inst,c14.inst,c15.inst,c16.inst,c17.inst,c18.inst,c19.inst,c20.inst,c21.inst,c22.inst,c23.inst,c24.inst,c25.inst,c26.inst,c27.inst,c28.inst,c29.inst,c30.inst,c31.inst,c32.inst,c33.inst,c34.inst,c35.inst,c36.inst,c37.inst,c38.inst,c39.inst,c40.inst,c41.inst,c42.inst,c43.inst,c44.inst,c45.inst,c46.inst,c47.inst,c48.inst,c49.inst,c50.inst,c51.inst,c52.inst,c53.inst,c54.inst,c55.inst,c56.inst,c57.inst,c58.inst,c59.inst,c60.inst,c61.inst,c62.inst,c63.inst,c64.inst,c65.inst,c66.inst,c67.inst,c68.inst,c69.inst,c70.inst,c71.inst,c72.inst,c73.inst,c74.inst,c75.inst,c76.inst,c77.inst,c78.inst,c79.inst,c80.inst,c81.inst,c82.inst,c83.inst,c84.inst,c85.inst,c86.inst,c87.inst,c88.inst,c89.inst,c90.inst,c91.inst,c92.inst,c93.inst,c94.inst,c95.inst,c96.inst,c97.inst,c98.inst,c99.inst,c100.inst,c101.inst,c102.inst,c103.inst,c104.inst,c105.inst,c106.inst,c107.inst,c108.inst,c109.inst,c110.inst,c111.inst,c112.inst,c113.inst,c114.inst,c115.inst,c116.inst,c117.inst,c118.inst,c119.inst,c120.inst,c121.inst,c122.inst,c123.inst,c124.inst,c125.inst,c126.inst,c127.inst,c128.inst,c129.inst,c130.inst,c131.inst,c132.inst,c133.inst,c134.inst,c135.inst,c136.inst,c137.inst,c138.inst,c139.inst,c140.inst,c141.inst,c142.inst,c143.inst,c144.inst,c145.inst,c146.inst,c147.inst,c148.inst,c149.inst,c150.inst,c151.inst,c152.inst,c153.inst,c154.inst,c155.inst,c156.inst,c157.inst,c158.inst,c159.inst,c160.inst,c161.inst,c162.inst,c163.inst,c164.inst,c165.inst,c166.inst,c167.inst,c168.inst,c169.inst,c170.inst,c171.inst,c172.inst,c173.inst,c174.inst,c175.inst,c176.inst,c177.inst,c178.inst,c179.inst,c180.inst,c181.inst,c182.inst,c183.inst,c184.inst,c185.inst,c186.inst,c187.inst,c188.inst,c189.inst,c190.inst,c191.inst,c192.inst,c193.inst,c194.inst,c195.inst,c196.inst,c197.inst,c198.inst,c199.inst,c200.inst,c201.inst,c202.inst,c203.inst,c204.inst,c205.inst,c206.inst,c207.inst,c208.inst,c209.inst,c210.inst,c211.inst,c212.inst,c213.inst,c214.inst,c215.inst,c216.inst,c217.inst,c218.inst,c219.inst,c220.inst,c221.inst,c222.inst,c223.inst,c224.inst,c225.inst,c226.inst,c227.inst,c228.inst,c229.inst,c230.inst,c231.inst,c232.inst,c233.inst,c234.inst,c235.inst,c236.inst,c237.inst,c238.inst,c239.inst,c240.inst,c241.inst,c242.inst,c243.inst,c244.inst,c245.inst,c246.inst,c247.inst,c248.inst,c249.inst,c250.inst,c251.inst,c252.inst,c253.inst,c254.inst,c255.inst,c256.inst,c257.inst,c258.inst,c259.inst,c260.inst,c261.inst,c262.inst,c263.inst,c264.inst,c265.inst,c266.inst,c267.inst,c268.inst,c269.inst,c270.inst,c271.inst,c272.inst,c273.inst,c274.inst,c275.inst,c276.inst,c277.inst,c278.inst,c279.inst,c280.inst,c281.inst,c282.inst,c283.inst,c284.inst,c285.inst,c286.inst,c287.inst,c288.inst,c289.inst,c290.inst,c291.inst,c292.inst,c293.inst,c294.inst,c295.inst,c296.inst,c297.inst,c298.inst,c299.inst,c300.inst,c301.inst,c302.inst,c303.inst,c304.inst,c305.inst,c306.inst,c307.inst,c308.inst,c309.inst,c310.inst,c311.inst,c312.inst,c313.inst,c314.inst,c315.inst,c316.inst,c317.inst,c318.inst,c319.inst,c320.inst,c321.inst,c322.inst,c323.inst,c324.inst,c325.inst,c326.inst,c327.inst,c328.inst,c329.inst,c330.inst,c331.inst,c332.inst,c333.inst,c334.inst,c335.inst,c336.inst,c337.inst,c338.inst,c339.inst,c340.inst,c341.inst,c342.inst,c343.inst,c344.inst,c345.inst,c346.inst,c347.inst,c348.inst,c349.inst,c350.inst,c351.inst,c352.inst,c353.inst,c354.inst,c355.inst,c356.inst,c357.inst,c358.inst,c359.inst,c360.inst,c361.inst,c362.inst,c363.inst,c364.inst,c365.inst,c366.inst,c367.inst,c368.inst,c369.inst,c370.inst,c371.inst,c372.inst,c373.inst,c374.inst,c375.inst,c376.inst,c377.inst,c378.inst,c379.inst,c380.inst,c381.inst,c382.inst,c383.inst,c384.inst,c385.inst,c386.inst,c387.inst,c388.inst,c389.inst,c390.inst,c391.inst,c392.inst,c393.inst,c394.inst,c395.inst,c396.inst,c397.inst,c398.inst,c399.inst,c400.inst,c401.inst,c402.inst,c403.inst,c404.inst,c405.inst,c406.inst,c407.inst,c408.inst,c409.inst,c410.inst,c411.inst,c412.inst,c413.inst,c414.inst,c415.inst,c416.inst,c417.inst,c418.inst,c419.inst,c420.inst,c421.inst,c422.inst,c423.inst,c424.inst,c425.inst,c426.inst,c427.inst,c428.inst,c429.inst,c430.inst,c431.inst,c432.inst,c433.inst,c434.inst,c435.inst,c436.inst,c437.inst,c438.inst,c439.inst,c440.inst,c441.inst,c442.inst,c443.inst,c444.inst,c445.inst,c446.inst,c447.inst,c448.inst,c449.inst,c450.inst,c451.inst,c452.inst,c453.inst,c454.inst,c455.inst,c456.inst,c457.inst,c458.inst,c459.inst,c460.inst,c461.inst,c462.inst,c463.inst,c464.inst,c465.inst,c466.inst,c467.inst,c468.inst,c469.inst,c470.inst,c471.inst,c472.inst,c473.inst,c474.inst,c475.inst,c476.inst,c477.inst,c478.inst,c479.inst,c480.inst,c481.inst,c482.inst,c483.inst,c484.inst,c485.inst,c486.inst,c487.inst,c488.inst,c489.inst,c490.inst,c491.inst,c492.inst,c493.inst,c494.inst,c495.inst,c496.inst,c497.inst,c498.inst,c499.inst,c500.inst,c501.inst,c502.inst,c503.inst,c504.inst,c505.inst,c506.inst,c507.inst,c508.inst,c509.inst,c510.inst,c511.inst,c512.inst,c513.inst,c514.inst,c515.inst,c516.inst,c517.inst,c518.inst,c519.inst,c520.inst,c521.inst,c522.inst,c523.inst,c524.inst,c525.inst,c526.inst,c527.inst,c528.inst,c529.inst,c530.inst,c531.inst,c532.inst,c533.inst,c534.inst,c535.inst,c536.inst,c537.inst,c538.inst,c539.inst,c540.inst,c541.inst,c542.inst,c543.inst,c544.inst,c545.inst,c546.inst,c547.inst,c548.inst,c549.inst,c550.inst,c551.inst,c552.inst,c553.inst,c554.inst,c555.inst,c556.inst,c557.inst,c558.inst,c559.inst,c560.inst,c561.inst,c562.inst,c563.inst,c564.inst,c565.inst,c566.inst,c567.inst,c568.inst,c569.inst,c570.inst,c571.inst,c572.inst,c573.inst,c574.inst,c575.inst,c576.inst,c577.inst,c578.inst,c579.inst,c580.inst,c581.inst,c582.inst,c583.inst,c584.inst,c585.inst,c586.inst,c587.inst,c588.inst,c589.inst,c590.inst,c591.inst,c592.inst,c593.inst,c594.inst,c595.inst,c596.inst,c597.inst,c598.inst,c599.inst,c600.inst,c601.inst,c602.inst,c603.inst,c604.inst,c605.inst,c606.inst,c607.inst,c608.inst,c609.inst,c610.inst,c611.inst,c612.inst,c613.inst,c614.inst,c615.inst,c616.inst,c617.inst,c618.inst,c619.inst,c620.inst,c621.inst,c622.inst,c623.inst,c624.inst,c625.inst,c626.inst,c627.inst,c628.inst,c629.inst,c630.inst,c631.inst,c632.inst,c633.inst,c634.inst,c635.inst,c636.inst,c637.inst,c638.inst,c639.inst,c640.inst,c641.inst,c642.inst,c643.inst,c644.inst,c645.inst,c646.inst,c647.inst,c648.inst,c649.inst,c650.inst,c651.inst,c652.inst,c653.inst,c654.inst,c655.inst,c656.inst,c657.inst,c658.inst,c659.inst,c660.inst,c661.inst,c662.inst,c663.inst,c664.inst,c665.inst,c666.inst,c667.inst,c668.inst,c669.inst,c670.inst,c671.inst,c672.inst,c673.inst,c674.inst,c675.inst,c676.inst,c677.inst,c678.inst,c679.inst,c680.inst,c681.inst,c682.inst,c683.inst,c684.inst,c685.inst,c686.inst,c687.inst,c688.inst,c689.inst,c690.inst,c691.inst,c692.inst,c693.inst,c694.inst,c695.inst,c696.inst,c697.inst,c698.inst,c699.inst,c700.inst,c701.inst,c702.inst,c703.inst,c704.inst,c705.inst,c706.inst,c707.inst,c708.inst,c709.inst,c710.inst,c711.inst,c712.inst,c713.inst,c714.inst,c715.inst,c716.inst,c717.inst,c718.inst,c719.inst,c720.inst,c721.inst,c722.inst,c723.inst,c724.inst,c725.inst,c726.inst,c727.inst,c728.inst,c729.inst,c730.inst,c731.inst,c732.inst,c733.inst,c734.inst,c735.inst,c736.inst,c737.inst,c738.inst,c739.inst,c740.inst,c741.inst,c742.inst,c743.inst,c744.inst,c745.inst,c746.inst,c747.inst,c748.inst,c749.inst,c750.inst,c751.inst,c752.inst,c753.inst,c754.inst,c755.inst,c756.inst,c757.inst,c758.inst,c759.inst,c760.inst,c761.inst,c762.inst,c763.inst,c764.inst,c765.inst,c766.inst,c767.inst,c768.inst,c769.inst,c770.inst,c771.inst,c772.inst,c773.inst,c774.inst,c775.inst,c776.inst,c777.inst,c778.inst,c779.inst,c780.inst,c781.inst,c782.inst,c783.inst,c784.inst,c785.inst,c786.inst,c787.inst,c788.inst,c789.inst,c790.inst,c791.inst,c792.inst,c793.inst,c794.inst,c795.inst,c796.inst,c797.inst,c798.inst,c799.inst,c800.inst,c801.inst,c802.inst,c803.inst,c804.inst,c805.inst,c806.inst,c807.inst,c808.inst,c809.inst,c810.inst,c811.inst,c812.inst,c813.inst,c814.inst,c815.inst,c816.inst,c817.inst,c818.inst,c819.inst,c820.inst,c821.inst,c822.inst,c823.inst,c824.inst,c825.inst,c826.inst,c827.inst,c828.inst,c829.inst,c830.inst,c831.inst,c832.inst,c833.inst,c834.inst,c835.inst,c836.inst,c837.inst,c838.inst,c839.inst,c840.inst,c841.inst,c842.inst,c843.inst,c844.inst,c845.inst,c846.inst,c847.inst,c848.inst,c849.inst,c850.inst,c851.inst,c852.inst,c853.inst,c854.inst,c855.inst,c856.inst,c857.inst,c858.inst,c859.inst,c860.inst,c861.inst,c862.inst,c863.inst,c864.inst,c865.inst,c866.inst,c867.inst,c868.inst,c869.inst,c870.inst,c871.inst,c872.inst,c873.inst,c874.inst,c875.inst,c876.inst,c877.inst,c878.inst,c879.inst,c880.inst,c881.inst,c882.inst,c883.inst,c884.inst,c885.inst,c886.inst,c887.inst,c888.inst,c889.inst,c890.inst,c891.inst,c892.inst,c893.inst,c894.inst,c895.inst,c896.inst,c897.inst,c898.inst,c899.inst,c900.inst,c901.inst,c902.inst,c903.inst,c904.inst,c905.inst,c906.inst,c907.inst,c908.inst,c909.inst,c910.inst,c911.inst,c912.inst,c913.inst,c914.inst,c915.inst,c916.inst,c917.inst,c918.inst,c919.inst,c920.inst,c921.inst,c922.inst,c923.inst,c924.inst,c925.inst,c926.inst,c927.inst,c928.inst,c929.inst,c930.inst,c931.inst,c932.inst,c933.inst,c934.inst,c935.inst,c936.inst,c937.inst,c938.inst,c939.inst,c940.inst,c941.inst,c942.inst,c943.inst,c944.inst,c945.inst,c946.inst,c947.inst,c948.inst,c949.inst,c950.inst,c951.inst,c952.inst,c953.inst,c954.inst,c955.inst,c956.inst,c957.inst,c958.inst,c959.inst,c960.inst,c961.inst,c962.inst,c963.inst,c964.inst,c965.inst,c966.inst,c967.inst,c968.inst,c969.inst,c970.inst,c971.inst,c972.inst,c973.inst,c974.inst,c975.inst,c976.inst,c977.inst,c978.inst,c979.inst,c980.inst,c981.inst,c982.inst,c983.inst,c984.inst,c985.inst,c986.inst,c987.inst,c988.inst,c989.inst,c990.inst,c991.inst,c992.inst,c993.inst,c994.inst,c995.inst,c996.inst,c997.inst,c998.inst,c999.inst,c1000.inst,c1001.inst,c1002.inst,c1003.inst,c1004.inst,c1005.inst,c1006.inst,c1007.inst,c1008.inst,c1009.inst,c1010.inst,c1011.inst,c1012.inst,c1013.inst,c1014.inst,c1015.inst,c1016.inst,c1017.inst,c1018.inst,c1019.inst,c1020.inst,c1021.inst,c1022.inst,c1023.inst};
+micro_instr_latency = /home/wangzhao/timeloop-dev/focus/simulator/runfiles/instr_latency;
+routing_board = /home/wangzhao/timeloop-dev/focus/simulator/tasks/resnet50_b1w512_32x32/routing_board;
+deadlock_check_freq = 100000;
+
+// NoC speficication, copied from booksim
+topology = mesh;
+k = 32;
+n = 2;      // # dims
+
+sim_type = throughput;
+
+sim_power = 1;
+channel_width = 128;    // Only work for power simulation
+
+// Routing
+// routing_function = dim_order;
+// routing_function = min_adapt;
+// routing_function = xy_yx;
+// routing_function = romm;
+routing_function = src_routing;
+
+
+num_vcs = 4;
+vc_buf_size = 2;
+
+tech_file = runfiles/noc/techfile.txt;
+watch_out = booksim.log;
+// watch_packets = {247};
+// watch_flits = {297};
+// watch_flits = {19,20,21,22,23,24,25,26};
+// watch_packets = {0,1,2,3,4,5,6,7,8,9,10};
+
+END Configuration File: /home/wangzhao/timeloop-dev/focus/simulator/tasks/resnet50_b1w512_32x32/spatial_spec
+BEGIN Configuration File: /home/wangzhao/timeloop-dev/focus/simulator/tasks/wide_resnet50_2_b1w512_32x32/spatial_spec
+// log_file = /dev/null;
+log_file = out.log;
+// log_file = -;
+
+
+// Core array speficication
+threshold = 10240;
+working_directory = /home/wangzhao/timeloop-dev/focus/simulator/tasks/wide_resnet50_2_b1w512_32x32;
+tasks = {c0.inst,c1.inst,c2.inst,c3.inst,c4.inst,c5.inst,c6.inst,c7.inst,c8.inst,c9.inst,c10.inst,c11.inst,c12.inst,c13.inst,c14.inst,c15.inst,c16.inst,c17.inst,c18.inst,c19.inst,c20.inst,c21.inst,c22.inst,c23.inst,c24.inst,c25.inst,c26.inst,c27.inst,c28.inst,c29.inst,c30.inst,c31.inst,c32.inst,c33.inst,c34.inst,c35.inst,c36.inst,c37.inst,c38.inst,c39.inst,c40.inst,c41.inst,c42.inst,c43.inst,c44.inst,c45.inst,c46.inst,c47.inst,c48.inst,c49.inst,c50.inst,c51.inst,c52.inst,c53.inst,c54.inst,c55.inst,c56.inst,c57.inst,c58.inst,c59.inst,c60.inst,c61.inst,c62.inst,c63.inst,c64.inst,c65.inst,c66.inst,c67.inst,c68.inst,c69.inst,c70.inst,c71.inst,c72.inst,c73.inst,c74.inst,c75.inst,c76.inst,c77.inst,c78.inst,c79.inst,c80.inst,c81.inst,c82.inst,c83.inst,c84.inst,c85.inst,c86.inst,c87.inst,c88.inst,c89.inst,c90.inst,c91.inst,c92.inst,c93.inst,c94.inst,c95.inst,c96.inst,c97.inst,c98.inst,c99.inst,c100.inst,c101.inst,c102.inst,c103.inst,c104.inst,c105.inst,c106.inst,c107.inst,c108.inst,c109.inst,c110.inst,c111.inst,c112.inst,c113.inst,c114.inst,c115.inst,c116.inst,c117.inst,c118.inst,c119.inst,c120.inst,c121.inst,c122.inst,c123.inst,c124.inst,c125.inst,c126.inst,c127.inst,c128.inst,c129.inst,c130.inst,c131.inst,c132.inst,c133.inst,c134.inst,c135.inst,c136.inst,c137.inst,c138.inst,c139.inst,c140.inst,c141.inst,c142.inst,c143.inst,c144.inst,c145.inst,c146.inst,c147.inst,c148.inst,c149.inst,c150.inst,c151.inst,c152.inst,c153.inst,c154.inst,c155.inst,c156.inst,c157.inst,c158.inst,c159.inst,c160.inst,c161.inst,c162.inst,c163.inst,c164.inst,c165.inst,c166.inst,c167.inst,c168.inst,c169.inst,c170.inst,c171.inst,c172.inst,c173.inst,c174.inst,c175.inst,c176.inst,c177.inst,c178.inst,c179.inst,c180.inst,c181.inst,c182.inst,c183.inst,c184.inst,c185.inst,c186.inst,c187.inst,c188.inst,c189.inst,c190.inst,c191.inst,c192.inst,c193.inst,c194.inst,c195.inst,c196.inst,c197.inst,c198.inst,c199.inst,c200.inst,c201.inst,c202.inst,c203.inst,c204.inst,c205.inst,c206.inst,c207.inst,c208.inst,c209.inst,c210.inst,c211.inst,c212.inst,c213.inst,c214.inst,c215.inst,c216.inst,c217.inst,c218.inst,c219.inst,c220.inst,c221.inst,c222.inst,c223.inst,c224.inst,c225.inst,c226.inst,c227.inst,c228.inst,c229.inst,c230.inst,c231.inst,c232.inst,c233.inst,c234.inst,c235.inst,c236.inst,c237.inst,c238.inst,c239.inst,c240.inst,c241.inst,c242.inst,c243.inst,c244.inst,c245.inst,c246.inst,c247.inst,c248.inst,c249.inst,c250.inst,c251.inst,c252.inst,c253.inst,c254.inst,c255.inst,c256.inst,c257.inst,c258.inst,c259.inst,c260.inst,c261.inst,c262.inst,c263.inst,c264.inst,c265.inst,c266.inst,c267.inst,c268.inst,c269.inst,c270.inst,c271.inst,c272.inst,c273.inst,c274.inst,c275.inst,c276.inst,c277.inst,c278.inst,c279.inst,c280.inst,c281.inst,c282.inst,c283.inst,c284.inst,c285.inst,c286.inst,c287.inst,c288.inst,c289.inst,c290.inst,c291.inst,c292.inst,c293.inst,c294.inst,c295.inst,c296.inst,c297.inst,c298.inst,c299.inst,c300.inst,c301.inst,c302.inst,c303.inst,c304.inst,c305.inst,c306.inst,c307.inst,c308.inst,c309.inst,c310.inst,c311.inst,c312.inst,c313.inst,c314.inst,c315.inst,c316.inst,c317.inst,c318.inst,c319.inst,c320.inst,c321.inst,c322.inst,c323.inst,c324.inst,c325.inst,c326.inst,c327.inst,c328.inst,c329.inst,c330.inst,c331.inst,c332.inst,c333.inst,c334.inst,c335.inst,c336.inst,c337.inst,c338.inst,c339.inst,c340.inst,c341.inst,c342.inst,c343.inst,c344.inst,c345.inst,c346.inst,c347.inst,c348.inst,c349.inst,c350.inst,c351.inst,c352.inst,c353.inst,c354.inst,c355.inst,c356.inst,c357.inst,c358.inst,c359.inst,c360.inst,c361.inst,c362.inst,c363.inst,c364.inst,c365.inst,c366.inst,c367.inst,c368.inst,c369.inst,c370.inst,c371.inst,c372.inst,c373.inst,c374.inst,c375.inst,c376.inst,c377.inst,c378.inst,c379.inst,c380.inst,c381.inst,c382.inst,c383.inst,c384.inst,c385.inst,c386.inst,c387.inst,c388.inst,c389.inst,c390.inst,c391.inst,c392.inst,c393.inst,c394.inst,c395.inst,c396.inst,c397.inst,c398.inst,c399.inst,c400.inst,c401.inst,c402.inst,c403.inst,c404.inst,c405.inst,c406.inst,c407.inst,c408.inst,c409.inst,c410.inst,c411.inst,c412.inst,c413.inst,c414.inst,c415.inst,c416.inst,c417.inst,c418.inst,c419.inst,c420.inst,c421.inst,c422.inst,c423.inst,c424.inst,c425.inst,c426.inst,c427.inst,c428.inst,c429.inst,c430.inst,c431.inst,c432.inst,c433.inst,c434.inst,c435.inst,c436.inst,c437.inst,c438.inst,c439.inst,c440.inst,c441.inst,c442.inst,c443.inst,c444.inst,c445.inst,c446.inst,c447.inst,c448.inst,c449.inst,c450.inst,c451.inst,c452.inst,c453.inst,c454.inst,c455.inst,c456.inst,c457.inst,c458.inst,c459.inst,c460.inst,c461.inst,c462.inst,c463.inst,c464.inst,c465.inst,c466.inst,c467.inst,c468.inst,c469.inst,c470.inst,c471.inst,c472.inst,c473.inst,c474.inst,c475.inst,c476.inst,c477.inst,c478.inst,c479.inst,c480.inst,c481.inst,c482.inst,c483.inst,c484.inst,c485.inst,c486.inst,c487.inst,c488.inst,c489.inst,c490.inst,c491.inst,c492.inst,c493.inst,c494.inst,c495.inst,c496.inst,c497.inst,c498.inst,c499.inst,c500.inst,c501.inst,c502.inst,c503.inst,c504.inst,c505.inst,c506.inst,c507.inst,c508.inst,c509.inst,c510.inst,c511.inst,c512.inst,c513.inst,c514.inst,c515.inst,c516.inst,c517.inst,c518.inst,c519.inst,c520.inst,c521.inst,c522.inst,c523.inst,c524.inst,c525.inst,c526.inst,c527.inst,c528.inst,c529.inst,c530.inst,c531.inst,c532.inst,c533.inst,c534.inst,c535.inst,c536.inst,c537.inst,c538.inst,c539.inst,c540.inst,c541.inst,c542.inst,c543.inst,c544.inst,c545.inst,c546.inst,c547.inst,c548.inst,c549.inst,c550.inst,c551.inst,c552.inst,c553.inst,c554.inst,c555.inst,c556.inst,c557.inst,c558.inst,c559.inst,c560.inst,c561.inst,c562.inst,c563.inst,c564.inst,c565.inst,c566.inst,c567.inst,c568.inst,c569.inst,c570.inst,c571.inst,c572.inst,c573.inst,c574.inst,c575.inst,c576.inst,c577.inst,c578.inst,c579.inst,c580.inst,c581.inst,c582.inst,c583.inst,c584.inst,c585.inst,c586.inst,c587.inst,c588.inst,c589.inst,c590.inst,c591.inst,c592.inst,c593.inst,c594.inst,c595.inst,c596.inst,c597.inst,c598.inst,c599.inst,c600.inst,c601.inst,c602.inst,c603.inst,c604.inst,c605.inst,c606.inst,c607.inst,c608.inst,c609.inst,c610.inst,c611.inst,c612.inst,c613.inst,c614.inst,c615.inst,c616.inst,c617.inst,c618.inst,c619.inst,c620.inst,c621.inst,c622.inst,c623.inst,c624.inst,c625.inst,c626.inst,c627.inst,c628.inst,c629.inst,c630.inst,c631.inst,c632.inst,c633.inst,c634.inst,c635.inst,c636.inst,c637.inst,c638.inst,c639.inst,c640.inst,c641.inst,c642.inst,c643.inst,c644.inst,c645.inst,c646.inst,c647.inst,c648.inst,c649.inst,c650.inst,c651.inst,c652.inst,c653.inst,c654.inst,c655.inst,c656.inst,c657.inst,c658.inst,c659.inst,c660.inst,c661.inst,c662.inst,c663.inst,c664.inst,c665.inst,c666.inst,c667.inst,c668.inst,c669.inst,c670.inst,c671.inst,c672.inst,c673.inst,c674.inst,c675.inst,c676.inst,c677.inst,c678.inst,c679.inst,c680.inst,c681.inst,c682.inst,c683.inst,c684.inst,c685.inst,c686.inst,c687.inst,c688.inst,c689.inst,c690.inst,c691.inst,c692.inst,c693.inst,c694.inst,c695.inst,c696.inst,c697.inst,c698.inst,c699.inst,c700.inst,c701.inst,c702.inst,c703.inst,c704.inst,c705.inst,c706.inst,c707.inst,c708.inst,c709.inst,c710.inst,c711.inst,c712.inst,c713.inst,c714.inst,c715.inst,c716.inst,c717.inst,c718.inst,c719.inst,c720.inst,c721.inst,c722.inst,c723.inst,c724.inst,c725.inst,c726.inst,c727.inst,c728.inst,c729.inst,c730.inst,c731.inst,c732.inst,c733.inst,c734.inst,c735.inst,c736.inst,c737.inst,c738.inst,c739.inst,c740.inst,c741.inst,c742.inst,c743.inst,c744.inst,c745.inst,c746.inst,c747.inst,c748.inst,c749.inst,c750.inst,c751.inst,c752.inst,c753.inst,c754.inst,c755.inst,c756.inst,c757.inst,c758.inst,c759.inst,c760.inst,c761.inst,c762.inst,c763.inst,c764.inst,c765.inst,c766.inst,c767.inst,c768.inst,c769.inst,c770.inst,c771.inst,c772.inst,c773.inst,c774.inst,c775.inst,c776.inst,c777.inst,c778.inst,c779.inst,c780.inst,c781.inst,c782.inst,c783.inst,c784.inst,c785.inst,c786.inst,c787.inst,c788.inst,c789.inst,c790.inst,c791.inst,c792.inst,c793.inst,c794.inst,c795.inst,c796.inst,c797.inst,c798.inst,c799.inst,c800.inst,c801.inst,c802.inst,c803.inst,c804.inst,c805.inst,c806.inst,c807.inst,c808.inst,c809.inst,c810.inst,c811.inst,c812.inst,c813.inst,c814.inst,c815.inst,c816.inst,c817.inst,c818.inst,c819.inst,c820.inst,c821.inst,c822.inst,c823.inst,c824.inst,c825.inst,c826.inst,c827.inst,c828.inst,c829.inst,c830.inst,c831.inst,c832.inst,c833.inst,c834.inst,c835.inst,c836.inst,c837.inst,c838.inst,c839.inst,c840.inst,c841.inst,c842.inst,c843.inst,c844.inst,c845.inst,c846.inst,c847.inst,c848.inst,c849.inst,c850.inst,c851.inst,c852.inst,c853.inst,c854.inst,c855.inst,c856.inst,c857.inst,c858.inst,c859.inst,c860.inst,c861.inst,c862.inst,c863.inst,c864.inst,c865.inst,c866.inst,c867.inst,c868.inst,c869.inst,c870.inst,c871.inst,c872.inst,c873.inst,c874.inst,c875.inst,c876.inst,c877.inst,c878.inst,c879.inst,c880.inst,c881.inst,c882.inst,c883.inst,c884.inst,c885.inst,c886.inst,c887.inst,c888.inst,c889.inst,c890.inst,c891.inst,c892.inst,c893.inst,c894.inst,c895.inst,c896.inst,c897.inst,c898.inst,c899.inst,c900.inst,c901.inst,c902.inst,c903.inst,c904.inst,c905.inst,c906.inst,c907.inst,c908.inst,c909.inst,c910.inst,c911.inst,c912.inst,c913.inst,c914.inst,c915.inst,c916.inst,c917.inst,c918.inst,c919.inst,c920.inst,c921.inst,c922.inst,c923.inst,c924.inst,c925.inst,c926.inst,c927.inst,c928.inst,c929.inst,c930.inst,c931.inst,c932.inst,c933.inst,c934.inst,c935.inst,c936.inst,c937.inst,c938.inst,c939.inst,c940.inst,c941.inst,c942.inst,c943.inst,c944.inst,c945.inst,c946.inst,c947.inst,c948.inst,c949.inst,c950.inst,c951.inst,c952.inst,c953.inst,c954.inst,c955.inst,c956.inst,c957.inst,c958.inst,c959.inst,c960.inst,c961.inst,c962.inst,c963.inst,c964.inst,c965.inst,c966.inst,c967.inst,c968.inst,c969.inst,c970.inst,c971.inst,c972.inst,c973.inst,c974.inst,c975.inst,c976.inst,c977.inst,c978.inst,c979.inst,c980.inst,c981.inst,c982.inst,c983.inst,c984.inst,c985.inst,c986.inst,c987.inst,c988.inst,c989.inst,c990.inst,c991.inst,c992.inst,c993.inst,c994.inst,c995.inst,c996.inst,c997.inst,c998.inst,c999.inst,c1000.inst,c1001.inst,c1002.inst,c1003.inst,c1004.inst,c1005.inst,c1006.inst,c1007.inst,c1008.inst,c1009.inst,c1010.inst,c1011.inst,c1012.inst,c1013.inst,c1014.inst,c1015.inst,c1016.inst,c1017.inst,c1018.inst,c1019.inst,c1020.inst,c1021.inst,c1022.inst,c1023.inst};
+micro_instr_latency = /home/wangzhao/timeloop-dev/focus/simulator/runfiles/instr_latency;
+routing_board = /home/wangzhao/timeloop-dev/focus/simulator/tasks/wide_resnet50_2_b1w512_32x32/routing_board;
+deadlock_check_freq = 100000;
+
+// NoC speficication, copied from booksim
+topology = mesh;
+k = 32;
+n = 2;      // # dims
+
+sim_type = throughput;
+
+sim_power = 1;
+channel_width = 128;    // Only work for power simulation
+
+// Routing
+// routing_function = dim_order;
+// routing_function = min_adapt;
+// routing_function = xy_yx;
+// routing_function = romm;
+routing_function = src_routing;
+
+
+num_vcs = 4;
+vc_buf_size = 2;
+
+tech_file = runfiles/noc/techfile.txt;
+watch_out = booksim.log;
+// watch_packets = {247};
+// watch_flits = {297};
+// watch_flits = {19,20,21,22,23,24,25,26};
+// watch_packets = {0,1,2,3,4,5,6,7,8,9,10};
+
+END Configuration File: /home/wangzhao/timeloop-dev/focus/simulator/tasks/wide_resnet50_2_b1w512_32x32/spatial_spec
+
+mem controller:  [15, 16, 14, 17, 480, 512, 448, 544, 511, 543, 479, 575, 1007, 1008, 1006, 1009]
+compute cycle 41760.0
+3.011373563423974
+METRO software takes: 72.18698835372925 seconds
+
+Info: Working for mobilenet_v3_large_layer58
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer59
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer60
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer61
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer62
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer63
+====================== FINISH =========================
+
+
+Info: Working for mobilenet_v3_large_layer64
+====================== FINISH =========================
+
+
+core:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1000, 1001, 1002, 1003, 1004, 1005, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023]
+mem controller:  [15, 16, 14, 17, 480, 512, 448, 544, 511, 543, 479, 575, 1007, 1008, 1006, 1009]
+compute cycle 183035.0
+3.0629326311510043
+METRO software takes: 194.47383379936218 seconds
+
+mem controller:  [15, 16, 14, 17, 480, 512, 448, 544, 511, 543, 479, 575, 1007, 1008, 1006, 1009]
+compute cycle 1763328.0
+3.819770342359055
+METRO software takes: 1439.3498792648315 seconds
+
+Info: Working for wide_resnet50_2_layer62
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer63
+====================== FINISH =========================
+
+
+Info: Working for wide_resnet50_2_layer64
+====================== FINISH =========================
+
+
+core:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1000, 1001, 1002, 1003, 1004, 1005, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023]
+mem controller:  [15, 16, 14, 17, 480, 512, 448, 544, 511, 543, 479, 575, 1007, 1008, 1006, 1009]
+compute cycle 4956672.0
+3.770729813057738
+METRO software takes: 3279.244355201721 seconds

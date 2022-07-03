@@ -3,6 +3,7 @@ problem:
     C: 120
     Hdilation: 1
     Hstride: 1
+    M: 1
     N: 1
     P: 28
     Q: 28
@@ -52,4 +53,5 @@ problem:
     - N
     - P
     - Q
+    - M
     name: CNN-Layer
