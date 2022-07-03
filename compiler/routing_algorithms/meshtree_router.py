@@ -45,9 +45,7 @@ class RPMTreeRouter(Router):
             if not self.tree_pruner(tree, i, v, p_node):
                 if_pruned_all = False
         return if_pruned_all
-
         
-
 
     def get_tree(self, tree, node: int, dests: list) -> None:
         if node in dests:
@@ -166,20 +164,22 @@ class WhirlTreeRouter(Router):
                 if_pruned_all = False
         return if_pruned_all
 
-    def dest_pruner(self, tree, v, p_node):
+    def dest_pruner(self, tree, v, p_node, debug=False):
         neighbors = list(nx.neighbors(tree, v))
         if_pruned_all = True
-        if len(neighbors) == 0 and p_node and (not tree.nodes[v]['dest']):
+        if len(neighbors) == 0 and p_node != None and (not tree.nodes[v]['dest']):
             tree.remove_edge(p_node, v)
             tree.remove_node(v)
             if_pruned_all = False
         
         for i in neighbors:
-            if not self.dest_pruner(tree, i, v):
+            if debug:
+                print(i)
+            if not self.dest_pruner(tree, i, v, debug):
                 if_pruned_all = False
         return if_pruned_all
     
-    def route(self, source: int, dests: list, x = -1) -> nx.DiGraph:
+    def route(self, source: int, dests: list, x = -1, xy_format=True) -> nx.DiGraph:
         tree = nx.DiGraph()
         tree.add_node(source, root=True)
 
@@ -231,12 +231,13 @@ class WhirlTreeRouter(Router):
                 tree.nodes[i]['dest'] = True
             else:
                 tree.nodes[i]['dest'] = False
-        
+
         while not self.dest_pruner(tree, source, None):
             pass
-
-        while not self.tree_pruner(tree, source, None, None):
-            pass
+        
+        if xy_format:
+            while not self.tree_pruner(tree, source, None, None):
+                pass
 
         return tree
 
@@ -503,7 +504,7 @@ class Steiner_TreeRouter(Router):
             self.add_point(add_p, tree)
             dests_temp.remove(add_p)
 
-        print(tree.edges())
+        # print(tree.edges())
         for i in tree.nodes():
             if i in dests:
                 tree.nodes[i]['dest'] = True
@@ -517,8 +518,8 @@ class Steiner_TreeRouter(Router):
 
 
 if __name__ == "__main__":
-    #router = WhirlTreeRouter(4)
+    router = WhirlTreeRouter(8)
     #router = RPMTreeRouter(4)
     #router = BAMTreeRouter(4)
-    router = Steiner_TreeRouter(4)
-    print(router.route(9, [0, 2, 3, 13, 15]).edges())
+    # router = Steiner_TreeRouter(4)
+    print(router.route(6, [22, 23]).edges())

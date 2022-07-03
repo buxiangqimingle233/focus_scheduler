@@ -6,6 +6,8 @@ import networkx as nx
 from math import ceil
 import pickle
 
+import networkx as nx
+
 from op_graph.micro_op_graph import MicroOpGraph
 # Fake trace generator
 from fake_trace_generator.generator import gen_fake_trace
@@ -15,7 +17,7 @@ from compiler.timeloop_agents.agent import TimeloopLayer
 from mapping_algorithms.random_mapper import RandomMapper
 from mapping_algorithms.hilbert_mapper import HilbertMapper
 # Tree Generator
-from compiler.routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, WhirlTreeRouter
+from compiler.routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, WhirlTreeRouter, BAMTreeRouter, Steiner_TreeRouter
 # The backend to generate trace for spatial_sim
 from compiler.spatialsim_agents.trace_generator import TraceGenerator
 from compiler.spatialsim_agents.variables import Variables
@@ -55,25 +57,27 @@ class TaskCompiler():
         # map tasks to pe array
         op_graph = self._map_operators(op_graph)
 
-        op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators_{}.png".format(gc.taskname)))
-        op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping_{}.png".format(gc.taskname)), gc.array_diameter)
+        nx.write_gpickle(op_graph, "test.gpickle")
 
-        # # Hack: to accelerate simulation, we reduce the iteration counts by `overclock`
-        # for _, nattr in op_graph.get_data().nodes(data=True):
-        #     try:
-        #         nattr["cnt"] = ceil(nattr["cnt"] / gc.overclock)
-        #     except:
-        #         pass
-        #     # if nattr["type"]
-        self.compute_cycles = op_graph.compute_cycles()
+        # op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators.png"))
+        # op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping.png"))
+
+        self.compute_cycle_lower_bound = op_graph.total_compute_cycles()
+
+        # for node, attr in op_graph.get_data().nodes(data=True):
+        #     attr['cnt'] = 1
+        #     pass
+        # start = 100000
+        # for u, v, eattr in op_graph.get_data().edges(data=True):
+        #     if eattr['edge_type'] == "control":
+        #         eattr['fid'] = start
+        #         eattr['size'] = 1
+        #         start += 1
+        
 
         flattened = self.flatten(op_graph)
-        # for n, nattr in flattened.nodes(data=True):
-        #     print(nattr["layer"], nattr["op_type"], nattr["p_pe"])
-        # for u, v, eattr in flattened.edges(data=True):
-        #     uattr = flattened.nodes[u]
-        #     vattr = flattened.nodes[v]
-        #     print(uattr["layer"], uattr["op_type"], vattr["layer"], vattr["op_type"], eattr["size"], eattr["fid"])
+
+        nx.write_gpickle(flattened, f'./{gc.Router.__name__}_{gc.taskname}_{gc.benchmark_name[10:]}.gpickle')
 
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
@@ -86,15 +90,15 @@ class TaskCompiler():
         return self.op_grpah
 
     def get_compute_cycle(self):
-        assert hasattr(self, "compute_cycles")
-        return self.compute_cycles
+        assert hasattr(self, "compute_cycle_lower_bound")
+        return self.compute_cycle_lower_bound
 
     def _gen_op_graph(self):
         print("Generating the operator graph using timeloop")
 
         op_graph = MicroOpGraph()
         for layer, model, prob_spec, core in zip(self.layer_names, self.model_names, self.prob_spec_names, self.cores):
-            print("Info:", "Working for", layer)
+            print("Info:", "Working for", layer)    
             # Initialize the agent
             tlagent = TimeloopLayer(prob_spec, model_dir=model, dram_spatial_size=core, prj_root=gc.prj_root)
             # Invoke timeloop for dataflow reports
@@ -125,7 +129,11 @@ class TaskCompiler():
         specification_ref_file = open(Variables.get_ref_spec_path(gc.spatial_sim_root), "r")
 
         # Generate multicast tree for multi-end packets
-        router = RPMTreeRouter(gc.array_diameter)
+        #router = MeshTreeRouter(gc.array_diameter)
+        router = gc.Router(gc.array_diameter)
+        #router = WhirlTreeRouter(gc.array_diameter)
+        #router = BAMTreeRouter(gc.array_diameter)
+        #router = Steiner_TreeRouter(gc.array_diameter)
         TraceGenerator().gen_trace(trace_files, routing_board_file, specification_file, \
             specification_ref_file, op_graph, router)
 

@@ -17,5 +17,5 @@ def plot_router_conflict_factors(conflict_factor: list):
     board = board.reshape((gc.array_diameter, gc.array_diameter))
     fig = sns.heatmap(data=board, cmap="RdBu_r", linewidths=0.3, annot=True)
     heatmap = fig.get_figure()
-    heatmap.savefig(os.path.join(gc.visualization_root, "conflicts_per_router_{}.png".format(gc.taskname)), dpi=500)
+    heatmap.savefig(os.path.join(gc.visualization_root, "conflicts_per_router_{}_{}.png".format(gc.taskname, gc.benchmark_name[10:])), dpi=500)
     plt.close()

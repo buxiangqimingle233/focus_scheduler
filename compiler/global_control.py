@@ -118,3 +118,11 @@ def debug_show(item):
 
 def get_ea_logpath():
     return os.path.join(focus_buffer, taskname, "ea_output")
+
+
+# -------------------- Router -----------------------------------
+
+from routing_algorithms.meshtree_router import RPMTreeRouter, WhirlTreeRouter
+
+Router = RPMTreeRouter
+benchmark_name = None

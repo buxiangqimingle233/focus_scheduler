@@ -1,4 +1,5 @@
 import re
+from this import d
 import pandas as pd
 import networkx as nx
 import numpy as np
@@ -6,6 +7,8 @@ import pandas as pd
 import copy
 import seaborn as sns
 import matplotlib.pyplot as plt
+from functools import reduce
+from compiler import global_control as gc
 
 # traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])
 
@@ -163,7 +166,12 @@ class MicroOpGraph:
     def get_operator_type(self, node) -> str:
         return self.graph.nodes[node]["op_type"]
 
-    def compute_cycles(self) -> int:
+    def total_compute_cycles(self) -> int:
+        # subgraph = nx.subgraph_view(self.graph, filter_node=lambda x: self.graph.nodes[x]["node_type"] == "worker")
+        # macs = reduce(lambda x, y: )
+        # cycles = [nattr["delay"] * nattr["cnt"] for _, nattr in self.graph.nodes(data=True) if nattr["op_type"] == "worker"]
+        # return sum(cycles)
+
         wg = copy.deepcopy(self.graph)
         for u, _, attr in wg.edges(data=True):
             uattr = wg.nodes[u]
@@ -171,7 +179,16 @@ class MicroOpGraph:
                 attr["cycle"] = uattr["delay"] * uattr["cnt"]
             else:
                 attr["cycle"] = 0
+            uattr["cycle"] = attr["cycle"]
         # path = nx.dag_longest_path(wg, weight="cycle", default_weight=0)
+        # cycle = 0
+        # vis = {}
+        # for op in path:
+        #     if wg.nodes[op]["p_pe"] not in vis:
+        #         cycle += wg.nodes[op]["cycle"]
+        #         vis.add(wg.nodes[op]["p_pe"])
+        # return cycle
+
         cycle = nx.dag_longest_path_length(wg, weight="cycle", default_weight=0)
         return cycle
 
