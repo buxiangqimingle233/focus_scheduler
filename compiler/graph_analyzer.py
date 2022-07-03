@@ -186,6 +186,8 @@ class Graph_analyzer:
 
                 self.graph.edges[e]['waiting_time'] = max_waiting_time
         
+        print(max_waiting_time)
+        
         #
         for v in dest:
             p_pe = graph.nodes[v]['p_pe']
@@ -196,6 +198,7 @@ class Graph_analyzer:
             # if in the same core, transfermation is unnecessary
             if p_source == p_pe:
                 self.graph.nodes[v]['start'] = transfer_start
+                graph.nodes[v]['start'] = transfer_start
         
         # if vector in [5,6]:
         #     print(vector, p_source, transfering_time, transfer_start, max_waiting_time, size, sep=' ')
@@ -273,9 +276,9 @@ if __name__ == "__main__":
     # print(temp.per_layer_topological_sort(graph))
 
     #######################################################################3
-    graph = nx.read_gpickle('./try.gpickle')
-    for e in graph.edges():
-        graph.edges[e]['priority'] = -1
+    graph = nx.read_gpickle('./RPMTreeRouter_bert-large_b1w1024_5x5_4_4.yaml.gpickle')
+    # for e in graph.edges():
+    #     graph.edges[e]['priority'] = -1
 
 
     for v in graph.nodes():

@@ -72,7 +72,7 @@ simulate_baseline = True
 # PEs and NoCs. 
 # This parameter reduces the packet size and computing time simultaneously.
 # It only effects baseline simulation
-overclock = 20
+overclock = 1
 
 # This parameter describes how much iteration we take.
 # It effects both baseline simulation and focus software

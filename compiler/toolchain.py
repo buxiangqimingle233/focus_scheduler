@@ -77,7 +77,7 @@ class TaskCompiler():
 
         flattened = self.flatten(op_graph)
 
-        nx.write_gpickle(op_graph.get_data(), f'./try.gpickle')
+        nx.write_gpickle(flattened, f'./{gc.Router.__name__}_{gc.taskname}_{gc.benchmark_name[10:]}.gpickle')
 
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
