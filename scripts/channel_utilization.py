@@ -18,9 +18,7 @@ def plot_channel_load(op_graph: MicroOpGraph):
     plt.clf()
     flows = op_graph.get_flow_endpoints()
 
-    # tree_router = RPMTreeRouter(gc.array_diameter)
-    # tree_router = WhirlTreeRouter(gc.array_diameter)
-    tree_router = MeshTreeRouter(gc.array_diameter)
+    tree_router = gc.Router(gc.array_diameter)
 
     path_router = XYRouter((gc.array_diameter, gc.array_diameter))
     channels = [[0 for _ in range(6)] for _ in range(gc.array_size)]
@@ -33,6 +31,7 @@ def plot_channel_load(op_graph: MicroOpGraph):
     # print(channels)
     board = np.full((gc.array_size, ), 0, dtype=float)
     channel_board = np.asarray_chkfinite(channels, dtype=float)
+    # print("{} deviation: {}".format(gc.taskname, np.std(channel_board) / np.average(channel_board)), file=sys.stderr)
 
     with open(os.path.join(gc.op_graph_buffer, "channel_loads_{}.npy".format(gc.taskname)), "wb") as f:
         np.save(f, channel_board)

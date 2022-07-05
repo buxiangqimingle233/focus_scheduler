@@ -124,5 +124,5 @@ def get_ea_logpath():
 
 from routing_algorithms.meshtree_router import RPMTreeRouter, WhirlTreeRouter
 
-Router = RPMTreeRouter
+Router = WhirlTreeRouter
 benchmark_name = None

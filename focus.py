@@ -118,7 +118,10 @@ def run_single_task(args):
         toolchain = TaskCompiler()
         toolchain.compile()
         compute_cycle = toolchain.get_compute_cycle() # * gc.overclock
-        print("compute cycle", compute_cycle)
+        maeri_cycle = toolchain.get_maeri_cycle()
+        eyeriss_cycle = toolchain.get_eyeriss_cycle()
+        print("{} {} compute cycle: {}, maeri cycle: {}, eyeriss_cycle: {}" \
+              .format(gc.taskname, maeri_cycle/compute_cycle, compute_cycle, maeri_cycle, eyeriss_cycle), file=stderr)
 
         # plot channel loads
         plot_channel_load(toolchain.get_working_graph())
