@@ -17,7 +17,7 @@ architecture:
     - local:
       - attributes:
           block-size: 32
-          depth: 2048
+          depth: 1024
           nbanks: 4
           nports: 2
           width: 4096
@@ -64,5 +64,5 @@ architecture:
           class: compute
           name: LMAC[0..15]
           subclass: lmac
-        name: PE[0..15]
+        name: PE[0..63]
   version: 0.3

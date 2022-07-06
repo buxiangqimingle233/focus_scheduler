@@ -111,7 +111,7 @@ def run_single_task():
         toolchain = TaskCompiler()
         toolchain.compile()
         compute_cycle = toolchain.get_compute_cycle() / gc.overclock
-        # print("compute cycle", compute_cycle, file=stderr)
+        print("compute cycle", compute_cycle, file=stderr)
 
     # Invoke simulator
     if gc.simulate_baseline:

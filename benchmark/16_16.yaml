@@ -1,65 +1,65 @@
 bert-large:
-- bert-large_layer1: 2
-- bert-large_layer2: 2
-- bert-large_layer3: 2
-- bert-large_layer4: 2
-- bert-large_layer5: 2
-- bert-large_layer6: 2
-- bert-large_layer7: 2
-- bert-large_layer8: 2
-- bert-large_layer9: 2
-- bert-large_layer10: 2
-- bert-large_layer11: 2
-- bert-large_layer12: 2
-- bert-large_layer13: 2
-- bert-large_layer14: 2
-- bert-large_layer15: 2
-- bert-large_layer16: 2
-- bert-large_layer17: 2
-- bert-large_layer18: 2
-- bert-large_layer19: 2
-- bert-large_layer20: 2
-- bert-large_layer21: 2
-- bert-large_layer22: 2
-- bert-large_layer23: 2
-- bert-large_layer24: 2
-- bert-large_layer25: 2
-- bert-large_layer26: 2
-- bert-large_layer27: 2
-- bert-large_layer28: 2
-- bert-large_layer29: 2
-- bert-large_layer30: 2
-- bert-large_layer31: 2
-- bert-large_layer32: 2
-# - bert-large_layer33: 2
-# - bert-large_layer34: 2
-# - bert-large_layer35: 2
-# - bert-large_layer36: 2
-# - bert-large_layer37: 2
-# - bert-large_layer38: 2
-# - bert-large_layer39: 2
-# - bert-large_layer40: 2
-# - bert-large_layer41: 2
-# - bert-large_layer42: 2
-# - bert-large_layer43: 2
-# - bert-large_layer44: 2
-# - bert-large_layer45: 2
-# - bert-large_layer46: 2
-# - bert-large_layer47: 2
-# - bert-large_layer48: 2
-# - bert-large_layer49: 2
-# - bert-large_layer50: 2
-# - bert-large_layer51: 2
-# - bert-large_layer52: 2
-# - bert-large_layer53: 2
-# - bert-large_layer54: 2
-# - bert-large_layer55: 2
-# - bert-large_layer56: 2
-# - bert-large_layer57: 2
-# - bert-large_layer58: 2
-# - bert-large_layer59: 2
-# - bert-large_layer60: 2
-# - bert-large_layer61: 2
-# - bert-large_layer62: 2
-# - bert-large_layer63: 2
-# - bert-large_layer64: 2
+- bert-large_layer1: 16
+- bert-large_layer2: 16
+- bert-large_layer3: 16
+- bert-large_layer4: 16
+- bert-large_layer5: 16
+- bert-large_layer6: 16
+- bert-large_layer7: 16
+- bert-large_layer8: 16
+- bert-large_layer9: 16
+- bert-large_layer10: 16
+- bert-large_layer11: 16
+- bert-large_layer12: 16
+- bert-large_layer13: 16
+- bert-large_layer14: 16
+- bert-large_layer15: 16
+- bert-large_layer16: 16
+- bert-large_layer17: 16
+- bert-large_layer18: 16
+- bert-large_layer19: 16
+- bert-large_layer20: 16
+- bert-large_layer21: 16
+- bert-large_layer22: 16
+- bert-large_layer23: 16
+- bert-large_layer24: 16
+- bert-large_layer25: 16
+- bert-large_layer26: 16
+- bert-large_layer27: 16
+- bert-large_layer28: 16
+- bert-large_layer29: 16
+- bert-large_layer30: 16
+- bert-large_layer31: 16
+- bert-large_layer32: 16
+- bert-large_layer33: 16
+- bert-large_layer34: 16
+- bert-large_layer35: 16
+- bert-large_layer36: 16
+- bert-large_layer37: 16
+- bert-large_layer38: 16
+- bert-large_layer39: 16
+- bert-large_layer40: 16
+- bert-large_layer41: 16
+- bert-large_layer42: 16
+- bert-large_layer43: 16
+- bert-large_layer44: 16
+- bert-large_layer45: 16
+- bert-large_layer46: 16
+- bert-large_layer47: 16
+- bert-large_layer48: 16
+- bert-large_layer49: 16
+- bert-large_layer50: 16
+# - bert-large_layer51: 16
+# - bert-large_layer52: 16
+# - bert-large_layer53: 16
+# - bert-large_layer54: 16
+# - bert-large_layer55: 16
+# - bert-large_layer56: 16
+# - bert-large_layer57: 16
+# - bert-large_layer58: 16
+# - bert-large_layer59: 16
+# - bert-large_layer60: 16
+# - bert-large_layer61: 16
+# - bert-large_layer62: 16
+# - bert-large_layer63: 16
+# - bert-large_layer64: 16
