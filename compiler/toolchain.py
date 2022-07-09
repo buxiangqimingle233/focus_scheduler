@@ -6,6 +6,7 @@ import networkx as nx
 from math import ceil
 import pickle
 
+
 import networkx as nx
 
 from op_graph.micro_op_graph import MicroOpGraph
@@ -64,9 +65,11 @@ class TaskCompiler():
 
         self.compute_cycle_lower_bound = op_graph.total_compute_cycles()
 
-        # for node, attr in op_graph.get_data().nodes(data=True):
-        #     attr['cnt'] = 1
-        #     pass
+        for node, attr in op_graph.get_data().nodes(data=True):
+            attr['cntt'] = attr['cnt']
+            # attr['cnt'] = 1
+            # c_cnt = attr['cnt']
+            pass
         # start = 100000
         # for u, v, eattr in op_graph.get_data().edges(data=True):
         #     if eattr['edge_type'] == "control":
@@ -74,10 +77,15 @@ class TaskCompiler():
         #         eattr['size'] = 1
         #         start += 1
         
+        if gc.generate_graph:
+            flattened = self.flatten(op_graph)
 
-        flattened = self.flatten(op_graph)
+            nx.write_gpickle(flattened, f'{gc.graph_name}')
+            exit()
 
-        nx.write_gpickle(flattened, f'./{gc.Router.__name__}_{gc.taskname}_{gc.benchmark_name[10:]}.gpickle')
+        for u, v, eattr in op_graph.get_data().edges(data=True):
+            if eattr['edge_type'] == "data":
+                eattr['size'] = (eattr['size'] + 10)
 
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
@@ -128,7 +136,10 @@ class TaskCompiler():
 
         # Generate multicast tree for multi-end packets
         #router = MeshTreeRouter(gc.array_diameter)
+
         router = gc.Router(gc.array_diameter)
+        # router = pickle.load(open('./compiler/worst.pickle', 'rb'))
+
         #router = WhirlTreeRouter(gc.array_diameter)
         #router = BAMTreeRouter(gc.array_diameter)
         #router = Steiner_TreeRouter(gc.array_diameter)
@@ -167,6 +178,9 @@ class TaskCompiler():
     def flatten(self, op_graph: MicroOpGraph) -> nx.DiGraph():
         ret = nx.DiGraph()
         G = deepcopy(op_graph.get_data())
+        # for _, nattr in G.nodes(data=True):
+        #     if nattr["op_type"] != "sink":
+        #         nattr["cnt"] = 5
 
         for _, __, eattr in G.edges(data=True):
             eattr["priority"] = 55
@@ -179,9 +193,9 @@ class TaskCompiler():
             iteraction_cnt = int(nattr["cnt"])
 
             for i in range(iteraction_cnt):
-                flatten_node_hash = MicroOpGraph.hash_node(nattr["layer"], nattr["v_pe"], nattr["batch"] * gc.batch + i)
+                flatten_node_hash = MicroOpGraph.hash_node(nattr["layer"], nattr["v_pe"], nattr["batch"] * gc.batch * iteraction_cnt + i)
                 ret.add_node(flatten_node_hash, **nattr)
-                ret.nodes[flatten_node_hash]["cnt"] = 1
+                ret.nodes[flatten_node_hash]["cnt"] = nattr["cntt"]
                 op_hash_to_node_hash[node].append(flatten_node_hash)
 
             for i in range(1, iteraction_cnt):
@@ -213,7 +227,10 @@ class TaskCompiler():
             sources = op_hash_to_node_hash[u]
             destinations = op_hash_to_node_hash[v]
             pkt = eattr["pkt"]
-            assert len(pkt) == len(sources)
+            if not len(pkt) == len(sources):
+                # print(len(pkt), len(sources))
+                pass
+                # assert(False)
             if eattr["edge_type"] == "data":
                 assert len(sources) % len(destinations) == 0 or len(destinations) % len(sources) == 0
                 # one dest, multiple source
@@ -259,4 +276,3 @@ class TaskCompiler():
                 print("O:{}, W:{}, I:{}".format(o["interval"], w["interval"], i["interval"]))
                 exit()
             # print(o["interval"], w["interval"], )
-

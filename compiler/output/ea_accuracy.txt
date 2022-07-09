@@ -1294,3 +1294,1442 @@
 -6459.0 <__main__.StrategyIndividual object at 0x7f84cb7e4978>
 -6569.0 <__main__.StrategyIndividual object at 0x7f84cb449cc0>
 -6569.0 <__main__.StrategyIndividual object at 0x7f84cb4b7390>
+===0/2===
+579100.6881100072 <__main__.RouterIndividual object at 0x7f220c3094e0>
+579100.6881100072 <__main__.RouterIndividual object at 0x7f2214c65f98>
+579100.6881100072 <__main__.RouterIndividual object at 0x7f221d617a90>
+===1/2===
+579100.6881100072 <__main__.RouterIndividual object at 0x7f220298e048>
+579100.6881100072 <__main__.RouterIndividual object at 0x7f2260505780>
+579100.6881100072 <__main__.RouterIndividual object at 0x7f22605058d0>
+===0/2===
+579100.6881100072 <__main__.RouterIndividual object at 0x7ff9902f04e0>
+579100.6881100072 <__main__.RouterIndividual object at 0x7ff990c4bf98>
+579100.6881100072 <__main__.RouterIndividual object at 0x7ff9915fca90>
+===0/2===
+579100.6881100072 <__main__.RouterIndividual object at 0x7fe5fb9bc4e0>
+579100.6881100072 <__main__.RouterIndividual object at 0x7fe5fc317f98>
+579100.6881100072 <__main__.RouterIndividual object at 0x7fe5fccc8a90>
+===0/2===
+579100.6881100072 <__main__.RouterIndividual object at 0x7fdfd93ac4a8>
+579100.6881100072 <__main__.RouterIndividual object at 0x7fdfd9d07f60>
+579100.6881100072 <__main__.RouterIndividual object at 0x7fdfda6b7a58>
+===1/2===
+579100.6881100072 <__main__.RouterIndividual object at 0x7fdfd7a38048>
+579100.6881100072 <__main__.RouterIndividual object at 0x7fdfd80d2e10>
+579100.6881100072 <__main__.RouterIndividual object at 0x7fdfdd5a0898>
+===0/2===
+579100.6881100072 <__main__.RouterIndividual object at 0x7efdd576f588>
+579100.6881100072 <__main__.RouterIndividual object at 0x7efdd60b0f98>
+579100.6881100072 <__main__.RouterIndividual object at 0x7efdd6a61b38>
+===1/2===
+579100.6881100072 <__main__.RouterIndividual object at 0x7efdd9848c18>
+579100.6881100072 <__main__.RouterIndividual object at 0x7efdd99cb828>
+579100.6881100072 <__main__.RouterIndividual object at 0x7efdd99cb978>
+===0/2===
+223252.0 <__main__.RouterIndividual object at 0x7ff1f3bbe438>
+223252.0 <__main__.RouterIndividual object at 0x7ff1f43ba080>
+223252.0 <__main__.RouterIndividual object at 0x7ff1f4ec39e8>
+===1/2===
+223252.0 <__main__.RouterIndividual object at 0x7ff1f6485eb8>
+223252.0 <__main__.RouterIndividual object at 0x7ff1f62fb860>
+223252.0 <__main__.RouterIndividual object at 0x7ff1f6719eb8>
+===0/2===
+223252.0 <__main__.RouterIndividual object at 0x7f272e5c60f0>
+223252.0 <__main__.RouterIndividual object at 0x7f2737722f98>
+223252.0 <__main__.RouterIndividual object at 0x7f27393a5eb8>
+===1/2===
+223252.0 <__main__.RouterIndividual object at 0x7f273bdd7908>
+223252.0 <__main__.RouterIndividual object at 0x7f273bfb9550>
+223252.0 <__main__.RouterIndividual object at 0x7f273be324a8>
+===0/2===
+221442.0 <__main__.RouterIndividual object at 0x7f377f2066a0>
+221440.0 <__main__.RouterIndividual object at 0x7f377e367978>
+221440.0 <__main__.RouterIndividual object at 0x7f377e108b70>
+===1/2===
+221442.0 <__main__.RouterIndividual object at 0x7f377faa4320>
+221442.0 <__main__.RouterIndividual object at 0x7f377f2066a0>
+221440.0 <__main__.RouterIndividual object at 0x7f377d2c5d68>
+===0/10===
+372537.0 <__main__.RouterIndividual object at 0x7fb15b8ab198>
+372530.0 <__main__.RouterIndividual object at 0x7fb18652d908>
+372472.0 <__main__.RouterIndividual object at 0x7fb290bb3b38>
+===0/10===
+372469.0 <__main__.RouterIndividual object at 0x7f52188cb358>
+372460.0 <__main__.RouterIndividual object at 0x7f51b50cb978>
+372428.0 <__main__.RouterIndividual object at 0x7f51b7f8c6d8>
+===1/10===
+372599.0 <__main__.RouterIndividual object at 0x7f51e7b19710>
+372469.0 <__main__.RouterIndividual object at 0x7f51fe99cfd0>
+372469.0 <__main__.RouterIndividual object at 0x7f52188cb358>
+===2/10===
+372602.0 <__main__.RouterIndividual object at 0x7f51b8ef4400>
+372599.0 <__main__.RouterIndividual object at 0x7f51e7b19710>
+372593.0 <__main__.RouterIndividual object at 0x7f520b032f60>
+===3/10===
+372672.0 <__main__.RouterIndividual object at 0x7f51b1d4c048>
+372602.0 <__main__.RouterIndividual object at 0x7f51b8ef4400>
+372599.0 <__main__.RouterIndividual object at 0x7f51e7b19710>
+===4/10===
+372722.0 <__main__.RouterIndividual object at 0x7f5306156fd0>
+372672.0 <__main__.RouterIndividual object at 0x7f51b1d4c048>
+372602.0 <__main__.RouterIndividual object at 0x7f51b8ef4400>
+===5/10===
+372722.0 <__main__.RouterIndividual object at 0x7f51ea7724a8>
+372722.0 <__main__.RouterIndividual object at 0x7f5306156fd0>
+372672.0 <__main__.RouterIndividual object at 0x7f51b1d4c048>
+===6/10===
+372728.0 <__main__.RouterIndividual object at 0x7f5203985358>
+372725.0 <__main__.RouterIndividual object at 0x7f51cbc670f0>
+372722.0 <__main__.RouterIndividual object at 0x7f53087da390>
+===7/10===
+372895.0 <__main__.RouterIndividual object at 0x7f51b8c810f0>
+372728.0 <__main__.RouterIndividual object at 0x7f51b9820f28>
+372728.0 <__main__.RouterIndividual object at 0x7f5203985358>
+===8/10===
+372895.0 <__main__.RouterIndividual object at 0x7f51b8c810f0>
+372894.0 <__main__.RouterIndividual object at 0x7f51b66d00f0>
+372891.0 <__main__.RouterIndividual object at 0x7f5306019c88>
+===9/10===
+373155.0 <__main__.RouterIndividual object at 0x7f51d3731588>
+372898.0 <__main__.RouterIndividual object at 0x7f520b1ddf60>
+372895.0 <__main__.RouterIndividual object at 0x7f51b8c810f0>
+===0/10===
+-372345.0 <__main__.RouterIndividual object at 0x7f3b5784c5c0>
+-372382.0 <__main__.RouterIndividual object at 0x7f3b30be7e10>
+-372383.0 <__main__.RouterIndividual object at 0x7f3b047d9630>
+===1/10===
+-372345.0 <__main__.RouterIndividual object at 0x7f3b5784c5c0>
+-372380.0 <__main__.RouterIndividual object at 0x7f3bd309e128>
+-372382.0 <__main__.RouterIndividual object at 0x7f3b30be7e10>
+===2/10===
+-372345.0 <__main__.RouterIndividual object at 0x7f3b5784c5c0>
+-372353.0 <__main__.RouterIndividual object at 0x7f3b5cf5d278>
+-372380.0 <__main__.RouterIndividual object at 0x7f3bd309e128>
+===3/10===
+-372341.0 <__main__.RouterIndividual object at 0x7f3b410c0978>
+-372345.0 <__main__.RouterIndividual object at 0x7f3b5784c5c0>
+-372353.0 <__main__.RouterIndividual object at 0x7f3b5cf5d278>
+===4/10===
+-372341.0 <__main__.RouterIndividual object at 0x7f3b410c0978>
+-372345.0 <__main__.RouterIndividual object at 0x7f3b5784c5c0>
+-372353.0 <__main__.RouterIndividual object at 0x7f3b5cf5d278>
+===5/10===
+-372341.0 <__main__.RouterIndividual object at 0x7f3b1ad24400>
+-372341.0 <__main__.RouterIndividual object at 0x7f3b410c0978>
+-372345.0 <__main__.RouterIndividual object at 0x7f3b03100cf8>
+===6/10===
+-372320.0 <__main__.RouterIndividual object at 0x7f3b07cb50f0>
+-372341.0 <__main__.RouterIndividual object at 0x7f3b022af8d0>
+-372341.0 <__main__.RouterIndividual object at 0x7f3b410c0978>
+===7/10===
+-372320.0 <__main__.RouterIndividual object at 0x7f3b07cb50f0>
+-372341.0 <__main__.RouterIndividual object at 0x7f3b2c304080>
+-372341.0 <__main__.RouterIndividual object at 0x7f3b048f4d30>
+===8/10===
+-372320.0 <__main__.RouterIndividual object at 0x7f3b0731fa58>
+-372320.0 <__main__.RouterIndividual object at 0x7f3b07cb50f0>
+-372335.0 <__main__.RouterIndividual object at 0x7f3b483f3940>
+===9/10===
+-372320.0 <__main__.RouterIndividual object at 0x7f3b02371400>
+-372320.0 <__main__.RouterIndividual object at 0x7f3b07cb50f0>
+-372320.0 <__main__.RouterIndividual object at 0x7f3b0731fa58>
+===0/10===
+365566.0 <__main__.RouterIndividual object at 0x7fa6f8383c50>
+365565.0 <__main__.RouterIndividual object at 0x7fa72659da58>
+365559.0 <__main__.RouterIndividual object at 0x7fa796e94438>
+===1/10===
+365571.0 <__main__.RouterIndividual object at 0x7fa7ba0095f8>
+365566.0 <__main__.RouterIndividual object at 0x7fa6f8383c50>
+365565.0 <__main__.RouterIndividual object at 0x7fa6e8d3d748>
+===2/10===
+365583.0 <__main__.RouterIndividual object at 0x7fa6f1a3af28>
+365582.0 <__main__.RouterIndividual object at 0x7fa73658e940>
+365580.0 <__main__.RouterIndividual object at 0x7fa78efb8d68>
+===3/10===
+365592.0 <__main__.RouterIndividual object at 0x7fa6e921e080>
+365583.0 <__main__.RouterIndividual object at 0x7fa6f1a3af28>
+365582.0 <__main__.RouterIndividual object at 0x7fa73658e940>
+===4/10===
+365909.0 <__main__.RouterIndividual object at 0x7fa767501b70>
+365598.0 <__main__.RouterIndividual object at 0x7fa7549bc908>
+365595.0 <__main__.RouterIndividual object at 0x7fa7675018d0>
+===0/10===
+-181310.0 <__main__.RouterIndividual object at 0x7f78a117c748>
+-181565.0 <__main__.RouterIndividual object at 0x7f77b375eb70>
+-182303.0 <__main__.RouterIndividual object at 0x7f78b79e9f28>
+===1/10===
+-181065.0 <__main__.RouterIndividual object at 0x7f78ab780160>
+-181310.0 <__main__.RouterIndividual object at 0x7f78a117c748>
+-181565.0 <__main__.RouterIndividual object at 0x7f77b375eb70>
+===2/10===
+-181065.0 <__main__.RouterIndividual object at 0x7f78ab780160>
+-181088.0 <__main__.RouterIndividual object at 0x7f78b4012a20>
+-181310.0 <__main__.RouterIndividual object at 0x7f78a117c748>
+===3/10===
+-181065.0 <__main__.RouterIndividual object at 0x7f78ab780160>
+-181088.0 <__main__.RouterIndividual object at 0x7f78b4012a20>
+-181211.0 <__main__.RouterIndividual object at 0x7f7896d62668>
+===4/10===
+-181065.0 <__main__.RouterIndividual object at 0x7f78ab780160>
+-181088.0 <__main__.RouterIndividual object at 0x7f78a0e736d8>
+-181088.0 <__main__.RouterIndividual object at 0x7f78b4012a20>
+===5/10===
+-180584.0 <__main__.RouterIndividual object at 0x7f77b2911358>
+-180773.0 <__main__.RouterIndividual object at 0x7f77ab927e80>
+-181065.0 <__main__.RouterIndividual object at 0x7f78a0eecc18>
+===5/10===
+365923.0 <__main__.RouterIndividual object at 0x7fa78ef4ce48>
+365909.0 <__main__.RouterIndividual object at 0x7fa762be3fd0>
+365909.0 <__main__.RouterIndividual object at 0x7fa767501b70>
+===0/10===
+-3348290.0 <__main__.RouterIndividual object at 0x7fd561da9320>
+-3348586.0 <__main__.RouterIndividual object at 0x7fd5615fd710>
+-3348599.0 <__main__.RouterIndividual object at 0x7fd568719f28>
+===6/10===
+-180499.0 <__main__.RouterIndividual object at 0x7f78b45a0eb8>
+-180584.0 <__main__.RouterIndividual object at 0x7f77b2911358>
+-180773.0 <__main__.RouterIndividual object at 0x7f77ab927e80>
+===1/10===
+-3348290.0 <__main__.RouterIndividual object at 0x7fd561da9320>
+-3348586.0 <__main__.RouterIndividual object at 0x7fd5615fd710>
+-3348595.0 <__main__.RouterIndividual object at 0x7fd56298e898>
+===2/10===
+-3348290.0 <__main__.RouterIndividual object at 0x7fd561da9320>
+-3348526.0 <__main__.RouterIndividual object at 0x7fd56338a8d0>
+-3348549.0 <__main__.RouterIndividual object at 0x7fd5620e0748>
+===7/10===
+-179886.0 <__main__.RouterIndividual object at 0x7f78a1d0beb8>
+-180499.0 <__main__.RouterIndividual object at 0x7f78b45a0eb8>
+-180584.0 <__main__.RouterIndividual object at 0x7f78a3624048>
+===3/10===
+-3348290.0 <__main__.RouterIndividual object at 0x7fd561da9320>
+-3348366.0 <__main__.RouterIndividual object at 0x7fd563c155f8>
+-3348460.0 <__main__.RouterIndividual object at 0x7fd56308b780>
+===8/10===
+-179886.0 <__main__.RouterIndividual object at 0x7f78a1d0beb8>
+-180014.0 <__main__.RouterIndividual object at 0x7f78a06854a8>
+-180446.0 <__main__.RouterIndividual object at 0x7f77b32f9be0>
+===4/10===
+-3348290.0 <__main__.RouterIndividual object at 0x7fd561da9320>
+-3348366.0 <__main__.RouterIndividual object at 0x7fd563c155f8>
+-3348445.0 <__main__.RouterIndividual object at 0x7fd561a23eb8>
+===5/10===
+-3348290.0 <__main__.RouterIndividual object at 0x7fd561da9320>
+-3348366.0 <__main__.RouterIndividual object at 0x7fd563c155f8>
+-3348379.0 <__main__.RouterIndividual object at 0x7fd564cc3d68>
+===9/10===
+-179886.0 <__main__.RouterIndividual object at 0x7f78a1d0beb8>
+-179927.0 <__main__.RouterIndividual object at 0x7f77b2844160>
+-180014.0 <__main__.RouterIndividual object at 0x7f78a06854a8>
+===6/10===
+-3348290.0 <__main__.RouterIndividual object at 0x7fd561da9320>
+-3348366.0 <__main__.RouterIndividual object at 0x7fd563c155f8>
+-3348373.0 <__main__.RouterIndividual object at 0x7fd562103be0>
+===7/10===
+-3348290.0 <__main__.RouterIndividual object at 0x7fd561da9320>
+-3348366.0 <__main__.RouterIndividual object at 0x7fd563c155f8>
+-3348373.0 <__main__.RouterIndividual object at 0x7fd565487080>
+===8/10===
+-3348290.0 <__main__.RouterIndividual object at 0x7fd561da9320>
+-3348354.0 <__main__.RouterIndividual object at 0x7fd565462550>
+-3348366.0 <__main__.RouterIndividual object at 0x7fd563c155f8>
+===9/10===
+-3348277.0 <__main__.RouterIndividual object at 0x7fd5616314a8>
+-3348290.0 <__main__.RouterIndividual object at 0x7fd561da9320>
+-3348354.0 <__main__.RouterIndividual object at 0x7fd565462550>
+===0/10===
+-329708.0 <__main__.RouterIndividual object at 0x7f31e3830ac8>
+-330001.0 <__main__.RouterIndividual object at 0x7f31e3a7be80>
+-330740.0 <__main__.RouterIndividual object at 0x7f31e43db7f0>
+===6/10===
+365923.0 <__main__.RouterIndividual object at 0x7fa78ef4ce48>
+365911.0 <__main__.RouterIndividual object at 0x7fa71dfc8da0>
+365909.0 <__main__.RouterIndividual object at 0x7fa767501b70>
+===0/10===
+-330114.0 <__main__.RouterIndividual object at 0x7f1aa565e7b8>
+-331012.0 <__main__.RouterIndividual object at 0x7f1aa82a59e8>
+-331424.0 <__main__.RouterIndividual object at 0x7f1aa7224198>
+===1/10===
+-330114.0 <__main__.RouterIndividual object at 0x7f1aa565e7b8>
+-330132.0 <__main__.RouterIndividual object at 0x7f1aaa4ae198>
+-330646.0 <__main__.RouterIndividual object at 0x7f1aa750ec88>
+===2/10===
+-330027.0 <__main__.RouterIndividual object at 0x7f1aa73c85f8>
+-330114.0 <__main__.RouterIndividual object at 0x7f1aa565e7b8>
+-330132.0 <__main__.RouterIndividual object at 0x7f1aaa4ae198>
+===3/10===
+-329769.0 <__main__.RouterIndividual object at 0x7f1aa4ed1c50>
+-329803.0 <__main__.RouterIndividual object at 0x7f1aa9444320>
+-330027.0 <__main__.RouterIndividual object at 0x7f1aa73c85f8>
+===4/10===
+-329145.0 <__main__.RouterIndividual object at 0x7f1aaa4aee80>
+-329462.0 <__main__.RouterIndividual object at 0x7f1aa758dcc0>
+-329769.0 <__main__.RouterIndividual object at 0x7f1aa4ed1c50>
+===5/10===
+-329145.0 <__main__.RouterIndividual object at 0x7f1aaa4aee80>
+-329462.0 <__main__.RouterIndividual object at 0x7f1aa758dcc0>
+-329769.0 <__main__.RouterIndividual object at 0x7f1aaa0afa58>
+===6/10===
+-328509.0 <__main__.RouterIndividual object at 0x7f1aa8f02dd8>
+-329145.0 <__main__.RouterIndividual object at 0x7f1aaa4aee80>
+-329462.0 <__main__.RouterIndividual object at 0x7f1aa758dcc0>
+===7/10===
+-328168.0 <__main__.RouterIndividual object at 0x7f19ae5bd6a0>
+-328509.0 <__main__.RouterIndividual object at 0x7f1aa8f02dd8>
+-329113.0 <__main__.RouterIndividual object at 0x7f1aa84df630>
+===8/10===
+-328027.0 <__main__.RouterIndividual object at 0x7f1aaa07ff28>
+-328168.0 <__main__.RouterIndividual object at 0x7f1aa50b49e8>
+-328168.0 <__main__.RouterIndividual object at 0x7f19ae5bd6a0>
+===9/10===
+-328016.0 <__main__.RouterIndividual object at 0x7f1aa4b04d30>
+-328017.0 <__main__.RouterIndividual object at 0x7f1aa669d978>
+-328027.0 <__main__.RouterIndividual object at 0x7f1aaa07ff28>
+===7/10===
+365941.0 <__main__.RouterIndividual object at 0x7fa708a3dc50>
+365923.0 <__main__.RouterIndividual object at 0x7fa78ef4ce48>
+365919.0 <__main__.RouterIndividual object at 0x7fa742de0b00>
+===0/10===
+-764931.0 <__main__.RouterIndividual object at 0x7faa817ad358>
+-764937.0 <__main__.RouterIndividual object at 0x7fab6bacfef0>
+-765292.0 <__main__.RouterIndividual object at 0x7fab7880d550>
+===1/10===
+-764898.0 <__main__.RouterIndividual object at 0x7fab700290b8>
+-764898.0 <__main__.RouterIndividual object at 0x7fab6e694d68>
+-764931.0 <__main__.RouterIndividual object at 0x7faa817ad358>
+===2/10===
+-764896.0 <__main__.RouterIndividual object at 0x7fab7a2a2be0>
+-764898.0 <__main__.RouterIndividual object at 0x7fab6d531ac8>
+-764898.0 <__main__.RouterIndividual object at 0x7fab6e694d68>
+===3/10===
+-764894.0 <__main__.RouterIndividual object at 0x7fab782c24a8>
+-764896.0 <__main__.RouterIndividual object at 0x7fab7a2a2be0>
+-764898.0 <__main__.RouterIndividual object at 0x7fab700290b8>
+===4/10===
+-764752.0 <__main__.RouterIndividual object at 0x7fab88eb3b70>
+-764870.0 <__main__.RouterIndividual object at 0x7fab6db52550>
+-764894.0 <__main__.RouterIndividual object at 0x7fab782c24a8>
+===5/10===
+-764752.0 <__main__.RouterIndividual object at 0x7fab88eb3b70>
+-764862.0 <__main__.RouterIndividual object at 0x7fab783649b0>
+-764870.0 <__main__.RouterIndividual object at 0x7fab782c27b8>
+===6/10===
+-764752.0 <__main__.RouterIndividual object at 0x7fab88eb3b70>
+-764778.0 <__main__.RouterIndividual object at 0x7fab79a1b8d0>
+-764796.0 <__main__.RouterIndividual object at 0x7fab6c210a20>
+===7/10===
+-764752.0 <__main__.RouterIndividual object at 0x7fab88eb3b70>
+-764765.0 <__main__.RouterIndividual object at 0x7faa7909ba58>
+-764778.0 <__main__.RouterIndividual object at 0x7faa714aa080>
+===8/10===
+-764752.0 <__main__.RouterIndividual object at 0x7fab6bc7c3c8>
+-764752.0 <__main__.RouterIndividual object at 0x7fab88eb3b70>
+-764765.0 <__main__.RouterIndividual object at 0x7faa7909ba58>
+===9/10===
+-764752.0 <__main__.RouterIndividual object at 0x7fab7910f5c0>
+-764752.0 <__main__.RouterIndividual object at 0x7fab88eb3b70>
+-764752.0 <__main__.RouterIndividual object at 0x7fab6bc7c3c8>
+===8/10===
+365982.0 <__main__.RouterIndividual object at 0x7fa75d319f28>
+365942.0 <__main__.RouterIndividual object at 0x7fa726f13be0>
+365941.0 <__main__.RouterIndividual object at 0x7fa708a3dc50>
+===9/10===
+365982.0 <__main__.RouterIndividual object at 0x7fa75d319f28>
+365945.0 <__main__.RouterIndividual object at 0x7fa79bd47048>
+365943.0 <__main__.RouterIndividual object at 0x7fa7246f4da0>
+===0/10===
+-365392.0 <__main__.RouterIndividual object at 0x7f6d9ca5a390>
+-365456.0 <__main__.RouterIndividual object at 0x7f6cebed92e8>
+-365545.0 <__main__.RouterIndividual object at 0x7f6d6ddb21d0>
+===1/10===
+-365392.0 <__main__.RouterIndividual object at 0x7f6cf9489438>
+-365392.0 <__main__.RouterIndividual object at 0x7f6d9ca5a390>
+-365456.0 <__main__.RouterIndividual object at 0x7f6cebed92e8>
+===2/10===
+-365386.0 <__main__.RouterIndividual object at 0x7f6d12328278>
+-365392.0 <__main__.RouterIndividual object at 0x7f6d9ca5a390>
+-365392.0 <__main__.RouterIndividual object at 0x7f6cf9489438>
+===3/10===
+-365386.0 <__main__.RouterIndividual object at 0x7f6d12328278>
+-365388.0 <__main__.RouterIndividual object at 0x7f6cd606df28>
+-365390.0 <__main__.RouterIndividual object at 0x7f6d8efe3f28>
+===4/10===
+-365087.0 <__main__.RouterIndividual object at 0x7f6ceb24f1d0>
+-365386.0 <__main__.RouterIndividual object at 0x7f6d12328278>
+-365388.0 <__main__.RouterIndividual object at 0x7f6cd4dd4160>
+===5/10===
+-365085.0 <__main__.RouterIndividual object at 0x7f6cc577efd0>
+-365087.0 <__main__.RouterIndividual object at 0x7f6ceb24f1d0>
+-365386.0 <__main__.RouterIndividual object at 0x7f6d12328278>
+===6/10===
+-365085.0 <__main__.RouterIndividual object at 0x7f6ccd9b5940>
+-365085.0 <__main__.RouterIndividual object at 0x7f6cc577efd0>
+-365087.0 <__main__.RouterIndividual object at 0x7f6cdd909940>
+===7/10===
+-365085.0 <__main__.RouterIndividual object at 0x7f6cc577efd0>
+-365085.0 <__main__.RouterIndividual object at 0x7f6ccd9b5940>
+-365086.0 <__main__.RouterIndividual object at 0x7f6ce30420b8>
+===8/10===
+-365085.0 <__main__.RouterIndividual object at 0x7f6cf8b9ffd0>
+-365085.0 <__main__.RouterIndividual object at 0x7f6ccd9b5940>
+-365085.0 <__main__.RouterIndividual object at 0x7f6cc577efd0>
+===9/10===
+-365006.0 <__main__.RouterIndividual object at 0x7f6d7cc97160>
+-365080.0 <__main__.RouterIndividual object at 0x7f6cfc6b3128>
+-365085.0 <__main__.RouterIndividual object at 0x7f6ccfca31d0>
+===0/10===
+-365880.0 <__main__.RouterIndividual object at 0x7f396eeef518>
+-365950.0 <__main__.RouterIndividual object at 0x7f3981540fd0>
+-365963.0 <__main__.RouterIndividual object at 0x7f394801d5c0>
+===1/10===
+-365876.0 <__main__.RouterIndividual object at 0x7f39badc7160>
+-365880.0 <__main__.RouterIndividual object at 0x7f396eeef518>
+-365950.0 <__main__.RouterIndividual object at 0x7f3981540fd0>
+===2/10===
+-365876.0 <__main__.RouterIndividual object at 0x7f39badc7160>
+-365880.0 <__main__.RouterIndividual object at 0x7f396eeef518>
+-365884.0 <__main__.RouterIndividual object at 0x7f39e50ad0b8>
+===3/10===
+-365876.0 <__main__.RouterIndividual object at 0x7f39badc7160>
+-365878.0 <__main__.RouterIndividual object at 0x7f3a0ce72048>
+-365880.0 <__main__.RouterIndividual object at 0x7f396eeef518>
+===4/10===
+-365599.0 <__main__.RouterIndividual object at 0x7f39975fe438>
+-365850.0 <__main__.RouterIndividual object at 0x7f391fa5a048>
+-365876.0 <__main__.RouterIndividual object at 0x7f39badc7160>
+===5/10===
+-365599.0 <__main__.RouterIndividual object at 0x7f392b8c1048>
+-365599.0 <__main__.RouterIndividual object at 0x7f39975fe438>
+-365850.0 <__main__.RouterIndividual object at 0x7f391fa5a048>
+===6/10===
+-365599.0 <__main__.RouterIndividual object at 0x7f39975fe438>
+-365599.0 <__main__.RouterIndividual object at 0x7f392b8c1048>
+-365846.0 <__main__.RouterIndividual object at 0x7f3922731128>
+===7/10===
+-365555.0 <__main__.RouterIndividual object at 0x7f39c123c2e8>
+-365557.0 <__main__.RouterIndividual object at 0x7f39780bbf98>
+-365599.0 <__main__.RouterIndividual object at 0x7f392b8c1048>
+===8/10===
+-365555.0 <__main__.RouterIndividual object at 0x7f39c123c2e8>
+-365557.0 <__main__.RouterIndividual object at 0x7f39780bbf98>
+-365561.0 <__main__.RouterIndividual object at 0x7f398c382080>
+===9/10===
+-365555.0 <__main__.RouterIndividual object at 0x7f39c123c2e8>
+-365557.0 <__main__.RouterIndividual object at 0x7f39780bbf98>
+-365559.0 <__main__.RouterIndividual object at 0x7f396bd339e8>
+===0/10===
+-365364.0 <__main__.RouterIndividual object at 0x7fcfc8132978>
+-365545.0 <__main__.RouterIndividual object at 0x7fcf8a9386d8>
+-365549.0 <__main__.RouterIndividual object at 0x7fcfd7780e80>
+===1/10===
+-365364.0 <__main__.RouterIndividual object at 0x7fcfc8132978>
+-365545.0 <__main__.RouterIndividual object at 0x7fcf8a9386d8>
+-365549.0 <__main__.RouterIndividual object at 0x7fcff6843e80>
+===2/10===
+-365364.0 <__main__.RouterIndividual object at 0x7fcfc8132978>
+-365382.0 <__main__.RouterIndividual object at 0x7fcfe4c63c50>
+-365545.0 <__main__.RouterIndividual object at 0x7fcf8a9386d8>
+===3/10===
+-365250.0 <__main__.RouterIndividual object at 0x7fcfe499d908>
+-365364.0 <__main__.RouterIndividual object at 0x7fcfc8132978>
+-365372.0 <__main__.RouterIndividual object at 0x7fcfe499d588>
+===4/10===
+-365057.0 <__main__.RouterIndividual object at 0x7fcf6ce1eba8>
+-365063.0 <__main__.RouterIndividual object at 0x7fcfe99d1f28>
+-365250.0 <__main__.RouterIndividual object at 0x7fcfe499d908>
+===5/10===
+-365057.0 <__main__.RouterIndividual object at 0x7fcf6ce1eba8>
+-365063.0 <__main__.RouterIndividual object at 0x7fcf662bf400>
+-365063.0 <__main__.RouterIndividual object at 0x7fcfe99d1f28>
+===6/10===
+-364894.0 <__main__.RouterIndividual object at 0x7fcfd4e38390>
+-365057.0 <__main__.RouterIndividual object at 0x7fcf6ce1eba8>
+-365061.0 <__main__.RouterIndividual object at 0x7fcfb480cba8>
+===0/10===
+365452.0 <__main__.RouterIndividual object at 0x7f1f7f93ea90>
+365045.0 <__main__.RouterIndividual object at 0x7f1f53066cf8>
+364472.0 <__main__.RouterIndividual object at 0x7f1fac1fe908>
+===1/10===
+365452.0 <__main__.RouterIndividual object at 0x7f1f7f93ea90>
+365045.0 <__main__.RouterIndividual object at 0x7f1f53066cf8>
+364813.0 <__main__.RouterIndividual object at 0x7f1fb4b86f60>
+===2/10===
+365688.0 <__main__.RouterIndividual object at 0x7f2116fa1c18>
+365452.0 <__main__.RouterIndividual object at 0x7f1f32fea128>
+365452.0 <__main__.RouterIndividual object at 0x7f1f7f93ea90>
+===3/10===
+365688.0 <__main__.RouterIndividual object at 0x7f2116fa1c18>
+365687.0 <__main__.RouterIndividual object at 0x7f1f78352940>
+365665.0 <__main__.RouterIndividual object at 0x7f1f7206dcc0>
+===4/10===
+366173.0 <__main__.RouterIndividual object at 0x7f201096c080>
+365820.0 <__main__.RouterIndividual object at 0x7f1f8f16c630>
+365762.0 <__main__.RouterIndividual object at 0x7f1f7ef20fd0>
+===5/10===
+366173.0 <__main__.RouterIndividual object at 0x7f201096c080>
+365820.0 <__main__.RouterIndividual object at 0x7f1f8f16c630>
+365773.0 <__main__.RouterIndividual object at 0x7f21121f4ba8>
+===6/10===
+366173.0 <__main__.RouterIndividual object at 0x7f201096c080>
+365820.0 <__main__.RouterIndividual object at 0x7f1f8f16c630>
+365773.0 <__main__.RouterIndividual object at 0x7f21121f4ba8>
+===7/10===
+366207.0 <__main__.RouterIndividual object at 0x7f1f5013d278>
+366173.0 <__main__.RouterIndividual object at 0x7f201096c080>
+365820.0 <__main__.RouterIndividual object at 0x7f1f8f16c630>
+===8/10===
+366207.0 <__main__.RouterIndividual object at 0x7f1f5013d278>
+366173.0 <__main__.RouterIndividual object at 0x7f201096c080>
+365820.0 <__main__.RouterIndividual object at 0x7f1f8f16c630>
+===9/10===
+366208.0 <__main__.RouterIndividual object at 0x7f1f5179e160>
+366207.0 <__main__.RouterIndividual object at 0x7f1f9dcc5048>
+366207.0 <__main__.RouterIndividual object at 0x7f1f5013d278>
+===0/2===
+365897.0 <__main__.RouterIndividual object at 0x7f6993d0d748>
+363444.0 <__main__.RouterIndividual object at 0x7f69c20b6588>
+===1/2===
+365897.0 <__main__.RouterIndividual object at 0x7f6993d0d748>
+===0/2===
+363738.0 <__main__.RouterIndividual object at 0x7f37289a9668>
+363386.0 <__main__.RouterIndividual object at 0x7f374f1ff588>
+===1/2===
+363738.0 <__main__.RouterIndividual object at 0x7f37289a9668>
+===0/2===
+365952.0 <__main__.RouterIndividual object at 0x7f57c869f588>
+363562.0 <__main__.RouterIndividual object at 0x7f579a30b630>
+===1/2===
+365952.0 <__main__.RouterIndividual object at 0x7f57c869f588>
+===0/10===
+364750.0 <__main__.RouterIndividual object at 0x7f72c8d948d0>
+364485.0 <__main__.RouterIndividual object at 0x7f7321f294e0>
+364151.0 <__main__.RouterIndividual object at 0x7f72e68a72b0>
+===0/10===
+-361931.0 <__main__.RouterIndividual object at 0x7f0ff683d5f8>
+-362772.0 <__main__.RouterIndividual object at 0x7f0f49304fd0>
+-362791.0 <__main__.RouterIndividual object at 0x7f0f5804ec18>
+===0/10===
+365549.0 <__main__.RouterIndividual object at 0x7fd2d11bd0b8>
+365376.0 <__main__.RouterIndividual object at 0x7fd2c245dc50>
+365350.0 <__main__.RouterIndividual object at 0x7fd3329196a0>
+===1/10===
+-361931.0 <__main__.RouterIndividual object at 0x7f0ff683d5f8>
+-362707.0 <__main__.RouterIndividual object at 0x7f0f61042cc0>
+-362772.0 <__main__.RouterIndividual object at 0x7f0f49304fd0>
+===1/10===
+365825.0 <__main__.RouterIndividual object at 0x7fd2f8e40ba8>
+365679.0 <__main__.RouterIndividual object at 0x7fd295dafa58>
+365549.0 <__main__.RouterIndividual object at 0x7fd2d11bd0b8>
+===2/10===
+-361931.0 <__main__.RouterIndividual object at 0x7f0ff683d5f8>
+-362143.0 <__main__.RouterIndividual object at 0x7f0f080f3fd0>
+-362273.0 <__main__.RouterIndividual object at 0x7f0f519f1550>
+===2/10===
+365825.0 <__main__.RouterIndividual object at 0x7fd2e0ba23c8>
+365825.0 <__main__.RouterIndividual object at 0x7fd2f8e40ba8>
+365679.0 <__main__.RouterIndividual object at 0x7fd295dafa58>
+===3/10===
+-361551.0 <__main__.RouterIndividual object at 0x7f0f61995ba8>
+-361611.0 <__main__.RouterIndividual object at 0x7f0f34413f28>
+-361931.0 <__main__.RouterIndividual object at 0x7f0ff683d5f8>
+===3/10===
+365825.0 <__main__.RouterIndividual object at 0x7fd2f8e40ba8>
+365825.0 <__main__.RouterIndividual object at 0x7fd2e0ba23c8>
+365679.0 <__main__.RouterIndividual object at 0x7fd295dafa58>
+===4/10===
+-361551.0 <__main__.RouterIndividual object at 0x7f0f6ecae1d0>
+-361551.0 <__main__.RouterIndividual object at 0x7f0f61995ba8>
+-361590.0 <__main__.RouterIndividual object at 0x7f0f876fb5f8>
+===4/10===
+365853.0 <__main__.RouterIndividual object at 0x7fd2722bc860>
+365825.0 <__main__.RouterIndividual object at 0x7fd272655ba8>
+365825.0 <__main__.RouterIndividual object at 0x7fd2e0ba23c8>
+===5/10===
+-361511.0 <__main__.RouterIndividual object at 0x7f10e5ea00b8>
+-361542.0 <__main__.RouterIndividual object at 0x7f0f6fcf4a90>
+-361551.0 <__main__.RouterIndividual object at 0x7f0f5a91e550>
+===5/10===
+365875.0 <__main__.RouterIndividual object at 0x7fd295c601d0>
+365853.0 <__main__.RouterIndividual object at 0x7fd2722bc860>
+365837.0 <__main__.RouterIndividual object at 0x7fd265583da0>
+===6/10===
+-361153.0 <__main__.RouterIndividual object at 0x7f0f242b5fd0>
+-361511.0 <__main__.RouterIndividual object at 0x7f10e5ea00b8>
+-361539.0 <__main__.RouterIndividual object at 0x7f0f28a30dd8>
+===6/10===
+365950.0 <__main__.RouterIndividual object at 0x7fd2603822b0>
+365918.0 <__main__.RouterIndividual object at 0x7fd318829198>
+365875.0 <__main__.RouterIndividual object at 0x7fd295c601d0>
+===7/10===
+-360850.0 <__main__.RouterIndividual object at 0x7f0f849f8978>
+-361153.0 <__main__.RouterIndividual object at 0x7f0f242b5fd0>
+-361489.0 <__main__.RouterIndividual object at 0x7f0f880fa048>
+===7/10===
+366004.0 <__main__.RouterIndividual object at 0x7fd2d328fef0>
+365950.0 <__main__.RouterIndividual object at 0x7fd2603822b0>
+365948.0 <__main__.RouterIndividual object at 0x7fd291cf19e8>
+===8/10===
+-360571.0 <__main__.RouterIndividual object at 0x7f0f46fd3f98>
+-360850.0 <__main__.RouterIndividual object at 0x7f0f50cb2cf8>
+-360850.0 <__main__.RouterIndividual object at 0x7f0f849f8978>
+===0/10===
+94672.0 <__main__.RouterIndividual object at 0x7f594761dd68>
+94672.0 <__main__.RouterIndividual object at 0x7f59478b8f60>
+94670.0 <__main__.RouterIndividual object at 0x7f594790abe0>
+===1/10===
+94672.0 <__main__.RouterIndividual object at 0x7f593d20eb70>
+94672.0 <__main__.RouterIndividual object at 0x7f59478b8f60>
+94672.0 <__main__.RouterIndividual object at 0x7f594761dd68>
+===2/10===
+94689.0 <__main__.RouterIndividual object at 0x7f593d32ada0>
+94672.0 <__main__.RouterIndividual object at 0x7f59471d69e8>
+94672.0 <__main__.RouterIndividual object at 0x7f594761dd68>
+===3/10===
+94689.0 <__main__.RouterIndividual object at 0x7f593d20ec50>
+94689.0 <__main__.RouterIndividual object at 0x7f593d32ada0>
+94679.0 <__main__.RouterIndividual object at 0x7f593d47b128>
+===4/10===
+94691.0 <__main__.RouterIndividual object at 0x7f594765f8d0>
+94689.0 <__main__.RouterIndividual object at 0x7f594780d710>
+94689.0 <__main__.RouterIndividual object at 0x7f5947842f60>
+===5/10===
+94691.0 <__main__.RouterIndividual object at 0x7f59478a2b38>
+94691.0 <__main__.RouterIndividual object at 0x7f59477a4fd0>
+94691.0 <__main__.RouterIndividual object at 0x7f5879a85a20>
+===8/10===
+366056.0 <__main__.RouterIndividual object at 0x7fd2ebde5cc0>
+366004.0 <__main__.RouterIndividual object at 0x7fd2d328fef0>
+365989.0 <__main__.RouterIndividual object at 0x7fd2bff0f518>
+===0/10===
+94680.0 <__main__.RouterIndividual object at 0x7f903edc10f0>
+94672.0 <__main__.RouterIndividual object at 0x7f903f2a29b0>
+94670.0 <__main__.RouterIndividual object at 0x7f903f71aeb8>
+===1/10===
+94724.0 <__main__.RouterIndividual object at 0x7f903f718748>
+94689.0 <__main__.RouterIndividual object at 0x7f903f80d0b8>
+94682.0 <__main__.RouterIndividual object at 0x7f904904ec18>
+===0/10===
+94723.0 <__main__.RouterIndividual object at 0x7f6bd84cd358>
+94696.0 <__main__.RouterIndividual object at 0x7f6af7750630>
+94672.0 <__main__.RouterIndividual object at 0x7f6bd84cd198>
+===1/10===
+94725.0 <__main__.RouterIndividual object at 0x7f6bd859eeb8>
+94723.0 <__main__.RouterIndividual object at 0x7f6bd84cd358>
+94696.0 <__main__.RouterIndividual object at 0x7f6bd8107c50>
+===2/10===
+94730.0 <__main__.RouterIndividual object at 0x7f6bd815deb8>
+94726.0 <__main__.RouterIndividual object at 0x7f6bd7fd9ac8>
+94725.0 <__main__.RouterIndividual object at 0x7f6bd826e860>
+===3/10===
+94730.0 <__main__.RouterIndividual object at 0x7f6bd7e11358>
+94730.0 <__main__.RouterIndividual object at 0x7f6bd815deb8>
+94726.0 <__main__.RouterIndividual object at 0x7f6bd8596208>
+===9/10===
+-360424.0 <__main__.RouterIndividual object at 0x7f10e2849048>
+-360571.0 <__main__.RouterIndividual object at 0x7f0f46fd3f98>
+-360815.0 <__main__.RouterIndividual object at 0x7f0f588f3208>
+===9/10===
+366121.0 <__main__.RouterIndividual object at 0x7fd2c31a5c18>
+366056.0 <__main__.RouterIndividual object at 0x7fd2ebde5cc0>
+366027.0 <__main__.RouterIndividual object at 0x7fd2a326b0b8>
+===0/10===
+94677.0 <__main__.RouterIndividual object at 0x7fc17ae86f98>
+94670.0 <__main__.RouterIndividual object at 0x7fc172798208>
+94670.0 <__main__.RouterIndividual object at 0x7fc17ac96dd8>
+===1/10===
+94724.0 <__main__.RouterIndividual object at 0x7fc0bd1e3a20>
+94716.0 <__main__.RouterIndividual object at 0x7fc0bd5cc320>
+94677.0 <__main__.RouterIndividual object at 0x7fc17ae86f98>
+===2/10===
+94741.0 <__main__.RouterIndividual object at 0x7fc0bd1d4908>
+94726.0 <__main__.RouterIndividual object at 0x7fc172604d30>
+94724.0 <__main__.RouterIndividual object at 0x7fc17a88d390>
+===3/10===
+94741.0 <__main__.RouterIndividual object at 0x7fc17aa85ef0>
+94741.0 <__main__.RouterIndividual object at 0x7fc0bd1d4908>
+94733.0 <__main__.RouterIndividual object at 0x7fc1722bdf98>
+===4/10===
+94750.0 <__main__.RouterIndividual object at 0x7fc17aa38240>
+94743.0 <__main__.RouterIndividual object at 0x7fc17aa38f28>
+94741.0 <__main__.RouterIndividual object at 0x7fc0bd1d4908>
+===5/10===
+94750.0 <__main__.RouterIndividual object at 0x7fc17aa38240>
+94743.0 <__main__.RouterIndividual object at 0x7fc1722bddd8>
+94743.0 <__main__.RouterIndividual object at 0x7fc1725c3940>
+===6/10===
+94750.0 <__main__.RouterIndividual object at 0x7fc17aa38240>
+94743.0 <__main__.RouterIndividual object at 0x7fc171c10d68>
+94743.0 <__main__.RouterIndividual object at 0x7fc17aa38f28>
+===7/10===
+94750.0 <__main__.RouterIndividual object at 0x7fc17aa38240>
+94745.0 <__main__.RouterIndividual object at 0x7fc18b5f3d30>
+94743.0 <__main__.RouterIndividual object at 0x7fc172604630>
+===8/10===
+94780.0 <__main__.RouterIndividual object at 0x7fc171bcf048>
+94750.0 <__main__.RouterIndividual object at 0x7fc17aa38240>
+94745.0 <__main__.RouterIndividual object at 0x7fc1725c3780>
+===9/10===
+94780.0 <__main__.RouterIndividual object at 0x7fc1725c3550>
+94780.0 <__main__.RouterIndividual object at 0x7fc171bcf048>
+94750.0 <__main__.RouterIndividual object at 0x7fc17aa38240>
+===0/10===
+100891.0 <__main__.RouterIndividual object at 0x7fe33c7fec50>
+100886.0 <__main__.RouterIndividual object at 0x7fe33cf333c8>
+100855.0 <__main__.RouterIndividual object at 0x7fe33c9a50b8>
+===1/10===
+100898.0 <__main__.RouterIndividual object at 0x7fe33c9b3240>
+100892.0 <__main__.RouterIndividual object at 0x7fe33cbe3940>
+100891.0 <__main__.RouterIndividual object at 0x7fe33c7fec50>
+===2/10===
+100898.0 <__main__.RouterIndividual object at 0x7fe33c9b3240>
+100893.0 <__main__.RouterIndividual object at 0x7fe33c5914a8>
+100892.0 <__main__.RouterIndividual object at 0x7fe33cbe3940>
+===3/10===
+100928.0 <__main__.RouterIndividual object at 0x7fe33b734780>
+100898.0 <__main__.RouterIndividual object at 0x7fe33c9b3240>
+100893.0 <__main__.RouterIndividual object at 0x7fe33ccd4978>
+===4/10===
+100961.0 <__main__.RouterIndividual object at 0x7fe33b2df978>
+100953.0 <__main__.RouterIndividual object at 0x7fe33c339780>
+100928.0 <__main__.RouterIndividual object at 0x7fe33b734780>
+===5/10===
+100965.0 <__main__.RouterIndividual object at 0x7fe33bd6c2b0>
+100961.0 <__main__.RouterIndividual object at 0x7fe33cf83b70>
+100961.0 <__main__.RouterIndividual object at 0x7fe33b2df978>
+===6/10===
+100965.0 <__main__.RouterIndividual object at 0x7fe33bd6c2b0>
+100961.0 <__main__.RouterIndividual object at 0x7fe33b2df978>
+100961.0 <__main__.RouterIndividual object at 0x7fe33cf83b70>
+===7/10===
+100975.0 <__main__.RouterIndividual object at 0x7fe33c72b518>
+100965.0 <__main__.RouterIndividual object at 0x7fe33bd6c2b0>
+100961.0 <__main__.RouterIndividual object at 0x7fe33bc99e10>
+===8/10===
+100975.0 <__main__.RouterIndividual object at 0x7fe33c72b518>
+100965.0 <__main__.RouterIndividual object at 0x7fe33b4d3780>
+100965.0 <__main__.RouterIndividual object at 0x7fe33bd6c2b0>
+===9/10===
+101019.0 <__main__.RouterIndividual object at 0x7fe339f29320>
+101015.0 <__main__.RouterIndividual object at 0x7fe33b2df160>
+100975.0 <__main__.RouterIndividual object at 0x7fe33c72b518>
+===0/10===
+100900.0 <__main__.RouterIndividual object at 0x7f2564a56320>
+100899.0 <__main__.RouterIndividual object at 0x7f2561302630>
+100898.0 <__main__.RouterIndividual object at 0x7f25653e14e0>
+===1/10===
+100967.0 <__main__.RouterIndividual object at 0x7f2565304c50>
+100902.0 <__main__.RouterIndividual object at 0x7f256326d470>
+100900.0 <__main__.RouterIndividual object at 0x7f2564a56320>
+===2/10===
+100967.0 <__main__.RouterIndividual object at 0x7f2565304c50>
+100904.0 <__main__.RouterIndividual object at 0x7f2563ac3668>
+100902.0 <__main__.RouterIndividual object at 0x7f25642709b0>
+===3/10===
+100967.0 <__main__.RouterIndividual object at 0x7f2565304c50>
+100933.0 <__main__.RouterIndividual object at 0x7f2561c76710>
+100931.0 <__main__.RouterIndividual object at 0x7f2561460b38>
+===4/10===
+100969.0 <__main__.RouterIndividual object at 0x7f2560a92358>
+100967.0 <__main__.RouterIndividual object at 0x7f2565304c50>
+100955.0 <__main__.RouterIndividual object at 0x7f256159a550>
+===5/10===
+100969.0 <__main__.RouterIndividual object at 0x7f2563e46198>
+100969.0 <__main__.RouterIndividual object at 0x7f2560a92358>
+100967.0 <__main__.RouterIndividual object at 0x7f2565304c50>
+===6/10===
+100975.0 <__main__.RouterIndividual object at 0x7f2561cfcf28>
+100969.0 <__main__.RouterIndividual object at 0x7f25620a6c88>
+100969.0 <__main__.RouterIndividual object at 0x7f2560a92358>
+===7/10===
+100975.0 <__main__.RouterIndividual object at 0x7f25611f4358>
+100975.0 <__main__.RouterIndividual object at 0x7f2561cfcf28>
+100969.0 <__main__.RouterIndividual object at 0x7f25651d2320>
+===8/10===
+100980.0 <__main__.RouterIndividual object at 0x7f25646a09e8>
+100975.0 <__main__.RouterIndividual object at 0x7f2561cfcf28>
+100975.0 <__main__.RouterIndividual object at 0x7f25611f4358>
+===9/10===
+100980.0 <__main__.RouterIndividual object at 0x7f25646a09e8>
+100975.0 <__main__.RouterIndividual object at 0x7f25610c3c18>
+100975.0 <__main__.RouterIndividual object at 0x7f25611f4358>
+===0/10===
+104770.0 <__main__.RouterIndividual object at 0x7f452ab39550>
+104444.0 <__main__.RouterIndividual object at 0x7f4525d8ff28>
+104407.0 <__main__.RouterIndividual object at 0x7f451d091978>
+===1/10===
+104770.0 <__main__.RouterIndividual object at 0x7f452ab39550>
+104765.0 <__main__.RouterIndividual object at 0x7f452a1e0f28>
+104444.0 <__main__.RouterIndividual object at 0x7f4525d8ff28>
+===2/10===
+104801.0 <__main__.RouterIndividual object at 0x7f45293e3668>
+104776.0 <__main__.RouterIndividual object at 0x7f4525e63898>
+104770.0 <__main__.RouterIndividual object at 0x7f452ab39550>
+===3/10===
+105315.0 <__main__.RouterIndividual object at 0x7f452706f518>
+104895.0 <__main__.RouterIndividual object at 0x7f451d010fd0>
+104801.0 <__main__.RouterIndividual object at 0x7f45293e3668>
+===4/10===
+105328.0 <__main__.RouterIndividual object at 0x7f45281776a0>
+105315.0 <__main__.RouterIndividual object at 0x7f452706f518>
+105308.0 <__main__.RouterIndividual object at 0x7f452b204240>
+===5/10===
+105329.0 <__main__.RouterIndividual object at 0x7f452a623358>
+105328.0 <__main__.RouterIndividual object at 0x7f45281776a0>
+105315.0 <__main__.RouterIndividual object at 0x7f452706f518>
+===6/10===
+105334.0 <__main__.RouterIndividual object at 0x7f452649c860>
+105329.0 <__main__.RouterIndividual object at 0x7f452a623358>
+105328.0 <__main__.RouterIndividual object at 0x7f45281776a0>
+===7/10===
+105511.0 <__main__.RouterIndividual object at 0x7f45286e4be0>
+105389.0 <__main__.RouterIndividual object at 0x7f45292f5828>
+105334.0 <__main__.RouterIndividual object at 0x7f452649c860>
+===8/10===
+105511.0 <__main__.RouterIndividual object at 0x7f45286e4be0>
+105423.0 <__main__.RouterIndividual object at 0x7f452613a780>
+105389.0 <__main__.RouterIndividual object at 0x7f45292f5828>
+===9/10===
+105511.0 <__main__.RouterIndividual object at 0x7f45286e4be0>
+105500.0 <__main__.RouterIndividual object at 0x7f4529bebcc0>
+105423.0 <__main__.RouterIndividual object at 0x7f452613a780>
+===0/10===
+202565.0 <__main__.RouterIndividual object at 0x7f37465415f8>
+202486.0 <__main__.RouterIndividual object at 0x7f372ea8c5f8>
+201842.0 <__main__.RouterIndividual object at 0x7f3713490dd8>
+===1/10===
+202565.0 <__main__.RouterIndividual object at 0x7f37465415f8>
+202512.0 <__main__.RouterIndividual object at 0x7f382ab41ba8>
+202486.0 <__main__.RouterIndividual object at 0x7f37310fbc88>
+===2/10===
+202565.0 <__main__.RouterIndividual object at 0x7f37465415f8>
+202512.0 <__main__.RouterIndividual object at 0x7f382ab41ba8>
+202486.0 <__main__.RouterIndividual object at 0x7f372ea8c5f8>
+===3/10===
+202565.0 <__main__.RouterIndividual object at 0x7f37465415f8>
+202538.0 <__main__.RouterIndividual object at 0x7f37180116a0>
+202512.0 <__main__.RouterIndividual object at 0x7f382ab41ba8>
+===4/10===
+202603.0 <__main__.RouterIndividual object at 0x7f3727658908>
+202565.0 <__main__.RouterIndividual object at 0x7f37465415f8>
+202538.0 <__main__.RouterIndividual object at 0x7f37180116a0>
+===5/10===
+202603.0 <__main__.RouterIndividual object at 0x7f3727658908>
+202565.0 <__main__.RouterIndividual object at 0x7f37465415f8>
+202538.0 <__main__.RouterIndividual object at 0x7f37180116a0>
+===6/10===
+202603.0 <__main__.RouterIndividual object at 0x7f3829714828>
+202603.0 <__main__.RouterIndividual object at 0x7f3727658908>
+202565.0 <__main__.RouterIndividual object at 0x7f37465415f8>
+===7/10===
+202787.0 <__main__.RouterIndividual object at 0x7f373882d208>
+202722.0 <__main__.RouterIndividual object at 0x7f3834451208>
+202646.0 <__main__.RouterIndividual object at 0x7f383e3dfa20>
+===8/10===
+202787.0 <__main__.RouterIndividual object at 0x7f373882d208>
+202729.0 <__main__.RouterIndividual object at 0x7f38343dff60>
+202722.0 <__main__.RouterIndividual object at 0x7f3834451208>
+===9/10===
+203003.0 <__main__.RouterIndividual object at 0x7f3833bdfb00>
+202787.0 <__main__.RouterIndividual object at 0x7f373882d208>
+202776.0 <__main__.RouterIndividual object at 0x7f37387c8400>
+===0/10===
+533527.0 <__main__.RouterIndividual object at 0x7f5d9e4dd128>
+533077.0 <__main__.RouterIndividual object at 0x7f5daacdaa58>
+531825.0 <__main__.RouterIndividual object at 0x7f5e0e1f3630>
+===1/10===
+533527.0 <__main__.RouterIndividual object at 0x7f5d9e4dd128>
+533476.0 <__main__.RouterIndividual object at 0x7f5d9f62f160>
+533420.0 <__main__.RouterIndividual object at 0x7f5efbe4b438>
+===2/10===
+533535.0 <__main__.RouterIndividual object at 0x7f5efaddaef0>
+533527.0 <__main__.RouterIndividual object at 0x7f5d9e4dd128>
+533476.0 <__main__.RouterIndividual object at 0x7f5d9f62f160>
+===3/10===
+533535.0 <__main__.RouterIndividual object at 0x7f5db07e6898>
+533535.0 <__main__.RouterIndividual object at 0x7f5efaddaef0>
+533527.0 <__main__.RouterIndividual object at 0x7f5d9e4dd128>
+===4/10===
+533535.0 <__main__.RouterIndividual object at 0x7f5efaddaef0>
+533535.0 <__main__.RouterIndividual object at 0x7f5db07e6898>
+533529.0 <__main__.RouterIndividual object at 0x7f5da2fd9630>
+===5/10===
+533535.0 <__main__.RouterIndividual object at 0x7f5dd3a71048>
+533535.0 <__main__.RouterIndividual object at 0x7f5db07e6898>
+533535.0 <__main__.RouterIndividual object at 0x7f5efaddaef0>
+===6/10===
+533535.0 <__main__.RouterIndividual object at 0x7f5d9f14d5f8>
+533535.0 <__main__.RouterIndividual object at 0x7f5efaddaef0>
+533535.0 <__main__.RouterIndividual object at 0x7f5db07e6898>
+===7/10===
+533625.0 <__main__.RouterIndividual object at 0x7f5dad877a20>
+533623.0 <__main__.RouterIndividual object at 0x7f5da0a553c8>
+533535.0 <__main__.RouterIndividual object at 0x7f5dd3a71048>
+===8/10===
+533713.0 <__main__.RouterIndividual object at 0x7f5d93673080>
+533625.0 <__main__.RouterIndividual object at 0x7f5daa0efc50>
+533625.0 <__main__.RouterIndividual object at 0x7f5dad877a20>
+===9/10===
+533713.0 <__main__.RouterIndividual object at 0x7f5d93673080>
+533706.0 <__main__.RouterIndividual object at 0x7f5da85616d8>
+533625.0 <__main__.RouterIndividual object at 0x7f5dad877a20>
+===0/20===
+433871.0 <__main__.RouterIndividual object at 0x7fe86a0e12e8>
+431961.0 <__main__.RouterIndividual object at 0x7fe8a5712588>
+431649.0 <__main__.RouterIndividual object at 0x7fe92645f630>
+===0/20===
+-427811.0 <__main__.RouterIndividual object at 0x7fb7cf8a5320>
+-428788.0 <__main__.RouterIndividual object at 0x7fb80aede5c0>
+-428855.0 <__main__.RouterIndividual object at 0x7fb7fc1060b8>
+===1/20===
+433871.0 <__main__.RouterIndividual object at 0x7fe86a0e12e8>
+433510.0 <__main__.RouterIndividual object at 0x7fe8883d3a20>
+433245.0 <__main__.RouterIndividual object at 0x7fe8b8d20a20>
+===1/20===
+-427811.0 <__main__.RouterIndividual object at 0x7fb7cf8a5320>
+-428623.0 <__main__.RouterIndividual object at 0x7fb80b4c1828>
+-428788.0 <__main__.RouterIndividual object at 0x7fb8248134a8>
+===2/20===
+433871.0 <__main__.RouterIndividual object at 0x7fe86a0e12e8>
+433510.0 <__main__.RouterIndividual object at 0x7fe8883d3a20>
+433245.0 <__main__.RouterIndividual object at 0x7fe8b8d20a20>
+===2/20===
+-427811.0 <__main__.RouterIndividual object at 0x7fb82c58d198>
+-427811.0 <__main__.RouterIndividual object at 0x7fb7cf8a5320>
+-427851.0 <__main__.RouterIndividual object at 0x7fb7d4d980b8>
+===3/20===
+433871.0 <__main__.RouterIndividual object at 0x7fe8b545c8d0>
+433871.0 <__main__.RouterIndividual object at 0x7fe86a0e12e8>
+433642.0 <__main__.RouterIndividual object at 0x7fe866f7d0f0>
+===3/20===
+-427141.0 <__main__.RouterIndividual object at 0x7fb85d8e59e8>
+-427779.0 <__main__.RouterIndividual object at 0x7fb849438ef0>
+-427811.0 <__main__.RouterIndividual object at 0x7fb7cf8a5320>
+===4/20===
+433871.0 <__main__.RouterIndividual object at 0x7fe86a0e12e8>
+433871.0 <__main__.RouterIndividual object at 0x7fe8b545c8d0>
+433642.0 <__main__.RouterIndividual object at 0x7fe866f7d0f0>
+===4/20===
+-427141.0 <__main__.RouterIndividual object at 0x7fb85d8e59e8>
+-427217.0 <__main__.RouterIndividual object at 0x7fb7b9386978>
+-427655.0 <__main__.RouterIndividual object at 0x7fb7c460aef0>
+===5/20===
+434909.0 <__main__.RouterIndividual object at 0x7fe8c9533dd8>
+434011.0 <__main__.RouterIndividual object at 0x7fe8663141d0>
+433871.0 <__main__.RouterIndividual object at 0x7fe8b545c8d0>
+===5/20===
+-427133.0 <__main__.RouterIndividual object at 0x7fb81df45e10>
+-427141.0 <__main__.RouterIndividual object at 0x7fb85d8e59e8>
+-427177.0 <__main__.RouterIndividual object at 0x7fb8064ddf60>
+===6/20===
+434909.0 <__main__.RouterIndividual object at 0x7fe8c9533dd8>
+434882.0 <__main__.RouterIndividual object at 0x7fea14f88c88>
+434359.0 <__main__.RouterIndividual object at 0x7fe84ee70dd8>
+===6/20===
+-427133.0 <__main__.RouterIndividual object at 0x7fb81df45e10>
+-427139.0 <__main__.RouterIndividual object at 0x7fb78ea4cf28>
+-427141.0 <__main__.RouterIndividual object at 0x7fb7caab8908>
+===7/20===
+434909.0 <__main__.RouterIndividual object at 0x7fea1563c320>
+434909.0 <__main__.RouterIndividual object at 0x7fe8c9533dd8>
+434882.0 <__main__.RouterIndividual object at 0x7fea14f88c88>
+===7/20===
+-426896.0 <__main__.RouterIndividual object at 0x7fb7ce79f0f0>
+-427133.0 <__main__.RouterIndividual object at 0x7fb81df45e10>
+-427137.0 <__main__.RouterIndividual object at 0x7fb7e5268080>
+===8/20===
+434919.0 <__main__.RouterIndividual object at 0x7fe84e21f550>
+434918.0 <__main__.RouterIndividual object at 0x7fe826ff9b70>
+434909.0 <__main__.RouterIndividual object at 0x7fe8c9533dd8>
+===8/20===
+-426896.0 <__main__.RouterIndividual object at 0x7fb7ce79f0f0>
+-427133.0 <__main__.RouterIndividual object at 0x7fb81df45e10>
+-427135.0 <__main__.RouterIndividual object at 0x7fb80800a4e0>
+===9/20===
+435121.0 <__main__.RouterIndividual object at 0x7fe8aeab1cc0>
+434961.0 <__main__.RouterIndividual object at 0x7fe8749dd0b8>
+434919.0 <__main__.RouterIndividual object at 0x7fe84e21f550>
+===9/20===
+-426653.0 <__main__.RouterIndividual object at 0x7fb81f996ba8>
+-426896.0 <__main__.RouterIndividual object at 0x7fb7ce79f0f0>
+-427133.0 <__main__.RouterIndividual object at 0x7fb81df45e10>
+===10/20===
+435366.0 <__main__.RouterIndividual object at 0x7fe887050d30>
+435121.0 <__main__.RouterIndividual object at 0x7fe8aeab1cc0>
+434961.0 <__main__.RouterIndividual object at 0x7fe8749dd0b8>
+===10/20===
+-426653.0 <__main__.RouterIndividual object at 0x7fb81f996ba8>
+-426858.0 <__main__.RouterIndividual object at 0x7fb86204a160>
+-426896.0 <__main__.RouterIndividual object at 0x7fb7ce79f0f0>
+===11/20===
+435366.0 <__main__.RouterIndividual object at 0x7fe887050d30>
+435121.0 <__main__.RouterIndividual object at 0x7fe8aeab1cc0>
+434986.0 <__main__.RouterIndividual object at 0x7fe84cbdb588>
+===11/20===
+-426653.0 <__main__.RouterIndividual object at 0x7fb81f996ba8>
+-426796.0 <__main__.RouterIndividual object at 0x7fb79e59ff28>
+-426832.0 <__main__.RouterIndividual object at 0x7fb84bb06898>
+===12/20===
+435366.0 <__main__.RouterIndividual object at 0x7fe887050d30>
+435121.0 <__main__.RouterIndividual object at 0x7fe8aeab1cc0>
+435009.0 <__main__.RouterIndividual object at 0x7fe8bf6011d0>
+===12/20===
+-426479.0 <__main__.RouterIndividual object at 0x7fb7e5a8b4a8>
+-426653.0 <__main__.RouterIndividual object at 0x7fb81f996ba8>
+-426764.0 <__main__.RouterIndividual object at 0x7fb7c4c77e80>
+===13/20===
+435366.0 <__main__.RouterIndividual object at 0x7fe887050d30>
+435352.0 <__main__.RouterIndividual object at 0x7fe8260f02e8>
+435179.0 <__main__.RouterIndividual object at 0x7fe8906b1e48>
+===13/20===
+-426479.0 <__main__.RouterIndividual object at 0x7fb7e5a8b4a8>
+-426507.0 <__main__.RouterIndividual object at 0x7fb80a321240>
+-426653.0 <__main__.RouterIndividual object at 0x7fb791aa1ef0>
+===14/20===
+435564.0 <__main__.RouterIndividual object at 0x7fe8c22e7a90>
+435412.0 <__main__.RouterIndividual object at 0x7fe871987898>
+435366.0 <__main__.RouterIndividual object at 0x7fe8b26b7550>
+===14/20===
+-426479.0 <__main__.RouterIndividual object at 0x7fb7e5a8b4a8>
+-426507.0 <__main__.RouterIndividual object at 0x7fb80a321240>
+-426543.0 <__main__.RouterIndividual object at 0x7fb7e4099f98>
+===0/20===
+25159.0 <__main__.RouterIndividual object at 0x7fb0edb44080>
+24537.0 <__main__.RouterIndividual object at 0x7fb1292df518>
+24435.0 <__main__.RouterIndividual object at 0x7fb12025e1d0>
+===1/20===
+25159.0 <__main__.RouterIndividual object at 0x7fb0edb44080>
+24537.0 <__main__.RouterIndividual object at 0x7fb1292df518>
+24435.0 <__main__.RouterIndividual object at 0x7fb12025e1d0>
+===2/20===
+25159.0 <__main__.RouterIndividual object at 0x7fb0edb44080>
+24537.0 <__main__.RouterIndividual object at 0x7fb1292df518>
+24435.0 <__main__.RouterIndividual object at 0x7fb12025e1d0>
+===3/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb12932b048>
+25159.0 <__main__.RouterIndividual object at 0x7fb0edb44080>
+24537.0 <__main__.RouterIndividual object at 0x7fb1292df518>
+===4/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb12932b048>
+25207.0 <__main__.RouterIndividual object at 0x7fb142062cf8>
+25159.0 <__main__.RouterIndividual object at 0x7fb0edb44080>
+===5/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+26115.0 <__main__.RouterIndividual object at 0x7fb12932b048>
+25207.0 <__main__.RouterIndividual object at 0x7fb142062cf8>
+===6/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb12932b048>
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+25617.0 <__main__.RouterIndividual object at 0x7fb1419b65c0>
+===7/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+26115.0 <__main__.RouterIndividual object at 0x7fb12932b048>
+25617.0 <__main__.RouterIndividual object at 0x7fb1419b65c0>
+===8/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb12932b048>
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+25617.0 <__main__.RouterIndividual object at 0x7fb1419b65c0>
+===9/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+26115.0 <__main__.RouterIndividual object at 0x7fb12932b048>
+25617.0 <__main__.RouterIndividual object at 0x7fb164fe50f0>
+===10/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb0edd04da0>
+26115.0 <__main__.RouterIndividual object at 0x7fb12932b048>
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+===11/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb1297285f8>
+26115.0 <__main__.RouterIndividual object at 0x7fb141f21438>
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+===12/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb120502940>
+26115.0 <__main__.RouterIndividual object at 0x7fb128f1a4a8>
+26115.0 <__main__.RouterIndividual object at 0x7fb0edd04da0>
+===13/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb141c65c18>
+26115.0 <__main__.RouterIndividual object at 0x7fb1295d7358>
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+===14/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb128c23cc0>
+26115.0 <__main__.RouterIndividual object at 0x7fb141ecc080>
+26115.0 <__main__.RouterIndividual object at 0x7fb0edd04da0>
+===15/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb12911c550>
+26115.0 <__main__.RouterIndividual object at 0x7fb128dff400>
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+===16/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb141b3e9b0>
+26115.0 <__main__.RouterIndividual object at 0x7fb1297d2ac8>
+26115.0 <__main__.RouterIndividual object at 0x7fb0edd04da0>
+===17/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb1204d4550>
+26115.0 <__main__.RouterIndividual object at 0x7fb1421141d0>
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+===18/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb142036da0>
+26115.0 <__main__.RouterIndividual object at 0x7fb128ca4438>
+26115.0 <__main__.RouterIndividual object at 0x7fb0edd04da0>
+===19/20===
+26115.0 <__main__.RouterIndividual object at 0x7fb1297283c8>
+26115.0 <__main__.RouterIndividual object at 0x7fb129744e10>
+26115.0 <__main__.RouterIndividual object at 0x7fb10fb2d4a8>
+===15/20===
+435702.0 <__main__.RouterIndividual object at 0x7fe8597ba160>
+435564.0 <__main__.RouterIndividual object at 0x7fe8c22e7a90>
+435462.0 <__main__.RouterIndividual object at 0x7fe8a7b067f0>
+===15/20===
+-426465.0 <__main__.RouterIndividual object at 0x7fb78cebaeb8>
+-426479.0 <__main__.RouterIndividual object at 0x7fb7e5a8b4a8>
+-426507.0 <__main__.RouterIndividual object at 0x7fb80a321240>
+===16/20===
+435702.0 <__main__.RouterIndividual object at 0x7fe8597ba160>
+435638.0 <__main__.RouterIndividual object at 0x7fe852b3cda0>
+435564.0 <__main__.RouterIndividual object at 0x7fe8c22e7a90>
+===16/20===
+-426259.0 <__main__.RouterIndividual object at 0x7fb7c71ad400>
+-426465.0 <__main__.RouterIndividual object at 0x7fb78cebaeb8>
+-426469.0 <__main__.RouterIndividual object at 0x7fb7f17fd978>
+===17/20===
+435702.0 <__main__.RouterIndividual object at 0x7fe8597ba160>
+435676.0 <__main__.RouterIndividual object at 0x7fe868747198>
+435638.0 <__main__.RouterIndividual object at 0x7fe852b3cda0>
+===17/20===
+-426259.0 <__main__.RouterIndividual object at 0x7fb7c71ad400>
+-426292.0 <__main__.RouterIndividual object at 0x7fb7fa5f4e48>
+-426305.0 <__main__.RouterIndividual object at 0x7fb7d972d6a0>
+===18/20===
+435702.0 <__main__.RouterIndividual object at 0x7fe8597ba160>
+435676.0 <__main__.RouterIndividual object at 0x7fe868747198>
+435658.0 <__main__.RouterIndividual object at 0x7fe88f433be0>
+===18/20===
+-426149.0 <__main__.RouterIndividual object at 0x7fb84dfd8fd0>
+-426259.0 <__main__.RouterIndividual object at 0x7fb7c71ad400>
+-426263.0 <__main__.RouterIndividual object at 0x7fb7e35f06a0>
+===19/20===
+435702.0 <__main__.RouterIndividual object at 0x7fe8597ba160>
+435694.0 <__main__.RouterIndividual object at 0x7fe8524bca90>
+435676.0 <__main__.RouterIndividual object at 0x7fe868747198>
+===19/20===
+-426149.0 <__main__.RouterIndividual object at 0x7fb84dfd8fd0>
+-426223.0 <__main__.RouterIndividual object at 0x7fb819b776a0>
+-426259.0 <__main__.RouterIndividual object at 0x7fb7c71ad400>
+===0/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599352.0 <__main__.RouterIndividual object at 0x7f2da6d34b70>
+-599435.0 <__main__.RouterIndividual object at 0x7f2dcc8a9630>
+===0/20===
+603347.0 <__main__.RouterIndividual object at 0x7f400910e5c0>
+602542.0 <__main__.RouterIndividual object at 0x7f402ed4dfd0>
+601176.0 <__main__.RouterIndividual object at 0x7f40c5ab6b00>
+===1/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599180.0 <__main__.RouterIndividual object at 0x7f2d4c26ef98>
+-599352.0 <__main__.RouterIndividual object at 0x7f2da6d34b70>
+===1/20===
+603347.0 <__main__.RouterIndividual object at 0x7f400910e5c0>
+603111.0 <__main__.RouterIndividual object at 0x7f413a2697f0>
+602542.0 <__main__.RouterIndividual object at 0x7f402ed4dfd0>
+===2/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599125.0 <__main__.RouterIndividual object at 0x7f2da756c198>
+-599180.0 <__main__.RouterIndividual object at 0x7f2d4c26ef98>
+===2/20===
+603591.0 <__main__.RouterIndividual object at 0x7f409fea9fd0>
+603347.0 <__main__.RouterIndividual object at 0x7f400910e5c0>
+603234.0 <__main__.RouterIndividual object at 0x7f40024f8ef0>
+===3/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599105.0 <__main__.RouterIndividual object at 0x7f2ddba3ec88>
+-599125.0 <__main__.RouterIndividual object at 0x7f2da756c198>
+===3/20===
+603665.0 <__main__.RouterIndividual object at 0x7f3ffef57fd0>
+603601.0 <__main__.RouterIndividual object at 0x7f40f5b89eb8>
+603591.0 <__main__.RouterIndividual object at 0x7f409fea9fd0>
+===4/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599093.0 <__main__.RouterIndividual object at 0x7f2d86f1bf60>
+===4/20===
+603665.0 <__main__.RouterIndividual object at 0x7f412b2cc160>
+603665.0 <__main__.RouterIndividual object at 0x7f3ffef57fd0>
+603641.0 <__main__.RouterIndividual object at 0x7f402f57a668>
+===5/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599081.0 <__main__.RouterIndividual object at 0x7f2cfa82c128>
+===5/20===
+603845.0 <__main__.RouterIndividual object at 0x7f3ff8ec9160>
+603793.0 <__main__.RouterIndividual object at 0x7f3ffaef9c50>
+603665.0 <__main__.RouterIndividual object at 0x7f40405d1048>
+===6/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599081.0 <__main__.RouterIndividual object at 0x7f2cfa82c128>
+===6/20===
+604087.0 <__main__.RouterIndividual object at 0x7f40c4173898>
+603979.0 <__main__.RouterIndividual object at 0x7f40c41730b8>
+603861.0 <__main__.RouterIndividual object at 0x7f40f7867f28>
+===7/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599073.0 <__main__.RouterIndividual object at 0x7f2d90fb34a8>
+===7/20===
+604168.0 <__main__.RouterIndividual object at 0x7f4133af4d68>
+604151.0 <__main__.RouterIndividual object at 0x7f3fa63a8f98>
+604087.0 <__main__.RouterIndividual object at 0x7f4125e00e10>
+===8/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599073.0 <__main__.RouterIndividual object at 0x7f2d90fb34a8>
+===8/20===
+604341.0 <__main__.RouterIndividual object at 0x7f40deed4e48>
+604304.0 <__main__.RouterIndividual object at 0x7f410bd28dd8>
+604168.0 <__main__.RouterIndividual object at 0x7f4133af4d68>
+===9/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599073.0 <__main__.RouterIndividual object at 0x7f2d509ca6d8>
+===9/20===
+604354.0 <__main__.RouterIndividual object at 0x7f4070f06fd0>
+604341.0 <__main__.RouterIndividual object at 0x7f4136130240>
+604341.0 <__main__.RouterIndividual object at 0x7f40deed4e48>
+===10/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599071.0 <__main__.RouterIndividual object at 0x7f2d17ffb588>
+===10/20===
+604551.0 <__main__.RouterIndividual object at 0x7f3fec046080>
+604533.0 <__main__.RouterIndividual object at 0x7f3feb0edd30>
+604434.0 <__main__.RouterIndividual object at 0x7f400bf9d7b8>
+===11/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599071.0 <__main__.RouterIndividual object at 0x7f2c8929e208>
+===11/20===
+604628.0 <__main__.RouterIndividual object at 0x7f409ab31f98>
+604612.0 <__main__.RouterIndividual object at 0x7f40ec2d33c8>
+604551.0 <__main__.RouterIndividual object at 0x7f3fec046080>
+===12/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599069.0 <__main__.RouterIndividual object at 0x7f2cd01e37b8>
+===12/20===
+604684.0 <__main__.RouterIndividual object at 0x7f3f8f801358>
+604671.0 <__main__.RouterIndividual object at 0x7f40f7dc2588>
+604671.0 <__main__.RouterIndividual object at 0x7f3fa64b16d8>
+===13/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599067.0 <__main__.RouterIndividual object at 0x7f2dbc25b6a0>
+===13/20===
+604751.0 <__main__.RouterIndividual object at 0x7f400acb72b0>
+604748.0 <__main__.RouterIndividual object at 0x7f4133978f28>
+604702.0 <__main__.RouterIndividual object at 0x7f3ff04b3a58>
+===14/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599067.0 <__main__.RouterIndividual object at 0x7f2cfbff1eb8>
+===14/20===
+604993.0 <__main__.RouterIndividual object at 0x7f4000281588>
+604894.0 <__main__.RouterIndividual object at 0x7f409c52ffd0>
+604893.0 <__main__.RouterIndividual object at 0x7f40002816d8>
+===15/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d56aa3710>
+-599065.0 <__main__.RouterIndividual object at 0x7f2d0fe9a0f0>
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+===15/20===
+605069.0 <__main__.RouterIndividual object at 0x7f400abc88d0>
+604993.0 <__main__.RouterIndividual object at 0x7f4000281588>
+604991.0 <__main__.RouterIndividual object at 0x7f40a3568080>
+===16/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2dae39ad68>
+-599065.0 <__main__.RouterIndividual object at 0x7f2dbbd1d240>
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+===16/20===
+605131.0 <__main__.RouterIndividual object at 0x7f40075f8c50>
+605070.0 <__main__.RouterIndividual object at 0x7f40051d71d0>
+605069.0 <__main__.RouterIndividual object at 0x7f400abc88d0>
+===17/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2d469a0390>
+-599065.0 <__main__.RouterIndividual object at 0x7f2e11449898>
+-599065.0 <__main__.RouterIndividual object at 0x7f2d56aa3710>
+===17/20===
+605250.0 <__main__.RouterIndividual object at 0x7f41934fa5f8>
+605131.0 <__main__.RouterIndividual object at 0x7f40075f8c50>
+605072.0 <__main__.RouterIndividual object at 0x7f3fffbadf60>
+===18/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2cedacb160>
+-599065.0 <__main__.RouterIndividual object at 0x7f2d589c6dd8>
+-599065.0 <__main__.RouterIndividual object at 0x7f2ce37c4a58>
+===18/20===
+605258.0 <__main__.RouterIndividual object at 0x7f3ff2149080>
+605257.0 <__main__.RouterIndividual object at 0x7f42063335c0>
+605256.0 <__main__.RouterIndividual object at 0x7f4123e3c048>
+===19/20===
+-599065.0 <__main__.RouterIndividual object at 0x7f2df8c82e80>
+-599065.0 <__main__.RouterIndividual object at 0x7f2c90dd58d0>
+-599065.0 <__main__.RouterIndividual object at 0x7f2d56aa3710>
+===19/20===
+605384.0 <__main__.RouterIndividual object at 0x7f40aee80d68>
+605370.0 <__main__.RouterIndividual object at 0x7f3f9deeb1d0>
+605348.0 <__main__.RouterIndividual object at 0x7f40ae22c128>
+===0/20===
+218166.0 <__main__.RouterIndividual object at 0x7f575c685f28>
+217518.0 <__main__.RouterIndividual object at 0x7f5688813c50>
+216951.0 <__main__.RouterIndividual object at 0x7f56ab8bf550>
+===1/20===
+219075.0 <__main__.RouterIndividual object at 0x7f56a8f0f358>
+218166.0 <__main__.RouterIndividual object at 0x7f575c685f28>
+217518.0 <__main__.RouterIndividual object at 0x7f5688813c50>
+===2/20===
+219075.0 <__main__.RouterIndividual object at 0x7f56a8f0f358>
+218637.0 <__main__.RouterIndividual object at 0x7f5731929400>
+218166.0 <__main__.RouterIndividual object at 0x7f575c685f28>
+===3/20===
+219075.0 <__main__.RouterIndividual object at 0x7f56a8f0f358>
+218975.0 <__main__.RouterIndividual object at 0x7f575c8a5cf8>
+218703.0 <__main__.RouterIndividual object at 0x7f56f5f58860>
+===4/20===
+219075.0 <__main__.RouterIndividual object at 0x7f56a8f0f358>
+218975.0 <__main__.RouterIndividual object at 0x7f575c8a5cf8>
+218703.0 <__main__.RouterIndividual object at 0x7f56f5f58860>
+===5/20===
+219471.0 <__main__.RouterIndividual object at 0x7f56fe3bdf28>
+219075.0 <__main__.RouterIndividual object at 0x7f56a8f0f358>
+218975.0 <__main__.RouterIndividual object at 0x7f575c8a5cf8>
+===6/20===
+219484.0 <__main__.RouterIndividual object at 0x7f57853f8978>
+219471.0 <__main__.RouterIndividual object at 0x7f56fe3bdf28>
+219075.0 <__main__.RouterIndividual object at 0x7f56a8f0f358>
+===7/20===
+219484.0 <__main__.RouterIndividual object at 0x7f57853f8978>
+219471.0 <__main__.RouterIndividual object at 0x7f56fe3bdf28>
+219228.0 <__main__.RouterIndividual object at 0x7f56f5dae5f8>
+===8/20===
+219484.0 <__main__.RouterIndividual object at 0x7f57853f8978>
+219471.0 <__main__.RouterIndividual object at 0x7f57853f8c18>
+219471.0 <__main__.RouterIndividual object at 0x7f56fe3bdf28>
+===9/20===
+219670.0 <__main__.RouterIndividual object at 0x7f575bdc5be0>
+219484.0 <__main__.RouterIndividual object at 0x7f57853f8978>
+219471.0 <__main__.RouterIndividual object at 0x7f56fe3bdf28>
+===10/20===
+219670.0 <__main__.RouterIndividual object at 0x7f575bdc5be0>
+219572.0 <__main__.RouterIndividual object at 0x7f56fe1497b8>
+219484.0 <__main__.RouterIndividual object at 0x7f57853f8978>
+===11/20===
+219838.0 <__main__.RouterIndividual object at 0x7f56a69639e8>
+219670.0 <__main__.RouterIndividual object at 0x7f575bdc5be0>
+219572.0 <__main__.RouterIndividual object at 0x7f56fe1497b8>
+===12/20===
+219838.0 <__main__.RouterIndividual object at 0x7f56a69639e8>
+219670.0 <__main__.RouterIndividual object at 0x7f575bdc5be0>
+219572.0 <__main__.RouterIndividual object at 0x7f56fe1497b8>
+===0/20===
+-213723.0 <__main__.RouterIndividual object at 0x7f8bee687b00>
+-214911.0 <__main__.RouterIndividual object at 0x7f8aeadea6a0>
+-215748.0 <__main__.RouterIndividual object at 0x7f8afac04630>
+===13/20===
+219864.0 <__main__.RouterIndividual object at 0x7f575b4f8b00>
+219838.0 <__main__.RouterIndividual object at 0x7f570e934d30>
+219838.0 <__main__.RouterIndividual object at 0x7f56a69639e8>
+===1/20===
+-213723.0 <__main__.RouterIndividual object at 0x7f8bee687b00>
+-214415.0 <__main__.RouterIndividual object at 0x7f8bf3a35d30>
+-214911.0 <__main__.RouterIndividual object at 0x7f8ad9596cc0>
+===14/20===
+219864.0 <__main__.RouterIndividual object at 0x7f575b4f8b00>
+219838.0 <__main__.RouterIndividual object at 0x7f56a69639e8>
+219838.0 <__main__.RouterIndividual object at 0x7f570e934d30>
+===2/20===
+-213723.0 <__main__.RouterIndividual object at 0x7f8bee687b00>
+-213749.0 <__main__.RouterIndividual object at 0x7f8af2538f60>
+-213973.0 <__main__.RouterIndividual object at 0x7f8aca515da0>
+===15/20===
+219968.0 <__main__.RouterIndividual object at 0x7f575c057e10>
+219960.0 <__main__.RouterIndividual object at 0x7f578e1a1160>
+219864.0 <__main__.RouterIndividual object at 0x7f575b4f8b00>
+===3/20===
+-213307.0 <__main__.RouterIndividual object at 0x7f8aca5151d0>
+-213587.0 <__main__.RouterIndividual object at 0x7f8af27ec518>
+-213723.0 <__main__.RouterIndividual object at 0x7f8bee687b00>
+===16/20===
+219968.0 <__main__.RouterIndividual object at 0x7f575c057e10>
+219960.0 <__main__.RouterIndividual object at 0x7f578e1a1160>
+219864.0 <__main__.RouterIndividual object at 0x7f575b4f8b00>
+===4/20===
+-213307.0 <__main__.RouterIndividual object at 0x7f8aca5151d0>
+-213379.0 <__main__.RouterIndividual object at 0x7f8ad94eb940>
+-213587.0 <__main__.RouterIndividual object at 0x7f8befe558d0>
+===17/20===
+219968.0 <__main__.RouterIndividual object at 0x7f575c057e10>
+219960.0 <__main__.RouterIndividual object at 0x7f578e1a1160>
+219864.0 <__main__.RouterIndividual object at 0x7f575b89a9b0>
+===5/20===
+-213097.0 <__main__.RouterIndividual object at 0x7f8bf2033dd8>
+-213165.0 <__main__.RouterIndividual object at 0x7f8bf2841048>
+-213307.0 <__main__.RouterIndividual object at 0x7f8aca5151d0>
+===18/20===
+219968.0 <__main__.RouterIndividual object at 0x7f575c057e10>
+219960.0 <__main__.RouterIndividual object at 0x7f578e1a1160>
+219864.0 <__main__.RouterIndividual object at 0x7f569c578668>
+===6/20===
+-213085.0 <__main__.RouterIndividual object at 0x7f8ad9596da0>
+-213097.0 <__main__.RouterIndividual object at 0x7f8bf2033dd8>
+-213119.0 <__main__.RouterIndividual object at 0x7f8ac5207c50>
+===19/20===
+219968.0 <__main__.RouterIndividual object at 0x7f575c057e10>
+219960.0 <__main__.RouterIndividual object at 0x7f578e1a1160>
+219864.0 <__main__.RouterIndividual object at 0x7f56a8d1e898>
+===7/20===
+-211515.0 <__main__.RouterIndividual object at 0x7f8bef684e10>
+-212819.0 <__main__.RouterIndividual object at 0x7f8ac7ba7a90>
+-212947.0 <__main__.RouterIndividual object at 0x7f8ae32a25c0>
+===8/20===
+-211359.0 <__main__.RouterIndividual object at 0x7f8bed024da0>
+-211515.0 <__main__.RouterIndividual object at 0x7f8bef684e10>
+-212757.0 <__main__.RouterIndividual object at 0x7f8aed523dd8>
+===9/20===
+-211359.0 <__main__.RouterIndividual object at 0x7f8bed024da0>
+-211515.0 <__main__.RouterIndividual object at 0x7f8bef684e10>
+-211923.0 <__main__.RouterIndividual object at 0x7f8ae823b518>
+===10/20===
+-211007.0 <__main__.RouterIndividual object at 0x7f8accbbd860>
+-211359.0 <__main__.RouterIndividual object at 0x7f8bed024da0>
+-211515.0 <__main__.RouterIndividual object at 0x7f8bef684e10>
+===11/20===
+-210991.0 <__main__.RouterIndividual object at 0x7f8bf0f3c4e0>
+-211007.0 <__main__.RouterIndividual object at 0x7f8accbbd860>
+-211025.0 <__main__.RouterIndividual object at 0x7f8bf190deb8>
+===12/20===
+-210495.0 <__main__.RouterIndividual object at 0x7f8aea91bba8>
+-210991.0 <__main__.RouterIndividual object at 0x7f8bf0f3c4e0>
+-211007.0 <__main__.RouterIndividual object at 0x7f8accbbd860>
+===13/20===
+-209789.0 <__main__.RouterIndividual object at 0x7f8bf20db470>
+-210423.0 <__main__.RouterIndividual object at 0x7f8bf348d828>
+-210495.0 <__main__.RouterIndividual object at 0x7f8aea91bba8>
+===14/20===
+-209519.0 <__main__.RouterIndividual object at 0x7f8bed9b7ba8>
+-209719.0 <__main__.RouterIndividual object at 0x7f8ac2a7e160>
+-209789.0 <__main__.RouterIndividual object at 0x7f8bf20db470>
+===15/20===
+-209179.0 <__main__.RouterIndividual object at 0x7f8aca3d8080>
+-209519.0 <__main__.RouterIndividual object at 0x7f8bed9b7ba8>
+-209647.0 <__main__.RouterIndividual object at 0x7f8bf2cb0d68>
+===16/20===
+-208987.0 <__main__.RouterIndividual object at 0x7f8aed2346d8>
+-209179.0 <__main__.RouterIndividual object at 0x7f8aca3d8080>
+-209367.0 <__main__.RouterIndividual object at 0x7f8bed270c50>
+===17/20===
+-208837.0 <__main__.RouterIndividual object at 0x7f8bf28936d8>
+-208985.0 <__main__.RouterIndividual object at 0x7f8ad40db2b0>
+-208987.0 <__main__.RouterIndividual object at 0x7f8aed2346d8>
+===18/20===
+-208837.0 <__main__.RouterIndividual object at 0x7f8bf28936d8>
+-208893.0 <__main__.RouterIndividual object at 0x7f8adbbc0ba8>
+-208965.0 <__main__.RouterIndividual object at 0x7f8ae0a3f630>
+===19/20===
+-208837.0 <__main__.RouterIndividual object at 0x7f8bf28936d8>
+-208893.0 <__main__.RouterIndividual object at 0x7f8adbbc0ba8>
+-208919.0 <__main__.RouterIndividual object at 0x7f8addedef98>

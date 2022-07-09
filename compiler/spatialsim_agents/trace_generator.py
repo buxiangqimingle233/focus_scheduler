@@ -8,6 +8,26 @@ from variables import Variables
 from compiler import global_control as gc
 import re
 
+def tree_pruner(diameter, tree, v, p_node, pp_node):
+    neighbors = nx.neighbors(tree, v)
+    if_pruned_all = True
+    if (p_node != None and pp_node != None):
+        if (p_node // diameter == pp_node // diameter) or (p_node % diameter == v % diameter):
+            if len(list(nx.neighbors(tree, p_node))) == 1 and (not tree.nodes[p_node]['dest']):
+                tree.remove_edge(pp_node, p_node)
+                tree.remove_edge(p_node, v)
+                tree.remove_node(p_node)
+                tree.add_edge(pp_node, v)
+                p_node = pp_node
+                if_pruned_all = False
+
+    for i in list(neighbors):
+        if not tree_pruner(diameter, tree, i, v, p_node):
+            if_pruned_all = False
+    return if_pruned_all
+
+
+
 class TraceGenerator:
     '''Act as the driver for spatial-simulator.
     '''
@@ -84,9 +104,32 @@ class TraceGenerator:
                 src = node2pe(endpoints["src"])
                 dsts = list(map(node2pe, endpoints["dst"]))
                 mc_tree = router.route(src, dsts)
+                # raw_src = endpoints["src"]
+                # raw_dsts = endpoints['dst']
+                # mc_tree = router.route(raw_src, raw_dsts)
+                # mc_tree = router[endpoints["fid"]]
+                # print(mc_tree.nodes())
+                
                 cache[endpoints["fid"]] = mc_tree
             else:
                 mc_tree = cache[endpoints["fid"]]
+
+            # while not tree_pruner(32, mc_tree, src, None, None):
+            #     pass
+
+            # src = node2pe(endpoints["src"])
+            # dsts = list(map(node2pe, endpoints["dst"]))
+            # mc_tree = router[endpoints["fid"]]
+            # print(endpoints['fid'])
+            # print(src)
+            # print(dsts)
+            # print('edges:',mc_tree.edges())
+            # print('nodes:', mc_tree.nodes())
+            # while not tree_pruner(32, mc_tree, src, None, None):
+            #     pass
+            # print(mc_tree.nodes())
+
+
             print("{} {} {}".format(pid, src, " ".join(map(str, dsts))), file=to)
             for seg_src, seg_dst in mc_tree.edges():
                 print("{} {}".format(seg_src, seg_dst), file=to)

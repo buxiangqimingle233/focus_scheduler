@@ -14,3 +14,8 @@ notes.md
 *.out
 TODO
 visualization/*
+
+# test source file
+try.py
+op_graph_output/*
+compiler/try.py

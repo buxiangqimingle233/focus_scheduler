@@ -18,6 +18,11 @@ from scripts.channel_utilization import plot_channel_load
 from scripts.router_conflict_factors import plot_router_conflict_factors
 from scripts.core_busy_ratio import plot_core_busy_ratio
 
+from compiler.EA import RouterIndividual
+
+import sys
+print(sys.setrecursionlimit(20000))
+
 
 pd.set_option('mode.chained_assignment', None)
 random.seed(114514)
@@ -43,6 +48,12 @@ def getArgumentParser():
                         default="1024-1024-512", help="Flit size range from Fmin to Fmax, interleave with Step")
     parser.add_argument("-b", "--batch", dest="b", type=int, default=1, metavar="4")
     parser.add_argument("-debug", dest="debug", action="store_true")
+
+    parser.add_argument("-gn", "--graph_name", dest="gn", type=str, metavar="1.gpickle",
+                        default="1.gpickle", help="Spec file of task to run")
+    parser.add_argument("-graph", dest="graph", action="store_true")
+
+
     parser.add_argument("mode", type=str, metavar="tgesf", default="",
                         help="Running mode, t: invoke timeloop-mapper, g: use fake trace generator, \
                               e: invoke timeloop-model, s: simulate baseline, f: invoke focus scheduler \
@@ -53,6 +64,8 @@ def getArgumentParser():
 def setEnvSpecs(args: argparse.Namespace):
 
     gc.benchmark_name = args.bm
+    gc.graph_name = args.gn
+    gc.generate_graph = args.graph
 
     # set architecture parameters
     gc.array_diameter = args.d

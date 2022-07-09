@@ -131,12 +131,14 @@ class RPMTreeRouter(Router):
             self.get_tree(tree, node+1, dests_di[3])
 
     
-    def route(self, source: int, dests: list) -> nx.DiGraph:
+    def route(self, source: int, dests: list, xy_format=True) -> nx.DiGraph:
         tree = nx.DiGraph()
-        tree.add_node(source, root=True)
+        tree.add_node(source, root=True, dest = False)
         self.get_tree(tree, source, dests)
-        while not self.tree_pruner(tree, source, None, None):
-            pass
+
+        if xy_format:
+            while not self.tree_pruner(tree, source, None, None):
+                pass
 
         return tree
 
@@ -488,7 +490,7 @@ class Steiner_TreeRouter(Router):
                 tree.add_node(x)
                 tree.add_edge(pre_node, x)
     
-    def route(self, source: int, dests: list) -> nx.DiGraph:
+    def route(self, source: int, dests: list, xy_format=True) -> nx.DiGraph:
         tree = nx.DiGraph()
         tree.add_node(source, root=True)
         dests_temp = copy.deepcopy(dests)
@@ -510,9 +512,13 @@ class Steiner_TreeRouter(Router):
                 tree.nodes[i]['dest'] = True
             else:
                 tree.nodes[i]['dest'] = False
+            tree.nodes[i]['root'] = False
 
-        while not self.tree_pruner(tree, source, None, None):
-            pass
+        tree.nodes[source]['root'] = True
+
+        if xy_format:
+            while not self.tree_pruner(tree, source, None, None):
+                pass
 
         return tree
 

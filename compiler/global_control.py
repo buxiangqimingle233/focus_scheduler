@@ -122,7 +122,9 @@ def get_ea_logpath():
 
 # -------------------- Router -----------------------------------
 
-from routing_algorithms.meshtree_router import RPMTreeRouter, WhirlTreeRouter
+from routing_algorithms.meshtree_router import RPMTreeRouter, WhirlTreeRouter, Steiner_TreeRouter
 
-Router = RPMTreeRouter
+Router = Steiner_TreeRouter
 benchmark_name = None
+graph_name = '1.gpickle'
+generate_graph = False
