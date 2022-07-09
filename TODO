@@ -1,4 +1,0 @@
-bug: Stall when parsing instructions
-feature: buffer constraints
-
-opt: Parallel

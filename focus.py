@@ -118,24 +118,11 @@ def run_single_task(args):
         toolchain = TaskCompiler()
         toolchain.compile()
         compute_cycle = toolchain.get_compute_cycle() # * gc.overclock
-        maeri_cycle = toolchain.get_maeri_cycle()
-        eyeriss_cycle = toolchain.get_eyeriss_cycle()
-
-        print("{} {} compute cycle: {}, maeri cycle: {}, eyeriss_cycle: {}" \
-              .format(gc.taskname, maeri_cycle/compute_cycle, compute_cycle, maeri_cycle, eyeriss_cycle), file=stderr)
 
         # plot channel loads
         plot_channel_load(toolchain.get_working_graph())
         # plot message size distribution
         plot_msg_size_dist(toolchain.get_working_graph())
-
-    # try:
-    #     data_path = os.path.join(gc.op_graph_buffer, "core_busy_ratio_{}_{}.npy".format(gc.taskname, gc.benchmark_name[10:]))
-    #     busy_ratio = np.load(data_path)
-    #     busy_ratio = np.asarray_chkfinite([i for i in busy_ratio if i > 0.001])
-    #     print("{} busy ratio: {}".format(gc.taskname, np.average(busy_ratio)), file=stderr)
-    # except:
-    #     pass
 
     # Invoke simulator
     if gc.simulate_baseline:
@@ -170,29 +157,3 @@ if __name__ == "__main__":
         vars(args)["f"] = f
         setEnvSpecs(args)
         run_single_task(args)
-
-    # # Invoke the FOCUS software procedure to schedule the traffic.
-    # if gc.focus_schedule:
-    #     # Generate working directory
-    #     working_dir = os.path.join(gc.focus_buffer, gc.taskname)
-    #     if not os.path.exists(working_dir):
-    #         os.mkdir(working_dir)
-
-    #     # Generate an engine for heuristic search
-    #     # for debugging
-    #     if gc.scheduler_verbose:
-    #         ea_controller = EA.EvolutionController(population_size=gc.population_size, n_evolution=gc.n_evolution, 
-    #                                             log_path=os.path.join(gc.focus_buffer, gc.taskname, "ea_output"))
-    #     else:
-    #         ea_controller = EA.ParallelEvolutionController(n_workers=gc.n_workers,
-    #             population_size=gc.population_size, n_evolution=gc.n_evolution,
-    #             log_path=gc.get_ea_logpath())
-
-    #         ea_controller.init_population(individual.individual_generator)
-    #         best_individual, _ = ea_controller.run_evolution_search(gc.scheduler_verbose)
-    #     # dump the EA's results
-    #     solution = best_individual.getTrace()
-    #     dump_file = os.path.join(gc.focus_buffer, gc.taskname, "solution_{}.json".format(gc.flit_size))
-    #     solution.to_json(dump_file)
-
-    #     toolchain.analyzeFocusResult()

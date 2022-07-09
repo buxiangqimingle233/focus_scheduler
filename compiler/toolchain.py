@@ -58,20 +58,6 @@ class TaskCompiler():
         # map tasks to pe array
         op_graph = self._map_operators(op_graph)
 
-        nx.write_gpickle(op_graph, "test.gpickle")
-
-        # Experiment Codes
-        self.compute_cycle_lower_bound = op_graph.total_compute_cycles()
-        self.ideal_network_cycles = op_graph.evaluate_maeri()
-        self.eyeriss_network_cycles = op_graph.evaluate_eyeriss()
-        self.total_injected_flits = op_graph.total_injected_flits()
-
-        # For METRO
-        flattened = self.flatten(op_graph)
-        # self.test_flatten(flattened)
-
-        # nx.write_gpickle(flattened, f'./{gc.Router.__name__}_{gc.taskname}_{gc.benchmark_name[10:]}.gpickle')
-
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
 
@@ -79,42 +65,12 @@ class TaskCompiler():
             pickle.dump(op_graph, f)
         self.op_grpah = op_graph
 
-
-    def test_flatten(self, flattened: nx.DiGraph):
-        for node, attr in flattened.nodes(data=True):
-            print(attr["layer"], attr["op_type"])
-        wg = copy.deepcopy(flattened)
-        for u, v, attr in wg.edges(data=True):
-            uattr = wg.nodes[u]
-            vattr = wg.nodes[v]
-            size = attr["size"]
-            if uattr["op_type"] == "worker":
-                attr["cycle"] = uattr["delay"]
-            else:
-                attr["cycle"] = 0
-            if uattr["p_pe"] != vattr["p_pe"]:
-                print(size)
-                attr["cycle"] += attr["size"]
-            vattr["cycle"] = attr["cycle"]
-        cycle = nx.dag_longest_path_length(wg, weight="cycle", default_weight=0)
-        path = nx.dag_longest_path(wg, weight="cycle", default_weight=0)
-        print("cycle: {}, ".format(cycle))
-        for node in path:
-            print(wg.nodes[node]["layer"], wg.nodes[node]["op_type"])
-        # gc.debug_show(cycle)
-
     def get_working_graph(self):
         return self.op_grpah
 
     def get_compute_cycle(self):
         assert hasattr(self, "compute_cycle_lower_bound")
         return self.compute_cycle_lower_bound
-
-    def get_maeri_cycle(self):
-        return self.ideal_network_cycles
-    
-    def get_eyeriss_cycle(self):
-        return self.eyeriss_network_cycles
 
     def _gen_op_graph(self):
         print("Generating the operator graph using timeloop")
