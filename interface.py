@@ -69,7 +69,5 @@ if __name__ == '__main__':
     f.writelines(lines_list)
     f.close()
 
-
-
     # os.system(f"python3 -W ignore focus.py -bm {args.bm} -d {args.d} -b {args.b} -fr {args.fr} teds")
     os.system(f"python3 -W ignore focus.py -bm {args.bm} -d {args.d} -b {args.b} -fr {args.fr} teds")
