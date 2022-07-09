@@ -3,10 +3,9 @@ import re
 from copy import deepcopy
 from sys import stderr
 
-from bitarray import test
+import numpy as np
 from compiler import global_control as gc
 import networkx as nx
-from math import ceil
 import copy
 import pickle
 
@@ -61,26 +60,15 @@ class TaskCompiler():
 
         nx.write_gpickle(op_graph, "test.gpickle")
 
-        # op_graph.draw_graph(os.path.join(gc.visualization_root, "micro_operators.png"))
-        # op_graph.draw_mapping(os.path.join(gc.visualization_root, "mapping.png"))
-
+        # Experiment Codes
         self.compute_cycle_lower_bound = op_graph.total_compute_cycles()
-        self.ideal_network_cycles = op_graph.ideal_network_cycles()
-        self.eyeriss_network_cycles = op_graph.eyeriss_network_cycles()
-        self.test_avg_bandwidth(op_graph)
-        # for node, attr in op_graph.get_data().nodes(data=True):
-        #     attr['cnt'] = 1
-        #     pass
-        # start = 100000
-        # for u, v, eattr in op_graph.get_data().edges(data=True):
-        #     if eattr['edge_type'] == "control":
-        #         eattr['fid'] = start
-        #         eattr['size'] = 1
-        #         start += 1
-        
+        self.ideal_network_cycles = op_graph.evaluate_maeri()
+        self.eyeriss_network_cycles = op_graph.evaluate_eyeriss()
+        self.total_injected_flits = op_graph.total_injected_flits()
 
+        # For METRO
         flattened = self.flatten(op_graph)
-        self.test_flatten(flattened)
+        # self.test_flatten(flattened)
 
         # nx.write_gpickle(flattened, f'./{gc.Router.__name__}_{gc.taskname}_{gc.benchmark_name[10:]}.gpickle')
 
@@ -90,15 +78,6 @@ class TaskCompiler():
         with open(os.path.join(gc.op_graph_buffer, "op_graph_{}.gpickle".format(gc.taskname)), "wb+") as f:
             pickle.dump(op_graph, f)
         self.op_grpah = op_graph
-
-    def test_avg_bandwidth(self, op_graph: MicroOpGraph):
-        total_flits = 0
-        cycles = op_graph.total_compute_cycles()
-        for u, v, eattr in op_graph.get_data().edges(data=True):
-            uattr, vattr = op_graph.get_data().nodes[u], op_graph.get_data().nodes[v]
-            if eattr["edge_type"] == "data" and uattr["p_pe"] != vattr["p_pe"]:
-                total_flits += eattr["size"] * uattr["cnt"]
-        print("bandwidth: {}".format(total_flits / cycles), file=stderr)
 
 
     def test_flatten(self, flattened: nx.DiGraph):
@@ -215,6 +194,8 @@ class TaskCompiler():
         ret = nx.DiGraph()
         G = deepcopy(op_graph.get_data())
 
+        cnts = np.asarray_chkfinite([nattr["cnt"] for _, nattr in G.nodes(data=True) if nattr["op_type"] == "worker"])
+
         for _, __, eattr in G.edges(data=True):
             eattr["priority"] = 55
             eattr["pkt"] = []
@@ -260,7 +241,9 @@ class TaskCompiler():
             sources = op_hash_to_node_hash[u]
             destinations = op_hash_to_node_hash[v]
             pkt = eattr["pkt"]
-            assert len(pkt) == len(sources)
+            if len(pkt) != len(sources):
+                print(len(pkt), len(sources))
+                assert len(pkt) == len(sources)
             if eattr["edge_type"] == "data":
                 assert len(sources) % len(destinations) == 0 or len(destinations) % len(sources) == 0
                 # one dest, multiple source

@@ -79,6 +79,7 @@ class TraceGenerator:
 
         cache = {}
         for pid, endpoints in data_pkt_endpoints.items():
+
             # Ignore unicast packets
             if len(endpoints["dst"]) == 1:
                 continue
@@ -89,6 +90,7 @@ class TraceGenerator:
                 cache[endpoints["fid"]] = mc_tree
             else:
                 mc_tree = cache[endpoints["fid"]]
+
             print("{} {} {}".format(pid, src, " ".join(map(str, dsts))), file=to)
             for seg_src, seg_dst in mc_tree.edges():
                 print("{} {}".format(seg_src, seg_dst), file=to)

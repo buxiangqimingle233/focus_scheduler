@@ -28,7 +28,7 @@ def plot_channel_load(op_graph: MicroOpGraph):
             passing_channels = path_router.getPath(src, dst)
             for c in passing_channels:
                 channels[c[0]][c[1]] += endpoints["total_bytes"]
-    # print(channels)
+
     board = np.full((gc.array_size, ), 0, dtype=float)
     channel_board = np.asarray_chkfinite(channels, dtype=float)
     # print("{} deviation: {}".format(gc.taskname, np.std(channel_board) / np.average(channel_board)), file=sys.stderr)
@@ -43,7 +43,6 @@ def plot_channel_load(op_graph: MicroOpGraph):
     top5 = board[idx]
     # print(sum(top5) / sum(board))
     # print(max(channel_board) / min([i for i in channel_board.tolist() if i != 0]))
-    print(np.std(channel_board) / np.average(channel_board))
     fig = sns.histplot(channel_board, bins=15)
     # board = board.reshape((gc.array_diameter, gc.array_diameter))
     # fig = sns.heatmap(data=board, cmap="RdBu_r", linewidths=0.3, annot=False)

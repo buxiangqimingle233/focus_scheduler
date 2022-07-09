@@ -49,18 +49,287 @@ bandwidth: 2.09161419194169
 wide_resnet50_2_b1w1024_32x32 deviation: 3.2097018351901854
 
 MAERI: 
-bandwidth: 0.869921232524671
-resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 2.151434379711486 compute cycle: 5603328.0, maeri cycle: 12055192.5, eyeriss_cycle: 11353792.0
-bandwidth: 0.5106451584077017
-bert-large_mnasnet_ssd_r34_b1w1024_32x32 2.1566223327064393 compute cycle: 1342864.0, maeri cycle: 2896050.4921875, eyeriss_cycle: 2722390.0
-bandwidth: 1.4803944600759418
-mobilenet_v3_large_b1w1024_32x32 2.913082261418581 compute cycle: 183035.0, maeri cycle: 533196.01171875, eyeriss_cycle: 396029.0
-bandwidth: 0.6786436822004379
-bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 2.564630020449369 compute cycle: 7716864.0, maeri cycle: 19790901.078125, eyeriss_cycle: 16189124.0
-bandwidth: 6.407835638066202
-resnet50_b1w1024_32x32 5.97369214189731 compute cycle: 1763328.0, maeri cycle: 10533578.6171875, eyeriss_cycle: 4741846.0
-bandwidth: 17.54329501915709
-bert_b1w1024_32x32 14.132318419240901 compute cycle: 41760.0, maeri cycle: 590165.6171875, eyeriss_cycle: 172502.0
-bandwidth: 4.18322838388338
-wide_resnet50_2_b1w1024_32x32 4.587853140013854 compute cycle: 4956672.0, maeri cycle: 22740483.19921875, eyeriss_cycle: 12137319.0
 
+bandwidth: 0.5197004313169464
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 deviation: 2.931479416642881
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 busy ratio: 0.13131311882656613
+bandwidth: 0.869921232524671
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 deviation: 3.5080976837569593
+bandwidth: 1.4803944600759418
+mobilenet_v3_large_b1w1024_32x32 deviation: 2.131633965490158
+mobilenet_v3_large_b1w1024_32x32 busy ratio: 0.07794907280903138
+bandwidth: 0.6802194518395037
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 deviation: 4.574064476789106
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 busy ratio: 0.23064323404681955
+bandwidth: 8.959386973180077
+bert_b1w1024_32x32 deviation: 2.129141036197558
+bert_b1w1024_32x32 busy ratio: 0.012356400428436365
+bandwidth: 6.407835638066202
+resnet50_b1w1024_32x32 deviation: 2.7953337665999713
+resnet50_b1w1024_32x32 busy ratio: 0.0821678320304207
+bandwidth: 4.18322838388338
+wide_resnet50_2_b1w1024_32x32 deviation: 3.2097018351901854
+
+
+bandwidth: 0.5197004313169464
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 deviation: 2.5033540299828463
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 busy ratio: 0.11154438798320475
+bandwidth: 0.869921232524671
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 deviation: 3.2403890305733425
+bandwidth: 1.4803944600759418
+mobilenet_v3_large_b1w1024_32x32 deviation: 2.131633965490158
+mobilenet_v3_large_b1w1024_32x32 busy ratio: 0.07467760646683451
+bandwidth: 0.6802194518395037
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 deviation: 4.014180031507263
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 busy ratio: 0.16090632281939596
+bandwidth: 8.959386973180077
+bert_b1w1024_32x32 deviation: 2.129141036197558
+bert_b1w1024_32x32 busy ratio: 0.004640141555336076
+bandwidth: 6.407835638066202
+resnet50_b1w1024_32x32 deviation: 2.7953337665999713
+resnet50_b1w1024_32x32 busy ratio: 0.05710462488612834
+bandwidth: 4.18322838388338
+wide_resnet50_2_b1w1024_32x32 deviation: 3.2097018351901854
+
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.6299296019168675
+bandwidth: 0.869921232524671
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 deviation: 3.6507862323904123
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 maeri utlization: 0.5758052464293034
+bandwidth: 0.5197004313169464
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 deviation: 2.604501392261178
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 busy ratio: 0.11154438798320475
+mobilenet_v3_large_b1w1024_32x32 maeri utlization: 0.4241217543967167
+bandwidth: 1.4803944600759418
+mobilenet_v3_large_b1w1024_32x32 deviation: 2.131633965490158
+mobilenet_v3_large_b1w1024_32x32 busy ratio: 0.07467760646683451
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.5278096720565937
+bandwidth: 0.6802194518395037
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 deviation: 3.8572990167378514
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 busy ratio: 0.16090632281939596
+bert_b1w1024_32x32 maeri utlization: 0.13196303837255752
+bandwidth: 8.959386973180077
+bert_b1w1024_32x32 deviation: 2.129141036197558
+bert_b1w1024_32x32 busy ratio: 0.004640141555336076
+resnet50_b1w1024_32x32 maeri utlization: 0.43377804487690796
+bandwidth: 6.407835638066202
+resnet50_b1w1024_32x32 deviation: 2.7953337665999713
+resnet50_b1w1024_32x32 busy ratio: 0.05710462488612834
+wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.43970581343436643
+bandwidth: 4.18322838388338
+wide_resnet50_2_b1w1024_32x32 deviation: 3.2097018351901854
+
+
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 eyeriss utlization: 0.6268540217730756
+bandwidth: 0.5197004313169464
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 deviation: 2.931479416642881
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 busy ratio: 0.11154438798320475
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 eyeriss utlization: 0.6850154187183076
+bandwidth: 0.869921232524671
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 deviation: 3.3017794805024128
+mobilenet_v3_large_b1w1024_32x32 eyeriss utlization: 0.48726388528838616
+bandwidth: 1.4803944600759418
+mobilenet_v3_large_b1w1024_32x32 deviation: 2.131633965490158
+mobilenet_v3_large_b1w1024_32x32 busy ratio: 0.07467760646683451
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 eyeriss utlization: 0.5806820181046489
+bandwidth: 0.6802194518395037
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 deviation: 3.8572990167378514
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 busy ratio: 0.16090632281939596
+bert_b1w1024_32x32 eyeriss utlization: 0.19728176555506463
+bandwidth: 8.959386973180077
+bert_b1w1024_32x32 deviation: 2.129141036197558
+bert_b1w1024_32x32 busy ratio: 0.004640141555336076
+resnet50_b1w1024_32x32 eyeriss utlization: 0.4949174397314103
+bandwidth: 6.407835638066202
+resnet50_b1w1024_32x32 deviation: 2.7953337665999713
+resnet50_b1w1024_32x32 busy ratio: 0.05710462488612834
+wide_resnet50_2_b1w1024_32x32 eyeriss utlization: 0.5115188212778614
+bandwidth: 4.18322838388338
+wide_resnet50_2_b1w1024_32x32 deviation: 3.2097018351901854
+
+bandwidth: 1.2238321799307958
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 1.3374978035791523 compute cycle: 36992.0, maeri cycle: 49476.71875, eyeriss_cycle: 47344.0
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 deviation: 2.857486200559601
+bandwidth: 0.21302689725503526
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 1.0524144007738803 compute cycle: 188272.0, maeri cycle: 198140.1640625, eyeriss_cycle: 196472.0
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 deviation: 3.1420314426310383
+bandwidth: 0.34732305517035106
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 1.0631048649206705 compute cycle: 147108.0, maeri cycle: 156391.23046875, eyeriss_cycle: 156249.0
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 deviation: 2.5783067293947353
+bandwidth: 0.5125529696643573
+resnet50_b1w1024_32x32 1.182138430805223 compute cycle: 118936.0, maeri cycle: 140598.81640625, eyeriss_cycle: 143555.0
+resnet50_b1w1024_32x32 deviation: 2.2208764296648917
+bandwidth: 0.6164909407308834
+mobilenet_v3_large_b1w1024_32x32 1.2535623022016924 compute cycle: 58614.0, maeri cycle: 73476.30078125, eyeriss_cycle: 75220.0
+mobilenet_v3_large_b1w1024_32x32 deviation: 2.2878004728776586
+bandwidth: 0.13584606241464772
+wide_resnet50_2_b1w1024_32x32 1.0428358377741547 compute cycle: 632672.0, maeri cycle: 659773.03515625, eyeriss_cycle: 663436.0
+wide_resnet50_2_b1w1024_32x32 deviation: 2.1284776191067865
+bandwidth: 2.3381642512077296
+bert_b1w1024_32x32 1.8319385810257074 compute cycle: 23184.0, maeri cycle: 42471.6640625, eyeriss_cycle: 49412.0
+bert_b1w1024_32x32 deviation: 2.261945783611638
+
+
+
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 maeri variation: 5.678606902925109
+bandwidth: 0.869921232524671
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 1.1023564924273574 compute cycle: 5603328.0, maeri cycle: 6176865.0, eyeriss_cycle: 6191616.0
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 deviation: 3.297351358388828
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 maeri variation: 6.346876034296564
+bandwidth: 0.5197004313169464
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 1.10401759259966 compute cycle: 1342864.0, maeri cycle: 1482545.48046875, eyeriss_cycle: 1488680.0
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 deviation: 2.931479416642881
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 maeri variation: 6.128231485519287
+bandwidth: 0.6802194518395037
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 1.3155061616512873 compute cycle: 7716864.0, maeri cycle: 10151582.140625, eyeriss_cycle: 10737680.0
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 deviation: 4.574064476789106
+mobilenet_v3_large_b1w1024_32x32 maeri variation: 5.154544580042023
+bandwidth: 1.4803944600759418
+mobilenet_v3_large_b1w1024_32x32 1.5502758181495342 compute cycle: 183035.0, maeri cycle: 283754.734375, eyeriss_cycle: 298869.0
+mobilenet_v3_large_b1w1024_32x32 deviation: 2.131633965490158
+resnet50_b1w1024_32x32 maeri variation: 5.602086230548901
+bandwidth: 6.407835638066202
+resnet50_b1w1024_32x32 3.027750868138259 compute cycle: 1763328.0, maeri cycle: 5338917.8828125, eyeriss_cycle: 6621208.0
+resnet50_b1w1024_32x32 deviation: 2.7953337665999713
+bert_b1w1024_32x32 maeri variation: 4.985477895775793
+bandwidth: 8.959386973180077
+bert_b1w1024_32x32 4.085967058788314 compute cycle: 83520.0, maeri cycle: 341259.96875, eyeriss_cycle: 439088.0
+bert_b1w1024_32x32 deviation: 2.129141036197558
+wide_resnet50_2_b1w1024_32x32 maeri variation: 5.650079135491519
+bandwidth: 4.18322838388338
+wide_resnet50_2_b1w1024_32x32 2.3038412188094655 compute cycle: 4956672.0, maeri cycle: 11419385.26171875, eyeriss_cycle: 13849098.0
+wide_resnet50_2_b1w1024_32x32 deviation: 3.2097018351901854
+
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 eyeriss variation: 3.235275941022414
+bandwidth: 0.5197004313169464
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 1.10401759259966 compute cycle: 1342864.0, maeri cycle: 1482545.48046875, eyeriss_cycle: 1488680.0
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 deviation: 2.6146627143210632
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 eyeriss variation: 4.127687026214042
+bandwidth: 0.869921232524671
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 1.1023564924273574 compute cycle: 5603328.0, maeri cycle: 6176865.0, eyeriss_cycle: 6191616.0
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 deviation: 3.6158289042565337
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 eyeriss variation: 5.139069470460568
+bandwidth: 0.6802194518395037
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 1.3155061616512873 compute cycle: 7716864.0, maeri cycle: 10151582.140625, eyeriss_cycle: 10711568.0
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 deviation: 4.842555456184388
+mobilenet_v3_large_b1w1024_32x32 eyeriss variation: 3.389718064244681
+bandwidth: 1.4803944600759418
+mobilenet_v3_large_b1w1024_32x32 1.5502758181495342 compute cycle: 183035.0, maeri cycle: 283754.734375, eyeriss_cycle: 298869.0
+mobilenet_v3_large_b1w1024_32x32 deviation: 2.235171307924137
+resnet50_b1w1024_32x32 eyeriss variation: 3.321280404041011
+bandwidth: 6.407835638066202
+resnet50_b1w1024_32x32 3.027750868138259 compute cycle: 1763328.0, maeri cycle: 5338917.8828125, eyeriss_cycle: 6621208.0
+resnet50_b1w1024_32x32 deviation: 2.749835156475631
+bert_b1w1024_32x32 eyeriss variation: 3.212454850094943
+bandwidth: 8.959386973180077
+bert_b1w1024_32x32 4.085967058788314 compute cycle: 83520.0, maeri cycle: 341259.96875, eyeriss_cycle: 439088.0
+bert_b1w1024_32x32 deviation: 2.168634649213505
+wide_resnet50_2_b1w1024_32x32 eyeriss variation: 3.5697658143354762
+bandwidth: 4.18322838388338
+wide_resnet50_2_b1w1024_32x32 2.3038412188094655 compute cycle: 4956672.0, maeri cycle: 11419385.26171875, eyeriss_cycle: 13849098.0
+wide_resnet50_2_b1w1024_32x32 deviation: 3.298887186502795
+
+
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 eyeriss variation: 3.8747153695107603
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 total flits: 4874454.0
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 1.1023564924273574 compute cycle: 5603328.0, maeri cycle: 6176865.0, eyeriss_cycle: 6191616.0
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 deviation: 3.006069169672558
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 eyeriss variation: 3.4297123535723544
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 total flits: 697887.0
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 1.10401759259966 compute cycle: 1342864.0, maeri cycle: 1482545.48046875, eyeriss_cycle: 1488680.0
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 deviation: 2.8364267457823074
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 eyeriss variation: 4.736328858366297
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 total flits: 5249161.0
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 1.3155061616512873 compute cycle: 7716864.0, maeri cycle: 10151582.140625, eyeriss_cycle: 10708880.0
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 deviation: 4.006094047447372
+mobilenet_v3_large_b1w1024_32x32 eyeriss variation: 3.389718064244681
+mobilenet_v3_large_b1w1024_32x32 total flits: 270964.0
+mobilenet_v3_large_b1w1024_32x32 1.5502758181495342 compute cycle: 183035.0, maeri cycle: 283754.734375, eyeriss_cycle: 298869.0
+mobilenet_v3_large_b1w1024_32x32 deviation: 2.235171307924137
+resnet50_b1w1024_32x32 eyeriss variation: 3.321280404041011
+resnet50_b1w1024_32x32 total flits: 11299116.0
+resnet50_b1w1024_32x32 3.027750868138259 compute cycle: 1763328.0, maeri cycle: 5338917.8828125, eyeriss_cycle: 6621208.0
+resnet50_b1w1024_32x32 deviation: 2.749835156475631
+bert_b1w1024_32x32 eyeriss variation: 3.212454850094943
+bert_b1w1024_32x32 total flits: 748288.0
+bert_b1w1024_32x32 4.085967058788314 compute cycle: 83520.0, maeri cycle: 341259.96875, eyeriss_cycle: 439088.0
+bert_b1w1024_32x32 deviation: 2.168634649213505
+wide_resnet50_2_b1w1024_32x32 eyeriss variation: 3.5697658143354762
+wide_resnet50_2_b1w1024_32x32 total flits: 20734891.0
+wide_resnet50_2_b1w1024_32x32 2.3038412188094655 compute cycle: 4956672.0, maeri cycle: 11419385.26171875, eyeriss_cycle: 13849098.0
+wide_resnet50_2_b1w1024_32x32 deviation: 3.298887186502795
+
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.14433521588831988
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 1.1023564924273574 compute cycle: 5603328.0, maeri cycle: 6176865.0, eyeriss_cycle: 6191616.0
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 maeri utlization: 0.04775364967082592
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 1.10401759259966 compute cycle: 1342864.0, maeri cycle: 1482545.48046875, eyeriss_cycle: 1488680.0
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.1127394668981371
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 1.3155061616512873 compute cycle: 7716864.0, maeri cycle: 10151582.140625, eyeriss_cycle: 10711568.0
+mobilenet_v3_large_b1w1024_32x32 maeri utlization: 0.03856848155263897
+mobilenet_v3_large_b1w1024_32x32 1.5502758181495342 compute cycle: 183035.0, maeri cycle: 283754.734375, eyeriss_cycle: 298869.0
+resnet50_b1w1024_32x32 maeri utlization: 0.23215721553712595
+resnet50_b1w1024_32x32 3.027750868138259 compute cycle: 1763328.0, maeri cycle: 5338917.8828125, eyeriss_cycle: 6621208.0
+bert_b1w1024_32x32 maeri utlization: 0.0891577697039595
+bert_b1w1024_32x32 4.085967058788314 compute cycle: 83520.0, maeri cycle: 341259.96875, eyeriss_cycle: 439088.0
+
+
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.00240540275732041
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 1.1023564924273574 compute cycle: 5603328.0, maeri cycle: 6176865.0, eyeriss_cycle: 6191616.0
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 maeri utlization: 0.003554851243966441
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 1.10401759259966 compute cycle: 1342864.0, maeri cycle: 1482545.48046875, eyeriss_cycle: 1488680.0
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.0014526277539417653
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 1.3155061616512873 compute cycle: 7716864.0, maeri cycle: 10151582.140625, eyeriss_cycle: 10708880.0
+mobilenet_v3_large_b1w1024_32x32 maeri utlization: 0.001059090769674774
+mobilenet_v3_large_b1w1024_32x32 1.5502758181495342 compute cycle: 183035.0, maeri cycle: 283754.734375, eyeriss_cycle: 298869.0
+resnet50_b1w1024_32x32 maeri utlization: 0.0002687791832761935
+resnet50_b1w1024_32x32 3.027750868138259 compute cycle: 1763328.0, maeri cycle: 5338917.8828125, eyeriss_cycle: 6621208.0
+bert_b1w1024_32x32 maeri utlization: 0.00014923158077997025
+bert_b1w1024_32x32 4.085967058788314 compute cycle: 83520.0, maeri cycle: 341259.96875, eyeriss_cycle: 439088.0
+wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.0003767221953047315
+wide_resnet50_2_b1w1024_32x32 2.3038412188094655 compute cycle: 4956672.0, maeri cycle: 11419385.26171875, eyeriss_cycle: 13849098.0
+
+
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.013171831141690371
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 1.1023564924273574 compute cycle: 5603328.0, maeri cycle: 6176865.0, eyeriss_cycle: 6191616.0
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 maeri utlization: 0.012639471089658459
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 1.10401759259966 compute cycle: 1342864.0, maeri cycle: 1482545.48046875, eyeriss_cycle: 1488680.0
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.004324101221035953
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 1.3155061616512873 compute cycle: 7716864.0, maeri cycle: 10151582.140625, eyeriss_cycle: 10737680.0
+mobilenet_v3_large_b1w1024_32x32 maeri utlization: 0.0022500185646202667
+mobilenet_v3_large_b1w1024_32x32 1.5502758181495342 compute cycle: 183035.0, maeri cycle: 283754.734375, eyeriss_cycle: 298869.0
+resnet50_b1w1024_32x32 maeri utlization: 0.0006475997262936992
+resnet50_b1w1024_32x32 3.027750868138259 compute cycle: 1763328.0, maeri cycle: 5338917.8828125, eyeriss_cycle: 6621208.0
+bert_b1w1024_32x32 maeri utlization: 0.0002616663334224136
+bert_b1w1024_32x32 4.085967058788314 compute cycle: 83520.0, maeri cycle: 341259.96875, eyeriss_cycle: 439088.0
+wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.0007715270559840901
+wide_resnet50_2_b1w1024_32x32 2.3038412188094655 compute cycle: 4956672.0, maeri cycle: 11419385.26171875, eyeriss_cycle: 13849098.0
+
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.35380111028609096
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 1.4290712325893649 compute cycle: 5603328.0, maeri cycle: 8007554.8515625, eyeriss_cycle: 6191616.0
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 maeri utlization: 0.34544098682744756
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 1.426555839212869 compute cycle: 1342864.0, maeri cycle: 1915670.48046875, eyeriss_cycle: 1488680.0
+mobilenet_v3_large_b1w1024_32x32 maeri utlization: 0.19878307333602138
+mobilenet_v3_large_b1w1024_32x32 3.2615714719862323 compute cycle: 183035.0, maeri cycle: 596981.734375, eyeriss_cycle: 298869.0
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.30775031058565566
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 2.299125414238867 compute cycle: 7716864.0, maeri cycle: 17742038.140625, eyeriss_cycle: 10708880.0
+resnet50_b1w1024_32x32 maeri utlization: 0.22977456932387647
+resnet50_b1w1024_32x32 9.36984037162258 compute cycle: 1763328.0, maeri cycle: 16522101.8828125, eyeriss_cycle: 6621208.0
+bert_b1w1024_32x32 maeri utlization: 0.03601772610999446
+bert_b1w1024_32x32 13.743294644995212 compute cycle: 83520.0, maeri cycle: 1147839.96875, eyeriss_cycle: 439088.0
+wide_resnet50_2_b1w1024_32x32 maeri utlization: 0.21601445082993087
+wide_resnet50_2_b1w1024_32x32 6.3837347441425925 compute cycle: 4956672.0, maeri cycle: 31642079.26171875, eyeriss_cycle: 13849098.0
+
+
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 eyeriss utlization: 0.4822992534641052
+bert-large_mnasnet_ssd_r34_b1w1024_32x32 1.426555839212869 compute cycle: 1342864.0, maeri cycle: 1915670.48046875, eyeriss_cycle: 1707404.0
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 eyeriss utlization: 0.5151284066905395
+resnet50_resnext50_32x4d_vgg16_wide_resnet50_2_b1w1024_32x32 1.4290712325893649 compute cycle: 5603328.0, maeri cycle: 8007554.8515625, eyeriss_cycle: 7074048.0
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 eyeriss utlization: 0.44207697876652013
+bert-large_inception_unet_wide_resnet50_2_b1w1024_32x32 2.299125414238867 compute cycle: 7716864.0, maeri cycle: 17742038.140625, eyeriss_cycle: 15268904.0
+mobilenet_v3_large_b1w1024_32x32 eyeriss utlization: 0.3301091786466252
+mobilenet_v3_large_b1w1024_32x32 3.2615714719862323 compute cycle: 183035.0, maeri cycle: 596981.734375, eyeriss_cycle: 472619.0
+resnet50_b1w1024_32x32 eyeriss utlization: 0.34888715650428553
+resnet50_b1w1024_32x32 9.36984037162258 compute cycle: 1763328.0, maeri cycle: 16522101.8828125, eyeriss_cycle: 13908028.0
+bert_b1w1024_32x32 eyeriss utlization: 0.09281599373315863
+bert_b1w1024_32x32 13.743294644995212 compute cycle: 83520.0, maeri cycle: 1147839.96875, eyeriss_cycle: 972440.0
+wide_resnet50_2_b1w1024_32x32 eyeriss utlization: 0.3584895550126349
+wide_resnet50_2_b1w1024_32x32 6.3837347441425925 compute cycle: 4956672.0, maeri cycle: 31642079.26171875, eyeriss_cycle: 27187638.0

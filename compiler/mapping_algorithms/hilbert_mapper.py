@@ -62,6 +62,7 @@ class HilbertMapper(Mapper):
             if self.virtualization:
                 self.idx = self.idx % len(self.hilbert_curve)
             if pe in self.cores:
+                # return sample(self.cores, 1)[0]
                 return pe
 
     def __map_to_mem_ctrl(self, selected_cluster):

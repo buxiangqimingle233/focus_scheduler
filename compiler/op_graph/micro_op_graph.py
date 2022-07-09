@@ -1,5 +1,4 @@
 import re
-from this import d
 import pandas as pd
 import networkx as nx
 import numpy as np
@@ -9,6 +8,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from functools import reduce
 from compiler import global_control as gc
+from sys import stderr
+from compiler.focus.individual import XYRouter
+import random
 
 # traffic = pd.DataFrame(columns=["layer", "src", "dst", "interval", "flit", "counts"])
 
@@ -166,97 +168,6 @@ class MicroOpGraph:
     def get_operator_type(self, node) -> str:
         return self.graph.nodes[node]["op_type"]
 
-    def total_compute_cycles(self) -> int:
-        # subgraph = nx.subgraph_view(self.graph, filter_node=lambda x: self.graph.nodes[x]["node_type"] == "worker")
-        # macs = reduce(lambda x, y: )
-        # cycles = [nattr["delay"] * nattr["cnt"] for _, nattr in self.graph.nodes(data=True) if nattr["op_type"] == "worker"]
-        # return sum(cycles)
-
-        wg = copy.deepcopy(self.graph)
-        for u, _, attr in wg.edges(data=True):
-            uattr = wg.nodes[u]
-            if uattr["op_type"] == "worker":
-                attr["cycle"] = uattr["delay"] * uattr["cnt"]
-            # elif uattr["op_type"] == "wsrc" or uattr["op_type"] == "insrc":
-            #     attr["cycle"] = uattr["delay"] * uattr["cnt"]
-            else:
-                attr["cycle"] = 0
-            uattr["cycle"] = attr["cycle"]
-        # path = nx.dag_longest_path(wg, weight="cycle", default_weight=0)
-        # cycle = 0
-        # vis = {}
-        # for op in path:
-        #     if wg.nodes[op]["p_pe"] not in vis:
-        #         cycle += wg.nodes[op]["cycle"]
-        #         vis.add(wg.nodes[op]["p_pe"])
-        # return cycle
-
-        cycle = nx.dag_longest_path_length(wg, weight="cycle", default_weight=0)
-        return cycle
-
-    def ideal_network_cycles(self) -> int:
-        # subgraph = nx.subgraph_view(self.graph, filter_node=lambda x: self.graph.nodes[x]["node_type"] == "worker")
-        # macs = reduce(lambda x, y: )
-        # cycles = [nattr["delay"] * nattr["cnt"] for _, nattr in self.graph.nodes(data=True) if nattr["op_type"] == "worker"]
-        # return sum(cycles)
-        mc_tree_avg_cycle = 1 + sum([i * 1 / 2**i for i in range(7)])
-        rd_tree_avg_cycle = 1 + sum([i * 1 / 2**i for i in range(11)])
-
-        wg = copy.deepcopy(self.graph)
-        for u, v, attr in wg.edges(data=True):
-            uattr = wg.nodes[u]
-            vattr = wg.nodes[v]
-            if uattr["op_type"] == "worker" and uattr["p_pe"] != vattr["p_pe"]:
-                attr["cycle"] = uattr["delay"] * uattr["cnt"] \
-                              + attr["size"] * uattr["cnt"] * mc_tree_avg_cycle \
-                              + attr["size"] * uattr["cnt"] * rd_tree_avg_cycle
-            elif (uattr["op_type"] == "insrc" or uattr["op_type"] == "wsrc") and uattr["p_pe"] != vattr["p_pe"]:
-                attr["cycle"] = attr["size"] * uattr["cnt"] * mc_tree_avg_cycle
-            else:
-                attr["cycle"] = 0
-            uattr["cycle"] = attr["cycle"]
-
-        # path = nx.dag_longest_path(wg, weight="cycle", default_weight=0)
-        # cycle = 0
-        # vis = {}
-        # for op in path:
-        #     if wg.nodes[op]["p_pe"] not in vis:
-        #         cycle += wg.nodes[op]["cycle"]
-        #         vis.add(wg.nodes[op]["p_pe"])
-        # return cycle
-
-        cycle = nx.dag_longest_path_length(wg, weight="cycle", default_weight=0)
-        return cycle
-
-    def eyeriss_network_cycles(self) -> int:
-        same_cluster_latency = 1
-        diff_cluster_latency = 4
-        wg = copy.deepcopy(self.graph)
-        for u, v, attr in wg.edges(data=True):
-            uattr = wg.nodes[u]
-            vattr = wg.nodes[v]
-
-            if uattr["op_type"] == "worker" and uattr["p_pe"] != vattr["p_pe"]:
-                if uattr["p_pe"] % 16 == vattr["p_pe"] % 16:
-                    latency = same_cluster_latency
-                else:
-                    latency = diff_cluster_latency
-                attr["cycle"] = uattr["delay"] * uattr["cnt"] + attr["size"] * uattr["cnt"] * latency
-
-            elif uattr["op_type"] == "insrc" or uattr["op_type"] == "wsrc" and uattr["p_pe"] != vattr["p_pe"]:
-                if uattr["p_pe"] % 16 == vattr["p_pe"] % 16:
-                    latency = same_cluster_latency
-                else:
-                    latency = diff_cluster_latency
-                attr["cycle"] = attr["size"] * uattr["cnt"] * latency
-
-            else:
-                attr["cycle"] = 0
-            uattr["cycle"] = attr["cycle"]
-       
-        cycle = nx.dag_longest_path_length(wg, weight="cycle", default_weight=0)
-        return cycle 
-
     def get_flow_endpoints(self) -> dict:
         '''Get data packets to send ( unicast + multicasat )
             Return: {fid: {"src": src, "dst": [d1, d2], "total_bytes": bytes}}
@@ -328,3 +239,200 @@ class MicroOpGraph:
         heatmap = fig.get_figure()
         heatmap.savefig(fig_path, dpi=500)
         plt.close()
+    
+    # Experiment codes
+
+    def total_compute_cycles(self) -> int:
+        # subgraph = nx.subgraph_view(self.graph, filter_node=lambda x: self.graph.nodes[x]["node_type"] == "worker")
+        # macs = reduce(lambda x, y: )
+        # cycles = [nattr["delay"] * nattr["cnt"] for _, nattr in self.graph.nodes(data=True) if nattr["op_type"] == "worker"]
+        # return sum(cycles)
+
+        wg = copy.deepcopy(self.graph)
+        for u, _, attr in wg.edges(data=True):
+            uattr = wg.nodes[u]
+            if uattr["op_type"] == "worker":
+                attr["cycle"] = uattr["delay"] * uattr["cnt"]
+            # elif uattr["op_type"] == "wsrc" or uattr["op_type"] == "insrc":
+            #     attr["cycle"] = uattr["delay"] * uattr["cnt"]
+            else:
+                attr["cycle"] = 0
+            uattr["cycle"] = attr["cycle"]
+        # path = nx.dag_longest_path(wg, weight="cycle", default_weight=0)
+        # cycle = 0
+        # vis = {}
+        # for op in path:
+        #     if wg.nodes[op]["p_pe"] not in vis:
+        #         cycle += wg.nodes[op]["cycle"]
+        #         vis.add(wg.nodes[op]["p_pe"])
+        # return cycle
+
+        cycle = nx.dag_longest_path_length(wg, weight="cycle", default_weight=0)
+        return cycle
+
+    def evaluate_maeri(self) -> int:
+        # subgraph = nx.subgraph_view(self.graph, filter_node=lambda x: self.graph.nodes[x]["node_type"] == "worker")
+        # macs = reduce(lambda x, y: )
+        # cycles = [nattr["delay"] * nattr["cnt"] for _, nattr in self.graph.nodes(data=True) if nattr["op_type"] == "worker"]
+        # return sum(cycles)
+        mc_tree_avg_cycle = 10 + sum([i * 1 / 2**i for i in range(7)])
+        rd_tree_avg_cycle = 10 + sum([i * 1 / 2**i for i in range(11)])
+
+        wg = copy.deepcopy(self.graph)
+        for _, attr in wg.nodes(data=True):
+            attr["waiting"] = 0
+        for u, v, attr in wg.edges(data=True):
+            uattr = wg.nodes[u]
+            vattr = wg.nodes[v]
+            if uattr["op_type"] == "worker" and uattr["p_pe"] != vattr["p_pe"]:
+                attr["cycle"] = uattr["delay"] * uattr["cnt"] \
+                              + attr["size"] * uattr["cnt"] * mc_tree_avg_cycle \
+                              + attr["size"] * uattr["cnt"] * rd_tree_avg_cycle
+            elif (uattr["op_type"] == "insrc" or uattr["op_type"] == "wsrc") and uattr["p_pe"] != vattr["p_pe"]:
+                attr["cycle"] = attr["size"] * uattr["cnt"] * mc_tree_avg_cycle
+            else:
+                attr["cycle"] = 0
+
+            if vattr["op_type"] == "worker" and attr["edge_type"] == "data":
+                vattr["waiting"] += attr["size"] * uattr["cnt"] * (mc_tree_avg_cycle + rd_tree_avg_cycle)
+                # vattr["waiting"] = max(vattr["waiting"], attr["size"] * (mc_tree_avg_cycle + rd_tree_avg_cycle))
+            if uattr["op_type"] == "worker" and attr["edge_type"] == "data":
+                uattr["waiting"] += attr["size"] * uattr["cnt"] * rd_tree_avg_cycle
+            uattr["cycle"] = attr["cycle"]
+
+        def unbalance_tree(list):
+            assert(len(list) == 1024), "tree size illegal!"
+            edge = []
+            for level in range(1, 11):
+                edge_num = pow(2, level)
+                for i in range(edge_num):
+                    edge.append(sum(list[i * pow(2, 10 - level) : (i + 1) * pow(2, 10 - level)]))
+            # print(edge)
+            return np.std(edge) / np.mean(edge)
+        
+        in_loads = [0 for _ in range(gc.array_size)]
+        out_loads = [0 for _ in range(gc.array_size)]
+        for u, v, attr in wg.edges(data=True):
+            if attr["edge_type"] == "data":
+                uattr, vattr = wg.nodes[u], wg.nodes[v]
+                size = attr["size"] * uattr["cnt"]
+                in_loads[vattr["p_pe"]] += size
+                in_loads[uattr["p_pe"]] += size
+        # print("{} maeri variation: {}".format(gc.taskname, unbalance_tree(in_loads)), file=stderr)
+        computations = np.zeros((1024))
+        waitings = np.zeros((1024))
+        for _, attr in wg.nodes(data=True):
+            if attr["op_type"] == "worker":
+                p_pe = attr["p_pe"]
+                computations[p_pe] += attr["delay"] * attr["cnt"]
+                waitings[p_pe] += attr["waiting"]
+        idx = np.nonzero(computations)
+        computations = computations[idx]
+        waitings = waitings[idx]
+        # gc.debug_show(computations)
+
+        # utils = [attr["delay"] * attr["cnt"] / (attr["delay"] * attr["cnt"] + attr["waiting"]) for _, attr in wg.nodes(data=True) if attr["op_type"] == "worker"]
+        utils = computations / (computations + waitings)
+        utils = np.asarray_chkfinite(utils)
+        print("{} maeri utlization: {}".format(gc.taskname, np.average(utils)), file=stderr)
+
+        # gc.debug_show(np.average(utils))
+
+        # path = nx.dag_longest_path(wg, weight="cycle", default_weight=0)
+        # cycle = 0
+        # vis = {}
+        # for op in path:
+        #     if wg.nodes[op]["p_pe"] not in vis:
+        #         cycle += wg.nodes[op]["cycle"]
+        #         vis.add(wg.nodes[op]["p_pe"])
+        # return cycle
+
+        cycle = nx.dag_longest_path_length(wg, weight="cycle", default_weight=0)
+        return cycle
+
+    def evaluate_eyeriss(self) -> int:
+        same_cluster_latency = 2
+        diff_cluster_latency = 10
+        wg = copy.deepcopy(self.graph)
+        for _, attr in wg.nodes(data=True):
+            attr["waiting"] = 0
+        for u, v, attr in wg.edges(data=True):
+            uattr = wg.nodes[u]
+            vattr = wg.nodes[v]
+
+            if uattr["op_type"] == "worker" and uattr["p_pe"] != vattr["p_pe"]:
+                if uattr["p_pe"] % 16 == vattr["p_pe"] % 16:
+                    latency = same_cluster_latency
+                else:
+                    latency = diff_cluster_latency
+                attr["cycle"] = uattr["delay"] * uattr["cnt"] + attr["size"] * uattr["cnt"] * latency
+
+            elif uattr["op_type"] == "insrc" or uattr["op_type"] == "wsrc" and uattr["p_pe"] != vattr["p_pe"]:
+                if uattr["p_pe"] % 16 == vattr["p_pe"] % 16:
+                    latency = same_cluster_latency
+                else:
+                    latency = diff_cluster_latency
+                attr["cycle"] = attr["size"] * uattr["cnt"] * latency
+
+            else:
+                attr["cycle"] = 0
+
+            if vattr["op_type"] == "worker"  and attr["edge_type"] == "data":
+                vattr["waiting"] += attr["size"] * uattr["cnt"] * latency
+            if uattr["op_type"] == "worker"  and attr["edge_type"] == "data":
+                uattr["waiting"] += attr["size"] * uattr["cnt"] * latency
+
+            uattr["cycle"] = attr["cycle"]
+
+            
+        channels = np.zeros((64, 4, 16 + 6))    # 64 clusters * 4 router * (16 + 4) channels
+        flows = self.get_flow_endpoints()
+        path_router = XYRouter((gc.array_diameter, gc.array_diameter))
+        for pid, endpoints in flows.items():
+            router = random.randint(0, 3)
+            src_cluster = endpoints["src"] // 16
+            dst_clusters = [i // 16 for i in endpoints["dst"]]
+            for dc in dst_clusters:
+                passing_channels = path_router.getPath(src_cluster, dc)
+                for c in passing_channels:
+                    cluster = c[0]
+                    channel = c[1]
+                    channels[cluster, router, channel] += endpoints["total_bytes"]
+            src_local_id = endpoints["src"] % 16 + 6
+            dst_locals_id = [i % 16 + 6 for i in endpoints["dst"]]
+
+            channels[src_cluster][router][src_local_id] += endpoints["total_bytes"]
+            for di, dc in zip(dst_locals_id, dst_clusters):
+                channels[dc][router][di] += endpoints["total_bytes"]
+        variation = np.std(channels) / np.average(channels)
+        # print("{} eyeriss variation: {}".format(gc.taskname, variation), file=stderr)
+        # gc.debug_show(np.std(channels) / np.average(channels))
+        computations = np.zeros((1024))
+        waitings = np.zeros((1024))
+        for _, attr in wg.nodes(data=True):
+            if attr["op_type"] == "worker":
+                p_pe = attr["p_pe"]
+                computations[p_pe] += attr["delay"] * attr["cnt"]
+                waitings[p_pe] += attr["waiting"]
+        idx = np.nonzero(computations)
+        computations = computations[idx]
+        waitings = waitings[idx]
+        utils = computations / (computations + waitings)
+        # utils = np.asarray_chkfinite(utils)
+        print("{} eyeriss utlization: {}".format(gc.taskname, np.average(utils)), file=stderr)
+
+        # utils = [attr["delay"] * attr["cnt"] / (attr["delay"] * attr["cnt"] + attr["waiting"]) for _, attr in wg.nodes(data=True) if attr["op_type"] == "worker"]
+        # utils = np.asarray_chkfinite(utils)
+        # print("{} eyeriss utlization: {}".format(gc.taskname, np.average(utils)), file=stderr)
+
+        cycle = nx.dag_longest_path_length(wg, weight="cycle", default_weight=0)
+        return cycle 
+    
+    def total_injected_flits(self):
+        total_flits = 0
+        cycles = self.op_graph.total_compute_cycles()
+        for u, v, eattr in self.op_graph.get_data().edges(data=True):
+            uattr, vattr = self.op_graph.get_data().nodes[u], self.op_graph.get_data().nodes[v]
+            if eattr["edge_type"] == "data" and uattr["p_pe"] != vattr["p_pe"]:
+                total_flits += eattr["size"] * uattr["cnt"]
+        print("{} total flits: {}".format(gc.taskname, total_flits), file=stderr)

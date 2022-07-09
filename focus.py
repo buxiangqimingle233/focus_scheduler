@@ -120,6 +120,7 @@ def run_single_task(args):
         compute_cycle = toolchain.get_compute_cycle() # * gc.overclock
         maeri_cycle = toolchain.get_maeri_cycle()
         eyeriss_cycle = toolchain.get_eyeriss_cycle()
+
         print("{} {} compute cycle: {}, maeri cycle: {}, eyeriss_cycle: {}" \
               .format(gc.taskname, maeri_cycle/compute_cycle, compute_cycle, maeri_cycle, eyeriss_cycle), file=stderr)
 
@@ -127,6 +128,14 @@ def run_single_task(args):
         plot_channel_load(toolchain.get_working_graph())
         # plot message size distribution
         plot_msg_size_dist(toolchain.get_working_graph())
+
+    # try:
+    #     data_path = os.path.join(gc.op_graph_buffer, "core_busy_ratio_{}_{}.npy".format(gc.taskname, gc.benchmark_name[10:]))
+    #     busy_ratio = np.load(data_path)
+    #     busy_ratio = np.asarray_chkfinite([i for i in busy_ratio if i > 0.001])
+    #     print("{} busy ratio: {}".format(gc.taskname, np.average(busy_ratio)), file=stderr)
+    # except:
+    #     pass
 
     # Invoke simulator
     if gc.simulate_baseline:
