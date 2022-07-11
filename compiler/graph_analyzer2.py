@@ -6,10 +6,12 @@ from routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, Wh
 import matplotlib.pyplot as plt
 import functools
 import argparse
+from sys import stderr
 
 import time
 
 time_start = time.time()
+args = None
 
 def getArgumentParser():
     example_text = '''example:
@@ -29,6 +31,7 @@ def getArgumentParser():
                         default=8, help="Diameter of the reticle array")
     parser.add_argument("-rc", "--reticle_cycle", dest="rc", type=int, metavar="8",
                         default=8, help="cycles for transmitting a flit between reticles")
+    parser.add_argument("-debug", dest="debug", action="store_true")
     return parser
 
 
@@ -58,6 +61,9 @@ class Graph_analyzer:
         self.reticle_cycle = reticle_cycle
         self.multi_task_per_core = multi_task_per_core
         self.edge_occupied = {}
+        self.edge_occupied_sum = {}
+        self.edge_occupied_max = {}
+
         self.p_node_occupied = {}
         if not user_defined_router:
             self.router = router(self.diameter)
@@ -72,6 +78,7 @@ class Graph_analyzer:
         self.channel_loads = {}
         self.size_length = 0
         self.raw_graph = copy.deepcopy(self.graph)
+        self.updata_cnt = 0
 
         
 
@@ -91,6 +98,9 @@ class Graph_analyzer:
             for j in range(self.diameter**2):
                 if (abs(i-j) == 1 or abs(i-j) == self.diameter) :
                     self.edge_occupied[(i, j)] = []
+                    if args.debug:
+                        self.edge_occupied_sum[(i, j)] = 0
+                        self.edge_occupied_max[(i, j)] = 0
 
         # print('init_graph end:', time.time()-time_start)
         return self.graph, topo_node_list
@@ -110,6 +120,7 @@ class Graph_analyzer:
     def analyze(self, critical_path = False):
         self.graph, topo_node_list = self.init_graph()
         self.max_time = 0
+        self.updata_cnt = 0
         
         fid_dict = {}
         counter = 0
@@ -126,6 +137,7 @@ class Graph_analyzer:
                         self.graph = self.update(v, id, e, dest, self.graph)
 
                     fid_dict[id] = True
+                    self.updata_cnt += 1
 
                     # counter += 1
                     # if counter % 1000 == 0:
@@ -190,6 +202,16 @@ class Graph_analyzer:
 
 
         for e in edges_list:
+            if args.debug:
+                # print('update cnt: ', self.updata_cnt)
+                # print('edge: ', e)
+                # print('occupied periods: ', self.edge_occupied[e])
+                # print('current period: ', (temp_edge_occupied[e][0] + max_waiting_time, temp_edge_occupied[e][1] + max_waiting_time))
+                # print()
+                self.edge_occupied_max[e] = max(self.edge_occupied_max[e], temp_edge_occupied[e][1] + max_waiting_time)
+                self.edge_occupied_sum[e] += temp_edge_occupied[e][1] - temp_edge_occupied[e][0]
+
+
             self.edge_occupied[e].append((temp_edge_occupied[e][0] + max_waiting_time, temp_edge_occupied[e][1] + max_waiting_time))
             self.edge_occupied[e].sort(key=first_value)
             if len(self.edge_occupied[e]) > 10:
@@ -285,6 +307,15 @@ class Graph_analyzer:
             self.max_time = max(self.max_time, G_backup.nodes[d]['start'] + G_backup.nodes[d]['delay'])
         return G_backup
 
+    def print_channel_utilization(self):
+
+        for i in range(self.diameter**2):
+            for j in range(self.diameter**2):
+                if ((abs(i%self.diameter-j%self.diameter) == 1 and abs(i-j) == 1) or abs(i-j) == self.diameter) :
+                    self.edge_occupied[(i, j)] = []
+                    print(i, '-', j, ': ', self.edge_occupied_sum[(i, j)] / max(self.edge_occupied_max[(i, j)], 1), sep='')
+
+
 
 
 
@@ -297,11 +328,13 @@ if __name__ == "__main__":
     graph = nx.read_gpickle(args.of)
 
     print('graph edges num:', len(graph.edges()))
-    print('graph nodes num:', len(graph.edges()))
+    print('graph nodes num:', len(graph.nodes()))
 
 
     a = Graph_analyzer(diameter=args.d, reticle_size=args.rs, reticle_cycle=args.rc, graph=graph, router=Steiner_TreeRouter, multi_task_per_core=True)
-    print("total cycles:", a.analyze())
-    print("critical cycles:", a.analyze(critical_path=True))
+    print("total cycles:", a.analyze(), file=stderr)
+    if args.debug:
+        a.print_channel_utilization()
+    print("critical cycles:", a.analyze(critical_path=True), file=stderr)
 
     
