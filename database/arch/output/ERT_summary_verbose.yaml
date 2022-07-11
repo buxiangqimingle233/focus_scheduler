@@ -1,0 +1,1204 @@
+ERT_summary:
+  version: 0.3
+  table_summary:
+  - name: System.DRAM
+    actions:
+    - name: read
+      energy: 512
+    - name: write
+      energy: 512
+    - name: idle
+      energy: 0
+    primitive_estimation(s):
+    - System.DRAM:
+        estimator: Cacti
+  - name: System.ws[0..255].PE[0..15].PEInputBuffer
+    actions:
+    - name: write
+      average_energy: 0.14561
+      max_energy: 0.23632
+      min_energy: 0.0549
+    - name: read
+      average_energy: 0.14561
+      max_energy: 0.23632
+      min_energy: 0.0549
+    - name: idle
+      energy: 0.018
+    primitive_estimation(s):
+    - action_name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.0549
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 11.11%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 78.05%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 10.84%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 0.19298
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        energy: 0.14418
+        action_share: 1
+        interpreted_energy: 0.14418
+        percentage: 74.71%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 22.2%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 3.08%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 0.09824
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        energy: 0.04944
+        action_share: 1
+        interpreted_energy: 0.04944
+        percentage: 50.33%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 43.62%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 6.06%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 0.23632
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        energy: 0.18752
+        action_share: 1
+        interpreted_energy: 0.18752
+        percentage: 79.35%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 18.13%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 2.52%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.0549
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 11.11%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 78.05%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 10.84%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 0.19298
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        energy: 0.14418
+        action_share: 1
+        interpreted_energy: 0.14418
+        percentage: 74.71%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 22.2%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 3.08%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 0.09824
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        energy: 0.04944
+        action_share: 1
+        interpreted_energy: 0.04944
+        percentage: 50.33%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 43.62%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 6.06%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 0.23632
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        energy: 0.18752
+        action_share: 1
+        interpreted_energy: 0.18752
+        percentage: 79.35%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 18.13%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 2.52%
+        estimator: Aladdin_table
+    - action_name: idle
+      arguments: null
+      energy: 0.018
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: idle
+        arguments: null
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 33.89%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0..1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.0119
+        percentage: 66.11%
+        estimator: Aladdin_table
+  - name: System.ws[0..255].PE[0..15].PEWeightBuffer[0..3]
+    actions:
+    - name: write
+      average_energy: 0.14561
+      max_energy: 0.23632
+      min_energy: 0.0549
+    - name: read
+      average_energy: 0.14561
+      max_energy: 0.23632
+      min_energy: 0.0549
+    - name: idle
+      energy: 0.018
+    primitive_estimation(s):
+    - action_name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.0549
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 11.11%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 78.05%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 10.84%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 0.19298
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        energy: 0.14418
+        action_share: 1
+        interpreted_energy: 0.14418
+        percentage: 74.71%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 22.2%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 3.08%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 0.09824
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        energy: 0.04944
+        action_share: 1
+        interpreted_energy: 0.04944
+        percentage: 50.33%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 43.62%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 6.06%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 0.23632
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        energy: 0.18752
+        action_share: 1
+        interpreted_energy: 0.18752
+        percentage: 79.35%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 18.13%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 2.52%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.0549
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 11.11%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 78.05%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 10.84%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 0.19298
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        energy: 0.14418
+        action_share: 1
+        interpreted_energy: 0.14418
+        percentage: 74.71%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 22.2%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 3.08%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 0.09824
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        energy: 0.04944
+        action_share: 1
+        interpreted_energy: 0.04944
+        percentage: 50.33%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 43.62%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 6.06%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 0.23632
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        energy: 0.18752
+        action_share: 1
+        interpreted_energy: 0.18752
+        percentage: 79.35%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 18.13%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 2.52%
+        estimator: Aladdin_table
+    - action_name: idle
+      arguments: null
+      energy: 0.018
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: idle
+        arguments: null
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 33.89%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0..1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.0119
+        percentage: 66.11%
+        estimator: Aladdin_table
+  - name: System.ws[0..255].PE[0..15].PEAccuBuffer[0..3]
+    actions:
+    - name: write
+      average_energy: 0.14561
+      max_energy: 0.23632
+      min_energy: 0.0549
+    - name: read
+      average_energy: 0.14561
+      max_energy: 0.23632
+      min_energy: 0.0549
+    - name: idle
+      energy: 0.018
+    primitive_estimation(s):
+    - action_name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.0549
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 11.11%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 78.05%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 10.84%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 0.19298
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        energy: 0.14418
+        action_share: 1
+        interpreted_energy: 0.14418
+        percentage: 74.71%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 22.2%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 3.08%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 0.09824
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        energy: 0.04944
+        action_share: 1
+        interpreted_energy: 0.04944
+        percentage: 50.33%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 43.62%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 6.06%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 0.23632
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        energy: 0.18752
+        action_share: 1
+        interpreted_energy: 0.18752
+        percentage: 79.35%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 18.13%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 2.52%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.0549
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 11.11%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 78.05%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 10.84%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 0.19298
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        energy: 0.14418
+        action_share: 1
+        interpreted_energy: 0.14418
+        percentage: 74.71%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 22.2%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 3.08%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 0.09824
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        energy: 0.04944
+        action_share: 1
+        interpreted_energy: 0.04944
+        percentage: 50.33%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 43.62%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 6.06%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 0.23632
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        energy: 0.18752
+        action_share: 1
+        interpreted_energy: 0.18752
+        percentage: 79.35%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 18.13%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 2.52%
+        estimator: Aladdin_table
+    - action_name: idle
+      arguments: null
+      energy: 0.018
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: idle
+        arguments: null
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 33.89%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0..1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.0119
+        percentage: 66.11%
+        estimator: Aladdin_table
+  - name: System.ws[0..255].PE[0..15].PEWeightRegs[0..15]
+    actions:
+    - name: access
+      energy: 0.009
+    primitive_estimation(s):
+    - action_name: access
+      arguments: null
+      energy: 0.009
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: access
+        arguments: null
+        energy: 0.009
+        action_share: 1
+        interpreted_energy: 0.009
+        percentage: 100.0%
+        estimator: Aladdin_table
+  - name: System.ws[0..255].PE[0..15].LMAC[0..15]
+    actions:
+    - name: compute
+      energy: 0.5608
+    primitive_estimation(s):
+    - action_name: compute
+      arguments: null
+      energy: 0.5608
+      subaction_estimations:
+      - subcomponent_name: intmac
+        subaction_name: mac_random
+        arguments: null
+        energy: 0.5608
+        action_share: 1
+        interpreted_energy: 0.5608
+        percentage: 100.0%
+        estimator: Aladdin_table
+  - name: System.ws[0..255].GlobalBuffer
+    actions:
+    - name: write
+      average_energy: 0.14561
+      max_energy: 0.23632
+      min_energy: 0.0549
+    - name: read
+      average_energy: 0.14561
+      max_energy: 0.23632
+      min_energy: 0.0549
+    - name: idle
+      energy: 0.018
+    primitive_estimation(s):
+    - action_name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.0549
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 11.11%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: count
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 78.05%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 10.84%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 0.19298
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        energy: 0.14418
+        action_share: 1
+        interpreted_energy: 0.14418
+        percentage: 74.71%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: count
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 22.2%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 3.08%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 0.09824
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        energy: 0.04944
+        action_share: 1
+        interpreted_energy: 0.04944
+        percentage: 50.33%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: count
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 43.62%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 6.06%
+        estimator: Aladdin_table
+    - action_name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 0.23632
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: write
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        energy: 0.18752
+        action_share: 1
+        interpreted_energy: 0.18752
+        percentage: 79.35%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: count
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 18.13%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 2.52%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.0549
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 11.11%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 78.05%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 10.84%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 0.19298
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        energy: 0.14418
+        action_share: 1
+        interpreted_energy: 0.14418
+        percentage: 74.71%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 22.2%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 3.08%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 0.09824
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        energy: 0.04944
+        action_share: 1
+        interpreted_energy: 0.04944
+        percentage: 50.33%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 43.62%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 6.06%
+        estimator: Aladdin_table
+    - action_name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 0.23632
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: read
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        energy: 0.18752
+        action_share: 1
+        interpreted_energy: 0.18752
+        percentage: 79.35%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[1]
+        subaction_name: add
+        arguments: null
+        energy: 0.04285
+        action_share: 1
+        interpreted_energy: 0.04285
+        percentage: 18.13%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.00595
+        percentage: 2.52%
+        estimator: Aladdin_table
+    - action_name: idle
+      arguments: null
+      energy: 0.018
+      subaction_estimations:
+      - subcomponent_name: storage
+        subaction_name: idle
+        arguments: null
+        energy: 0.0061
+        action_share: 1
+        interpreted_energy: 0.0061
+        percentage: 33.89%
+        estimator: Aladdin_table
+      - subcomponent_name: address_generators[0..1]
+        subaction_name: idle
+        arguments: null
+        energy: 0.00595
+        action_share: 1
+        interpreted_energy: 0.0119
+        percentage: 66.11%
+        estimator: Aladdin_table

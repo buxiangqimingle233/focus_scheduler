@@ -1,38 +1,38 @@
 dall-e:
-# - dall-e_layer1: 8
-# - dall-e_layer2: 8
-# - dall-e_layer3: 8
-# - dall-e_layer4: 8
-# - dall-e_layer5: 8
-# - dall-e_layer6: 8
-# - dall-e_layer7: 8
-# - dall-e_layer8: 8
-# - dall-e_layer9: 8
-# - dall-e_layer10: 8
+- dall-e_layer1: 8
+- dall-e_layer2: 8
+- dall-e_layer3: 8
+- dall-e_layer4: 8
+- dall-e_layer5: 8
+- dall-e_layer6: 8
+- dall-e_layer7: 8
+- dall-e_layer8: 8
+- dall-e_layer9: 8
+- dall-e_layer10: 8
 - dall-e_layer11: 8
-# - dall-e_layer12: 8
-# - dall-e_layer13: 8
-# - dall-e_layer14: 8
-# - dall-e_layer15: 8
-# - dall-e_layer16: 8
-# - dall-e_layer17: 8
-# - dall-e_layer18: 8
-# - dall-e_layer19: 8
-# - dall-e_layer20: 8
-# - dall-e_layer21: 8
-# - dall-e_layer22: 8
-# - dall-e_layer23: 8
-# - dall-e_layer24: 8
-# - dall-e_layer25: 8
-# - dall-e_layer26: 8
-# - dall-e_layer27: 8
-# - dall-e_layer28: 8
-# - dall-e_layer29: 8
-# - dall-e_layer30: 8
-# - dall-e_layer31: 8
-# - dall-e_layer32: 8
-# - dall-e_layer33: 8
-# - dall-e_layer34: 8
-# - dall-e_layer35: 8
-# - dall-e_layer36: 8
-# - dall-e_layer37: 8
+- dall-e_layer12: 8
+- dall-e_layer13: 8
+- dall-e_layer14: 8
+- dall-e_layer15: 8
+- dall-e_layer16: 8
+- dall-e_layer17: 8
+- dall-e_layer18: 8
+- dall-e_layer19: 8
+- dall-e_layer20: 8
+- dall-e_layer21: 8
+- dall-e_layer22: 8
+- dall-e_layer23: 8
+- dall-e_layer24: 8
+- dall-e_layer25: 8
+- dall-e_layer26: 8
+- dall-e_layer27: 8
+- dall-e_layer28: 8
+- dall-e_layer29: 8
+- dall-e_layer30: 8
+- dall-e_layer31: 8
+- dall-e_layer32: 8
+- dall-e_layer33: 8
+- dall-e_layer34: 8
+- dall-e_layer35: 8
+- dall-e_layer36: 8
+- dall-e_layer37: 8

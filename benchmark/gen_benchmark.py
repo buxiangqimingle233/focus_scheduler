@@ -1,5 +1,5 @@
-f = open("gpt2.yaml", "w")
+f = open("gpt2-xl.yaml", "w")
 
-print("gpt2:", file=f)
-for i in range(1, 49):
-    print(f"- gpt2_layer{i}: 16", file=f)
+print("gpt2-xl:", file=f)
+for i in range(1, 193):
+    print(f"- gpt2-xl_layer{i}: 8", file=f)

@@ -1,0 +1,865 @@
+architecture:
+  version: 0.3
+  local:
+  - name: System.ws[0..255].PE[0..15].PEInputBuffer
+    class: smartbuffer_RF
+    attributes:
+      block-size: 8
+      datawidth: 8
+      depth: 1024
+      memory_depth: 12
+      memory_width: 16
+      meshX: 4
+      n_banks: 1
+      n_buffets: 1
+      n_rdwr_ports: 2
+      technology: 45nm
+      width: 64
+      word-bits: 8
+    primitive_components:
+    - name: storage
+      class: regfile
+      attributes:
+        technology: 45nm
+        width: 16
+        depth: 12
+        n_rdwr_ports: 2
+        n_banks: 1
+        n_ports: 2
+        latency: 5ns
+      area_share: 1
+    - name: address_generators[0..1]
+      class: intadder
+      attributes:
+        technology: 45nm
+        width: 2.4849066497880004
+        datawidth: 16
+        num_pipeline_stages: 1
+        latency: 5ns
+      area_share: 1
+    actions:
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: idle
+      arguments: null
+      primitive_actions:
+      - name: storage
+        action: idle
+        arguments: null
+        action_share: 1
+      - name: address_generators[0..1]
+        action: idle
+        arguments: null
+        action_share: 1
+  - name: System.ws[0..255].PE[0..15].PEWeightBuffer[0..3]
+    class: smartbuffer_RF
+    attributes:
+      block-size: 8
+      datawidth: 8
+      depth: 1024
+      memory_depth: 12
+      memory_width: 16
+      meshX: 16
+      n_banks: 1
+      n_buffets: 1
+      n_rdwr_ports: 2
+      nbanks: 8
+      technology: 45nm
+      word-bits: 8
+    primitive_components:
+    - name: storage
+      class: regfile
+      attributes:
+        technology: 45nm
+        width: 16
+        depth: 12
+        n_rdwr_ports: 2
+        n_banks: 1
+        n_ports: 2
+        latency: 5ns
+      area_share: 1
+    - name: address_generators[0..1]
+      class: intadder
+      attributes:
+        technology: 45nm
+        width: 2.4849066497880004
+        datawidth: 16
+        num_pipeline_stages: 1
+        latency: 5ns
+      area_share: 1
+    actions:
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: idle
+      arguments: null
+      primitive_actions:
+      - name: storage
+        action: idle
+        arguments: null
+        action_share: 1
+      - name: address_generators[0..1]
+        action: idle
+        arguments: null
+        action_share: 1
+  - name: System.ws[0..255].PE[0..15].PEAccuBuffer[0..3]
+    class: smartbuffer_RF
+    attributes:
+      datawidth: 24
+      depth: 16
+      memory_depth: 12
+      memory_width: 16
+      meshX: 16
+      n_banks: 1
+      n_buffets: 1
+      n_rdwr_ports: 2
+      technology: 45nm
+      word-bits: 24
+    primitive_components:
+    - name: storage
+      class: regfile
+      attributes:
+        technology: 45nm
+        width: 16
+        depth: 12
+        n_rdwr_ports: 2
+        n_banks: 1
+        n_ports: 2
+        latency: 5ns
+      area_share: 1
+    - name: address_generators[0..1]
+      class: intadder
+      attributes:
+        technology: 45nm
+        width: 2.4849066497880004
+        datawidth: 16
+        num_pipeline_stages: 1
+        latency: 5ns
+      area_share: 1
+    actions:
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[0]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: idle
+      arguments: null
+      primitive_actions:
+      - name: storage
+        action: idle
+        arguments: null
+        action_share: 1
+      - name: address_generators[0..1]
+        action: idle
+        arguments: null
+        action_share: 1
+  - name: System.ws[0..255].PE[0..15].PEWeightRegs[0..15]
+    class: reg_storage
+    attributes:
+      cluster-size: 64
+      datawidth: 8
+      depth: 1
+      latency: 1ns
+      meshX: 16
+      num-ports: 2
+      technology: 45nm
+      width: 16
+      word-bits: 8
+    primitive_components:
+    - name: storage
+      class: reg
+      attributes:
+        technology: 45nm
+        latency: 1ns
+        datawidth: 16
+      area_share: 1
+    actions:
+    - name: access
+      arguments: null
+      primitive_actions:
+      - name: storage
+        action: access
+        arguments: null
+        action_share: 1
+  - name: System.ws[0..255].PE[0..15].LMAC[0..15]
+    class: lmac
+    attributes:
+      datawidth: 8
+      meshX: 16
+      technology: 45nm
+      word-bits: 8
+    primitive_components:
+    - name: intmac
+      class: intmac
+      attributes:
+        technology: 45nm
+        datawidth: 8
+        num_pipeline_stages: 2
+        latency: 5ns
+      area_share: 1
+    actions:
+    - name: compute
+      arguments: null
+      primitive_actions:
+      - name: intmac
+        action: mac_random
+        arguments: null
+        action_share: 1
+  - name: System.ws[0..255].GlobalBuffer
+    class: smartbuffer_SRAM
+    attributes:
+      block-size: 32
+      datawidth: 8
+      depth: 2048
+      memory_depth: 12
+      memory_width: 16
+      meshX: 1
+      n_banks: 1
+      n_buffets: 1
+      n_rdwr_ports: 2
+      nbanks: 4
+      nports: 2
+      technology: 45nm
+      width: 512
+      word-bits: 8
+    primitive_components:
+    - name: storage
+      class: SRAM
+      attributes:
+        technology: 45nm
+        width: 16
+        depth: 12
+        n_rdwr_ports: 2
+        n_banks: 1
+        n_rd_ports: 0
+        n_wr_ports: 0
+        latency: 5ns
+      area_share: 1
+    - name: address_generators[0..1]
+      class: intadder
+      attributes:
+        technology: 45nm
+        width: 2.4849066497880004
+        datawidth: 16
+        num_pipeline_stages: 1
+        latency: 5ns
+      area_share: 1
+    actions:
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[0]
+        action: count
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[0]
+        action: count
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[0]
+        action: count
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: write
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[0]
+        action: count
+        arguments: null
+        action_share: 1
+      - name: address_generators[1]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 0
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 0
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 1
+          data_delta: 0
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      primitive_actions:
+      - name: storage
+        action: read
+        arguments:
+          address_delta: 1
+          data_delta: 1
+        action_share: 1
+      - name: address_generators[1]
+        action: add
+        arguments: null
+        action_share: 1
+      - name: address_generators[0]
+        action: idle
+        arguments: null
+        action_share: 1
+    - name: idle
+      arguments: null
+      primitive_actions:
+      - name: storage
+        action: idle
+        arguments: null
+        action_share: 1
+      - name: address_generators[0..1]
+        action: idle
+        arguments: null
+        action_share: 1
+  - name: System.DRAM
+    class: DRAM
+    actions:
+    - name: read
+      arguments: null
+    - name: write
+      arguments: null
+    - name: idle
+      arguments: null
