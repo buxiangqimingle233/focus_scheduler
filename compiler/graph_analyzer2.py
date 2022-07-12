@@ -7,11 +7,13 @@ import matplotlib.pyplot as plt
 import functools
 import argparse
 from sys import stderr
+import numpy as np
 
 import time
 
 time_start = time.time()
 args = None
+list_maintain = 10
 
 def getArgumentParser():
     example_text = '''example:
@@ -192,10 +194,14 @@ class Graph_analyzer:
                 occupy_end += self.reticle_cycle - 1
             temp_edge_occupied[e] = (occupy_start, occupy_end)    #here occupy_end don't need to wait, [ , )
 
-            if not self.edge_occupied[e] or self.edge_occupied[e][0][0] < occupy_end:
-                for i in range(len(self.edge_occupied[e])):
-                    if i == len(self.edge_occupied[e]) - 1 or (self.edge_occupied[e][i+1][0] - max(occupy_start + max_waiting_time, self.edge_occupied[e][i][1])) >= transfering_time:
-                        max_waiting_time = max(max_waiting_time, self.edge_occupied[e][i][1] - occupy_start)
+            index_temp = 0
+            if len(self.edge_occupied[e]) > list_maintain:
+                index_temp = -list_maintain
+            if not self.edge_occupied[e] or self.edge_occupied[e][index_temp][0] < occupy_end:
+                length_temp = min(len(self.edge_occupied[e]), list_maintain)
+                for i in range(length_temp):
+                    if i == length_temp - 1 or (self.edge_occupied[e][-length_temp+i+1][0] - max(occupy_start + max_waiting_time, self.edge_occupied[e][-length_temp+i][1])) >= transfering_time:
+                        max_waiting_time = max(max_waiting_time, self.edge_occupied[e][-length_temp+i][1] - occupy_start)
                         break
 
         # print('1:', time.time()-time_start)
@@ -213,9 +219,9 @@ class Graph_analyzer:
 
 
             self.edge_occupied[e].append((temp_edge_occupied[e][0] + max_waiting_time, temp_edge_occupied[e][1] + max_waiting_time))
-            self.edge_occupied[e].sort(key=first_value)
-            if len(self.edge_occupied[e]) > 10:
-                self.edge_occupied[e] = self.edge_occupied[e][-10:-1]
+            self.edge_occupied[e][-11:].sort(key=first_value)
+            # if len(self.edge_occupied[e]) > 10:
+            #     self.edge_occupied[e] = self.edge_occupied[e][-10:-1]
             self.max_time = max(self.max_time, temp_edge_occupied[e][1] + max_waiting_time) + 1 #we suppose there will be a output node whose delay is 0
 
         #update edge waiting time
@@ -308,16 +314,37 @@ class Graph_analyzer:
         return G_backup
 
     def print_channel_utilization(self):
-
         for i in range(self.diameter**2):
             for j in range(self.diameter**2):
                 if ((abs(i%self.diameter-j%self.diameter) == 1 and abs(i-j) == 1) or abs(i-j) == self.diameter) :
-                    self.edge_occupied[(i, j)] = []
                     print(i, '-', j, ': ', self.edge_occupied_sum[(i, j)] / max(self.edge_occupied_max[(i, j)], 1), sep='')
-
-
-
-
+                    
+    def print_channel_utilization_fig(self, colums=100, output_dir = './visualization_output'):
+        for i in range(self.diameter**2):
+            for j in range(self.diameter**2):
+                if ((abs(i%self.diameter-j%self.diameter) == 1 and abs(i-j) == 1) or abs(i-j) == self.diameter) :
+                    self.edge_occupied[(i,j)].sort(key=first_value)
+                    interval = self.max_time // colums
+                    occupied_periods = np.zeros(colums)
+                    for p in self.edge_occupied[(i,j)]:
+                        start = p[0]
+                        start_index = int(p[0] // interval)
+                        # print(start_index)
+                        if p[1] < (start_index+1)*interval:
+                            occupied_periods[start_index] += p[1]-p[0]
+                        else:
+                            occupied_periods[start_index] += (start_index+1)*interval-p[0]
+                            temp_index = start_index + 1
+                            while (temp_index + 1)*interval < p[1]:
+                                occupied_periods[temp_index] += interval
+                                temp_index += 1
+                            occupied_periods[temp_index] += p[1] - temp_index*interval
+                            
+                    plt.plot(list(range(colums)), occupied_periods)
+                    plt.savefig(output_dir + f'/{i}-{j}.png')
+                    plt.clf()
+                        
+                            
 
 
 if __name__ == "__main__":
@@ -333,8 +360,10 @@ if __name__ == "__main__":
 
     a = Graph_analyzer(diameter=args.d, reticle_size=args.rs, reticle_cycle=args.rc, graph=graph, router=Steiner_TreeRouter, multi_task_per_core=True)
     print("total cycles:", a.analyze(), file=stderr)
-    if args.debug:
-        a.print_channel_utilization()
+    a.print_channel_utilization_fig()
+    
+    # if args.debug:
+    #     a.print_channel_utilization()
     print("critical cycles:", a.analyze(critical_path=True), file=stderr)
 
     
