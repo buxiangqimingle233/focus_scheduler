@@ -10,11 +10,11 @@ G.add_edge(1,2, id = 1, size = 5)
 G.add_edge(1,3, id = 2, size = 5)
 G.add_edge(2,4, id = 1, size = 5)
 
-for _, __, ettr in G.edges(data=True):
-    print(_)
-    print(__)
-    print(ettr)
-    print()
+# for _, __, ettr in G.edges(data=True):
+#     print(_)
+#     print(__)
+#     print(ettr)
+#     print()
 
 
 # class A:
@@ -28,5 +28,9 @@ for _, __, ettr in G.edges(data=True):
 # x = pickle.load(open('try.pickle', 'rb'))
 
 # print(x.a, " ", x.b)
-x = [1,2,3,4,5,6,7,8,9,10]
-print(x[-5:])
+# x = [1,2,3,4,5,6,7,8,9,10]
+# print(x[-5:])
+
+graph = nx.read_gpickle('./op_graph_output/gpt2-xl.gpickle')
+for e in graph.edges():
+    print(graph.edges[e]['size'])
