@@ -19,3 +19,4 @@ visualization/*
 try.py
 op_graph_output/*
 compiler/try.py
+backup/*

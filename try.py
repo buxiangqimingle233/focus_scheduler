@@ -1,5 +1,6 @@
 import networkx as nx
 import pickle
+from compiler.op_graph.micro_op_graph import MicroOpGraph
 
 G = nx.DiGraph()
 G.add_node(1, delay = 2)
@@ -31,6 +32,8 @@ G.add_edge(2,4, id = 1, size = 5)
 # x = [1,2,3,4,5,6,7,8,9,10]
 # print(x[-5:])
 
-graph = nx.read_gpickle('./op_graph_output/gpt2-xl.gpickle')
-for e in graph.edges():
-    print(graph.edges[e]['size'])
+graph = nx.read_gpickle('./op_graph_output/gpt2-xl-1024.gpickleraw.gpickle')
+# for e in graph.edges():
+#     print(graph.edges[e]['size'])
+for v in graph.get_data().nodes():
+    print(graph.get_data().nodes[v]['cnt'])

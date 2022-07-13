@@ -8,6 +8,8 @@ import functools
 import argparse
 from sys import stderr
 import numpy as np
+import global_control as gc
+from tqdm import tqdm
 
 import time
 
@@ -126,7 +128,7 @@ class Graph_analyzer:
         
         fid_dict = {}
         counter = 0
-        for v in topo_node_list:
+        for v in tqdm(topo_node_list):
             temp_edges_list = list(self.graph.edges(v))
             for e in temp_edges_list:
                 if (not self.graph.edges[e]['fid'] in fid_dict.keys()):
@@ -359,12 +361,12 @@ if __name__ == "__main__":
 
 
     a = Graph_analyzer(diameter=args.d, reticle_size=args.rs, reticle_cycle=args.rc, graph=graph, router=Steiner_TreeRouter, multi_task_per_core=True)
-    print("total cycles:", a.analyze(), file=stderr)
-    a.print_channel_utilization_fig()
-    plt.savefig('./visualization_output' + f'/gpt2-xl_channel_loads.png')
+    print(f"{gc.flit_size}-{args.d}-{args.rs}-{args.rc}-total cycles:", a.analyze(), file=stderr)
+    # a.print_channel_utilization_fig()
+    # plt.savefig('./visualization_output' + f'/gpt2-xl_channel_loads.png')
     
     # if args.debug:
     #     a.print_channel_utilization()
-    print("critical cycles:", a.analyze(critical_path=True), file=stderr)
+    print(f"{gc.flit_size}-{args.d}-{args.rs}-{args.rc}-critical cycles:", a.analyze(critical_path=True), file=stderr)
 
     

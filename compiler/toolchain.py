@@ -79,8 +79,9 @@ class TaskCompiler():
         
         if gc.generate_graph:
             flattened = self.flatten(op_graph)
-
+            nx.write_gpickle(op_graph, f'{gc.graph_name}' + 'raw.gpickle')
             nx.write_gpickle(flattened, f'{gc.graph_name}')
+            
             exit()
 
         for u, v, eattr in op_graph.get_data().edges(data=True):
