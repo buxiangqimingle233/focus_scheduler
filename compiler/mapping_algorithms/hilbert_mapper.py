@@ -77,7 +77,7 @@ class HilbertMapper(Mapper):
 
 
     def __belonging_layer(self, cluster: set) -> str:
-        G = self.working_graph.get_data()
+        G = self.working_graph.get_graph()
         # For the component with just single node, simply check its layer from G; 
         # For the component with more than one node, return the layer of its first node.
         if len(cluster) == 1:
@@ -94,7 +94,7 @@ class HilbertMapper(Mapper):
 
 
     def __need_pe(self, component: set) -> bool:
-        G = self.working_graph.get_data()
+        G = self.working_graph.get_graph()
         types = {G.nodes[ele]["op_type"] for ele in component}
         # pure "insrc" or "wsrc" do not need cores
         if not types & {"worker", "sink"}:

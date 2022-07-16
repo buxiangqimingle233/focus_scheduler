@@ -25,7 +25,7 @@ class TraceGenerator:
     def gen_trace(self, trace_to: dict, routing_board_to: TextIOWrapper, spec_to: TextIOWrapper, \
             spec_ref: TextIOWrapper, graph: MicroOpGraph, router: router.Router):
 
-        op_graph = deepcopy(graph.get_data())
+        op_graph = deepcopy(graph.get_graph())
 
         # Operator field
         for filename in trace_to.values():

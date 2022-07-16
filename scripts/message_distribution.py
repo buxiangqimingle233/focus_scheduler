@@ -12,7 +12,7 @@ def plot_msg_size_dist(op_graph: MicroOpGraph):
     # plt.ylim(0, 200)
     # plt.xlim(0, 1000)
     fig_path = os.path.join(gc.visualization_root, "msg_size_dist_{}.png".format(gc.taskname))
-    msg_size = [attr["size"] for _, __, attr in op_graph.get_data().edges(data=True) if attr["edge_type"] == "data"]
+    msg_size = [attr["size"] for _, __, attr in op_graph.get_graph().edges(data=True) if attr["edge_type"] == "data"]
     msg_size = np.asarray_chkfinite(msg_size)
 
     fig = sns.histplot(msg_size, bins=30)

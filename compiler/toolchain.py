@@ -49,7 +49,7 @@ class TaskCompiler():
     def compile(self):
 
         if gc.dataflow_engine == "timeloop":
-            op_graph = self._gen_op_graph()
+            op_graph = self._gen_forward_graph()
         else: 
             assert False
             # Fake trace generator has not been compatible with op_graph
@@ -57,6 +57,8 @@ class TaskCompiler():
 
         # map tasks to pe array
         op_graph = self._map_operators(op_graph)
+
+        self._gen_backward_graph(op_graph)
 
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
@@ -67,12 +69,12 @@ class TaskCompiler():
 
     def get_working_graph(self):
         return self.op_grpah
-
+    
     def get_compute_cycle(self):
-        assert hasattr(self, "compute_cycle_lower_bound")
-        return self.compute_cycle_lower_bound
+        # assert hasattr(self, "compute_cycle_lower_bound")
+        return self.op_grpah.total_compute_cycles()
 
-    def _gen_op_graph(self):
+    def _gen_forward_graph(self):
         print("Generating the operator graph using timeloop")
 
         op_graph = MicroOpGraph()
@@ -86,6 +88,90 @@ class TaskCompiler():
             print("====================== FINISH =========================\n\n")
 
         return op_graph
+
+    def _gen_backward_graph(self, op_graph: MicroOpGraph) -> MicroOpGraph:
+        forward_graph = op_graph.get_graph()
+
+        # weights (gradiants) size
+        gradiants = {}
+        worker_counts = {}
+        for node, attr in nx.subgraph_view(forward_graph, filter_node=lambda x: forward_graph.nodes[x]["batch"] == 0 and forward_graph.nodes[x]["op_type"] == "wsrc").nodes(data=True):
+            if attr["layer"] not in gradiants:
+                gradiants[attr["layer"]] = attr["cnt"] * max([eattr["size"] for _, __, eattr in forward_graph.out_edges(node, data=True) if eattr["edge_type"] == "data"])
+                worker_counts[attr["layer"]] = len([1 for _, __, eattr in forward_graph.out_edges(node, data=True) if eattr["edge_type"] == "data"])
+
+        # reverse forward graph, remove wsrcs
+        grad_graph = nx.subgraph_view(forward_graph, \
+            filter_node=lambda x: forward_graph.nodes[x]["op_type"] != "wsrc" and forward_graph.nodes[x]["batch"] == 0, \
+            filter_edge=lambda u, v: forward_graph.edges[u, v]["edge_type"] == "data")
+
+        grad_graph = nx.DiGraph(grad_graph, name="backward")
+        nx.set_node_attributes(grad_graph, 0, "batch")
+
+        # reset worker delay & cnt
+        for node in (n for n, t in grad_graph.nodes(data="op_type") if t == "worker"):
+            attr = grad_graph.nodes[node]
+            attr["delay"] = attr["cnt"] * attr["delay"]
+            attr["cnt"] = 1
+
+        def get_nextlayer_name(name):
+            layer_number = re.findall(r"\d+", name)[-1]
+            pre_layer_number = str(int(layer_number) + 1)
+            prelayer_name = re.sub(layer_number[::-1], pre_layer_number[::-1], name[::-1])[::-1]
+            return prelayer_name
+
+        for node in (n for n, t in grad_graph.nodes(data="op_type") if t == "sink"):
+            attr = grad_graph.nodes[node]
+            # assert get_nextlayer_name(attr["layer"]) in gradiants
+            if get_nextlayer_name(attr["layer"]) in gradiants:
+                attr["delay"] = gradiants[get_nextlayer_name(attr["layer"])]
+            else:
+                attr["delay"] = 1
+            attr["cnt"] = 1
+
+        grad_graph = grad_graph.reverse()
+
+        for node in nx.topological_sort(grad_graph): 
+            nattr = grad_graph.nodes[node]
+            flow_cnt = MicroOpGraph.flow_cnt
+            MicroOpGraph.flow_cnt += 1
+            # broadcast gradients from the successing layer and outputs of this layer
+            if nattr["op_type"] == "sink":
+                if get_nextlayer_name(nattr["layer"]) in gradiants:
+                    output_size = gradiants[get_nextlayer_name(nattr["layer"])] + max([size for _, __, size in grad_graph.in_edges(data="size")])
+                else:
+                    # the last layer
+                    output_size = 1
+            # accumulate gradients
+            elif nattr["op_type"] == "worker":
+                output_size = gradiants[nattr["layer"]] / worker_counts[nattr["layer"]]
+            # pass the gradients to the previous layer
+            elif nattr["op_type"] == "insrc":
+                output_size = gradiants[nattr["layer"]]
+
+            for _, v, eattr in grad_graph.out_edges(node, data=True):
+                eattr["fid"] = flow_cnt
+                eattr["size"] = output_size
+
+        # def rehash_to_backward_nodes(a):
+        #     return MicroOpGraph.hash_node(layer_=a["layer"], vpe_=a["v_pe"], batch_=a["batch"], bw=True)
+        # relabel = {node: rehash_to_backward_nodes(attr) for node, attr in grad_graph.nodes(data=True)}
+        # grad_graph = nx.relabel_nodes(grad_graph, relabel)
+
+        op_graph.set_graph(nx.disjoint_union(forward_graph, grad_graph))
+
+        # connect the corresponding endpoints of forward graphs and backward graphs
+        G = op_graph.get_graph()
+        cutting_layers = [layer for layer in gradiants if get_nextlayer_name(layer) not in gradiants]
+        danling_fw_sinks = {nattr["layer"]: n for n, nattr in G.nodes(data=True) if nattr["op_type"] == "sink" and G.out_degree(n) == 0}
+        danling_bw_sinks = {nattr["layer"]: n for n, nattr in G.nodes(data=True) if nattr["op_type"] == "sink" and G.in_degree(n) == 0}
+        assert len(danling_fw_sinks) == len(danling_bw_sinks) and len(danling_bw_sinks) == len(cutting_layers)
+        for cl in cutting_layers:
+            op_graph.add_control_edge(danling_fw_sinks[cl], danling_bw_sinks[cl])
+
+        # print(len(forward_graph.nodes), len(grad_graph.nodes), len(op_graph.graph.nodes))
+        # print(nx.to_pandas_edgelist(op_graph.graph))
+        # print(nx.to_pandas_edgelist(grad_graph))
 
     def _map_operators(self, op_graph):
         layout = self.gen_physical_layout()
@@ -148,7 +234,7 @@ class TaskCompiler():
 
     def flatten(self, op_graph: MicroOpGraph) -> nx.DiGraph():
         ret = nx.DiGraph()
-        G = deepcopy(op_graph.get_data())
+        G = deepcopy(op_graph.get_graph())
 
         cnts = np.asarray_chkfinite([nattr["cnt"] for _, nattr in G.nodes(data=True) if nattr["op_type"] == "worker"])
 

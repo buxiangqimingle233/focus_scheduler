@@ -37,7 +37,7 @@ class Mapper:
 
         # Sink nodes at layer x and isource nodes at layer x+1 should be mapped to the 
         # same physical processing element to exploit data reuse. 
-        G = deepcopy(self.working_graph.get_data())
+        G = deepcopy(self.working_graph.get_graph())
         isources = [node for node, op_type in G.nodes(data="op_type") if op_type == "insrc"]
         for insrc in isources:
             sinks = [u for u, _ in G.in_edges(insrc) if G.nodes[u]["op_type"] == "sink"]
@@ -62,14 +62,14 @@ class Mapper:
     def _generate_ret(self):
         
         # Change mapping constraint edges to real control edges
-        constraint_edges = [(u, v) for u, v, type_ in self.backup.get_data().edges(data="edge_type") \
+        constraint_edges = [(u, v) for u, v, type_ in self.backup.get_graph().edges(data="edge_type") \
                             if type_ == "map_constraint"]
 
         for u, v in constraint_edges:
             self.backup.remove_edge(u, v)
             self.backup.add_control_edge(u, v)
 
-        for node, p_pe in self.working_graph.get_data().nodes(data="p_pe"):
+        for node, p_pe in self.working_graph.get_graph().nodes(data="p_pe"):
             self.backup.set_physical_pe(node, p_pe)
 
         return self.backup
