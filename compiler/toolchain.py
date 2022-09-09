@@ -62,7 +62,7 @@ class TaskCompiler():
         # map tasks to pe array
         op_graph = self._map_operators(op_graph)
 
-        self._gen_backward_graph(op_graph)
+        # self._gen_backward_graph(op_graph)
 
         # dump as spatialsim trace
         self._to_spatialsim_trace(op_graph)
@@ -104,6 +104,8 @@ class TaskCompiler():
             fake_report = fake_agent.encode_dataframe(layer=layer)
             op_graph.add_layer(fake_report, gc.batch)
             print("====================== FINISH =========================\n\n")
+
+        return op_graph
 
 
     def _gen_backward_graph(self, op_graph: MicroOpGraph) -> MicroOpGraph:

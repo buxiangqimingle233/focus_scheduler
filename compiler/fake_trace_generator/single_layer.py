@@ -11,7 +11,6 @@ import re
 # Generate single layer workload similar to Timeloop's output
 class FakeWorkload():
     
-    @staticmethod
     def encode_dataframe(self, args=None, layer=None):
         """Generate fake dataframe"""
         if layer == None:
@@ -68,7 +67,6 @@ class FakeWorkload():
 
         return df
 
-    @staticmethod
     def encode_string(self, args):
         """Encode args into string"""
         s = f"cw{args['cnt_w']}_ci{args['cnt_i']}_co{args['cnt_o']}" +\
@@ -78,7 +76,6 @@ class FakeWorkload():
             f"_n{args['worker']}"
         return s
 
-    @staticmethod
     def parse_string(self, s):
         """Parse encoded string into args"""
         args = dict()
@@ -102,3 +99,8 @@ class FakeWorkload():
             val = int(t[i:])
             args[key] = val
         return args
+
+if __name__ == "__main__":
+    fake_agent = FakeWorkload()
+    df = fake_agent.encode_dataframe(layer="cw36_ci1764_co1764_bw0_bi1_fw5_fi22_fo7_dw343_di7_do7_n4")
+    print(df)

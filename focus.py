@@ -84,7 +84,7 @@ def setEnvSpecs(args: argparse.Namespace):
         gc.cores += reduce(lambda x, y: x + y, map(lambda x: list(x.values()), model))
 
     # set the task name that exclusively identify the task
-    if gc.dataflow_engine == "timeloop":
+    if gc.dataflow_engine == "timeloop" or gc.dataflow_engine == "fake":
         gc.taskname = "_".join(gc.models) + "_b{}w{}".format(gc.batch, gc.flit_size) \
                                           + "_{}x{}".format(gc.array_diameter, gc.array_diameter)
     else:
@@ -120,9 +120,9 @@ def run_single_task(args):
         compute_cycle = toolchain.get_compute_cycle() # * gc.overclock
 
         # plot channel loads
-        plot_channel_load(toolchain.get_working_graph())
+        # plot_channel_load(toolchain.get_working_graph())
         # plot message size distribution
-        plot_msg_size_dist(toolchain.get_working_graph())
+        # plot_msg_size_dist(toolchain.get_working_graph())
 
     # Invoke simulator
     if gc.simulate_baseline:
@@ -135,10 +135,10 @@ def run_single_task(args):
         
         # plot core busy ratios
         mems = [k for k, v in TaskCompiler().gen_physical_layout().items() if v != "mems"]
-        plot_core_busy_ratio(simulator.core_busy_ratio(), mems)
+        # plot_core_busy_ratio(simulator.core_busy_ratio(), mems)
 
         # plot router conflict factors
-        plot_router_conflict_factors(simulator.router_conflict_factor())
+        # plot_router_conflict_factors(simulator.router_conflict_factor())
 
 
     if gc.compile_task and gc.simulate_baseline:
