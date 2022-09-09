@@ -12,11 +12,13 @@ import pickle
 from op_graph.micro_op_graph import MicroOpGraph
 # Fake trace generator
 from fake_trace_generator.generator import gen_fake_trace
+from fake_trace_generator.single_layer import FakeWorkload
 # Timeloop agents
 from compiler.timeloop_agents.agent import TimeloopLayer
 # Task Mapper
 from mapping_algorithms.random_mapper import RandomMapper
 from mapping_algorithms.hilbert_mapper import HilbertMapper
+from mapping_algorithms.hilbert_mapper import RandomizedHilbertMapper
 # Tree Generator
 from compiler.routing_algorithms.meshtree_router import MeshTreeRouter, RPMTreeRouter, WhirlTreeRouter, BAMTreeRouter, Steiner_TreeRouter
 # The backend to generate trace for spatial_sim
@@ -50,6 +52,8 @@ class TaskCompiler():
 
         if gc.dataflow_engine == "timeloop":
             op_graph = self._gen_forward_graph()
+        elif gc.dataflow_engine == "fake":
+            op_graph = self._gen_fake_forward_graph()
         else: 
             assert False
             # Fake trace generator has not been compatible with op_graph
@@ -88,6 +92,19 @@ class TaskCompiler():
             print("====================== FINISH =========================\n\n")
 
         return op_graph
+
+    def _gen_fake_forward_graph(self):
+        # Model with multiple layers may cause unintented parallelism due to a bug.
+        assert len(self.layer_names) == 1
+        print("Generating the operator graph using a fake one")
+
+        op_graph = MicroOpGraph()
+        for layer in self.layer_names:
+            fake_agent = FakeWorkload()
+            fake_report = fake_agent.encode_dataframe(layer=layer)
+            op_graph.add_layer(fake_report, gc.batch)
+            print("====================== FINISH =========================\n\n")
+
 
     def _gen_backward_graph(self, op_graph: MicroOpGraph) -> MicroOpGraph:
         forward_graph = op_graph.get_graph()
@@ -176,7 +193,10 @@ class TaskCompiler():
     def _map_operators(self, op_graph):
         layout = self.gen_physical_layout()
         # mapper = RandomMapper(op_graph, layout)
-        mapper = HilbertMapper(op_graph, layout, gc.array_diameter, gc.virtualization)
+        if gc.dataflow_engine == "fake":
+            mapper = RandomizedHilbertMapper(op_graph, layout, gc.array_diameter, gc.virtualization)
+        else:
+            mapper = HilbertMapper(op_graph, layout, gc.array_diameter, gc.virtualization)
         return mapper.map()
 
     def _to_spatialsim_trace(self, op_graph):

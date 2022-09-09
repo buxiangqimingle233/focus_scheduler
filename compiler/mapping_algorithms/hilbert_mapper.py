@@ -1,6 +1,6 @@
 import sys
 from math import ceil, log2
-from random import sample
+from random import sample, uniform
 
 from compiler.mapping_algorithms.hilbert import hilbert_curve, hilbert_map
 from op_graph.micro_op_graph import MicroOpGraph
@@ -98,6 +98,50 @@ class HilbertMapper(Mapper):
         types = {G.nodes[ele]["op_type"] for ele in component}
         # pure "insrc" or "wsrc" do not need cores
         if not types & {"worker", "sink"}:
+            return False
+        else:
+            return True
+
+
+class RandomizedHilbertMapper(HilbertMapper):
+    def __init__(self, op_graph: MicroOpGraph, physical_layout: dict, diameter: int, virtualization=True) -> None:
+        super().__init__(op_graph, physical_layout, diameter, virtualization)
+        # randomize the starting index
+        self.idx = int(uniform(0, len(self.hilbert_curve)))
+
+    def _map(self, selected_cluster: set) -> int:
+        if self.__need_pe(selected_cluster):
+            return self.__map_to_core(selected_cluster)
+        else:
+            return self.__map_to_mem_ctrl(selected_cluster)
+
+    def __map_to_core(self, selected_cluster):
+        while True:
+            assert self.idx < len(self.hilbert_curve)
+            # pe = self.__pe_position(*self.hilbert_curve.pop(0))
+            pe = self.__pe_position(*self.hilbert_curve[self.idx])
+            self.idx = self.idx + 1
+            if self.virtualization:
+                self.idx = self.idx % len(self.hilbert_curve)
+            if pe in self.cores:
+                # return sample(self.cores, 1)[0]
+                return pe
+
+    def __map_to_mem_ctrl(self, selected_cluster):
+        return sample(self.mems, 1)[0]
+
+
+    def __pe_position(self, x, y) -> int:
+        if x >= self.diameter or y >= self.diameter:
+            return -1
+        else:
+            return x * self.diameter + y
+
+    def __need_pe(self, component: set) -> bool:
+        G = self.working_graph.get_graph()
+        types = {G.nodes[ele]["op_type"] for ele in component}
+        # for single layer, only "wsrc" does not need cores
+        if types & {"wsrc"}:
             return False
         else:
             return True
