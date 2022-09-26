@@ -11,3 +11,6 @@ output/*
 traceDR.json
 notes.md
 visualization/*
+
+gnn
+buffer
