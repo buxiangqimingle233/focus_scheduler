@@ -6,6 +6,7 @@ from random import sample, uniform
 from compiler.mapping_algorithms.hilbert import hilbert_curve, hilbert_map
 from op_graph.micro_op_graph import MicroOpGraph
 from mapper import Mapper
+from hashlib import sha256
 
 class HilbertMapper(Mapper):
     '''To guarantee adjacent PEs are allocated continuously, we sort PEs in the order of Hilbert Curve, \
@@ -147,7 +148,11 @@ class RandomizedHilbertMapper(HilbertMapper):
         s = ""
         for k, v in param_dict.items():
             s = s + f"{k}_{v}_"
-        return hash(s) % len(self.hilbert_curve)
+        h = sha256(s.encode())
+        e = int(h.hexdigest(), 16)
+        print(f"debug: hash function takes {s}")
+        print(f"debug: hash function generates {e}")
+        return e % len(self.hilbert_curve)
 
     def _map(self, selected_cluster: set) -> int:
         if self.__need_pe(selected_cluster):
