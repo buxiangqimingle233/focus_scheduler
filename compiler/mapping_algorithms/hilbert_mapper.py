@@ -1,3 +1,4 @@
+from argparse import ArgumentDefaultsHelpFormatter
 import sys
 from math import ceil, log2
 from random import sample, uniform
@@ -104,10 +105,49 @@ class HilbertMapper(Mapper):
 
 
 class RandomizedHilbertMapper(HilbertMapper):
+    """For fixed delay ratio & flit size & broadcasting, we make sure we have the same mapping.
+    In other word, layers with only delay different should have invariant layer mapping.
+    """
     def __init__(self, op_graph: MicroOpGraph, physical_layout: dict, diameter: int, virtualization=True) -> None:
         super().__init__(op_graph, physical_layout, diameter, virtualization)
-        # randomize the starting index
-        self.idx = int(uniform(0, len(self.hilbert_curve)))
+        self.idx = self.__randomize_starting_index()
+
+    def __randomize_starting_index(self):
+        param_dict = {
+            "flit_w": None,
+            "flit_i": None,
+            "flit_o": None,
+            "delay_w": None,
+            "delay_i": None,
+            "delay_o": None,
+            # "broadcast_w": None,  # kinda difficult
+            # "broadcast_i": None,
+            "worker": None,
+        }
+
+        G = self.working_graph.get_graph()
+        for u, v, eattr in G.edges(data=True):
+            if eattr['edge_type'] != "data":
+                continue
+            if G.nodes[u]['op_type'] == "wsrc":
+                param_dict['flit_w'] = eattr['size']
+                param_dict['delay_w'] = G.nodes[u]['delay']
+            elif G.nodes[u]['op_type'] == 'insrc':
+                param_dict['flit_i'] = eattr['size']
+                param_dict['delay_i'] = G.nodes[u]['delay']
+            elif G.nodes[u]['op_type'] == 'worker':
+                param_dict['flit_o'] = eattr['size']
+                param_dict['delay_o'] = G.nodes[u]['delay']
+        param_dict['worker'] = len([u for u, nattr in G.nodes(data=True) if nattr['op_type'] == 'worker'])
+        min_delay = min(param_dict["delay_i"], param_dict['delay_w'], param_dict['delay_o'])
+        param_dict['delay_i'] = param_dict['delay_i'] // min_delay
+        param_dict['delay_w'] = param_dict['delay_w'] // min_delay
+        param_dict['delay_o'] = param_dict['delay_o'] // min_delay
+
+        s = ""
+        for k, v in param_dict.values():
+            s = s + f"{k}_{v}_"
+        return hash(s)
 
     def _map(self, selected_cluster: set) -> int:
         if self.__need_pe(selected_cluster):
@@ -128,7 +168,7 @@ class RandomizedHilbertMapper(HilbertMapper):
                 return pe
 
     def __map_to_mem_ctrl(self, selected_cluster):
-        return sample(self.mems, 1)[0]
+        return self.mems[self.idx % len(self.mems)]        
 
 
     def __pe_position(self, x, y) -> int:
