@@ -7,20 +7,93 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import pandas as pd
 import re
+import yaml
 
-# Generate single layer workload similar to Timeloop's output
-class FakeWorkload():
-    
-    def encode_dataframe(self, args=None, layer=None):
-        """Generate fake dataframe"""
-        if layer == None:
-            assert args != None
-            layer = self.encode_string(args)
-        if args == None:
-            assert layer != None
-            args = self.parse_string(layer)
+# Copied from gnn4noc
+class LayerSample():
+    """ An easy-to-use representation of a fake layer's computation info.
+    """
+    def __init__(self, args):
+        self.params = None
+        if isinstance(args, str):
+            self.params = self.__parse_str(args)
+        elif isinstance(args, dict):
+            self.params = self.__parse_dict(args)
+        else:
+            raise NotImplementedError
+        
 
+    def __repr__(self):
+        p = self.params
+        s = f"cw{p['cnt_w']}_ci{p['cnt_i']}_co{p['cnt_o']}" +\
+            f"_bw{p['broadcast_w']}_bi{p['broadcast_i']}" +\
+            f"_fw{p['flit_w']}_fi{p['flit_i']}_fo{p['flit_o']}" +\
+            f"_dw{p['delay_w']}_di{p['delay_i']}_do{p['delay_o']}" +\
+            f"_n{p['worker']}"
+        return s
+
+    def dump(self, save_root, model_name=None):
+        """Dump to model config for focus scheduler.
+        """
+        s = self.__repr__()
+        if model_name == None:
+            model_name = s
+        savepath = os.path.join(save_root, f"{model_name}.yaml")
+        data = {s: [{s: 2}]}
+        with open(savepath, 'w') as f:
+            yaml.dump(data, f)
+
+    def __empty_params(self):
+        empty_params = {
+            'cnt_w': None,
+            'cnt_i': None,
+            'cnt_o': None,
+            'flit_w': None,
+            'flit_i': None,
+            'flit_o': None,
+            'delay_w': None,
+            'delay_i': None,
+            'delay_o': None,
+            'broadcast_w': None,
+            'broadcast_i': None,
+            'worker': None,
+        }
+        return empty_params
+
+    def __parse_str(self, s):
+        params = self.__empty_params()
+        short2full = {
+            "cw": "cnt_w",
+            "ci": "cnt_i",
+            "co": "cnt_o",
+            "bw": "broadcast_w",
+            "bi": "broadcast_i",
+            "fw": "flit_w",
+            "fi": "flit_i",
+            "fo": "flit_o",
+            "dw": "delay_w",
+            "di": "delay_i",
+            "do": "delay_o",
+            "n": "worker",
+        }
+        for t in s.split('_'):
+            i = re.search('\d+', t).span()[0]
+            key = short2full[t[:i]]
+            val = int(t[i:])
+            params[key] = val
+        assert None not in params.values()
+        return params
+
+    def __parse_dict(self, args):
+        params = self.__empty_params()
+        for k in params.keys():
+            params[k] = args[k]
+        return params
+
+    def to_dataframe(self):
         cnt_index = 0
+        args = self.params
+        layer = self.__repr__()
         df = pd.DataFrame(columns=['index', 'counts', 'datatype', 'dst', 'flit',\
             'interval', 'layer', 'src', 'delay'])
         
@@ -66,39 +139,6 @@ class FakeWorkload():
             df = df.append(tmp_dict, ignore_index=True)
 
         return df
-
-    def encode_string(self, args):
-        """Encode args into string"""
-        s = f"cw{args['cnt_w']}_ci{args['cnt_i']}_co{args['cnt_o']}" +\
-            f"_bw{args['broadcast_w']}_bi{args['broadcast_i']}" +\
-            f"_fw{args['flit_w']}_fi{args['flit_i']}_fo{args['flit_o']}" +\
-            f"_dw{args['delay_w']}_di{args['delay_i']}_do{args['delay_o']}" +\
-            f"_n{args['worker']}"
-        return s
-
-    def parse_string(self, s):
-        """Parse encoded string into args"""
-        args = dict()
-        short2full = {
-            "cw": "cnt_w",
-            "ci": "cnt_i",
-            "co": "cnt_o",
-            "bw": "broadcast_w",
-            "bi": "broadcast_i",
-            "fw": "flit_w",
-            "fi": "flit_i",
-            "fo": "flit_o",
-            "dw": "delay_w",
-            "di": "delay_i",
-            "do": "delay_o",
-            "n": "worker",
-        }
-        for t in s.split('_'):
-            i = re.search('\d+', t).span()[0]
-            key = short2full[t[:i]]
-            val = int(t[i:])
-            args[key] = val
-        return args
 
 if __name__ == "__main__":
     fake_agent = FakeWorkload()

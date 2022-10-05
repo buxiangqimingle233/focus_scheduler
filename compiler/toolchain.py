@@ -12,7 +12,7 @@ import pickle
 from op_graph.micro_op_graph import MicroOpGraph
 # Fake trace generator
 from fake_trace_generator.generator import gen_fake_trace
-from fake_trace_generator.single_layer import FakeWorkload
+from fake_trace_generator.single_layer import LayerSample
 # Timeloop agents
 from compiler.timeloop_agents.agent import TimeloopLayer
 # Task Mapper
@@ -100,8 +100,8 @@ class TaskCompiler():
 
         op_graph = MicroOpGraph()
         for layer in self.layer_names:
-            fake_agent = FakeWorkload()
-            fake_report = fake_agent.encode_dataframe(layer=layer)
+            fake_agent = LayerSample(layer)
+            fake_report = fake_agent.to_dataframe()
             op_graph.add_layer(fake_report, gc.batch)
             print("====================== FINISH =========================\n\n")
 

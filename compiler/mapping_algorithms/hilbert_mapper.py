@@ -145,9 +145,9 @@ class RandomizedHilbertMapper(HilbertMapper):
         param_dict['delay_o'] = param_dict['delay_o'] // min_delay
 
         s = ""
-        for k, v in param_dict.values():
+        for k, v in param_dict.items():
             s = s + f"{k}_{v}_"
-        return hash(s)
+        return hash(s) % len(self.hilbert_curve)
 
     def _map(self, selected_cluster: set) -> int:
         if self.__need_pe(selected_cluster):
