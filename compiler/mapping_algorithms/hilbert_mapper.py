@@ -112,6 +112,8 @@ class RandomizedHilbertMapper(HilbertMapper):
     def __init__(self, op_graph: MicroOpGraph, physical_layout: dict, diameter: int, virtualization=True) -> None:
         super().__init__(op_graph, physical_layout, diameter, virtualization)
         self.idx = self.__randomize_starting_index()
+        # self.idx = 114520 % (diameter ** 2)
+        # self.idx = 11443899 % (diameter ** 2)
 
     def __randomize_starting_index(self):
         param_dict = {
