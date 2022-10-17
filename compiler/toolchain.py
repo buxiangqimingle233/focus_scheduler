@@ -95,7 +95,7 @@ class TaskCompiler():
 
     def _gen_fake_forward_graph(self):
         # Model with multiple layers may cause unintented parallelism due to a bug.
-        assert len(self.layer_names) == 1
+        # assert len(self.layer_names) == 1
         print("Generating the operator graph using a fake one")
 
         op_graph = MicroOpGraph()

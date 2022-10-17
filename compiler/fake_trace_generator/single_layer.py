@@ -78,6 +78,8 @@ class LayerSample():
         }
         for t in s.split('_'):
             i = re.search('\d+', t).span()[0]
+            if t[:i] not in short2full.keys():
+                continue
             key = short2full[t[:i]]
             val = int(t[i:])
             params[key] = val
@@ -141,6 +143,4 @@ class LayerSample():
         return df
 
 if __name__ == "__main__":
-    fake_agent = FakeWorkload()
-    df = fake_agent.encode_dataframe(layer="cw36_ci1764_co1764_bw0_bi1_fw5_fi22_fo7_dw343_di7_do7_n4")
-    print(df)
+    pass
